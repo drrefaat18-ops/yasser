@@ -175,3 +175,29 @@
 **Pharmacogenomics** — The study of how a person's genes affect their response to medicines.
 
 **Pharmacovigilance** — The monitoring of medicines after approval to detect, assess and prevent adverse effects.
+
+**Gait cycle** — The sequence of movements from one heel strike to the next heel strike of the same foot, with stance and swing phases.
+
+**Haptic boundary** — A software limit that stops a robotic tool from moving outside a planned zone, used for example in joint-replacement surgery.
+
+**Inertial measurement unit** — A sensor combining an accelerometer and a gyroscope that records acceleration and rotation; found in most wearables (IMU).
+
+**Leader–follower telemanipulation** — A robotic surgery set-up in which the surgeon's hand movements at a console lead and the robot's instruments follow.
+
+**Motion scaling** — A robotic feature that turns a large hand movement into a smaller, more precise instrument movement.
+
+**Objective Structured Assessment of Technical Skills** — A validated rating scale for surgical technical skill (OSATS).
+
+**Pose estimation** — A computer-vision task that locates body key points, such as joints, in images or video.
+
+**Range of motion** — How far a joint can move, measured in degrees.
+
+**Robotic exoskeleton** — A powered wearable frame that supports or moves the limbs, used for example in gait rehabilitation.
+
+**Surgical data science** — The collection and analysis of data from surgery, such as video and instrument movements, to improve care.
+
+**Telerehabilitation** — Rehabilitation delivered remotely, often by live video.
+
+**Tremor filtering** — A robotic feature that removes the small natural shake of the surgeon's hands (physiological tremor, about 8–12 Hz).
+
+**Wearable** — A device worn on the body, such as a wrist band or sensor, that records signals like movement or heart rate.

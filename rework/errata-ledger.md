@@ -14,21 +14,21 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 6 | Delta-check creatinine rise | 611 | IV-line contamination dilutes (lowers) analytes; false rise = wrong patient, mislabel, interference; alert goes to technologist and requesting clinician | Ch6 | fixed (Ch6 §6.5) |
 | 7 | ICG shows ureters | 1306 | ICG is excreted by the liver into bile; it does not show ureters | — | removed-with-content |
 | 8 | AML ≥20% blasts | Ch3 Q6 | WHO 5th ed. (2022) removed the 20% threshold for AML with defining genetic abnormalities; ICC uses ≥10% | — | removed-with-content |
-| 9 | Physiological tremor frequency | 1010, Q17 | 8–12 Hz | Ch8 | open |
+| 9 | Physiological tremor frequency | 1010, Q17 | 8–12 Hz | Ch8 | fixed (Ch8 §8.4) |
 | 10 | ML superior to logistic regression | 1107, 1418 | No average performance benefit in clinical prediction (Christodoulou 2019) | Ch3 | fixed (Ch3 §3.5) |
 | 11 | AKI prediction (Tomašev 2019) | 2083 | Cohort 93.6% male (US veterans); about two false alerts per true alert | Ch9 | open |
-| 12 | STAR robot superiority | 1074, 1264 | Pre-clinical animal study, small numbers, single lab | Ch8 | open |
+| 12 | STAR robot superiority | 1074, 1264 | Pre-clinical animal study, small numbers, single lab | Ch8 | fixed (Ch8 §8.5) |
 | 13 | Data leakage definition | 2643 | Leakage = information from test data or the future contaminating training, not a privacy problem | Ch3 | fixed (Ch3 §3.4) |
 | 14 | Learned intermediary doctrine | 2500, 2695, 2709 | Product-liability doctrine: manufacturer discharges its duty to warn by warning the clinician; it does not shield clinicians | Ch11 | open |
 | 15 | §7.4.3 lesson from Obermeyer | 2599 | Algorithm was already race-blind; bias came from cost used as a proxy label → fix the label, "blindness" does not remove bias | Ch10 | open |
 | 16 | Differential privacy as absolute | Ch7 | Bounded, tunable guarantee controlled by ε; not absolute | Ch10 | open |
 | 17 | XAI as cure for the black box | §7.3 | Saliency maps show where a model looked, not whether its reasoning is valid (Adebayo 2018) | Ch11 | open |
-| 18 | "master–slave" terminology | 1004 | "leader–follower" | Ch8 | open |
+| 18 | "master–slave" terminology | 1004 | "leader–follower" | Ch8 | fixed (Ch8 §8.4) |
 | 19 | WSI file size | 618 | ~30 GB uncompressed for 100,000 × 100,000 RGB; 1–3 GB after compression | Ch6 | fixed (Ch6 §6.4) |
 | 20 | ASC-US | 659 | "Atypical squamous cells of undetermined significance" — not a diagnosis of dysplasia; managed by reflex HPV testing | — | removed-with-content |
 | 21 | S. pneumoniae morphology | 690 | Lancet-shaped diplococci, not chains | — | removed-with-content |
-| 22 | 7 DOF comparison | 1014 | 7 DOF counted across the whole instrument; compare with 4 DOF of a rigid laparoscopic tool | Ch8 (if mentioned) | open |
-| 23 | Haptic virtual fixtures at skull base | 1025 | Established in orthopaedics (e.g., knee/hip robots), not licensed for skull-base boundaries | Ch8 (if mentioned) | open |
+| 22 | 7 DOF comparison | 1014 | 7 DOF counted across the whole instrument; compare with 4 DOF of a rigid laparoscopic tool | Ch8 (if mentioned) | fixed (Ch8 §8.4) |
+| 23 | Haptic virtual fixtures at skull base | 1025 | Established in orthopaedics (e.g., knee/hip robots), not licensed for skull-base boundaries | Ch8 (if mentioned) | fixed (Ch8 §8.4) |
 | 24 | AR navigation "sub-millimetre" | 1090 | Brain shift of 10–20 mm after dural opening limits navigation accuracy | — | removed-with-content |
 | 25 | JPEG artefacts called adversarial | 256 | Adversarial perturbations are crafted against a model; compression artefacts are distribution shift | Ch3 | fixed (Ch3 §3.4) |
 | 26 | FFR-CT described as PINN | Ch5 | Licensed FFR-CT uses conventional computational fluid dynamics | — | removed-with-content |
