@@ -10,8 +10,10 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-BUDGETS = {1: 2000, 2: 2000, 3: 2400, 4: 2700, 5: 2400, 6: 2800,
-           7: 2400, 8: 2400, 9: 2300, 10: 2200, 11: 2400}
+# simplified edition: ~1,700 words per chapter including MCQs
+BUDGETS = {1: 1600, 2: 1600, 3: 1700, 4: 1800, 5: 1700, 6: 1800,
+           7: 1700, 8: 1700, 9: 1700, 10: 1700, 11: 1800}
+MAX_MEAN, LONG = 16, 28
 FRONT_BUDGET = 500
 REQUIRED_H2 = ["Opening Case", "Learning Objectives", "Key Takeaways",
                "Self-Assessment", "Answers and Rationales", "References"]
@@ -86,13 +88,13 @@ def check_sentences(text):
         return ["sentences: no prose found"]
     lens = [len(WORD.findall(s)) for s in sents]
     mean = sum(lens) / len(lens)
-    long_share = sum(1 for n in lens if n > 40) / len(lens)
+    long_share = sum(1 for n in lens if n > LONG) / len(lens)
     fails = []
-    if mean > 22:
-        fails.append(f"sentences: mean length {mean:.1f} > 22")
+    if mean > MAX_MEAN:
+        fails.append(f"sentences: mean length {mean:.1f} > {MAX_MEAN}")
     if long_share >= 0.05:
         longest = max(sents, key=lambda s: len(WORD.findall(s)))
-        fails.append(f"sentences: {long_share:.0%} over 40 words (e.g. '{longest[:80]}…')")
+        fails.append(f"sentences: {long_share:.0%} over {LONG} words (e.g. '{longest[:80]}…')")
     return fails
 
 
@@ -278,8 +280,8 @@ def check_all():
         total += words(front.read_text(encoding="utf-8"))
     else:
         fails.append("book: missing 00-front-matter.md")
-    if not 24000 <= total <= 29000:
-        fails.append(f"book: total {total} words, need 24,000–29,000")
+    if not 17000 <= total <= 21000:
+        fails.append(f"book: total {total} words, need 17,000–21,000")
     ledger = ROOT / "errata-ledger.md"
     if not ledger.exists() or "| open |" in ledger.read_text(encoding="utf-8"):
         fails.append("book: errata ledger missing or has open rows")

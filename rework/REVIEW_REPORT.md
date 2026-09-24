@@ -57,3 +57,19 @@
 - Confirm Egypt as the local context. The Local Context boxes are in Ch10 (Law 151/2020) and Ch11 (Egyptian Drug Authority, Law 151/2019).
 - Confirm that Dr. Elkholy has approved the rework and how the new edition will credit her.
 - The PubMed connector was unavailable, so references were verified through CrossRef.
+
+## 6. Simplified Edition (2026-09-24)
+
+At the user's request, the chapters were rewritten in plainer language for both students and teaching staff.
+
+- **Length:** the book fell from 26,642 to 20,481 words. The checker's new budget is 17,000–21,000 words, with about 1,700 words per chapter.
+- **Sentences:** the checker now fails any chapter whose prose averages more than 16 words per sentence, or where 5% or more of sentences exceed 28 words. The actual prose average is 9.5 words.
+- **Removed:**
+  - all Deeper Dive boxes and formulas;
+  - Dice/IoU, k-space detail, tremor frequencies, reporting-guideline lists and secondary study statistics;
+  - references that are no longer cited. The list went from 129 to 101, renumbered by first citation with `tools/renumber_refs.py`.
+- **Kept:**
+  - every chapter, running case, Learning Objectives box, Medical Background box, Four Lenses box, Myth vs Evidence box, Safety Alert box and Local Context box;
+  - all 10 MCQs per chapter, with the same answer keys and shortened rationales.
+- **Unchanged:** no new factual claims were added. The remaining references are a subset of the 111 already verified.
+- **Outputs:** `AI_in_Health_Care_Interprofessional.docx` and `.pdf`, 95 pages, built by `tools/build_book.py`.

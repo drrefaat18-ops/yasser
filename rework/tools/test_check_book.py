@@ -122,6 +122,16 @@ def test_master_slave_fails():
     assert code == 1 and "master" in out.lower(), out
 
 
+def test_mean_sentence_over_16_fails():
+    sys.path.insert(0, str(TOOL.parent))
+    import check_book
+    s18 = "One two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen."
+    fails = check_book.check_sentences(" ".join([s18] * 5))
+    assert any("mean" in f for f in fails), fails
+    s12 = "One two three four five six seven eight nine ten eleven twelve."
+    assert check_book.check_sentences(" ".join([s12] * 5)) == []
+
+
 if __name__ == "__main__":
     for name, fn in list(globals().items()):
         if name.startswith("test_"):

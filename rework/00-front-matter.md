@@ -30,7 +30,7 @@ Every chapter is for every profession. Some chapters sit closer to your future w
 - **Through Four Lenses** — what the chapter means for each of the four professions.
 - **Myth vs Evidence** — a common belief, checked against research.
 - **Safety Alert** — one point that protects patients.
-- **Deeper Dive** — optional detail. You can skip it and still follow the chapter.
+- **Local Context** — how the topic applies in Egypt.
 
 Numbers in square brackets, such as [3], point to the numbered references at the end of each chapter. Words in **bold** are defined in the Glossary.
 
