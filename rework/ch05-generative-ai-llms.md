@@ -35,7 +35,7 @@ Hallucinations are dangerous in health care because they look exactly like corre
 LLMs also inherit problems from their training text. A study asked four major LLMs questions based on debunked, race-based medical ideas, such as race-based kidney-function formulas. All four repeated some of these harmful claims [9].
 
 ## 5.3 Exam Scores Are Not Clinical Safety
-LLMs have passed medical licensing-style exams. ChatGPT reached near the passing level of the US licensing exam [3]. Google's Med-PaLM reached 67.6% on a set of exam-style questions, and Med-PaLM 2 reached 86.5% [1, 6].
+LLMs have passed medical licensing-style exams. ChatGPT reached near the passing level of the US licensing exam [3]. Google's Flan-PaLM model reached 67.6% on a set of exam-style questions, and its successor Med-PaLM 2 reached 86.5% [1, 6].
 
 These results show strong medical knowledge. They do not show safety in care. Exam questions are tidy, complete and have one right answer. Real patients bring missing information, mixed symptoms, fear and competing priorities. An exam does not test whether a model notices what is missing, admits uncertainty or recognises an emergency.
 
