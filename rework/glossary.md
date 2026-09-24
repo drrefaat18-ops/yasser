@@ -201,3 +201,17 @@
 **Tremor filtering** — A robotic feature that removes the small natural shake of the surgeon's hands (physiological tremor, about 8–12 Hz).
 
 **Wearable** — A device worn on the body, such as a wrist band or sensor, that records signals like movement or heart rate.
+
+**Acute kidney injury** — A rapid fall in kidney function over hours or days, usually detected by a rising creatinine (AKI).
+
+**Alarm fatigue** — Reduced response to monitoring alarms and alerts after exposure to many false or low-value ones.
+
+**Closed-loop system** — A system that measures a value, such as glucose, and automatically adjusts treatment, such as insulin, in a continuous feedback loop.
+
+**Early warning score** — A rule-based score that adds points for abnormal vital signs to flag patients at risk of deterioration, such as NEWS2.
+
+**Electrocardiogram** — A recording of the heart's electrical activity (ECG).
+
+**Sepsis** — A life-threatening reaction to infection in which the body's response damages its own organs.
+
+**Type 1 diabetes** — A form of diabetes in which the body makes no insulin, so insulin must be replaced every day.

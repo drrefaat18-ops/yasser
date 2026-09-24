@@ -16,7 +16,7 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 8 | AML ≥20% blasts | Ch3 Q6 | WHO 5th ed. (2022) removed the 20% threshold for AML with defining genetic abnormalities; ICC uses ≥10% | — | removed-with-content |
 | 9 | Physiological tremor frequency | 1010, Q17 | 8–12 Hz | Ch8 | fixed (Ch8 §8.4) |
 | 10 | ML superior to logistic regression | 1107, 1418 | No average performance benefit in clinical prediction (Christodoulou 2019) | Ch3 | fixed (Ch3 §3.5) |
-| 11 | AKI prediction (Tomašev 2019) | 2083 | Cohort 93.6% male (US veterans); about two false alerts per true alert | Ch9 | open |
+| 11 | AKI prediction (Tomašev 2019) | 2083 | Cohort 93.6% male (US veterans); about two false alerts per true alert | Ch9 | fixed (Ch9 §9.2) |
 | 12 | STAR robot superiority | 1074, 1264 | Pre-clinical animal study, small numbers, single lab | Ch8 | fixed (Ch8 §8.5) |
 | 13 | Data leakage definition | 2643 | Leakage = information from test data or the future contaminating training, not a privacy problem | Ch3 | fixed (Ch3 §3.4) |
 | 14 | Learned intermediary doctrine | 2500, 2695, 2709 | Product-liability doctrine: manufacturer discharges its duty to warn by warning the clinician; it does not shield clinicians | Ch11 | open |
