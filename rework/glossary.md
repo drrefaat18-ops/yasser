@@ -215,3 +215,25 @@
 **Sepsis** — A life-threatening reaction to infection in which the body's response damages its own organs.
 
 **Type 1 diabetes** — A form of diabetes in which the body makes no insulin, so insulin must be replaced every day.
+
+**Algorithmic bias** — Systematically worse performance or recommendations from a model for some groups of people.
+
+**Anonymisation** — Processing data so that individuals can no longer be identified by any reasonable means; hard to achieve for rich health data.
+
+**De-identification** — Removing or altering details that could identify a person, such as the 18 identifiers of the US HIPAA Safe Harbor method.
+
+**Differential privacy** — A method that adds measured random noise to data or results, giving a mathematical, tunable limit (set by ε) on what can be learned about any one person.
+
+**Federated learning** — Training a shared model across several sites, each using its own data and sending only model updates, so raw patient data do not move.
+
+**Fitzpatrick scale** — A classification of skin types from I (always burns) to VI (deeply pigmented, rarely burns).
+
+**GDPR** — The European Union's General Data Protection Regulation, which treats health data as a special category needing extra protection.
+
+**HIPAA** — The US Health Insurance Portability and Accountability Act, whose Privacy Rule governs health information held by providers and insurers.
+
+**Personal Data Protection Law** — Egypt's Law No. 151 of 2020, which treats health data as sensitive personal data requiring explicit consent and stronger security.
+
+**Pseudonymisation** — Replacing identifiers with codes while a key allows re-linking; pseudonymised data remain personal data under GDPR.
+
+**Re-identification** — Working out who a person is from data that were meant to be de-identified, often by combining several ordinary details.

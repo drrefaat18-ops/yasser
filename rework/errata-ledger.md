@@ -20,8 +20,8 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 12 | STAR robot superiority | 1074, 1264 | Pre-clinical animal study, small numbers, single lab | Ch8 | fixed (Ch8 §8.5) |
 | 13 | Data leakage definition | 2643 | Leakage = information from test data or the future contaminating training, not a privacy problem | Ch3 | fixed (Ch3 §3.4) |
 | 14 | Learned intermediary doctrine | 2500, 2695, 2709 | Product-liability doctrine: manufacturer discharges its duty to warn by warning the clinician; it does not shield clinicians | Ch11 | open |
-| 15 | §7.4.3 lesson from Obermeyer | 2599 | Algorithm was already race-blind; bias came from cost used as a proxy label → fix the label, "blindness" does not remove bias | Ch10 | open |
-| 16 | Differential privacy as absolute | Ch7 | Bounded, tunable guarantee controlled by ε; not absolute | Ch10 | open |
+| 15 | §7.4.3 lesson from Obermeyer | 2599 | Algorithm was already race-blind; bias came from cost used as a proxy label → fix the label, "blindness" does not remove bias | Ch10 | fixed (Ch10 §10.2) |
+| 16 | Differential privacy as absolute | Ch7 | Bounded, tunable guarantee controlled by ε; not absolute | Ch10 | fixed (Ch10 §10.4) |
 | 17 | XAI as cure for the black box | §7.3 | Saliency maps show where a model looked, not whether its reasoning is valid (Adebayo 2018) | Ch11 | open |
 | 18 | "master–slave" terminology | 1004 | "leader–follower" | Ch8 | fixed (Ch8 §8.4) |
 | 19 | WSI file size | 618 | ~30 GB uncompressed for 100,000 × 100,000 RGB; 1–3 GB after compression | Ch6 | fixed (Ch6 §6.4) |
@@ -35,7 +35,7 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 27 | TAVR cusp-overlap / circular annulus | 1562 | Topic dropped | — | removed-with-content |
 | 28 | CVS includes common bile duct | 1049 | Topic dropped (CVS requires only two structures entering the gallbladder; CBD not dissected) | — | removed-with-content |
 | 29 | "70% of clinical decisions rely on lab results" | 587 | No primary evidence (Hallworth 2011) — do not repeat | Ch6 | fixed (Ch6 §6.5) |
-| 30 | GDPR "right to explanation" as settled law | 2531 | Contested (Wachter 2017) | Ch10 | open |
+| 30 | GDPR "right to explanation" as settled law | 2531 | Contested (Wachter 2017) | Ch10 | fixed (Ch10 §10.5) |
 | 31 | McKinney 2020 as settled | Ref 6 | Cite with Haibe-Kains 2020 reproducibility critique | Ch6 | fixed (Ch6 §6.2) |
 | 32 | PINN for MRI reconstruction | 164, 1086 | Clinical reconstruction uses physics-informed unrolled networks (variational networks, MoDL), not PINNs | Ch6 (if mentioned) | fixed (Ch6 §6.3 (no PINN claim)) |
 | 33 | "Randomized trials proved…" without naming trials | 4 places | Name the trial and cite it, or remove the claim | All | open |
