@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="Segoe UI, Arial, sans-serif">
+<rect width="800" height="300" fill="#ffffff"/>
+<text x="400" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1f2d3d">How a large language model writes: one likely token at a time</text>
+<rect x="40" y="60" width="420" height="50" rx="6" fill="#d6e6f5" stroke="#2b5d8a"/>
+<text x="250" y="91" text-anchor="middle" font-size="16" fill="#1f2d3d">"A changing mole should be checked by a ..."</text>
+<line x1="460" y1="85" x2="520" y2="85" stroke="#1f2d3d" stroke-width="2"/><polygon points="520,79 532,85 520,91" fill="#1f2d3d"/>
+<rect x="540" y="50" width="220" height="150" rx="6" fill="#fdf0d5" stroke="#9a6b00"/>
+<text x="650" y="74" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2d3d">Next-token scores</text>
+<text x="556" y="102" font-size="14" fill="#1f2d3d">dermatologist</text><rect x="672" y="90" width="72" height="14" fill="#2b5d8a"/>
+<text x="556" y="130" font-size="14" fill="#1f2d3d">doctor</text><rect x="672" y="118" width="54" height="14" fill="#2b5d8a"/>
+<text x="556" y="158" font-size="14" fill="#1f2d3d">specialist</text><rect x="672" y="146" width="30" height="14" fill="#2b5d8a"/>
+<text x="556" y="186" font-size="14" fill="#1f2d3d">pharmacist</text><rect x="672" y="174" width="10" height="14" fill="#2b5d8a"/>
+<text x="400" y="240" text-anchor="middle" font-size="15" fill="#1f2d3d">The model picks a likely token, adds it, and repeats.</text>
+<text x="400" y="264" text-anchor="middle" font-size="15" fill="#a12b2b">"Likely" is not the same as "true": no fact is checked unless a source is connected.</text>
+<text x="400" y="290" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative scores.</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="Segoe UI, Arial, sans-serif">
+<rect width="800" height="340" fill="#ffffff"/>
+<text x="400" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2d3d">Splitting data, and how leakage breaks it</text>
+<rect x="40" y="60" width="440" height="60" fill="#d6e6f5" stroke="#2b5d8a" stroke-width="2"/>
+<text x="260" y="96" text-anchor="middle" font-size="17" fill="#1f2d3d">Training set (about 70%): adjusts parameters</text>
+<rect x="480" y="60" width="140" height="60" fill="#fdf0d5" stroke="#9a6b00" stroke-width="2"/>
+<text x="550" y="88" text-anchor="middle" font-size="15" fill="#1f2d3d">Validation</text>
+<text x="550" y="108" text-anchor="middle" font-size="13" fill="#1f2d3d">(about 15%) tuning</text>
+<rect x="620" y="60" width="140" height="60" fill="#e3f2e1" stroke="#2f7a3a" stroke-width="2"/>
+<text x="690" y="88" text-anchor="middle" font-size="15" fill="#1f2d3d">Test</text>
+<text x="690" y="108" text-anchor="middle" font-size="13" fill="#1f2d3d">(about 15%) used once</text>
+<text x="400" y="160" text-anchor="middle" font-size="16" font-weight="700" fill="#a12b2b">Leakage: test information reaches training</text>
+<rect x="40" y="180" width="340" height="120" rx="8" fill="#fbeaea" stroke="#a12b2b" stroke-width="2"/>
+<text x="210" y="208" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Patient-level leakage</text>
+<text x="210" y="236" text-anchor="middle" font-size="14" fill="#1f2d3d">Photos of the same patient in</text>
+<text x="210" y="256" text-anchor="middle" font-size="14" fill="#1f2d3d">both training and test sets:</text>
+<text x="210" y="276" text-anchor="middle" font-size="14" fill="#1f2d3d">the model recognises the patient</text>
+<rect x="420" y="180" width="340" height="120" rx="8" fill="#fbeaea" stroke="#a12b2b" stroke-width="2"/>
+<text x="590" y="208" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Future leakage</text>
+<text x="590" y="236" text-anchor="middle" font-size="14" fill="#1f2d3d">Inputs recorded after the moment</text>
+<text x="590" y="256" text-anchor="middle" font-size="14" fill="#1f2d3d">of prediction, such as "antibiotics</text>
+<text x="590" y="276" text-anchor="middle" font-size="14" fill="#1f2d3d">started": the model reads the decision</text>
+<text x="400" y="328" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative. Split by patient, and by time, to prevent leakage.</text>
+</svg>

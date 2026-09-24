@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" font-family="Segoe UI, Arial, sans-serif">
+<rect width="820" height="400" fill="#ffffff"/>
+<text x="410" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1f2d3d">Same test (95% sensitivity, 95% specificity), different prevalence</text>
+<text x="200" y="66" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2d3d">Screening: 5 per 1,000</text>
+<text x="200" y="86" text-anchor="middle" font-size="13" fill="#5a6470">100,000 people</text>
+<rect x="60" y="100" width="140" height="80" fill="#e3f2e1" stroke="#2f7a3a"/><text x="130" y="135" text-anchor="middle" font-size="14" fill="#1f2d3d">True positive</text><text x="130" y="158" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">475</text>
+<rect x="200" y="100" width="140" height="80" fill="#fbeaea" stroke="#a12b2b"/><text x="270" y="135" text-anchor="middle" font-size="14" fill="#1f2d3d">False positive</text><text x="270" y="158" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">4,975</text>
+<rect x="60" y="180" width="140" height="80" fill="#fdf0d5" stroke="#9a6b00"/><text x="130" y="215" text-anchor="middle" font-size="14" fill="#1f2d3d">False negative</text><text x="130" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">25</text>
+<rect x="200" y="180" width="140" height="80" fill="#d6e6f5" stroke="#2b5d8a"/><text x="270" y="215" text-anchor="middle" font-size="14" fill="#1f2d3d">True negative</text><text x="270" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">94,525</text>
+<text x="200" y="295" text-anchor="middle" font-size="16" fill="#1f2d3d">PPV = 475 / 5,450 = <tspan font-weight="700" fill="#a12b2b">8.7%</tspan></text>
+<text x="620" y="66" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2d3d">Specialist clinic: 1 in 10</text>
+<text x="620" y="86" text-anchor="middle" font-size="13" fill="#5a6470">1,000 referred people</text>
+<rect x="480" y="100" width="140" height="80" fill="#e3f2e1" stroke="#2f7a3a"/><text x="550" y="135" text-anchor="middle" font-size="14" fill="#1f2d3d">True positive</text><text x="550" y="158" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">95</text>
+<rect x="620" y="100" width="140" height="80" fill="#fbeaea" stroke="#a12b2b"/><text x="690" y="135" text-anchor="middle" font-size="14" fill="#1f2d3d">False positive</text><text x="690" y="158" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">45</text>
+<rect x="480" y="180" width="140" height="80" fill="#fdf0d5" stroke="#9a6b00"/><text x="550" y="215" text-anchor="middle" font-size="14" fill="#1f2d3d">False negative</text><text x="550" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">5</text>
+<rect x="620" y="180" width="140" height="80" fill="#d6e6f5" stroke="#2b5d8a"/><text x="690" y="215" text-anchor="middle" font-size="14" fill="#1f2d3d">True negative</text><text x="690" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">855</text>
+<text x="620" y="295" text-anchor="middle" font-size="16" fill="#1f2d3d">PPV = 95 / 140 = <tspan font-weight="700" fill="#2f7a3a">68%</tspan></text>
+<text x="410" y="345" text-anchor="middle" font-size="15" fill="#1f2d3d">The model did not change. The population did.</text>
+<text x="410" y="380" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative. Top row: model says positive. Bottom row: model says negative. Left: disease. Right: healthy.</text>
+</svg>

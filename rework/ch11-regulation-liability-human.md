@@ -18,7 +18,7 @@ Software that is intended to diagnose, prevent, monitor or treat disease can be 
 
 Regulators classify SaMD by risk. An international framework considers two questions [1]. How important is the software's information: does it treat or diagnose, drive clinical management, or only inform it? And how serious is the patient's condition: critical, serious or non-serious? Software that diagnoses a critical condition carries the highest risk and faces the strictest review.
 
-> **Medical Background in 60 Seconds:** A **medical device** is any instrument, machine, implant or software used for a medical purpose, from a thermometer to an MRI scanner. Regulators check that its benefits outweigh its risks before it is sold, and keep monitoring it afterwards. **Septic shock** is the most severe stage of sepsis, when blood pressure stays dangerously low despite fluids and drugs are needed to support it.
+> **Medical Background in 60 Seconds:** A **medical device** is any instrument, machine, implant or software used for a medical purpose, from a thermometer to an MRI scanner. Regulators check that its benefits outweigh its risks before it is sold, and keep monitoring it afterwards. **Septic shock** is the most severe stage of sepsis, when blood pressure stays dangerously low despite fluids, and drugs are needed to support it.
 
 ## 11.2 The United States: FDA Pathways
 The US Food and Drug Administration (FDA) uses three main routes to market.
