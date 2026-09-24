@@ -43,3 +43,43 @@
 **Structured data** — Data that fit into rows and columns, such as laboratory values, codes and prescriptions.
 
 **Unstructured data** — Data without a fixed table format, such as images, signals and free text.
+
+**Adversarial attack** — A small, deliberate change to an input, often invisible to people, crafted to make a specific model give a wrong output.
+
+**Anterior cruciate ligament** — A ligament inside the knee that stops the shin bone sliding forward and helps the knee resist twisting (ACL).
+
+**Class imbalance** — A situation in which one outcome is much rarer than another in the data, such as cancer in screening images.
+
+**Convolutional neural network** — A neural network designed for images; early layers detect edges and textures, later layers detect shapes (CNN).
+
+**Data leakage** — Information that would not be available in real use reaching the training or testing of a model, making it look better than it is.
+
+**Distribution shift** — A difference between the data a model was trained on and the data it meets in use, such as new patients, machines or practices.
+
+**External validation** — Testing a model on data from a different hospital, time period or population from the one used to develop it.
+
+**Gradient descent** — The training method that repeatedly nudges a model's parameters in the direction that reduces its loss.
+
+**Internal validation** — Testing a model on a held-out part of the same dataset used to develop it.
+
+**Loss function** — A formula that measures how wrong a model's predictions are during training.
+
+**Overfitting** — When a model learns the quirks and noise of its training data so closely that it performs poorly on new data.
+
+**Parameter** — One of the adjustable numbers inside a model that training changes.
+
+**Reinforcement learning** — Learning by taking actions and receiving rewards or penalties.
+
+**Shortcut learning** — When a model relies on an easy cue that predicts the label in training data but is unrelated to the real task, such as a scanner marker.
+
+**Supervised learning** — Learning from examples that come with correct answers (labels).
+
+**Test set** — Data kept aside and used once, at the end, to estimate how a model will perform on new cases.
+
+**Training set** — The data used to adjust a model's parameters.
+
+**U-Net** — A convolutional neural network that outlines structures pixel by pixel in an image (segmentation).
+
+**Unsupervised learning** — Learning that finds structure, such as groups, in data without labels.
+
+**Validation set** — Data used during development to tune design choices and decide when to stop training.
