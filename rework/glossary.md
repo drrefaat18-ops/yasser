@@ -237,3 +237,37 @@
 **Pseudonymisation** — Replacing identifiers with codes while a key allows re-linking; pseudonymised data remain personal data under GDPR.
 
 **Re-identification** — Working out who a person is from data that were meant to be de-identified, often by combining several ordinary details.
+
+**De-skilling** — Loss of a professional skill that is no longer practised because a tool performs it.
+
+**Egyptian Drug Authority** — The Egyptian regulator for medicines and medical devices, including medical software, established by Law No. 151 of 2019 (EDA).
+
+**EU AI Act** — Regulation (EU) 2024/1689, the European Union's law on artificial intelligence, which sets obligations for high-risk AI systems, including many medical devices.
+
+**Explainable AI** — Methods that show which inputs influenced a model's output, such as heatmaps; they show where a model looked, not whether it reasoned correctly (XAI).
+
+**Good machine learning practice** — Ten guiding principles agreed by US, Canadian and UK regulators for developing medical AI (GMLP).
+
+**High-risk AI** — Under the EU AI Act, AI systems with significant potential to harm health, safety or rights, such as medical devices needing notified-body review.
+
+**In Vitro Diagnostic Regulation** — The EU regulation for laboratory tests and related software (IVDR, Regulation 2017/746).
+
+**Learned intermediary doctrine** — A product-liability rule under which a manufacturer usually meets its duty to warn about risks by warning the prescribing clinician rather than each patient.
+
+**Medical device** — Any instrument, machine, implant or software intended for a medical purpose, such as diagnosis, monitoring or treatment.
+
+**Medical Device Regulation** — The EU regulation for medical devices, including most medical software (MDR, Regulation 2017/745).
+
+**Negligence** — Failure to meet the expected standard of care, causing harm; requires duty, breach, causation and damages.
+
+**Notified body** — An independent organisation designated in the EU to assess whether a medical device meets legal requirements.
+
+**Predetermined change control plan** — A plan, authorised by the FDA in advance, describing the changes a maker may make to an AI device and how they will be tested (PCCP).
+
+**Premarket approval** — The FDA's most demanding route to market, for high-risk devices, usually requiring clinical evidence (PMA).
+
+**Septic shock** — The most severe stage of sepsis, with persistently low blood pressure needing drug support.
+
+**Software as a medical device** — Software intended for a medical purpose, such as diagnosis or monitoring, that is itself a medical device without being part of hardware (SaMD).
+
+**Standard of care** — The level of care that a reasonably competent professional would provide in the same circumstances.
