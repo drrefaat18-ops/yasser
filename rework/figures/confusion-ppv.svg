@@ -16,5 +16,5 @@
 <rect x="620" y="180" width="140" height="80" fill="#d6e6f5" stroke="#2b5d8a"/><text x="690" y="215" text-anchor="middle" font-size="14" fill="#1f2d3d">True negative</text><text x="690" y="238" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2d3d">855</text>
 <text x="620" y="295" text-anchor="middle" font-size="16" fill="#1f2d3d">PPV = 95 / 140 = <tspan font-weight="700" fill="#2f7a3a">68%</tspan></text>
 <text x="410" y="345" text-anchor="middle" font-size="15" fill="#1f2d3d">The model did not change. The population did.</text>
-<text x="410" y="380" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative. Top row: model says positive. Bottom row: model says negative. Left: disease. Right: healthy.</text>
+<text x="410" y="380" text-anchor="middle" font-size="12" fill="#5a6470">Top row: model says positive. Bottom row: model says negative. Left: disease. Right: healthy.</text>
 </svg>

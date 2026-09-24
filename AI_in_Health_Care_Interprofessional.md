@@ -92,7 +92,7 @@ By the end of this chapter you will be able to:
 **Generative AI** makes new content, such as text or images. A **large language model** (LLM) is generative AI trained on huge amounts of text. Lina's chatbot is an LLM.
 
 ![Figure 1.1 — Nested fields of AI](rework/figures/orig-image2.png)
-*Figure 1.1 — AI contains machine learning, which contains deep learning. Generative AI is built with deep learning. Illustrative.*
+*Figure 1.1 — AI contains machine learning, which contains deep learning. Generative AI is built with deep learning.*
 
 Think of the terms as boxes inside boxes (Figure 1.1). Every LLM uses deep learning. Not every AI system does.
 
@@ -489,7 +489,7 @@ A model always looks good on the data it trained on. The real question is how it
 - The **test set** is kept locked and used once, at the end.
 
 ![Figure 3.1 — Training, validation and test sets](rework/figures/split-leakage.svg)
-*Figure 3.1 — The test set must stay unseen. Leakage happens when test information reaches training. Illustrative.*
+*Figure 3.1 — The test set must stay unseen. Leakage happens when test information reaches training.*
 
 Testing on part of the same dataset is **internal validation**. Testing on data from another hospital or time is **external validation**. External validation tells you much more.
 
@@ -672,7 +672,7 @@ PPV = 475 ÷ 5,450 = 8.7%.
 When the app says "high risk", the mole is melanoma less than 1 time in 10. This is not because the app is bad. It is because melanoma is rare in this group. A negative result, however, is very reassuring.
 
 ![Figure 4.1 — How prevalence changes PPV](rework/figures/confusion-ppv.svg)
-*Figure 4.1 — The same test gives a PPV of 8.7% when the disease is rare and 68% when it is common. Illustrative.*
+*Figure 4.1 — The same test gives a PPV of 8.7% when the disease is rare and 68% when it is common.*
 
 How common a condition is in the tested group is called **prevalence**. PPV rises with prevalence. In a skin clinic where 1 in 10 moles is melanoma, the same app has a PPV of about 68%. The model did not change. The population did.
 
@@ -852,7 +852,7 @@ During training, the model reads billions of sentences. Again and again, it gues
 When you ask a question, the model writes the answer one token at a time (Figure 5.1). Each token is the one that seems most likely to come next.
 
 ![Figure 5.1 — Next-token prediction](rework/figures/next-token.svg)
-*Figure 5.1 — An LLM writes by choosing a likely next token, again and again. It predicts likely text; it does not look up facts. Illustrative.*
+*Figure 5.1 — An LLM writes by choosing a likely next token, again and again. It predicts likely text; it does not look up facts.*
 
 ## 5.2 Why Chatbots Make Things Up
 An LLM predicts what text usually looks like. It does not check whether the text is true. When it does not know, it still writes fluent, confident text. This is called a **hallucination** [2].
@@ -1040,7 +1040,7 @@ Amal's result is a referral, not a diagnosis. Some referred patients will turn o
 **Breast screening.** In many countries, two radiologists read each mammogram. In a large Swedish randomised trial, AI helped sort the mammograms [3]. Reading work fell by 44%, and about 20% more cancers were found without more false alarms.
 
 ![Figure 6.1 — Dermoscopic images and model scores](images/image15.png)
-*Figure 6.1 — A model's scores for two skin lesions. The "confidence" values are not true probabilities (Chapter 4). Both lesions are on light skin, like most training images. Illustrative.*
+*Figure 6.1 — A model's scores for two skin lesions. The "confidence" values are not true probabilities (Chapter 4). Both lesions are on light skin, like most training images.*
 
 ## 6.3 Skin, Knees and Fast MRI
 **Skin.** A 2017 model matched dermatologists on test photos of skin lesions [4]. But most training photos show light skin. On a test set balanced across skin tones, several models did worse on darker skin [5]. This matters for Lina, who has dark skin (Chapter 10).
@@ -1057,7 +1057,7 @@ In **digital pathology**, a scanner turns a glass slide into a **whole-slide ima
 A model cannot read it in one piece. So it is cut into thousands of small tiles. The model scores each tile. The scores are combined into a colour **heatmap** that shows where suspicious tissue is (Figure 6.2).
 
 ![Figure 6.2 — Whole-slide imaging pipeline](rework/figures/orig-image5.png)
-*Figure 6.2 — A slide is cut into tiles, each tile is scored, and the results form a heatmap. Illustrative.*
+*Figure 6.2 — A slide is cut into tiles, each tile is scored, and the results form a heatmap.*
 
 In one large study, a model could have spared pathologists from reviewing most prostate slides while still catching every cancer in the test set [8]. But stain colour and scanners differ between laboratories. A model from one laboratory may fail in another.
 
@@ -1385,7 +1385,7 @@ By the end of this chapter you will be able to:
 OpenPose is a widely used system for this [1]. Researchers have used such tools on ordinary phone videos to measure walking [2]. This could bring gait assessment outside special laboratories.
 
 ![Figure 8.1 — Pose estimation](rework/figures/pose-skeleton.svg)
-*Figure 8.1 — The model finds body points in each frame; joint angles are worked out from the lines between them. Illustrative.*
+*Figure 8.1 — The model finds body points in each frame; joint angles are worked out from the lines between them.*
 
 Accuracy depends on conditions. Baggy clothes hide joints. Poor light, one camera angle and a body partly out of view all add error. Most models learned from people walking normally. Walking aids, amputations and unusual movement may not be well covered. Karim's case shows these limits.
 
@@ -1588,7 +1588,7 @@ One model spotted people at risk of atrial fibrillation, an irregular rhythm lin
 That second model was tested in a randomised trial with over 22,000 patients [6]. Teams that saw the AI result found more cases of weak heart pump: 2.1% of patients instead of 1.6%. The benefit was real but modest. This is a realistic picture: AI helps, but often less than accuracy figures suggest.
 
 ![Figure 9.1 — Trend-based instability prediction](images/image14.png)
-*Figure 9.1 — A sketch of blood pressure over time. A model flags a subtle trend before pressure clearly falls. Illustrative, not real patient data.*
+*Figure 9.1 — A sketch of blood pressure over time. A model flags a subtle trend before pressure clearly falls.*
 
 ## 9.4 Automatic Insulin Delivery
 People with **type 1 diabetes** make no insulin and must replace it every day. A **closed-loop system** links a glucose sensor, a computer program and an insulin pump (Figure 9.2). The sensor measures glucose every few minutes. The program adjusts insulin automatically.
@@ -1596,7 +1596,7 @@ People with **type 1 diabetes** make no insulin and must replace it every day. A
 In a six-month randomised trial, closed-loop systems raised the time spent in the healthy glucose range from 59% to 71% of the day [7].
 
 ![Figure 9.2 — Closed-loop insulin delivery](rework/figures/orig-image18.png)
-*Figure 9.2 — A glucose sensor feeds a dosing program, which adjusts an insulin pump. Illustrative.*
+*Figure 9.2 — A glucose sensor feeds a dosing program, which adjusts an insulin pump.*
 
 Amal has type 2 diabetes and takes tablets, not insulin. This tool is not for her current treatment. Knowing who a tool is for is part of using it safely.
 
@@ -1779,7 +1779,7 @@ Three terms are often confused:
 The danger is **re-identification**. A few ordinary facts together can point to one person. Postcode, birth date and sex together identify most US residents [8]. Wearable data are especially risky, because movement and sleep patterns are almost unique.
 
 ![Figure 10.1 — A privacy pipeline for AI training](rework/figures/privacy-pipeline.svg)
-*Figure 10.1 — Each protection step reduces, but does not remove, the risk of re-identification. Illustrative.*
+*Figure 10.1 — Each protection step reduces, but does not remove, the risk of re-identification.*
 
 ## 10.4 Privacy-Protecting Methods
 **Differential privacy** adds carefully measured random noise to data or results [9]. This limits how much anyone can learn about one person. More noise means stronger privacy but less accurate results. It is a strong protection, but not an absolute one.
@@ -1965,7 +1965,7 @@ The AI Act adds to the MDR and IVDR; it does not replace them. The World Health 
 > **Local Context:** In Egypt, medical devices are regulated by the **Egyptian Drug Authority**, set up by Law No. 151 of 2019. Its definition of a medical device includes software for diagnosis, prevention, monitoring or treatment [8]. So AI tools used in Egyptian care fall under device rules, as well as the data rules in Chapter 10.
 
 ![Figure 11.1 — Lifecycle governance for AI medical software](rework/figures/orig-image24.png)
-*Figure 11.1 — AI medical software moves from development and testing, through review, to use and ongoing monitoring. Illustrative.*
+*Figure 11.1 — AI medical software moves from development and testing, through review, to use and ongoing monitoring.*
 
 ## 11.4 Liability: Who Is Responsible?
 **Negligence** is the legal basis of most malpractice claims. A patient must show four things:
@@ -1980,7 +1980,7 @@ AI makes the second point harder. Legal experts suggest that, today, clinicians 
 Responsibility is usually shared (Figure 11.2). The clinician owns the clinical judgment. The hospital owns choosing, testing and monitoring the tool, and training staff. The maker owns the product's design, testing and warnings.
 
 ![Figure 11.2 — Shared responsibility for AI-assisted care](rework/figures/orig-image21.png)
-*Figure 11.2 — Responsibility is shared between the clinician, the maker and the hospital. Illustrative.*
+*Figure 11.2 — Responsibility is shared between the clinician, the maker and the hospital.*
 
 The **learned intermediary doctrine** is often misunderstood. A maker of medicines or devices usually meets its duty to warn by warning the prescribing clinician, not each patient. The clinician then advises the patient. This rule limits the maker's duty to warn patients directly. It is not a shield for clinicians.
 

@@ -44,7 +44,7 @@ PPV = 475 ÷ 5,450 = 8.7%.
 When the app says "high risk", the mole is melanoma less than 1 time in 10. This is not because the app is bad. It is because melanoma is rare in this group. A negative result, however, is very reassuring.
 
 ![Figure 4.1 — How prevalence changes PPV](figures/confusion-ppv.svg)
-*Figure 4.1 — The same test gives a PPV of 8.7% when the disease is rare and 68% when it is common. Illustrative.*
+*Figure 4.1 — The same test gives a PPV of 8.7% when the disease is rare and 68% when it is common.*
 
 How common a condition is in the tested group is called **prevalence**. PPV rises with prevalence. In a skin clinic where 1 in 10 moles is melanoma, the same app has a PPV of about 68%. The model did not change. The population did.
 

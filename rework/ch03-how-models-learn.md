@@ -43,7 +43,7 @@ A model always looks good on the data it trained on. The real question is how it
 - The **test set** is kept locked and used once, at the end.
 
 ![Figure 3.1 — Training, validation and test sets](figures/split-leakage.svg)
-*Figure 3.1 — The test set must stay unseen. Leakage happens when test information reaches training. Illustrative.*
+*Figure 3.1 — The test set must stay unseen. Leakage happens when test information reaches training.*
 
 Testing on part of the same dataset is **internal validation**. Testing on data from another hospital or time is **external validation**. External validation tells you much more.
 

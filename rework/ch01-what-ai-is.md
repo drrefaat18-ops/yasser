@@ -24,7 +24,7 @@ By the end of this chapter you will be able to:
 **Generative AI** makes new content, such as text or images. A **large language model** (LLM) is generative AI trained on huge amounts of text. Lina's chatbot is an LLM.
 
 ![Figure 1.1 — Nested fields of AI](figures/orig-image2.png)
-*Figure 1.1 — AI contains machine learning, which contains deep learning. Generative AI is built with deep learning. Illustrative.*
+*Figure 1.1 — AI contains machine learning, which contains deep learning. Generative AI is built with deep learning.*
 
 Think of the terms as boxes inside boxes (Figure 1.1). Every LLM uses deep learning. Not every AI system does.
 

@@ -20,5 +20,5 @@
 <text x="590" y="236" text-anchor="middle" font-size="14" fill="#1f2d3d">Inputs recorded after the moment</text>
 <text x="590" y="256" text-anchor="middle" font-size="14" fill="#1f2d3d">of prediction, such as "antibiotics</text>
 <text x="590" y="276" text-anchor="middle" font-size="14" fill="#1f2d3d">started": the model reads the decision</text>
-<text x="400" y="328" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative. Split by patient, and by time, to prevent leakage.</text>
+<text x="400" y="328" text-anchor="middle" font-size="12" fill="#5a6470">Split by patient, and by time, to prevent leakage.</text>
 </svg>

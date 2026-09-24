@@ -17,5 +17,4 @@
 <text x="360" y="228" font-size="14" fill="#1f2d3d">- loose clothing, poor light</text>
 <text x="360" y="254" font-size="14" fill="#1f2d3d">- one camera angle, body out of view</text>
 <text x="360" y="280" font-size="14" fill="#1f2d3d">- bodies unlike the training data</text>
-<text x="350" y="368" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative.</text>
 </svg>

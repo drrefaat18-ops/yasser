@@ -48,7 +48,7 @@ The AI Act adds to the MDR and IVDR; it does not replace them. The World Health 
 > **Local Context:** In Egypt, medical devices are regulated by the **Egyptian Drug Authority**, set up by Law No. 151 of 2019. Its definition of a medical device includes software for diagnosis, prevention, monitoring or treatment [8]. So AI tools used in Egyptian care fall under device rules, as well as the data rules in Chapter 10.
 
 ![Figure 11.1 — Lifecycle governance for AI medical software](figures/orig-image24.png)
-*Figure 11.1 — AI medical software moves from development and testing, through review, to use and ongoing monitoring. Illustrative.*
+*Figure 11.1 — AI medical software moves from development and testing, through review, to use and ongoing monitoring.*
 
 ## 11.4 Liability: Who Is Responsible?
 **Negligence** is the legal basis of most malpractice claims. A patient must show four things:
@@ -63,7 +63,7 @@ AI makes the second point harder. Legal experts suggest that, today, clinicians 
 Responsibility is usually shared (Figure 11.2). The clinician owns the clinical judgment. The hospital owns choosing, testing and monitoring the tool, and training staff. The maker owns the product's design, testing and warnings.
 
 ![Figure 11.2 — Shared responsibility for AI-assisted care](figures/orig-image21.png)
-*Figure 11.2 — Responsibility is shared between the clinician, the maker and the hospital. Illustrative.*
+*Figure 11.2 — Responsibility is shared between the clinician, the maker and the hospital.*
 
 The **learned intermediary doctrine** is often misunderstood. A maker of medicines or devices usually meets its duty to warn by warning the prescribing clinician, not each patient. The clinician then advises the patient. This rule limits the maker's duty to warn patients directly. It is not a shield for clinicians.
 

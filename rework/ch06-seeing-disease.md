@@ -34,7 +34,7 @@ Amal's result is a referral, not a diagnosis. Some referred patients will turn o
 **Breast screening.** In many countries, two radiologists read each mammogram. In a large Swedish randomised trial, AI helped sort the mammograms [3]. Reading work fell by 44%, and about 20% more cancers were found without more false alarms.
 
 ![Figure 6.1 — Dermoscopic images and model scores](../images/image15.png)
-*Figure 6.1 — A model's scores for two skin lesions. The "confidence" values are not true probabilities (Chapter 4). Both lesions are on light skin, like most training images. Illustrative.*
+*Figure 6.1 — A model's scores for two skin lesions. The "confidence" values are not true probabilities (Chapter 4). Both lesions are on light skin, like most training images.*
 
 ## 6.3 Skin, Knees and Fast MRI
 **Skin.** A 2017 model matched dermatologists on test photos of skin lesions [4]. But most training photos show light skin. On a test set balanced across skin tones, several models did worse on darker skin [5]. This matters for Lina, who has dark skin (Chapter 10).
@@ -51,7 +51,7 @@ In **digital pathology**, a scanner turns a glass slide into a **whole-slide ima
 A model cannot read it in one piece. So it is cut into thousands of small tiles. The model scores each tile. The scores are combined into a colour **heatmap** that shows where suspicious tissue is (Figure 6.2).
 
 ![Figure 6.2 — Whole-slide imaging pipeline](figures/orig-image5.png)
-*Figure 6.2 — A slide is cut into tiles, each tile is scored, and the results form a heatmap. Illustrative.*
+*Figure 6.2 — A slide is cut into tiles, each tile is scored, and the results form a heatmap.*
 
 In one large study, a model could have spared pathologists from reviewing most prostate slides while still catching every cancer in the test set [8]. But stain colour and scanners differ between laboratories. A model from one laboratory may fail in another.
 

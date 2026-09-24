@@ -9,5 +9,4 @@
 <g fill="#1f2d3d"><polygon points="203,109 225,115 203,121"/><polygon points="413,109 435,115 413,121"/><polygon points="623,109 645,115 623,121"/></g>
 <text x="430" y="200" text-anchor="middle" font-size="15" fill="#a12b2b">Each step reduces re-identification risk. None removes it completely.</text>
 <text x="430" y="224" text-anchor="middle" font-size="14" fill="#1f2d3d">De-identified is not anonymous. Pseudonymised data are still personal data under GDPR.</text>
-<text x="430" y="250" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative.</text>
 </svg>

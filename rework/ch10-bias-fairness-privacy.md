@@ -52,7 +52,7 @@ Three terms are often confused:
 The danger is **re-identification**. A few ordinary facts together can point to one person. Postcode, birth date and sex together identify most US residents [8]. Wearable data are especially risky, because movement and sleep patterns are almost unique.
 
 ![Figure 10.1 — A privacy pipeline for AI training](figures/privacy-pipeline.svg)
-*Figure 10.1 — Each protection step reduces, but does not remove, the risk of re-identification. Illustrative.*
+*Figure 10.1 — Each protection step reduces, but does not remove, the risk of re-identification.*
 
 ## 10.4 Privacy-Protecting Methods
 **Differential privacy** adds carefully measured random noise to data or results [9]. This limits how much anyone can learn about one person. More noise means stronger privacy but less accurate results. It is a strong protection, but not an absolute one.

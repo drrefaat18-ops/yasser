@@ -41,7 +41,7 @@ One model spotted people at risk of atrial fibrillation, an irregular rhythm lin
 That second model was tested in a randomised trial with over 22,000 patients [6]. Teams that saw the AI result found more cases of weak heart pump: 2.1% of patients instead of 1.6%. The benefit was real but modest. This is a realistic picture: AI helps, but often less than accuracy figures suggest.
 
 ![Figure 9.1 — Trend-based instability prediction](../images/image14.png)
-*Figure 9.1 — A sketch of blood pressure over time. A model flags a subtle trend before pressure clearly falls. Illustrative, not real patient data.*
+*Figure 9.1 — A sketch of blood pressure over time. A model flags a subtle trend before pressure clearly falls.*
 
 ## 9.4 Automatic Insulin Delivery
 People with **type 1 diabetes** make no insulin and must replace it every day. A **closed-loop system** links a glucose sensor, a computer program and an insulin pump (Figure 9.2). The sensor measures glucose every few minutes. The program adjusts insulin automatically.
@@ -49,7 +49,7 @@ People with **type 1 diabetes** make no insulin and must replace it every day. A
 In a six-month randomised trial, closed-loop systems raised the time spent in the healthy glucose range from 59% to 71% of the day [7].
 
 ![Figure 9.2 — Closed-loop insulin delivery](figures/orig-image18.png)
-*Figure 9.2 — A glucose sensor feeds a dosing program, which adjusts an insulin pump. Illustrative.*
+*Figure 9.2 — A glucose sensor feeds a dosing program, which adjusts an insulin pump.*
 
 Amal has type 2 diabetes and takes tablets, not insulin. This tool is not for her current treatment. Knowing who a tool is for is part of using it safely.
 

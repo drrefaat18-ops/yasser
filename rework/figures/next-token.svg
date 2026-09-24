@@ -12,5 +12,4 @@
 <text x="556" y="186" font-size="14" fill="#1f2d3d">pharmacist</text><rect x="672" y="174" width="10" height="14" fill="#2b5d8a"/>
 <text x="400" y="240" text-anchor="middle" font-size="15" fill="#1f2d3d">The model picks a likely token, adds it, and repeats.</text>
 <text x="400" y="264" text-anchor="middle" font-size="15" fill="#a12b2b">"Likely" is not the same as "true": no fact is checked unless a source is connected.</text>
-<text x="400" y="290" text-anchor="middle" font-size="12" fill="#5a6470">Illustrative scores.</text>
 </svg>

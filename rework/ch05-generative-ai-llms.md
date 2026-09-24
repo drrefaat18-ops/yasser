@@ -23,7 +23,7 @@ During training, the model reads billions of sentences. Again and again, it gues
 When you ask a question, the model writes the answer one token at a time (Figure 5.1). Each token is the one that seems most likely to come next.
 
 ![Figure 5.1 — Next-token prediction](figures/next-token.svg)
-*Figure 5.1 — An LLM writes by choosing a likely next token, again and again. It predicts likely text; it does not look up facts. Illustrative.*
+*Figure 5.1 — An LLM writes by choosing a likely next token, again and again. It predicts likely text; it does not look up facts.*
 
 ## 5.2 Why Chatbots Make Things Up
 An LLM predicts what text usually looks like. It does not check whether the text is true. When it does not know, it still writes fluent, confident text. This is called a **hallucination** [2].

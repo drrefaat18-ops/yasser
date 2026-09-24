@@ -23,7 +23,7 @@ By the end of this chapter you will be able to:
 OpenPose is a widely used system for this [1]. Researchers have used such tools on ordinary phone videos to measure walking [2]. This could bring gait assessment outside special laboratories.
 
 ![Figure 8.1 — Pose estimation](figures/pose-skeleton.svg)
-*Figure 8.1 — The model finds body points in each frame; joint angles are worked out from the lines between them. Illustrative.*
+*Figure 8.1 — The model finds body points in each frame; joint angles are worked out from the lines between them.*
 
 Accuracy depends on conditions. Baggy clothes hide joints. Poor light, one camera angle and a body partly out of view all add error. Most models learned from people walking normally. Walking aids, amputations and unusual movement may not be well covered. Karim's case shows these limits.
 
