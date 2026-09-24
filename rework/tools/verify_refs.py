@@ -9,6 +9,7 @@ import json
 import pathlib
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -25,13 +26,18 @@ def references(text):
 def crossref_title(doi):
     url = "https://api.crossref.org/works/" + urllib.parse.quote(doi, safe="/")
     req = urllib.request.Request(url, headers={"User-Agent": "rework-verify/1.0"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            msg = json.load(r)["message"]
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return None
-        raise
+    for attempt in range(5):
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                msg = json.load(r)["message"]
+            break
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return None
+            if e.code != 429 or attempt == 4:
+                raise
+            time.sleep(3 * (attempt + 1))  # CrossRef rate limit
+    time.sleep(0.5)
     return " ".join(msg.get("title") or [""])
 
 
