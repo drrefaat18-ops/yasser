@@ -125,7 +125,7 @@ B) Unlimited changes without any testing
 C) Skipping clinical validation for the first version
 D) Selling the device without a label
 
-**Q4.** Under the EU AI Act, how is an AI system that is a medical device needing notified-body review classified? [LO3]
+**Q4.** A company sells an AI sepsis tool in the EU. It is a medical device that needs notified-body review. How is it classified under the EU AI Act? [LO3]
 A) Minimal-risk AI
 B) Banned AI
 C) High-risk AI

@@ -131,13 +131,13 @@ B) Pseudonymisation
 C) Reinforcement learning
 D) Federated learning
 
-**Q8.** Under Egypt's Personal Data Protection Law, how is health data treated? [LO5]
+**Q8.** A clinic in Cairo wants to share patient records with an app developer. Under Egypt's Personal Data Protection Law, how is health data treated? [LO5]
 A) As public data that anyone may use
 B) As sensitive data, generally requiring explicit written consent and stronger security
 C) As exempt from any protection
 D) As data only employers can process
 
-**Q9.** Under GDPR, what is the status of pseudonymised health data? [LO5]
+**Q9.** A European research team replaces patient names with codes but keeps the key. Under GDPR, what is the status of these pseudonymised data? [LO5]
 A) It is still personal data.
 B) It is fully anonymous.
 C) It is not covered by the law.

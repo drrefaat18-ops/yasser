@@ -26,10 +26,10 @@ By the end of this chapter you will be able to:
 ![Figure 1.1 — Nested fields of AI](figures/orig-image2.png)
 *Figure 1.1 — Artificial intelligence contains machine learning, which contains deep learning. Generative AI and large language models are built with deep learning. Illustrative.*
 
-These terms nest inside each other, as Figure 1.1 shows. Every LLM is a deep-learning model. Not every AI system is a deep-learning model.
+These terms nest inside each other, as Figure 1.1 shows. Every LLM uses deep learning; not every AI system does.
 
 ## 1.2 Rules Versus Learning
-Older computer programs in health care were **rule-based system**s. A person writes each rule. For example: "If the patient takes warfarin and a new prescription contains aspirin, show a bleeding-risk warning." The logic is transparent. Anyone can read the rule and check it. But rules break when reality is messier than the rule writer imagined.
+Older computer programs in health care were **rule-based system**s. A person writes each rule. For example: "If the patient takes warfarin and a new prescription contains aspirin, show a bleeding-risk warning." The logic is transparent. But rules break when reality is messier than the rule writer imagined.
 
 A learned model works differently. It sees thousands of past prescriptions and outcomes. It learns which combinations of drugs, doses, ages and kidney function were followed by bleeding. It then gives a risk score for a new prescription. It can capture patterns no person wrote down. It can also learn patterns that are wrong, biased or accidental. You cannot read its logic line by line.
 
@@ -90,7 +90,7 @@ B) A rule-based system
 C) A large language model
 D) An unsupervised clustering model
 
-**Q2.** Which statement about the relationship between these terms is correct? [LO1]
+**Q2.** A classmate draws a diagram of AI terms for a revision session. Which statement about the relationship between these terms is correct? [LO1]
 A) Machine learning includes artificial intelligence as a subtype.
 B) Every AI system uses a neural network.
 C) Generative AI is unrelated to deep learning.
@@ -114,7 +114,7 @@ B) LLMs predict plausible text and do not check facts by design.
 C) LLMs only work with images.
 D) LLMs always refuse medical questions.
 
-**Q6.** What happened in 2018 that marked a turning point for AI in health care? [LO3]
+**Q6.** A lecturer calls 2018 a turning point for AI in health care. What happened that year? [LO3]
 A) An autonomous AI system for diabetic eye screening was authorised in the United States.
 B) The term "artificial intelligence" was first used.
 C) AlphaFold solved protein structures.
