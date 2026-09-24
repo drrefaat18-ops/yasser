@@ -133,3 +133,33 @@
 **Token** — A small piece of text, such as a word or part of a word, that a language model reads and predicts.
 
 **Transformer** — The neural-network design behind modern LLMs; its attention mechanism weighs all earlier words when predicting the next one.
+
+**Biopsy** — A small sample of tissue removed for examination under a microscope.
+
+**Computer-aided detection** — Imaging AI that marks where a possible finding is, leaving interpretation to the reader (CADe).
+
+**Computer-aided diagnosis** — Imaging AI that characterises a finding, for example as likely malignant or benign (CADx).
+
+**Computer-aided triage** — Imaging AI that reorders the reading list so suspected urgent cases are read first (CADt).
+
+**CT** — Computed tomography: an imaging method that combines many X-ray views into cross-sectional slices.
+
+**Digital pathology** — Scanning glass slides into digital images for viewing and analysis on a computer.
+
+**Haemolysis** — Breakdown of red blood cells in a sample, which releases their contents and can distort results such as potassium.
+
+**Heatmap** — A colour overlay showing which regions of an image contributed most to a model's output.
+
+**Icterus** — High bilirubin in a sample, giving it a yellow colour that can interfere with some tests.
+
+**Lipaemia** — High fat content in a sample, making it cloudy and able to interfere with some tests.
+
+**MRI** — Magnetic resonance imaging: an imaging method using a strong magnet and radio waves, good for soft tissues and free of ionising radiation.
+
+**Oculomics** — Research using eye images, such as retinal photographs, to detect signs of disease elsewhere in the body.
+
+**Retinal photograph** — A photograph of the back of the eye showing the retina and its blood vessels (fundus photograph).
+
+**Whole-slide image** — A very high-resolution digital scan of an entire pathology slide (WSI).
+
+**X-ray** — An imaging method that passes ionising radiation through the body; dense tissues such as bone appear white.

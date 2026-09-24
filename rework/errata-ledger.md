@@ -6,12 +6,12 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 
 | # | Topic | Original line(s) | Correct statement | Target | Status |
 |---|---|---|---|---|---|
-| 1 | k-space undersampling | 164 | Undersampling produces aliasing; networks suppress it with incoherent sampling plus a learned prior; missing data is inferred, not recovered | Ch6 | open |
-| 2 | Fast-MRI time saving | 170 | 25→5 and 40→10 min = 75–80% reduction | Ch6 | open |
-| 3 | Breast-screening trial claim | 59 | Cite MASAI (Lång 2023): 44% screen-reading workload reduction; ~20% more cancers detected; recall not reduced | Ch1, Ch4, Ch6 | open |
+| 1 | k-space undersampling | 164 | Undersampling produces aliasing; networks suppress it with incoherent sampling plus a learned prior; missing data is inferred, not recovered | Ch6 | fixed (Ch6 §6.3) |
+| 2 | Fast-MRI time saving | 170 | 25→5 and 40→10 min = 75–80% reduction | Ch6 | fixed (Ch6 §6.3) |
+| 3 | Breast-screening trial claim | 59 | Cite MASAI (Lång 2023): 44% screen-reading workload reduction; ~20% more cancers detected; recall not reduced | Ch1, Ch4, Ch6 | fixed (Ch1 §1.4, Ch6 §6.2) |
 | 4 | Softmax output as "confidence"/probability | 256, 559, 2563 | Model score is not a calibrated probability or statistical confidence | Ch4 | fixed (Ch4 §4.4) |
-| 5 | Stroke infarct core | 1534, 1546, 1682, 1826, 1834, 1836 | rCBF < 30% (not CBV) | Ch6 (one-line mention at most) | open |
-| 6 | Delta-check creatinine rise | 611 | IV-line contamination dilutes (lowers) analytes; false rise = wrong patient, mislabel, interference; alert goes to technologist and requesting clinician | Ch6 | open |
+| 5 | Stroke infarct core | 1534, 1546, 1682, 1826, 1834, 1836 | rCBF < 30% (not CBV) | — | removed-with-content |
+| 6 | Delta-check creatinine rise | 611 | IV-line contamination dilutes (lowers) analytes; false rise = wrong patient, mislabel, interference; alert goes to technologist and requesting clinician | Ch6 | fixed (Ch6 §6.5) |
 | 7 | ICG shows ureters | 1306 | ICG is excreted by the liver into bile; it does not show ureters | — | removed-with-content |
 | 8 | AML ≥20% blasts | Ch3 Q6 | WHO 5th ed. (2022) removed the 20% threshold for AML with defining genetic abnormalities; ICC uses ≥10% | — | removed-with-content |
 | 9 | Physiological tremor frequency | 1010, Q17 | 8–12 Hz | Ch8 | open |
@@ -24,7 +24,7 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 16 | Differential privacy as absolute | Ch7 | Bounded, tunable guarantee controlled by ε; not absolute | Ch10 | open |
 | 17 | XAI as cure for the black box | §7.3 | Saliency maps show where a model looked, not whether its reasoning is valid (Adebayo 2018) | Ch11 | open |
 | 18 | "master–slave" terminology | 1004 | "leader–follower" | Ch8 | open |
-| 19 | WSI file size | 618 | ~30 GB uncompressed for 100,000 × 100,000 RGB; 1–3 GB after compression | Ch6 | open |
+| 19 | WSI file size | 618 | ~30 GB uncompressed for 100,000 × 100,000 RGB; 1–3 GB after compression | Ch6 | fixed (Ch6 §6.4) |
 | 20 | ASC-US | 659 | "Atypical squamous cells of undetermined significance" — not a diagnosis of dysplasia; managed by reflex HPV testing | — | removed-with-content |
 | 21 | S. pneumoniae morphology | 690 | Lancet-shaped diplococci, not chains | — | removed-with-content |
 | 22 | 7 DOF comparison | 1014 | 7 DOF counted across the whole instrument; compare with 4 DOF of a rigid laparoscopic tool | Ch8 (if mentioned) | open |
@@ -34,12 +34,12 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 26 | FFR-CT described as PINN | Ch5 | Licensed FFR-CT uses conventional computational fluid dynamics | — | removed-with-content |
 | 27 | TAVR cusp-overlap / circular annulus | 1562 | Topic dropped | — | removed-with-content |
 | 28 | CVS includes common bile duct | 1049 | Topic dropped (CVS requires only two structures entering the gallbladder; CBD not dissected) | — | removed-with-content |
-| 29 | "70% of clinical decisions rely on lab results" | 587 | No primary evidence (Hallworth 2011) — do not repeat | Ch6 | open |
+| 29 | "70% of clinical decisions rely on lab results" | 587 | No primary evidence (Hallworth 2011) — do not repeat | Ch6 | fixed (Ch6 §6.5) |
 | 30 | GDPR "right to explanation" as settled law | 2531 | Contested (Wachter 2017) | Ch10 | open |
-| 31 | McKinney 2020 as settled | Ref 6 | Cite with Haibe-Kains 2020 reproducibility critique | Ch6 | open |
-| 32 | PINN for MRI reconstruction | 164, 1086 | Clinical reconstruction uses physics-informed unrolled networks (variational networks, MoDL), not PINNs | Ch6 (if mentioned) | open |
+| 31 | McKinney 2020 as settled | Ref 6 | Cite with Haibe-Kains 2020 reproducibility critique | Ch6 | fixed (Ch6 §6.2) |
+| 32 | PINN for MRI reconstruction | 164, 1086 | Clinical reconstruction uses physics-informed unrolled networks (variational networks, MoDL), not PINNs | Ch6 (if mentioned) | fixed (Ch6 §6.3 (no PINN claim)) |
 | 33 | "Randomized trials proved…" without naming trials | 4 places | Name the trial and cite it, or remove the claim | All | open |
-| 34 | AI "sees through" overlapping structures | 549 | A CNN reading the same 2D projection has no extra physical information; it learns statistical cues | Ch6 | open |
+| 34 | AI "sees through" overlapping structures | 549 | A CNN reading the same 2D projection has no extra physical information; it learns statistical cues | Ch6 | fixed (Ch6 §6.1) |
 
 ## Figures
 
