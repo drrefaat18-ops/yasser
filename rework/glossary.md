@@ -83,3 +83,41 @@
 **Unsupervised learning** — Learning that finds structure, such as groups, in data without labels.
 
 **Validation set** — Data used during development to tune design choices and decide when to stop training.
+
+**Accuracy** — The share of all cases a model classifies correctly; misleading when a condition is rare.
+
+**Area under the precision–recall curve** — A summary of how precision (PPV) and recall (sensitivity) trade off across thresholds; more informative than AUROC for rare conditions (AUPRC).
+
+**Area under the ROC curve** — The probability that a model scores a random patient with the condition higher than a random patient without it; ranges from 0.5 (chance) to 1.0 (perfect) (AUROC, C-statistic).
+
+**Calibration** — How closely a model's predicted risks match observed event rates; a calibrated "20% risk" means about 20 in 100 similar patients have the event.
+
+**Confusion matrix** — A 2 × 2 table comparing a model's positive and negative outputs with the true condition.
+
+**Diagnostic test** — A test used when symptoms or signs already raise suspicion of a condition.
+
+**Dice coefficient** — An overlap measure between a model's outline and the true outline: twice the overlap divided by the total size of both; 0 to 1.
+
+**Discrimination** — A model's ability to rank patients, giving higher scores to those with the condition.
+
+**Intersection over union** — An overlap measure: the shared area of two outlines divided by their combined area; 0 to 1 (IoU).
+
+**Negative predictive value** — The share of negative results that are truly negative (NPV).
+
+**Positive predictive value** — The share of positive results that are truly positive; depends strongly on prevalence (PPV, precision).
+
+**Prevalence** — How common a condition is in the group being tested.
+
+**Randomised controlled trial** — A study in which patients or sites are randomly assigned to different care, such as with or without AI, to measure its effect (RCT).
+
+**Reporting guideline** — A checklist of what a research paper should report, such as TRIPOD+AI for prediction models or CONSORT-AI for AI trials.
+
+**ROC curve** — A plot of sensitivity against 1 − specificity across all possible thresholds.
+
+**Screening** — Testing people without symptoms to find disease early.
+
+**Sensitivity** — The share of people with a condition whom a test correctly identifies (recall).
+
+**Specificity** — The share of people without a condition whom a test correctly clears.
+
+**Threshold** — The score above which a model's output is treated as positive.

@@ -9,7 +9,7 @@ Every error found in the original review (`SESSION_SUMMARY.md` §3) is tracked h
 | 1 | k-space undersampling | 164 | Undersampling produces aliasing; networks suppress it with incoherent sampling plus a learned prior; missing data is inferred, not recovered | Ch6 | open |
 | 2 | Fast-MRI time saving | 170 | 25→5 and 40→10 min = 75–80% reduction | Ch6 | open |
 | 3 | Breast-screening trial claim | 59 | Cite MASAI (Lång 2023): 44% screen-reading workload reduction; ~20% more cancers detected; recall not reduced | Ch1, Ch4, Ch6 | open |
-| 4 | Softmax output as "confidence"/probability | 256, 559, 2563 | Model score is not a calibrated probability or statistical confidence | Ch4 | open |
+| 4 | Softmax output as "confidence"/probability | 256, 559, 2563 | Model score is not a calibrated probability or statistical confidence | Ch4 | fixed (Ch4 §4.4) |
 | 5 | Stroke infarct core | 1534, 1546, 1682, 1826, 1834, 1836 | rCBF < 30% (not CBV) | Ch6 (one-line mention at most) | open |
 | 6 | Delta-check creatinine rise | 611 | IV-line contamination dilutes (lowers) analytes; false rise = wrong patient, mislabel, interference; alert goes to technologist and requesting clinician | Ch6 | open |
 | 7 | ICG shows ureters | 1306 | ICG is excreted by the liver into bile; it does not show ureters | — | removed-with-content |
