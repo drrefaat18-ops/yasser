@@ -163,3 +163,15 @@
 **Whole-slide image** — A very high-resolution digital scan of an entire pathology slide (WSI).
 
 **X-ray** — An imaging method that passes ionising radiation through the body; dense tissues such as bone appear white.
+
+**Alert fatigue** — Declining attention to computer alerts after seeing many, often low-value, alerts; leads to important alerts being overridden.
+
+**Area under the concentration–time curve** — The total exposure of the body to a drug over a period, used to guide doses of drugs such as vancomycin (AUC).
+
+**Drug target** — A molecule in the body, usually a protein, that a medicine is designed to act on.
+
+**Model-informed precision dosing** — Dosing that combines a pharmacokinetic model with an individual patient's drug levels and characteristics to recommend a dose (MIPD).
+
+**Pharmacogenomics** — The study of how a person's genes affect their response to medicines.
+
+**Pharmacovigilance** — The monitoring of medicines after approval to detect, assess and prevent adverse effects.
