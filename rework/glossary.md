@@ -121,3 +121,15 @@
 **Specificity** — The share of people without a condition whom a test correctly clears.
 
 **Threshold** — The score above which a model's output is treated as positive.
+
+**Academic integrity** — Honesty in study and assessment, including acknowledging when AI tools were used and not presenting their output as one's own work.
+
+**Ambient scribe** — An AI system that listens, with consent, to a consultation and drafts the clinical note for the clinician to review.
+
+**Drug interaction** — A change in the effect of a medicine caused by another medicine, food or supplement.
+
+**Retrieval-augmented generation** — A method in which an LLM first retrieves passages from trusted documents and then answers using them, so that sources can be shown (RAG).
+
+**Token** — A small piece of text, such as a word or part of a word, that a language model reads and predicts.
+
+**Transformer** — The neural-network design behind modern LLMs; its attention mechanism weighs all earlier words when predicting the next one.
