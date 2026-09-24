@@ -25,3 +25,21 @@
 **Rule-based system** — Software that follows rules written by people, such as "if drug A and drug B, then warn".
 
 **Training data** — The examples a machine-learning model learns from.
+
+**DICOM** — The international standard for storing and exchanging medical images together with their metadata.
+
+**Electronic health record** — The digital version of a patient's chart, holding diagnoses, medicines, results, notes and appointments.
+
+**Interoperability** — The ability of different health information systems to exchange data and use it correctly.
+
+**Label** — The correct answer attached to a training example, such as "pneumonia present" for a chest X-ray.
+
+**Label noise** — Errors in the labels a model is trained on; the model learns these errors too.
+
+**Metadata** — Data about data, such as the scanner model, hospital and date stored with a medical image.
+
+**Omics** — Data describing molecules in the body, such as genomics (DNA) and pharmacogenomics (genes affecting drug response).
+
+**Structured data** — Data that fit into rows and columns, such as laboratory values, codes and prescriptions.
+
+**Unstructured data** — Data without a fixed table format, such as images, signals and free text.
