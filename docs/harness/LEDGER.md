@@ -6,8 +6,8 @@ This file is kept separate from `TICKET.md` so that progress updates never touch
 | Step | Owner | Status | Handoff artifact | Commit | Date |
 |---|---|---|---|---|---|
 | 0 | Claude | Done: approved at 23d819f (DEC-026) | `TICKET.md`, `VISION.md`, `DECISIONS.md` | — | 2026-09-25 |
-| 1 | Claude | Spec committed; exit checks pass (A–M covered, 48/48 INV rows, TBD grep empty); awaiting user approval. Subagents spawned: 0 | `docs/superpowers/specs/2026-09-25-book-harness-core-design.md` | 0284376 | 2026-09-25 |
-| 2 | Claude | Not started | Arabic + translation contracts | — | — |
+| 1 | Claude | Done: spec approved by user (DEC-031). Exit checks pass (A–M covered, 48/48 INV rows, TBD grep empty). Subagents spawned: 0 | `docs/superpowers/specs/2026-09-25-book-harness-core-design.md` | 0284376 | 2026-09-25 |
+| 2 | Claude | Released (DEC-031) | Arabic + translation contracts | — | — |
 | 3 | Codex / user | Not started | `reviews/step3-review-<k>.md` + approval DEC | — | — |
 | 4 | Claude | Not started | plan + approval DEC | — | — |
 | 5 | Claude | Not started | `harness/preflight.py`, `golden.json` | — | — |
