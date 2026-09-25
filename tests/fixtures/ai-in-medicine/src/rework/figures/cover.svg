@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" font-family="Segoe UI, Arial, sans-serif">
+<rect width="600" height="800" fill="#12324f"/>
+<g stroke="#4f86b8" stroke-width="1.5" opacity="0.7">
+<line x1="90" y1="300" x2="220" y2="240"/><line x1="90" y1="300" x2="220" y2="360"/><line x1="220" y1="240" x2="360" y2="300"/><line x1="220" y1="360" x2="360" y2="300"/><line x1="220" y1="240" x2="360" y2="200"/><line x1="220" y1="360" x2="360" y2="400"/><line x1="360" y1="200" x2="500" y2="300"/><line x1="360" y1="300" x2="500" y2="300"/><line x1="360" y1="400" x2="500" y2="300"/></g>
+<g fill="#7fb3e0"><circle cx="90" cy="300" r="10"/><circle cx="220" cy="240" r="10"/><circle cx="220" cy="360" r="10"/><circle cx="360" cy="200" r="10"/><circle cx="360" cy="300" r="10"/><circle cx="360" cy="400" r="10"/></g>
+<circle cx="500" cy="300" r="22" fill="#f0b429"/>
+<path d="M 482 300 h 8 l 4 -10 l 6 20 l 4 -10 h 8" fill="none" stroke="#12324f" stroke-width="3"/>
+<text x="300" y="530" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">Artificial Intelligence</text>
+<text x="300" y="578" text-anchor="middle" font-size="38" font-weight="700" fill="#ffffff">in Health Care</text>
+<text x="300" y="624" text-anchor="middle" font-size="20" fill="#cfe0f0">An Interprofessional Introduction</text>
+<text x="300" y="660" text-anchor="middle" font-size="15" fill="#cfe0f0">Medicine · Pharmacy · Physical Therapy · Health Sciences</text>
+<text x="300" y="740" text-anchor="middle" font-size="18" fill="#ffffff">Assistant Prof. Dr. Shereen Elsaid Elkholy</text>
+</svg>

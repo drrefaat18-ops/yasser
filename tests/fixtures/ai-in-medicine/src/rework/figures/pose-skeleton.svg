@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="Segoe UI, Arial, sans-serif">
+<rect width="700" height="380" fill="#ffffff"/>
+<text x="350" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1f2d3d">Pose estimation: key points to joint angle</text>
+<g stroke="#2b5d8a" stroke-width="5" stroke-linecap="round">
+<line x1="200" y1="80" x2="200" y2="170"/><line x1="200" y1="100" x2="150" y2="150"/><line x1="200" y1="100" x2="250" y2="150"/>
+<line x1="200" y1="170" x2="245" y2="245"/><line x1="245" y1="245" x2="215" y2="330"/>
+<line x1="200" y1="170" x2="165" y2="250"/><line x1="165" y1="250" x2="170" y2="330"/></g>
+<circle cx="200" cy="62" r="18" fill="none" stroke="#2b5d8a" stroke-width="4"/>
+<g fill="#a12b2b"><circle cx="200" cy="170" r="7"/><circle cx="245" cy="245" r="7"/><circle cx="215" cy="330" r="7"/><circle cx="165" cy="250" r="7"/><circle cx="170" cy="330" r="7"/><circle cx="200" cy="100" r="7"/></g>
+<text x="212" y="166" font-size="14" fill="#1f2d3d">hip</text><text x="276" y="262" font-size="14" fill="#1f2d3d">knee</text><text x="228" y="345" font-size="14" fill="#1f2d3d">ankle</text>
+<path d="M 233 225 A 22 22 0 0 1 262 252" fill="none" stroke="#9a6b00" stroke-width="3"/>
+<rect x="340" y="80" width="330" height="220" rx="8" fill="#f4f6f8" stroke="#8a96a3"/>
+<text x="360" y="112" font-size="15" font-weight="700" fill="#1f2d3d">From the key points:</text>
+<text x="360" y="140" font-size="14" fill="#1f2d3d">- knee angle from hip-knee-ankle lines</text>
+<text x="360" y="166" font-size="14" fill="#1f2d3d">- step length and walking speed</text>
+<text x="360" y="200" font-size="15" font-weight="700" fill="#a12b2b">Accuracy falls with:</text>
+<text x="360" y="228" font-size="14" fill="#1f2d3d">- loose clothing, poor light</text>
+<text x="360" y="254" font-size="14" fill="#1f2d3d">- one camera angle, body out of view</text>
+<text x="360" y="280" font-size="14" fill="#1f2d3d">- bodies unlike the training data</text>
+</svg>

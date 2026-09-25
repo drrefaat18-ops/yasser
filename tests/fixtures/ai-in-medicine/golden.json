@@ -1,0 +1,3699 @@
+{
+ "chapters": [
+  {
+   "file": "rework/ch01-what-ai-is.md",
+   "id": "ch01",
+   "title": "Chapter 1: What AI Is — and Isn't"
+  },
+  {
+   "file": "rework/ch02-health-data.md",
+   "id": "ch02",
+   "title": "Chapter 2: Health Data — What AI Learns From"
+  },
+  {
+   "file": "rework/ch03-how-models-learn.md",
+   "id": "ch03",
+   "title": "Chapter 3: How Models Learn — and How They Fail"
+  },
+  {
+   "file": "rework/ch04-reading-performance-claims.md",
+   "id": "ch04",
+   "title": "Chapter 4: Reading an AI Performance Claim"
+  },
+  {
+   "file": "rework/ch05-generative-ai-llms.md",
+   "id": "ch05",
+   "title": "Chapter 5: Generative AI and Large Language Models"
+  },
+  {
+   "file": "rework/ch06-seeing-disease.md",
+   "id": "ch06",
+   "title": "Chapter 6: Seeing Disease — Imaging, Laboratory and Pathology"
+  },
+  {
+   "file": "rework/ch07-medicines.md",
+   "id": "ch07",
+   "title": "Chapter 7: Medicines — Discovery, Dosing and Safety"
+  },
+  {
+   "file": "rework/ch08-ai-in-motion.md",
+   "id": "ch08",
+   "title": "Chapter 8: AI in Motion — Rehabilitation, Wearables and Robotics"
+  },
+  {
+   "file": "rework/ch09-monitoring-prediction.md",
+   "id": "ch09",
+   "title": "Chapter 9: Monitoring, Prediction and Population Health"
+  },
+  {
+   "file": "rework/ch10-bias-fairness-privacy.md",
+   "id": "ch10",
+   "title": "Chapter 10: Bias, Fairness and Privacy"
+  },
+  {
+   "file": "rework/ch11-regulation-liability-human.md",
+   "id": "ch11",
+   "title": "Chapter 11: Regulation, Liability and the Human in the Loop"
+  }
+ ],
+ "checks": [
+  {
+   "id": "BOOK-CHAPTER-COUNT",
+   "measured": {
+    "chapters": 11
+   },
+   "status": "pass",
+   "target": "book"
+  },
+  {
+   "id": "BOOK-FRONT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "book"
+  },
+  {
+   "id": "BUDGET-TOTAL",
+   "measured": {
+    "total_words": 20465
+   },
+   "status": "pass",
+   "target": "book"
+  },
+  {
+   "id": "ERRATA-OPEN",
+   "measured": {},
+   "status": "pass",
+   "target": "book"
+  },
+  {
+   "id": "GLOSS-MIN",
+   "measured": {
+    "glossary_terms": 136
+   },
+   "status": "pass",
+   "target": "book"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1600,
+    "words": 1809
+   },
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 3,
+     "C": 2,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 4
+   },
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 8.675
+   },
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch01"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1600,
+    "words": 1698
+   },
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 4
+   },
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 8.67
+   },
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch02"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1700,
+    "words": 1696
+   },
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 3,
+     "C": 2,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 8.712
+   },
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch03"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1800,
+    "words": 1909
+   },
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0081
+   },
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 9.22
+   },
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch04"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1700,
+    "words": 1798
+   },
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 9.616
+   },
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch05"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1800,
+    "words": 1922
+   },
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 10.14
+   },
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch06"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1700,
+    "words": 1771
+   },
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 10.222
+   },
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch07"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1700,
+    "words": 1728
+   },
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 10.239
+   },
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch08"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1700,
+    "words": 1762
+   },
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 2,
+     "D": 3
+    }
+   },
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0
+   },
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 9.94
+   },
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch09"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1700,
+    "words": 1859
+   },
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 2,
+     "C": 3,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0194
+   },
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 10.583
+   },
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch10"
+  },
+  {
+   "id": "BANNED-TERM",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "BUDGET-CHAPTER",
+   "measured": {
+    "budget": 1800,
+    "words": 2002
+   },
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "CIT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "CIT-UNCITED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "GLOSS-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "KEY-BALANCE",
+   "measured": {
+    "key_counts": {
+     "A": 3,
+     "B": 3,
+     "C": 2,
+     "D": 2
+    }
+   },
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "KEY-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "KEY-RATIONALE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "KEY-RUN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "LO-COUNT",
+   "measured": {
+    "lo_count": 5
+   },
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "LO-UNASSESSED",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "LO-VERB",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "MCQ-CASE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "MCQ-COUNT",
+   "measured": {
+    "mcq_count": 10
+   },
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "MCQ-EXTRA-OPTION",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "MCQ-LO-TAG",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "MCQ-LO-UNKNOWN",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "MCQ-OPTIONS",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "PERSP-BALANCE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "PERSP-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "READ-LONG",
+   "measured": {
+    "long_share": 0.0076
+   },
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "READ-MEAN",
+   "measured": {
+    "mean_sentence": 9.542
+   },
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "READ-NOPROSE",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "TPL-CALLOUT-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "TPL-H1",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "TPL-SECTION-MISSING",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  },
+  {
+   "id": "TPL-SECTION-ORDER",
+   "measured": {},
+   "status": "pass",
+   "target": "ch11"
+  }
+ ],
+ "docx": {
+  "core_properties": {
+   "category": "",
+   "creator": "Assistant Prof. Dr. Shereen Elsaid Elkholy",
+   "description": "",
+   "keywords": "",
+   "language": "en-GB",
+   "subject": "",
+   "title": "Artificial Intelligence in Health Care: An Interprofessional Introduction"
+  },
+  "images": 13,
+  "paragraph_styles": {
+   "(none)": 336,
+   "Answer": 121,
+   "BoxLabel": 68,
+   "BoxText": 227,
+   "CaptionText": 12,
+   "Figure": 12,
+   "GlossaryEntry": 136,
+   "Heading1": 16,
+   "Heading2": 83,
+   "Heading2Unlisted": 22,
+   "ListBullet": 116,
+   "Option": 440,
+   "Question": 110,
+   "Reference": 101,
+   "TOC1": 16,
+   "TOC2": 83,
+   "TableText": 58,
+   "TitleHeading": 1
+  },
+  "parts": [
+   "[Content_Types].xml",
+   "_rels/.rels",
+   "customXml/_rels/item1.xml.rels",
+   "customXml/item1.xml",
+   "customXml/itemProps1.xml",
+   "docProps/app.xml",
+   "docProps/core.xml",
+   "word/_rels/document.xml.rels",
+   "word/_rels/fontTable.xml.rels",
+   "word/document.xml",
+   "word/endnotes.xml",
+   "word/fontTable.xml",
+   "word/fonts/font1.odttf",
+   "word/fonts/font10.odttf",
+   "word/fonts/font11.odttf",
+   "word/fonts/font12.odttf",
+   "word/fonts/font13.odttf",
+   "word/fonts/font14.odttf",
+   "word/fonts/font15.odttf",
+   "word/fonts/font2.odttf",
+   "word/fonts/font3.odttf",
+   "word/fonts/font4.odttf",
+   "word/fonts/font5.odttf",
+   "word/fonts/font6.odttf",
+   "word/fonts/font7.odttf",
+   "word/fonts/font8.odttf",
+   "word/fonts/font9.odttf",
+   "word/footer1.xml",
+   "word/footer10.xml",
+   "word/footer11.xml",
+   "word/footer12.xml",
+   "word/footer13.xml",
+   "word/footer14.xml",
+   "word/footer15.xml",
+   "word/footer16.xml",
+   "word/footer17.xml",
+   "word/footer18.xml",
+   "word/footer19.xml",
+   "word/footer2.xml",
+   "word/footer20.xml",
+   "word/footer21.xml",
+   "word/footer22.xml",
+   "word/footer23.xml",
+   "word/footer24.xml",
+   "word/footer25.xml",
+   "word/footer26.xml",
+   "word/footer27.xml",
+   "word/footer28.xml",
+   "word/footer29.xml",
+   "word/footer3.xml",
+   "word/footer30.xml",
+   "word/footer31.xml",
+   "word/footer32.xml",
+   "word/footer33.xml",
+   "word/footer34.xml",
+   "word/footer35.xml",
+   "word/footer36.xml",
+   "word/footer4.xml",
+   "word/footer5.xml",
+   "word/footer6.xml",
+   "word/footer7.xml",
+   "word/footer8.xml",
+   "word/footer9.xml",
+   "word/footnotes.xml",
+   "word/header1.xml",
+   "word/header10.xml",
+   "word/header11.xml",
+   "word/header12.xml",
+   "word/header13.xml",
+   "word/header14.xml",
+   "word/header15.xml",
+   "word/header16.xml",
+   "word/header17.xml",
+   "word/header18.xml",
+   "word/header19.xml",
+   "word/header2.xml",
+   "word/header20.xml",
+   "word/header21.xml",
+   "word/header22.xml",
+   "word/header23.xml",
+   "word/header24.xml",
+   "word/header25.xml",
+   "word/header26.xml",
+   "word/header27.xml",
+   "word/header28.xml",
+   "word/header29.xml",
+   "word/header3.xml",
+   "word/header30.xml",
+   "word/header31.xml",
+   "word/header32.xml",
+   "word/header33.xml",
+   "word/header34.xml",
+   "word/header35.xml",
+   "word/header36.xml",
+   "word/header4.xml",
+   "word/header5.xml",
+   "word/header6.xml",
+   "word/header7.xml",
+   "word/header8.xml",
+   "word/header9.xml",
+   "word/media/image1.png",
+   "word/media/image10.png",
+   "word/media/image11.png",
+   "word/media/image12.png",
+   "word/media/image13.png",
+   "word/media/image2.png",
+   "word/media/image3.png",
+   "word/media/image4.png",
+   "word/media/image5.png",
+   "word/media/image6.png",
+   "word/media/image7.png",
+   "word/media/image8.png",
+   "word/media/image9.png",
+   "word/numbering.xml",
+   "word/settings.xml",
+   "word/styles.xml",
+   "word/theme/theme1.xml",
+   "word/webSettings.xml"
+  ],
+  "toc_field": true
+ },
+ "hashes": {
+  "assembled_md": "fd78e9c17da12fd0283ae7a4f1d4234819dc35269b192ee64c1b0bb622230f8f",
+  "chapters": {
+   "ch01": "6b43bc0134cd534d7d58e2bb0f7bf4339f5dfb8b916c846d2a8eee6de661ed21",
+   "ch02": "0c2198f24e2d90104f6259faf3f4c22485cd29b06f8f67d479a3c6c4a758cd09",
+   "ch03": "494d3f062192e558a840f291495b2cb000b7788e8ea19824ebe1ec1d8fb2e7cf",
+   "ch04": "5773b0d864a1f61c5830b7c703b94910b19699ac4f19c15e411f9512ba4da96a",
+   "ch05": "07f052596e6eec7ac97a911a376121960e8e749352f3112c1a8b5025ba2b7512",
+   "ch06": "0de3e424e47705d37813d15b8ed023a5ba934558b0b4cd2788e6abd0dd0cd81a",
+   "ch07": "3edd3d578d595898d6d9a97a44f565c70162f798c7ac9fed8ad419ccdb216d0e",
+   "ch08": "8bad16c1bd20ac8e679a7baed1d5c3ebc36f38f8bd5b5cbe6aefea9b5a85b043",
+   "ch09": "c205f091beac4fc0323c0e54aadbc9c686e3cb59ab8b5f87f8ad6046d715345b",
+   "ch10": "1d78a0a614d246d56c5f4e6dc976f885d896e236a7374486bfeb3b3f909e8e9d",
+   "ch11": "8aa9201025a93567f7da2255fdd95d4598b6cc235ac920379017a1e954138c99"
+  },
+  "docx": "3cb60b282d09475749cd113dfb17bc590f849ff01a739795e8bec86d9996aa01",
+  "docx_parts": {
+   "[Content_Types].xml": "7e1c22ce80c6279a6818b9b337b37bdd437074d390c5f3a9e1713cc921344a46",
+   "_rels/.rels": "2e4d8613828f50d6899cf563ee6d0526e3ae9b103861459ce9bd32053cf37c1e",
+   "customXml/_rels/item1.xml.rels": "063ebdfb492f3221c720768ab6a64a325287ab9c430b47edfe4d61e8870bd10b",
+   "customXml/item1.xml": "3b323b63cf6821593c4ac38fe77b9c7215ec20a082dd52d6142603bd98aedda2",
+   "customXml/itemProps1.xml": "08e065d78a5c0beb5ff2251756b59327cbd55b271d5be5268e993e00f8d0f6a8",
+   "docProps/app.xml": "8c5a74e31af5a7e826c71a59ac793f1a94d229ff8ef80ca15d2a94404987b9f8",
+   "docProps/core.xml": "b88ccf963922f3f83c93c927a07520ca08de0204c6c566eea870090db24cd316",
+   "word/_rels/document.xml.rels": "9aa2d0fe06c1ead1fc73c57279882c9775eb9c8d45cf1c8b7fe2876ebc3f7f44",
+   "word/_rels/fontTable.xml.rels": "830501744b6cf38b367dec2fab4ba391925e204881f05e8a801ba6fc518c7bc6",
+   "word/document.xml": "6a7d18bc70950b60791aee7951c5511ec1b8d7a510330e278377de1644e16165",
+   "word/endnotes.xml": "cfeb9c3c6179dac40fdbc90865f2a912549c272afd4d332c3963dc1a53101ba5",
+   "word/fontTable.xml": "a70e789bb94a04c3b32d70040969929f1f2370825de924f4aabef7076ffd2db3",
+   "word/fonts/font1.odttf": "volatile",
+   "word/fonts/font10.odttf": "volatile",
+   "word/fonts/font11.odttf": "volatile",
+   "word/fonts/font12.odttf": "volatile",
+   "word/fonts/font13.odttf": "volatile",
+   "word/fonts/font14.odttf": "volatile",
+   "word/fonts/font15.odttf": "volatile",
+   "word/fonts/font2.odttf": "volatile",
+   "word/fonts/font3.odttf": "volatile",
+   "word/fonts/font4.odttf": "volatile",
+   "word/fonts/font5.odttf": "volatile",
+   "word/fonts/font6.odttf": "volatile",
+   "word/fonts/font7.odttf": "volatile",
+   "word/fonts/font8.odttf": "volatile",
+   "word/fonts/font9.odttf": "volatile",
+   "word/footer1.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer10.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer11.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer12.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer13.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer14.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer15.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer16.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer17.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer18.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer19.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer2.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer20.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer21.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer22.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer23.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer24.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer25.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer26.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer27.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer28.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer29.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer3.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer30.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer31.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer32.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer33.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer34.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer35.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer36.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer4.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer5.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer6.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footer7.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer8.xml": "26e3ec2b207bc488dfa66d81516535607b4560a1e44495dc908f10367ae26a88",
+   "word/footer9.xml": "3161d61b56308142f6b1f995bcb8a4157d4426ef9576ed8e875494d5b985f199",
+   "word/footnotes.xml": "27f054c1db7639c8b542696c0398a67addfb67be7c3e7e7967e6ded431ffcb37",
+   "word/header1.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header10.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header11.xml": "2520310f3961d0e41f78b3e115f961de5bf3ad21993e188d291fd4bdd94cf3fe",
+   "word/header12.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header13.xml": "7b3b2282f145559118b6469d87959cc10d822c0b10f9752f01de4eb77ddf4600",
+   "word/header14.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header15.xml": "79af29c9e384a6b32bc8ac659316d5e9be87812ba4cdf9f8b44913e77ab2d1ff",
+   "word/header16.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header17.xml": "47d023979ac2b873a0f0ebcdb13af7404c647dc1d847465a754a5eab51975da1",
+   "word/header18.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header19.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header2.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header20.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header21.xml": "ec2be478a0138eeecabd8f6d0ff8142ceab3375647b265518d8f8e15b7956786",
+   "word/header22.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header23.xml": "00960ca80d8aef6725791600176325929fc43ba46cb0779012273c53ae4662d4",
+   "word/header24.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header25.xml": "b123357e95d76d930b053cb859005682ac64e2d84f62883b4434194e9c09be92",
+   "word/header26.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header27.xml": "122c5b07ef8d22cc0878440f947630ddd96f9d7ca9f7b1dff97c412755884002",
+   "word/header28.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header29.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header3.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header30.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header31.xml": "ee232625945df2bb4bd44e99d841c88f59c8b63cf471f066b224bd0c0b661928",
+   "word/header32.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header33.xml": "a57449439e031985f83cf6c79d501b44cc2b454bf2ac2f862c306c40a3e4bc09",
+   "word/header34.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header35.xml": "5d8c4414894520fbb83e15c333d725086f6e83fb42844d69a7eb41e4dab65236",
+   "word/header36.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header4.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header5.xml": "07acb64580bbbf2a3580712b8a3099c2d1e6a4920216bc928ccd5ab44064c42f",
+   "word/header6.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header7.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header8.xml": "8873edff53406c43316c689689df6c0a3921f94b64cc69cd5d0ae8389d8062d1",
+   "word/header9.xml": "0020ae325cd85e853748c779ef0da9c99190aa7d5e21d21636c5b52855af9f7c",
+   "word/media/image1.png": "fbfdbffa252899fb1f445b04d75a06d422d9574ed5d3a0a8c58c21d390b99ef8",
+   "word/media/image10.png": "401b0750c94ea78511a8e4819e1fd4fa48c5ff73045220f36d31306c02bf71f5",
+   "word/media/image11.png": "127fc08fa063274bdd4394c2b6d4722945199d03c83ab90623982934d1514498",
+   "word/media/image12.png": "bbd8549993f551dc609e594e017528b36ab7c59a5c92bd2cb11e11db763ef6de",
+   "word/media/image13.png": "a72e50e1a61ddad052232383efe93b5ebdc6ae085c2aa05fd423ceb8488e226a",
+   "word/media/image2.png": "9abd062c7cc17f9f958c05392e165f43a31f8c07a798b6b6e600a917053880e2",
+   "word/media/image3.png": "10e161266824970de3b840840d9795b6af9628c283c7892ab18a8179af3a8f25",
+   "word/media/image4.png": "5ed700563e32747a043c7690a0b77cbe6ca93384343ab75a958932402083b6cb",
+   "word/media/image5.png": "bdf8a1429d51c74ccb969112a81bd3ede1c530df7a1c7634929004c403055d97",
+   "word/media/image6.png": "3e6e336c28460a8800a72a55e82618371e3dabbd982dfa9cabbd362da5a05ae3",
+   "word/media/image7.png": "442c2a24a7903b008a934cfe8d3f191db0dd9458b20cdf10a7f1410904664feb",
+   "word/media/image8.png": "d56b1ee2435de0ccdf74371582d85cabcdd92cad75940eb2478d935b1b9b5354",
+   "word/media/image9.png": "6b81ec5efd9f72c0ac00aa7a105820c6a1156d2fba26d2fb117a41e49021c283",
+   "word/numbering.xml": "73c6dfeb5b0995bde31dbcba154f121df366fa00e643002e908f1fa4c5fdfc90",
+   "word/settings.xml": "1c076e8ce5fd09cac1cc110eb37a6bd1e2801d38296066ff8990522166a6f2f2",
+   "word/styles.xml": "0c653046620ddcfe450bd92f225b11a46679f37963b6cfe1824e89798c8c984c",
+   "word/theme/theme1.xml": "a2dc965c2c7025f33f7b327c2669b9f7920f204cf8bded98ab243bd3c07ab27b",
+   "word/webSettings.xml": "cd99c31ac6329ddf082f0e426057b130988fad579ac0b70065006e40a08846b3"
+  }
+ },
+ "images": [
+  {
+   "dpi": [
+    300.0,
+    300.0
+   ],
+   "height_px": 1200,
+   "path": "images/image1.jpeg",
+   "width_px": 896
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 583,
+   "path": "images/image10.png",
+   "width_px": 1513
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 741,
+   "path": "images/image11.png",
+   "width_px": 1552
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 726,
+   "path": "images/image12.png",
+   "width_px": 1454
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 726,
+   "path": "images/image13.png",
+   "width_px": 1434
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 708,
+   "path": "images/image14.png",
+   "width_px": 1573
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 575,
+   "path": "images/image15.png",
+   "width_px": 1489
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 695,
+   "path": "images/image16.png",
+   "width_px": 1497
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 695,
+   "path": "images/image17.png",
+   "width_px": 1434
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 664,
+   "path": "images/image18.png",
+   "width_px": 1465
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 770,
+   "path": "images/image19.png",
+   "width_px": 1102
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 1080,
+   "path": "images/image2.png",
+   "width_px": 1679
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 1206,
+   "path": "images/image20.png",
+   "width_px": 1217
+  },
+  {
+   "dpi": [
+    300.0,
+    300.0
+   ],
+   "height_px": 1320,
+   "path": "images/image21.png",
+   "width_px": 2346
+  },
+  {
+   "dpi": [
+    300.0,
+    300.0
+   ],
+   "height_px": 1020,
+   "path": "images/image22.png",
+   "width_px": 2369
+  },
+  {
+   "dpi": [
+    300.0,
+    300.0
+   ],
+   "height_px": 1170,
+   "path": "images/image23.png",
+   "width_px": 2360
+  },
+  {
+   "dpi": [
+    300.0,
+    300.0
+   ],
+   "height_px": 1110,
+   "path": "images/image24.png",
+   "width_px": 2370
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 899,
+   "path": "images/image3.png",
+   "width_px": 1979
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 859,
+   "path": "images/image4.png",
+   "width_px": 1979
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 699,
+   "path": "images/image5.png",
+   "width_px": 2179
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 911,
+   "path": "images/image6.png",
+   "width_px": 1979
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 911,
+   "path": "images/image7.png",
+   "width_px": 1979
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 980,
+   "path": "images/image8.png",
+   "width_px": 1771
+  },
+  {
+   "dpi": [
+    200.0,
+    200.0
+   ],
+   "height_px": 691,
+   "path": "images/image9.png",
+   "width_px": 1576
+  },
+  {
+   "dpi": null,
+   "height_px": 625,
+   "path": "rework/figures/orig-image17.png",
+   "width_px": 1434
+  },
+  {
+   "dpi": null,
+   "height_px": 594,
+   "path": "rework/figures/orig-image18.png",
+   "width_px": 1465
+  },
+  {
+   "dpi": null,
+   "height_px": 700,
+   "path": "rework/figures/orig-image19.png",
+   "width_px": 1102
+  },
+  {
+   "dpi": null,
+   "height_px": 985,
+   "path": "rework/figures/orig-image2.png",
+   "width_px": 1679
+  },
+  {
+   "dpi": null,
+   "height_px": 980,
+   "path": "rework/figures/orig-image21.png",
+   "width_px": 2346
+  },
+  {
+   "dpi": null,
+   "height_px": 1015,
+   "path": "rework/figures/orig-image24.png",
+   "width_px": 2370
+  },
+  {
+   "dpi": null,
+   "height_px": 824,
+   "path": "rework/figures/orig-image3.png",
+   "width_px": 1979
+  },
+  {
+   "dpi": null,
+   "height_px": 624,
+   "path": "rework/figures/orig-image5.png",
+   "width_px": 2179
+  },
+  {
+   "dpi": null,
+   "height_px": 1600,
+   "path": "rework/figures/png/confusion-ppv.png",
+   "width_px": 3280
+  },
+  {
+   "dpi": null,
+   "height_px": 3509,
+   "path": "rework/figures/png/cover.png",
+   "width_px": 2481
+  },
+  {
+   "dpi": null,
+   "height_px": 1200,
+   "path": "rework/figures/png/next-token.png",
+   "width_px": 3200
+  },
+  {
+   "dpi": null,
+   "height_px": 1520,
+   "path": "rework/figures/png/pose-skeleton.png",
+   "width_px": 2800
+  },
+  {
+   "dpi": null,
+   "height_px": 1040,
+   "path": "rework/figures/png/privacy-pipeline.png",
+   "width_px": 3440
+  },
+  {
+   "dpi": null,
+   "height_px": 1360,
+   "path": "rework/figures/png/split-leakage.png",
+   "width_px": 3200
+  }
+ ],
+ "pdf": {
+  "bookmarks": [
+   {
+    "level": 0,
+    "title": "How to Use This Book"
+   },
+   {
+    "level": 1,
+    "title": "Boxes You Will Meet"
+   },
+   {
+    "level": 1,
+    "title": "Meet the Patients"
+   },
+   {
+    "level": 1,
+    "title": "Who Is in the Care Team"
+   },
+   {
+    "level": 0,
+    "title": "Part I   Foundations"
+   },
+   {
+    "level": 0,
+    "title": "1   What AI Is — and Isn't"
+   },
+   {
+    "level": 1,
+    "title": "1.1 Four Words You Will Hear Every Day"
+   },
+   {
+    "level": 1,
+    "title": "1.2 Rules Versus Learning"
+   },
+   {
+    "level": 1,
+    "title": "1.3 A Short History"
+   },
+   {
+    "level": 1,
+    "title": "1.4 What AI Can and Cannot Do"
+   },
+   {
+    "level": 1,
+    "title": "1.5 Three Risks to Watch"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "2   Health Data — What AI Learns From"
+   },
+   {
+    "level": 1,
+    "title": "2.1 Five Kinds of Health Data"
+   },
+   {
+    "level": 1,
+    "title": "2.2 Labels: The Answers a Model Learns From"
+   },
+   {
+    "level": 1,
+    "title": "2.3 Data Quality: Problems Before Learning Starts"
+   },
+   {
+    "level": 1,
+    "title": "2.4 Speaking the Same Language: Standards"
+   },
+   {
+    "level": 1,
+    "title": "2.5 Famous Datasets and Who They Leave Out"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "3   How Models Learn — and How They Fail"
+   },
+   {
+    "level": 1,
+    "title": "3.1 Three Ways to Learn"
+   },
+   {
+    "level": 1,
+    "title": "3.2 How Training Works"
+   },
+   {
+    "level": 1,
+    "title": "3.3 Splitting the Data"
+   },
+   {
+    "level": 1,
+    "title": "3.4 Four Ways Models Fail"
+   },
+   {
+    "level": 1,
+    "title": "3.5 Rare Conditions and Simple Models"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "4   Reading an AI Performance Claim"
+   },
+   {
+    "level": 1,
+    "title": "4.1 The 2 × 2 Table"
+   },
+   {
+    "level": 1,
+    "title": "4.2 Why a \"95%\" Test Can Be Wrong Most of the Time"
+   },
+   {
+    "level": 1,
+    "title": "4.3 Thresholds and AUROC"
+   },
+   {
+    "level": 1,
+    "title": "4.4 Ranking Versus Honest Numbers"
+   },
+   {
+    "level": 1,
+    "title": "4.5 How Strong Is the Evidence?"
+   },
+   {
+    "level": 1,
+    "title": "4.6 Five Questions to Ask About Any AI Claim"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "5   Generative AI and Large Language Models"
+   },
+   {
+    "level": 1,
+    "title": "5.1 How a Large Language Model Works"
+   },
+   {
+    "level": 1,
+    "title": "5.2 Why Chatbots Make Things Up"
+   },
+   {
+    "level": 1,
+    "title": "5.3 Exam Scores Are Not Patient Safety"
+   },
+   {
+    "level": 1,
+    "title": "5.4 Useful Applications"
+   },
+   {
+    "level": 1,
+    "title": "5.5 Using Chatbots Safely: A Checklist"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "Part II   AI Across the Care Pathway"
+   },
+   {
+    "level": 0,
+    "title": "6   Seeing Disease — Imaging, Laboratory and Pathology"
+   },
+   {
+    "level": 1,
+    "title": "6.1 Detect, Diagnose, Triage"
+   },
+   {
+    "level": 1,
+    "title": "6.2 Screening Eyes and Breasts"
+   },
+   {
+    "level": 1,
+    "title": "6.3 Skin, Knees and Fast MRI"
+   },
+   {
+    "level": 1,
+    "title": "6.4 Pathology: From Glass Slide to Heatmap"
+   },
+   {
+    "level": 1,
+    "title": "6.5 The Clinical Laboratory"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "7   Medicines — Discovery, Dosing and Safety"
+   },
+   {
+    "level": 1,
+    "title": "7.1 Discovery: Finding Targets and Molecules"
+   },
+   {
+    "level": 1,
+    "title": "7.2 Medication Alerts and Alert Fatigue"
+   },
+   {
+    "level": 1,
+    "title": "7.3 Precision Dosing"
+   },
+   {
+    "level": 1,
+    "title": "7.4 Genes and Drug Safety"
+   },
+   {
+    "level": 1,
+    "title": "7.5 Chatbots and Drug Information"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "8   AI in Motion — Rehabilitation, Wearables and Robotics"
+   },
+   {
+    "level": 1,
+    "title": "8.1 Pose Estimation: From Video to Joints"
+   },
+   {
+    "level": 1,
+    "title": "8.2 Wearables: Sensors on the Body"
+   },
+   {
+    "level": 1,
+    "title": "8.3 Remote Rehabilitation and Home Apps"
+   },
+   {
+    "level": 1,
+    "title": "8.4 Robots in the Operating Room"
+   },
+   {
+    "level": 1,
+    "title": "8.5 Levels of Autonomy"
+   },
+   {
+    "level": 1,
+    "title": "8.6 Measuring Skill"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "9   Monitoring, Prediction and Population Health"
+   },
+   {
+    "level": 1,
+    "title": "9.1 Early Warning: From Scores to Models"
+   },
+   {
+    "level": 1,
+    "title": "9.2 Early Warning Versus False Alarms"
+   },
+   {
+    "level": 1,
+    "title": "9.3 AI and the ECG"
+   },
+   {
+    "level": 1,
+    "title": "9.4 Automatic Insulin Delivery"
+   },
+   {
+    "level": 1,
+    "title": "9.5 Population Health"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "Part III   Responsible AI"
+   },
+   {
+    "level": 0,
+    "title": "10   Bias, Fairness and Privacy"
+   },
+   {
+    "level": 1,
+    "title": "10.1 Where Bias Comes From"
+   },
+   {
+    "level": 1,
+    "title": "10.2 The Obermeyer Case: When the Label Is the Problem"
+   },
+   {
+    "level": 1,
+    "title": "10.3 Privacy: Names Are Not Enough"
+   },
+   {
+    "level": 1,
+    "title": "10.4 Privacy-Protecting Methods"
+   },
+   {
+    "level": 1,
+    "title": "10.5 The Law: Shared Principles"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "11   Regulation, Liability and the Human in the Loop"
+   },
+   {
+    "level": 1,
+    "title": "11.1 When Software Is a Medical Device"
+   },
+   {
+    "level": 1,
+    "title": "11.2 The United States: FDA Routes"
+   },
+   {
+    "level": 1,
+    "title": "11.3 Europe: The AI Act"
+   },
+   {
+    "level": 1,
+    "title": "11.4 Liability: Who Is Responsible?"
+   },
+   {
+    "level": 1,
+    "title": "11.5 The Human in the Loop"
+   },
+   {
+    "level": 1,
+    "title": "11.6 Looking Ahead"
+   },
+   {
+    "level": 1,
+    "title": "Self-Assessment"
+   },
+   {
+    "level": 1,
+    "title": "References"
+   },
+   {
+    "level": 0,
+    "title": "Glossary"
+   }
+  ],
+  "pages": 95
+ },
+ "project": "ai-in-medicine",
+ "provenance": {
+  "captured_from": ".",
+  "tool_sha": "f06ceff38ff69794a60eae1f66118e3838b9b045"
+ },
+ "references": {
+  "ch01": {
+   "count": 9,
+   "with_doi": 8,
+   "without_doi": 1
+  },
+  "ch02": {
+   "count": 8,
+   "with_doi": 8,
+   "without_doi": 0
+  },
+  "ch03": {
+   "count": 6,
+   "with_doi": 6,
+   "without_doi": 0
+  },
+  "ch04": {
+   "count": 7,
+   "with_doi": 6,
+   "without_doi": 1
+  },
+  "ch05": {
+   "count": 9,
+   "with_doi": 6,
+   "without_doi": 3
+  },
+  "ch06": {
+   "count": 10,
+   "with_doi": 10,
+   "without_doi": 0
+  },
+  "ch07": {
+   "count": 10,
+   "with_doi": 10,
+   "without_doi": 0
+  },
+  "ch08": {
+   "count": 8,
+   "with_doi": 8,
+   "without_doi": 0
+  },
+  "ch09": {
+   "count": 10,
+   "with_doi": 9,
+   "without_doi": 1
+  },
+  "ch10": {
+   "count": 11,
+   "with_doi": 8,
+   "without_doi": 3
+  },
+  "ch11": {
+   "count": 13,
+   "with_doi": 5,
+   "without_doi": 8
+  }
+ },
+ "schema_version": 1,
+ "verify_refs": [
+  {
+   "chapter": "ch01",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 2,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch01",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch01",
+   "n": 9,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch02",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch03",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch03",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch03",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch03",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch03",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch03",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch04",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch04",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch04",
+   "n": 3,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch04",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch04",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch04",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch04",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 1,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch05",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch05",
+   "n": 8,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch05",
+   "n": 9,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch06",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 9,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch06",
+   "n": 10,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 9,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch07",
+   "n": 10,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch08",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 1,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch09",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 6,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 7,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 9,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch09",
+   "n": 10,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 1,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 3,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 4,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 5,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 6,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch10",
+   "n": 7,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch10",
+   "n": 8,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 9,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 10,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch10",
+   "n": 11,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 1,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 2,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch11",
+   "n": 3,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 4,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 5,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 6,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 7,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 8,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 9,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch11",
+   "n": 10,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch11",
+   "n": 11,
+   "status": "ok"
+  },
+  {
+   "chapter": "ch11",
+   "n": 12,
+   "status": "no_doi"
+  },
+  {
+   "chapter": "ch11",
+   "n": 13,
+   "status": "ok"
+  }
+ ],
+ "volatile_excluded": [
+  {
+   "field": "docx: w:rsid* attributes, w:rsids and w:rsid elements",
+   "reason": "save-session metadata"
+  },
+  {
+   "field": "docx: w14:paraId, w14:textId, wp14:anchorId, wp14:editId, w16cid:durableId attributes; w14:docId, w15:docId",
+   "reason": "random IDs Word writes on every save"
+  },
+  {
+   "field": "docx: w:zoom in settings.xml",
+   "reason": "view zoom of the last Word window, not content"
+  },
+  {
+   "field": "docx: w:fontKey and the bytes of word/fonts/*.odttf",
+   "reason": "embedded fonts are obfuscated with a random per-save key; the part names and fontTable font names stay hashed"
+  },
+  {
+   "field": "docx: w:lastRenderedPageBreak, w:proofErr",
+   "reason": "layout and proofing state"
+  },
+  {
+   "field": "docx: result runs of the TOC field (between fldChar separate and end)",
+   "reason": "page numbers depend on Word pagination; the field instruction is kept"
+  },
+  {
+   "field": "docx: bookmarks named _Toc*",
+   "reason": "Word regenerates them on every TOC update"
+  },
+  {
+   "field": "docProps/core.xml created, modified, lastModifiedBy, revision",
+   "reason": "save metadata"
+  },
+  {
+   "field": "docProps/app.xml TotalTime, Application, AppVersion",
+   "reason": "save metadata"
+  },
+  {
+   "field": "pdf: CreationDate, ModDate, document ID",
+   "reason": "export metadata; only page count and bookmarks are captured"
+  }
+ ],
+ "words": {
+  "chapters": {
+   "ch01": 1809,
+   "ch02": 1698,
+   "ch03": 1696,
+   "ch04": 1909,
+   "ch05": 1798,
+   "ch06": 1922,
+   "ch07": 1771,
+   "ch08": 1728,
+   "ch09": 1762,
+   "ch10": 1859,
+   "ch11": 2002
+  },
+  "front_matter": 511,
+  "total": 20465
+ }
+}
