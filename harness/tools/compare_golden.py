@@ -52,7 +52,10 @@ def main():
     x = ap.parse_args()
     load = lambda p: json.load(open(p, encoding="utf-8"))
     allow = load(x.allow)
-    allow = allow.get("expected_diff", allow) if isinstance(allow, dict) else allow
+    allow = allow.get("expected_diff") if isinstance(allow, dict) else allow
+    if not isinstance(allow, list) or any(not isinstance(r, dict) or set(r) != {"pointer_glob", "reason"} for r in allow):
+        print("ERROR ALLOWLIST: expected a list (or a manifest's expected_diff) of {pointer_glob, reason}", file=sys.stderr)
+        sys.exit(2)
     result = diff(load(x.a), load(x.b), allow, checks_from=load(x.checks_from) if x.checks_from else None)
     text = json.dumps(result, ensure_ascii=False, indent=1, sort_keys=True)
     if x.out:

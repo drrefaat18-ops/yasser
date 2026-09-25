@@ -33,8 +33,8 @@ def key(q, letter):
 
 MUTATIONS = [  # (legacy function, mutation of the chapter text, expected ID)
     ("check_budget", lambda t: t, "BUDGET-CHAPTER"),
-    ("check_sentences", lambda t: t.replace(". ", " and "), "READ-MEAN"),
-    ("check_sentences", lambda t: t.replace(". ", " and "), "READ-LONG"),
+    ("check_sentences", lambda t: "\n".join(["word " * 20 + "end."] * 40), "READ-MEAN"),      # mean 21, none > 28
+    ("check_sentences", lambda t: "\n".join(["Short words here now."] * 19 + ["word " * 30 + "end."]), "READ-LONG"),
     ("check_sentences", lambda t: "", "READ-NOPROSE"),
     ("check_template", lambda t: re.sub(r"^# Chapter \d+: .*$", "# Intro", t, count=1, flags=re.M), "TPL-H1"),
     ("check_template", lambda t: t.replace("\n## References", "\n## Refs", 1), "TPL-SECTION-MISSING"),
@@ -95,7 +95,19 @@ class LegacyClassify(unittest.TestCase):
                 self.assertTrue(msgs, "mutation produced no legacy message")
                 self.assertIn(expected, {capture_golden.classify(fn, m) for m in msgs})
 
+    def test_swapped_mappings_would_be_caught(self):
+        """For two IDs of one function, a swap of their regexes passes only if each mutation also emits the other ID."""
+        mod = legacy()
+        emitted = {(fn, exp): {capture_golden.classify(fn, m) for m in call(mod, fn, mutate(CH))}
+                   for fn, mutate, exp in MUTATIONS}
+        for (fn, a), ids_a in emitted.items():
+            for (fn_b, b), ids_b in emitted.items():
+                if fn == fn_b and a < b:
+                    with self.subTest(a=a, b=b):
+                        self.assertFalse(b in ids_a and a in ids_b, f"{a} and {b} mutations each emit both IDs")
+
     def test_every_book_mapping_row(self):
+        emitted = {}
         for mutate, expected in BOOK_MUTATIONS:
             with self.subTest(expected=expected), tempfile.TemporaryDirectory() as tmp:
                 root = pathlib.Path(tmp) / "rework"
@@ -106,7 +118,12 @@ class LegacyClassify(unittest.TestCase):
                 with contextlib.redirect_stdout(io.StringIO()):
                     msgs = [m for m in mod.check_all() if m.startswith("book:")]
                 self.assertTrue(msgs, "mutation produced no book message")
-                self.assertIn(expected, {capture_golden.classify("check_all", m) for m in msgs})
+                emitted[expected] = {capture_golden.classify("check_all", m) for m in msgs}
+                self.assertIn(expected, emitted[expected])
+        for a in emitted:  # swap guard, as for chapter rows
+            for b in emitted:
+                if a < b:
+                    self.assertFalse(b in emitted[a] and a in emitted[b], f"{a} and {b} mutations each emit both IDs")
 
     def test_table_complete(self):
         ids = {row[2] for row in MUTATIONS} | {row[1] for row in BOOK_MUTATIONS}

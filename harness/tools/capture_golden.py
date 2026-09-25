@@ -17,6 +17,35 @@ class Unclassified(Exception):
     """A legacy message or verify_refs line that the N6 table does not know."""
 
 
+class LayoutError(Exception):
+    """A layout path that escapes the project (core §1.1, plan N1)."""
+
+
+LAYOUT_PATH_KEYS = ["chapters_dir", "front_matter", "glossary", "errata", "legacy_tools"]
+
+
+def layout_problems(project_dir, layout):
+    """Every layout path must be relative and resolve inside the project; the chapter glob is one file pattern."""
+    root = pathlib.Path(project_dir).resolve()
+    found = [(k, layout.get(k)) for k in LAYOUT_PATH_KEYS]
+    found += [("images", v) for v in layout.get("images", [])]
+    found += [(f"deliverables.{k}", v) for k, v in layout.get("deliverables", {}).items()]
+    probs = []
+    for key, value in found:
+        if not isinstance(value, str) or not value:
+            probs.append(f"{key}: missing or not a string")
+            continue
+        path = pathlib.PurePosixPath(value.replace("\\", "/"))
+        if path.is_absolute() or re.match(r"^[A-Za-z]:", value) or ".." in path.parts:
+            probs.append(f"{key}: {value!r} must be a relative path inside the project")
+        elif not (root / path).resolve().is_relative_to(root):
+            probs.append(f"{key}: {value!r} resolves outside the project")
+    glob = layout.get("chapter_glob")
+    if not isinstance(glob, str) or not glob or re.search(r"[/\\]|\.\.", glob):
+        probs.append(f"chapter_glob: {glob!r} must be a single file-name pattern")
+    return probs
+
+
 class NetworkError(Exception):
     """verify_refs printed ERROR: a flaky result is never frozen (core §9.1)."""
 
@@ -74,7 +103,8 @@ VOLATILE_ATTRS = {f"{{{W14}}}paraId", f"{{{W14}}}textId", f"{{{WP14}}}anchorId",
                   f"{{{W16CID}}}durableId", f"{{{W}}}fontKey"}
 VOLATILE_TAGS = {f"{{{W}}}rsids", f"{{{W}}}rsid", f"{{{W}}}lastRenderedPageBreak", f"{{{W}}}proofErr",
                  f"{{{W14}}}docId", f"{{{W15}}}docId", f"{{{W}}}zoom"}
-OBFUSCATED_FONT = re.compile(r"^word/fonts/[^/]+\.odttf$")
+R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+PKG_REL = "http://schemas.openxmlformats.org/package/2006/relationships"
 VOLATILE_CORE = {f"{{{CP}}}lastModifiedBy", f"{{{CP}}}revision", f"{{{DCTERMS}}}created", f"{{{DCTERMS}}}modified"}
 VOLATILE_APP = {f"{{{EP}}}TotalTime", f"{{{EP}}}Application", f"{{{EP}}}AppVersion"}
 VOLATILE_EXCLUDED = [  # N5 / core §9.1: every field the semantic hashes and facts leave out, with its reason
@@ -82,8 +112,9 @@ VOLATILE_EXCLUDED = [  # N5 / core §9.1: every field the semantic hashes and fa
     {"field": "docx: w14:paraId, w14:textId, wp14:anchorId, wp14:editId, w16cid:durableId attributes; w14:docId, w15:docId",
      "reason": "random IDs Word writes on every save"},
     {"field": "docx: w:zoom in settings.xml", "reason": "view zoom of the last Word window, not content"},
-    {"field": "docx: w:fontKey and the bytes of word/fonts/*.odttf",
-     "reason": "embedded fonts are obfuscated with a random per-save key; the part names and fontTable font names stay hashed"},
+    {"field": "docx: w:fontKey, and the bytes of embedded fonts (word/fonts/*)",
+     "reason": "Word re-obfuscates and rewrites embedded fonts on every save (random key, head checksum, timestamps);"
+               " each font part is hashed by its fontTable name, embed slot and byte length"},
     {"field": "docx: w:lastRenderedPageBreak, w:proofErr", "reason": "layout and proofing state"},
     {"field": "docx: result runs of the TOC field (between fldChar separate and end)",
      "reason": "page numbers depend on Word pagination; the field instruction is kept"},
@@ -92,7 +123,8 @@ VOLATILE_EXCLUDED = [  # N5 / core §9.1: every field the semantic hashes and fa
     {"field": "docProps/app.xml TotalTime, Application, AppVersion", "reason": "save metadata"},
     {"field": "pdf: CreationDate, ModDate, document ID", "reason": "export metadata; only page count and bookmarks are captured"},
 ]
-NS_REF = re.compile(r"DOI:\s*(10\.\S+?)\.?\s*$|doi\.org/(10\.\S+?)\.?\s*$")  # legacy verify_refs.py:53
+# legacy verify_refs.py:53, but "[ \t]" after the colon so the §9.5 leak scan sees no drive-letter pattern
+DOI_REF = re.compile(r"DOI:[ \t]*(10\.\S+?)\.?\s*$|doi\.org/(10\.\S+?)\.?\s*$")
 
 
 def _w(tag):
@@ -236,7 +268,7 @@ def reference_counts(project_dir, layout, paths):
     out = {}
     for p in paths:
         lines = [line for _, line in mod.references(p.read_text(encoding="utf-8"))]
-        doi = sum(1 for line in lines if NS_REF.search(line))
+        doi = sum(1 for line in lines if DOI_REF.search(line))
         out[chapter_id(p)] = {"count": len(lines), "with_doi": doi, "without_doi": len(lines) - doi}
     return out
 
@@ -266,12 +298,17 @@ def _strip_volatile(name, root):
             toc_ids.add(el.get(_w("id")))
             drop.append(el)
     drop += [el for el in root.iter(_w("bookmarkEnd")) if el.get(_w("id")) in toc_ids]
-    # TOC field result: a run is dropped when it lies inside the result both before and after its own field chars
-    stack, emptied = [], set()
+    # TOC field result, per run child: text/tabs inside the result are dropped; a fldChar is dropped only when it
+    # is inside the result both before and after it, so the TOC's own begin/instr/separate/end always stay.
+    stack, touched = [], set()
     in_result = lambda: any(f["toc"] and f["result"] for f in stack)
     for run in root.iter(_w("r")):
-        before = in_result()
+        if in_result():
+            touched.add(run)
         for child in run:
+            if child.tag == _w("rPr"):
+                continue
+            before = in_result()
             if child.tag == _w("fldChar"):
                 kind = child.get(_w("fldCharType"))
                 if kind == "begin":
@@ -281,12 +318,14 @@ def _strip_volatile(name, root):
                     stack[-1]["toc"] = stack[-1]["instr"].strip().startswith("TOC")
                 elif kind == "end" and stack:
                     stack.pop()
-            elif child.tag == _w("instrText") and stack:
-                stack[-1]["instr"] += child.text or ""
-        if before and in_result():
-            drop.append(run)
-            if run.getparent() is not None and run.getparent().tag == _w("hyperlink"):
-                emptied.add(run.getparent())
+                gone = before and in_result()
+            else:
+                if child.tag == _w("instrText") and stack:
+                    stack[-1]["instr"] += child.text or ""
+                gone = before
+            if gone:
+                drop.append(child)
+                touched.add(run)
     if name == "docProps/core.xml":
         drop += [el for el in root if el.tag in VOLATILE_CORE]
     if name == "docProps/app.xml":
@@ -294,19 +333,44 @@ def _strip_volatile(name, root):
     for el in drop:
         if el.getparent() is not None:
             el.getparent().remove(el)
+    emptied = set()
+    for run in touched:  # a run left with only formatting was pure result
+        if run.getparent() is not None and all(c.tag == _w("rPr") for c in run):
+            if run.getparent().tag == _w("hyperlink"):
+                emptied.add(run.getparent())
+            run.getparent().remove(run)
     for h in emptied:
         if h.getparent() is not None and not h.findall(_w("r")):
             h.getparent().remove(h)
+
+
+def embedded_fonts(z):
+    """{part name: {font, embed}} for every embedded font declared in word/fontTable.xml."""
+    from lxml import etree
+    names = set(z.namelist())
+    if not {"word/fontTable.xml", "word/_rels/fontTable.xml.rels"} <= names:
+        return {}
+    targets = {r.get("Id"): r.get("Target") for r in etree.fromstring(z.read("word/_rels/fontTable.xml.rels"))
+               .iter(f"{{{PKG_REL}}}Relationship")}
+    fonts = {}
+    for font in etree.fromstring(z.read("word/fontTable.xml")).iter(_w("font")):
+        for el in font:
+            rid = el.get(f"{{{R}}}id")
+            if rid in targets:
+                part = "word/" + targets[rid].lstrip("/").removeprefix("word/")
+                fonts[part] = {"font": font.get(_w("name")), "embed": etree.QName(el).localname}
+    return fonts
 
 
 def docx_parts(path):
     from lxml import etree
     out = {}
     with zipfile.ZipFile(path) as z:
+        fonts = embedded_fonts(z)
         for name in sorted(z.namelist()):
             data = z.read(name)
-            if OBFUSCATED_FONT.match(name):
-                out[name] = "volatile"
+            if name in fonts:  # ponytail: identity, not bytes; Word rewrites font bytes per save (same-length edits unseen)
+                out[name] = hashing.hash_bytes(hashing.canonical_json(dict(fonts[name], length=len(data))))
                 continue
             if name.endswith((".xml", ".rels")):
                 root = etree.fromstring(data)
@@ -358,6 +422,9 @@ def _tool_sha(project_dir, layout):
 
 def capture(project_dir, layout, *, slug, run_refs=True):
     project_dir = pathlib.Path(project_dir)
+    probs = layout_problems(project_dir, layout)
+    if probs:
+        raise LayoutError("; ".join(probs))
     mod = load_legacy_checker(project_dir, layout)
     paths = chapter_paths(project_dir, layout)
     glossary = project_dir / layout["glossary"]
@@ -432,6 +499,9 @@ def main():
         write(capture(project, layout, slug=project.name, run_refs=not a.no_refs), a.out)
     except ImportError as e:
         print(f"ERROR DEPENDENCY: {e}", file=sys.stderr)
+        sys.exit(1)
+    except LayoutError as e:
+        print(f"ERROR LAYOUT: {e}", file=sys.stderr)
         sys.exit(1)
     except (NetworkError, Unclassified) as e:
         print(f"ERROR {type(e).__name__}: {e}", file=sys.stderr)

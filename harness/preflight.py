@@ -69,7 +69,10 @@ def check_browser(group):
 
 
 def check_fonts():
-    fonts = pathlib.Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts"
+    windir = os.environ.get("WINDIR") or os.environ.get("SystemRoot")
+    if not windir:
+        return _c("fonts", "build", False, "WINDIR and SystemRoot unset: cannot locate the Windows font folder")
+    fonts = pathlib.Path(windir) / "Fonts"
     missing = [f for f in FONT_FILES if not (fonts / f).exists()]
     return _c("fonts", "build", not missing, "missing: " + ", ".join(missing) if missing else "all present")
 
@@ -81,25 +84,35 @@ def check_rdkit():
     return _c("rdkit", "chemistry", Chem.MolFromSmiles("CCO") is not None, "smoke test CCO", required=False)
 
 
+# One registry: (groups the check belongs to, probe). Task 5.1 table; a check listed under two groups runs once.
+CHECKS = [
+    (("core",), check_python),
+    (("core",), check_git),
+    (("core",), check_write_lock),
+    (("ingest", "build"), lambda: check_module("docx", "ingest", label="python-docx")),
+    (("ingest", "build"), lambda: check_module("lxml", "ingest")),
+    (("ingest",), lambda: check_module("markitdown", "ingest", required=False)),
+    (("build",), lambda: check_module("PIL", "build", label="Pillow")),
+    (("build",), lambda: check_module("win32com", "build", label="pywin32")),
+    (("build",), check_word),
+    (("build", "figures"), lambda: check_browser("build")),
+    (("build",), check_fonts),
+    (("figures",), lambda: check_module("matplotlib", "figures")),
+    (("golden",), lambda: check_module("pypdf", "golden")),
+]
+GROUPS = ["core", "ingest", "build", "figures", "golden", "chemistry"]
+
+
 def run(groups):
-    checks = []
-    if "core" in groups:
-        checks += [check_python(), check_git(), check_write_lock()]
-    if "ingest" in groups:
-        checks += [check_module("docx", "ingest", label="python-docx"), check_module("lxml", "ingest"),
-                   check_module("markitdown", "ingest", required=False)]
-    if "build" in groups:
-        checks += [check_module("PIL", "build", label="Pillow"), check_module("win32com", "build", label="pywin32"),
-                   check_word(), check_browser("build"), check_fonts()]
-    if "figures" in groups:
-        checks += [check_module("matplotlib", "figures")]
-    if "golden" in groups:
-        checks += [check_module("pypdf", "golden")]
+    unknown = sorted(set(groups) - set(GROUPS))
+    if unknown:
+        raise ValueError(f"unknown group(s): {', '.join(unknown)}")
+    checks = [probe() for member, probe in CHECKS if set(member) & set(groups)]
     if "chemistry" in groups:
         c = check_rdkit()
         c["required"] = True  # explicitly requested
         checks.append(c)
-    elif groups == DEFAULT_GROUPS:
+    elif sorted(groups) == sorted(DEFAULT_GROUPS):
         checks.append(check_rdkit())
     return checks
 
@@ -111,7 +124,7 @@ def exit_code(checks):
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
-    ap.add_argument("--group", action="append")
+    ap.add_argument("--group", action="append", choices=GROUPS)
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
     checks = run(a.group or DEFAULT_GROUPS)

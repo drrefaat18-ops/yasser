@@ -40,18 +40,41 @@ class DocxHashTest(unittest.TestCase):
                                      f'<w15:docId w15:val="{i}"/></w:settings>',
                 "word/numbering.xml": f'<w:numbering {W} {cid}><w:num w16cid:durableId="{i}" w:numId="1"/></w:numbering>',
                 "word/styles.xml": f'<w:styles {W}><w:style w:styleId="Normal"><w:rsid w:val="{i}"/></w:style></w:styles>',
-                "word/fontTable.xml": f'<w:fonts {W} {rr}><w:font w:name="X"><w:embedRegular r:id="rId1" w:fontKey="{{{i}}}"/></w:font></w:fonts>',
-                "word/fonts/font1.odttf": f"obfuscated-{i}".encode()})
+                "word/fontTable.xml": f'<w:fonts {W} {rr}><w:font w:name="X"><w:embedRegular r:id="rId1" w:fontKey="{{{i}}}"/></w:font></w:fonts>'})
         self.assertEqual(self._hash(parts(1)), self._hash(parts(2)))
         changed = parts(1)
         changed["word/fontTable.xml"] = changed["word/fontTable.xml"].replace('w:name="X"', 'w:name="Y"')
         self.assertNotEqual(self._hash(parts(1)), self._hash(changed))
 
+    def test_embedded_font_hash_ignores_key_but_sees_payload(self):
+        rr = 'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"'
+        rels = ('<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+                '<Relationship Id="rId1" Type="x" Target="fonts/font1.odttf"/></Relationships>')
+
+        def parts(guid, payload):
+            key = bytes.fromhex(guid.replace("-", ""))[::-1]
+            data = bytearray(payload)
+            for i in range(32):
+                data[i] ^= key[i % 16]
+            return dict(BASE, **{
+                "word/fontTable.xml": f'<w:fonts {W} {rr}><w:font w:name="X"><w:embedRegular r:id="rId1" w:fontKey="{{{guid}}}"/></w:font></w:fonts>',
+                "word/_rels/fontTable.xml.rels": rels, "word/fonts/font1.odttf": bytes(data)})
+        font = bytes(range(64)) * 2
+        g1, g2 = "0A1B2C3D-4E5F-6071-8293-A4B5C6D7E8F9", "11111111-2222-3333-4444-555555555555"
+        self.assertEqual(self._hash(parts(g1, font)), self._hash(parts(g2, font)))
+        # Word rewrites font bytes on every save (head checksum, timestamps), so a font is identified by its
+        # declared name, embed slot and de-obfuscated length; same-length glyph edits are a known ceiling.
+        self.assertNotEqual(self._hash(parts(g1, font)), self._hash(parts(g1, font + b"\x00")))
+        renamed = parts(g1, font)
+        renamed["word/fontTable.xml"] = renamed["word/fontTable.xml"].replace('w:name="X"', 'w:name="Y"')
+        self.assertNotEqual(self._hash(parts(g1, font))["word/fonts/font1.odttf"],
+                            self._hash(renamed)["word/fonts/font1.odttf"])
+
     def test_toc_result_and_toc_bookmarks_are_volatile(self):
         def doc(page, mark):
             return (f'<w:document {W}><w:body><w:p><w:r><w:fldChar w:fldCharType="begin"/></w:r>'
                     f'<w:r><w:instrText> TOC \\o "1-2"</w:instrText></w:r><w:r><w:fldChar w:fldCharType="separate"/></w:r>'
-                    f'<w:hyperlink w:anchor="{mark}"><w:r><w:t>Intro {page}</w:t></w:r></w:hyperlink></w:p>'
+                    f'<w:hyperlink w:anchor="{mark}"><w:r><w:t>Intro {page}</w:t></w:r><w:r><w:rPr><w:b/></w:rPr></w:r></w:hyperlink></w:p>'
                     f'<w:p><w:r><w:fldChar w:fldCharType="end"/></w:r></w:p>'
                     f'<w:p><w:bookmarkStart w:id="7" w:name="{mark}"/><w:r><w:t>Intro</w:t></w:r><w:bookmarkEnd w:id="7"/></w:p>'
                     f'</w:body></w:document>')
@@ -60,6 +83,21 @@ class DocxHashTest(unittest.TestCase):
         self.assertEqual(a, b)
         c = self._hash(dict(BASE, **{"word/document.xml": doc(3, "_Toc111").replace("<w:t>Intro</w:t>", "<w:t>Other</w:t>")}))
         self.assertNotEqual(a, c)
+
+    def test_toc_result_sharing_delimiter_runs_is_volatile(self):
+        """Result text in the same run as the separate or end fldChar, and a nested PAGEREF field."""
+        def doc(page):
+            return (f'<w:document {W}><w:body><w:p><w:r><w:fldChar w:fldCharType="begin"/>'
+                    f'<w:instrText> TOC \\\\o "1-2" </w:instrText><w:fldChar w:fldCharType="separate"/><w:t>A {page}</w:t></w:r>'
+                    f'<w:r><w:fldChar w:fldCharType="begin"/><w:instrText> PAGEREF _Toc1 </w:instrText>'
+                    f'<w:fldChar w:fldCharType="separate"/><w:t>{page}</w:t><w:fldChar w:fldCharType="end"/></w:r>'
+                    f'<w:r><w:t>B {page}</w:t><w:fldChar w:fldCharType="end"/></w:r>'
+                    f'<w:r><w:t>after</w:t></w:r></w:p></w:body></w:document>')
+        self.assertEqual(self._hash(dict(BASE, **{"word/document.xml": doc(3)})),
+                         self._hash(dict(BASE, **{"word/document.xml": doc(4)})))
+        moved = doc(3).replace("<w:t>after</w:t>", "<w:t>later</w:t>")
+        self.assertNotEqual(self._hash(dict(BASE, **{"word/document.xml": doc(3)})),
+                            self._hash(dict(BASE, **{"word/document.xml": moved})))
 
     def test_content_changes_are_detected(self):
         base = self._hash(BASE)
@@ -75,6 +113,19 @@ class CompareTest(unittest.TestCase):
                                 [{"pointer_glob": "/project", "reason": "rename"}])
         self.assertEqual({x["pointer"]: x["allowed"] for x in d["diffs"]}, {"/project": True, "/words/total": False})
 
+    def test_bad_allowlist_is_a_named_error(self):
+        import subprocess, sys
+        with tempfile.TemporaryDirectory() as tmp:
+            d = pathlib.Path(tmp)
+            (d / "a.json").write_text('{"x": 1}'); (d / "b.json").write_text('{"x": 2}')
+            for bad in ['{"reserved": []}', '[{"pointer": "/x"}]', '"x"']:
+                with self.subTest(bad=bad):
+                    (d / "allow.json").write_text(bad)
+                    r = subprocess.run([sys.executable, "harness/tools/compare_golden.py", str(d / "a.json"), str(d / "b.json"),
+                                        "--allow", str(d / "allow.json")], capture_output=True, text=True)
+                    self.assertEqual(r.returncode, 2)
+                    self.assertIn("ERROR ALLOWLIST", r.stderr)
+
     def test_provenance_ignored(self):
         self.assertEqual(compare_golden.diff({"provenance": {"tool_sha": "a"}}, {"provenance": {"tool_sha": "b"}}, [])["diffs"], [])
 
@@ -88,6 +139,21 @@ class CompareTest(unittest.TestCase):
 
 
 class CaptureTest(unittest.TestCase):
+    LAYOUT = json.loads((pathlib.Path(__file__).parent / "fixtures/ai-in-medicine/layout-legacy.json").read_text(encoding="utf-8"))
+
+    def test_layout_paths_must_stay_inside_project(self):
+        with tempfile.TemporaryDirectory() as t:
+            root = pathlib.Path(t)
+            self.assertEqual(capture_golden.layout_problems(root, self.LAYOUT), [])
+            for key, bad in [("legacy_tools", "../outside"), ("chapters_dir", "/abs"), ("chapters_dir", "C:/abs"),
+                             ("images", ["images", "../x"]), ("deliverables", {"md": "../a.md", "docx": "b", "pdf": "c"}),
+                             ("chapter_glob", "../*.md"), ("chapter_glob", "sub/*.md")]:
+                with self.subTest(key=key, bad=bad):
+                    probs = capture_golden.layout_problems(root, dict(self.LAYOUT, **{key: bad}))
+                    self.assertTrue(any(key in p for p in probs), probs)
+                    with self.assertRaises(capture_golden.LayoutError):
+                        capture_golden.capture(root, dict(self.LAYOUT, **{key: bad}), slug="x")
+
     def test_capture_refuses_network_error(self):
         with self.assertRaises(capture_golden.NetworkError):
             capture_golden.parse_refs_output("ch01", "OK 1\nERROR 2: timed out\n")
