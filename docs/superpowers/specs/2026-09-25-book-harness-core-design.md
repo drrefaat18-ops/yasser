@@ -55,9 +55,11 @@ D:\yasser\
       en.json
     presets/                     # tested theme presets (§4.4)
       ltr-textbook.json
+      rtl-textbook.json          # STEP 10 (Arabic contract §3)
     tools/                       # generalised tools (STEP 8)
       convert_docx.py  check_book.py  assemble.py  build_book.py
       verify_refs.py  renumber_refs.py  capture_golden.py  compare_golden.py  leak_scan.py
+      check_translation.py       # STEP 11 (translation contract §5)
     figures/                     # figure system (§7)
       render.py  check_figures.py  charts.py
       packs/
@@ -86,9 +88,13 @@ projects/<book>/
   decisions.md                                         # per-project DEC log (user words for each approval)
   source/                                              # custody copies of source files (read-only by convention)
   source-manifest.json
-  ingest/        normalized.md  assets/  conversion-report.json
+  ingest/        normalized.md  units.json  assets/  conversion-report.json
   evaluation/    findings.json  scorecard.json  report.md  codex-review.md  fixes.md
   design/        design.md  chapter-plan.json  errata-seed.md
+  termbase.json  termbase-additions.json               # only when translation applies (translation contract §3)
+  translation/   <unit-id>.md  check-report.json  codex-review.md  fixes.md   # only when translation applies
+  trace/         source-target-map.json               # only when translation applies
+  references-manual.json                              # manual reference verifications (Arabic contract §5.3)
   <chapters>/    front matter, chapter files, glossary, errata ledger   # dir name = template.paths.chapters
   figures/       figures.json  src/  out/
   build/         <basename>.md  <basename>.docx  <basename>.pdf  build-report.json
@@ -110,7 +116,7 @@ Every path inside a project is resolved from `template.paths` (§4.3) relative t
 The graph is data in `state.py` (`STAGES`), not a hardcoded sequence, so STEP 2 can insert a stage (EXT-TR-1).
 
 ```text
-new → intake ─(intake approval)→ ingest → evaluate → design ─(design approval)→ rework → build → audit
+new → intake ─(intake approval)→ ingest → evaluate → design ─(design approval)→ [translate] → rework → build → audit
 ```
 
 **Mandatory stage set** depends on `brief.goal.mode`:
@@ -120,7 +126,7 @@ new → intake ─(intake approval)→ ingest → evaluate → design ─(design
 | `evaluate_only` | new, intake, ingest, evaluate |
 | `evaluate_and_rework` | new, intake, ingest, evaluate, design, rework, build, audit |
 
-When `brief.language.translation_required` is true, the stage STEP 2 defines joins the mandatory set (EXT-TR-1).
+When `brief.language.translation_required` is true **and** `goal.mode = evaluate_and_rework`, the `translate` stage joins the mandatory set between `design` and `rework` (EXT-TR-1; stage row in the translation contract §2). With `evaluate_only`, translation means only that the evaluation report is written in the output language.
 
 **Stage kinds.**
 - `auto` stages run fully in Python: `run_stage.py --project P run <stage>`.
@@ -134,7 +140,7 @@ Receipt fields common to every stage are in §2.3; the table lists only stage-sp
 |---|---|---|---|---|---|---|---|---|
 | `new` | auto | slug argument | `projects/<slug>/` skeleton, `state.json`, empty `decisions.md` | `slug` | slug matches pattern; directory does not exist | — | If it fails after creating the directory, it removes only what this invocation created. Re-run is safe. | `state.json` validates against `state.v1` |
 | `intake` | agentic | `harness/rubric_core.json`, `harness/locale/<tag>.json`, `harness/presets/<preset>.json` | `brief.json`, `rubric.json`, `template.json`, `theme.json`, `agents/*.json` | `questionnaire_ids` (A–M answered) | `new` receipt ok | every later stage (through the intake approval hash) | `complete` fails with the list of schema and cross-file errors; files stay for editing; re-run `complete`. | schema validation of all five kinds; cross-file rules in §4.6; `brief.unresolved` is empty |
-| `ingest` | auto | `brief.source.files[]` originals, `template.paths`, `template.ingest` | `source/*`, `source-manifest.json`, `ingest/normalized.md`, `ingest/assets/*`, `ingest/conversion-report.json` | `converter` (`docx-native` or `markitdown`), `source_formats` | intake approval valid | evaluate and everything after | Writes into `ingest/.tmp/` and swaps into place only on success; on failure the previous outputs stay and the receipt is `failed`. Exit 2 if a structure is `lost` (§2.4). | conversion-report counts per structure; custody hashes equal the originals |
+| `ingest` | auto | `brief.source.files[]` originals, `template.paths`, `template.ingest` | `source/*`, `source-manifest.json`, `ingest/normalized.md`, `ingest/units.json`, `ingest/assets/*`, `ingest/conversion-report.json` | `converter` (`docx-native` or `markitdown`), `source_formats` | intake approval valid | evaluate and everything after | Writes into `ingest/.tmp/` and swaps into place only on success; on failure the previous outputs stay and the receipt is `failed`. Exit 2 if a structure is `lost` (§2.4). | conversion-report counts per structure; custody hashes equal the originals |
 | `evaluate` | agentic | `brief.json`, `rubric.json`, `agents/*.json`, `ingest/normalized.md`, `ingest/conversion-report.json` | `evaluation/findings.json`, `scorecard.json`, `report.md`, `codex-review.md`, `fixes.md` | `rubric_digest`, `personas[]`, `author_model`, `reviewer_model`, `subagents[]` (each with reason) | intake approval valid; ingest receipt valid | design and after | `complete` refuses while any blocker/major Codex finding lacks a `fixes.md` row with status `fixed + verified`, `rejected` or `ruled by user`. Re-run `complete` after fixing. | §8 checks; scorecard recomputed in code from rubric weights and must equal the file |
 | `design` | agentic | `evaluation/*` outputs, `brief.json`, `template.json`, `theme.json` | `design/design.md`, `design/chapter-plan.json`, `design/errata-seed.md` | `chapter_count`, `total_budget` | evaluate receipt valid; `goal.mode = evaluate_and_rework` | rework and after (through the design approval hash) | Same as intake: `complete` lists errors; re-run. | `chapter-plan.v1` validation; budgets sum inside `template.budgets.total`; every evaluate blocker/major finding is mapped to a chapter or to `out-of-scope` with a reason |
 | `rework` | agentic, unit-based | design artifacts, intake artifacts, `ingest/normalized.md` | chapter files, glossary, errata ledger, `figures/src/*`, `figures/figures.json` | `units[]`: one entry per chapter with its own input/output hashes, checker-report hash and `verify_refs` summary | design approval valid | build and after | **Per-chapter resume**: `complete rework --unit <chapter-id>` writes a unit receipt; `begin rework` lists units still missing or stale. The stage receipt is written by `complete rework` once every unit in `chapter-plan.json` is valid and the book-level checks pass. | per-unit checker JSON with zero failing checks; `verify_refs` with zero `NOT FOUND`/`TITLE MISMATCH`/`ERROR`/disallowed `NO DOI`; book-level checks (errata closed where enabled) |
@@ -204,7 +210,7 @@ There are exactly two user approvals.
 | Approval | Covers (hashed) | Written when | Blocks without it |
 |---|---|---|---|
 | `intake` | `brief.json`, `rubric.json`, `template.json`, `theme.json`, every `agents/*.json` | after the user explicitly approves, in chat, the exact files shown | every stage after `intake` |
-| `design` | `design/design.md`, `design/chapter-plan.json`, `design/errata-seed.md` | after the user explicitly approves, in chat, the exact files shown | `rework` and every stage after it |
+| `design` | `design/design.md`, `design/chapter-plan.json`, `design/errata-seed.md`; plus `termbase.json` when translation applies (EXT-TR-2) | after the user explicitly approves, in chat, the exact files shown | `rework` and every stage after it |
 
 **Record** (in `state.json` → `approvals.<kind>`): `kind`, `files {path: sha256}`, `dec_id`, `approved_at`, `approved_by: "user"`.
 
@@ -310,10 +316,11 @@ Stable semantic IDs are the machine keys; labels are presentation only (CDR §3)
 | `callouts[]` | `{id, label, syntax, required, min, max, parts[] }`; `syntax` is the literal first-line marker; `parts[]` names labelled sub-parts (e.g. myth and evidence) |
 | `perspectives` | `{enabled, callout_id, items[] {id, label}, balance_tolerance}` — from brief D |
 | `learning_objectives` | `{enabled, id_pattern, min, max, discouraged_verbs[]}`; verbs default from locale |
-| `assessment.mcq` | `{enabled, count, option_labels[], allow_other_labels: false, key_balance {min, max}, max_run, rationale_required, answers_section_role}` — from brief H |
+| `assessment.mcq` | `{enabled, count, option_labels[], option_display_labels[], allow_other_labels: false, key_balance {min, max}, max_run, rationale_required, answers_section_role}` — from brief H |
 | `assessment.case_question` | `{required, label}` |
 | `citations` | `{style: numeric-bracket or author-year, pattern}` |
-| `references` | `{section_role, entry_pattern, identifier_patterns[], no_doi_policy {allowed_types[], requires_url}, title_match {mode: heuristic, original-language or manual, words, threshold}, providers}` |
+| `references` | `{section_role, entry_pattern, identifier_patterns[], no_doi_policy {allowed_types[], requires_url}, title_match {mode: heuristic, original-language or manual, words, threshold}, original_title_marker, providers}` |
+| `locale_overrides` | any field of the locale profile, overriding it for this project (e.g. `digits.output`); EXT-LOC-1 |
 | `glossary` | `{enabled, term_syntax, excluded_callout_ids[], minimum_terms}` |
 | `readability` | `{mean_sentence_max, long_sentence_words, long_share_max}`; defaults from locale |
 | `budgets` | `{tolerance, total {min, max}, front_matter}`; per-chapter budgets live in `chapter-plan.json` |
@@ -341,13 +348,13 @@ A theme names a tested preset and overrides only what it must (CDR §3: no untes
 | `toc` | `{levels}` |
 | `cover` | `{asset or null}` |
 | `title_page` | `{notices[]}`; title, subtitle, credits and audience line are read from `brief`, never duplicated here |
-| `labels` | `{contents, update_toc_instruction, chapter, part, glossary, figure}` — localized UI strings bound to IDs |
+| `labels` | `{contents, update_toc_instruction, chapter, part, glossary, figure, table, question_prefix, objective_prefix}` — localized UI strings bound to IDs; machine markers in chapter Markdown stay ASCII and are shown with these labels (Arabic contract P1) |
 | `output.basename` | build file name stem |
 | `build` | `{backend: word_com, word_com {toc_styles}, pdf {bookmarks: headings, embed_fonts}}` |
 
 ### 4.5 Other schemas (named here, fields fixed by the plan in STEP 4)
 
-`chapter-plan.v1` (chapters `{id, file, title, word_budget, part_id, source_refs[]}`, `parts[] {id, label, title}`), `overlay.v1` (§6), `state.v1` (§2.3), `findings.v1` and `scorecard.v1` (§8), `checker-report.v1` (§9.1), `source-manifest.v1` and `conversion-report.v1` (§2.4), `figures.v1` (§7), `golden.v1` and `golden-diff.v1` (§9).
+`chapter-plan.v1` (chapters `{id, file, title, word_budget, part_id, source_refs[]}`, `parts[] {id, label, title}`, `dropped[] {source_unit, reason}`), `overlay.v1` (§6), `state.v1` (§2.3), `findings.v1` and `scorecard.v1` (§8), `checker-report.v1` (§9.1), `source-manifest.v1` and `conversion-report.v1` (§2.4), `figures.v1` (§7), `golden.v1` and `golden-diff.v1` (§9); `units.v1` (EXT-TR-3); defined by the STEP 2 contracts: `references-manual.v1`, `termbase.v1`, `trace.v1`.
 
 ### 4.6 Cross-file rules checked by `complete intake`
 
@@ -546,6 +553,8 @@ The checker emits `checker-report.v1`: `{target, checks[] {id, status, message, 
 | assets | `ASSET-MISSING`, `ASSET-OUTSIDE-ROOT` |
 | references | `REF-NOT-FOUND`, `REF-TITLE-MISMATCH`, `REF-NO-DOI-DISALLOWED`, `REF-ERROR` |
 | figures, chemistry | §7.3, §7.5 |
+| Arabic locale | `AR-DIGIT-MIXED`, `AR-DIGIT-INCONSISTENT`, `REF-MANUAL-PENDING` (Arabic contract §6.4) |
+| translation | `TB-*`, `PRES-*`, `TR-*` (translation contract §4.3, §5, §6) |
 
 A check whose feature is disabled in `template.json` reports `not_applicable`, never `pass`.
 
@@ -642,14 +651,14 @@ Named here; STEP 2 fills them. Core code must route through these points, so Ara
 
 | ID | Extension point | Core obligation now |
 |---|---|---|
-| EXT-LOC-1 | **Locale profile** `harness/locale/<tag>.json`, selected by `brief.language.output`: `tokenizer`, `sentence_terminators[]`, `digit_policy`, readability defaults, `discouraged_objective_verbs[]`, `banned_terms[]`, default `chapter_heading_pattern`, `figure_caption_pattern`, default labels | All tokenising, sentence splitting, readability defaults and default labels read the profile; `en.json` reproduces today's behaviour |
+| EXT-LOC-1 | **Locale profile** `harness/locale/<tag>.json`, selected by `brief.language.output`: `tokenizer`, `sentence_terminators[]`, `digit_policy`, readability defaults, `discouraged_objective_verbs[]`, `banned_terms[]`, default `chapter_heading_pattern`, `figure_caption_pattern`, default labels; project overrides via `template.locale_overrides` | Every locale-dependent function takes the profile as a **parameter** (no global language): chapters use the output-language profile, source text and translation checks use the source-language profile. `en.json` reproduces today's behaviour |
 | EXT-LOC-2 | **Direction and bidi** `theme.direction`, `theme.lang_tag`, `theme.fonts.complex_script` | The DOCX renderer creates every paragraph, run and table through one function that applies direction and language properties from the theme; LTR behaviour is today's |
 | EXT-LOC-3 | **Labels bound to stable IDs** `template.sections[].label`, `template.callouts[].label`, `theme.labels.*` | No shared code compares against a display string; parsing matches the configured label for an ID |
 | EXT-LOC-4 | **Reference policy** `template.references.title_match.mode` and a separate DOI-existence result | `verify_refs` reports existence and title match as two fields; `mode` selects the matcher |
 | EXT-LOC-5 | **Acceptance corpus** `tests/fixtures/locale/<tag>/` | The test runner discovers per-locale corpora by directory |
-| EXT-TR-1 | **Stage slot** in the `STAGES` data (§2.1), joining the mandatory set when `brief.language.translation_required` is true | Stage graph, mandatory sets and invalidation are data-driven |
-| EXT-TR-2 | **Termbase and approval set** reserved path `projects/<p>/termbase.json`; `APPROVAL_SETS` is data (§3) | An approval set can gain a file without code changes to the gate |
-| EXT-TR-3 | **Traceability units** reserved path `projects/<p>/trace/`; chapter IDs from `chapter-plan.json`, section IDs from `template.sections[].id` | Chapter and section IDs are stable and exposed by the checker's parsed representation |
+| EXT-TR-1 | **Stage slot** in the `STAGES` data (§2.1): `translate` between `design` and `rework`, mandatory when `translation_required` and `goal.mode = evaluate_and_rework` | Stage graph, mandatory sets and invalidation are data-driven |
+| EXT-TR-2 | **Termbase and approval set** `projects/<p>/termbase.json` joins the design approval set when translation applies; `termbase-additions.json` is not gated; `APPROVAL_SETS` is data (§3) | An approval set can gain a file without code changes to the gate |
+| EXT-TR-3 | **Traceability units** `ingest/units.json` (source unit IDs `src-chNN`, `src-chNN-sMM`), `trace/source-target-map.json`; target chapter IDs from `chapter-plan.json`, section IDs from `template.sections[].id` | Ingest writes `units.json`; chapter and section IDs are stable and exposed by the checker's parsed representation |
 | EXT-TR-4 | **Independent review gate** receipt fields `author_model`, `reviewer_model` | `state.py` exposes one check that `reviewer_model ≠ author_model` for any stage that declares it |
 
 ---
