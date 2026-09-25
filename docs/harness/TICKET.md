@@ -12,7 +12,7 @@ last_updated: 2026-09-25
 >
 > **Binding constraint on every step:** `docs/harness/VISION.md`. Read it before touching anything.
 >
-> **Status:** approved by the user at commit `23d819f` (DEC-026), after 6 Codex review rounds (the cap is reached; DEC-025). **STEP 1 is released.** The intake questionnaire is already approved (DEC-027). Execution sessions may commit, but never push (DEC-028).
+> **Status:** approved by the user at commit `23d819f` (DEC-026), after 6 Codex review rounds. From now on, each artifact gets one Codex review and Claude fixes the findings through the Fix Protocol (DEC-030). That amendment was made on the user's own instruction, so it needs no separate re-approval. **STEP 1 is released.** The intake questionnaire is already approved (DEC-027). Execution sessions may commit, but never push (DEC-028).
 
 ## Why this plan exists (the problem being solved)
 
@@ -37,19 +37,20 @@ The user wants to run **the same pipeline on other textbooks in any science, in 
   
   A receipt is **stale** if any input hash no longer matches. A stale receipt blocks every downstream stage.
 - **User approval.** A record in `state.json`. It holds the approved artifact hashes, and a DEC ID. The DEC ID logs the user's words in this conversation. Only Claude writes it, and only right after the user explicitly approves, in chat, the exact files shown. Tests use fixture projects with fixture approvals. They never edit a real project's state.
-- **Codex review passed.** Codex is read-only, so it emits its report as its final message. Claude saves that report verbatim to `docs/harness/reviews/step<N>-review-<k>.md`, with a header of three fields:
-  - `reviewed_commit`: the SHA Codex reviewed;
-  - `verdict`: `pass` or `fail`;
-  - `open_blocker_major`: the number of open blocker and major findings.
+- **Codex review done (DEC-030).** Each artifact gets **one** Codex review. That covers every spec, contract, plan and implementation step.
+  - **Mode:** read-only, through `codex-delegate`.
+  - **Report:** Codex emits its report as its final message. Claude saves it verbatim to `docs/harness/reviews/step<N>-review.md`. The header holds `reviewed_commit`, `verdict` and `open_blocker_major`. Claude never alters Codex's verdict.
+  - **No re-review.** Claude fixes the findings using the **Fix Protocol** below.
+  - **Records:** each fix is logged in `docs/harness/reviews/step<N>-fixes.md`.
+  - **When the review counts as done:** once the fixes file shows every blocker and major finding as either `fixed + verified` or `ruled by user`.
+- **Fix Protocol (DEC-030).** Apply it to every review, in this order:
+  1. **Take the review.** Read every finding, and re-open each cited file:line to confirm the finding is real. Record any finding that is false as `rejected`, with the evidence.
+  2. **Think deeply.** For each real finding, identify the **root cause**, not just the symptom. Ask why the defect got in, and what else that same cause would have broken.
+  3. **Hunt for more defects.** Search beyond the cited spot for the same class of defect: sibling callers, parallel steps, other files built on the same assumption. Also look for defects the review missed. Log each new one with its own ID, marked `found-by-claude`.
+  4. **Fix.** Fix the root cause once, where every caller routes through it. Do not patch each symptom separately.
+  5. **Verify.** Run the test, command or check that would fail if the fix were wrong, and record both the command and its result.
 
-  Claude then appends a triage table. Claude never changes the verdict.
-
-  Review reports and Ledger updates go in a **report-only commit**. That commit touches only `docs/harness/reviews/` and `docs/harness/LEDGER.md`. Both are separate files, so a check on paths alone is enough (DEC-023). The check lists the paths of **every** intervening commit with `git log --name-only`, not an endpoint `git diff` (DEC-024). A review is "passed" when three things hold:
-  - the latest report has `verdict: pass`;
-  - it has `open_blocker_major: 0`;
-  - its `reviewed_commit` equals the **latest commit that touches anything outside the report-only paths**.
-
-  Report-only commits are excluded from that comparison, which prevents an endless review loop. After any fix commit, Codex re-reviews the new SHA.
+  For each finding, `step<N>-fixes.md` records: ID | real / rejected | root cause | siblings found | fix | verification command → result.
 - **Mandatory inputs for STEPS 5–13.** Before starting, an implementation agent reads all four of these:
   1. its exact approved task(s) in `docs/superpowers/plans/2026-09-25-book-harness.md`;
   2. the approved specs and contracts from STEPS 1–3 that the task names;
@@ -108,10 +109,14 @@ The user wants to run **the same pipeline on other textbooks in any science, in 
     
     Never use `scientific-schematics` or any paid AI image generation for book figures.
 
-13. **Review rounds are capped (DEC-025).** Every artifact gets **at most 3 Codex review rounds**. This covers each spec, contract, plan, ticket and implementation step.
-    - **After round 3:** Claude fixes any remaining blocker or major finding itself, and verifies the fix by running the fix's own test or command. Claude does not dispatch a further review. Remaining minor findings are logged in the Blocker Register as `accepted-minor`, and they never block a step.
-    - **What "Codex review passed" means once the cap is reached:** round 3 is done, and every blocker or major finding it raised is either fixed and verified by Claude, or ruled on by the user.
-    - **Pressures that will try to break this rule:** "one more round will make it perfect", or "the reviewer found something new". Later rounds find diminishing, mostly wording-level issues, and those cost more than they save (DEC-014).
+13. **One Codex review per artifact, then Claude fixes it (DEC-030; this supersedes DEC-025).**
+    - Claude dispatches exactly **one** Codex review per artifact.
+    - Claude resolves the findings through the Fix Protocol (see Definitions): take the review, think deeply, hunt for more defects, fix, then verify.
+    - Claude never dispatches a second review round.
+    - Minor findings that are not fixed are logged as `accepted-minor`. They do not block.
+    - **Pressures that will try to break this rule, and why they do not:**
+      - "Let Codex check my fixes": verifying the fixes is Claude's job, done by running them.
+      - "One more round would be safer": the ticket's own rounds 3–6 found diminishing, wording-level issues (DEC-025, DEC-030).
 
 ---
 
@@ -269,16 +274,16 @@ Both are committed. If the core spec's extension points change, the core spec is
 - both earlier Codex reviews;
 - the current tools.
 
-Each finding gets a stable ID. Claude verifies every file:line that Codex cites, triages each finding (accept, reject with a reason, or ask the user) and fixes the specs. Then Codex re-reviews, until the spec review passes (see Definitions). Finally the user approves the final spec commit.
+Each finding gets a stable ID. Claude verifies every file:line that Codex cites, triages each finding (accept, reject with a reason, or ask the user) and fixes the specs. Claude applies the Fix Protocol. There is no second review round (DEC-030). Finally, the user approves the final spec commit.
 
 **Scope lock: do NOT:** start the plan, or edit code.
 
 **Output:**
-- `docs/harness/reviews/step3-review-<k>.md`
+- `docs/harness/reviews/step3-review.md` and `step3-fixes.md`
 - a DEC entry recording the user's approval of the spec commit SHA
 
 **Exit criteria:**
-- Codex review passed.
+- Codex review done.
 - The user approval DEC exists and names the commit SHA.
 
 ---
@@ -334,7 +339,7 @@ Execution is Claude inline (DEC-017).
 **Exit criteria:**
 - Preflight exits 0.
 - Running the capture twice produces byte-identical `golden.json`.
-- Codex review passed.
+- Codex review done.
 
 ---
 
@@ -365,7 +370,7 @@ After the moves, re-run the baseline capture.
 - `git show --stat` for commit A shows renames only.
 - Commit B touches only allowlisted files.
 - The golden diff contains only the fields in the manifest's `expected_diff` allowlist.
-- Codex review passed.
+- Codex review done.
 
 ---
 
@@ -414,7 +419,7 @@ Also:
 - The `CLAUDE.md` diff has been reviewed.
 - The medical-onboarding approval DEC exists.
 - `python harness/run_stage.py --project projects/ai-in-medicine verify --through intake` exits 0. The intake approval hashes match.
-- Codex review passed.
+- Codex review done.
 
 ---
 
@@ -455,7 +460,7 @@ Also:
 - The medical golden report matches STEP 6. The only diff is the listed `verify_refs` change.
 - Positive-config fixtures pass.
 - The scoped leak scan (defined in the spec) over shared production code exits 0.
-- Codex review passed.
+- Codex review done.
 
 ---
 
@@ -483,7 +488,7 @@ Also:
 **Exit criteria:**
 - Tests pass, including one invalid SMILES that must fail.
 - The evidence PNGs are committed.
-- Codex review passed.
+- Codex review done.
 - Codex inspected every committed evidence PNG.
 
 ---
@@ -499,7 +504,7 @@ Also:
 - The Arabic fixture passes the checker.
 - It builds to DOCX and PDF.
 - Rendered pages are saved as evidence under `docs/harness/reviews/step10-evidence/`. They include a TOC page, a table page, a list page and a mixed-script page.
-- Codex review passed, and the review inspected the evidence.
+- Codex review done, and the review inspected the evidence.
 
 ---
 
@@ -517,7 +522,7 @@ Also:
 - a translation review by a different model.
 
 Also:
-- Codex review passed.
+- Codex review done.
 - The user has seen both outputs.
 
 ---
@@ -543,7 +548,7 @@ Also:
 
 ---
 
-## STEP 13: Codex: independent harness audit, with re-audit until clean
+## STEP 13: Codex: independent harness audit (one pass), then Claude fixes via the Fix Protocol
 
 **Owner:** Codex (read-only). Claude saves the report and applies fixes.
 **Starts when:** STEP 12 is done.
@@ -556,17 +561,12 @@ Also:
 - the figure system;
 - the docs.
 
-Codex re-audits every fix commit.
+Codex audits once. Claude resolves the findings through the Fix Protocol. There is no re-audit (DEC-030).
 
-**Exit criteria:** the final report's `reviewed_commit` equals the latest non-report-only commit (see Definitions). Every later commit must be report-only. To check this, run:
-
-```bash
-paths=$(git log --format= --name-only <reviewed_commit>..HEAD) && ! printf '%s
-' "$paths" | grep -v '^$' | grep -vE '^docs/harness/(reviews/|LEDGER\.md$)'
-```
-
-It must print nothing and exit 0. Any path it prints is a forbidden path. If `git log` fails, for example on a bad SHA, the check fails instead of passing (Codex review 6). The check covers every commit in the range, not just the two endpoints, so a forbidden edit that was later reverted still shows up. The report has zero unaccepted blocker or major findings.
-
+**Exit criteria:**
+- `docs/harness/reviews/step13-review.md` and `step13-fixes.md` exist.
+- Every blocker and major finding is either `fixed + verified` or `ruled by user`.
+- `python harness/run_stage.py --project projects/<book> verify` still exits 0 after the fixes.
 ---
 
 ## GOAL

@@ -1,6 +1,6 @@
 # Book Harness Step Ledger
 
-Separate file so report-only commits can be verified by path alone (DEC-023).
+This file is kept separate from `TICKET.md` so that progress updates never touch the ticket itself (DEC-023, DEC-030).
 
 
 | Step | Owner | Status | Handoff artifact | Commit | Date |
