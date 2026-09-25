@@ -1,7 +1,7 @@
 ---
 type: design-spec
 step: 1
-status: pending-user-approval
+status: approved at 0284376 (DEC-031); amended in STEP 2 (20f4efe) and STEP 3 (Codex review fixes, §15), final approval pending
 date: 2026-09-25
 ticket: docs/harness/TICKET.md (approved at 23d819f, DEC-026)
 binding: docs/harness/VISION.md
@@ -91,10 +91,12 @@ projects/<book>/
   ingest/        normalized.md  units.json  assets/  conversion-report.json
   evaluation/    findings.json  scorecard.json  report.md  codex-review.md  fixes.md
   design/        design.md  chapter-plan.json  errata-seed.md
-  termbase.json  termbase-additions.json               # only when translation applies (translation contract §3)
+  termbase.json                                        # only when translation applies; design-approved (translation contract §3)
+  termbase-additions.json                              # only when translation applies; resolution record written by `terms resolve` (§3)
+  terms/         translate-proposals.json  rework-proposals.json   # only when translation applies; one owner each
   translation/   <unit-id>.md  check-report.json  codex-review.md  fixes.md   # only when translation applies
-  trace/         source-target-map.json               # only when translation applies
-  references-manual.json                              # manual reference verifications (Arabic contract §5.3)
+  trace/         translation-map.json  source-target-map.json      # only when translation applies; translate owns the first, rework the second
+  references-manual.json                              # manual reference verifications (Arabic contract §5.3); a rework input
   <chapters>/    front matter, chapter files, glossary, errata ledger   # dir name = template.paths.chapters
   figures/       figures.json  src/  out/
   build/         <basename>.md  <basename>.docx  <basename>.pdf  build-report.json
@@ -105,7 +107,9 @@ Every path inside a project is resolved from `template.paths` (§4.3) relative t
 
 **Asset model.** An image link in a chapter file is relative to that file. The assembler resolves each link to an absolute path, checks it lies under one of `template.paths.allowed_asset_roots`, then rewrites it relative to the output file with a path-relative computation. There is no string replacement of prefixes (fixes CDR §4 on `assemble.py:21-37`).
 
-**Project selection.** Every executable requires `--project <path>`. The resolved path must be a direct child of `<repo>/projects/`, and its name must match `^[a-z0-9][a-z0-9-]{1,62}$`. No tool infers a default project (CDR §2).
+**Project selection.** Every executable requires `--project <path>`. The resolved path must be a direct child of `<repo>/projects/`, and its name must match `^[a-z0-9][a-z0-9-]{1,62}$`. `<repo>` is the git work tree that contains the running `harness/` code. No tool infers a default project (CDR §2), and there is no flag that bypasses this rule; tests work through it as described in §9.6.
+
+**Build output location.** Build outputs always go to the project's `build/` directory. This is a fixed part of the project layout, not a config key. Only the file stem is configurable (`theme.output.basename`).
 
 ---
 
@@ -128,24 +132,36 @@ new → intake ─(intake approval)→ ingest → evaluate → design ─(design
 
 When `brief.language.translation_required` is true **and** `goal.mode = evaluate_and_rework`, the `translate` stage joins the mandatory set between `design` and `rework` (EXT-TR-1; stage row in the translation contract §2). With `evaluate_only`, translation means only that the evaluation report is written in the output language.
 
+**Stages map onto the six vision phases.** Stages are units of receipts and resume. They are not new phases: the vision's six phases stay exactly as stated, in the same order (VISION.md).
+
+| Vision phase | Stages |
+|---|---|
+| Asks about the book first; no work before intake is done | `new`, `intake` (gate, not a production phase) |
+| 1. Ingest | `ingest` |
+| 2. Evaluate | `evaluate` |
+| 3. Design | `design` |
+| 4. Rewrite | `translate` (only when translation applies), then `rework`. Translation is the first step of the rewrite, as the vision requires ("including translation between them"). |
+| 5. Build Word and PDF | `build` |
+| 6. Re-score | `audit` |
+
 **Stage kinds.**
 - `auto` stages run fully in Python: `run_stage.py --project P run <stage>`.
 - `agentic` stages are work Claude does in the session, bracketed by two runner calls: `begin <stage>` (checks gates, marks downstream invalid, prints the task brief and the required outputs) and `complete <stage>` (validates outputs against their schemas and QA rules, then writes the receipt). Nothing counts as done until `complete` exits 0.
 
 ### 2.2 Contract table
 
-Receipt fields common to every stage are in §2.3; the table lists only stage-specific additions.
+Receipt fields common to every stage are in §2.3; the table lists only stage-specific additions. The "Preconditions" column lists stage-specific conditions only. On top of them, **every** stage after `intake` requires the gates in §2.3 (`require_gates`): a valid intake approval for all of them, and additionally a valid design approval for `translate`, `rework`, `build` and `audit`.
 
 | Stage | Kind | Inputs (hashed) | Outputs (hashed) | Extra receipt fields | Preconditions | Invalidates | Failure and resume | QA evidence |
 |---|---|---|---|---|---|---|---|---|
-| `new` | auto | slug argument | `projects/<slug>/` skeleton, `state.json`, empty `decisions.md` | `slug` | slug matches pattern; directory does not exist | — | If it fails after creating the directory, it removes only what this invocation created. Re-run is safe. | `state.json` validates against `state.v1` |
+| `new` | auto | none (`args: {slug}`) | `projects/<slug>/` skeleton directories, empty `decisions.md` (`state.json` is control-plane, §2.3) | — | slug matches pattern; directory does not exist | — | If it fails after creating the directory, it removes only what this invocation created. Re-run is safe. | `state.json` validates against `state.v1` |
 | `intake` | agentic | `harness/rubric_core.json`, `harness/locale/<tag>.json`, `harness/presets/<preset>.json` | `brief.json`, `rubric.json`, `template.json`, `theme.json`, `agents/*.json` | `questionnaire_ids` (A–M answered) | `new` receipt ok | every later stage (through the intake approval hash) | `complete` fails with the list of schema and cross-file errors; files stay for editing; re-run `complete`. | schema validation of all five kinds; cross-file rules in §4.6; `brief.unresolved` is empty |
-| `ingest` | auto | `brief.source.files[]` originals, `template.paths`, `template.ingest` | `source/*`, `source-manifest.json`, `ingest/normalized.md`, `ingest/units.json`, `ingest/assets/*`, `ingest/conversion-report.json` | `converter` (`docx-native` or `markitdown`), `source_formats` | intake approval valid | evaluate and everything after | Writes into `ingest/.tmp/` and swaps into place only on success; on failure the previous outputs stay and the receipt is `failed`. Exit 2 if a structure is `lost` (§2.4). | conversion-report counts per structure; custody hashes equal the originals |
-| `evaluate` | agentic | `brief.json`, `rubric.json`, `agents/*.json`, `ingest/normalized.md`, `ingest/conversion-report.json` | `evaluation/findings.json`, `scorecard.json`, `report.md`, `codex-review.md`, `fixes.md` | `rubric_digest`, `personas[]`, `author_model`, `reviewer_model`, `subagents[]` (each with reason) | intake approval valid; ingest receipt valid | design and after | `complete` refuses while any blocker/major Codex finding lacks a `fixes.md` row with status `fixed + verified`, `rejected` or `ruled by user`. Re-run `complete` after fixing. | §8 checks; scorecard recomputed in code from rubric weights and must equal the file |
+| `ingest` | auto | `brief.source.files[]` originals, `template.paths`, `template.ingest` | `source/*`, `source-manifest.json`, `ingest/normalized.md`, `ingest/units.json`, `ingest/assets/*`, `ingest/conversion-report.json` | `converter` (`docx-native` or `markitdown`), `source_formats` | — | evaluate and everything after | Writes into `ingest/.tmp/` and swaps into place only on success; on failure the previous outputs stay and the receipt is `failed`. Exit 2 if a structure is `lost` (§2.4). | conversion-report counts per structure; custody hashes equal the originals |
+| `evaluate` | agentic | `brief.json`, `rubric.json`, `agents/*.json`, `ingest/normalized.md`, `ingest/conversion-report.json` | `evaluation/findings.json`, `scorecard.json`, `report.md`, `codex-review.md`, `fixes.md` | `rubric_digest`, `personas[]`, `author_model`, `reviewer_model`, `subagents[]` (each with reason) | ingest receipt valid | design and after | `complete` refuses while any blocker/major Codex finding lacks a `fixes.md` row with status `fixed + verified`, `rejected` or `ruled by user`. Re-run `complete` after fixing. | §8 checks; scorecard recomputed in code from rubric weights and must equal the file |
 | `design` | agentic | `evaluation/*` outputs, `brief.json`, `template.json`, `theme.json` | `design/design.md`, `design/chapter-plan.json`, `design/errata-seed.md` | `chapter_count`, `total_budget` | evaluate receipt valid; `goal.mode = evaluate_and_rework` | rework and after (through the design approval hash) | Same as intake: `complete` lists errors; re-run. | `chapter-plan.v1` validation; budgets sum inside `template.budgets.total`; every evaluate blocker/major finding is mapped to a chapter or to `out-of-scope` with a reason |
-| `rework` | agentic, unit-based | design artifacts, intake artifacts, `ingest/normalized.md` | chapter files, glossary, errata ledger, `figures/src/*`, `figures/figures.json` | `units[]`: one entry per chapter with its own input/output hashes, checker-report hash and `verify_refs` summary | design approval valid | build and after | **Per-chapter resume**: `complete rework --unit <chapter-id>` writes a unit receipt; `begin rework` lists units still missing or stale. The stage receipt is written by `complete rework` once every unit in `chapter-plan.json` is valid and the book-level checks pass. | per-unit checker JSON with zero failing checks; `verify_refs` with zero `NOT FOUND`/`TITLE MISMATCH`/`ERROR`/disallowed `NO DOI`; book-level checks (errata closed where enabled) |
+| `rework` | agentic, unit-based | design artifacts, intake artifacts, `ingest/normalized.md`, `references-manual.json` (if present); when translation applies also `translation/*.md`, `trace/translation-map.json`, `termbase.json`, `termbase-additions.json` | chapter files, glossary, errata ledger, `figures/src/*`, `figures/figures.json`; when translation applies also `trace/source-target-map.json`, `terms/rework-proposals.json` | `units[]`: one entry per chapter with its own input/output hashes, checker-report hash and `verify_refs` summary | design receipt valid; translate receipt valid when translation applies | build and after | **Per-chapter resume**: `complete rework --unit <chapter-id>` writes a unit receipt; `begin rework` lists units still missing or stale. The stage receipt is written by `complete rework` once every unit in `chapter-plan.json` is valid and the book-level checks pass. | per-unit checker JSON with zero failing checks; `verify_refs` with zero `NOT FOUND`/`TITLE MISMATCH`/`ERROR`/disallowed `NO DOI`; book-level checks (errata closed where enabled) |
 | `build` | auto | rework outputs, `template.json`, `theme.json`, `design/chapter-plan.json`, `figures/*` | `figures/out/*`, `build/<basename>.md`, `.docx`, `.pdf`, `build-report.json` | `backend`, `page_count`, `bookmarks_count` | rework receipt valid; preflight for the build backend passes | audit | Renders figures, runs the figure checker, assembles, builds DOCX, then PDF. A Word COM failure keeps the DOCX, marks the receipt `failed` with the step name; re-run repeats the whole stage (it is deterministic). | `build-report.json`: DOCX package facts (§9.1), TOC field present, image count, PDF page count and bookmarks |
-| `audit` | agentic | build outputs, chapter files, `rubric.json`, `evaluation/scorecard.json` | `audit/findings.json`, `scorecard.json`, `codex-audit.md`, `fixes.md` | `rubric_digest` (must equal the evaluate receipt's), `codex_audited_build` (build hashes Codex saw), `review_kind` per score | build receipt valid | — | One Codex audit (DEC-030). Claude fixes via the Fix Protocol; fixes that change chapters make build stale, so Claude re-runs `build`, then `complete audit`, which binds the **post-fix** build hashes and records the pre-fix ones in `codex_audited_build`. | rubric digest equality; scorecard with `self` and `independent` scores kept separate; zero blocker/major findings without a closed fixes row |
+| `audit` | agentic | build outputs, chapter files, `brief.json`, `rubric.json`, `evaluation/scorecard.json`, `ingest/normalized.md`; when translation applies also `ingest/units.json`, `translation/*.md`, `translation/check-report.json`, `trace/source-target-map.json`, `termbase.json`, `termbase-additions.json` | `audit/findings.json`, `scorecard.json`, `codex-audit.md`, `fixes.md` | `rubric_digest` (must equal the evaluate receipt's), `codex_audited_inputs` (the input hashes Codex saw, including the build), `review_kind` per score | build receipt valid | — | One Codex audit (DEC-030). Claude fixes via the Fix Protocol. Fixes that change chapters change rework outputs, so the rework receipt goes stale (§2.3). Claude then runs `abort audit` (keeps the audit files), `begin rework`, `complete rework --unit <id>` for each changed chapter, `complete rework`, `run build`, `begin audit` and `complete audit`. The last call binds the **post-fix** inputs and keeps the pre-fix ones in `codex_audited_inputs`. | rubric digest equality; scorecard with `self` and `independent` scores kept separate; zero blocker/major findings without a closed fixes row |
 
 ### 2.3 State, receipts and invalidation
 
@@ -156,9 +172,13 @@ Receipt fields common to every stage are in §2.3; the table lists only stage-sp
   "schema_version": 1,
   "project_id": "<slug>",
   "receipts": { "<stage>": { "...": "..." } },
-  "approvals": { "intake": { "...": "..." }, "design": { "...": "..." } }
+  "approvals": { "intake": { "...": "..." }, "design": { "...": "..." } },
+  "active_run": null,
+  "aborts": []
 }
 ```
+
+**Control-plane files** are `state.json`, `state.lock` and `decisions.md`. They are never listed in any receipt's `inputs` or `outputs`, so a receipt never has to hash the file it is stored in. `decisions.md` is bound instead through the row hashes in approval records (§3).
 
 **Receipt** (per the ticket's Definitions), for each completed stage:
 
@@ -166,8 +186,9 @@ Receipt fields common to every stage are in §2.3; the table lists only stage-sp
 |---|---|
 | `stage` | stage id |
 | `status` | `ok` or `failed` |
-| `inputs` | `{path: sha256}` for every input file |
-| `outputs` | `{path: sha256}` for every output file |
+| `args` | `{name: value}` for non-file arguments (e.g. `slug` for `new`, `unit` for a unit receipt); may be empty |
+| `inputs` | `{path: sha256}` for every input file (control-plane files excluded) |
+| `outputs` | `{path: sha256}` for every output file (control-plane files excluded) |
 | `tool_sha` | last commit touching the stage's `tool_paths` (below) |
 | `time` | ISO-8601 UTC |
 | `error` | present only when `status = failed` |
@@ -178,13 +199,17 @@ Receipt fields common to every stage are in §2.3; the table lists only stage-sp
 
 **Tool SHA.** Each stage declares `tool_paths` (the harness files it executes, e.g. `harness/tools/check_book.py`). `tool_sha` = `git log -1 --format=%H -- <tool_paths>`. If any of those paths has uncommitted changes, the receipt is refused (`dirty tool`). This makes a tool change stale only the stages that run that tool.
 
-**Staleness.** A receipt is stale if any input hash no longer matches, its `tool_sha` differs from the current value for its `tool_paths`, it has `invalidated_by`, or its status is `failed`. A stale receipt blocks every downstream stage.
+**Staleness.** A receipt is stale if any input hash **or output hash** no longer matches the file on disk, a listed file is missing, its `tool_sha` differs from the current value for its `tool_paths`, it has `invalidated_by`, or its status is `failed`. A stale receipt blocks every downstream stage. Checking outputs is stricter than the ticket's minimum (inputs only). It means a hand-edited `normalized.md`, chapter, DOCX or PDF can never pass as a valid upstream output. Each file therefore has exactly one owning stage: a file that is one stage's output is never edited by a later stage (translation contract §3–4 applies this rule to the termbase and trace files).
+
+**Gates (`require_gates`).** One function in `state.py` decides whether a stage may start or finish. `begin`, `run`, `complete` and `verify` all call it, and so does every legacy-tool entry point (Rule 7). It derives the required approvals from the stage's position in `STAGES`: the intake approval for every stage after `intake`, plus the design approval for `translate`, `rework`, `build` and `audit`. It fails if a required approval is **missing**, stale, or covers a different set of files from the current `APPROVAL_SETS` entry. It also fails if any required upstream receipt is stale. `complete` re-checks the gates, so an approval or upstream receipt that went stale during agentic work also blocks completion.
 
 **Invalidation.** `begin <stage>` and `run <stage>` write `invalidated_by` on every transitive downstream receipt **before** doing any work, so an upstream run that later fails still blocks downstream.
 
-**Lock.** Every write to `state.json` holds `state.lock`, created with exclusive-create. A leftover lock produces a named error telling the user which process and time created it; it is never removed silently.
+**Lock and active run.** There are two mechanisms:
+- **Write lock.** Every write to `state.json` holds `state.lock`, created with exclusive-create. A leftover lock produces a named error telling the user which process and time created it; it is never removed silently.
+- **Active run (lease).** `begin` and `run` set `active_run = {stage, unit or null, nonce, pid, started_at}`, and refuse if another run is already active in the project. `run` clears it on exit. `begin` prints the nonce, and `complete` must be given it (`--nonce`) and clears it. `abort <stage> --reason TEXT` is the only recovery path for a crashed or stale run: it clears `active_run`, appends `{stage, nonce, reason, time}` to `aborts[]`, writes no receipt, and leaves downstream receipts invalidated. `abort` keeps the stage's files on disk. `ponytail:` there is one lease per project, so stages never run concurrently within a project. Per-stage leases can be added if parallel stages ever become necessary.
 
-**`verify`.** `run_stage.py --project P verify [--through <stage>]` checks: each approval that exists up to the boundary still matches its hashes, and each mandatory receipt up to the boundary is valid (status ok, current input hashes, expected tool SHA, no invalidation marker). It exits 0 only when all pass, otherwise 1 with one line per failure.
+**`verify`.** `run_stage.py --project P verify [--through <stage>]` calls `require_gates` for the boundary stage. It then checks each mandatory receipt up to the boundary: status ok, current input and output hashes, expected tool SHA, no invalidation marker. It also reports an `active_run` if one is set. A required approval that is absent is a failure, not a skip. It exits 0 only when all pass, otherwise 1 with one line per failure.
 
 ### 2.4 Ingest fidelity
 
@@ -197,7 +222,9 @@ Receipt fields common to every stage are in §2.3; the table lists only stage-sp
 | figures | `a:blip` references | `ok` if equal, else `lost` |
 | equations | `m:oMath` elements | `lossy` if converted to text, `lost` if dropped |
 | footnotes | `w:footnoteReference` | `lossy` if inlined, `lost` if dropped |
-| text | characters of body text vs characters in `normalized.md` (markup stripped) | `lost` if the output has < 98% of source characters |
+| text | characters of body text vs characters in `normalized.md` (markup stripped), minus **configured omissions** | `lost` if the output has < 98% of (source characters − omitted characters) |
+
+**Configured omissions.** A span of source text may be left out of the fidelity denominator only if the template configures that omission. Today there is one kind: the source TOC, when `template.ingest.drop_source_toc` is true. It runs from the first line matching `toc_start_pattern` to the line before `toc_end_pattern`. The text row records `omitted[] {reason, chars, line_start, line_end}`, and the report prints these counts. Nothing else is excluded.
 
 Exit 2 if any structure is `lost`. `lossy` items become findings that evaluate must address. For non-DOCX input converted by `markitdown`, source counts that cannot be taken are recorded as `not_measurable` and the report says so; they never count as `ok`.
 
@@ -212,13 +239,21 @@ There are exactly two user approvals.
 | `intake` | `brief.json`, `rubric.json`, `template.json`, `theme.json`, every `agents/*.json` | after the user explicitly approves, in chat, the exact files shown | every stage after `intake` |
 | `design` | `design/design.md`, `design/chapter-plan.json`, `design/errata-seed.md`; plus `termbase.json` when translation applies (EXT-TR-2) | after the user explicitly approves, in chat, the exact files shown | `rework` and every stage after it |
 
-**Record** (in `state.json` → `approvals.<kind>`): `kind`, `files {path: sha256}`, `dec_id`, `approved_at`, `approved_by: "user"`.
+**Record** (in `state.json` → `approvals.<kind>`): `kind`, `files {path: sha256}`, `dec_id`, `dec_row_sha256`, `approved_at`, `approved_by: "user"`.
 
-**Writing an approval.** Only Claude writes it, only right after the user's explicit approval, with `run_stage.py --project P approve <kind> --dec DEC-NNN`. The command refuses unless `projects/<p>/decisions.md` already contains a row for `DEC-NNN` naming this approval kind with the user's words. The approval set is data (`APPROVAL_SETS` in `state.py`) so STEP 2 can add files (EXT-TR-2).
+**Writing an approval.** Only Claude writes it, only right after the user's explicit approval, with `run_stage.py --project P approve <kind> --dec DEC-NNN`. The command refuses unless `projects/<p>/decisions.md` already contains a row for `DEC-NNN` naming this approval kind with the user's words. It stores `dec_row_sha256`, the SHA-256 of that table row after CRLF→LF normalisation and trimming of trailing whitespace. `require_gates` re-hashes the row, so an edit to the recorded user words makes the approval stale like an edit to a covered file. Every other runner record that cites a DEC (`terms resolve`, translation contract §3.3; `references-manual.json` entries, Arabic contract §5.3) stores the same `dec_row_sha256`. The approval set is data (`APPROVAL_SETS` in `state.py`) so STEP 2 can add files (EXT-TR-2).
 
-**Changing an approved file.** Any edit to a covered file makes the approval stale, which blocks every gated stage until the user re-approves. There is no "minor edit" exemption (Rule 7). The design stage may need to change `template.json` or `theme.json` (e.g. a new callout); that edit re-opens the **intake** approval, and the user re-approves both. Stage receipts whose own inputs did not change stay valid after re-approval.
+**Changing an approved file.** Any edit to a covered file makes the approval stale, which blocks every gated stage until the user re-approves. There is no "minor edit" exemption (Rule 7). The design stage may need to change `template.json` or `theme.json` (e.g. a new callout). These are intake outputs, so the one-owner rule (§2.3) applies: design never edits them. The sequence is:
+1. `abort design` (the design files stay on disk).
+2. `begin intake --amend`. This is the only `begin` that does not write `invalidated_by` downstream. Downstream receipts still go stale through their own input hashes.
+3. Edit the file, then `complete intake`.
+4. The user re-approves intake.
+5. Run any receipt that is now stale (for example `run ingest` when `template.json` is one of its inputs).
+6. `begin design` and `complete design`. The user then approves the design.
 
-**Tests** use fixture projects with fixture approvals and never edit a real project's state.
+Stage receipts whose own inputs did not change stay valid throughout.
+
+**Tests** use fixture projects with fixture approvals and never edit a real project's state. §9.6 describes how they run.
 
 ---
 
@@ -256,9 +291,9 @@ No approval state lives here (CDR §3).
 | `goal.mode` | enum `evaluate_only`, `evaluate_and_rework` | E | drives the mandatory stage set (§2.1) |
 | `goal.directions[]` | enum `simplify`, `broaden`, `update`, `restructure`, `other` | E | required non-empty when rework |
 | `goal.notes` | string | E | |
-| `language.source` | BCP-47 tag | F | e.g. `en`, `ar` |
-| `language.output` | BCP-47 tag | F | selects `harness/locale/<tag>.json` |
-| `language.translation_required` | bool | F | must be `true` when source ≠ output (cross-rule) |
+| `language.source` | BCP-47 tag | F | e.g. `en`, `ar`, `ar-EG`, `en-GB` |
+| `language.output` | BCP-47 tag | F | its **primary language subtag** (the part before the first `-`, lower-cased) selects `harness/locale/<primary>.json`; the full tag is the default for `theme.lang_tag` |
+| `language.translation_required` | bool | F | must be `true` exactly when the primary subtags of source and output differ (cross-rule 2); `en-GB` → `en-US` is not translation |
 | `language.terminology` | string | F | required terms or conventions; the termbase itself is STEP 2 (EXT-TR-2) |
 | `size.target_words_total` | integer or null | G | |
 | `size.chapter_count_target` | integer or null | G | |
@@ -298,7 +333,7 @@ No approval state lives here (CDR §3).
 | `core_version` | the `rubric_core.json` version the fixed pillars came from |
 | `pillars[]` | `{id, kind: fixed or domain, name, description, weight, anchors, hard_caps[], reviewer_ids[], applicable}` |
 | `pillars[].anchors` | `{"9-10", "7-8", "4-6", "1-3"}` text per band, and `evidence_required` per band |
-| `pillars[].hard_caps[]` | `{condition, max_score}`, e.g. an unfixed safety-critical error caps the accuracy pillar at 4 |
+| `pillars[].hard_caps[]` | `{trigger {severity, min_count, tag or null}, max_score, description}`. The trigger is machine-checkable: the cap applies when at least `min_count` findings with this `pillar_id` and `severity` (and `tag`, if set) are open. A finding is open when it has no `fixed + verified` row in the stage's `fixes.md`. `description` is display text only. Example: `{trigger {severity: blocker, min_count: 1, tag: safety}, max_score: 4}` |
 | `provenance` | `{generated_by, from_brief_sha256, edited_by_user: bool}` |
 
 Validation rules are in §5.
@@ -310,13 +345,13 @@ Stable semantic IDs are the machine keys; labels are presentation only (CDR §3)
 | Field | Notes |
 |---|---|
 | `paths` | `chapters`, `chapter_glob`, `front_matter`, `glossary`, `errata`, `figures`, `normalized_source`, `assets`, `asset_link_prefix`, `allowed_asset_roots[]` |
-| `ingest` | `heading_rules[] {pattern, level}`, `toc_end_pattern` or null, `drop_source_toc: bool` |
+| `ingest` | `heading_rules[] {pattern, level}`, `toc_start_pattern` or null (e.g. the source's contents heading), `toc_entry_pattern` or null (e.g. `Chapter N: Title<tab>page`), `toc_end_pattern` or null, `drop_source_toc: bool`. When the TOC is dropped, the page-reference output (`p. N`) goes with it; build regenerates the TOC |
 | `chapter_heading_pattern` | regex with named groups `num` and `title`; default from locale |
 | `sections[]` | H2 sections: `{id, label, role, required, boxed}`; `role` ∈ `opening`, `objectives`, `core`, `takeaways`, `assessment`, `answers`, `references`, `how_to_use`, `other`; list order = required order |
 | `callouts[]` | `{id, label, syntax, required, min, max, parts[] }`; `syntax` is the literal first-line marker; `parts[]` names labelled sub-parts (e.g. myth and evidence) |
 | `perspectives` | `{enabled, callout_id, items[] {id, label}, balance_tolerance}` — from brief D |
 | `learning_objectives` | `{enabled, id_pattern, min, max, discouraged_verbs[]}`; verbs default from locale |
-| `assessment.mcq` | `{enabled, count, option_labels[], option_display_labels[], allow_other_labels: false, key_balance {min, max}, max_run, rationale_required, answers_section_role}` — from brief H |
+| `assessment.mcq` | `{enabled, count, option_labels[], option_display_labels[], allow_other_labels: false, key_balance {min, max}, max_run, rationale_required, answers_section_role}` — from brief H. The **marker grammar** in chapter Markdown is a harness constant, the same for every language (Arabic contract P1): question `**Q<n>.**`, objective tag `[LO<n>]`, option `<label>)`, key `**Q<n>. <label>**`. Only the labels are config; display text comes from `theme.labels.question_prefix`, `theme.labels.objective_prefix` and `option_display_labels` |
 | `assessment.case_question` | `{required, label}` |
 | `citations` | `{style: numeric-bracket or author-year, pattern}` |
 | `references` | `{section_role, entry_pattern, identifier_patterns[], no_doi_policy {allowed_types[], requires_url}, title_match {mode: heuristic, original-language or manual, words, threshold}, original_title_marker, providers}` |
@@ -325,7 +360,7 @@ Stable semantic IDs are the machine keys; labels are presentation only (CDR §3)
 | `readability` | `{mean_sentence_max, long_sentence_words, long_share_max}`; defaults from locale |
 | `budgets` | `{tolerance, total {min, max}, front_matter}`; per-chapter budgets live in `chapter-plan.json` |
 | `banned_terms[]` | `{pattern, replacement}`; merged with the locale list |
-| `errata` | `{enabled, file, status_column, open_values[], closed_values[]}` |
+| `errata` | `{enabled, status_column, open_values[], closed_values[]}`; the file is `paths.errata` (one key per fact) |
 | `figures` | `{caption_pattern}`; default from locale |
 | `front_matter` | `{toc_insert_before_section_id}` |
 
@@ -338,7 +373,7 @@ A theme names a tested preset and overrides only what it must (CDR §3: no untes
 | `preset` | a file in `harness/presets/` (`ltr-textbook` now; the RTL preset is STEP 10) |
 | `direction`, `lang_tag` | `ltr`/`rtl`, BCP-47; must agree with `brief.language.output` (cross-rule; EXT-LOC-2) |
 | `page` | `{size, margins, header_distance, footer_distance}` |
-| `fonts` | `{serif, serif_heading, sans, complex_script}` |
+| `fonts` | `{serif, serif_heading, sans, complex_script, complex_script_heading}`; `complex_script` is used for body styles and `complex_script_heading` for heading, caption, header/footer and UI styles (EXT-LOC-2) |
 | `palette` | `{ink, primary, accent, muted}` hex |
 | `layout.text_width` | cm |
 | `alignment` | `{body, headings}` |
@@ -347,20 +382,22 @@ A theme names a tested preset and overrides only what it must (CDR §3: no untes
 | `boxed_section_ids[]`, `toc_excluded_section_ids[]` | section IDs |
 | `toc` | `{levels}` |
 | `cover` | `{asset or null}` |
-| `title_page` | `{notices[]}`; title, subtitle, credits and audience line are read from `brief`, never duplicated here |
+| `title_page` | `{notices[]}`; title, subtitle, credits and audience line are read from `brief`, never duplicated here. The title-page **layout** (order, sizes, spacing) is fixed by the preset file (`title_page_layout` in `harness/presets/<preset>.json`); it is a tested preset constant, not project config (CDR §3) |
 | `labels` | `{contents, update_toc_instruction, chapter, part, glossary, figure, table, question_prefix, objective_prefix}` — localized UI strings bound to IDs; machine markers in chapter Markdown stay ASCII and are shown with these labels (Arabic contract P1) |
 | `output.basename` | build file name stem |
 | `build` | `{backend: word_com, word_com {toc_styles}, pdf {bookmarks: headings, embed_fonts}}` |
 
 ### 4.5 Other schemas (named here, fields fixed by the plan in STEP 4)
 
-`chapter-plan.v1` (chapters `{id, file, title, word_budget, part_id, source_refs[]}`, `parts[] {id, label, title}`, `dropped[] {source_unit, reason}`), `overlay.v1` (§6), `state.v1` (§2.3), `findings.v1` and `scorecard.v1` (§8), `checker-report.v1` (§9.1), `source-manifest.v1` and `conversion-report.v1` (§2.4), `figures.v1` (§7), `golden.v1` and `golden-diff.v1` (§9); `units.v1` (EXT-TR-3); defined by the STEP 2 contracts: `references-manual.v1`, `termbase.v1`, `trace.v1`.
+`chapter-plan.v1` (chapters `{id, file, title, word_budget, part_id, source_refs[]}`, `parts[] {id, label, title}`, `dropped[] {source_unit, reason}`), `overlay.v1` (§6), `state.v1` (§2.3), `findings.v1` and `scorecard.v1` (§8), `checker-report.v1` (§9.1), `source-manifest.v1` and `conversion-report.v1` (§2.4), `figures.v1` (§7), `golden.v1` and `golden-diff.v1` (§9); `units.v1` (EXT-TR-3); defined by the STEP 2 contracts: `references-manual.v1`, `termbase.v1` (including its proposal and resolution forms), `trace.v1` (with `kind: translation` or `final`).
+
+`harness/defaults.json` is harness data, not a project schema. Its one field today is `references.providers.crossref {endpoint, user_agent, retries, timeout_s, backoff_s}`, with the current values from `verify_refs.py:27-40`. A project overrides it through `template.references.providers`.
 
 ### 4.6 Cross-file rules checked by `complete intake`
 
 1. `rubric.pillars[kind=domain]` IDs and weights equal `brief.domain_pillars`.
-2. `language.translation_required` is true if and only if `language.source ≠ language.output`.
-3. `theme.lang_tag` and `theme.direction` agree with `language.output` and its locale profile.
+2. `language.translation_required` is true if and only if the primary subtags of `language.source` and `language.output` differ. A `harness/locale/<primary>.json` profile must exist for both subtags.
+3. `theme.lang_tag` has the same primary subtag as `language.output`; its region part may differ (e.g. output `ar`, `lang_tag` `ar-EG`). `theme.direction` equals the profile's `direction`.
 4. `template.perspectives.enabled` equals `brief.perspectives.enabled`, and the items match.
 5. `template.assessment.mcq.enabled` equals `brief.assessment.mcq.enabled`; if enabled, `count` and the number of `option_labels` equal `per_chapter` and `options`.
 6. Every `reviewer_ids[]` entry in the rubric names a shared persona in `harness/agents/` or an overlay in `agents/`.
@@ -375,16 +412,16 @@ A theme names a tested preset and overrides only what it must (CDR §3: no untes
 
 | ID | Pillar | Weight | Owns |
 |---|---|:---:|---|
-| `G1` | Content accuracy | 20 | every factually wrong statement, wrong number, wrong definition, wrong citation-to-claim link, anywhere in the book |
+| `G1` | Content accuracy | 20 | every factually wrong statement, wrong number, wrong definition, and every claim that its cited reference does not support (claim-support mismatch), anywhere in the book |
 | `G2` | Pedagogical design and clarity | 20 | objectives, structure, progression, cognitive load, readability, figures' teaching value |
 | `G3` | Assessment quality | 10 | questions, distractors, rationales, key balance, alignment to objectives |
-| `G4` | Sources and currency | 10 | reference existence, recency against `brief.references.recency`, evidence hierarchy, citation coverage |
+| `G4` | Sources and currency | 10 | reference existence and metadata, recency against `brief.references.recency`, evidence hierarchy, citation coverage (claims that need a citation and have none) |
 | | **Generic total** | **60** | |
 
 ### 5.2 Reserved split
 
 - Generic pillars: **60** of 100, fixed.
-- Domain pillars: **40** of 100, from intake (questionnaire M): 1–4 pillars, each an integer from 5 to 25, summing to exactly 40.
+- Domain pillars: **40** of 100, from intake (questionnaire M): 1–4 pillars, each an integer from 5 to 40, summing to exactly 40. A single domain pillar therefore carries all 40.
 - If `brief.assessment` has MCQs, cases and exercises all disabled, `G3.applicable = false` and its 10 points move to `G2` (weight 30). No other reallocation is allowed.
 - Validation: unique IDs; all four fixed IDs present with core weights (after the one allowed reallocation); total exactly 100; every pillar has ≥ 1 reviewer.
 
@@ -394,8 +431,8 @@ This split is a design choice of this spec. The previous medical rubric (`EVALUA
 
 Each finding carries exactly one `pillar_id`. Assignment order:
 
-1. A statement that is **false** (fact, number, definition, law, dose, date) → `G1`, whatever its domain.
-2. A reference that does not exist, does not support the claim, or is out of date → `G4`.
+1. A statement that is **false** (fact, number, definition, law, dose, date), or a claim its cited reference does not support → `G1`, whatever its domain.
+2. A reference that does not exist, has wrong metadata or is out of date, or a claim that needs a citation and has none → `G4`.
 3. An assessment item defect → `G3`.
 4. A clarity, structure or level defect → `G2`.
 5. Otherwise, a domain pillar: missing or shallow domain coverage, weak domain method or practice (e.g. regulatory depth, experimental method). Domain pillars never score correctness of an individual statement.
@@ -404,7 +441,7 @@ Each finding carries exactly one `pillar_id`. Assignment order:
 
 ### 5.4 Score and digest
 
-- Each applicable pillar is scored 1–10 in 0.5 steps against its anchors, after `hard_caps`.
+- Each applicable pillar is scored 1–10 in 0.5 steps against its anchors. The runner then evaluates every `hard_caps[].trigger` against `findings.json` and `fixes.md`. For each cap that fires, the scorecard must list it in `caps_applied[] {pillar_id, cap_index, finding_ids[]}`, and the pillar score must be ≤ its `max_score`. `complete` fails if a firing cap is missing, a listed cap does not fire, or a score exceeds its cap.
 - Weighted total = Σ (score × weight) / 10, reported out of 100 with one decimal. The runner computes it; a hand-written total that disagrees fails `complete`.
 - **Rubric digest** = SHA-256 of canonical `rubric.json` (§2.3). The evaluate and audit receipts both store it; `complete audit` fails if they differ. Baseline and rescore are therefore always on the same rubric.
 - The medical project's new `rubric.json` is a different rubric from `EVALUATION_RUBRIC.md`. Its historic scores (46 and the self-assessed 81, `rework/REVIEW_REPORT.md:8`) are kept as history and never compared with harness scores.
@@ -482,6 +519,13 @@ Optional dependency group with a pinned RDKit version (the version is fixed by t
 | `chem.reaction` | `smarts`, `name`, optional `conditions` | parse the reaction SMARTS; every reactant and product sanitises | `CHEM-SMARTS-INVALID` |
 | cross-check | `name` / `pubchem_cid` against PubChem | live: timeout 10 s, results cached under `figures/.cache/pubchem/`; offline or network failure → `unverified`, never `pass` | `CHEM-PUBCHEM-MISMATCH`, `CHEM-UNVERIFIED` |
 
+**Stage behaviour of chemistry IDs.**
+
+| ID | Effect |
+|---|---|
+| `CHEM-SMILES-INVALID`, `CHEM-SANITIZE`, `CHEM-SMARTS-INVALID`, `CHEM-PUBCHEM-MISMATCH` | fail `build`, like the `FIG-*` IDs in §7.3 |
+| `CHEM-UNVERIFIED` | does not fail `build`, so offline work can continue. It is listed in `build-report.json`, and `complete audit` refuses while any figure is still unverified. There are two ways to clear it: a later online `run build` that turns it into `pass`, or an audit `fixes.md` row with status `ruled by user` that cites a DEC. It is never reported as `pass`. |
+
 Tests use mocked PubChem responses only.
 
 ---
@@ -500,9 +544,9 @@ Designed under Rule 11: inline persona passes, then one Codex review. The first 
 6. **Fix Protocol** (DEC-030) on the evaluation: confirm each Codex finding at its cited location, find the root cause, hunt siblings, fix, verify; record in `evaluation/fixes.md` with columns `ID | real/rejected | root cause | siblings found | fix | verification → result`.
 7. `complete evaluate`.
 
-**`findings.v1`:** `{id: F-NNN, pillar_id, severity: blocker, major or minor, location {file, line_start, line_end}, claim, evidence, source: persona id or codex, fix_hint}`.
+**`findings.v1`:** `{id: F-NNN, pillar_id, severity: blocker, major or minor, tags[], location {file, line_start, line_end}, claim, evidence, source: persona id or codex, fix_hint}`. `tags[]` hold free project tags (e.g. `safety`) that `hard_caps` triggers can match.
 
-**`scorecard.v1`:** `{rubric_digest, pillars[] {id, score, applicable, evidence_finding_ids[]}, total, review_kind: self or independent}`. Evaluate scores are `self`; the audit stage adds `independent` scores from Codex.
+**`scorecard.v1`:** `{rubric_digest, pillars[] {id, score, applicable, evidence_finding_ids[]}, caps_applied[] {pillar_id, cap_index, finding_ids[]}, total, review_kind: self or independent}`. Evaluate scores are `self`; the audit stage adds `independent` scores from Codex.
 
 **Subagents.** Default 0. A spawn is allowed only for context isolation of a very large read whose conclusion alone is needed, or for genuinely independent parallel work; at most 2; each is logged in the receipt's `subagents[]` with its reason. "One agent per chapter" and "each persona deserves its own agent" are not reasons (Rule 11).
 
@@ -584,6 +628,15 @@ It fails on:
 
 Its own test plants one forbidden literal in a temp copy and asserts exit 1. Structural leaks are caught by §9.4, not by the scan.
 
+### 9.6 How tests run the real gated CLI
+
+Fixtures under `tests/fixtures/` are immutable and are never passed to `--project` directly, since they are not under `projects/` (§1.1). A test that exercises a gated entry point does this:
+1. It creates a temporary directory, runs `git init`, copies in `harness/`, commits it (so `tool_sha` resolves and nothing is dirty), and copies the fixture to `projects/<fixture-slug>/`.
+2. It runs the real `harness/run_stage.py` from that copy with `--project projects/<fixture-slug>`.
+3. It removes only that temporary directory afterwards.
+
+No production flag relaxes project selection or the gates. Pure-function tests (tokenizer, validator, comparator) import modules directly and need no temporary repository.
+
 ---
 
 ## 10. Inventory mapping (j)
@@ -594,54 +647,54 @@ One row per entry of the CDR "Hardcoded values inventory" (48 entries, in order)
 |---|---|---|---|
 | INV-01 | `convert_docx_to_md.py:13-15` | absolute source, Markdown and image paths under `D:\yasser` | `brief.source.files[]`, `template.paths.normalized_source`, `template.paths.assets` |
 | INV-02 | `convert_docx_to_md.py:33-42` | extracted images always linked as `images/<file>` | `template.paths.asset_link_prefix` |
-| INV-03 | `convert_docx_to_md.py:127-138` | English `Chapter N`, `Table of Contents`, `p.` grammar | `template.ingest.drop_source_toc` (the source TOC is dropped and regenerated at build) |
+| INV-03 | `convert_docx_to_md.py:127-138` | English `Chapter N`, `Table of Contents`, `p.` grammar | `template.ingest.toc_start_pattern`, `template.ingest.toc_entry_pattern`, `template.ingest.drop_source_toc`; the `p.` page-reference output is `removed` (the dropped TOC is regenerated at build) |
 | INV-04 | `convert_docx_to_md.py:142-175` | English heading recognition (`Chapter Executive Overview`, `References`, `Self-Assessment Quiz`, `Chapter … Review`) | `template.ingest.heading_rules[]` |
 | INV-05 | `convert_docx_to_md.py:154-155,288-289` | book title `ARTIFICIAL INTELLIGENCE IN MEDICINE` | `removed` (title comes from `brief.identity.title`; no title-specific cleanup) |
 | INV-06 | `convert_docx_to_md.py:247-250` | TOC ends at literal `Chapter 1:` | `template.ingest.toc_end_pattern` |
 | INV-07 | `convert_docx_to_md.py:280-286` | adds the medical book's missing Chapter 7 and References TOC links | `removed` |
 | INV-08 | `rework/tools/check_book.py:12` | project root inferred from tool location | `removed` (required `--project`, §1.1) |
-| INV-09 | `rework/tools/check_book.py:14-17` | eleven chapter budgets, readability limits, front-matter budget | `chapter-plan.chapters[].word_budget`, `template.readability.*`, `template.budgets.front_matter` |
+| INV-09 | `rework/tools/check_book.py:14-17` | eleven chapter budgets, readability limits, front-matter budget | `chapter-plan.chapters[].word_budget`, `template.readability.mean_sentence_max`, `template.readability.long_sentence_words`, `template.readability.long_share_max`, `template.budgets.front_matter` |
 | INV-10 | `rework/tools/check_book.py:18-22` | six section labels, four box labels, four perspective labels | `template.sections[]`, `template.callouts[]`, `template.perspectives.items[]` |
 | INV-11 | `rework/tools/check_book.py:23,83-97` | ASCII word tokenizer, English sentence splitting | `locale.tokenizer`, `locale.sentence_terminators` |
 | INV-12 | `rework/tools/check_book.py:39-49` | literal `References` and `Self-Assessment` boundaries | `template.sections[].role` (`references`, `assessment`) |
 | INV-13 | `rework/tools/check_book.py:103-116` | `# Chapter N: Title` and literal box syntax | `template.chapter_heading_pattern`, `template.callouts[].syntax` |
 | INV-14 | `rework/tools/check_book.py:120-132` | exactly four perspectives, ±20% balance | `template.perspectives.items[]` (count), `template.perspectives.balance_tolerance` |
-| INV-15 | `rework/tools/check_book.py:136-146` | `LO` IDs, 3–5 objectives, banned verb `understand` | `template.learning_objectives.*`, `locale.discouraged_objective_verbs` |
-| INV-16 | `rework/tools/check_book.py:150-199` | ten MCQs, A–D, no E, one case question, key counts 2–3, no triple run | `template.assessment.mcq.*`, `template.assessment.case_question` |
+| INV-15 | `rework/tools/check_book.py:136-146` | `LO` IDs, 3–5 objectives, banned verb `understand` | `template.learning_objectives.id_pattern`, `template.learning_objectives.min`, `template.learning_objectives.max`, `template.learning_objectives.discouraged_verbs` (default `locale.discouraged_objective_verbs`) |
+| INV-16 | `rework/tools/check_book.py:150-199` | ten MCQs, A–D, no E, one case question, key counts 2–3, no triple run | `template.assessment.mcq.count`, `template.assessment.mcq.option_labels[]`, `template.assessment.mcq.allow_other_labels`, `template.assessment.mcq.key_balance`, `template.assessment.mcq.max_run`, `template.assessment.case_question` |
 | INV-17 | `rework/tools/check_book.py:202-221` | numeric square-bracket citations | `template.citations.style`, `template.citations.pattern` |
 | INV-18 | `rework/tools/check_book.py:225-249` | bold marks glossary terms; literal perspective-box exception | `template.glossary.term_syntax`, `template.glossary.excluded_callout_ids[]` |
 | INV-19 | `rework/tools/check_book.py:252-253` | English banned term and replacement | `template.banned_terms[]` (merged with `locale.banned_terms`) |
-| INV-20 | `rework/tools/check_book.py:259-289` | `chNN`, glossary file, 11 chapters, front-matter file, 17k–21k total, errata file, literal open status, ≥ 120 glossary terms | `template.paths.*`, `chapter-plan.chapters[]`, `template.budgets.total`, `template.errata.*`, `template.glossary.minimum_terms` |
-| INV-21 | `rework/tools/build_book.py:21-28` | root/rework/output paths; book title, subtitle, author | `template.paths.*`, `theme.output.basename`, `brief.identity.title`, `brief.identity.subtitle`, `brief.identity.authors[]` |
-| INV-22 | `rework/tools/build_book.py:30-32` | fonts, palette, text width | `theme.fonts.*`, `theme.palette.*`, `theme.layout.text_width` |
+| INV-20 | `rework/tools/check_book.py:259-289` | `chNN`, glossary file, 11 chapters, front-matter file, 17k–21k total, errata file, literal open status, ≥ 120 glossary terms | `template.paths.chapter_glob`, `template.paths.glossary`, `template.paths.front_matter`, `template.paths.errata`, `chapter-plan.chapters[]`, `template.budgets.total`, `template.errata.open_values[]`, `template.glossary.minimum_terms` |
+| INV-21 | `rework/tools/build_book.py:21-28` | root/rework/output paths; book title, subtitle, author | root: `removed` (required `--project`, §1); `template.paths.chapters`, `template.paths.figures`; output path: fixed `build/` (§1.1) + `theme.output.basename`; `brief.identity.title`, `brief.identity.subtitle`, `brief.identity.authors[]` |
+| INV-22 | `rework/tools/build_book.py:30-32` | fonts, palette, text width | `theme.fonts.serif`, `theme.fonts.serif_heading`, `theme.fonts.sans`, `theme.palette.ink`, `theme.palette.primary`, `theme.palette.accent`, `theme.palette.muted`, `theme.layout.text_width` |
 | INV-23 | `rework/tools/build_book.py:35-44` | callout labels and colours | `theme.callouts.<callout_id>` |
 | INV-24 | `rework/tools/build_book.py:45-51` | three parts with chapter spans; boxed and unlisted sections | `chapter-plan.parts[]`, `theme.boxed_section_ids[]`, `theme.toc_excluded_section_ids[]` |
-| INV-25 | `rework/tools/build_book.py:204-237` | `en-GB`, left-aligned styles | `theme.lang_tag`, `theme.direction`, `theme.alignment.*` |
-| INV-26 | `rework/tools/build_book.py:289-317` | LTR option/reference/glossary indentation | `theme.lists.*`, `theme.direction` |
-| INV-27 | `rework/tools/build_book.py:429-472` | four perspectives in a 2×2 grid; literal perspective, myth and evidence labels | `template.perspectives.*`, `template.callouts[].parts[]`, `theme.callouts.<callout_id>.layout` |
+| INV-25 | `rework/tools/build_book.py:204-237` | `en-GB`, left-aligned styles | `theme.lang_tag`, `theme.direction`, `theme.alignment.body`, `theme.alignment.headings` |
+| INV-26 | `rework/tools/build_book.py:289-317` | LTR option/reference/glossary indentation | `theme.lists.indent`, `theme.lists.hanging`, `theme.direction` |
+| INV-27 | `rework/tools/build_book.py:429-472` | four perspectives in a 2×2 grid; literal perspective, myth and evidence labels | `template.perspectives.items[]`, `template.perspectives.callout_id`, `template.callouts[].parts[]`, `theme.callouts.<callout_id>.layout` |
 | INV-28 | `rework/tools/build_book.py:501-519` | figure path assumptions, PNG mirror directory, English `Figure N.N` captions | `template.paths.figures`, `figures.json` (`figures.v1`), `template.figures.caption_pattern` |
-| INV-29 | `rework/tools/build_book.py:569-573` | A4 page and fixed margins/distances | `theme.page.*` |
+| INV-29 | `rework/tools/build_book.py:569-573` | A4 page and fixed margins/distances | `theme.page.size`, `theme.page.margins`, `theme.page.header_distance`, `theme.page.footer_distance` |
 | INV-30 | `rework/tools/build_book.py:598-653` | English section names and callout grammar drive rendering | `removed` (the renderer consumes the checker's parsed representation keyed by section and callout IDs) |
-| INV-31 | `rework/tools/build_book.py:663-703` | cover detected by filename substring; English Q/LO grammar; A–E options | `theme.cover.asset`, `template.assessment.mcq.option_labels[]`, `template.learning_objectives.id_pattern` |
+| INV-31 | `rework/tools/build_book.py:663-703` | cover detected by filename substring; English Q/LO grammar; A–E options | `theme.cover.asset`; Q/LO marker grammar: harness constant, the same for every language (§4.3 `assessment.mcq`; Arabic contract P1), displayed through `theme.labels.question_prefix`, `theme.labels.objective_prefix`; `template.assessment.mcq.option_labels[]`, `template.assessment.mcq.option_display_labels[]`, `template.learning_objectives.id_pattern` |
 | INV-32 | `rework/tools/build_book.py:715-751` | literal `References`, `Learning Objectives`, `Answers and Rationales` | `template.sections[].role` (`references`, `objectives`, `answers`) |
-| INV-33 | `rework/tools/build_book.py:761-805` | fixed cover file, title-page layout, title/subtitle/author | `theme.cover.asset`, `theme.title_page.*`, `brief.identity.*` |
+| INV-33 | `rework/tools/build_book.py:761-805` | fixed cover file, title-page layout, title/subtitle/author | `theme.cover.asset`; title-page layout: preset constant `title_page_layout` (§4.4); `brief.identity.title`, `brief.identity.subtitle`, `brief.identity.authors[]` |
 | INV-34 | `rework/tools/build_book.py:805-825` | four-profession audience line; named fictional-patient notice | `brief.audience.display_line`, `theme.title_page.notices[]` |
 | INV-35 | `rework/tools/build_book.py:827-832` | English `Contents` and fallback message | `theme.labels.contents`, `theme.labels.update_toc_instruction` |
-| INV-36 | `rework/tools/build_book.py:841-908` | `How to Use This Book`, `Chapter`, `Glossary`, `ch*.md`, part structure | `template.sections[].role` (`how_to_use`), `theme.labels.*`, `template.chapter_heading_pattern`, `template.paths.chapter_glob`, `chapter-plan.parts[]` |
+| INV-36 | `rework/tools/build_book.py:841-908` | `How to Use This Book`, `Chapter`, `Glossary`, `ch*.md`, part structure | `template.sections[].role` (`how_to_use`), `theme.labels.chapter`, `theme.labels.part`, `theme.labels.glossary`, `template.chapter_heading_pattern`, `template.paths.chapter_glob`, `chapter-plan.parts[]` |
 | INV-37 | `rework/tools/build_book.py:918-923` | core metadata language `en-GB` | `theme.lang_tag` |
-| INV-38 | `rework/tools/build_book.py:928-964` | Word COM, hidden instance, TOC styles, embedded fonts, PDF settings | `theme.build.backend`, `theme.build.word_com.*`, `theme.build.pdf.*` |
-| INV-39 | `rework/tools/assemble.py:10-12` | tool-relative root, `rework/`, root-level output name | `template.paths.chapters`, `theme.output.basename` (and required `--project`) |
+| INV-38 | `rework/tools/build_book.py:928-964` | Word COM, hidden instance, TOC styles, embedded fonts, PDF settings | `theme.build.backend`, `theme.build.word_com.toc_styles`, `theme.build.pdf.bookmarks`, `theme.build.pdf.embed_fonts`; hidden Word instance: fixed behaviour of the `word_com` backend |
+| INV-39 | `rework/tools/assemble.py:10-12` | tool-relative root, `rework/`, root-level output name | root: `removed` (required `--project`); `template.paths.chapters`; output path: fixed `build/` + `theme.output.basename` |
 | INV-40 | `rework/tools/assemble.py:21-23` | prefix rewriting of `../images/` and `figures/` | `removed` (path-relative asset resolver, §1.1) |
-| INV-41 | `rework/tools/assemble.py:28-34` | front-matter file, `ch*.md`, glossary file, `Contents`, `How to Use This Book` | `template.paths.*`, `theme.labels.contents`, `template.front_matter.toc_insert_before_section_id` |
+| INV-41 | `rework/tools/assemble.py:28-34` | front-matter file, `ch*.md`, glossary file, `Contents`, `How to Use This Book` | `template.paths.front_matter`, `template.paths.chapter_glob`, `template.paths.glossary`, `theme.labels.contents`, `template.front_matter.toc_insert_before_section_id` |
 | INV-42 | `rework/tools/assemble.py:37` | only `images/` and `rework/figures/` are asset roots | `template.paths.allowed_asset_roots[]` |
-| INV-43 | `rework/tools/verify_refs.py:17,44-48` | ASCII title tokenizer, first six words, 60% overlap | `template.references.title_match.*` |
+| INV-43 | `rework/tools/verify_refs.py:17,44-48` | ASCII title tokenizer, first six words, 60% overlap | `template.references.title_match.mode`, `template.references.title_match.words`, `template.references.title_match.threshold` |
 | INV-44 | `rework/tools/verify_refs.py:20-23` | literal `References` and numbered-entry grammar | `template.sections[].role` (`references`), `template.references.entry_pattern` |
-| INV-45 | `rework/tools/verify_refs.py:27-40` | Crossref endpoint, user agent, 5 retries, 15 s timeout, fixed backoff | `defaults.references.providers.crossref.*` (harness `defaults.json`; overridable by `template.references.providers`) |
+| INV-45 | `rework/tools/verify_refs.py:27-40` | Crossref endpoint, user agent, 5 retries, 15 s timeout, fixed backoff | `defaults.references.providers.crossref` fields `endpoint`, `user_agent`, `retries`, `timeout_s`, `backoff_s` (§4.5; overridable by `template.references.providers`) |
 | INV-46 | `rework/tools/verify_refs.py:53-57` | DOI patterns; every no-DOI reference passes despite the stated rule | `template.references.identifier_patterns[]`, `template.references.no_doi_policy` |
 | INV-47 | `rework/tools/renumber_refs.py:8,30-46` | numeric square-bracket citations; English `## References` | `template.citations.pattern`, `template.sections[].role` (`references`) |
 | INV-48 | `rework/_template.md:1-52` | medical chapter skeleton with English headings | `removed` (a skeleton is generated from `template.json` by the runner at `begin rework`) |
 
-**Completeness:** 48 CDR rows → INV-01…INV-48. 42 map to config keys; 6 are `removed` (INV-05, INV-07, INV-08, INV-30, INV-40, INV-48). No row is unmapped.
+**Completeness:** 48 CDR rows → INV-01…INV-48. 42 map to config keys, with any sub-part that is not configurable named explicitly as a harness or preset constant, `removed`, or the fixed `build/` location. 6 are fully `removed` (INV-05, INV-07, INV-08, INV-30, INV-40, INV-48). Every key is an exact declared field; no wildcards. The check is mechanical: every backticked `template.`, `theme.`, `brief.`, `chapter-plan.`, `locale.` or `defaults.` target must name a field declared in §4 or §11 (see `docs/harness/reviews/step3-fixes.md`, S3-13).
 
 ---
 
@@ -651,14 +704,14 @@ Named here; STEP 2 fills them. Core code must route through these points, so Ara
 
 | ID | Extension point | Core obligation now |
 |---|---|---|
-| EXT-LOC-1 | **Locale profile** `harness/locale/<tag>.json`, selected by `brief.language.output`: `tokenizer`, `sentence_terminators[]`, `digit_policy`, readability defaults, `discouraged_objective_verbs[]`, `banned_terms[]`, default `chapter_heading_pattern`, `figure_caption_pattern`, default labels; project overrides via `template.locale_overrides` | Every locale-dependent function takes the profile as a **parameter** (no global language): chapters use the output-language profile, source text and translation checks use the source-language profile. `en.json` reproduces today's behaviour |
-| EXT-LOC-2 | **Direction and bidi** `theme.direction`, `theme.lang_tag`, `theme.fonts.complex_script` | The DOCX renderer creates every paragraph, run and table through one function that applies direction and language properties from the theme; LTR behaviour is today's |
+| EXT-LOC-1 | **Locale profile** `harness/locale/<primary>.json`, selected by the primary language subtag of `brief.language.output` (for chapters) or `brief.language.source` (for source text); the full BCP-47 tag is used only for Word language and regional formatting through `theme.lang_tag`: `tokenizer`, `sentence_terminators[]`, `digit_policy`, readability defaults, `discouraged_objective_verbs[]`, `banned_terms[]`, default `chapter_heading_pattern`, `figure_caption_pattern`, default labels; project overrides via `template.locale_overrides` | Every locale-dependent function takes the profile as a **parameter** (no global language): chapters use the output-language profile, source text and translation checks use the source-language profile. `en.json` reproduces today's behaviour |
+| EXT-LOC-2 | **Direction and bidi** `theme.direction`, `theme.lang_tag`, `theme.fonts.complex_script`, `theme.fonts.complex_script_heading` | The DOCX renderer creates every paragraph, run and table through one function that applies direction and language properties from the theme; LTR behaviour is today's |
 | EXT-LOC-3 | **Labels bound to stable IDs** `template.sections[].label`, `template.callouts[].label`, `theme.labels.*` | No shared code compares against a display string; parsing matches the configured label for an ID |
 | EXT-LOC-4 | **Reference policy** `template.references.title_match.mode` and a separate DOI-existence result | `verify_refs` reports existence and title match as two fields; `mode` selects the matcher |
 | EXT-LOC-5 | **Acceptance corpus** `tests/fixtures/locale/<tag>/` | The test runner discovers per-locale corpora by directory |
-| EXT-TR-1 | **Stage slot** in the `STAGES` data (§2.1): `translate` between `design` and `rework`, mandatory when `translation_required` and `goal.mode = evaluate_and_rework` | Stage graph, mandatory sets and invalidation are data-driven |
-| EXT-TR-2 | **Termbase and approval set** `projects/<p>/termbase.json` joins the design approval set when translation applies; `termbase-additions.json` is not gated; `APPROVAL_SETS` is data (§3) | An approval set can gain a file without code changes to the gate |
-| EXT-TR-3 | **Traceability units** `ingest/units.json` (source unit IDs `src-chNN`, `src-chNN-sMM`), `trace/source-target-map.json`; target chapter IDs from `chapter-plan.json`, section IDs from `template.sections[].id` | Ingest writes `units.json`; chapter and section IDs are stable and exposed by the checker's parsed representation |
+| EXT-TR-1 | **Stage slot** in the `STAGES` data (§2.1): `translate` between `design` and `rework`, as the first step of vision phase 4 (Rewrite), mandatory when `translation_required` and `goal.mode = evaluate_and_rework` | Stage graph, mandatory sets and invalidation are data-driven |
+| EXT-TR-2 | **Termbase and approval set** `projects/<p>/termbase.json` joins the design approval set when translation applies; term proposals (`terms/*-proposals.json`) are stage outputs, and `termbase-additions.json` is the resolution record written by `run_stage.py terms resolve --dec`; `APPROVAL_SETS` is data (§3) | An approval set can gain a file without code changes to the gate |
+| EXT-TR-3 | **Traceability units** `ingest/units.json` (source unit IDs `src-chNN`, `src-chNN-sMM`), `trace/translation-map.json` (translate), `trace/source-target-map.json` (rework); target chapter IDs from `chapter-plan.json`, section IDs from `template.sections[].id` | Ingest writes `units.json`; chapter and section IDs are stable and exposed by the checker's parsed representation |
 | EXT-TR-4 | **Independent review gate** receipt fields `author_model`, `reviewer_model` | `state.py` exposes one check that `reviewer_model ≠ author_model` for any stage that declares it |
 
 ---
@@ -697,4 +750,23 @@ These are design choices of this spec, listed so the approval is explicit:
 3. **`chapter-plan.json` is a design artifact**; per-chapter budgets and parts live there, not in the intake template (§4.3).
 4. **Editing an intake file during design re-opens the intake approval** (§3).
 5. **Tool SHA per stage `tool_paths`**, not the whole repo (§2.3).
-6. **Audit binds the post-fix build**, recording the Codex-audited build separately (§2.2).
+6. **Audit binds the post-fix build**, recording the Codex-audited inputs separately (§2.2).
+
+---
+
+## 15. STEP 3 amendments (Codex review, `docs/harness/reviews/step3-review.md`)
+
+The fixes are recorded finding by finding in `docs/harness/reviews/step3-fixes.md`. The design changes the user approves with the final spec are:
+
+1. Stages map onto the six vision phases; `translate` is the first step of phase 4, not a new phase (§2.1).
+2. Receipts are also stale when an output hash changes. Each file has one owning stage. Control-plane files are never hashed in receipts. `new` records `args` (§2.3).
+3. A single `require_gates` function applies to every stage after intake. A missing approval fails `verify`. `complete` re-checks the gates (§2.3).
+4. There is one active-run lease per project, with a `--nonce` on `complete` and `abort` as the only recovery path (§2.3).
+5. An intake amend path lets a design-time template change avoid editing another stage's outputs (§3).
+6. Approvals bind the hash of the `decisions.md` row (§3).
+7. Language is chosen by primary subtag; the region matters only for Word language (§4.1, §4.6).
+8. G1 owns claim-support mismatch and G4 owns existence, currency and coverage. There are 1–4 domain pillars, each worth 5–40 points. Hard caps use machine triggers and scorecards record `caps_applied` (§5).
+9. Ingest fidelity subtracts configured omissions (§2.4).
+10. Chemistry IDs have defined stage effects (§7.5).
+11. Tests run the real CLI in a temporary git repository (§9.6).
+12. Inventory targets are exact keys (§10).

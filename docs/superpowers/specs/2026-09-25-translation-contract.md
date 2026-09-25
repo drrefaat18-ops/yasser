@@ -1,7 +1,7 @@
 ---
 type: interface-contract
 step: 2
-status: pending-codex-review (STEP 3)
+status: amended after STEP 3 Codex review (fixes in docs/harness/reviews/step3-fixes.md); final approval pending
 date: 2026-09-25
 core_spec: docs/superpowers/specs/2026-09-25-book-harness-core-design.md (approved at 0284376, DEC-031; amended in the STEP 2 commit as allowed by the ticket)
 companion: docs/superpowers/specs/2026-09-25-arabic-locale-contract.md
@@ -27,7 +27,7 @@ CDR §5 (`docs/harness/codex-design-review-2026-09-25.md:287`) is the requiremen
 | `evaluate_and_rework` | false | no translation |
 | `evaluate_and_rework` | true | the `translate` stage joins the mandatory set (§2) |
 
-`translation_required` is true exactly when `language.source ≠ language.output` (core §4.6 rule 2). Supported pairs: `en→ar`, `ar→en`. Any other pair is refused by `complete intake` with `TR-PAIR-UNSUPPORTED`.
+`translation_required` is true exactly when the **primary language subtags** of `language.source` and `language.output` differ (core §4.6 rule 2). Regions play no part here: `ar-EG → ar` and `en-GB → en-US` are not translation. Supported pairs, by primary subtag: `en→ar` and `ar→en`. Any other pair of different subtags is refused by `complete intake` with `TR-PAIR-UNSUPPORTED`. `pair` values below use primary subtags (`en-ar`, `ar-en`).
 
 ---
 
@@ -40,6 +40,7 @@ new → intake ─(intake approval)→ ingest → evaluate → design ─(design
 | Decision | Reason |
 |---|---|
 | **Evaluate runs on the original source**, before any translation. | Findings describe the author's book, not translation artefacts. |
+| **Translate is the first step of vision phase 4 (Rewrite)**, not a new phase (core §2.1 phase map). | The vision fixes six phases and requires translation; translation belongs to rewriting the book. |
 | **Translate runs after design approval.** | Design decides which source material survives (`chapter-plan.json` → `chapters[].source_refs[]`); only those units are translated, so dropped material costs nothing. |
 | **Translate is a faithful translation, not a rewrite.** | A faithful unit can be checked against its source unit one to one, which makes the review gate well defined. |
 | **Rework runs in the output language** on the translated units, and writes new material directly in that language. | The final text is written once, checked once with the output-language profile, and fixed once after audit. |
@@ -50,14 +51,14 @@ new → intake ─(intake approval)→ ingest → evaluate → design ─(design
 |---|---|
 | Kind | agentic, unit-based (like `rework`) |
 | Inputs (hashed) | `design/*` approved artifacts, `termbase.json`, `ingest/normalized.md`, `ingest/units.json`, `brief.json` |
-| Outputs (hashed) | `translation/<unit-id>.md` (one per translated unit), `translation/check-report.json`, `translation/codex-review.md`, `translation/fixes.md`, `trace/source-target-map.json` (translation half), `termbase-additions.json` |
+| Outputs (hashed) | `translation/<unit-id>.md` (one per translated unit), `translation/check-report.json`, `translation/codex-review.md`, `translation/fixes.md`, `trace/translation-map.json` (`trace.v1`, `kind: translation`), `terms/translate-proposals.json`. No later stage edits any of them (core §2.3, one owner per file). |
 | Extra receipt fields | `pair` (`en-ar` or `ar-en`), `units[]` (per-unit input/output hashes), `author_model`, `reviewer_model` |
-| Preconditions | design approval valid (it covers `termbase.json`); `goal.mode = evaluate_and_rework`; `translation_required = true` |
+| Preconditions | core `require_gates` (intake approval and design approval valid; the design approval covers `termbase.json`); design receipt valid; `goal.mode = evaluate_and_rework`; `translation_required = true` |
 | Invalidates | rework and every later stage |
 | Failure and resume | per-unit: `complete translate --unit <unit-id>` writes a unit receipt after the automated checks (§5) pass for that unit; `begin translate` lists units missing or stale. The stage receipt needs every unit valid, the one Codex review saved, and every blocker/major review finding closed in `fixes.md`. |
 | QA evidence | `check-report.json` with zero failing checks; review header; fixes table; reviewer ≠ author (§6) |
 
-`rework` gains inputs `translation/*.md` and `trace/source-target-map.json` when translation applies.
+When translation applies, `rework` gains the inputs `translation/*.md`, `trace/translation-map.json`, `termbase.json` and `termbase-additions.json`, and the outputs `trace/source-target-map.json` (`kind: final`) and `terms/rework-proposals.json` (core §2.2).
 
 ---
 
@@ -68,9 +69,10 @@ new → intake ─(intake approval)→ ingest → evaluate → design ─(design
 | File | Approval | Written by |
 |---|---|---|
 | `projects/<p>/termbase.json` | part of the **design** approval set (core §3, `APPROVAL_SETS.design`) | Claude in the `design` stage, from `brief.language.terminology`, the evaluation, and term extraction over the units named in `chapter-plan.json` |
-| `projects/<p>/termbase-additions.json` | not approval-gated | appended by `translate` and `rework` when a new term appears |
+| `projects/<p>/terms/translate-proposals.json`, `terms/rework-proposals.json` | not approval-gated; hashed outputs of their stage | written by `translate` and `rework` respectively when a new term appears; never edited by another stage |
+| `projects/<p>/termbase-additions.json` | resolution record, bound to a DEC row hash | written only by `run_stage.py --project P terms resolve --dec DEC-NNN` (§3.3); hashed input of `rework` and `audit` |
 
-Editing `termbase.json` after approval re-opens the design approval, like any covered file. New terms go to the additions file instead, so work is not blocked mid-stage.
+Editing `termbase.json` after approval re-opens the design approval, like any covered file. New terms go to a proposals file instead, so work is not blocked mid-stage.
 
 ### 3.2 Schema `termbase.v1`
 
@@ -94,12 +96,18 @@ Entry fields:
 | `gloss_first_use` | bool; when true, the first use in each chapter shows the source term in parentheses, e.g. `التعلم الآلي (machine learning)`; this links to the Arabic glossary `gloss` (Arabic contract §4) |
 | `note` | domain note for the translator and reviewer |
 
-Additions use the same entry schema plus `status: proposed, accepted or rejected` and `first_seen {unit_id}`.
+**Proposal form** (`terms/*-proposals.json`): the same entry schema plus `first_seen {unit_id}`. IDs are `P-T-NNNN` in translate proposals and `P-R-NNNN` in rework proposals, so no two stages can claim the same ID.
+
+**Resolution form** (`termbase-additions.json`): `{schema_version, pair, resolutions[] {proposal_id, status: accepted or rejected, entry, dec_id, dec_row_sha256}}`. An accepted resolution's `entry` is the term as accepted, which may be edited from the proposal.
 
 ### 3.3 When the termbase is approved
 
 - `termbase.json`: with the design, in one user approval (no new approval kind; core §3 keeps exactly two).
-- `termbase-additions.json`: `complete audit` refuses while any addition is still `proposed`. The user accepts or rejects additions in chat; Claude records the batch in `decisions.md` with a DEC ID and sets each status. Accepted additions are checked for consistency like approved entries from the moment they are accepted.
+- Proposals: the user accepts or rejects them in chat. Claude records the batch in `decisions.md` with a DEC ID, then runs `terms resolve --dec DEC-NNN`, which writes the resolutions and the DEC row hash (core §3). A proposal with no resolution is **open**.
+- `complete audit` refuses while any proposal in either proposals file is open (`TB-PROPOSAL-OPEN`).
+- Accepted entries are checked like approved entries from then on.
+- A rejected proposal's target form must not appear in the translated or reworked text (`TB-REJECTED-PRESENT`).
+- Because `termbase-additions.json` is a rework input, resolving proposals makes the rework receipt stale. `complete rework` is re-run; if it proposes nothing new, the process converges in one pass.
 
 ---
 
@@ -109,16 +117,17 @@ Additions use the same entry schema plus `status: proposed, accepted or rejected
 
 `ingest` writes `ingest/units.json` (schema `units.v1`, core EXT-TR-3): `units[] {id, heading, level, line_start, line_end, sha256}`. IDs are `src-chNN` for chapters and `src-chNN-sMM` for H2 sections, numbered in document order. `normalized.md` itself is not modified. `chapter-plan.json` `chapters[].source_refs[]` cites these IDs.
 
-### 4.2 Map `trace/source-target-map.json` (schema `trace.v1`)
+### 4.2 Maps `trace/translation-map.json` and `trace/source-target-map.json` (schema `trace.v1`)
 
 | Field | Notes |
 |---|---|
 | `schema_version`, `pair` | |
+| `kind` | `translation` (written by `translate` to `translation-map.json`) or `final` (written by `rework` to `source-target-map.json`) |
 | `entries[]` | `{source_unit, source_sha256, translation_unit, translation_sha256, target_chapter_id, target_section_ids[], relation}` |
 | `relation` | `translated`, `adapted`, `merged`, `split`, `dropped`, `new` |
 
-- `translate` fills `source_unit`, `source_sha256`, `translation_unit`, `translation_sha256`.
-- `rework` fills `target_chapter_id`, `target_section_ids[]` and `relation`.
+- **`kind: translation`**: every entry requires `source_unit`, `source_sha256`, `translation_unit` and `translation_sha256`. The target fields and `relation` are forbidden.
+- **`kind: final`**: every entry requires `relation`. For all relations except `new`, it also requires the four translation fields, copied from `translation-map.json`. For all relations except `dropped`, it requires `target_chapter_id` and `target_section_ids[]`. `rework` never edits `translation-map.json`.
 - `dropped` entries need the design reason (`chapter-plan.json` names the unit under `dropped[]`); `new` entries have no source unit.
 
 ### 4.3 Traceability checks
@@ -126,7 +135,7 @@ Additions use the same entry schema plus `status: proposed, accepted or rejected
 | ID | Fails when |
 |---|---|
 | `TR-UNIT-MISSING` | a unit in `source_refs[]` has no translation unit |
-| `TR-UNIT-STALE` | a recorded `source_sha256` or `translation_sha256` no longer matches |
+| `TR-UNIT-STALE` | a recorded `source_sha256` or `translation_sha256` no longer matches, in either map, or the final map's copied hashes differ from `translation-map.json` |
 | `TR-ORPHAN` | a translation unit has no source unit |
 | `TR-TARGET-UNMAPPED` | (after rework) a target chapter has no entry, or a translated unit has no target chapter and is not `dropped` |
 
@@ -147,6 +156,8 @@ Run by `harness/tools/check_translation.py --project P [--unit ID]`, emitting `c
 | `PRES-PROTECTED` | preservation of mixed script | protected spans (Arabic contract P4: formulas, SMILES/SMARTS, code, units, gene symbols) differ |
 | `PRES-FIGURE` | preservation | figure or table references differ |
 | `PRES-LATIN-TERM` | mixed script (en→ar) | a Latin term kept in the source-language form in the termbase (`dnt` or gloss) is missing from the target |
+| `TB-REJECTED-PRESENT` | termbase resolution | the target form of a rejected proposal appears in a translated unit or reworked chapter |
+| `TB-PROPOSAL-OPEN` | termbase resolution | a proposal has no resolution (checked by `complete audit`) |
 | traceability IDs | §4.3 | as listed |
 
 Numbers that are not in protected spans (e.g. "three" vs `3`) are listed in the report under `notes[]` for the reviewer, not failed, because spelled-out numbers change form legitimately between languages.
@@ -164,7 +175,7 @@ Numbers that are not in protected spans (e.g. "three" vs `3`) are listed in the 
   - `TR-REVIEW-SAME-MODEL` if `reviewer_model = author_model` (core EXT-TR-4 check);
   - `TR-REVIEW-OPEN` if a blocker or major finding lacks a `fixed + verified`, `rejected` or `ruled by user` row.
 
-The final reworked text is later covered by the independent audit (core §2.2), which checks meaning against the source through the trace map.
+The final reworked text is later covered by the independent audit (core §2.2). The audit checks meaning against the source through the final trace map. Every artifact it uses is a hashed audit input and is recorded in `codex_audited_inputs`: `ingest/normalized.md`, `ingest/units.json`, `translation/*.md`, `translation/check-report.json`, `trace/source-target-map.json`, `termbase.json` and `termbase-additions.json`. A change to any of them after the audit makes the audit receipt stale.
 
 ---
 
@@ -187,8 +198,8 @@ The final reworked text is later covered by the independent audit (core §2.2), 
 | Contract field | Core extension point |
 |---|---|
 | `translate` stage, its position, mandatory-set condition, invalidation, receipt fields | EXT-TR-1 |
-| `termbase.json` in the design approval set; `termbase.v1`; `termbase-additions.json` and its audit rule | EXT-TR-2 |
-| `ingest/units.json` (`units.v1`); `trace/source-target-map.json` (`trace.v1`); `chapter-plan.json` `source_refs[]` and `dropped[]`; `TR-UNIT-*`, `TR-ORPHAN`, `TR-TARGET-UNMAPPED` | EXT-TR-3 |
+| `termbase.json` in the design approval set; `termbase.v1` (entry, proposal, resolution forms); `terms/*-proposals.json`; `termbase-additions.json`, `terms resolve`; `TB-PROPOSAL-OPEN`, `TB-REJECTED-PRESENT` | EXT-TR-2 |
+| `ingest/units.json` (`units.v1`); `trace/translation-map.json` and `trace/source-target-map.json` (`trace.v1`, `kind`); `chapter-plan.json` `source_refs[]` and `dropped[]`; `TR-UNIT-*`, `TR-ORPHAN`, `TR-TARGET-UNMAPPED` | EXT-TR-3 |
 | `author_model`, `reviewer_model`; `TR-REVIEW-*`; review file and fixes file | EXT-TR-4 |
 | per-language processing in §5 and §7; `TB-*` normalised matching; digit rules | EXT-LOC-1 |
 | reference handling in §7 | EXT-LOC-4 |
@@ -198,14 +209,15 @@ The final reworked text is later covered by the independent audit (core §2.2), 
 
 ## 9. Acceptance criteria (STEP 11)
 
-Two fixture projects: `tests/fixtures/translation/en-ar/` and `tests/fixtures/translation/ar-en/`. Each holds a small source (two chapters, at least four H2 units, one table, one figure reference, one DOI reference, one formula or SMILES string, one `dnt` term, one `gloss_first_use` term), its `termbase.json`, `units.json`, translated units, a trace map and a stored review file.
+Two fixture projects: `tests/fixtures/translation/en-ar/` and `tests/fixtures/translation/ar-en/`. Each holds a small source (two chapters, at least four H2 units, one table, one figure reference, one DOI reference, one formula or SMILES string, one `dnt` term, one `gloss_first_use` term), its `termbase.json`, `units.json`, translated units, both trace maps, a proposals file with one accepted and one rejected proposal plus its resolution record, and a stored review file. Tests run the real CLI on a copy of each fixture inside a temporary git repository (core §9.6); the immutable fixture is never passed to `--project` directly.
 
 | # | Criterion | Literal expectation |
 |---|---|---|
-| 1 | **termbase consistency** | the good fixture reports zero `TB-*` failures; mutations: remove a required target term → `TB-TERM-MISSING`; insert a forbidden variant → `TB-FORBIDDEN-VARIANT`; alter a `dnt` string → `TB-DNT-ALTERED`; drop a first-use gloss → `TB-GLOSS-MISSING` |
+| 1 | **termbase consistency** | the good fixture reports zero `TB-*` failures; mutations: remove a required target term → `TB-TERM-MISSING`; insert a forbidden variant → `TB-FORBIDDEN-VARIANT`; alter a `dnt` string → `TB-DNT-ALTERED`; drop a first-use gloss → `TB-GLOSS-MISSING`; insert a rejected proposal's form → `TB-REJECTED-PRESENT`; remove the resolution of a proposal → `complete audit` exits non-zero with `TB-PROPOSAL-OPEN` |
 | 2 | **traceability** | good fixture passes; delete a translation unit → `TR-UNIT-MISSING`; edit a source unit after translating → `TR-UNIT-STALE`; add an unmapped unit → `TR-ORPHAN` |
 | 3 | **preservation of references and mixed script** | good fixture passes; change a citation number → `PRES-CITATION`; alter a DOI → `PRES-IDENTIFIER`; alter the formula or SMILES → `PRES-PROTECTED` |
-| 4 | **review by a different model** | `complete translate` on a fixture state with `reviewer_model = author_model` exits non-zero with `TR-REVIEW-SAME-MODEL`; with the review file absent, `TR-REVIEW-MISSING`; with an open major finding, `TR-REVIEW-OPEN` |
+| 4 | **review by a different model** | `complete translate` on a copied fixture state with `reviewer_model = author_model` exits non-zero with `TR-REVIEW-SAME-MODEL`; with the review file absent, `TR-REVIEW-MISSING`; with an open major finding, `TR-REVIEW-OPEN` |
 | 5 | **both directions** | criteria 1–4 pass for **both** `en-ar` and `ar-en` |
+| 6 | **language tags** | `complete intake` accepts `ar-EG → en-GB` as pair `ar-en`, treats `en-GB → en-US` as no translation, and refuses `fr → ar` with `TR-PAIR-UNSUPPORTED` |
 
 The test runner exits 0 while each mutation yields its named ID and a non-zero checker exit (core §9.3 convention). STEP 11 also requires one real Codex review of each fixture's translation and that the user has seen both outputs (ticket STEP 11).

@@ -1,7 +1,7 @@
 ---
 type: interface-contract
 step: 2
-status: pending-codex-review (STEP 3)
+status: amended after STEP 3 Codex review (fixes in docs/harness/reviews/step3-fixes.md); final approval pending
 date: 2026-09-25
 core_spec: docs/superpowers/specs/2026-09-25-book-harness-core-design.md (approved at 0284376, DEC-031; amended in the STEP 2 commit as allowed by the ticket)
 binding: docs/harness/VISION.md
@@ -35,7 +35,7 @@ The profile is data. Every locale-dependent function receives a profile object a
 
 | Field | Value for `ar` | Contract |
 |---|---|---|
-| `tag` | `ar` | matches `brief.language.*` values starting with `ar` |
+| `tag` | `ar` | the primary language subtag; selected when the primary subtag of `brief.language.output` (or `.source`, for source text) is `ar`, so `ar`, `ar-EG` and `ar-SA` all use this profile (core §4.1, EXT-LOC-1) |
 | `script` | `Arab` | |
 | `direction` | `rtl` | must equal `theme.direction` (core §4.6 rule 3) |
 | `normalisation.compare` | `["NFC", "strip_tatweel", "strip_harakat", "unify_alef", "unify_ya"]` | applied before any **comparison** (glossary lookup, banned terms, termbase matching, discouraged verbs); never applied to text written to output |
@@ -53,7 +53,7 @@ The profile is data. Every locale-dependent function receives a profile object a
 | `range_separators` | `["-", "–"]` | accepted inside citation groups |
 | `percent_signs` | `["%", "٪"]` | both accepted |
 | `ordinal_words` | map of `الأول`…`الثلاثون` → 1…30 (masculine and feminine forms) | lets `chapter_heading_pattern` accept `الفصل الثالث` as chapter 3 |
-| `chapter_heading_pattern` | `^# الفصل (?P<num>[0-9٠-٩]+\|<ordinal>)\s*[:：]\s*(?P<title>.+)$` | `<ordinal>` expands from `ordinal_words` |
+| `chapter_heading_pattern` | see §2.2 (kept out of this table so that no Markdown escape can change the regex) | `<ordinal>` expands from `ordinal_words` |
 | `figure_caption_pattern` | `شكل ({chapter}-{n})` | numbers rendered in `digits.output` |
 | `table_caption_pattern` | `جدول ({chapter}-{n})` | |
 | `discouraged_objective_verbs` | normalised patterns for "understand / know / be aware of": `[يت]?فهم`, `فهم`, `[يت]?عرف`, `معرفة`, `[يت]?درك`, `إدراك`, `[يت]?لم ب`, `الإلمام` | matched on the normalised objective line at word boundaries |
@@ -71,6 +71,16 @@ The profile is data. Every locale-dependent function receives a profile object a
 
 A project may still set its own values through `template.readability` at intake.
 
+### 2.2 Chapter heading pattern
+
+The profile stores this template string exactly (a single `|` is regex alternation):
+
+```text
+^# الفصل (?P<num>[0-9٠-٩]+|<ordinal>)\s*[:：]\s*(?P<title>.+)$
+```
+
+**Expansion of `<ordinal>`.** At profile load, `<ordinal>` is replaced by a non-capturing group `(?:w1|w2|…)`. The words are all keys of `ordinal_words`, in both masculine and feminine forms. Each word is passed through `re.escape` and sorted longest first, so `الحادي عشر` is tried before `الحادي`. The words are matched on the heading after `normalisation.compare`. `num` is then converted to an integer: digits in either system go through `unicodedata.digit`, and an ordinal word through `ordinal_words`. The acceptance corpus (§6.1 `labels/`) includes the headings `# الفصل 3: …`, `# الفصل ٣: …`, `# الفصل الثالث: …`, `# الفصل الثالثة: …` (feminine form) and `# الفصل الحادي عشر: …`. All of them must parse to the expected number.
+
 ---
 
 ## 3. Direction and bidi contract for DOCX (EXT-LOC-2)
@@ -79,9 +89,10 @@ The core renderer creates every paragraph, run, table and section through **one*
 
 | Element | Required OOXML | Notes |
 |---|---|---|
-| document defaults (`styles.xml` `w:docDefaults/w:rPrDefault`) | `w:lang w:val="en-US" w:bidi="<theme.lang_tag>"`; `w:rFonts w:cs="<theme.fonts.complex_script>"` | `lang_tag` default `ar-EG` (CDR §5); any tag starting `ar-` is valid |
+| document defaults (`styles.xml` `w:docDefaults/w:rPrDefault`) | `w:lang w:val="en-US" w:bidi="<theme.lang_tag>"`; `w:rFonts w:cs="<theme.fonts.complex_script>"` | `lang_tag` default `ar-EG` (CDR §5); any tag whose primary subtag is `ar` is valid (core §4.6 rule 3) |
+| heading, caption, header/footer and TOC styles | `w:rFonts w:cs="<theme.fonts.complex_script_heading>"` in the style's `w:rPr` | body styles inherit `complex_script` from the defaults |
 | settings (`settings.xml`) | `w:themeFontLang w:bidi="<theme.lang_tag>"` | |
-| every paragraph style and paragraph in the body | `w:pPr/w:bidi` | |
+| every paragraph style and paragraph in the body | `w:pPr/w:bidi` | except display-equation paragraphs (row below), which are LTR |
 | paragraph alignment | theme values `start`, `end`, `center`, `both` mapped to OOXML so that `start` renders at the **right** margin | the mapping is proven by the rendered evidence pages (§6.3), not assumed |
 | every run of Arabic text | `w:rPr/w:rtl`; `w:rFonts w:cs`; `w:szCs` equal to `w:sz`; `w:bCs`/`w:iCs` whenever `w:b`/`w:i` | |
 | runs of Latin text or protected spans inside an Arabic paragraph | no `w:rtl`; `w:lang w:val="en-US"`; Latin fonts in `w:ascii`/`w:hAnsi` | the renderer splits text into runs by strong bidi class (`unicodedata.bidirectional`: `R`/`AL` → RTL run, `L` → LTR run; neutrals and digits join the preceding run; a leading neutral joins the following run) |
@@ -92,11 +103,12 @@ The core renderer creates every paragraph, run, table and section through **one*
 | headers and footers | bidi paragraphs; running head book title at reading start, chapter title at reading end | mirror of the LTR layout |
 | captions | `figure_caption_pattern` / `table_caption_pattern` from the profile, digits per policy | |
 | TOC | TOC field with TOC1/TOC2 styles carrying `w:bidi`; heading text `theme.labels.contents` | Word fills it via COM, as today (`rework/tools/build_book.py:945-947`) |
-| equations (OMML) | kept LTR (`m:oMathPara` without bidi) | formulas read left to right in Arabic textbooks |
+| display equations (OMML `m:oMathPara`) | the equation sits in **its own paragraph**, whose `w:pPr` has **no** `w:bidi` and `w:jc w:val="center"`; `m:oMathParaPr/m:jc m:val="center"` | formulas read left to right in Arabic textbooks. The containing paragraph is LTR, so there is nothing to neutralize. |
+| inline equations and formulas inside an Arabic paragraph | an inline `m:oMath` or a protected-span run is treated like any LTR run: it has no `w:rtl` and gets an LRM on each side when its neighbour is neutral | the mixed-script evidence page (§6.3) shows one inline formula and one display equation |
 | core properties | `dc:language` = `theme.lang_tag` | |
-| fonts | preset `rtl-textbook`: body `complex_script` = **Sakkal Majalla**, headings and UI `complex_script` = **Segoe UI**; Latin fonts as `ltr-textbook` | both ship with stock Windows (present on this machine in `C:\Windows\Fonts`: `majalla.ttf`, `majallab.ttf`, `segoeui.ttf`); preflight checks them |
+| fonts | preset `rtl-textbook`: `fonts.complex_script` (body) = **Sakkal Majalla**, `fonts.complex_script_heading` (headings, captions, header/footer, UI) = **Segoe UI**; Latin fonts as `ltr-textbook` | both ship with stock Windows (present on this machine in `C:\Windows\Fonts`: `majalla.ttf`, `majallab.ttf`, `segoeui.ttf`); preflight checks them |
 
-**Theme fields used:** `direction`, `lang_tag`, `fonts.complex_script`, `alignment.*`, `lists.*`, `labels.*`, `preset` (core §4.4). The preset file `harness/presets/rtl-textbook.json` is created in STEP 10.
+**Theme fields used:** `direction`, `lang_tag`, `fonts.complex_script`, `fonts.complex_script_heading`, `alignment.*`, `lists.*`, `labels.*`, `preset` (core §4.4). The preset file `harness/presets/rtl-textbook.json` is created in STEP 10.
 
 ### 3.1 RTL rules for lists, tables and the TOC (summary)
 
@@ -162,7 +174,7 @@ A DOI that exists but whose title cannot be compared automatically is `manual_pe
 
 ### 5.3 Manual verification record
 
-`projects/<p>/references-manual.json` (schema `references-manual.v1`): entries `{chapter_id, n, doi, verified_title, evidence_url, verified_on, dec_id}`. A matching entry turns `manual_pending` into `manual_ok`. The `dec_id` names the `decisions.md` row where the user or Claude recorded the check.
+`projects/<p>/references-manual.json` (schema `references-manual.v1`): entries `{chapter_id, n, doi, verified_title, evidence_url, verified_on, dec_id, dec_row_sha256}`. A matching entry turns `manual_pending` into `manual_ok`. The `dec_id` names the `decisions.md` row where the user or Claude recorded the check. `dec_row_sha256` binds that row (core §3). The file is a hashed input of `rework` (core §2.2), so a new or changed entry makes the rework receipt stale.
 
 ### 5.4 Pass rules
 
@@ -190,7 +202,7 @@ Stored under `tests/fixtures/locale/ar/`, discovered by directory by the test ru
 | `tokenize/` | harakat, tatweel, proclitics, Latin terms inside Arabic, both digit systems, `٫` decimals, `٪`, hyphenated compounds | exact word count per case |
 | `sentences/` | `؟`, `…`, `!؟`, abbreviations from §2, decimals in both systems, URLs, `؛` and `،` inside sentences | exact sentence list per case |
 | `digits/` | pure Western, pure Arabic-Indic, mixed-in-one-number, numbers inside protected spans | `AR-DIGIT-MIXED` / `AR-DIGIT-INCONSISTENT` present or absent as stated |
-| `labels/` | one Arabic chapter using Arabic section, callout and perspective labels, ASCII markers, Arabic ordinal chapter heading | checker report with zero failing checks; parsed section IDs listed literally |
+| `labels/` | one Arabic chapter using Arabic section, callout and perspective labels, ASCII markers; chapter headings with Western digits, Arabic-Indic digits, a masculine ordinal, a feminine ordinal and a two-word ordinal (§2.2) | checker report with zero failing checks; parsed section IDs and chapter numbers listed literally |
 | `objectives/` | objective lines with each discouraged verb form, and a clean line | `LO-VERB` present exactly for the listed lines |
 | `glossary/` | bold term with and without Latin gloss; term with harakat vs glossary entry without | lookup succeeds after normalisation; gloss captured |
 | `references/` | Arabic registry title (mocked), English reference in an Arabic book, translated title with original-title marker, marker missing, manual record present | the `doi_status` / `title_status` pair per reference |
@@ -198,11 +210,11 @@ Stored under `tests/fixtures/locale/ar/`, discovered by directory by the test ru
 
 ### 6.2 DOCX XML assertions
 
-`tests/fixtures/locale/ar/docx/assertions.json`: a list of `{xpath, expect}` checked against the DOCX built from the `labels/` fixture book. It contains at least one assertion for each row of the §3 table (docDefaults `w:bidi` language, `w:themeFontLang`, `w:bidi` on body paragraphs, `w:rtl` on Arabic runs and its absence on Latin runs, `w:szCs`, `w:rFonts/@w:cs`, `w:bCs`, `w:bidiVisual` on tables, `w:sectPr/w:bidi`, `w:pgNumType/@w:fmt`, list `w:numFmt`, TOC field present, `dc:language`).
+`tests/fixtures/locale/ar/docx/assertions.json`: a list of `{xpath, expect}` checked against the DOCX built from the `labels/` fixture book. It contains at least one assertion for each row of the §3 table (docDefaults `w:bidi` language, `w:themeFontLang`, `w:bidi` on body paragraphs, `w:rtl` on Arabic runs and its absence on Latin runs, `w:szCs`, `w:rFonts/@w:cs`, `w:bCs`, `w:bidiVisual` on tables, `w:sectPr/w:bidi`, `w:pgNumType/@w:fmt`, list `w:numFmt`, TOC field present, `dc:language`, heading-style `w:rFonts/@w:cs` equal to `complex_script_heading`, and a display-equation paragraph with no `w:bidi`).
 
 ### 6.3 Rendered evidence (STEP 10 exit)
 
-PDF pages rendered from the fixture book and saved under `docs/harness/reviews/step10-evidence/`: a **TOC page**, a **table page**, a **list page** and a **mixed-script page** (Arabic paragraph containing an English term, a DOI, a URL, a formula, a percentage and a parenthesised citation). Codex inspects them in its STEP 10 review.
+PDF pages rendered from the fixture book and saved under `docs/harness/reviews/step10-evidence/`: a **TOC page**, a **table page**, a **list page** and a **mixed-script page** (Arabic paragraph containing an English term, a DOI, a URL, an inline formula, a percentage and a parenthesised citation, followed by one display equation). Codex inspects them in its STEP 10 review.
 
 ### 6.4 Arabic check IDs added to the core catalogue
 
@@ -220,14 +232,14 @@ PDF pages rendered from the fixture book and saved under `docs/harness/reviews/s
 | `sentence_terminators`, `sentence_exceptions.*` | EXT-LOC-1 |
 | `digits.accepted`, `digits.output`, `digits.mixed_number`, `digits.body_consistency` | EXT-LOC-1 (via `template.locale_overrides` for `output`) |
 | `list_separators`, `range_separators`, `percent_signs`, `quote_marks` | EXT-LOC-1 |
-| `ordinal_words`, `chapter_heading_pattern` | EXT-LOC-1 |
+| `ordinal_words`, `chapter_heading_pattern` and its §2.2 expansion rule | EXT-LOC-1 |
 | `figure_caption_pattern`, `table_caption_pattern` | EXT-LOC-1 |
 | `discouraged_objective_verbs`, `banned_terms` | EXT-LOC-1 |
 | `readability.*` and the calibration rule | EXT-LOC-1; corpus in EXT-LOC-5 |
 | `default_labels` (all of §4) | EXT-LOC-3 |
 | `template.assessment.mcq.option_display_labels`, `theme.labels.question_prefix`, `theme.labels.objective_prefix`, `theme.labels.table` | EXT-LOC-3 |
 | glossary `gloss` in the parsed representation | EXT-LOC-3 (and EXT-TR-3 for termbase linking) |
-| all §3 OOXML obligations, `theme.lang_tag`, `theme.fonts.complex_script`, preset `rtl-textbook` | EXT-LOC-2 |
+| all §3 OOXML obligations, `theme.lang_tag`, `theme.fonts.complex_script`, `theme.fonts.complex_script_heading`, preset `rtl-textbook` | EXT-LOC-2 |
 | `doi_status`, `title_status` | EXT-LOC-4 |
 | `title_match.mode`, `original_title_marker`, `references-manual.json` | EXT-LOC-4 |
 | every §6 directory, DOCX assertions, rendered evidence | EXT-LOC-5 |
