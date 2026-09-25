@@ -1,0 +1,425 @@
+{
+ "schema_version": 1,
+ "project": "ai-in-medicine",
+ "reserved": [
+  "CLAUDE.md"
+ ],
+ "moves": [
+  {
+   "source": ".claude/agents/medical-ai-reviewer.md",
+   "destination": "projects/ai-in-medicine/history/medical-ai-reviewer.md",
+   "sha256": "3afcaf810e03818801bc06f7a8da9cb1bc7987143c500d776aafb68577ac647c"
+  },
+  {
+   "source": "AI_in_Health_Care_Interprofessional.docx",
+   "destination": "projects/ai-in-medicine/deliverables/AI_in_Health_Care_Interprofessional.docx",
+   "sha256": "e99a25b23524ddb8d5a19905319f58925ebdd4ab0027e6f7687556ff5c57bf6f"
+  },
+  {
+   "source": "AI_in_Health_Care_Interprofessional.md",
+   "destination": "projects/ai-in-medicine/deliverables/AI_in_Health_Care_Interprofessional.md",
+   "sha256": "c051b2b2a347b9dc786d70690e94802ea2212ab51e6f6c3064750614c897a0cb"
+  },
+  {
+   "source": "AI_in_Health_Care_Interprofessional.pdf",
+   "destination": "projects/ai-in-medicine/deliverables/AI_in_Health_Care_Interprofessional.pdf",
+   "sha256": "5a434a9fcca67e0837e3353ea2a28390c3ab3ee970aab216206655615ec5bd14"
+  },
+  {
+   "source": "AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx",
+   "destination": "projects/ai-in-medicine/original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx",
+   "sha256": "e74964e30243bca4db6b4d96175c0c98811e241fa865cd7ca44bf7066b11b4d5"
+  },
+  {
+   "source": "AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md",
+   "destination": "projects/ai-in-medicine/original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md",
+   "sha256": "16e55372579b10e0c4ace57d95f3b9db797b7b18193524b22ce1e6065e9db6dc"
+  },
+  {
+   "source": "EVALUATION_GUIDE.md",
+   "destination": "projects/ai-in-medicine/history/EVALUATION_GUIDE.md",
+   "sha256": "eebbcb3fce1c83a8d5d101b4522e610ea49092b3fdccb2bd59927286874391d1"
+  },
+  {
+   "source": "EVALUATION_RUBRIC.md",
+   "destination": "projects/ai-in-medicine/history/EVALUATION_RUBRIC.md",
+   "sha256": "57e443418b12fd5c9aa1a07931ad97cb22e3dfcf82b2f4cf836c3125492da99e"
+  },
+  {
+   "source": "PRODUCT.md",
+   "destination": "projects/ai-in-medicine/history/PRODUCT.md",
+   "sha256": "e5151a35b4bfdf55bc6ffb3407bd6957988470a8f2e8d60c1351686bc8de6aa8"
+  },
+  {
+   "source": "Review_Notes_AI_in_Medicine.pdf",
+   "destination": "projects/ai-in-medicine/history/Review_Notes_AI_in_Medicine.pdf",
+   "sha256": "17605243ef08ddfd153b553ce43b7e93420b16ad3559b7ddda1daac800e6aaf7"
+  },
+  {
+   "source": "SESSION_SUMMARY.md",
+   "destination": "projects/ai-in-medicine/history/SESSION_SUMMARY.md",
+   "sha256": "1b013f757636c6fa63502d6bfa68f0f90b134cd760e6af27eb2ad72fbdb484e4"
+  },
+  {
+   "source": "VERDICT.md",
+   "destination": "projects/ai-in-medicine/history/VERDICT.md",
+   "sha256": "085147895381c6d6298a0c66db9de8145384b68680cea1689c4b63f82c7ef376"
+  },
+  {
+   "source": "convert_docx_to_md.py",
+   "destination": "projects/ai-in-medicine/tools/convert_docx_to_md.py",
+   "sha256": "34ac16509ca5dc5285f32f3dc33b73542a49bdf6287b7bbcfbedf409b8dc9dbb"
+  },
+  {
+   "source": "images/image1.jpeg",
+   "destination": "projects/ai-in-medicine/images/image1.jpeg",
+   "sha256": "bbb32b2966e3f8880dc4b309238357929000f28d160da16893edbd6b56e0eaff"
+  },
+  {
+   "source": "images/image10.png",
+   "destination": "projects/ai-in-medicine/images/image10.png",
+   "sha256": "26e3d91c825107340fcf26053338ad7179632d57af21919de78e6f48b3cb3810"
+  },
+  {
+   "source": "images/image11.png",
+   "destination": "projects/ai-in-medicine/images/image11.png",
+   "sha256": "becd794d18dfd296c4c0f424363f51c9df4df9074c98ce824375f2394e1373c2"
+  },
+  {
+   "source": "images/image12.png",
+   "destination": "projects/ai-in-medicine/images/image12.png",
+   "sha256": "31157da2c61aaaec9e6394c91450de7c25d6dc2b68104d3f3765d8b99cff938b"
+  },
+  {
+   "source": "images/image13.png",
+   "destination": "projects/ai-in-medicine/images/image13.png",
+   "sha256": "f77f34a263c7be58a30fe4ec5923810d3104d13edd20d76465460230efa0472a"
+  },
+  {
+   "source": "images/image14.png",
+   "destination": "projects/ai-in-medicine/images/image14.png",
+   "sha256": "6b81ec5efd9f72c0ac00aa7a105820c6a1156d2fba26d2fb117a41e49021c283"
+  },
+  {
+   "source": "images/image15.png",
+   "destination": "projects/ai-in-medicine/images/image15.png",
+   "sha256": "3e6e336c28460a8800a72a55e82618371e3dabbd982dfa9cabbd362da5a05ae3"
+  },
+  {
+   "source": "images/image16.png",
+   "destination": "projects/ai-in-medicine/images/image16.png",
+   "sha256": "c88a15bc094e5973ccdd85ecd89587879837c201c52472e54e6bb362e33a974d"
+  },
+  {
+   "source": "images/image17.png",
+   "destination": "projects/ai-in-medicine/images/image17.png",
+   "sha256": "fd158d51c4662c72782110d14780bd4b196cae32d0c11b594f556caa61983a9d"
+  },
+  {
+   "source": "images/image18.png",
+   "destination": "projects/ai-in-medicine/images/image18.png",
+   "sha256": "eafccfeac2f6c5890c4ef6caf0165988321c19151d5ef63ff148b69536fc9cd8"
+  },
+  {
+   "source": "images/image19.png",
+   "destination": "projects/ai-in-medicine/images/image19.png",
+   "sha256": "49c7805857fd01e1ba812ea95f56aac45b8229f5a85cc542d63b57aaddc4f090"
+  },
+  {
+   "source": "images/image2.png",
+   "destination": "projects/ai-in-medicine/images/image2.png",
+   "sha256": "c6a78895bbe7986caa70556c55eb0038affbdc4cbd03eb4c308fd71cb2dd2b34"
+  },
+  {
+   "source": "images/image20.png",
+   "destination": "projects/ai-in-medicine/images/image20.png",
+   "sha256": "a934ae134f6a0b72d285c28e7c900242468d48a9800bec1cab66d6795bb4ede2"
+  },
+  {
+   "source": "images/image21.png",
+   "destination": "projects/ai-in-medicine/images/image21.png",
+   "sha256": "16ada1e604d5f563a5aac10ce8850c8252f404ed35ecf6b2618952a97b0503bd"
+  },
+  {
+   "source": "images/image22.png",
+   "destination": "projects/ai-in-medicine/images/image22.png",
+   "sha256": "0d71ce5bf34434aab991025dc0df0a47d613c2df8e7a25d85376d056438f52f5"
+  },
+  {
+   "source": "images/image23.png",
+   "destination": "projects/ai-in-medicine/images/image23.png",
+   "sha256": "92b1ca7ce1ef363c6593926baa524eaad05af54a3e3320fe9d728301d6081af1"
+  },
+  {
+   "source": "images/image24.png",
+   "destination": "projects/ai-in-medicine/images/image24.png",
+   "sha256": "13a6646337f75ab7ff1533cc9dfafc8d8178fbc8bd78a3767deb71a04dbc6342"
+  },
+  {
+   "source": "images/image3.png",
+   "destination": "projects/ai-in-medicine/images/image3.png",
+   "sha256": "b0c46800a022821be06195d9c1fc6c0c9fd932c5838a1cc34515b7bd94b71b3d"
+  },
+  {
+   "source": "images/image4.png",
+   "destination": "projects/ai-in-medicine/images/image4.png",
+   "sha256": "e110d400fd01639ca9989a8c0eb46bfe82332a5493de2f571643ea524772738c"
+  },
+  {
+   "source": "images/image5.png",
+   "destination": "projects/ai-in-medicine/images/image5.png",
+   "sha256": "66d6c30677c06306ba050cd141a121a30c2b4c1f816d748c926d2cd39fc8fb98"
+  },
+  {
+   "source": "images/image6.png",
+   "destination": "projects/ai-in-medicine/images/image6.png",
+   "sha256": "6614f169a09c38d6b65a76f15db04d5d6dbdc114f2efc9c2562b4909a57b426c"
+  },
+  {
+   "source": "images/image7.png",
+   "destination": "projects/ai-in-medicine/images/image7.png",
+   "sha256": "f810cca648a420b0a6478ba6526bd90bf0078229e66ca267bf9744a972883505"
+  },
+  {
+   "source": "images/image8.png",
+   "destination": "projects/ai-in-medicine/images/image8.png",
+   "sha256": "9e19b981cee37bddedc3b5a2003dd5cb130abed95255455e65a9de447f9b2b8c"
+  },
+  {
+   "source": "images/image9.png",
+   "destination": "projects/ai-in-medicine/images/image9.png",
+   "sha256": "bd0e662a304c9c8e7cd233e513e3a5697f43e399ebdb1491f0e8f3aba35ed1f3"
+  },
+  {
+   "source": "rework/00-front-matter.md",
+   "destination": "projects/ai-in-medicine/rework/00-front-matter.md",
+   "sha256": "d83e7635362878c2f07b2b54d1d57cb8f2b0309f9145521cba88bfd839fe5b94"
+  },
+  {
+   "source": "rework/REVIEW_REPORT.md",
+   "destination": "projects/ai-in-medicine/rework/REVIEW_REPORT.md",
+   "sha256": "64bcf81fb5b495f2eceb8de3ed83a4db703f7c3f8377da4d4ed456b301b95767"
+  },
+  {
+   "source": "rework/_template.md",
+   "destination": "projects/ai-in-medicine/rework/_template.md",
+   "sha256": "3940fb20368c06685d8dc7dad310461b8580ca05bd2b1f6ff211db3366f735c9"
+  },
+  {
+   "source": "rework/ch01-what-ai-is.md",
+   "destination": "projects/ai-in-medicine/rework/ch01-what-ai-is.md",
+   "sha256": "216fc1b0d3f9f529889a061e8d41e490a5ff1a60d5a85dace4c0acf6578ec6a1"
+  },
+  {
+   "source": "rework/ch02-health-data.md",
+   "destination": "projects/ai-in-medicine/rework/ch02-health-data.md",
+   "sha256": "c8cd9d554e90f3c1198081dc065dd8c53f1fa1081554369051fceb8162c09490"
+  },
+  {
+   "source": "rework/ch03-how-models-learn.md",
+   "destination": "projects/ai-in-medicine/rework/ch03-how-models-learn.md",
+   "sha256": "63a4b64a77052b4c8b28c2c4d86f90a3ea0c51a7018bbddbbd9ee991546c3c17"
+  },
+  {
+   "source": "rework/ch04-reading-performance-claims.md",
+   "destination": "projects/ai-in-medicine/rework/ch04-reading-performance-claims.md",
+   "sha256": "9facb4a690073af8eca60bd8fcee9486779f9ea96abaa1b1a4b2b27aee756dc7"
+  },
+  {
+   "source": "rework/ch05-generative-ai-llms.md",
+   "destination": "projects/ai-in-medicine/rework/ch05-generative-ai-llms.md",
+   "sha256": "3a7f819873af5acf84e0687edc40dcf5d8e69ac315fd94608721d4674283a6eb"
+  },
+  {
+   "source": "rework/ch06-seeing-disease.md",
+   "destination": "projects/ai-in-medicine/rework/ch06-seeing-disease.md",
+   "sha256": "5f937166626f2123385fa8986fd70e536c513b4ddd66ceba47a1ef11c5afc21e"
+  },
+  {
+   "source": "rework/ch07-medicines.md",
+   "destination": "projects/ai-in-medicine/rework/ch07-medicines.md",
+   "sha256": "8dc0353eecd93bc5c3b792d24ce63c01c35136ca3e556c36dcedb90dc568a303"
+  },
+  {
+   "source": "rework/ch08-ai-in-motion.md",
+   "destination": "projects/ai-in-medicine/rework/ch08-ai-in-motion.md",
+   "sha256": "000ff89dfd7d49c2d206a1e528d46f28766df1aa1fa1d47ed8ac8c9259d097ca"
+  },
+  {
+   "source": "rework/ch09-monitoring-prediction.md",
+   "destination": "projects/ai-in-medicine/rework/ch09-monitoring-prediction.md",
+   "sha256": "031520b12f9105e63193641295c6bfcf80280deaf4d8bfcecddcee62566b7a36"
+  },
+  {
+   "source": "rework/ch10-bias-fairness-privacy.md",
+   "destination": "projects/ai-in-medicine/rework/ch10-bias-fairness-privacy.md",
+   "sha256": "31877b00342e5e163cfc73a688ce17d278e4de3af5c60b918a6b0658d17b0a50"
+  },
+  {
+   "source": "rework/ch11-regulation-liability-human.md",
+   "destination": "projects/ai-in-medicine/rework/ch11-regulation-liability-human.md",
+   "sha256": "faaee04af937d123b4eb02fde33b1504351b4c4027f31da927f3ffea63cecd55"
+  },
+  {
+   "source": "rework/errata-ledger.md",
+   "destination": "projects/ai-in-medicine/rework/errata-ledger.md",
+   "sha256": "184f284705b1264bbde90f66d5b7ebeacbc48262b1c271f5cb1b18e34373cfec"
+  },
+  {
+   "source": "rework/figures/confusion-ppv.svg",
+   "destination": "projects/ai-in-medicine/rework/figures/confusion-ppv.svg",
+   "sha256": "a38f000fcdb87b3ae360706e63b5e33650c4387726f5ce0692c4970948960fb8"
+  },
+  {
+   "source": "rework/figures/cover.html",
+   "destination": "projects/ai-in-medicine/rework/figures/cover.html",
+   "sha256": "b8a626759aa6f0e7b4573185afb17e2fdbfe9749538d021856ddee1a696d87d7"
+  },
+  {
+   "source": "rework/figures/cover.svg",
+   "destination": "projects/ai-in-medicine/rework/figures/cover.svg",
+   "sha256": "826d21d917af8e244e399074f67d50936f1004668c42fa935f431393741cf499"
+  },
+  {
+   "source": "rework/figures/next-token.svg",
+   "destination": "projects/ai-in-medicine/rework/figures/next-token.svg",
+   "sha256": "acef7bdd489b82f72e90d2364fe04a9d044162a39bdfa81b5073e4cc4b67d0cc"
+  },
+  {
+   "source": "rework/figures/orig-image17.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image17.png",
+   "sha256": "658c52e30808e4c53315c35a79b9bbb01d78d8fa0d7ec1033ead3a7b04f183b8"
+  },
+  {
+   "source": "rework/figures/orig-image18.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image18.png",
+   "sha256": "401b0750c94ea78511a8e4819e1fd4fa48c5ff73045220f36d31306c02bf71f5"
+  },
+  {
+   "source": "rework/figures/orig-image19.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image19.png",
+   "sha256": "c8ba39b78fdb0b28fe2f6a3b486edecb37156a5eaf9e0cd16741af1110866c6a"
+  },
+  {
+   "source": "rework/figures/orig-image2.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image2.png",
+   "sha256": "9abd062c7cc17f9f958c05392e165f43a31f8c07a798b6b6e600a917053880e2"
+  },
+  {
+   "source": "rework/figures/orig-image21.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image21.png",
+   "sha256": "a72e50e1a61ddad052232383efe93b5ebdc6ae085c2aa05fd423ceb8488e226a"
+  },
+  {
+   "source": "rework/figures/orig-image24.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image24.png",
+   "sha256": "bbd8549993f551dc609e594e017528b36ab7c59a5c92bd2cb11e11db763ef6de"
+  },
+  {
+   "source": "rework/figures/orig-image3.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image3.png",
+   "sha256": "f05bface7938a25528a186ebace5336fbe2ff7cb8e5e52d7cc11c4992a54f607"
+  },
+  {
+   "source": "rework/figures/orig-image5.png",
+   "destination": "projects/ai-in-medicine/rework/figures/orig-image5.png",
+   "sha256": "442c2a24a7903b008a934cfe8d3f191db0dd9458b20cdf10a7f1410904664feb"
+  },
+  {
+   "source": "rework/figures/png/confusion-ppv.png",
+   "destination": "projects/ai-in-medicine/rework/figures/png/confusion-ppv.png",
+   "sha256": "5ed700563e32747a043c7690a0b77cbe6ca93384343ab75a958932402083b6cb"
+  },
+  {
+   "source": "rework/figures/png/cover.png",
+   "destination": "projects/ai-in-medicine/rework/figures/png/cover.png",
+   "sha256": "fbfdbffa252899fb1f445b04d75a06d422d9574ed5d3a0a8c58c21d390b99ef8"
+  },
+  {
+   "source": "rework/figures/png/next-token.png",
+   "destination": "projects/ai-in-medicine/rework/figures/png/next-token.png",
+   "sha256": "bdf8a1429d51c74ccb969112a81bd3ede1c530df7a1c7634929004c403055d97"
+  },
+  {
+   "source": "rework/figures/png/pose-skeleton.png",
+   "destination": "projects/ai-in-medicine/rework/figures/png/pose-skeleton.png",
+   "sha256": "d56b1ee2435de0ccdf74371582d85cabcdd92cad75940eb2478d935b1b9b5354"
+  },
+  {
+   "source": "rework/figures/png/privacy-pipeline.png",
+   "destination": "projects/ai-in-medicine/rework/figures/png/privacy-pipeline.png",
+   "sha256": "127fc08fa063274bdd4394c2b6d4722945199d03c83ab90623982934d1514498"
+  },
+  {
+   "source": "rework/figures/png/split-leakage.png",
+   "destination": "projects/ai-in-medicine/rework/figures/png/split-leakage.png",
+   "sha256": "10e161266824970de3b840840d9795b6af9628c283c7892ab18a8179af3a8f25"
+  },
+  {
+   "source": "rework/figures/pose-skeleton.svg",
+   "destination": "projects/ai-in-medicine/rework/figures/pose-skeleton.svg",
+   "sha256": "43f7881da76116a011f9d9138fe56497aa8ceadc914c7a72d03d1c097b3669f9"
+  },
+  {
+   "source": "rework/figures/privacy-pipeline.svg",
+   "destination": "projects/ai-in-medicine/rework/figures/privacy-pipeline.svg",
+   "sha256": "4fe389c98025491bd20956418c888a88daec7412d1080b2c96b068dcd9ee3690"
+  },
+  {
+   "source": "rework/figures/split-leakage.svg",
+   "destination": "projects/ai-in-medicine/rework/figures/split-leakage.svg",
+   "sha256": "8612b4b0db39a8f1522d51fba51162d0c330b3d73481e74ddfb299d1b485a7bb"
+  },
+  {
+   "source": "rework/glossary.md",
+   "destination": "projects/ai-in-medicine/rework/glossary.md",
+   "sha256": "62e219297a3af9b7811b3c95badb53b3c6a2b0e3e2a9804af4f99126054db594"
+  },
+  {
+   "source": "rework/tools/assemble.py",
+   "destination": "projects/ai-in-medicine/rework/tools/assemble.py",
+   "sha256": "9b1561138c8112329f166dc244798ce4e3255bffa97728cb1c5201e61a07bec7"
+  },
+  {
+   "source": "rework/tools/build_book.py",
+   "destination": "projects/ai-in-medicine/rework/tools/build_book.py",
+   "sha256": "ea9ac1b2620ad57055cedd81e9f127810d9b713c2b19e543ad114f884f8fc25a"
+  },
+  {
+   "source": "rework/tools/check_book.py",
+   "destination": "projects/ai-in-medicine/rework/tools/check_book.py",
+   "sha256": "3a91c3136bf96ada3802c4e13d89506c7e7e9e33eb576aa8270958ae9e991804"
+  },
+  {
+   "source": "rework/tools/renumber_refs.py",
+   "destination": "projects/ai-in-medicine/rework/tools/renumber_refs.py",
+   "sha256": "0638d451002c12e8990385a6375db4e43ba5e0691fdd123aec79c060a6b1693f"
+  },
+  {
+   "source": "rework/tools/test_check_book.py",
+   "destination": "projects/ai-in-medicine/rework/tools/test_check_book.py",
+   "sha256": "0fdddcd35a0d52eee60badf7274c131c09e3ac3247d77ce3145a0bc9387aa1dc"
+  },
+  {
+   "source": "rework/tools/test_verify_refs.py",
+   "destination": "projects/ai-in-medicine/rework/tools/test_verify_refs.py",
+   "sha256": "45059659f46d44447339fbc26e5523f3b5add35c9f3574761afaa74da2d26591"
+  },
+  {
+   "source": "rework/tools/verify_refs.py",
+   "destination": "projects/ai-in-medicine/rework/tools/verify_refs.py",
+   "sha256": "900bd383c5103ed722c03ed780ba5901ade8e672b6daf14f79a1a807f6eb6154"
+  }
+ ],
+ "path_fix_allowlist": [
+  "projects/ai-in-medicine/rework/tools/check_book.py",
+  "projects/ai-in-medicine/rework/tools/build_book.py",
+  "projects/ai-in-medicine/rework/tools/assemble.py",
+  "projects/ai-in-medicine/rework/tools/verify_refs.py",
+  "projects/ai-in-medicine/rework/tools/renumber_refs.py",
+  "projects/ai-in-medicine/rework/tools/test_check_book.py",
+  "projects/ai-in-medicine/rework/tools/test_verify_refs.py",
+  "projects/ai-in-medicine/tools/convert_docx_to_md.py"
+ ],
+ "expected_diff": []
+}

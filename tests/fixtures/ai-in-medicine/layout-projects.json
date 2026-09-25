@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "chapters_dir": "rework",
+  "chapter_glob": "ch*.md",
+  "front_matter": "rework/00-front-matter.md",
+  "glossary": "rework/glossary.md",
+  "errata": "rework/errata-ledger.md",
+  "images": [
+    "images",
+    "rework/figures"
+  ],
+  "legacy_tools": "rework/tools",
+  "legacy_sections": {
+    "assessment": "Self-Assessment",
+    "answers": "Answers and Rationales"
+  },
+  "deliverables": {
+    "md": "deliverables/AI_in_Health_Care_Interprofessional.md",
+    "docx": "deliverables/AI_in_Health_Care_Interprofessional.docx",
+    "pdf": "deliverables/AI_in_Health_Care_Interprofessional.pdf"
+  },
+  "src_copy": [
+    "rework",
+    "images",
+    "deliverables/AI_in_Health_Care_Interprofessional.md"
+  ]
+}
