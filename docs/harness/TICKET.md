@@ -1,7 +1,7 @@
 ---
 type: execution-plan
 version: 3.4
-status: draft-pending-user-review
+status: approved-pending-execution
 last_updated: 2026-09-25
 ---
 
@@ -12,7 +12,7 @@ last_updated: 2026-09-25
 >
 > **Binding constraint on every step:** `docs/harness/VISION.md`. Read it before touching anything.
 >
-> **Status:** draft v3.4. It was revised after Codex reviews 1–6 (`docs/harness/reviews/ticket-review-1.md`, `ticket-review-2.md`, `ticket-review-3.md`, `ticket-review-4.md`, `ticket-review-5.md` and `ticket-review-6.md`; triage in DEC-020 to DEC-025). **The ticket's review cap is reached (DEC-025), so no further Codex review is dispatched on this ticket.**. **STEP 1 is not released** until the user approves this ticket (0c Q1).
+> **Status:** approved by the user at commit `23d819f` (DEC-026), after 6 Codex review rounds (the cap is reached; DEC-025). **STEP 1 is released.** The intake questionnaire is already approved (DEC-027). Execution sessions may commit, but never push (DEC-028).
 
 ## Why this plan exists (the problem being solved)
 
@@ -144,9 +144,9 @@ The user wants to run **the same pipeline on other textbooks in any science, in 
 
 ### 0c: Open
 
-**Q1. Approve this ticket and assumptions 0b.1–0b.3?** The approval DEC records the exact commit SHA of `TICKET.md`, so the version label does not matter. *Blocks STEP 1.* **UNRESOLVED.**
+**Q1. Approve this ticket and assumptions 0b.1–0b.3?** **RESOLVED** by DEC-026: approved at `23d819f`, together with 0b.1–0b.6. The approval DEC records the exact commit SHA of `TICKET.md`, so the version label does not matter. 
 
-**Q2. The real book for STEP 12.** Its source files and language pair are needed before STEP 12. *Does not block until STEP 12.* **UNRESOLVED.**
+**Q2. The real book for STEP 12.** Its source files and language pair are needed before STEP 12. *It does not block any earlier step.* **Deferred** (DEC-029): the user will send it.
 
 ---
 
@@ -194,7 +194,7 @@ The user wants to run **the same pipeline on other textbooks in any science, in 
 
 **(k) Locale and translation extension points.** These are named here and filled in by STEP 2.
 
-**The intake questionnaire** is presented in chat and approved by the user before the spec is written. Its approval is logged as a DEC entry.
+**The intake questionnaire is already approved**: `docs/harness/INTAKE_QUESTIONNAIRE.md` (DEC-027). The spec turns A–M into the `brief` schema.
 
 **Depth:** design only. No code, no schema files, no moves.
 
@@ -216,7 +216,7 @@ The user wants to run **the same pipeline on other textbooks in any science, in 
 **Output:** `docs/superpowers/specs/2026-09-25-book-harness-core-design.md`, committed.
 
 **Exit criteria:**
-- The questionnaire DEC entry exists.
+- The spec's `brief` schema covers every questionnaire item A–M (DEC-027).
 - The spec is committed.
 - The inventory table has one row per inventory entry, and no row is unmapped. A reviewer can check this by counting rows against the Codex inventory.
 - `grep -nE "TBD|TODO|\?\?\?"` on the spec returns nothing.
@@ -586,8 +586,8 @@ The medical book reproduces its golden report from `projects/ai-in-medicine/`.
 
 | # | Step | Raised by | Date | The blocker | Resolution |
 |---|---|---|---|---|---|
-| 1 | 0 | Claude | 2026-09-25 | This ticket (by commit SHA) and 0b.1–0b.3 not yet approved (0c Q1) | **Open** |
-| 2 | 12 | Claude | 2026-09-25 | Real book source and language pair (0c Q2) | **Open** |
+| 1 | 0 | Claude | 2026-09-25 | This ticket (by commit SHA) and 0b.1–0b.3 not yet approved (0c Q1) | **Resolved**: DEC-026 approved it at `23d819f` |
+| 2 | 12 | Claude | 2026-09-25 | Real book source and language pair (0c Q2) | **Open, but only blocks STEP 12** (DEC-029) |
 | 3 | 0 | Codex review 1 | 2026-09-25 | Legacy-tool gate bypass; missing design approval; Arabic/translation contracts too late | Fixed in v2 (STEPS 2, 7; Definitions). Codex review 2 marked all 3 resolved |
 | 4 | 0 | Codex review 2 | 2026-09-25 | The review-pass definition was circular, plus 6 major findings | Fixed in v3 (DEC-021). Codex review 3 marked 10 of 11 resolved |
 | 5 | 0 | Codex review 3 | 2026-09-25 | STEP 13 compared against HEAD; approval question pointed at v2; `verify` had no stage boundary | Fixed in v3.1 (DEC-022). Codex review 4 marked 3 of 5 resolved |

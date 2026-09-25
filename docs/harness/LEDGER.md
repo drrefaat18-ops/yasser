@@ -5,8 +5,8 @@ Separate file so report-only commits can be verified by path alone (DEC-023).
 
 | Step | Owner | Status | Handoff artifact | Commit | Date |
 |---|---|---|---|---|---|
-| 0 | Claude | Draft v3.4 saved; review cap reached (DEC-025); pending user approval | `TICKET.md`, `VISION.md`, `DECISIONS.md` | — | 2026-09-25 |
-| 1 | Claude | Not started | core design spec | — | — |
+| 0 | Claude | Done: approved at 23d819f (DEC-026) | `TICKET.md`, `VISION.md`, `DECISIONS.md` | — | 2026-09-25 |
+| 1 | Claude | Released (the questionnaire is already approved, DEC-027) | core design spec | — | — |
 | 2 | Claude | Not started | Arabic + translation contracts | — | — |
 | 3 | Codex / user | Not started | `reviews/step3-review-<k>.md` + approval DEC | — | — |
 | 4 | Claude | Not started | plan + approval DEC | — | — |
