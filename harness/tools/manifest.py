@@ -4,6 +4,7 @@ Usage:
   python harness/tools/manifest.py --phase pre|post [--manifest FILE]
   python harness/tools/manifest.py --scope-commit HEAD [--extra PATH ...] [--manifest FILE]
 Exit 0 iff no problems; each problem is printed on its own line.
+--phase post holds only between commit A and commit B: commit B edits allowlisted files, so their hashes differ.
 """
 import argparse, json, pathlib, subprocess, sys
 
@@ -41,6 +42,9 @@ def problems(repo, m, phase):
         seen.add(dst)
         if not str(dst).startswith(prefix):
             probs.append(f"destination outside {prefix}: {dst}")
+        # chapters link ../images/ and figures/: both trees keep their relative paths, so images/ stays beside rework/
+        if str(src).startswith(("images/", "rework/")) and dst != prefix + src:
+            probs.append(f"images/ and rework/ must keep their paths under {prefix}: {src} -> {dst}")
         if phase == "pre":
             if src not in tracked:
                 probs.append(f"source not tracked: {src}")
