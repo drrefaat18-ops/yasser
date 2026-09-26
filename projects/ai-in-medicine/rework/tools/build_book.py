@@ -1,7 +1,7 @@
 """Build the textbook as Word (.docx) and PDF from the rework Markdown sources.
 
 Usage: python rework/tools/build_book.py [--no-pdf]
-Writes AI_in_Health_Care_Interprofessional.docx (and .pdf via Microsoft Word) at the repo root.
+Writes AI_in_Health_Care_Interprofessional.docx (and .pdf via Microsoft Word) in deliverables/.
 Figures: SVGs must be pre-rendered to rework/figures/png/ (see render_figures in README of this script's docstring):
   chrome --headless --force-device-scale-factor=4 --screenshot=png/X.png X.svg
 """
@@ -21,7 +21,7 @@ from docx.shared import Cm, Pt, RGBColor
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 REWORK = ROOT / "rework"
 FIG = REWORK / "figures"
-OUT = ROOT / "AI_in_Health_Care_Interprofessional.docx"
+OUT = ROOT / "deliverables" / "AI_in_Health_Care_Interprofessional.docx"
 
 BOOK = "Artificial Intelligence in Health Care"
 SUB = "An Interprofessional Introduction"

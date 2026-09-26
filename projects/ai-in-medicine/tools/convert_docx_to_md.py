@@ -10,9 +10,10 @@ from docx.text.paragraph import Paragraph
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-DOCX_PATH = r"D:\yasser\AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx"
-MD_PATH = r"D:\yasser\AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md"
-IMAGES_DIR = r"D:\yasser\images"
+BOOK_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DOCX_PATH = os.path.join(BOOK_DIR, "original", "AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx")
+MD_PATH = os.path.join(BOOK_DIR, "original", "AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md")
+IMAGES_DIR = os.path.join(BOOK_DIR, "images")
 
 os.makedirs(IMAGES_DIR, exist_ok=True)
 

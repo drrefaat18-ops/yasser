@@ -1,4 +1,4 @@
-"""Assemble rework chapters into one book file at the repo root.
+"""Assemble rework chapters into one book file in deliverables/.
 
 Usage: python rework/tools/assemble.py
 Writes AI_in_Health_Care_Interprofessional.md and exits 1 if any image path in it is missing.
@@ -9,7 +9,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 REWORK = ROOT / "rework"
-OUT = ROOT / "AI_in_Health_Care_Interprofessional.md"
+OUT = ROOT / "deliverables" / "AI_in_Health_Care_Interprofessional.md"
 
 
 def anchor(title):
