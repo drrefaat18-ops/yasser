@@ -237,7 +237,8 @@ def source_counts(conv):
 
 def output_counts(md):
     lines = md.splitlines()
-    stripped = re.sub(r"!\[[^\]]*\]\([^)]*\)|\[(?:equation|footnote): |^#{1,6} |^> ?|^- |^\| ---.*$|[*|]", "", md, flags=re.M)
+    # inlined equation/footnote text comes from outside body w:t, so it is not output body text (S8-02)
+    stripped = re.sub(r"!\[[^\]]*\]\([^)]*\)|\[(?:equation|footnote): [^\]\n]*\]|^#{1,6} |^> ?|^- |^\| ---.*$|[*|]", "", md, flags=re.M)
     return {"headings": sum(1 for l in lines if re.match(r"^#{1,6} ", l)),
             "tables": sum(1 for l in lines if l.startswith("| ---")),
             "figures": len(re.findall(r"!\[[^\]]*\]\(", md)),
@@ -294,7 +295,11 @@ def units(md):
 
 def main(project):
     from harness.tools import config
-    cfg = config.load(project)
+    try:
+        cfg = config.load(project)
+    except config.ConfigError as e:
+        print(f"ERROR CONFIG: {e}", file=sys.stderr)
+        return 2
     docx = [f for f in cfg["brief"]["source"]["files"] if f["format"] == "docx"]
     if len(docx) != 1:
         print(f"ERROR CONFIG: expected exactly one docx source, found {len(docx)}", file=sys.stderr)

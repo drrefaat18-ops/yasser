@@ -20,7 +20,7 @@ URL = re.compile(r"https?://\S+")
 TITLE_WORD = re.compile(r"[^\W_]+")
 
 
-class ConfigError(Exception):
+class ConfigError(config.ConfigError):
     pass
 
 

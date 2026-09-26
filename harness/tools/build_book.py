@@ -14,7 +14,7 @@ import json, math, pathlib, re, sys
 REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
-from harness.tools import assemble, config  # noqa: E402
+from harness.tools import assemble, check_book, config  # noqa: E402
 
 # Preset constants of the ltr-textbook layout (sizes in pt, rules and grid colours): tested layout, not project config
 RULE, GRID, STRIPE, LINK, WHITE = "F0B429", "C9D1D9", "F4F6F8", "2B5D8A", "FFFFFF"
@@ -56,11 +56,10 @@ class Book:
         self.ink, self.primary, self.accent, self.muted = (self.pal[k].lstrip("#") for k in ("ink", "primary", "accent", "muted"))
         self.labels = th["labels"]
         self.role = {s["role"]: s["label"] for s in t["sections"]}
-        self.section_ids = {s["label"]: s["id"] for s in t["sections"]}
-        self.boxed = {s["label"] for s in t["sections"] if s["id"] in th["boxed_section_ids"]}
-        self.unlisted = {s["label"] for s in t["sections"] if s["id"] in th["toc_excluded_section_ids"]}
-        self.callouts = {c["label"]: c for c in t["callouts"]}
-        self.options = t["assessment"]["mcq"]["option_labels"] if t["assessment"]["mcq"]["enabled"] else []
+        mcq = t["assessment"]["mcq"]
+        self.options = mcq["option_labels"] if mcq["enabled"] else []
+        self.option_display = dict(zip(mcq["option_labels"], mcq["option_display_labels"] or mcq["option_labels"]))
+        self.callout_by_id = {c["id"]: c for c in t["callouts"]}
         self.title, self.subtitle = b["identity"]["title"], b["identity"]["subtitle"]
         self.credits = ", ".join(a["credit_line"] for a in b["identity"]["authors"])
         self.audience = b["audience"]["display_line"]
@@ -76,9 +75,12 @@ class Book:
             return DEFAULT_BOX, self.primary, "box", None
         return e["fill"].lstrip("#"), e["label_colour"].lstrip("#"), e["layout"], e.get("border")
 
-    def callout_key(self, label):
-        c = self.callouts.get(label)
-        return c["id"] if c else None
+    def question(self, n):
+        """Display of the question marker `Q<n>` (theme.labels.question_prefix, Arabic contract P1)."""
+        return f"{self.labels['question_prefix']}{n}"
+
+    def objective(self, n):
+        return f"{self.labels['objective_prefix']}{n}"
 
 
 # ---------- the one element factory (EXT-LOC-2) ----------
@@ -448,7 +450,8 @@ class Renderer:
         self.x.table_borders(t, spec)
         lp = c.paragraphs[0]
         lp.style = self.doc.styles["Box Label"]
-        self.f.make_run(lp, label, bold=True, colour=colour)
+        if label is not None:
+            self.f.make_run(lp, label, bold=True, colour=colour)
         return t, c
 
     def after_table(self, container):
@@ -484,13 +487,14 @@ class Renderer:
             self.inline(p2, text)
         self.after_table(container)
 
-    def callout(self, container, label, text):
-        key = self.bk.callout_key(label)
+    def callout(self, container, key, text):
+        """`key` is the callout ID from the parsed chapter (None: a quote block that is no configured callout)."""
+        label = self.bk.callout_by_id[key]["label"] if key else None
         fill, colour, layout, _ = self.bk.style_of(key)
         t, c = self.box(container, label, fill, colour)
         self.x.cant_split(t.rows[0])
         chunks = [text]
-        parts = self.bk.callouts[label]["parts"] if key else []
+        parts = self.bk.callout_by_id[key]["parts"] if key else []
         if layout == "split" and parts:
             rx = r"\s+".join(rf"{re.escape(pt)}:\s*(.+?)" for pt in parts[:-1]) + rf"\s+{re.escape(parts[-1])}:\s*(.+)"
             m = re.match(rx, text)
@@ -562,16 +566,20 @@ class Renderer:
         d, doc, bk, f = self.d, self.doc, self.bk, self.f
         Pt, Cm, A = d["Pt"], d["Cm"], d["WD_ALIGN_PARAGRAPH"]
         lines = text.splitlines()
+        parsed = check_book.parse(text, bk.cfg)   # INV-30: sections and callouts by ID, from the checker's parser
+        sec_at = {x["line"]: x for x in parsed["sections"]}
+        callout_at = {x["line"]: x["id"] for x in parsed["callouts"]}
+        th = bk.cfg["theme"]
         i = 0
         container = doc
-        section = ""
+        role = None
         buf = []
         opt = re.compile(r"(" + "|".join(re.escape(o) for o in bk.options) + r")\)\s") if bk.options else None
 
         def flush():
             nonlocal buf
             if buf:
-                style = "Answer" if section == bk.role.get("answers") else None
+                style = "Answer" if role == "answers" else None
                 if container is not doc:
                     style = "Box Text"
                 p = f.make_paragraph(container, style=style)
@@ -593,13 +601,15 @@ class Renderer:
                 if container is not doc:
                     self.after_table(doc)
                 container = doc
-                section = s[3:].strip()
-                if section in bk.boxed:
-                    fill, colour, _, border = bk.style_of(bk.section_ids[section])
+                sec = sec_at[i + 1]
+                role, label = sec["role"], sec["label"]
+                if sec["id"] in th["boxed_section_ids"]:
+                    fill, colour, _, border = bk.style_of(sec["id"])
                     b = (border["size_eighths_pt"], border["colour"].lstrip("#")) if border else None
-                    _, container = self.box(doc, section, fill, colour, b)
+                    _, container = self.box(doc, label, fill, colour, b)
                 else:
-                    f.make_paragraph(doc, section, style="Heading 2 Unlisted" if section in bk.unlisted else "Heading 2")
+                    unlisted = sec["id"] in th["toc_excluded_section_ids"]
+                    f.make_paragraph(doc, label, style="Heading 2 Unlisted" if unlisted else "Heading 2")
                 i += 1
                 continue
             if s.startswith("### "):
@@ -609,21 +619,19 @@ class Renderer:
                 continue
             if s.startswith(">"):
                 flush()
+                key = callout_at.get(i + 1)
                 block = []
                 while i < len(lines) and lines[i].strip().startswith(">"):
                     block.append(lines[i].strip()[1:].strip())
                     i += 1
                 head = block[0]
-                grid = next((c for c in bk.callouts.values() if bk.style_of(c["id"])[2] == "grid"
-                             and head.startswith(c["syntax"].lstrip("> ").rstrip())), None)
-                if grid:
+                if key and bk.style_of(key)[2] == "grid":
                     items = [(m.group(1), m.group(2)) for m in (re.match(r"-\s*\*\*(.+?):\*\*\s*(.+)", b) for b in block[1:]) if m]
-                    fill, colour, _, _ = bk.style_of(grid["id"])
-                    self.grid(container, grid["label"], items, fill, colour)
+                    fill, colour, _, _ = bk.style_of(key)
+                    self.grid(container, bk.callout_by_id[key]["label"], items, fill, colour)
                 else:
-                    m = re.match(r"\*\*(.+?):\*\*\s*(.*)", head)
-                    label, body = (m.group(1), m.group(2)) if m else ("Note", head)
-                    self.callout(container, label, " ".join([body] + block[1:]))
+                    body = head[len(bk.callout_by_id[key]["syntax"].lstrip("> ")):].strip() if key else head
+                    self.callout(container, key, " ".join([body] + block[1:]))
                 continue
             if s.startswith("|"):
                 flush()
@@ -651,17 +659,18 @@ class Renderer:
                 i += 1
                 continue
             m = Q_LINE.match(s)
-            if m and section == bk.role.get("assessment") and opt:
+            if m and role == "assessment" and opt:
                 flush()
                 p = f.make_paragraph(container, style="Question")
-                f.make_run(p, m.group(1) + "  ", bold=True, colour=bk.primary)
+                f.make_run(p, bk.question(m.group(1)[1:]) + "  ", bold=True, colour=bk.primary)
                 stem = m.group(2)
                 lo = LO_TAIL.search(stem)
                 if lo:
                     stem = stem[: lo.start()]
                 self.inline(p, stem)
                 if lo:
-                    f.make_run(p, "  " + lo.group(1)[1:-1], colour=bk.muted, size=8)
+                    tags = re.findall(r"LO(\d+)", lo.group(1))
+                    f.make_run(p, "  " + ", ".join(bk.objective(t) for t in tags), colour=bk.muted, size=8)
                 i += 1
                 opts = []
                 while i < len(lines) and opt.match(lines[i].strip()):
@@ -670,7 +679,7 @@ class Renderer:
                 for k, o in enumerate(opts):
                     label = opt.match(o).group(1)
                     op = f.make_paragraph(container, style="Option")
-                    f.make_run(op, label + "\t", bold=True, colour=bk.primary)
+                    f.make_run(op, bk.option_display[label] + "\t", bold=True, colour=bk.primary)
                     self.inline(op, o[len(label) + 1:].strip())
                     op.paragraph_format.tab_stops.add_tab_stop(Cm(bk.cfg["theme"]["lists"]["indent"]))
                     if k == len(opts) - 1:
@@ -690,18 +699,18 @@ class Renderer:
             if m:
                 flush()
                 num, body = m.group(1), m.group(2)
-                if section == bk.role.get("references"):
+                if role == "references":
                     p = f.make_paragraph(container, style="Reference")
                     f.make_run(p, num + ".\t", colour=bk.muted)
                     self.reference_runs(p, body)
-                elif section == bk.role.get("objectives"):
+                elif role == "objectives":
                     lo = LO_ITEM.match(body)
                     p = f.make_paragraph(container, style="Box Text")
                     p.paragraph_format.left_indent = Cm(1.1)
                     p.paragraph_format.first_line_indent = Cm(-1.1)
                     p.paragraph_format.tab_stops.add_tab_stop(Cm(1.1))
                     p.paragraph_format.alignment = A.LEFT
-                    f.make_run(p, (lo.group(1) if lo else num + ".") + "\t", bold=True, colour=bk.accent, size=8.5)
+                    f.make_run(p, (bk.objective(lo.group(1)[2:]) if lo else num + ".") + "\t", bold=True, colour=bk.accent, size=8.5)
                     self.inline(p, lo.group(2) if lo else body)
                 else:
                     p = f.make_paragraph(container, style="Box Text" if container is not doc else None)
@@ -717,11 +726,14 @@ class Renderer:
                 self.inline(p, s)
                 i += 1
                 continue
-            if section == bk.role.get("answers") and s.startswith("**"):
+            if role == "answers" and s.startswith("**"):
                 flush()
                 p = f.make_paragraph(container, style="Answer")
                 m = re.match(r"\*\*(.+?)\*\*\s*(.*)", s)
-                f.make_run(p, m.group(1) + " ", bold=True, colour=bk.primary)
+                key_m = re.fullmatch(r"Q(\d+)\. (\S+)", m.group(1))
+                head = (f"{bk.question(key_m.group(1))}. {bk.option_display.get(key_m.group(2), key_m.group(2))}"
+                        if key_m else m.group(1))
+                f.make_run(p, head + " ", bold=True, colour=bk.primary)
                 self.inline(p, m.group(2))
                 i += 1
                 continue
@@ -1049,7 +1061,7 @@ def main(project, argv):
         if "--no-pdf" not in argv:
             pdf, pages = word_finish(cfg, out)
             print(f"wrote build/{pdf.name} ({pages} pages)")
-    except (KeyError, FileNotFoundError) as e:
+    except (config.ConfigError, KeyError, FileNotFoundError) as e:
         print(f"ERROR CONFIG: {e}", file=sys.stderr)
         return 2
     except (BuildError, assemble.AssetOutside) as e:

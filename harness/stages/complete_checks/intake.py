@@ -1,6 +1,7 @@
 """`complete intake`: schemas, cross-file rules (core §4.6), rubric rules (§5.2), overlay caps (§6)."""
 from harness import locales, paths
 from harness.stages.complete_checks.common import read_json, validate_file
+from harness.tools import config as tool_config
 
 SUPPORTED_PAIRS = {("en", "ar"), ("ar", "en")}          # translation contract §1
 CORE_PACKS = {"charts"}                                   # core figure pack, always available (core §7.4)
@@ -134,6 +135,8 @@ def intake(project):
     # 8. nothing unresolved (answers A-M are enforced by the schema)
     if brief["unresolved"]:
         probs.append(f"rule 8: brief.unresolved is not empty: {brief['unresolved']}")
+    # 9. tool config: paths stay inside the project, enabled features carry their fields (S8-01, S8-05)
+    probs += [f"rule 9: {x}" for x in tool_config.problems(project)]
     # rubric rules
     a = brief["assessment"]
     probs += [f"rubric: {x}" for x in rubric_problems(rubric, a["mcq"]["enabled"] or a["cases"]["enabled"] or a["exercises"]["enabled"])]

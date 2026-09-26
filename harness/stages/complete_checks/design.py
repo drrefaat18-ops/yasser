@@ -1,5 +1,6 @@
 """`complete design` (core §2.2 design row)."""
 from harness.stages.complete_checks.common import read_json, table, validate_file
+from harness.tools import config as tool_config
 
 
 def design(project, active_run):
@@ -9,6 +10,7 @@ def design(project, active_run):
             probs.append(f"design/{f} is missing or empty")
     if plan is None or probs:
         return {}, probs
+    probs += tool_config.problems(project)   # chapter files must stay inside the chapters directory (S8-01)
     if plan["project_id"] != project.name:
         probs.append(f"chapter-plan project_id {plan['project_id']!r} != {project.name!r}")
     ch = plan["chapters"]

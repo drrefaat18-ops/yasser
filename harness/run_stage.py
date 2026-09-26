@@ -13,6 +13,7 @@ MAX_SUBAGENTS = 2   # Rule 11
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import paths, state  # noqa: E402
+from harness.tools import config as tool_config  # noqa: E402
 from harness.stages import build as build_stage, complete_checks, contracts, ingest as ingest_stage, new as new_stage  # noqa: E402
 
 # auto stages register their implementation here: stage -> fn(project) -> extras (ingest 8.4, build 8.2)
@@ -165,6 +166,9 @@ def main(argv=None):
         return 1
     except (ingest_stage.IngestError, build_stage.BuildStepFailed) as e:   # an auto stage failed; its receipt says `failed`
         print(f"ERROR {e}", file=sys.stderr)
+        return e.exit_code
+    except tool_config.ConfigError as e:
+        print(f"ERROR CONFIG: {e}", file=sys.stderr)
         return e.exit_code
     except json.JSONDecodeError as e:
         print(f"ERROR SCHEMA: invalid JSON: {e}", file=sys.stderr)

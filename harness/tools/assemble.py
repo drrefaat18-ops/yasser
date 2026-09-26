@@ -91,7 +91,7 @@ def main(project):
     try:
         cfg = config.load(project)
         book, probs = assemble(cfg)
-    except (KeyError, FileNotFoundError, AttributeError) as e:
+    except (config.ConfigError, KeyError, FileNotFoundError, AttributeError) as e:
         print(f"ERROR CONFIG: {e}", file=sys.stderr)
         return 2
     out = output_path(cfg)

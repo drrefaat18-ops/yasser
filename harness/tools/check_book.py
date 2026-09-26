@@ -40,8 +40,7 @@ IDS = {  # emission order per function; every ID appears once per target
 NA = "not_applicable"   # a check result may list IDs whose sub-feature is disabled under this key
 
 
-class ConfigError(Exception):
-    """template.json asks for something this checker does not implement."""
+ConfigError = config.ConfigError   # one config error type for every tool (S8-05)
 
 
 # ---------- parsing ----------
@@ -219,7 +218,7 @@ def check_template(text, cfg):
     lines = text.splitlines()
     for c in t["callouts"]:
         n = sum(1 for line in lines if line.startswith(c["syntax"]))
-        if c["required"] and c["syntax"] not in text:
+        if c["required"] and n == 0:   # a marker line, not a mention in prose (S8-03)
             f["TPL-CALLOUT-MISSING"].append(f"template: missing box '{c['label']}'")
         elif n and ((c["min"] is not None and n < c["min"]) or (c["max"] is not None and n > c["max"])):
             f["TPL-CALLOUT-COUNT"].append(f"template: box '{c['label']}' appears {n}×, allowed {c['min']}–{c['max']}")
@@ -301,7 +300,7 @@ def check_mcqs(text, cfg):
             f["MCQ-LO-TAG"].append(f"Q{n}: missing [LOn] tag")
     if len(qs) != mcq["count"]:
         f["MCQ-COUNT"].append(f"MCQ count {len(qs)}, need {mcq['count']}")
-    if case_marker and case_marker not in sa:
+    if case_marker and not any(line.startswith(case_marker) for line in sa.splitlines()):
         f["MCQ-CASE"].append(f"missing {case_marker}")
     if _lo_enabled(cfg):
         ids = set(lo_ids(text, cfg))
@@ -474,7 +473,7 @@ def errata_open(path, cfg):
 def check_book_level(cfg, chapter_words):
     t = cfg["template"]
     f = {i: [] for i in IDS["book"]}
-    na = set()
+    na, missing_input = set(), set()
     meas = {}
     found = sorted(cfg.path("chapters").glob(t["paths"]["chapter_glob"]))
     planned = [p for _, p in cfg.chapters()]
@@ -495,6 +494,7 @@ def check_book_level(cfg, chapter_words):
                 f["BUDGET-FRONT"].append(f"book: front matter {fw} words, allowed {int(lo)}–{int(hi)}")
     else:
         f["BOOK-FRONT-MISSING"].append(f"book: missing {t['paths']['front_matter']}")
+        missing_input.add("BUDGET-FRONT")
     if t["budgets"]["front_matter"] is None:
         na.add("BUDGET-FRONT")
     meas["BUDGET-TOTAL"] = {"total_words": total}
@@ -523,6 +523,8 @@ def check_book_level(cfg, chapter_words):
     for c in rep["checks"]:
         if c["id"] in na:
             c.update(status="not_applicable", message="disabled in template.json", measured={})
+        elif c["id"] in missing_input:   # S8-06: never `pass` without its input; BOOK-FRONT-MISSING carries the failure
+            c.update(status="not_applicable", message="front matter file missing (see BOOK-FRONT-MISSING)", measured={})
     return rep, total
 
 
