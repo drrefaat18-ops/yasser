@@ -18,17 +18,17 @@ class GateError(Exception):
 # yet list harness/stages/contracts.py (their file-set definition); the task that ships a stage's tool replaces
 # it (Tasks 8.x, 9.x, 11.x state their STAGES edit). tool_sha refuses untracked paths.
 STAGES = [
-    {"id": "new", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},        # -> stages/new.py in 7.2
+    {"id": "new", "kind": "auto", "tool_paths": ["harness/stages/new.py"]},
     {"id": "intake", "kind": "agentic", "tool_paths": ["harness/schema.py", "harness/schemas/brief.v1.json", "harness/schemas/rubric.v1.json",
                                                        "harness/schemas/template.v1.json", "harness/schemas/theme.v1.json",
-                                                       "harness/schemas/overlay.v1.json"]},  # + complete_checks/intake.py in 7.2
+                                                       "harness/schemas/overlay.v1.json", "harness/stages/complete_checks/intake.py"]},
     {"id": "ingest", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},     # -> ingest.py, convert_docx.py in 8.4
-    {"id": "evaluate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> complete_checks/{common,evaluate}.py in 7.2
-    {"id": "design", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> complete_checks/design.py in 7.2
+    {"id": "evaluate", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/evaluate.py"]},
+    {"id": "design", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/design.py"]},
     {"id": "translate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_translation.py, complete_checks/translate.py in 11.x
     {"id": "rework", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_book.py (8.1), verify_refs.py + complete_checks/rework.py (8.3)
     {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},      # -> assemble.py (8.1), build.py + build_book.py (8.2), figures (9.1)
-    {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},   # -> complete_checks/{common,audit}.py in 7.2
+    {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/audit.py"]},
 ]
 RESERVED = {"stage", "status", "args", "inputs", "outputs", "tool_sha", "time", "error", "invalidated_by",
             "units", "imported", "imported_at_commit", "dec_id", "dec_row_sha256"}
@@ -158,6 +158,12 @@ def receipt_problems(project, stage_id, st, repo=None):
                 probs.append(f"{stage_id}: {kind[:-1]} missing {rel}")
             elif hashing.hash_file(f) != h:
                 probs.append(f"{stage_id}: {kind[:-1]} changed {rel}")
+    for fid, ru in (r.get("rulings") or {}).items():   # Task 7.2: an edited ruling row stales the receipt
+        try:
+            if dec_row_hash(project, ru["dec_id"])[0] != ru["dec_row_sha256"]:
+                probs.append(f"{stage_id}: ruling {fid} ({ru['dec_id']}) DEC row changed")
+        except GateError as e:
+            probs.append(f"{stage_id}: ruling {fid}: {e}")
     if r.get("imported"):
         try:
             if dec_row_hash(project, r["dec_id"])[0] != r["dec_row_sha256"]:
@@ -270,15 +276,19 @@ def _unit_problems(project, stage_id, name, r, repo):
     return probs
 
 
-def complete(project, stage_id, nonce, extras, unit=None, final=False, repo=None):
-    """Write the receipt. Unit stages: `unit=U` writes one unit receipt and keeps the lease; `unit=None, final=True`
-    writes the stage receipt once every unit is valid, and clears the lease."""
-    st = require_gates(project, stage_id, repo)
+def check_lease(st, stage_id, nonce):
     ar = st["active_run"]
     if not ar or ar["stage"] != stage_id:
         raise GateError("NO-ACTIVE-RUN", f"no active {stage_id} run; `begin {stage_id}` first")
     if ar["nonce"] != nonce:
         raise GateError("NONCE-MISMATCH", f"--nonce does not match the active {stage_id} run")
+
+
+def complete(project, stage_id, nonce, extras, unit=None, final=False, repo=None):
+    """Write the receipt. Unit stages: `unit=U` writes one unit receipt and keeps the lease; `unit=None, final=True`
+    writes the stage receipt once every unit is valid, and clears the lease."""
+    st = require_gates(project, stage_id, repo)
+    check_lease(st, stage_id, nonce)
     reserved = sorted(RESERVED & set(extras))
     if reserved:
         raise GateError("RESERVED-FIELD", f"extras may not set {reserved}")
