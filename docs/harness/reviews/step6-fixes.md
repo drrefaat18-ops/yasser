@@ -22,4 +22,4 @@ Review: `docs/harness/reviews/step6-review.md`. Codex reviewed commits `9aa3430`
 | `python -m unittest discover -s tests -t .` | 42 tests OK |
 | `python -m pytest projects/ai-in-medicine/rework/tools -q -p no:cacheprovider` | 15 passed |
 | `capture_golden.py … --layout layout-projects.json` → temp; `compare_golden.py golden.json <temp> --allow migration-manifest.json` | exit 0, exit 0, `diffs: []` |
-| `manifest.py --scope-commit <legacy-tools fix commit> --extra docs/harness/reviews/step6-golden-diff.md` | exit 0 (run after commit, below) |
+| `manifest.py --scope-commit 60b9c51 --extra docs/harness/reviews/step6-golden-diff.md` | exit 0, 0 problems |
