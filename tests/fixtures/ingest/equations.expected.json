@@ -1,0 +1,11 @@
+{
+ "exit": 0,
+ "assets": 0,
+ "structures": {
+  "equations": {
+   "source_count": 1,
+   "output_count": 1,
+   "status": "lossy"
+  }
+ }
+}

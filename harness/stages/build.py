@@ -9,7 +9,10 @@ from harness.tools import assemble, build_book, capture_golden, config
 
 
 class BuildStepFailed(Exception):
-    pass
+    exit_code = 1
+
+    def __init__(self, message):
+        super().__init__(f"BUILD: {message}")
 
 
 def _step(name, fn):

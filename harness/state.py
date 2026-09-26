@@ -23,7 +23,10 @@ STAGES = [
                                                        "harness/schemas/template.v1.json", "harness/schemas/theme.v1.json",
                                                        "harness/schemas/overlay.v1.json", "harness/stages/complete_checks/common.py",
                                                        "harness/stages/complete_checks/intake.py", "harness/locales.py"]},
-    {"id": "ingest", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},     # -> ingest.py, convert_docx.py in 8.4
+    {"id": "ingest", "kind": "auto", "tool_paths": ["harness/stages/ingest.py", "harness/tools/convert_docx.py",
+                                                    "harness/tools/config.py", "harness/locales.py",
+                                                    "harness/schemas/source-manifest.v1.json",
+                                                    "harness/schemas/conversion-report.v1.json", "harness/schemas/units.v1.json"]},
     {"id": "evaluate", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/evaluate.py",
                                                          "harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"]},
     {"id": "design", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/design.py",

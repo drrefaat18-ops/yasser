@@ -1,0 +1,11 @@
+{
+ "exit": 0,
+ "assets": 0,
+ "structures": {
+  "footnotes": {
+   "source_count": 2,
+   "output_count": 2,
+   "status": "lossy"
+  }
+ }
+}

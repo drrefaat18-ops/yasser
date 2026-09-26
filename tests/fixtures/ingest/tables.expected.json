@@ -1,0 +1,16 @@
+{
+ "exit": 0,
+ "assets": 0,
+ "structures": {
+  "tables": {
+   "source_count": 2,
+   "output_count": 2,
+   "status": "ok"
+  },
+  "callouts": {
+   "source_count": 1,
+   "output_count": 1,
+   "status": "ok"
+  }
+ }
+}

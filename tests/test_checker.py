@@ -114,7 +114,8 @@ class ToolPathsTest(unittest.TestCase):
         import re
         from harness import state
         control = {"state", "hashing", "paths", "schema", "gate"}
-        for stage, tool in (("rework", "harness/tools/check_book.py"), ("build", "harness/stages/build.py")):
+        for stage, tool in (("rework", "harness/stages/complete_checks/rework.py"), ("build", "harness/stages/build.py"),
+                            ("ingest", "harness/stages/ingest.py")):
             tp, todo, seen = set(state.BY_ID[stage]["tool_paths"]), [tool], set()
             while todo:
                 m = todo.pop()

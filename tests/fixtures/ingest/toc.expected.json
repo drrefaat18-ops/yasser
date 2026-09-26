@@ -1,0 +1,27 @@
+{
+ "exit": 0,
+ "assets": 0,
+ "structures": {
+  "headings": {
+   "source_count": 2,
+   "output_count": 2,
+   "status": "ok"
+  },
+  "text": {
+   "status": "ok"
+  }
+ },
+ "omitted": [
+  {
+   "reason": "source_toc",
+   "chars": 40,
+   "line_start": 1,
+   "line_end": 3
+  }
+ ],
+ "absent_from_normalized": [
+  "Contents",
+  "\t3",
+  "Chapter 2: Energy\t9"
+ ]
+}

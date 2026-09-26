@@ -13,10 +13,10 @@ MAX_SUBAGENTS = 2   # Rule 11
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import paths, state  # noqa: E402
-from harness.stages import build as build_stage, complete_checks, contracts, new as new_stage  # noqa: E402
+from harness.stages import build as build_stage, complete_checks, contracts, ingest as ingest_stage, new as new_stage  # noqa: E402
 
 # auto stages register their implementation here: stage -> fn(project) -> extras (ingest 8.4, build 8.2)
-AUTO_RUNNERS = {"build": build_stage.run}
+AUTO_RUNNERS = {"ingest": ingest_stage.run, "build": build_stage.run}
 AGENTIC = [s["id"] for s in state.STAGES if s["kind"] == "agentic"]
 AUTO = [s["id"] for s in state.STAGES if s["kind"] == "auto" and s["id"] != "new"]
 
@@ -163,6 +163,9 @@ def main(argv=None):
         for p in e.problems:
             print(f"ERROR CHECK: {p}", file=sys.stderr)
         return 1
+    except (ingest_stage.IngestError, build_stage.BuildStepFailed) as e:   # an auto stage failed; its receipt says `failed`
+        print(f"ERROR {e}", file=sys.stderr)
+        return e.exit_code
     except json.JSONDecodeError as e:
         print(f"ERROR SCHEMA: invalid JSON: {e}", file=sys.stderr)
         return 1
