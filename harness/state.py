@@ -362,12 +362,12 @@ def abort(project, stage_id, reason):
 def approve(project, kind, dec, repo=None):
     if kind not in APPROVAL_SETS:
         raise ValueError(f"unknown approval kind {kind!r}")
+    # gates first (R19), then the DEC row; the stage whose outputs are approved must hold a valid receipt (R4),
+    # so unchecked files cannot be approved. For design, require_gates(design) is everything but the design approval.
+    st = require_gates(project, kind, repo)
     h, row = dec_row_hash(project, dec)
     if kind.lower() not in row.lower():
         raise GateError("DEC-MISSING", f"{dec} row does not name the {kind} approval: {row}")
-    # ruling (step7-fixes): the stage whose outputs are approved must hold a valid receipt, so unchecked files
-    # cannot be approved; for design this also runs require_gates(design), i.e. everything but the design approval
-    st = require_gates(project, kind, repo)
     probs = receipt_problems(project, kind, st, repo)
     if probs:
         raise GateError("UPSTREAM-STALE", "; ".join(probs))
@@ -382,12 +382,12 @@ IMPORTABLE = {"ingest", "evaluate", "design", "rework"}
 def import_history(project, stage_id, dec, repo=None):
     """Adopt pre-harness artifacts as an imported receipt (plan N2). Refused unless every condition holds."""
     project = pathlib.Path(project)
-    st = load(project)
+    if stage_id not in IMPORTABLE:
+        raise GateError("IMPORT-REFUSED", f"{stage_id}: only {sorted(IMPORTABLE)} can be imported")
+    st = require_gates(project, stage_id, repo)   # gates first (R19)
 
     def refuse(why):
         raise GateError("IMPORT-REFUSED", f"{stage_id}: {why}")
-    if stage_id not in IMPORTABLE:
-        refuse(f"only {sorted(IMPORTABLE)} can be imported")
     if st["receipts"].get("new", {}).get("args", {}).get("adopted") is not True:
         refuse("the project was not created as adopted (`new` receipt args.adopted)")
     if stage_id in st["receipts"]:
@@ -407,7 +407,6 @@ def import_history(project, stage_id, dec, repo=None):
         f = (project / rel).resolve()
         if not f.is_relative_to(root) or not f.is_file():
             refuse(f"{rel} is missing or outside the project")
-    require_gates(project, stage_id, repo)
     head = _git(repo or paths.REPO, "rev-parse", "HEAD").strip()
     base = {"status": "ok", "imported": True, "imported_at_commit": head, "dec_id": dec, "dec_row_sha256": h,
             "tool_sha": "imported", "time": now()}
@@ -431,7 +430,7 @@ def verify(project, through=None, repo=None):
     try:
         st = load(project)
     except GateError as e:
-        return [f"{e.code}: {e}"]
+        return [str(e)]
     mand = _allowed_stages(project)
     if through is not None and through not in ORDER:
         raise ValueError(f"unknown stage {through!r}")
@@ -442,10 +441,10 @@ def verify(project, through=None, repo=None):
     try:
         require_gates(project, nxt, repo)
     except GateError as e:
-        fails.append(f"{e.code}: {e}")
+        fails.append(str(e))
     for s in boundary:
-        fails += receipt_problems(project, s, st, repo)
+        fails += [f"RECEIPT-STALE: {x}" for x in receipt_problems(project, s, st, repo)]
     ar = st["active_run"]
     if ar:
-        fails.append(f"active_run: {ar['stage']} nonce={ar['nonce']} started={ar['started_at']}")
+        fails.append(f"RUN-ACTIVE: {ar['stage']} nonce={ar['nonce']} started={ar['started_at']}")
     return fails

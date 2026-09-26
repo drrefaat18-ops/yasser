@@ -41,6 +41,7 @@ def _brief(project, stage_id):
 def cmd_begin(project, a):
     if a.stage not in AGENTIC:
         raise ValueError(f"{a.stage} is an auto stage; use `run {a.stage}`")
+    state.require_gates(project, a.stage)   # gate errors before usage checks (bypass matrix)
     if a.stage == "translate" and not a.author_model:
         raise ValueError("begin translate needs --author-model (translation contract §6)")
     nonce = state.begin(project, a.stage, amend=a.amend, author_model=a.author_model or "claude")
@@ -77,8 +78,10 @@ def cmd_verify(project, a):
     for sid, r in state.load(project)["receipts"].items() if (project / "state.json").exists() else []:
         if r.get("imported"):
             print(f"info: {sid} receipt is imported ({r['dec_id']}, commit {r['imported_at_commit'][:12]})")
+    for line in fails:   # each line is `CODE: message`
+        print(f"ERROR {line}", file=sys.stderr)
     if fails:
-        raise CheckFailed(fails)
+        raise SystemExit(1)
     print("verify ok" + (f" through {a.through}" if a.through else ""))
 
 

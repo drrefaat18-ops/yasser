@@ -54,6 +54,10 @@ def _selftest():
 
 
 if __name__ == "__main__":
+    import pathlib, sys  # gate shim (Task 7.3): no stage work before the gates pass
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))  # repo root
+    from harness.gate import enforce
+    PROJECT = enforce("rework", sys.argv)
     _selftest()
     for path in sys.argv[1:]:
         with open(path, encoding="utf-8") as f:

@@ -1,0 +1,16 @@
+{
+ "schema_version": 1,
+ "project_id": "bypass-book",
+ "parts": [],
+ "dropped": [],
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01.md",
+   "title": "One",
+   "word_budget": 100,
+   "part_id": null,
+   "source_refs": []
+  }
+ ]
+}

@@ -50,6 +50,10 @@ class NetworkError(Exception):
     """verify_refs printed ERROR: a flaky result is never frozen (core §9.1)."""
 
 
+class GateRefused(Exception):
+    """A gated legacy tool refused to run (Rule 7): the project's approvals or receipts are not valid."""
+
+
 # N6: legacy message -> check ID. Line numbers: rework/tools/check_book.py at d557120.
 CLASSIFY = {
     "check_template": [(r"^template: missing '# Chapter", "TPL-H1"),                 # 104
@@ -254,9 +258,13 @@ def parse_refs_output(chapter, text):
 
 def refs(project_dir, layout, paths):
     tool = pathlib.Path(project_dir) / layout["legacy_tools"] / "verify_refs.py"
+    # a gated copy (Task 7.3 shim) needs --project; the frozen STEP 5 fixture copy has no shim
+    gate = ["--project", str(project_dir)] if "harness.gate" in tool.read_text(encoding="utf-8") else []
     rows = []
     for p in paths:
-        r = subprocess.run([sys.executable, str(tool), str(p)], capture_output=True, text=True, encoding="utf-8")
+        r = subprocess.run([sys.executable, str(tool), *gate, str(p)], capture_output=True, text=True, encoding="utf-8")
+        if r.stderr.lstrip().startswith("ERROR "):   # a refused gate exits 1 like a failing check: never freeze it
+            raise GateRefused(f"{chapter_id(p)}: {r.stderr.strip()[-300:]}")
         if r.returncode not in (0, 1):
             raise NetworkError(f"{chapter_id(p)}: verify_refs exit {r.returncode}: {r.stderr.strip()[-300:]}")
         rows += parse_refs_output(chapter_id(p), r.stdout)
@@ -502,6 +510,9 @@ def main():
         sys.exit(1)
     except LayoutError as e:
         print(f"ERROR LAYOUT: {e}", file=sys.stderr)
+        sys.exit(1)
+    except GateRefused as e:
+        print(f"ERROR GATE: {e}", file=sys.stderr)
         sys.exit(1)
     except (NetworkError, Unclassified) as e:
         print(f"ERROR {type(e).__name__}: {e}", file=sys.stderr)

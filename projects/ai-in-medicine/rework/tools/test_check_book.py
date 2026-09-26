@@ -2,6 +2,24 @@ import pathlib, subprocess, sys, textwrap, tempfile
 
 TOOL = pathlib.Path(__file__).with_name("check_book.py")
 
+# Task 7.3: the tool is gated, so it runs inside a temp repo holding the bypass fixture project (core §9.6).
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[4]))
+import atexit, contextlib  # noqa: E402
+from tests.helpers import temp_repo  # noqa: E402
+
+_stack = contextlib.ExitStack()
+atexit.register(_stack.close)
+_ROOT = None
+
+
+def _gated(*args):
+    global _ROOT
+    if _ROOT is None:
+        _ROOT = _stack.enter_context(temp_repo("bypass", slug="bypass-book", stamp=True, with_legacy=True))
+    tool = _ROOT / TOOL.resolve().relative_to(pathlib.Path(__file__).resolve().parents[4])
+    return subprocess.run([sys.executable, str(tool), "--project", "projects/bypass-book", *map(str, args)],
+                          cwd=_ROOT, capture_output=True, text=True, encoding="utf-8")
+
 GOOD = textwrap.dedent("""\
 # Chapter 99: Fixture
 
@@ -58,8 +76,7 @@ def run(text, glossary="model"):
     (d / "glossary.md").write_text(f"**{glossary.strip()}** — def\n", encoding="utf-8")
     f = d / "ch99.md"
     f.write_text(text, encoding="utf-8")
-    r = subprocess.run([sys.executable, str(TOOL), str(f), "--budget", "0", "--glossary", str(d / "glossary.md")],
-                       capture_output=True, text=True, encoding="utf-8")
+    r = _gated(f, "--budget", "0", "--glossary", d / "glossary.md")
     return r.returncode, r.stdout
 
 

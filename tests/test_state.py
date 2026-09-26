@@ -66,11 +66,11 @@ class StateTest(unittest.TestCase):
         with temp_repo("state-basic", stamp=True) as root:
             p = root / "projects" / "fixture-book"
             with self.assertRaises(state.GateError) as cm:
-                state.import_history(p, "evaluate", "DEC-001")
+                state.import_history(p, "evaluate", "DEC-001", repo=root)
             self.assertEqual(cm.exception.code, "IMPORT-REFUSED")   # not adopted
             state.write(p, lambda st: st["receipts"]["new"]["args"].update(adopted=True))
             with self.assertRaises(state.GateError) as cm:
-                state.import_history(p, "ingest", "DEC-001")
+                state.import_history(p, "ingest", "DEC-001", repo=root)
             self.assertEqual(cm.exception.code, "IMPORT-REFUSED")   # ingest already has a receipt
 
     def test_leftover_lock_is_named_not_removed(self):
@@ -125,8 +125,11 @@ class LifecycleTest(unittest.TestCase):
     def test_approve_needs_row_naming_kind(self):
         with temp_repo("state-basic", stamp=True) as root:
             p = root / "projects" / "fixture-book"
+            d = p / "decisions.md"
+            d.write_text(d.read_text(encoding="utf-8") + "| DEC-009 | 2026-09-25 | user | approve something else | \"ok\" |\n",
+                         encoding="utf-8")
             with self.assertRaises(state.GateError) as cm:
-                state.approve(p, "design", "DEC-001", repo=root)
+                state.approve(p, "intake", "DEC-009", repo=root)
             self.assertEqual(cm.exception.code, "DEC-MISSING")
 
     def test_unit_lifecycle(self):

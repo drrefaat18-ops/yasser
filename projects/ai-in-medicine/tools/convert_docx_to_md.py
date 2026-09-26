@@ -8,6 +8,12 @@ from docx.oxml.text.paragraph import CT_P
 from docx.table import Table
 from docx.text.paragraph import Paragraph
 
+if __name__ == "__main__":
+    import pathlib, sys  # gate shim (Task 7.3): no stage work before the gates pass
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3]))  # repo root
+    from harness.gate import enforce
+    PROJECT = enforce("ingest", sys.argv)
+
 sys.stdout.reconfigure(encoding='utf-8')
 
 BOOK_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
