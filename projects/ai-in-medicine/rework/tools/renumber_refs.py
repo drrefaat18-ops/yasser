@@ -1,6 +1,6 @@
 """Drop uncited references and renumber citations by first appearance.
 
-Usage: python rework/tools/renumber_refs.py rework/chNN-*.md [...]
+Usage: python projects/ai-in-medicine/rework/tools/renumber_refs.py projects/ai-in-medicine/rework/chNN-*.md [...]
 """
 import re
 import sys

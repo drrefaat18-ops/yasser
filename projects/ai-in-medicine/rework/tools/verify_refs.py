@@ -1,6 +1,6 @@
 """Check that every DOI in a chapter's References exists on CrossRef and matches the cited title.
 
-Usage: python rework/tools/verify_refs.py rework/ch04-....md [more.md ...]
+Usage: python projects/ai-in-medicine/rework/tools/verify_refs.py projects/ai-in-medicine/rework/ch04-....md [more.md ...]
 Output per reference: OK n | NOT FOUND n | TITLE MISMATCH n | NO DOI n | ERROR n.
 Exit 1 on NOT FOUND, TITLE MISMATCH or ERROR. NO DOI is allowed only for laws/guidance with a URL.
 If api.crossref.org is unreachable from the shell, check DOIs with the WebFetch tool instead.

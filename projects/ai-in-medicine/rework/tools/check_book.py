@@ -1,8 +1,8 @@
 """Acceptance checks for rework chapters (spec §12). Stdlib only.
 
 Usage:
-  python rework/tools/check_book.py rework/ch04-....md [--budget N] [--glossary PATH]
-  python rework/tools/check_book.py --all
+  python projects/ai-in-medicine/rework/tools/check_book.py projects/ai-in-medicine/rework/ch04-....md [--budget N] [--glossary PATH]
+  python projects/ai-in-medicine/rework/tools/check_book.py --all
 """
 import argparse
 import pathlib

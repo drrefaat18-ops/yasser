@@ -32,8 +32,10 @@ Only allowlisted files changed; line endings preserved.
 | `projects/ai-in-medicine/rework/tools/build_book.py` | `OUT` → `ROOT / "deliverables" / …docx` (PDF follows `OUT`); docstring |
 | `projects/ai-in-medicine/tools/convert_docx_to_md.py` | absolute `D:\yasser\…` paths → relative to the script (`original/`, `images/`) |
 
-`check_book.py`, `verify_refs.py`, `renumber_refs.py` and the two legacy tests needed no change (their `ROOT` depth is unchanged). `python -m pytest projects/ai-in-medicine/rework/tools -q` → 15 passed.
+`check_book.py`, `verify_refs.py`, `renumber_refs.py` and the two legacy tests needed no path-constant change (their `ROOT` depth is unchanged); the Fix Protocol later corrected their usage lines only (S6-06). `python -m pytest projects/ai-in-medicine/rework/tools -q` → 15 passed.
 
-## Known limitation (not fixed: scope lock)
+## Image links after the move (updated by the Fix Protocol, `step6-fixes.md` S6-04, S6-05)
 
-`assemble.py` still rewrites image links to `images/…` and `rework/figures/…`, which are relative to the book root. The assembled Markdown now lives in `deliverables/`, so those links are broken when it is viewed on its own. The same is true of the moved deliverable `AI_in_Health_Care_Interprofessional.md`. The DOCX and PDF are unaffected (images are embedded). Harness builds write to `build/` from STEP 8 (N3), which is where this should be settled.
+The live tools now write links relative to where their output lives: `assemble.py` keeps `../images/…` and writes `../rework/figures/…` into `deliverables/`, and validates them relative to `OUT.parent`; `convert_docx_to_md.py` emits `../images/…` into `original/`. Re-running the capture and comparison after these fixes: both exit 0, diff list empty.
+
+The two frozen files, `deliverables/AI_in_Health_Care_Interprofessional.md` and `original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md`, still carry root-relative `images/…` links, so their images do not resolve when the Markdown is viewed on its own. They are not edited (Rule 5). The DOCX and PDF embed their images and are unaffected.

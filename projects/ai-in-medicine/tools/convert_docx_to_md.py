@@ -31,7 +31,7 @@ print(f"Extracted media files to {IMAGES_DIR}")
 doc = docx.Document(DOCX_PATH)
 
 def get_blip_targets(element):
-    """Find all image references within an XML element and map to images/filename."""
+    """Find all image references within an XML element and map to ../images/filename (MD_PATH is in original/)."""
     blips = element.xpath('.//a:blip')
     targets = []
     for b in blips:
@@ -39,7 +39,7 @@ def get_blip_targets(element):
         if embed_id and embed_id in doc.part.rels:
             target_ref = doc.part.rels[embed_id].target_ref
             filename = os.path.basename(target_ref)
-            targets.append(f"images/{filename}")
+            targets.append(f"../images/{filename}")
     return targets
 
 def split_paragraph_into_line_tokens(p):

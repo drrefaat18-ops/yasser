@@ -1,6 +1,6 @@
 """Assemble rework chapters into one book file in deliverables/.
 
-Usage: python rework/tools/assemble.py
+Usage: python projects/ai-in-medicine/rework/tools/assemble.py
 Writes AI_in_Health_Care_Interprofessional.md and exits 1 if any image path in it is missing.
 """
 import pathlib
@@ -19,8 +19,8 @@ def anchor(title):
 
 
 def fix_paths(text):
-    text = text.replace("](../images/", "](images/")
-    return text.replace("](figures/", "](rework/figures/")
+    # OUT is in deliverables/, a sibling of rework/ and images/, so ../images/ links stay as they are
+    return text.replace("](figures/", "](../rework/figures/")
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
     book = head.rstrip() + "\n\n" + toc + "\n## How to Use This Book" + rest
     book += "".join("\n\n---\n\n" + p.strip() + "\n" for p in parts)
     OUT.write_text(book, encoding="utf-8")
-    missing = [m for m in re.findall(r"\]\(((?:images|rework/figures)/[^)]+)\)", book) if not (ROOT / m).exists()]
+    missing = [m for m in re.findall(r"\]\(((?:\.\./images|\.\./rework/figures)/[^)]+)\)", book) if not (OUT.parent / m).exists()]
     for m in missing:
         print("missing image:", m)
     print(f"wrote {OUT.name}: {len(book.split())} words, {len(titles)} sections")

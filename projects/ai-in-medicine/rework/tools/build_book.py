@@ -1,6 +1,6 @@
 """Build the textbook as Word (.docx) and PDF from the rework Markdown sources.
 
-Usage: python rework/tools/build_book.py [--no-pdf]
+Usage: python projects/ai-in-medicine/rework/tools/build_book.py [--no-pdf]
 Writes AI_in_Health_Care_Interprofessional.docx (and .pdf via Microsoft Word) in deliverables/.
 Figures: SVGs must be pre-rendered to rework/figures/png/ (see render_figures in README of this script's docstring):
   chrome --headless --force-device-scale-factor=4 --screenshot=png/X.png X.svg
