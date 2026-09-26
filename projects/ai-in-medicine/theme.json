@@ -69,6 +69,20 @@
    "fill": "E6F2E6",
    "label_colour": "2F6A36",
    "layout": "box"
+  },
+  "opening": {
+   "fill": "EEF2F6",
+   "label_colour": "12324F",
+   "layout": "box"
+  },
+  "objectives": {
+   "fill": "FFFFFF",
+   "label_colour": "12324F",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "C9D1D9"
+   }
   }
  },
  "boxed_section_ids": [
@@ -100,7 +114,8 @@
   "figure": "Figure",
   "table": "Table",
   "question_prefix": "Q",
-  "objective_prefix": "LO"
+  "objective_prefix": "LO",
+  "chapters": "Chapters"
  },
  "output": {
   "basename": "AI_in_Health_Care_Interprofessional"

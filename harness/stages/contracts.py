@@ -119,8 +119,12 @@ def files(project, stage_id, unit=None):
     if stage_id == "build":
         theme = _json(project, "theme.json") or {}
         base = theme.get("output", {}).get("basename", "book")
-        ins = (_chapter_files(project) + _book_files(project) + ["template.json", "theme.json", "design/chapter-plan.json"]
-               + _glob(project, f"{p['figures']}/src") + [f"{p['figures']}/figures.json"])
+        # every file under the asset roots and the figures dir is read (images, legacy PNG mirrors, cover); figures.json
+        # joins when the figure system ships (STEP 9)
+        assets = sorted({f for root in p.get("allowed_asset_roots", []) + [p["figures"]] for f in _glob(project, root)}
+                        - {f for f in _glob(project, f"{p['figures']}/out")})
+        ins = (_chapter_files(project) + _book_files(project) + ["brief.json", "template.json", "theme.json",
+               "design/chapter-plan.json"] + assets)
         outs = _glob(project, f"{p['figures']}/out") + [f"build/{base}.{ext}" for ext in ("md", "docx", "pdf")]
         return ins, outs + ["build/build-report.json"]
     if stage_id == "audit":

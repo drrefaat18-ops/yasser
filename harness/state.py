@@ -31,8 +31,10 @@ STAGES = [
     {"id": "translate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_translation.py, complete_checks/translate.py in 11.x
     {"id": "rework", "kind": "agentic", "tool_paths": ["harness/tools/check_book.py", "harness/tools/assemble.py",   # + verify_refs.py,
                                                        "harness/tools/config.py", "harness/text.py", "harness/locales.py"]},  # complete_checks/rework.py (8.3)
-    {"id": "build", "kind": "auto", "tool_paths": ["harness/tools/assemble.py", "harness/tools/config.py",  # + build.py, build_book.py (8.2),
-                                                   "harness/locales.py"]},                                  # figures (9.1)
+    {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/build.py", "harness/tools/assemble.py", "harness/tools/build_book.py",
+                                                   "harness/tools/config.py", "harness/tools/capture_golden.py",   # report facts
+                                                   "harness/tools/check_book.py", "harness/text.py", "harness/locales.py",  # via capture
+                                                   "harness/preflight.py", "harness/presets"]},   # + figures (9.1)
     {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/audit.py",
                                                       "harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"]},
 ]

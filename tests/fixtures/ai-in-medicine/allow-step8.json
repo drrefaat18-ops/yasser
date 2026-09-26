@@ -1,1 +1,3 @@
-[]
+[
+ {"pointer_glob": "/hashes/assembled_md", "reason": "build/ Markdown links are relative to build/; the STEP 6 deliverable was assembled at the repo root (DEC-035). Identical once links resolve to their targets: tests.test_assemble (user ruling, STEP 8 R14)"}
+]

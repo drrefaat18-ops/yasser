@@ -114,7 +114,7 @@ class ToolPathsTest(unittest.TestCase):
         import re
         from harness import state
         control = {"state", "hashing", "paths", "schema", "gate"}
-        for stage, tool in (("rework", "harness/tools/check_book.py"), ("build", "harness/tools/assemble.py")):
+        for stage, tool in (("rework", "harness/tools/check_book.py"), ("build", "harness/stages/build.py")):
             tp, todo, seen = set(state.BY_ID[stage]["tool_paths"]), [tool], set()
             while todo:
                 m = todo.pop()
@@ -123,7 +123,7 @@ class ToolPathsTest(unittest.TestCase):
                 seen.add(m)
                 self.assertIn(m, tp, f"{stage}: {m} is executed but not in tool_paths")
                 src = (REPO / m).read_text(encoding="utf-8")
-                for pkg, names in re.findall(r"^\s*from (harness(?:\.tools)?) import (.+?)(?:\s+#.*)?$", src, re.M):
+                for pkg, names in re.findall(r"^\s*from (harness(?:\.tools|\.stages)?) import (.+?)(?:\s+#.*)?$", src, re.M):
                     for n in (x.strip().split(" as ")[0] for x in names.split(",")):
                         if n not in control:
                             todo.append(f"{pkg.replace('.', '/')}/{n}.py")

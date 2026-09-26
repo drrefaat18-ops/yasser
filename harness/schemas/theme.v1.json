@@ -249,6 +249,27 @@
        "grid",
        "split"
       ]
+     },
+     "border": {
+      "type": [
+       "object",
+       "null"
+      ],
+      "required": [
+       "size_eighths_pt",
+       "colour"
+      ],
+      "properties": {
+       "size_eighths_pt": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "colour": {
+        "type": "string",
+        "pattern": "^#?[0-9A-Fa-f]{6}$"
+       }
+      },
+      "additionalProperties": false
      }
     },
     "additionalProperties": false
@@ -359,6 +380,10 @@
      "pattern": "\\S"
     },
     "objective_prefix": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "chapters": {
      "type": "string",
      "pattern": "\\S"
     }

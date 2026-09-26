@@ -13,10 +13,10 @@ MAX_SUBAGENTS = 2   # Rule 11
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import paths, state  # noqa: E402
-from harness.stages import complete_checks, contracts, new as new_stage  # noqa: E402
+from harness.stages import build as build_stage, complete_checks, contracts, new as new_stage  # noqa: E402
 
 # auto stages register their implementation here: stage -> fn(project) -> extras (ingest 8.4, build 8.2)
-AUTO_RUNNERS = {}
+AUTO_RUNNERS = {"build": build_stage.run}
 AGENTIC = [s["id"] for s in state.STAGES if s["kind"] == "agentic"]
 AUTO = [s["id"] for s in state.STAGES if s["kind"] == "auto" and s["id"] != "new"]
 
