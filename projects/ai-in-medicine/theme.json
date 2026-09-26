@@ -1,0 +1,121 @@
+{
+ "schema_version": 1,
+ "project_id": "ai-in-medicine",
+ "preset": "ltr-textbook",
+ "direction": "ltr",
+ "lang_tag": "en-GB",
+ "page": {
+  "size": "A4",
+  "margins": {
+   "top": 2.6,
+   "bottom": 2.4,
+   "left": 3.5,
+   "right": 3.5
+  },
+  "header_distance": 1.3,
+  "footer_distance": 1.2
+ },
+ "fonts": {
+  "serif": "Sitka Text",
+  "serif_heading": "Sitka Heading",
+  "sans": "Segoe UI",
+  "complex_script": null,
+  "complex_script_heading": null
+ },
+ "palette": {
+  "ink": "1D2A38",
+  "primary": "12324F",
+  "accent": "9A6B00",
+  "muted": "5A6470"
+ },
+ "layout": {
+  "text_width": 14
+ },
+ "alignment": {
+  "body": "justify",
+  "headings": "left"
+ },
+ "lists": {
+  "indent": 1.2,
+  "hanging": 0.6
+ },
+ "callouts": {
+  "background": {
+   "fill": "E8F0F7",
+   "label_colour": "2B5D8A",
+   "layout": "box"
+  },
+  "lenses": {
+   "fill": "F1F3F5",
+   "label_colour": "12324F",
+   "layout": "grid"
+  },
+  "myth": {
+   "fill": "FBF3E0",
+   "label_colour": "7A5200",
+   "layout": "split"
+  },
+  "safety": {
+   "fill": "FBEAEA",
+   "label_colour": "A12B2B",
+   "layout": "box"
+  },
+  "deeper": {
+   "fill": "F1F1EE",
+   "label_colour": "4A5560",
+   "layout": "box"
+  },
+  "local": {
+   "fill": "E6F2E6",
+   "label_colour": "2F6A36",
+   "layout": "box"
+  }
+ },
+ "boxed_section_ids": [
+  "opening",
+  "objectives"
+ ],
+ "toc_excluded_section_ids": [
+  "takeaways",
+  "answers"
+ ],
+ "toc": {
+  "levels": 2
+ },
+ "cover": {
+  "asset": "rework/figures/png/cover.png"
+ },
+ "title_page": {
+  "notices": [
+   "The patients in this book (Mrs. Amal Hassan, Mr. Karim Adel and Ms. Lina Osei) are fictional. Any resemblance to real people is coincidental.",
+   "This book is for education. It is not clinical guidance. Laws, device approvals and product performance change quickly; check current sources before relying on any specific figure."
+  ]
+ },
+ "labels": {
+  "contents": "Contents",
+  "update_toc_instruction": "Right-click and choose Update Field to build the contents.",
+  "chapter": "Chapter",
+  "part": "Part",
+  "glossary": "Glossary",
+  "figure": "Figure",
+  "table": "Table",
+  "question_prefix": "Q",
+  "objective_prefix": "LO"
+ },
+ "output": {
+  "basename": "AI_in_Health_Care_Interprofessional"
+ },
+ "build": {
+  "backend": "word_com",
+  "word_com": {
+   "toc_styles": [
+    "TOC 1",
+    "TOC 2"
+   ]
+  },
+  "pdf": {
+   "bookmarks": "headings",
+   "embed_fonts": true
+  }
+ }
+}

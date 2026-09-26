@@ -1,0 +1,228 @@
+{
+ "schema_version": 1,
+ "project_id": "ai-in-medicine",
+ "identity": {
+  "title": "Artificial Intelligence in Health Care",
+  "subtitle": "An Interprofessional Introduction",
+  "edition": null,
+  "authors": [
+   {
+    "name": "Assistant Prof. Dr. Shereen Elsaid Elkholy",
+    "credit_line": "Assistant Prof. Dr. Shereen Elsaid Elkholy",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "Sole author credit until she confirms otherwise (history/PRODUCT.md).",
+  "rework_authorised": "unknown",
+  "rework_authorised_note": "The 2026-09-24 design recorded authorship as an assumption; no written approval from the author is on file."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx",
+    "format": "docx",
+    "sha256": "e74964e30243bca4db6b4d96175c0c98811e241fa865cd7ca44bf7066b11b4d5"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Artificial intelligence in health care",
+  "subfields": [
+   "machine learning",
+   "medical imaging",
+   "laboratory medicine",
+   "pharmacy",
+   "rehabilitation",
+   "health data",
+   "regulation and ethics"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Diagrams from SVG sources in rework/figures; original images in images/."
+ },
+ "audience": {
+  "year_of_study": "Years 1-2 (pre-clinical)",
+  "programmes": [
+   "Medicine",
+   "Pharmacy",
+   "Physical Therapy",
+   "Health Sciences"
+  ],
+  "prior_knowledge": "No clinical training and no computer-science background assumed.",
+  "display_line": "For students of medicine, pharmacy, physical therapy and the health sciences"
+ },
+ "perspectives": {
+  "enabled": true,
+  "items": [
+   {
+    "id": "medicine",
+    "label": "Medicine"
+   },
+   {
+    "id": "pharmacy",
+    "label": "Pharmacy"
+   },
+   {
+    "id": "physical-therapy",
+    "label": "Physical Therapy"
+   },
+   {
+    "id": "health-sciences",
+    "label": "Health Sciences"
+   }
+  ]
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "simplify",
+   "broaden",
+   "restructure",
+   "update"
+  ],
+  "notes": "One shared interprofessional course: AI literacy is the content, health care the context."
+ },
+ "language": {
+  "source": "en",
+  "output": "en-GB",
+  "translation_required": false,
+  "terminology": ""
+ },
+ "size": {
+  "target_words_total": 19000,
+  "chapter_count_target": 11,
+  "restructuring": "free",
+  "restructuring_note": "Reorganised from 7 specialty chapters into 11 concept chapters in 3 parts."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 10,
+   "options": 4,
+   "format": "Vignette-style stems tagged to objectives; answers and rationales at chapter end; one case question."
+  },
+  "cases": {
+   "enabled": true
+  },
+  "exercises": {
+   "enabled": false
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [],
+  "frameworks": [
+   "WHO",
+   "US FDA",
+   "EU AI Act",
+   "Egyptian Drug Authority"
+  ]
+ },
+ "references": {
+  "style": "vancouver",
+  "style_note": "Numbered square-bracket citations; one reference list per chapter.",
+  "recency": null,
+  "evidence_cutoff": null
+ },
+ "constraints": {
+  "must_keep": [
+   "Author credit",
+   "Running fictional patient cases"
+  ],
+  "must_not_change": [
+   "No invented ISBN, publisher or copyright registration"
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "docx",
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Fonts installed on stock Windows",
+  "branding": {
+   "logo": null,
+   "colours": []
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "AI and computational method",
+   "weight": 20,
+   "reviewer_ids": [
+    "statistician",
+    "clinical-accuracy"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Regulation, ethics and equity",
+   "weight": 20,
+   "reviewer_ids": [
+    "clinical-accuracy"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "default-confirmed",
+   "note": "Identity from history/PRODUCT.md; source DOCX in original/."
+  },
+  "B": {
+   "provenance": "default-confirmed",
+   "note": "Domain from the 2026-09-24 design spec; charts pack only."
+  },
+  "C": {
+   "provenance": "default-confirmed",
+   "note": "Audience from the design spec §1 and PRODUCT.md."
+  },
+  "D": {
+   "provenance": "default-confirmed",
+   "note": "Four professional lenses (check_book.py LENSES)."
+  },
+  "E": {
+   "provenance": "default-confirmed",
+   "note": "Evaluation plus rework (the first run)."
+  },
+  "F": {
+   "provenance": "default-confirmed",
+   "note": "English source and output; en-GB (build_book.py)."
+  },
+  "G": {
+   "provenance": "default-confirmed",
+   "note": "11 chapters, budgets from check_book.py BUDGETS."
+  },
+  "H": {
+   "provenance": "default-confirmed",
+   "note": "10 MCQs A-D per chapter plus one case question (check_book.py)."
+  },
+  "I": {
+   "provenance": "default-confirmed",
+   "note": "International frame plus Egypt Local Context boxes (design spec §1)."
+  },
+  "J": {
+   "provenance": "default-confirmed",
+   "note": "Numbered citations; DOI checked on CrossRef (verify_refs.py)."
+  },
+  "K": {
+   "provenance": "default-confirmed",
+   "note": "No ISBN/publisher (PRODUCT.md)."
+  },
+  "L": {
+   "provenance": "default-confirmed",
+   "note": "DOCX and PDF, A4, stock Windows fonts (PRODUCT.md)."
+  },
+  "M": {
+   "provenance": "default-confirmed",
+   "note": "Domain pillars proposed from the old rubric's non-correctness pillars (EVALUATION_RUBRIC.md 2 and 5)."
+  }
+ },
+ "unresolved": []
+}

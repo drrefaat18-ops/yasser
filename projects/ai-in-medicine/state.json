@@ -1,0 +1,394 @@
+{
+ "aborts": [],
+ "active_run": null,
+ "approvals": {
+  "design": {
+   "approved_at": "2026-09-26T15:29:09Z",
+   "approved_by": "user",
+   "dec_id": "DEC-038",
+   "dec_row_sha256": "b88df62802eb677adca46bb73aca23128634433757a7fd68ccc859d12b893ed7",
+   "files": {
+    "design/chapter-plan.json": "17361191231233fe81dc5bfe45e68980b15558189fc47ba3f43c94d043614ff1",
+    "design/design.md": "5d3b62d25cc51e530a5389c132d0abce2847737472a4adc03acb29b596ab59e9",
+    "design/errata-seed.md": "c50a064ceaf0c13e05c7b1a72628a4d56bdca5e356d162f9a31ec98c96281f89"
+   },
+   "kind": "design"
+  },
+  "intake": {
+   "approved_at": "2026-09-26T15:23:23Z",
+   "approved_by": "user",
+   "dec_id": "DEC-036",
+   "dec_row_sha256": "1d01f0fba8998d25632d8f8ba0eb791149a4c1eb9ca0f7f5c3a09435fb06bf8a",
+   "files": {
+    "agents/clinical-accuracy.json": "141f47e592719c2b295361b5603b4b7b29a13a07f941496160241362fcdca7ed",
+    "brief.json": "9de8e20cebe2a2da13f2ce453275d27117aa594ce42499f2a90be8ee4fdb409d",
+    "rubric.json": "8d234ebc4e714dc5412d1687d5f35a119c8b3804f70adf046dceb88323afc880",
+    "template.json": "bc65cad4e5133a6c21406ad8288f02a76b95c446540d0cd1dee298212bd8e5c3",
+    "theme.json": "3ed2030af8152cfeb267a5fa1a3e7391bd7f3bb553cc744a7579948b5597b674"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "ai-in-medicine",
+ "receipts": {
+  "design": {
+   "args": {},
+   "dec_id": "DEC-037",
+   "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+   "imported": true,
+   "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+   "inputs": {
+    "history/EVALUATION_RUBRIC.md": "57e443418b12fd5c9aa1a07931ad97cb22e3dfcf82b2f4cf836c3125492da99e",
+    "history/VERDICT.md": "085147895381c6d6298a0c66db9de8145384b68680cea1689c4b63f82c7ef376"
+   },
+   "outputs": {
+    "design/chapter-plan.json": "17361191231233fe81dc5bfe45e68980b15558189fc47ba3f43c94d043614ff1",
+    "design/design.md": "5d3b62d25cc51e530a5389c132d0abce2847737472a4adc03acb29b596ab59e9",
+    "design/errata-seed.md": "c50a064ceaf0c13e05c7b1a72628a4d56bdca5e356d162f9a31ec98c96281f89",
+    "history/2026-09-24-interprofessional-rework-design.md": "7dc7d9dece7fc69c543c925f6a6a6408117e8471515fea23baffa5a4e17d38df"
+   },
+   "stage": "design",
+   "status": "ok",
+   "time": "2026-09-26T15:25:04Z",
+   "tool_sha": "imported"
+  },
+  "evaluate": {
+   "args": {},
+   "dec_id": "DEC-037",
+   "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+   "imported": true,
+   "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+   "inputs": {
+    "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md": "a670f5b6450618425a09d254a6469ce86deb375a5637758b9e26c0b8445ec32f"
+   },
+   "outputs": {
+    "history/EVALUATION_RUBRIC.md": "57e443418b12fd5c9aa1a07931ad97cb22e3dfcf82b2f4cf836c3125492da99e",
+    "history/Review_Notes_AI_in_Medicine.pdf": "17605243ef08ddfd153b553ce43b7e93420b16ad3559b7ddda1daac800e6aaf7",
+    "history/VERDICT.md": "085147895381c6d6298a0c66db9de8145384b68680cea1689c4b63f82c7ef376"
+   },
+   "stage": "evaluate",
+   "status": "ok",
+   "time": "2026-09-26T15:25:03Z",
+   "tool_sha": "imported"
+  },
+  "ingest": {
+   "args": {},
+   "dec_id": "DEC-037",
+   "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+   "imported": true,
+   "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+   "inputs": {
+    "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx": "e74964e30243bca4db6b4d96175c0c98811e241fa865cd7ca44bf7066b11b4d5"
+   },
+   "outputs": {
+    "images/image1.jpeg": "bbb32b2966e3f8880dc4b309238357929000f28d160da16893edbd6b56e0eaff",
+    "images/image10.png": "26e3d91c825107340fcf26053338ad7179632d57af21919de78e6f48b3cb3810",
+    "images/image11.png": "becd794d18dfd296c4c0f424363f51c9df4df9074c98ce824375f2394e1373c2",
+    "images/image12.png": "31157da2c61aaaec9e6394c91450de7c25d6dc2b68104d3f3765d8b99cff938b",
+    "images/image13.png": "f77f34a263c7be58a30fe4ec5923810d3104d13edd20d76465460230efa0472a",
+    "images/image14.png": "6b81ec5efd9f72c0ac00aa7a105820c6a1156d2fba26d2fb117a41e49021c283",
+    "images/image15.png": "3e6e336c28460a8800a72a55e82618371e3dabbd982dfa9cabbd362da5a05ae3",
+    "images/image16.png": "c88a15bc094e5973ccdd85ecd89587879837c201c52472e54e6bb362e33a974d",
+    "images/image17.png": "fd158d51c4662c72782110d14780bd4b196cae32d0c11b594f556caa61983a9d",
+    "images/image18.png": "eafccfeac2f6c5890c4ef6caf0165988321c19151d5ef63ff148b69536fc9cd8",
+    "images/image19.png": "49c7805857fd01e1ba812ea95f56aac45b8229f5a85cc542d63b57aaddc4f090",
+    "images/image2.png": "c6a78895bbe7986caa70556c55eb0038affbdc4cbd03eb4c308fd71cb2dd2b34",
+    "images/image20.png": "a934ae134f6a0b72d285c28e7c900242468d48a9800bec1cab66d6795bb4ede2",
+    "images/image21.png": "16ada1e604d5f563a5aac10ce8850c8252f404ed35ecf6b2618952a97b0503bd",
+    "images/image22.png": "0d71ce5bf34434aab991025dc0df0a47d613c2df8e7a25d85376d056438f52f5",
+    "images/image23.png": "92b1ca7ce1ef363c6593926baa524eaad05af54a3e3320fe9d728301d6081af1",
+    "images/image24.png": "13a6646337f75ab7ff1533cc9dfafc8d8178fbc8bd78a3767deb71a04dbc6342",
+    "images/image3.png": "b0c46800a022821be06195d9c1fc6c0c9fd932c5838a1cc34515b7bd94b71b3d",
+    "images/image4.png": "e110d400fd01639ca9989a8c0eb46bfe82332a5493de2f571643ea524772738c",
+    "images/image5.png": "66d6c30677c06306ba050cd141a121a30c2b4c1f816d748c926d2cd39fc8fb98",
+    "images/image6.png": "6614f169a09c38d6b65a76f15db04d5d6dbdc114f2efc9c2562b4909a57b426c",
+    "images/image7.png": "f810cca648a420b0a6478ba6526bd90bf0078229e66ca267bf9744a972883505",
+    "images/image8.png": "9e19b981cee37bddedc3b5a2003dd5cb130abed95255455e65a9de447f9b2b8c",
+    "images/image9.png": "bd0e662a304c9c8e7cd233e513e3a5697f43e399ebdb1491f0e8f3aba35ed1f3",
+    "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md": "a670f5b6450618425a09d254a6469ce86deb375a5637758b9e26c0b8445ec32f"
+   },
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-09-26T15:25:02Z",
+   "tool_sha": "imported"
+  },
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook.json": "3383379144735ef9af43519a1ccab51232a2fe7b7f7f596764e9a37de4a3cf31",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/clinical-accuracy.json": "141f47e592719c2b295361b5603b4b7b29a13a07f941496160241362fcdca7ed",
+    "brief.json": "9de8e20cebe2a2da13f2ce453275d27117aa594ce42499f2a90be8ee4fdb409d",
+    "rubric.json": "8d234ebc4e714dc5412d1687d5f35a119c8b3804f70adf046dceb88323afc880",
+    "template.json": "bc65cad4e5133a6c21406ad8288f02a76b95c446540d0cd1dee298212bd8e5c3",
+    "theme.json": "3ed2030af8152cfeb267a5fa1a3e7391bd7f3bb553cc744a7579948b5597b674"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-09-26T15:23:22Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  },
+  "new": {
+   "args": {
+    "adopted": true,
+    "slug": "ai-in-medicine"
+   },
+   "inputs": {},
+   "outputs": {},
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-09-26T15:20:17Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  },
+  "rework": {
+   "args": {},
+   "dec_id": "DEC-037",
+   "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+   "imported": true,
+   "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+   "inputs": {
+    "design/chapter-plan.json": "17361191231233fe81dc5bfe45e68980b15558189fc47ba3f43c94d043614ff1",
+    "design/design.md": "5d3b62d25cc51e530a5389c132d0abce2847737472a4adc03acb29b596ab59e9",
+    "design/errata-seed.md": "c50a064ceaf0c13e05c7b1a72628a4d56bdca5e356d162f9a31ec98c96281f89"
+   },
+   "outputs": {
+    "rework/00-front-matter.md": "1ccb3d98dd0d7e2fe4510f2ac6073dab260efe2745a586e9241e70e8c2e5c529",
+    "rework/ch01-what-ai-is.md": "6b43bc0134cd534d7d58e2bb0f7bf4339f5dfb8b916c846d2a8eee6de661ed21",
+    "rework/ch02-health-data.md": "0c2198f24e2d90104f6259faf3f4c22485cd29b06f8f67d479a3c6c4a758cd09",
+    "rework/ch03-how-models-learn.md": "494d3f062192e558a840f291495b2cb000b7788e8ea19824ebe1ec1d8fb2e7cf",
+    "rework/ch04-reading-performance-claims.md": "5773b0d864a1f61c5830b7c703b94910b19699ac4f19c15e411f9512ba4da96a",
+    "rework/ch05-generative-ai-llms.md": "07f052596e6eec7ac97a911a376121960e8e749352f3112c1a8b5025ba2b7512",
+    "rework/ch06-seeing-disease.md": "0de3e424e47705d37813d15b8ed023a5ba934558b0b4cd2788e6abd0dd0cd81a",
+    "rework/ch07-medicines.md": "3edd3d578d595898d6d9a97a44f565c70162f798c7ac9fed8ad419ccdb216d0e",
+    "rework/ch08-ai-in-motion.md": "8bad16c1bd20ac8e679a7baed1d5c3ebc36f38f8bd5b5cbe6aefea9b5a85b043",
+    "rework/ch09-monitoring-prediction.md": "c205f091beac4fc0323c0e54aadbc9c686e3cb59ab8b5f87f8ad6046d715345b",
+    "rework/ch10-bias-fairness-privacy.md": "1d78a0a614d246d56c5f4e6dc976f885d896e236a7374486bfeb3b3f909e8e9d",
+    "rework/ch11-regulation-liability-human.md": "8aa9201025a93567f7da2255fdd95d4598b6cc235ac920379017a1e954138c99",
+    "rework/errata-ledger.md": "80af1096616fb0bdf23a4d0e5f3dd896fe01eae521d816136dd6ced6c3fef3d8",
+    "rework/figures/confusion-ppv.svg": "d719ecf7321ee0024dddf17e1e53ff0b7e2ccade44a3fb6e2149893587581c07",
+    "rework/figures/cover.html": "b8a626759aa6f0e7b4573185afb17e2fdbfe9749538d021856ddee1a696d87d7",
+    "rework/figures/cover.svg": "f1f7971e1304a6003657f0fb0d996bc1081ee70d5ddf8ad63ff022274050df16",
+    "rework/figures/next-token.svg": "acef7bdd489b82f72e90d2364fe04a9d044162a39bdfa81b5073e4cc4b67d0cc",
+    "rework/figures/orig-image17.png": "658c52e30808e4c53315c35a79b9bbb01d78d8fa0d7ec1033ead3a7b04f183b8",
+    "rework/figures/orig-image18.png": "401b0750c94ea78511a8e4819e1fd4fa48c5ff73045220f36d31306c02bf71f5",
+    "rework/figures/orig-image19.png": "c8ba39b78fdb0b28fe2f6a3b486edecb37156a5eaf9e0cd16741af1110866c6a",
+    "rework/figures/orig-image2.png": "9abd062c7cc17f9f958c05392e165f43a31f8c07a798b6b6e600a917053880e2",
+    "rework/figures/orig-image21.png": "a72e50e1a61ddad052232383efe93b5ebdc6ae085c2aa05fd423ceb8488e226a",
+    "rework/figures/orig-image24.png": "bbd8549993f551dc609e594e017528b36ab7c59a5c92bd2cb11e11db763ef6de",
+    "rework/figures/orig-image3.png": "f05bface7938a25528a186ebace5336fbe2ff7cb8e5e52d7cc11c4992a54f607",
+    "rework/figures/orig-image5.png": "442c2a24a7903b008a934cfe8d3f191db0dd9458b20cdf10a7f1410904664feb",
+    "rework/figures/png/confusion-ppv.png": "5ed700563e32747a043c7690a0b77cbe6ca93384343ab75a958932402083b6cb",
+    "rework/figures/png/cover.png": "fbfdbffa252899fb1f445b04d75a06d422d9574ed5d3a0a8c58c21d390b99ef8",
+    "rework/figures/png/next-token.png": "bdf8a1429d51c74ccb969112a81bd3ede1c530df7a1c7634929004c403055d97",
+    "rework/figures/png/pose-skeleton.png": "d56b1ee2435de0ccdf74371582d85cabcdd92cad75940eb2478d935b1b9b5354",
+    "rework/figures/png/privacy-pipeline.png": "127fc08fa063274bdd4394c2b6d4722945199d03c83ab90623982934d1514498",
+    "rework/figures/png/split-leakage.png": "10e161266824970de3b840840d9795b6af9628c283c7892ab18a8179af3a8f25",
+    "rework/figures/pose-skeleton.svg": "d7eaf7e70be788540da6d3b917499ac937ebc5ff4164b16c18fb0dbedc1a801f",
+    "rework/figures/privacy-pipeline.svg": "63def07abcc97e0a79402f8663cd3d527c024c4082d74f02dafe0d4f687d96a4",
+    "rework/figures/split-leakage.svg": "fee0247803784847f093e2c857d2f00b3962033bb99b7c174cc105fdef350aca",
+    "rework/glossary.md": "8892690aa2145854fdf934ed2c0b796f9749a56e054bde594648950375fbef67"
+   },
+   "stage": "rework",
+   "status": "ok",
+   "time": "2026-09-26T15:29:10Z",
+   "tool_sha": "imported",
+   "units": {
+    "ch01": {
+     "args": {
+      "unit": "ch01"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch01-what-ai-is.md": "6b43bc0134cd534d7d58e2bb0f7bf4339f5dfb8b916c846d2a8eee6de661ed21"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch02": {
+     "args": {
+      "unit": "ch02"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch02-health-data.md": "0c2198f24e2d90104f6259faf3f4c22485cd29b06f8f67d479a3c6c4a758cd09"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch03": {
+     "args": {
+      "unit": "ch03"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch03-how-models-learn.md": "494d3f062192e558a840f291495b2cb000b7788e8ea19824ebe1ec1d8fb2e7cf"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch04": {
+     "args": {
+      "unit": "ch04"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch04-reading-performance-claims.md": "5773b0d864a1f61c5830b7c703b94910b19699ac4f19c15e411f9512ba4da96a"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch05": {
+     "args": {
+      "unit": "ch05"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch05-generative-ai-llms.md": "07f052596e6eec7ac97a911a376121960e8e749352f3112c1a8b5025ba2b7512"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch06": {
+     "args": {
+      "unit": "ch06"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch06-seeing-disease.md": "0de3e424e47705d37813d15b8ed023a5ba934558b0b4cd2788e6abd0dd0cd81a"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch07": {
+     "args": {
+      "unit": "ch07"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch07-medicines.md": "3edd3d578d595898d6d9a97a44f565c70162f798c7ac9fed8ad419ccdb216d0e"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch08": {
+     "args": {
+      "unit": "ch08"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch08-ai-in-motion.md": "8bad16c1bd20ac8e679a7baed1d5c3ebc36f38f8bd5b5cbe6aefea9b5a85b043"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch09": {
+     "args": {
+      "unit": "ch09"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch09-monitoring-prediction.md": "c205f091beac4fc0323c0e54aadbc9c686e3cb59ab8b5f87f8ad6046d715345b"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch10": {
+     "args": {
+      "unit": "ch10"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch10-bias-fairness-privacy.md": "1d78a0a614d246d56c5f4e6dc976f885d896e236a7374486bfeb3b3f909e8e9d"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    },
+    "ch11": {
+     "args": {
+      "unit": "ch11"
+     },
+     "dec_id": "DEC-037",
+     "dec_row_sha256": "af7edddfdac1356748625c0dc0f2985f6da3f742d8562540b019f523a786a951",
+     "imported": true,
+     "imported_at_commit": "2b9a99819c36d9acfddf8ba7815ec7461557f37f",
+     "inputs": {},
+     "outputs": {
+      "rework/ch11-regulation-liability-human.md": "8aa9201025a93567f7da2255fdd95d4598b6cc235ac920379017a1e954138c99"
+     },
+     "status": "ok",
+     "time": "2026-09-26T15:29:10Z",
+     "tool_sha": "imported"
+    }
+   }
+  }
+ },
+ "schema_version": 1
+}

@@ -1,0 +1,103 @@
+{
+ "schema_version": 1,
+ "stages": {
+  "ingest": {
+   "inputs": [
+    "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.docx"
+   ],
+   "outputs": [
+    "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md",
+    "images/image1.jpeg",
+    "images/image10.png",
+    "images/image11.png",
+    "images/image12.png",
+    "images/image13.png",
+    "images/image14.png",
+    "images/image15.png",
+    "images/image16.png",
+    "images/image17.png",
+    "images/image18.png",
+    "images/image19.png",
+    "images/image2.png",
+    "images/image20.png",
+    "images/image21.png",
+    "images/image22.png",
+    "images/image23.png",
+    "images/image24.png",
+    "images/image3.png",
+    "images/image4.png",
+    "images/image5.png",
+    "images/image6.png",
+    "images/image7.png",
+    "images/image8.png",
+    "images/image9.png"
+   ]
+  },
+  "evaluate": {
+   "inputs": [
+    "original/AI_in_Medicine- Assistant Prof Dr Shereen Elkholy.md"
+   ],
+   "outputs": [
+    "history/Review_Notes_AI_in_Medicine.pdf",
+    "history/VERDICT.md",
+    "history/EVALUATION_RUBRIC.md"
+   ]
+  },
+  "design": {
+   "inputs": [
+    "history/VERDICT.md",
+    "history/EVALUATION_RUBRIC.md"
+   ],
+   "outputs": [
+    "history/2026-09-24-interprofessional-rework-design.md",
+    "design/design.md",
+    "design/chapter-plan.json",
+    "design/errata-seed.md"
+   ]
+  },
+  "rework": {
+   "inputs": [
+    "design/design.md",
+    "design/chapter-plan.json",
+    "design/errata-seed.md"
+   ],
+   "outputs": [
+    "rework/ch01-what-ai-is.md",
+    "rework/ch02-health-data.md",
+    "rework/ch03-how-models-learn.md",
+    "rework/ch04-reading-performance-claims.md",
+    "rework/ch05-generative-ai-llms.md",
+    "rework/ch06-seeing-disease.md",
+    "rework/ch07-medicines.md",
+    "rework/ch08-ai-in-motion.md",
+    "rework/ch09-monitoring-prediction.md",
+    "rework/ch10-bias-fairness-privacy.md",
+    "rework/ch11-regulation-liability-human.md",
+    "rework/00-front-matter.md",
+    "rework/glossary.md",
+    "rework/errata-ledger.md",
+    "rework/figures/confusion-ppv.svg",
+    "rework/figures/cover.html",
+    "rework/figures/cover.svg",
+    "rework/figures/next-token.svg",
+    "rework/figures/orig-image17.png",
+    "rework/figures/orig-image18.png",
+    "rework/figures/orig-image19.png",
+    "rework/figures/orig-image2.png",
+    "rework/figures/orig-image21.png",
+    "rework/figures/orig-image24.png",
+    "rework/figures/orig-image3.png",
+    "rework/figures/orig-image5.png",
+    "rework/figures/png/confusion-ppv.png",
+    "rework/figures/png/cover.png",
+    "rework/figures/png/next-token.png",
+    "rework/figures/png/pose-skeleton.png",
+    "rework/figures/png/privacy-pipeline.png",
+    "rework/figures/png/split-leakage.png",
+    "rework/figures/pose-skeleton.svg",
+    "rework/figures/privacy-pipeline.svg",
+    "rework/figures/split-leakage.svg"
+   ]
+  }
+ }
+}

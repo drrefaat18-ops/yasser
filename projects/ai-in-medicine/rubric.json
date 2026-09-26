@@ -1,0 +1,205 @@
+{
+ "schema_version": 1,
+ "project_id": "ai-in-medicine",
+ "core_version": 1,
+ "pillars": [
+  {
+   "id": "G1",
+   "kind": "fixed",
+   "name": "Content accuracy",
+   "description": "every factually wrong statement, wrong number, wrong definition, and every claim that its cited reference does not support (claim-support mismatch), anywhere in the book",
+   "weight": 20,
+   "anchors": {
+    "9-10": {
+     "text": "No factual errors or claim-support mismatches found on a full read.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Isolated minor inaccuracies that do not mislead the reader.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Several errors, or one that would mislead a reader acting on it.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Frequent or dangerous errors; the text cannot be trusted as written.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "subject-reviewer",
+    "clinical-accuracy"
+   ],
+   "applicable": true,
+   "hard_caps": [
+    {
+     "trigger": {
+      "severity": "blocker",
+      "min_count": 1,
+      "tag": "safety"
+     },
+     "max_score": 4,
+     "description": "An open safety blocker caps content accuracy at 4."
+    }
+   ]
+  },
+  {
+   "id": "G2",
+   "kind": "fixed",
+   "name": "Pedagogical design and clarity",
+   "description": "objectives, structure, progression, cognitive load, readability, figures' teaching value",
+   "weight": 20,
+   "anchors": {
+    "9-10": {
+     "text": "Clear objectives, logical progression and readable prose pitched at the stated audience throughout.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Sound structure with some uneven chapters or dense passages.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Objectives or progression are weak in many chapters; readability often above the audience.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "No usable learning design; structure or level does not fit the audience.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "instructional-designer",
+    "psychologist"
+   ],
+   "applicable": true,
+   "hard_caps": []
+  },
+  {
+   "id": "G3",
+   "kind": "fixed",
+   "name": "Assessment quality",
+   "description": "questions, distractors, rationales, key balance, alignment to objectives",
+   "weight": 10,
+   "anchors": {
+    "9-10": {
+     "text": "Every item is aligned to an objective, with plausible distractors and full rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Mostly sound items; some weak distractors or thin rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Many items misaligned, trivially guessable or without rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Assessment is missing, wrong-keyed or unusable.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "instructional-designer"
+   ],
+   "applicable": true,
+   "hard_caps": []
+  },
+  {
+   "id": "G4",
+   "kind": "fixed",
+   "name": "Sources and currency",
+   "description": "reference existence and metadata, recency against brief.references.recency, evidence hierarchy, citation coverage (claims that need a citation and have none)",
+   "weight": 10,
+   "anchors": {
+    "9-10": {
+     "text": "Every reference exists with correct metadata; recency target met; claims needing a citation have one.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "A few metadata slips or uncited claims; recency close to target.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Many unverifiable references, outdated evidence or uncited claims.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "References largely missing, invented or obsolete.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "research-synthesist"
+   ],
+   "applicable": true,
+   "hard_caps": []
+  },
+  {
+   "id": "D1",
+   "kind": "domain",
+   "name": "AI and computational method",
+   "weight": 20,
+   "description": "Depth and precision of AI/ML concepts: model types, validation discipline, metrics chosen for the claim, failure modes (not the correctness of single statements, which is G1).",
+   "anchors": {
+    "9-10": {
+     "text": "Precise architectural and metric distinctions, validation caveats throughout.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Solid definitions with occasional mild over-simplification.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Blurred paradigms or missing key validation caveats.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Computational content is shallow or misleading throughout.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "statistician",
+    "clinical-accuracy"
+   ],
+   "applicable": true
+  },
+  {
+   "id": "D2",
+   "kind": "domain",
+   "name": "Regulation, ethics and equity",
+   "weight": 20,
+   "description": "Depth of regulatory pathways, liability doctrine, privacy law and algorithmic bias coverage.",
+   "anchors": {
+    "9-10": {
+     "text": "Concrete regulatory pathways, doctrinal liability analysis, bias and privacy with cases.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Core legal and ethical topics covered; doctrine could go deeper.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Buzzwords without concrete pathways or cases.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Regulation, ethics or equity missing.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "clinical-accuracy"
+   ],
+   "applicable": true
+  }
+ ],
+ "provenance": {
+  "generated_by": "claude (STEP 7 Task 7.4)",
+  "from_brief_sha256": "9de8e20cebe2a2da13f2ce453275d27117aa594ce42499f2a90be8ee4fdb409d",
+  "edited_by_user": false
+ }
+}

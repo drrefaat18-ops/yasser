@@ -1,0 +1,112 @@
+{
+ "schema_version": 1,
+ "project_id": "ai-in-medicine",
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01-what-ai-is.md",
+   "title": "What AI Is — and Isn't",
+   "word_budget": 1600,
+   "part_id": "part-1",
+   "source_refs": []
+  },
+  {
+   "id": "ch02",
+   "file": "ch02-health-data.md",
+   "title": "Health Data — What AI Learns From",
+   "word_budget": 1600,
+   "part_id": "part-1",
+   "source_refs": []
+  },
+  {
+   "id": "ch03",
+   "file": "ch03-how-models-learn.md",
+   "title": "How Models Learn — and How They Fail",
+   "word_budget": 1700,
+   "part_id": "part-1",
+   "source_refs": []
+  },
+  {
+   "id": "ch04",
+   "file": "ch04-reading-performance-claims.md",
+   "title": "Reading an AI Performance Claim",
+   "word_budget": 1800,
+   "part_id": "part-1",
+   "source_refs": []
+  },
+  {
+   "id": "ch05",
+   "file": "ch05-generative-ai-llms.md",
+   "title": "Generative AI and Large Language Models",
+   "word_budget": 1700,
+   "part_id": "part-1",
+   "source_refs": []
+  },
+  {
+   "id": "ch06",
+   "file": "ch06-seeing-disease.md",
+   "title": "Seeing Disease — Imaging, Laboratory and Pathology",
+   "word_budget": 1800,
+   "part_id": "part-2",
+   "source_refs": []
+  },
+  {
+   "id": "ch07",
+   "file": "ch07-medicines.md",
+   "title": "Medicines — Discovery, Dosing and Safety",
+   "word_budget": 1700,
+   "part_id": "part-2",
+   "source_refs": []
+  },
+  {
+   "id": "ch08",
+   "file": "ch08-ai-in-motion.md",
+   "title": "AI in Motion — Rehabilitation, Wearables and Robotics",
+   "word_budget": 1700,
+   "part_id": "part-2",
+   "source_refs": []
+  },
+  {
+   "id": "ch09",
+   "file": "ch09-monitoring-prediction.md",
+   "title": "Monitoring, Prediction and Population Health",
+   "word_budget": 1700,
+   "part_id": "part-2",
+   "source_refs": []
+  },
+  {
+   "id": "ch10",
+   "file": "ch10-bias-fairness-privacy.md",
+   "title": "Bias, Fairness and Privacy",
+   "word_budget": 1700,
+   "part_id": "part-3",
+   "source_refs": []
+  },
+  {
+   "id": "ch11",
+   "file": "ch11-regulation-liability-human.md",
+   "title": "Regulation, Liability and the Human in the Loop",
+   "word_budget": 1800,
+   "part_id": "part-3",
+   "source_refs": []
+  }
+ ],
+ "parts": [
+  {
+   "id": "part-1",
+   "label": "Part I",
+   "title": "Foundations"
+  },
+  {
+   "id": "part-2",
+   "label": "Part II",
+   "title": "AI Across the Care Pathway"
+  },
+  {
+   "id": "part-3",
+   "label": "Part III",
+   "title": "Responsible AI"
+  }
+ ],
+ "dropped": []
+}

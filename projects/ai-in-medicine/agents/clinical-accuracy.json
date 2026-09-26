@@ -1,0 +1,29 @@
+{
+ "schema_version": 1,
+ "id": "clinical-accuracy",
+ "base_persona": "subject-reviewer",
+ "scope": "Artificial intelligence in health care for year 1-2 students of medicine, pharmacy, physical therapy and the health sciences: clinical grounding, computational rigour, assessment realism and medicolegal accuracy.",
+ "criteria": [
+  "Clinical terminology is exact, e.g. sensitivity in screening versus specificity in confirmatory testing.",
+  "Clinical workflows reflect real care settings: EHR integration, PACS/DICOM handoffs, laboratory information systems.",
+  "Architectures are defined precisely: CNNs for spatial grids, ViTs for patch attention, U-Net for segmentation.",
+  "Metric choice fits the claim: AUROC versus AUPRC under class imbalance, Dice for segmentation, calibration for risk.",
+  "Training, validation and external test sets are kept apart and leakage risks are stated.",
+  "CADe, CADx and CADt are distinguished under SaMD guidance.",
+  "Liability is anchored in named doctrines: standard of care, learned intermediary, vicarious liability.",
+  "MCQ stems are realistic scenarios; distractors are plausible mimics; rationales teach the mechanism.",
+  "Every chapter is readable by all four professions without prior clinical training."
+ ],
+ "exclusions": [
+  "Specialist procedures dropped by the design (e.g. TAVR planning, IVUS/OCT, EVAR) are not re-requested."
+ ],
+ "evidence_expectations": [
+  "Quote the exact text and give file and line for every finding.",
+  "Give replacement text, not only a critique.",
+  "Cite a verifiable source for any corrected number, trial or regulation."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2"
+ ]
+}
