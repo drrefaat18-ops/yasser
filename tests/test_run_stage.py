@@ -62,3 +62,15 @@ class RunnerTest(unittest.TestCase):
             self.assertEqual(run_cli(root, "--project", "projects/book-one", "new").returncode, 0)
             self.assertIn("ERROR PROJECT-EXISTS", run_cli(root, "--project", "projects/book-one", "new").stderr)
             self.assertIn("ERROR PROJECT-OUTSIDE", run_cli(root, "--project", "harness", "new").stderr)
+
+
+class SubagentCapTest(unittest.TestCase):
+    def test_more_than_two_subagents_refused(self):                            # S7-10
+        with temp_repo("state-basic", stamp=True) as root:
+            p = ["--project", "projects/fixture-book"]
+            nonce = run_cli(root, *p, "begin", "evaluate").stdout.split("nonce=")[1].split()[0]
+            r = run_cli(root, *p, "complete", "evaluate", "--nonce", nonce, *["--subagent", "x"] * 3)
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("ERROR SUBAGENT-CAP", r.stderr)
+            r = run_cli(root, *p, "complete", "evaluate", "--nonce", nonce, "--subagent", " ")
+            self.assertEqual(r.returncode, 2)

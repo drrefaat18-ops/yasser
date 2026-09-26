@@ -21,14 +21,18 @@ STAGES = [
     {"id": "new", "kind": "auto", "tool_paths": ["harness/stages/new.py"]},
     {"id": "intake", "kind": "agentic", "tool_paths": ["harness/schema.py", "harness/schemas/brief.v1.json", "harness/schemas/rubric.v1.json",
                                                        "harness/schemas/template.v1.json", "harness/schemas/theme.v1.json",
-                                                       "harness/schemas/overlay.v1.json", "harness/stages/complete_checks/intake.py"]},
+                                                       "harness/schemas/overlay.v1.json", "harness/stages/complete_checks/common.py",
+                                                       "harness/stages/complete_checks/intake.py", "harness/locales.py"]},
     {"id": "ingest", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},     # -> ingest.py, convert_docx.py in 8.4
-    {"id": "evaluate", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/evaluate.py"]},
-    {"id": "design", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/design.py"]},
+    {"id": "evaluate", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/evaluate.py",
+                                                         "harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"]},
+    {"id": "design", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/design.py",
+                                                       "harness/schemas/chapter-plan.v1.json"]},
     {"id": "translate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_translation.py, complete_checks/translate.py in 11.x
     {"id": "rework", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_book.py (8.1), verify_refs.py + complete_checks/rework.py (8.3)
     {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},      # -> assemble.py (8.1), build.py + build_book.py (8.2), figures (9.1)
-    {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/audit.py"]},
+    {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/audit.py",
+                                                      "harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"]},
 ]
 RESERVED = {"stage", "status", "args", "inputs", "outputs", "tool_sha", "time", "error", "invalidated_by",
             "units", "imported", "imported_at_commit", "dec_id", "dec_row_sha256"}
@@ -142,11 +146,55 @@ def dec_row_hash(project, dec):
     return hashing.hash_bytes(rows[0].encode("utf-8")), rows[0]
 
 
+IMPORT_MANIFEST = "history/import.json"
+
+
+def _import_files(project, stage_id):
+    """(inputs, outputs) an imported receipt must hash: the stage's history/import.json lists plus import.json itself (N2)."""
+    spec = (_read_json(project / IMPORT_MANIFEST) or {}).get("stages", {}).get(stage_id) or {}
+    return sorted(set(spec.get("inputs", [])) | {IMPORT_MANIFEST}), sorted(spec.get("outputs", []))
+
+
+def _expected_files(project, stage_id, r, unit=None):
+    """The file sets a receipt must cover, rebuilt from the contract (or the import manifest), never from state.json."""
+    if r.get("imported"):
+        if unit is not None:
+            return [], [contracts._chapter_file(project, unit)]
+        return _import_files(project, stage_id)
+    return contracts.files(project, stage_id, unit)
+
+
+def _keyset_problems(label, r, ins, outs):
+    probs = []
+    for kind, want in (("inputs", ins), ("outputs", outs)):
+        got = set(r.get(kind, {}))
+        if got != {w for w in want if pathlib.PurePosixPath(w).name not in CONTROL_PLANE}:
+            probs.append(f"{label}: {kind} recorded {sorted(got)} do not match the contract {sorted(want)}")
+    return probs
+
+
 def receipt_problems(project, stage_id, st, repo=None):
     r = st["receipts"].get(stage_id)
     if r is None:
         return [f"{stage_id}: no receipt"]
     probs = []
+    if r.get("stage", stage_id) != stage_id:
+        probs.append(f"{stage_id}: receipt names stage {r.get('stage')!r}")
+    if r.get("imported") and (stage_id not in IMPORTABLE or r.get("tool_sha") != "imported"):
+        probs.append(f"{stage_id}: imported flag on a stage that cannot be imported, or tool_sha is not `imported`")
+    if r["status"] == "ok":
+        try:
+            probs += _keyset_problems(stage_id, r, *_expected_files(project, stage_id, r))
+        except (KeyError, TypeError) as e:
+            probs.append(f"{stage_id}: file contract cannot be rebuilt ({e})")
+        if stage_id in contracts.UNIT_STAGES:
+            want = contracts.units(project, stage_id)
+            got = r.get("units", {})
+            if sorted(got) != sorted(want):
+                probs.append(f"{stage_id}: unit receipts {sorted(got)} != units {sorted(want)}")
+            for u in want:
+                if u in got:
+                    probs += _unit_problems(project, stage_id, u, got[u], repo)
     if r["status"] != "ok":
         probs.append(f"{stage_id}: status {r['status']}")
     if r.get("invalidated_by"):
@@ -262,6 +310,14 @@ def _hashed(project, rels):
 
 def _unit_problems(project, stage_id, name, r, repo):
     probs = []
+    if r.get("status") != "ok":
+        probs.append(f"{stage_id}/{name}: status {r.get('status')}")
+    if bool(r.get("imported")) != (r.get("tool_sha") == "imported"):
+        probs.append(f"{stage_id}/{name}: imported flag and tool_sha disagree")
+    try:
+        probs += _keyset_problems(f"{stage_id}/{name}", r, *_expected_files(project, stage_id, r, unit=name))
+    except (KeyError, TypeError) as e:
+        probs.append(f"{stage_id}/{name}: file contract cannot be rebuilt ({e})")
     for kind in ("inputs", "outputs"):
         for rel, h in r[kind].items():
             f = project / rel
@@ -371,7 +427,11 @@ def approve(project, kind, dec, repo=None):
     probs = receipt_problems(project, kind, st, repo)
     if probs:
         raise GateError("UPSTREAM-STALE", "; ".join(probs))
-    rec = {"kind": kind, "files": _hashed(project, APPROVAL_SETS[kind](project)), "dec_id": dec,
+    files = _hashed(project, APPROVAL_SETS[kind](project))
+    shown = sorted(rel for rel, fh in files.items() if fh not in row)
+    if shown:   # the user approved the hashes in the DEC row; they must be the hashes the gate will check
+        raise GateError("DEC-HASH-MISMATCH", f"{dec} row does not show the full SHA-256 (hashing.hash_file) of {shown}")
+    rec = {"kind": kind, "files": files, "dec_id": dec,
            "dec_row_sha256": h, "approved_at": now(), "approved_by": "user"}
     return write(project, lambda s: s["approvals"].__setitem__(kind, rec))
 
@@ -379,8 +439,9 @@ def approve(project, kind, dec, repo=None):
 IMPORTABLE = {"ingest", "evaluate", "design", "rework"}
 
 
-def import_history(project, stage_id, dec, repo=None):
-    """Adopt pre-harness artifacts as an imported receipt (plan N2). Refused unless every condition holds."""
+def import_history(project, stage_id, dec, replace=False, repo=None):
+    """Adopt pre-harness artifacts as an imported receipt (plan N2). Refused unless every condition holds.
+    `replace` (ruling R25) re-imports over an existing *imported* receipt under a new DEC; never over a harness receipt."""
     project = pathlib.Path(project)
     if stage_id not in IMPORTABLE:
         raise GateError("IMPORT-REFUSED", f"{stage_id}: only {sorted(IMPORTABLE)} can be imported")
@@ -390,18 +451,32 @@ def import_history(project, stage_id, dec, repo=None):
         raise GateError("IMPORT-REFUSED", f"{stage_id}: {why}")
     if st["receipts"].get("new", {}).get("args", {}).get("adopted") is not True:
         refuse("the project was not created as adopted (`new` receipt args.adopted)")
-    if stage_id in st["receipts"]:
-        refuse("the stage already has a receipt")
+    old = st["receipts"].get(stage_id)
+    if old is not None and not (replace and old.get("imported")):
+        refuse("the stage already has a receipt" + (" that the harness wrote; only an imported one can be replaced"
+                                                     if replace else ""))
+    if replace and old is None:
+        refuse("--replace needs an existing imported receipt")
     later = [s for s in ORDER[ORDER.index(stage_id) + 1:] if s in st["receipts"] and not st["receipts"][s].get("imported")]
     if later:
         refuse(f"later stage(s) {later} already ran in the harness")
+    earlier = [s for s in ORDER[:ORDER.index(stage_id)] if s in IMPORTABLE and s in st["receipts"]
+               and not st["receipts"][s].get("imported")]
+    if earlier:
+        refuse(f"earlier stage(s) {earlier} ran in the harness; history cannot sit on top of harness work")
     h, row = dec_row_hash(project, dec)
     if "import-history" not in row or stage_id not in row:
         refuse(f"{dec} row must contain `import-history` and `{stage_id}`: {row}")
-    spec = (_read_json(project / "history" / "import.json") or {}).get("stages", {}).get(stage_id)
-    if not spec:
-        refuse("history/import.json does not list this stage")
-    rels = spec.get("inputs", []) + spec.get("outputs", [])
+    if replace and dec == old.get("dec_id"):
+        refuse(f"--replace needs a new DEC row, not {dec}")
+    if not (_read_json(project / IMPORT_MANIFEST) or {}).get("stages", {}).get(stage_id):
+        refuse(f"{IMPORT_MANIFEST} does not list this stage")
+    ins, outs = _import_files(project, stage_id)
+    prev = [s for s in ORDER[:ORDER.index(stage_id)] if s in IMPORTABLE and s in st["receipts"]]
+    if prev and set(_import_files(project, prev[-1])[1]) - set(ins):   # lineage: history consumed what came before it
+        refuse(f"inputs must include every output of the imported {prev[-1]} stage; missing "
+               f"{sorted(set(_import_files(project, prev[-1])[1]) - set(ins))}")
+    rels = ins + outs
     root = project.resolve()
     for rel in rels:
         f = (project / rel).resolve()
@@ -410,8 +485,7 @@ def import_history(project, stage_id, dec, repo=None):
     head = _git(repo or paths.REPO, "rev-parse", "HEAD").strip()
     base = {"status": "ok", "imported": True, "imported_at_commit": head, "dec_id": dec, "dec_row_sha256": h,
             "tool_sha": "imported", "time": now()}
-    rec = {"stage": stage_id, "args": {}, "inputs": hash_map(project, spec.get("inputs", [])),
-           "outputs": hash_map(project, spec.get("outputs", [])), **base}
+    rec = {"stage": stage_id, "args": {}, "inputs": hash_map(project, ins), "outputs": hash_map(project, outs), **base}
     if stage_id == "rework":
         chapters = contracts.units(project, "rework")
         rec["units"] = {u: {"args": {"unit": u}, "inputs": {}, "outputs": hash_map(project, [contracts._chapter_file(project, u)]),

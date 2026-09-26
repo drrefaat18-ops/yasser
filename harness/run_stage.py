@@ -3,12 +3,13 @@
   python harness/run_stage.py --project projects/<slug> <command> ...
 Commands: new | init-state | begin STAGE [--amend] [--author-model M] | complete STAGE --nonce N [--unit U]
           [--subagent REASON ...] | run STAGE | abort STAGE --reason TEXT | approve intake|design --dec DEC-NNN
-          | import-history STAGE --dec DEC-NNN | verify [--through STAGE]
+          | import-history STAGE --dec DEC-NNN [--replace] | verify [--through STAGE]
 Exit: 0 ok; 1 gate or check failure (stderr `ERROR <CODE>: ...`, one line per problem); 2 usage error.
 """
 import argparse, json, pathlib, sys
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
+MAX_SUBAGENTS = 2   # Rule 11
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import paths, state  # noqa: E402
@@ -52,13 +53,18 @@ def cmd_begin(project, a):
 def cmd_complete(project, a):
     st = state.require_gates(project, a.stage)   # gate errors first, before any content check
     state.check_lease(st, a.stage, a.nonce)
+    reasons = a.subagent or []
+    if any(not r.strip() for r in reasons):
+        raise ValueError("--subagent needs a non-empty reason")
+    if len(reasons) > MAX_SUBAGENTS:   # ponytail: per complete call; a unit stage's cap across units is STEP 8's
+        raise state.GateError("SUBAGENT-CAP", f"{len(reasons)} subagents logged; Rule 11 allows at most {MAX_SUBAGENTS}")
     if a.stage not in complete_checks.CHECKS:
         raise state.GateError("NOT-IMPLEMENTED", f"{a.stage} has no completion checks yet (STEP 8/11)")
     extras, probs = complete_checks.CHECKS[a.stage](project, st["active_run"], a.unit)
     if probs:
         raise CheckFailed(probs)
-    if a.subagent:
-        extras["subagents"] = [{"reason": r} for r in a.subagent]
+    if reasons:
+        extras["subagents"] = [{"reason": r} for r in reasons]
     state.complete(project, a.stage, a.nonce, extras, unit=a.unit, final=a.unit is None)
     print(f"completed {a.stage}" + (f" unit {a.unit}" if a.unit else ""))
 
@@ -111,6 +117,7 @@ def parser():
     i = sub.add_parser("import-history")
     i.add_argument("stage", choices=state.ORDER)
     i.add_argument("--dec", required=True)
+    i.add_argument("--replace", action="store_true", help="re-import over an imported receipt under a new DEC (R25)")
     v = sub.add_parser("verify")
     v.add_argument("--through", choices=state.ORDER)
     return ap
@@ -140,7 +147,7 @@ def main(argv=None):
             state.approve(project, a.kind, a.dec)
             print(f"approved {a.kind} ({a.dec})")
         elif a.command == "import-history":
-            state.import_history(project, a.stage, a.dec)
+            state.import_history(project, a.stage, a.dec, replace=a.replace)
             print(f"imported {a.stage} ({a.dec})")
         elif a.command == "verify":
             cmd_verify(project, a)

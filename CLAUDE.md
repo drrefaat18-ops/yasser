@@ -35,7 +35,7 @@ Stages in order: `new`, `intake`, `ingest`, `evaluate`, `design`, `[translate]`,
 - **Design gate.** `translate`, `rework`, `build` and `audit` also need the user's design approval.
 - **Never edit `state.json` by hand.** Only `run_stage.py` writes it.
 - **Approvals only after explicit user approval in chat.** Show the exact files and their SHA-256s, get a clear yes, add a DEC row with the user's words to `projects/<book>/decisions.md`, then run `approve <kind> --dec DEC-NNN`.
-- Every executable, including legacy tools under `projects/`, calls the gate and needs `--project projects/<book>`. There is no bypass flag. If a command prints `ERROR <CODE>`, stop and report it.
+- Every executable that reads or writes a book, including legacy tools under `projects/`, calls the gate and needs `--project projects/<book>`. There is no bypass flag. The only ungated scripts are the four listed with their reasons in `harness/registry.py` (environment probe, golden compare, migration validator, golden capture). If a command prints `ERROR <CODE>`, stop and report it.
 
 ## Rule 8 — no domain in shared code
 

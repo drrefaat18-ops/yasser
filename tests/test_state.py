@@ -170,3 +170,115 @@ class LifecycleTest(unittest.TestCase):
                 self.assertEqual(st["receipts"]["rework"]["status"], "ok")
             finally:
                 state.require_gates = orig
+
+
+class ReviewFixTest(unittest.TestCase):
+    """STEP 7 Codex review findings S7-01..S7-05 (docs/harness/reviews/step7-fixes.md)."""
+
+    def _adopted(self, root):
+        p = root / "projects" / "fixture-book"
+        state.write(p, lambda st: (st["receipts"].pop("ingest"), st["receipts"]["new"]["args"].update(adopted=True)))
+        (p / "history").mkdir()
+        (p / "history" / "old-review.md").write_text("old review\n", encoding="utf-8")
+        (p / "history" / "import.json").write_text(json.dumps({"schema_version": 1, "stages": {
+            "ingest": {"inputs": ["source/book.md"], "outputs": ["ingest/normalized.md"]},
+            "evaluate": {"inputs": ["ingest/normalized.md"], "outputs": ["history/old-review.md"]}}}), encoding="utf-8")
+        d = p / "decisions.md"
+        d.write_text(d.read_text(encoding="utf-8") + "| DEC-010 | 2026-09-26 | user | import-history ingest evaluate | \"ok\" |\n"
+                     "| DEC-011 | 2026-09-26 | user | import-history ingest evaluate again | \"ok\" |\n", encoding="utf-8")
+        return p
+
+    def test_import_binds_manifest_and_lineage(self):                         # S7-01
+        with temp_repo("state-basic", stamp=True) as root:
+            p = self._adopted(root)
+            st = state.import_history(p, "ingest", "DEC-010", repo=root)
+            self.assertIn("history/import.json", st["receipts"]["ingest"]["inputs"])
+            m = json.loads((p / "history" / "import.json").read_text(encoding="utf-8"))
+            m["stages"]["evaluate"]["inputs"] = ["source/book.md"]              # does not consume ingest's output
+            (p / "history" / "import.json").write_text(json.dumps(m), encoding="utf-8")
+            self.assertTrue(any("import.json" in x for x in state.receipt_problems(p, "ingest", state.load(p), repo=root)))
+
+    def test_lineage_refused(self):                                             # S7-01
+        with temp_repo("state-basic", stamp=True) as root:
+            p = self._adopted(root)
+            m = json.loads((p / "history" / "import.json").read_text(encoding="utf-8"))
+            m["stages"]["evaluate"]["inputs"] = ["source/book.md"]
+            (p / "history" / "import.json").write_text(json.dumps(m), encoding="utf-8")
+            state.import_history(p, "ingest", "DEC-010", repo=root)
+            with self.assertRaises(state.GateError) as cm:
+                state.import_history(p, "evaluate", "DEC-010", repo=root)
+            self.assertIn("every output", str(cm.exception))
+
+    def test_removed_entry_and_forged_import_are_stale(self):                   # S7-02
+        with temp_repo("state-basic", stamp=True) as root:
+            p = root / "projects" / "fixture-book"
+            state.write(p, lambda st: st["receipts"]["ingest"]["outputs"].pop("ingest/normalized.md"))
+            self.assertTrue(state.receipt_problems(p, "ingest", state.load(p), repo=root))
+        with temp_repo("state-basic", stamp=True) as root:
+            p = root / "projects" / "fixture-book"
+            state.write(p, lambda st: st["receipts"]["intake"].update(imported=True, dec_id="DEC-001",
+                                                                       dec_row_sha256=state.dec_row_hash(p, "DEC-001")[0]))
+            self.assertTrue(any("imported flag" in x for x in state.receipt_problems(p, "intake", state.load(p), repo=root)))
+
+    def test_import_cannot_sit_on_harness_receipt(self):                        # S7-05
+        with temp_repo("state-basic", stamp=True) as root:
+            p = self._adopted(root)
+            nonce = state.begin(p, "ingest", repo=root)
+            state.complete(p, "ingest", nonce, {}, final=True, repo=root)
+            with self.assertRaises(state.GateError) as cm:
+                state.import_history(p, "evaluate", "DEC-010", repo=root)
+            self.assertIn("earlier stage", str(cm.exception))
+
+    def test_replace_only_over_imported_with_new_dec(self):                     # R25
+        with temp_repo("state-basic", stamp=True) as root:
+            p = self._adopted(root)
+            state.import_history(p, "ingest", "DEC-010", repo=root)
+            with self.assertRaises(state.GateError):
+                state.import_history(p, "ingest", "DEC-010", repo=root)          # one-shot without --replace
+            with self.assertRaises(state.GateError):
+                state.import_history(p, "ingest", "DEC-010", replace=True, repo=root)   # same DEC
+            st = state.import_history(p, "ingest", "DEC-011", replace=True, repo=root)
+            self.assertEqual(st["receipts"]["ingest"]["dec_id"], "DEC-011")
+        with temp_repo("state-basic", stamp=True) as root:
+            p = root / "projects" / "fixture-book"
+            state.write(p, lambda st: st["receipts"]["new"]["args"].update(adopted=True))
+            with self.assertRaises(state.GateError):
+                state.import_history(p, "ingest", "DEC-001", replace=True, repo=root)   # harness receipt
+
+    def test_approve_needs_full_hashes_in_dec_row(self):                        # S7-03
+        with temp_repo("state-basic", stamp=True) as root:
+            p = root / "projects" / "fixture-book"
+            with self.assertRaises(state.GateError) as cm:
+                state.approve(p, "intake", "DEC-001", repo=root)
+            self.assertEqual(cm.exception.code, "DEC-HASH-MISMATCH")
+            from harness import hashing
+            hs = " ".join(f"{f} {hashing.hash_file(p / f)}" for f in state.APPROVAL_SETS["intake"](p))
+            d = p / "decisions.md"
+            d.write_text(d.read_text(encoding="utf-8") + f"| DEC-012 | 2026-09-26 | user | approve intake: {hs} | \"ok\" |\n",
+                         encoding="utf-8")
+            self.assertEqual(state.approve(p, "intake", "DEC-012", repo=root)["approvals"]["intake"]["dec_id"], "DEC-012")
+
+    def test_tool_paths_cover_check_modules_and_schemas(self):                  # S7-04
+        import re
+        root = pathlib.Path(__file__).resolve().parents[1]
+        control = {"state", "hashing", "paths", "schema"}
+        for stage in ("intake", "evaluate", "design", "audit"):
+            tp = set(state.BY_ID[stage]["tool_paths"])
+            mods, seen = [f"harness/stages/complete_checks/{stage}.py"], set()
+            while mods:
+                m = mods.pop()
+                if m in seen:
+                    continue
+                seen.add(m)
+                self.assertIn(m, tp, f"{stage}: {m} is executed but not in tool_paths")
+                src = (root / m).read_text(encoding="utf-8")
+                for name in re.findall(r"^from harness import (.+)$", src, re.M):
+                    for n in (x.strip() for x in name.split(",")):
+                        if n not in control or (stage == "intake" and n == "schema"):
+                            mods.append(f"harness/{n}.py")
+                mods += [f"harness/stages/complete_checks/{n}.py"
+                         for n in re.findall(r"^from harness\.stages\.complete_checks\.(\w+) import", src, re.M)]
+                for sch in re.findall(r'validate_file\([^)]*"([\w-]+)"\)', src) if m.endswith(f"/{stage}.py") else []:
+                    self.assertIn(f"harness/schemas/{sch}.v1.json", tp, f"{stage}: schema {sch} not in tool_paths")
+            if stage in ("evaluate", "audit"):
+                self.assertTrue({"harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"} <= tp)

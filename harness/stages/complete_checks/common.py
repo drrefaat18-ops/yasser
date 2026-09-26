@@ -87,7 +87,19 @@ def review_gate(project, review, fixes):
     rows, rprobs = fixes_rows(project, fixes)
     probs += rprobs
     sev_col = lambda r: next((v for k, v in r.items() if k.lower().startswith("severity")), "")
-    for r in table(review, "ID"):
+    found = table(review, "ID")
+    serious = sum(sev_col(r).strip().lower() in ("blocker", "major") for r in found)
+    verdict, count = head.get("verdict", "").lower(), head.get("open_blocker_major", "")
+    if verdict and verdict not in ("pass", "fail"):
+        probs.append(f"REVIEW-HEADER {review.name}: verdict {verdict!r} must be pass or fail")
+    if count and not count.isdigit():
+        probs.append(f"REVIEW-HEADER {review.name}: open_blocker_major {count!r} is not a number")
+    elif count and int(count) != serious:   # a header that counts findings the table does not carry cannot be fixed row by row
+        probs.append(f"REVIEW-HEADER {review.name}: open_blocker_major {count} but the findings table has {serious} "
+                     "blocker/major rows")
+    if verdict in ("pass", "fail") and count.isdigit() and (verdict == "fail") != (int(count) > 0):
+        probs.append(f"REVIEW-HEADER {review.name}: verdict {verdict} contradicts open_blocker_major {count}")
+    for r in found:
         if sev_col(r).strip().lower() in ("blocker", "major") and rows.get(r["ID"]) not in CLOSED:
             probs.append(f"FIX-OPEN {r['ID']}: {sev_col(r)} review finding has no closed row in {fixes.name} "
                          f"(status must be one of {sorted(CLOSED)})")
@@ -99,6 +111,8 @@ def score(rubric, scorecard, findings, fixes):
     probs = []
     pillars = {p["id"]: p for p in rubric["pillars"]}
     card = {p["id"]: p for p in scorecard["pillars"]}
+    if len(card) != len(scorecard["pillars"]):
+        probs.append("scorecard lists a pillar more than once")
     if set(card) != set(pillars):
         probs.append(f"scorecard pillars {sorted(card)} != rubric pillars {sorted(pillars)}")
     ids = {f["id"] for f in findings}
@@ -112,7 +126,10 @@ def score(rubric, scorecard, findings, fixes):
         s = c.get("score")
         if p and p["applicable"] and (s is None or not 1 <= s <= 10 or (s * 2) % 1):
             probs.append(f"{pid}: score {s} must be 1-10 in 0.5 steps")
-    listed = {(c["pillar_id"], c["cap_index"]) for c in scorecard.get("caps_applied", [])}
+    caps = scorecard.get("caps_applied", [])
+    listed = {(c["pillar_id"], c["cap_index"]): c for c in caps}
+    if len(listed) != len(caps):
+        probs.append("caps_applied lists a cap more than once")
     for pid, p in pillars.items():
         for i, cap in enumerate(p.get("hard_caps", [])):
             t = cap["trigger"]
@@ -121,6 +138,9 @@ def score(rubric, scorecard, findings, fixes):
             fires = len(hits) >= t["min_count"]
             if fires and (pid, i) not in listed:
                 probs.append(f"{pid}: hard cap {i} fires ({hits}) but is not in caps_applied")
+            elif fires and sorted(listed[(pid, i)].get("finding_ids", [])) != sorted(hits):
+                probs.append(f"{pid}: caps_applied cap {i} cites {listed[(pid, i)].get('finding_ids')}, "
+                             f"the triggering findings are {hits}")
             if not fires and (pid, i) in listed:
                 probs.append(f"{pid}: caps_applied lists cap {i}, which does not fire")
             s = card.get(pid, {}).get("score")

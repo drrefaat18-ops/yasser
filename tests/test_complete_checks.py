@@ -82,3 +82,48 @@ class IntakeTest(unittest.TestCase):
             probs = " ".join(cc.intake(p)[1])
             for frag in ("rule 2", "TR-PAIR-UNSUPPORTED", "rule 3"):
                 self.assertIn(frag, probs)
+
+
+class ReviewFixTest(unittest.TestCase):
+    """STEP 7 Codex review findings S7-06..S7-08."""
+
+    def test_review_header_must_match_table(self):                              # S7-06
+        with temp_repo("state-basic", stamp=True) as root:
+            p = root / "projects" / "fixture-book"
+            rv, fx = p / "review.md", p / "fixes.md"
+            fx.write_text("", encoding="utf-8")
+            rv.write_text("verdict: fail\nopen_blocker_major: 1\nreviewer_model: codex\n\nno table\n", encoding="utf-8")
+            self.assertIn("REVIEW-HEADER", " ".join(cc.common.review_gate(p, rv, fx)[2]))
+            rv.write_text("verdict: pass\nopen_blocker_major: 0\nreviewer_model: codex\n", encoding="utf-8")
+            self.assertEqual(cc.common.review_gate(p, rv, fx)[2], [])
+            rv.write_text("verdict: pass\nopen_blocker_major: 1\nreviewer_model: codex\n\n| ID | Severity | x |\n|---|---|---|\n"
+                          "| S-01 | major | y |\n", encoding="utf-8")
+            probs = " ".join(cc.common.review_gate(p, rv, fx)[2])
+            self.assertIn("contradicts", probs)
+            self.assertIn("FIX-OPEN", probs)
+
+    def test_duplicate_pillar_and_wrong_cap_ids(self):                          # S7-07
+        rub = rubric([40]); rub["pillars"][0]["hard_caps"] = [
+            {"trigger": {"severity": "blocker", "min_count": 1, "tag": None}, "max_score": 4, "description": "x"}]
+        findings = [{"id": "F-001", "pillar_id": "G1", "severity": "blocker", "tags": []}]
+        card = {"pillars": [{"id": p["id"], "score": 4 if p["id"] == "G1" else 8, "applicable": True} for p in rub["pillars"]],
+                "caps_applied": [{"pillar_id": "G1", "cap_index": 0, "finding_ids": ["WRONG"]}],
+                "total": round((4 * 20 + 8 * 20 + 8 * 10 + 8 * 10 + 8 * 40) / 10, 1)}
+        self.assertTrue(any("cites" in x for x in cc.score(rub, card, findings, fixes={})))
+        card["caps_applied"][0]["finding_ids"] = ["F-001"]
+        self.assertEqual(cc.score(rub, card, findings, fixes={}), [])
+        card["pillars"].append(dict(card["pillars"][1]))
+        self.assertTrue(any("more than once" in x for x in cc.score(rub, card, findings, fixes={})))
+
+    def test_audit_inputs_bound_to_reviewed_commit(self):                       # S7-08
+        import subprocess
+        from harness.stages.complete_checks.audit import reviewed_commit_problems
+        with temp_repo("state-basic", stamp=True) as root:
+            p = root / "projects" / "fixture-book"
+            git = lambda *a: subprocess.run(["git", *a], cwd=root, capture_output=True, text=True, check=True).stdout.strip()
+            git("add", "projects"); git("commit", "-qm", "book")
+            head = git("rev-parse", "HEAD")
+            self.assertIn("not a commit", " ".join(reviewed_commit_problems(p, "0" * 40, ["brief.json"])))
+            self.assertEqual(reviewed_commit_problems(p, head, ["brief.json"]), [])
+            (p / "brief.json").write_text((p / "brief.json").read_text(encoding="utf-8") + " ", encoding="utf-8")
+            self.assertIn("differs", " ".join(reviewed_commit_problems(p, head, ["brief.json"])))

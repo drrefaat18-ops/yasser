@@ -36,10 +36,15 @@
    "status": "ok",
    "args": {},
    "inputs": {
+    "source/book.md": "0",
     "template.json": "0"
    },
    "outputs": {
-    "ingest/normalized.md": "0"
+    "source/book.md": "0",
+    "source-manifest.json": "0",
+    "ingest/normalized.md": "0",
+    "ingest/units.json": "0",
+    "ingest/conversion-report.json": "0"
    },
    "tool_sha": "0",
    "time": "2026-09-25T00:00:00Z"
