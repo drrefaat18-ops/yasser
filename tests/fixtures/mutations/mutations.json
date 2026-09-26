@@ -1,0 +1,9 @@
+[
+ {"name": "remove-required-callout", "fixture": "ai-in-medicine", "file": "rework/ch01-what-ai-is.md", "op": "delete_line_matching", "arg": "^> \\*\\*Safety Alert:", "expect": "TPL-CALLOUT-MISSING"},
+ {"name": "break-image-path", "fixture": "ai-in-medicine", "file": "rework/ch06-seeing-disease.md", "op": "replace_first", "arg": ["](../images/", "](../images/missing-"], "expect": "ASSET-MISSING"},
+ {"name": "skew-answer-key", "fixture": "ai-in-medicine", "file": "rework/ch02-health-data.md", "op": "set_all_keys", "arg": "A", "expect": "KEY-BALANCE"},
+ {"name": "reopen-erratum", "fixture": "ai-in-medicine", "file": "rework/errata-ledger.md", "op": "replace_first", "arg": ["| removed-with-content |", "| open |"], "expect": "ERRATA-OPEN"},
+ {"name": "break-citation", "fixture": "ai-in-medicine", "file": "rework/ch03-how-models-learn.md", "op": "append_to_first_prose", "arg": " [999]", "expect": "CIT-MISSING"},
+ {"name": "drop-perspective", "fixture": "ai-in-medicine", "file": "rework/ch04-reading-performance-claims.md", "op": "delete_first_perspective_item", "arg": null, "expect": "PERSP-MISSING"},
+ {"name": "exceed-word-budget", "fixture": "ai-in-medicine", "file": "rework/ch05-generative-ai-llms.md", "op": "append_prose_words", "arg": 900, "expect": "BUDGET-CHAPTER"}
+]

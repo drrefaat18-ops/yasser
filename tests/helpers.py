@@ -49,7 +49,8 @@ def stamp_project(root, project):
     for sid, r in st["receipts"].items():
         for kind in ("inputs", "outputs"):
             r[kind] = {rel: hashing.hash_file(project / rel) for rel in r[kind]}
-        r["tool_sha"] = state.tool_sha(state.BY_ID[sid]["tool_paths"], repo=root)
+        if not r.get("imported"):   # plan N2: an imported receipt keeps tool_sha "imported"
+            r["tool_sha"] = state.tool_sha(state.BY_ID[sid]["tool_paths"], repo=root)
         if r.get("dec_id"):
             r["dec_row_sha256"] = state.dec_row_hash(project, r["dec_id"])[0]
     for a in st["approvals"].values():

@@ -169,5 +169,43 @@ class CaptureTest(unittest.TestCase):
         self.assertEqual(capture_golden.dumps(g), capture_golden.dumps(json.loads(capture_golden.dumps(g))))
 
 
+class HarnessModeTest(unittest.TestCase):
+    """Plan Task 8.1: capture without --layout derives the layout from config and reads the harness checker."""
+    FIX = pathlib.Path(__file__).parent / "fixtures/ai-in-medicine"
+
+    def test_harness_mode_layout_from_config(self):
+        from tests.helpers import REPO
+        med = REPO / "projects/ai-in-medicine"
+        want = json.loads((self.FIX / "layout-projects.json").read_text(encoding="utf-8"))
+        self.assertEqual(capture_golden.derive_layout(med, "deliverables"), want)
+        build = capture_golden.derive_layout(med, "build")
+        self.assertEqual({k: v for k, v in build.items() if k not in ("deliverables", "src_copy")},
+                         {k: v for k, v in want.items() if k not in ("deliverables", "src_copy")})
+        self.assertEqual(build["deliverables"]["docx"], "build/AI_in_Health_Care_Interprofessional.docx")
+        with self.assertRaises(capture_golden.LayoutError):
+            capture_golden.derive_layout(med, "elsewhere")
+
+    def test_checker_matches_step6(self):
+        """Every STEP 6 (id, target) check is identical and every new ID passes (N7). verify_refs needs the network and
+        is compared by the STEP 8 evidence command (Tasks 8.2-8.3), so this capture skips it."""
+        from tests.helpers import temp_repo
+        step6 = json.loads((self.FIX / "golden-step6.json").read_text(encoding="utf-8"))
+        with temp_repo(project_from="projects/ai-in-medicine", stamp=True) as root:
+            g = capture_golden.capture_harness(root / "projects/ai-in-medicine", slug="ai-in-medicine",
+                                               run_refs=False, docx_from="deliverables")
+        d = compare_golden.diff(step6, g, [], checks_from=step6)["diffs"]
+        self.assertEqual([x["pointer"] for x in d], ["/verify_refs"])   # None here: not captured
+        new = {c["id"] for c in g["checks"]} - {c["id"] for c in step6["checks"]}
+        self.assertEqual(new, {"TPL-CALLOUT-COUNT", "BUDGET-FRONT", "ASSET-MISSING", "ASSET-OUTSIDE-ROOT"})
+
+    def test_capture_refuses_a_gated_refusal(self):
+        from tests.helpers import temp_repo
+        with temp_repo(project_from="projects/ai-in-medicine", stamp=True) as root:
+            p = root / "projects/ai-in-medicine"
+            (p / "brief.json").write_text("{}", encoding="utf-8")
+            with self.assertRaises(capture_golden.GateRefused):
+                capture_golden.harness_report(p)
+
+
 if __name__ == "__main__":
     unittest.main()

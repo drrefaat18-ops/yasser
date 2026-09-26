@@ -1,0 +1,15 @@
+# Fixed clinical term list for the scoped leak scan (core §9.5). One term per line; a trailing * matches any word
+# that starts with the term. Matching is case-insensitive at word boundaries. S7-09 added diagnos*, DSM, CBT.
+patient*
+clinic*
+physician*
+pharmac*
+physiotherap*
+radiolog*
+patholog*
+diagnos*
+medic*
+hospital*
+nurse*
+DSM
+CBT

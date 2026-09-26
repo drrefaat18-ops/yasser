@@ -1,0 +1,80 @@
+{
+ "schema_version": 1,
+ "project_id": "no-perspectives",
+ "preset": "ltr-textbook",
+ "direction": "ltr",
+ "lang_tag": "en-GB",
+ "page": {
+  "size": "A4",
+  "margins": {
+   "top": 2.6,
+   "bottom": 2.4,
+   "left": 3.5,
+   "right": 3.5
+  },
+  "header_distance": 1.3,
+  "footer_distance": 1.2
+ },
+ "fonts": {
+  "serif": "Sitka Text",
+  "serif_heading": "Sitka Heading",
+  "sans": "Segoe UI",
+  "complex_script": null,
+  "complex_script_heading": null
+ },
+ "palette": {
+  "ink": "1D2A38",
+  "primary": "12324F",
+  "accent": "9A6B00",
+  "muted": "5A6470"
+ },
+ "layout": {
+  "text_width": 14
+ },
+ "alignment": {
+  "body": "left",
+  "headings": "left"
+ },
+ "lists": {
+  "indent": 0.6,
+  "hanging": 0.6
+ },
+ "callouts": {},
+ "boxed_section_ids": [],
+ "toc_excluded_section_ids": [],
+ "toc": {
+  "levels": 2
+ },
+ "cover": {
+  "asset": null
+ },
+ "title_page": {
+  "notices": []
+ },
+ "labels": {
+  "contents": "Contents",
+  "update_toc_instruction": "Update the field.",
+  "chapter": "Chapter",
+  "part": "Part",
+  "glossary": "Glossary",
+  "figure": "Figure",
+  "table": "Table",
+  "question_prefix": "Q",
+  "objective_prefix": "LO"
+ },
+ "output": {
+  "basename": "motion-basics"
+ },
+ "build": {
+  "backend": "word_com",
+  "word_com": {
+   "toc_styles": [
+    "Heading 1"
+   ]
+  },
+  "pdf": {
+   "bookmarks": "headings",
+   "embed_fonts": true
+  }
+ }
+}

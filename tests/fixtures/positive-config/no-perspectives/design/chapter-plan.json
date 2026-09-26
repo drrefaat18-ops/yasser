@@ -1,0 +1,16 @@
+{
+ "schema_version": 1,
+ "project_id": "no-perspectives",
+ "parts": [],
+ "dropped": [],
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01-forces.md",
+   "title": "Forces and Motion",
+   "word_budget": 470,
+   "part_id": null,
+   "source_refs": []
+  }
+ ]
+}

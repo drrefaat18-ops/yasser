@@ -1,6 +1,7 @@
 """Golden regression capture (core §9.1; plan N1, N5, N6, N8). Read-only: it writes only --out.
 
-Usage: python harness/tools/capture_golden.py --project projects/<slug> --out FILE --layout FILE [--no-refs]
+Usage: python harness/tools/capture_golden.py --project projects/<slug> --out FILE [--layout FILE | --docx-from build|deliverables] [--no-refs]
+Without --layout (harness mode, STEP 8) the layout comes from project config and the checks from harness/tools/check_book.py.
 Exit 0 ok; 1 bad project path or missing dependency; 2 on any verify_refs ERROR (network) or unclassified message.
 """
 import argparse, contextlib, importlib.util, io, json, os, pathlib, re, subprocess, sys, zipfile
@@ -428,7 +429,34 @@ def _tool_sha(project_dir, layout):
     return r.stdout.strip()
 
 
+def _tail(project_dir, layout, paths, tool_sha):
+    """The keys every capture mode computes the same way: images, DOCX/PDF facts, hashes, provenance."""
+    deliv = {k: project_dir / v for k, v in layout["deliverables"].items()}
+    parts = docx_parts(deliv["docx"])
+    return {
+        "images": images(project_dir, layout),
+        "docx": docx_facts(deliv["docx"]),
+        "pdf": pdf_facts(deliv["pdf"]),
+        "hashes": {"assembled_md": hashing.hash_file(deliv["md"]),
+                   "docx": hashing.hash_bytes(hashing.canonical_json(parts)),
+                   "docx_parts": parts,
+                   "chapters": {chapter_id(p): hashing.hash_file(p) for p in paths}},
+        "volatile_excluded": VOLATILE_EXCLUDED,
+        "provenance": {"tool_sha": tool_sha,
+                       "captured_from": _rel(project_dir, REPO) if project_dir.is_relative_to(REPO) else project_dir.name},
+    }
+
+
+def _chapter_list(project_dir, paths):
+    out = []
+    for p in paths:
+        h1 = re.search(r"^# (.+?)\s*$", p.read_text(encoding="utf-8"), re.M)
+        out.append({"id": chapter_id(p), "file": _rel(p, project_dir), "title": h1.group(1) if h1 else None})
+    return out
+
+
 def capture(project_dir, layout, *, slug, run_refs=True):
+    """Legacy mode (STEPS 5-6, plan N6): checks from the project's legacy checker, per function."""
     project_dir = pathlib.Path(project_dir)
     probs = layout_problems(project_dir, layout)
     if probs:
@@ -440,32 +468,108 @@ def capture(project_dir, layout, *, slug, run_refs=True):
     book, total = book_checks(mod, layout, project_dir)
     checks = sorted(checks + book, key=lambda e: (e["target"], e["id"]))
     front = project_dir / layout["front_matter"]
-    chapters = []
-    for p in paths:
-        h1 = re.search(r"^# (.+?)\s*$", p.read_text(encoding="utf-8"), re.M)
-        chapters.append({"id": chapter_id(p), "file": _rel(p, project_dir), "title": h1.group(1) if h1 else None})
-    deliv = {k: project_dir / v for k, v in layout["deliverables"].items()}
-    parts = docx_parts(deliv["docx"])
     return {
         "schema_version": 1,
         "project": slug,
         "checks": checks,
-        "chapters": chapters,
+        "chapters": _chapter_list(project_dir, paths),
         "words": {"chapters": {chapter_id(p): mod.words(p.read_text(encoding="utf-8")) for p in paths},
                   "front_matter": mod.words(front.read_text(encoding="utf-8")) if front.exists() else None,
                   "total": total},
         "references": reference_counts(project_dir, layout, paths),
         "verify_refs": refs(project_dir, layout, paths) if run_refs else None,
-        "images": images(project_dir, layout),
-        "docx": docx_facts(deliv["docx"]),
-        "pdf": pdf_facts(deliv["pdf"]),
-        "hashes": {"assembled_md": hashing.hash_file(deliv["md"]),
-                   "docx": hashing.hash_bytes(hashing.canonical_json(parts)),
-                   "docx_parts": parts,
-                   "chapters": {chapter_id(p): hashing.hash_file(p) for p in paths}},
-        "volatile_excluded": VOLATILE_EXCLUDED,
-        "provenance": {"tool_sha": _tool_sha(project_dir, layout),
-                       "captured_from": _rel(project_dir, REPO) if project_dir.is_relative_to(REPO) else project_dir.name},
+        **_tail(project_dir, layout, paths, _tool_sha(project_dir, layout)),
+    }
+
+
+# ---------- harness mode (STEP 8, plan Task 8.1): layout and checks from project config ----------
+
+DELIVERABLES = ("build", "deliverables")
+
+
+def derive_layout(project_dir, docx_from="build"):
+    """The capture layout implied by template.json / theme.json (same keys as layout-projects.json)."""
+    from harness.tools import config
+    if docx_from not in DELIVERABLES:
+        raise LayoutError(f"--docx-from must be one of {DELIVERABLES}")
+    cfg = config.load(project_dir)
+    p = cfg["template"]["paths"]
+    ch = p["chapters"]
+    roles = {s["role"]: s["label"] for s in cfg["template"]["sections"]}
+    base = f"{docx_from}/{cfg['theme']['output']['basename']}"
+    roots = list(p["allowed_asset_roots"])
+    return {"schema_version": 1, "chapters_dir": ch, "chapter_glob": p["chapter_glob"],
+            "front_matter": f"{ch}/{p['front_matter']}" if p.get("front_matter") else None,
+            "glossary": f"{ch}/{p['glossary']}" if p.get("glossary") else None,
+            "errata": f"{ch}/{p['errata']}" if p.get("errata") else None,
+            "images": roots, "legacy_tools": f"{ch}/tools",
+            "legacy_sections": {"assessment": roles.get("assessment"), "answers": roles.get("answers")},
+            "deliverables": {ext: f"{base}.{ext}" for ext in ("md", "docx", "pdf")},
+            "src_copy": [ch] + [r for r in roots if not r.startswith(ch + "/")] + [f"{base}.md"]}
+
+
+def harness_report(project_dir):
+    """checker JSON from the gated harness checker of the repo that holds the project."""
+    repo = pathlib.Path(project_dir).resolve().parents[1]
+    r = subprocess.run([sys.executable, str(repo / "harness/tools/check_book.py"), "--project", str(project_dir), "--json"],
+                       cwd=repo, capture_output=True, text=True, encoding="utf-8")
+    if r.returncode == 1 and r.stderr.lstrip().startswith("ERROR "):   # a refused gate: never freeze it
+        raise GateRefused(r.stderr.strip()[-300:])
+    if r.returncode not in (0, 1):
+        raise LayoutError(f"check_book exit {r.returncode}: {r.stderr.strip()[-300:]}")
+    return json.loads(r.stdout)
+
+
+def harness_checks(report):
+    """checker-report targets -> golden checks[] (message kept only on fail, as in the legacy capture)."""
+    out = []
+    for t in report["targets"]:
+        for c in t["checks"]:
+            e = {"id": c["id"], "target": t["target"], "status": c["status"], "measured": c["measured"]}
+            if c["status"] == "fail":
+                e["message"] = c["message"]
+            out.append(e)
+    return sorted(out, key=lambda e: (e["target"], e["id"]))
+
+
+def harness_reference_counts(cfg):
+    from harness.tools import check_book
+    ids = [re.compile(x) for x in cfg["template"]["references"]["identifier_patterns"]]
+    out = {}
+    for c, path in cfg.chapters():
+        lines = [line for _, line in check_book.reference_entries(path.read_text(encoding="utf-8"), cfg)]
+        doi = sum(1 for line in lines if any(x.search(line) for x in ids))
+        out[c["id"]] = {"count": len(lines), "with_doi": doi, "without_doi": len(lines) - doi}
+    return out
+
+
+def _git_sha(repo, rel):
+    r = subprocess.run(["git", "log", "-1", "--format=%H", "--", rel], cwd=repo, capture_output=True, text=True)
+    if r.returncode != 0 or not r.stdout.strip():
+        raise RuntimeError(f"git log failed for {rel}: {r.stderr.strip()}")
+    return r.stdout.strip()
+
+
+def capture_harness(project_dir, *, slug, run_refs=True, docx_from="build"):
+    from harness.tools import config
+    project_dir = pathlib.Path(project_dir)
+    layout = derive_layout(project_dir, docx_from)
+    cfg = config.load(project_dir)
+    paths = [p for _, p in cfg.chapters()]
+    report = harness_report(project_dir)
+    by = {(t["target"], c["id"]): c["measured"] for t in report["targets"] for c in t["checks"]}
+    words = {"chapters": {c["id"]: by[(c["id"], "BUDGET-CHAPTER")]["words"] for c, _ in cfg.chapters()},
+             "front_matter": by.get(("book", "BUDGET-FRONT"), {}).get("words"),
+             "total": report["total_words"]}
+    return {
+        "schema_version": 1,
+        "project": slug,
+        "checks": harness_checks(report),
+        "chapters": _chapter_list(project_dir, paths),
+        "words": words,
+        "references": harness_reference_counts(cfg),
+        "verify_refs": refs(project_dir, layout, paths) if run_refs else None,
+        **_tail(project_dir, layout, paths, _git_sha(project_dir.resolve().parents[1], "harness/tools")),
     }
 
 
@@ -491,7 +595,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--project", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--layout", help="which files inside the project to read (N1); from STEP 8 derived from config")
+    ap.add_argument("--layout", help="legacy mode: which files inside the project to read (N1); omit for harness mode")
+    ap.add_argument("--docx-from", choices=DELIVERABLES, default="build", help="harness mode: where md/docx/pdf are read")
     ap.add_argument("--no-refs", action="store_true")
     a = ap.parse_args()
     try:
@@ -499,12 +604,13 @@ def main():
     except ValueError as e:
         print(f"ERROR {e}", file=sys.stderr)
         sys.exit(1)
-    if not a.layout:
-        print("ERROR LAYOUT: --layout is required until layout derivation from config ships (plan Task 8.1)", file=sys.stderr)
-        sys.exit(1)
-    layout = json.loads(pathlib.Path(a.layout).read_text(encoding="utf-8"))
     try:
-        write(capture(project, layout, slug=project.name, run_refs=not a.no_refs), a.out)
+        if a.layout:
+            layout = json.loads(pathlib.Path(a.layout).read_text(encoding="utf-8"))
+            golden = capture(project, layout, slug=project.name, run_refs=not a.no_refs)
+        else:
+            golden = capture_harness(project, slug=project.name, run_refs=not a.no_refs, docx_from=a.docx_from)
+        write(golden, a.out)
     except ImportError as e:
         print(f"ERROR DEPENDENCY: {e}", file=sys.stderr)
         sys.exit(1)

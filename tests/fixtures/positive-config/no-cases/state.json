@@ -1,0 +1,124 @@
+{
+ "schema_version": 1,
+ "project_id": "no-cases",
+ "receipts": {
+  "new": {
+   "stage": "new",
+   "status": "ok",
+   "args": {
+    "slug": "no-cases"
+   },
+   "inputs": {},
+   "outputs": {},
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  },
+  "intake": {
+   "stage": "intake",
+   "status": "ok",
+   "args": {},
+   "inputs": {
+    "../../harness/rubric_core.json": "0",
+    "../../harness/locale/en.json": "0",
+    "../../harness/presets/ltr-textbook.json": "0"
+   },
+   "outputs": {
+    "brief.json": "0",
+    "rubric.json": "0",
+    "template.json": "0",
+    "theme.json": "0"
+   },
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  },
+  "ingest": {
+   "stage": "ingest",
+   "status": "ok",
+   "args": {},
+   "inputs": {
+    "source/book.md": "0",
+    "template.json": "0"
+   },
+   "outputs": {
+    "source/book.md": "0",
+    "source-manifest.json": "0",
+    "ingest/normalized.md": "0",
+    "ingest/units.json": "0",
+    "ingest/conversion-report.json": "0"
+   },
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  },
+  "evaluate": {
+   "stage": "evaluate",
+   "status": "ok",
+   "args": {},
+   "inputs": {
+    "brief.json": "0",
+    "rubric.json": "0",
+    "ingest/normalized.md": "0",
+    "ingest/conversion-report.json": "0"
+   },
+   "outputs": {
+    "evaluation/findings.json": "0",
+    "evaluation/scorecard.json": "0",
+    "evaluation/report.md": "0",
+    "evaluation/codex-review.md": "0",
+    "evaluation/fixes.md": "0"
+   },
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  },
+  "design": {
+   "stage": "design",
+   "status": "ok",
+   "args": {},
+   "inputs": {
+    "evaluation/findings.json": "0",
+    "evaluation/scorecard.json": "0",
+    "evaluation/report.md": "0",
+    "evaluation/codex-review.md": "0",
+    "evaluation/fixes.md": "0",
+    "brief.json": "0",
+    "template.json": "0",
+    "theme.json": "0"
+   },
+   "outputs": {
+    "design/design.md": "0",
+    "design/chapter-plan.json": "0",
+    "design/errata-seed.md": "0"
+   },
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  }
+ },
+ "approvals": {
+  "intake": {
+   "kind": "intake",
+   "files": {
+    "brief.json": "0",
+    "rubric.json": "0",
+    "template.json": "0",
+    "theme.json": "0"
+   },
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "0",
+   "approved_at": "2026-09-25T00:00:00Z",
+   "approved_by": "user"
+  },
+  "design": {
+   "kind": "design",
+   "files": {
+    "design/design.md": "0",
+    "design/chapter-plan.json": "0",
+    "design/errata-seed.md": "0"
+   },
+   "dec_id": "DEC-002",
+   "dec_row_sha256": "0",
+   "approved_at": "2026-09-25T00:00:00Z",
+   "approved_by": "user"
+  }
+ },
+ "active_run": null,
+ "aborts": []
+}

@@ -29,8 +29,10 @@ STAGES = [
     {"id": "design", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/design.py",
                                                        "harness/schemas/chapter-plan.v1.json"]},
     {"id": "translate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_translation.py, complete_checks/translate.py in 11.x
-    {"id": "rework", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_book.py (8.1), verify_refs.py + complete_checks/rework.py (8.3)
-    {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/contracts.py"]},      # -> assemble.py (8.1), build.py + build_book.py (8.2), figures (9.1)
+    {"id": "rework", "kind": "agentic", "tool_paths": ["harness/tools/check_book.py", "harness/tools/assemble.py",   # + verify_refs.py,
+                                                       "harness/tools/config.py", "harness/text.py", "harness/locales.py"]},  # complete_checks/rework.py (8.3)
+    {"id": "build", "kind": "auto", "tool_paths": ["harness/tools/assemble.py", "harness/tools/config.py",  # + build.py, build_book.py (8.2),
+                                                   "harness/locales.py"]},                                  # figures (9.1)
     {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/audit.py",
                                                       "harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"]},
 ]

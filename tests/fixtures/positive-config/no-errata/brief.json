@@ -1,0 +1,190 @@
+{
+ "schema_version": 1,
+ "project_id": "no-errata",
+ "identity": {
+  "title": "Motion Basics",
+  "subtitle": null,
+  "edition": null,
+  "authors": [
+   {
+    "name": "A. Author",
+    "credit_line": "A. Author",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "as in source",
+  "rework_authorised": "yes",
+  "rework_authorised_note": ""
+ },
+ "source": {
+  "files": [
+   {
+    "path": "source/book.md",
+    "format": "md",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "general science",
+  "subfields": []
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": ""
+ },
+ "audience": {
+  "year_of_study": "first year",
+  "programmes": [
+   "general"
+  ],
+  "prior_knowledge": "none",
+  "display_line": null
+ },
+ "perspectives": {
+  "enabled": true,
+  "items": [
+   {
+    "id": "theory",
+    "label": "Theory"
+   },
+   {
+    "id": "experiment",
+    "label": "Experiment"
+   },
+   {
+    "id": "engineering",
+    "label": "Engineering"
+   }
+  ]
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "simplify"
+  ],
+  "notes": ""
+ },
+ "language": {
+  "source": "en",
+  "output": "en",
+  "translation_required": false,
+  "terminology": ""
+ },
+ "size": {
+  "target_words_total": null,
+  "chapter_count_target": null,
+  "restructuring": "keep_chapters",
+  "restructuring_note": ""
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 3,
+   "options": 4,
+   "format": "answers at chapter end"
+  },
+  "cases": {
+   "enabled": true
+  },
+  "exercises": {
+   "enabled": false
+  }
+ },
+ "context": {
+  "country": null,
+  "curriculum_standards": [],
+  "frameworks": []
+ },
+ "references": {
+  "style": "vancouver",
+  "style_note": "",
+  "recency": null,
+  "evidence_cutoff": null
+ },
+ "constraints": {
+  "must_keep": [],
+  "must_not_change": [],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "docx"
+  ],
+  "page_size": "A4",
+  "fonts": null,
+  "branding": {
+   "logo": null,
+   "colours": []
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Field coverage",
+   "weight": 40,
+   "reviewer_ids": [
+    "subject-reviewer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": ""
+  },
+  "B": {
+   "provenance": "user",
+   "note": ""
+  },
+  "C": {
+   "provenance": "user",
+   "note": ""
+  },
+  "D": {
+   "provenance": "user",
+   "note": ""
+  },
+  "E": {
+   "provenance": "user",
+   "note": ""
+  },
+  "F": {
+   "provenance": "user",
+   "note": ""
+  },
+  "G": {
+   "provenance": "user",
+   "note": ""
+  },
+  "H": {
+   "provenance": "user",
+   "note": ""
+  },
+  "I": {
+   "provenance": "user",
+   "note": ""
+  },
+  "J": {
+   "provenance": "user",
+   "note": ""
+  },
+  "K": {
+   "provenance": "user",
+   "note": ""
+  },
+  "L": {
+   "provenance": "user",
+   "note": ""
+  },
+  "M": {
+   "provenance": "user",
+   "note": ""
+  }
+ },
+ "unresolved": []
+}
