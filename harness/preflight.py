@@ -4,7 +4,9 @@ import argparse, importlib.util, json, os, pathlib, subprocess, sys
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_GROUPS = ["core", "ingest", "build", "figures", "golden"]
-FONT_FILES = ["Sitka.ttc", "segoeui.ttf", "majalla.ttf", "majallab.ttf"]  # ponytail: moves to presets in STEP 7
+# the union over tested presets; the Arabic fonts return with the RTL preset (STEP 10)
+FONT_FILES = sorted({f for p in (REPO / "harness" / "presets").glob("*.json")
+                     for f in json.loads(p.read_text(encoding="utf-8"))["required_font_files"]})
 BROWSERS = [r"%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe",
             r"%ProgramFiles%\Microsoft\Edge\Application\msedge.exe",
             r"%ProgramFiles%\Google\Chrome\Application\chrome.exe"]

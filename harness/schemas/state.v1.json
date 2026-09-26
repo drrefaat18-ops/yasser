@@ -1,0 +1,297 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "project_id",
+  "receipts",
+  "approvals",
+  "active_run",
+  "aborts"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "project_id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "receipts": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object",
+    "required": [
+     "stage",
+     "status",
+     "args",
+     "inputs",
+     "outputs",
+     "tool_sha",
+     "time"
+    ],
+    "properties": {
+     "stage": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "status": {
+      "enum": [
+       "ok",
+       "failed"
+      ]
+     },
+     "args": {
+      "type": "object"
+     },
+     "inputs": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "outputs": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "tool_sha": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "time": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+     },
+     "error": {
+      "type": "string"
+     },
+     "invalidated_by": {
+      "type": "string"
+     },
+     "units": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "object",
+       "required": [
+        "status",
+        "args",
+        "inputs",
+        "outputs",
+        "tool_sha",
+        "time"
+       ],
+       "properties": {
+        "status": {
+         "enum": [
+          "ok",
+          "failed"
+         ]
+        },
+        "args": {
+         "type": "object"
+        },
+        "inputs": {
+         "type": "object",
+         "additionalProperties": {
+          "type": "string"
+         }
+        },
+        "outputs": {
+         "type": "object",
+         "additionalProperties": {
+          "type": "string"
+         }
+        },
+        "tool_sha": {
+         "type": "string",
+         "pattern": "\\S"
+        },
+        "time": {
+         "type": "string",
+         "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+        }
+       }
+      }
+     },
+     "imported": {
+      "type": "boolean"
+     },
+     "imported_at_commit": {
+      "type": "string"
+     },
+     "dec_id": {
+      "type": "string",
+      "pattern": "^DEC-\\d{3,}$"
+     },
+     "dec_row_sha256": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "approvals": {
+   "type": "object",
+   "required": [],
+   "properties": {
+    "intake": {
+     "type": "object",
+     "required": [
+      "kind",
+      "files",
+      "dec_id",
+      "dec_row_sha256",
+      "approved_at",
+      "approved_by"
+     ],
+     "properties": {
+      "kind": {
+       "enum": [
+        "intake",
+        "design"
+       ]
+      },
+      "files": {
+       "type": "object",
+       "additionalProperties": {
+        "type": "string"
+       }
+      },
+      "dec_id": {
+       "type": "string",
+       "pattern": "^DEC-\\d{3,}$"
+      },
+      "dec_row_sha256": {
+       "type": "string"
+      },
+      "approved_at": {
+       "type": "string",
+       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+      },
+      "approved_by": {
+       "const": "user"
+      }
+     },
+     "additionalProperties": false
+    },
+    "design": {
+     "type": "object",
+     "required": [
+      "kind",
+      "files",
+      "dec_id",
+      "dec_row_sha256",
+      "approved_at",
+      "approved_by"
+     ],
+     "properties": {
+      "kind": {
+       "enum": [
+        "intake",
+        "design"
+       ]
+      },
+      "files": {
+       "type": "object",
+       "additionalProperties": {
+        "type": "string"
+       }
+      },
+      "dec_id": {
+       "type": "string",
+       "pattern": "^DEC-\\d{3,}$"
+      },
+      "dec_row_sha256": {
+       "type": "string"
+      },
+      "approved_at": {
+       "type": "string",
+       "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+      },
+      "approved_by": {
+       "const": "user"
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "additionalProperties": false
+  },
+  "active_run": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "required": [
+    "stage",
+    "unit",
+    "nonce",
+    "pid",
+    "started_at",
+    "author_model"
+   ],
+   "properties": {
+    "stage": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "unit": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "nonce": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "pid": {
+     "type": "integer"
+    },
+    "started_at": {
+     "type": "string",
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "author_model": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "aborts": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "stage",
+     "nonce",
+     "reason",
+     "time"
+    ],
+    "properties": {
+     "stage": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "nonce": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "reason": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "time": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

@@ -1,0 +1,78 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "figures"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "figures": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "chapter_id",
+     "kind",
+     "source",
+     "caption",
+     "alt",
+     "credit",
+     "licence",
+     "status"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+     },
+     "chapter_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "kind": {
+      "type": "string",
+      "pattern": "^(chart\\.[a-z0-9_-]+|diagram\\.svg|chem\\.structure|chem\\.reaction|raster\\.existing|author-asset)$"
+     },
+     "source": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "caption": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "alt": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "credit": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "licence": {
+      "enum": [
+       "original",
+       "CC-BY-4.0",
+       "CC0",
+       "public-domain",
+       "permission-granted",
+       "author-supplied"
+      ]
+     },
+     "status": {
+      "enum": [
+       "generated",
+       "existing",
+       "needs-author-asset"
+      ]
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

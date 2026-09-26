@@ -1,0 +1,42 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "diffs"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "diffs": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "pointer",
+     "before",
+     "after",
+     "allowed"
+    ],
+    "properties": {
+     "pointer": {
+      "type": "string"
+     },
+     "before": {},
+     "after": {},
+     "allowed": {
+      "type": "boolean"
+     },
+     "reason": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

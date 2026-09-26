@@ -1,0 +1,915 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "project_id",
+  "identity",
+  "source",
+  "domain",
+  "figures",
+  "audience",
+  "perspectives",
+  "goal",
+  "language",
+  "size",
+  "assessment",
+  "context",
+  "references",
+  "constraints",
+  "output",
+  "domain_pillars",
+  "answers",
+  "unresolved"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "project_id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "identity": {
+   "type": "object",
+   "required": [
+    "title",
+    "subtitle",
+    "edition",
+    "authors",
+    "credit_policy",
+    "rework_authorised",
+    "rework_authorised_note"
+   ],
+   "properties": {
+    "title": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "subtitle": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "edition": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "authors": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "name",
+       "credit_line",
+       "role"
+      ],
+      "properties": {
+       "name": {
+        "type": "string",
+        "pattern": "\\S"
+       },
+       "credit_line": {
+        "type": "string"
+       },
+       "role": {
+        "enum": [
+         "author",
+         "editor",
+         "translator",
+         "contributor"
+        ]
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    },
+    "credit_policy": {
+     "type": "string"
+    },
+    "rework_authorised": {
+     "enum": [
+      "yes",
+      "no",
+      "unknown"
+     ]
+    },
+    "rework_authorised_note": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "files"
+   ],
+   "properties": {
+    "files": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "path",
+       "format",
+       "sha256"
+      ],
+      "properties": {
+       "path": {
+        "type": "string",
+        "pattern": "\\S"
+       },
+       "format": {
+        "enum": [
+         "docx",
+         "pdf",
+         "md",
+         "other"
+        ]
+       },
+       "sha256": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+       }
+      },
+      "additionalProperties": false
+     },
+     "minItems": 1
+    }
+   },
+   "additionalProperties": false
+  },
+  "domain": {
+   "type": "object",
+   "required": [
+    "primary",
+    "subfields"
+   ],
+   "properties": {
+    "primary": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "subfields": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "figures": {
+   "type": "object",
+   "required": [
+    "packs",
+    "notes"
+   ],
+   "properties": {
+    "packs": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "charts",
+       "chemistry"
+      ]
+     }
+    },
+    "notes": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "audience": {
+   "type": "object",
+   "required": [
+    "year_of_study",
+    "programmes",
+    "prior_knowledge",
+    "display_line"
+   ],
+   "properties": {
+    "year_of_study": {
+     "type": "string"
+    },
+    "programmes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "prior_knowledge": {
+     "type": "string"
+    },
+    "display_line": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "perspectives": {
+   "type": "object",
+   "required": [
+    "enabled",
+    "items"
+   ],
+   "properties": {
+    "enabled": {
+     "type": "boolean"
+    },
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "id",
+       "label"
+      ],
+      "properties": {
+       "id": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+       },
+       "label": {
+        "type": "string",
+        "pattern": "\\S"
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "goal": {
+   "type": "object",
+   "required": [
+    "mode",
+    "directions",
+    "notes"
+   ],
+   "properties": {
+    "mode": {
+     "enum": [
+      "evaluate_only",
+      "evaluate_and_rework"
+     ]
+    },
+    "directions": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "simplify",
+       "broaden",
+       "update",
+       "restructure",
+       "other"
+      ]
+     }
+    },
+    "notes": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "language": {
+   "type": "object",
+   "required": [
+    "source",
+    "output",
+    "translation_required",
+    "terminology"
+   ],
+   "properties": {
+    "source": {
+     "type": "string",
+     "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    },
+    "output": {
+     "type": "string",
+     "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    },
+    "translation_required": {
+     "type": "boolean"
+    },
+    "terminology": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "size": {
+   "type": "object",
+   "required": [
+    "target_words_total",
+    "chapter_count_target",
+    "restructuring",
+    "restructuring_note"
+   ],
+   "properties": {
+    "target_words_total": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "chapter_count_target": {
+     "type": [
+      "integer",
+      "null"
+     ]
+    },
+    "restructuring": {
+     "enum": [
+      "keep_chapters",
+      "merge_split_allowed",
+      "free"
+     ]
+    },
+    "restructuring_note": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  },
+  "assessment": {
+   "type": "object",
+   "required": [
+    "mcq",
+    "cases",
+    "exercises"
+   ],
+   "properties": {
+    "mcq": {
+     "type": "object",
+     "required": [
+      "enabled",
+      "per_chapter",
+      "options",
+      "format"
+     ],
+     "properties": {
+      "enabled": {
+       "type": "boolean"
+      },
+      "per_chapter": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "options": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "format": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "cases": {
+     "type": "object",
+     "required": [
+      "enabled"
+     ],
+     "properties": {
+      "enabled": {
+       "type": "boolean"
+      }
+     },
+     "additionalProperties": false
+    },
+    "exercises": {
+     "type": "object",
+     "required": [
+      "enabled"
+     ],
+     "properties": {
+      "enabled": {
+       "type": "boolean"
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "additionalProperties": false
+  },
+  "context": {
+   "type": "object",
+   "required": [
+    "country",
+    "curriculum_standards",
+    "frameworks"
+   ],
+   "properties": {
+    "country": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "curriculum_standards": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "frameworks": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "references": {
+   "type": "object",
+   "required": [
+    "style",
+    "style_note",
+    "recency",
+    "evidence_cutoff"
+   ],
+   "properties": {
+    "style": {
+     "enum": [
+      "vancouver",
+      "apa",
+      "harvard",
+      "ieee",
+      "other"
+     ]
+    },
+    "style_note": {
+     "type": "string"
+    },
+    "recency": {
+     "type": [
+      "object",
+      "null"
+     ],
+     "required": [
+      "min_share_since"
+     ],
+     "properties": {
+      "min_share_since": {
+       "type": "object",
+       "required": [
+        "year",
+        "share"
+       ],
+       "properties": {
+        "year": {
+         "type": "integer"
+        },
+        "share": {
+         "type": "number",
+         "minimum": 0,
+         "maximum": 1
+        }
+       },
+       "additionalProperties": false
+      }
+     },
+     "additionalProperties": false
+    },
+    "evidence_cutoff": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+   },
+   "additionalProperties": false
+  },
+  "constraints": {
+   "type": "object",
+   "required": [
+    "must_keep",
+    "must_not_change",
+    "isbn",
+    "publisher",
+    "deadline"
+   ],
+   "properties": {
+    "must_keep": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "must_not_change": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "isbn": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "publisher": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "deadline": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+   },
+   "additionalProperties": false
+  },
+  "output": {
+   "type": "object",
+   "required": [
+    "formats",
+    "page_size",
+    "fonts",
+    "branding"
+   ],
+   "properties": {
+    "formats": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "docx",
+       "pdf"
+      ]
+     },
+     "minItems": 1
+    },
+    "page_size": {
+     "enum": [
+      "A4",
+      "Letter",
+      "B5"
+     ]
+    },
+    "fonts": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "branding": {
+     "type": "object",
+     "required": [
+      "logo",
+      "colours"
+     ],
+     "properties": {
+      "logo": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "colours": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "pattern": "^#?[0-9A-Fa-f]{6}$"
+       }
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "additionalProperties": false
+  },
+  "domain_pillars": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "name",
+     "weight",
+     "reviewer_ids"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "name": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "weight": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 40
+     },
+     "reviewer_ids": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+      },
+      "minItems": 1
+     }
+    },
+    "additionalProperties": false
+   },
+   "minItems": 1,
+   "maxItems": 4
+  },
+  "answers": {
+   "type": "object",
+   "required": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "properties": {
+    "A": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "B": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "C": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "D": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "E": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "F": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "G": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "H": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "I": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "J": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "K": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "L": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    },
+    "M": {
+     "type": "object",
+     "required": [
+      "provenance",
+      "note"
+     ],
+     "properties": {
+      "provenance": {
+       "enum": [
+        "user",
+        "default-confirmed"
+       ]
+      },
+      "note": {
+       "type": "string"
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "additionalProperties": false
+  },
+  "unresolved": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ },
+ "additionalProperties": false
+}

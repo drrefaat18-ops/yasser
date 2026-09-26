@@ -1,0 +1,98 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "rubric_digest",
+  "pillars",
+  "caps_applied",
+  "total",
+  "review_kind"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "rubric_digest": {
+   "type": "string",
+   "pattern": "^[0-9a-f]{64}$"
+  },
+  "pillars": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "score",
+     "applicable",
+     "evidence_finding_ids"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "score": {
+      "type": [
+       "number",
+       "null"
+      ],
+      "minimum": 1,
+      "maximum": 10
+     },
+     "applicable": {
+      "type": "boolean"
+     },
+     "evidence_finding_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "additionalProperties": false
+   },
+   "minItems": 1
+  },
+  "caps_applied": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "pillar_id",
+     "cap_index",
+     "finding_ids"
+    ],
+    "properties": {
+     "pillar_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "cap_index": {
+      "type": "integer",
+      "minimum": 0
+     },
+     "finding_ids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "total": {
+   "type": "number",
+   "minimum": 0,
+   "maximum": 100
+  },
+  "review_kind": {
+   "enum": [
+    "self",
+    "independent"
+   ]
+  }
+ },
+ "additionalProperties": false
+}

@@ -1,0 +1,118 @@
+{
+ "schema_version": 1,
+ "project_id": "fixture-book",
+ "paths": {
+  "chapters": "chapters",
+  "chapter_glob": "ch*.md",
+  "front_matter": null,
+  "glossary": null,
+  "errata": null,
+  "figures": "figures",
+  "normalized_source": "ingest/normalized.md",
+  "assets": "ingest/assets",
+  "asset_link_prefix": "",
+  "allowed_asset_roots": [
+   "ingest/assets"
+  ]
+ },
+ "ingest": {
+  "heading_rules": [],
+  "toc_start_pattern": null,
+  "toc_entry_pattern": null,
+  "toc_end_pattern": null,
+  "drop_source_toc": false
+ },
+ "chapter_heading_pattern": null,
+ "sections": [
+  {
+   "id": "refs",
+   "label": "References",
+   "role": "references",
+   "required": true,
+   "boxed": false
+  }
+ ],
+ "callouts": [],
+ "perspectives": {
+  "enabled": false,
+  "callout_id": null,
+  "items": [],
+  "balance_tolerance": null
+ },
+ "learning_objectives": {
+  "enabled": false,
+  "id_pattern": null,
+  "min": null,
+  "max": null,
+  "discouraged_verbs": null
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": false,
+   "count": null,
+   "option_labels": [],
+   "option_display_labels": [],
+   "allow_other_labels": false,
+   "key_balance": null,
+   "max_run": null,
+   "rationale_required": false,
+   "answers_section_role": null
+  },
+  "case_question": {
+   "required": false,
+   "label": null
+  }
+ },
+ "citations": {
+  "style": "numeric-bracket",
+  "pattern": "\\[(\\d+)\\]"
+ },
+ "references": {
+  "section_role": "references",
+  "entry_pattern": "^(\\d+)\\. ",
+  "identifier_patterns": [
+   "10\\.\\d{4,}/\\S+"
+  ],
+  "no_doi_policy": {
+   "allowed_types": [],
+   "requires_url": true
+  },
+  "title_match": {
+   "mode": "heuristic",
+   "words": 6,
+   "threshold": 0.6
+  },
+  "original_title_marker": null,
+  "providers": {}
+ },
+ "locale_overrides": {},
+ "glossary": {
+  "enabled": false,
+  "term_syntax": null,
+  "excluded_callout_ids": [],
+  "minimum_terms": null
+ },
+ "readability": {
+  "mean_sentence_max": null,
+  "long_sentence_words": null,
+  "long_share_max": null
+ },
+ "budgets": {
+  "tolerance": 0.1,
+  "total": null,
+  "front_matter": null
+ },
+ "banned_terms": [],
+ "errata": {
+  "enabled": false,
+  "status_column": null,
+  "open_values": [],
+  "closed_values": []
+ },
+ "figures": {
+  "caption_pattern": null
+ },
+ "front_matter": {
+  "toc_insert_before_section_id": null
+ }
+}

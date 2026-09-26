@@ -1,0 +1,49 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "files"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "files": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "path",
+     "original",
+     "format",
+     "sha256"
+    ],
+    "properties": {
+     "path": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "original": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "format": {
+      "enum": [
+       "docx",
+       "pdf",
+       "md",
+       "other"
+      ]
+     },
+     "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+     }
+    },
+    "additionalProperties": false
+   },
+   "minItems": 1
+  }
+ },
+ "additionalProperties": false
+}

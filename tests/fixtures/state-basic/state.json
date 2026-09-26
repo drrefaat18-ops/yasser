@@ -1,0 +1,65 @@
+{
+ "schema_version": 1,
+ "project_id": "fixture-book",
+ "receipts": {
+  "new": {
+   "stage": "new",
+   "status": "ok",
+   "args": {
+    "slug": "fixture-book"
+   },
+   "inputs": {},
+   "outputs": {},
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  },
+  "intake": {
+   "stage": "intake",
+   "status": "ok",
+   "args": {},
+   "inputs": {
+    "../../harness/rubric_core.json": "0",
+    "../../harness/locale/en.json": "0",
+    "../../harness/presets/ltr-textbook.json": "0"
+   },
+   "outputs": {
+    "brief.json": "0",
+    "rubric.json": "0",
+    "template.json": "0",
+    "theme.json": "0"
+   },
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  },
+  "ingest": {
+   "stage": "ingest",
+   "status": "ok",
+   "args": {},
+   "inputs": {
+    "template.json": "0"
+   },
+   "outputs": {
+    "ingest/normalized.md": "0"
+   },
+   "tool_sha": "0",
+   "time": "2026-09-25T00:00:00Z"
+  }
+ },
+ "approvals": {
+  "intake": {
+   "kind": "intake",
+   "files": {
+    "brief.json": "0",
+    "rubric.json": "0",
+    "template.json": "0",
+    "theme.json": "0"
+   },
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "0",
+   "approved_at": "2026-09-25T00:00:00Z",
+   "approved_by": "user"
+  }
+ },
+ "active_run": null,
+ "aborts": []
+}

@@ -1,0 +1,58 @@
+{
+ "schema_version": 1,
+ "tag": "en",
+ "script": "Latn",
+ "direction": "ltr",
+ "normalisation": {
+  "compare": [
+   "NFC",
+   "casefold"
+  ],
+  "count": [
+   "NFC"
+  ]
+ },
+ "tokenizer": {
+  "kind": "ascii-word",
+  "pattern": "[A-Za-z0-9][A-Za-z0-9'’\\-–./%]*"
+ },
+ "sentence_terminators": [
+  ".",
+  "!",
+  "?"
+ ],
+ "discouraged_objective_verbs": [
+  "understand"
+ ],
+ "banned_terms": [],
+ "readability": {
+  "mean_sentence_max": 16,
+  "long_sentence_words": 28,
+  "long_share_max": 0.05
+ },
+ "chapter_heading_pattern": "^# Chapter (?P<num>\\d+): (?P<title>.+)$",
+ "figure_caption_pattern": "Figure {chapter}.{n}",
+ "default_labels": {
+  "contents": "Contents",
+  "chapter": "Chapter",
+  "part": "Part",
+  "glossary": "Glossary",
+  "figure": "Figure",
+  "table": "Table",
+  "question_prefix": "Q",
+  "objective_prefix": "LO",
+  "update_toc_instruction": "Right-click and choose Update Field to build the table of contents.",
+  "learning_objectives": "Learning Objectives",
+  "references": "References",
+  "assessment": "Self-Assessment",
+  "answers": "Answers and Rationales",
+  "how_to_use": "How to Use This Book",
+  "takeaways": "Key Takeaways"
+ },
+ "digits": {
+  "accepted": [
+   "western"
+  ],
+  "output": "western"
+ }
+}

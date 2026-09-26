@@ -1,0 +1,106 @@
+{
+ "schema_version": 1,
+ "core_version": 1,
+ "pillars": [
+  {
+   "id": "G1",
+   "kind": "fixed",
+   "name": "Content accuracy",
+   "weight": 20,
+   "owns": "every factually wrong statement, wrong number, wrong definition, and every claim that its cited reference does not support (claim-support mismatch), anywhere in the book",
+   "anchors": {
+    "9-10": {
+     "text": "No factual errors or claim-support mismatches found on a full read.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Isolated minor inaccuracies that do not mislead the reader.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Several errors, or one that would mislead a reader acting on it.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Frequent or dangerous errors; the text cannot be trusted as written.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   }
+  },
+  {
+   "id": "G2",
+   "kind": "fixed",
+   "name": "Pedagogical design and clarity",
+   "weight": 20,
+   "owns": "objectives, structure, progression, cognitive load, readability, figures' teaching value",
+   "anchors": {
+    "9-10": {
+     "text": "Clear objectives, logical progression and readable prose pitched at the stated audience throughout.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Sound structure with some uneven chapters or dense passages.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Objectives or progression are weak in many chapters; readability often above the audience.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "No usable learning design; structure or level does not fit the audience.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   }
+  },
+  {
+   "id": "G3",
+   "kind": "fixed",
+   "name": "Assessment quality",
+   "weight": 10,
+   "owns": "questions, distractors, rationales, key balance, alignment to objectives",
+   "anchors": {
+    "9-10": {
+     "text": "Every item is aligned to an objective, with plausible distractors and full rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Mostly sound items; some weak distractors or thin rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Many items misaligned, trivially guessable or without rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Assessment is missing, wrong-keyed or unusable.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   }
+  },
+  {
+   "id": "G4",
+   "kind": "fixed",
+   "name": "Sources and currency",
+   "weight": 10,
+   "owns": "reference existence and metadata, recency against brief.references.recency, evidence hierarchy, citation coverage (claims that need a citation and have none)",
+   "anchors": {
+    "9-10": {
+     "text": "Every reference exists with correct metadata; recency target met; claims needing a citation have one.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "A few metadata slips or uncited claims; recency close to target.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Many unverifiable references, outdated evidence or uncited claims.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "References largely missing, invented or obsolete.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   }
+  }
+ ]
+}

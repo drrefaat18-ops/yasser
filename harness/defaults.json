@@ -1,0 +1,14 @@
+{
+ "schema_version": 1,
+ "references": {
+  "providers": {
+   "crossref": {
+    "endpoint": "https://api.crossref.org/works/",
+    "user_agent": "rework-verify/1.0",
+    "retries": 5,
+    "timeout_s": 15,
+    "backoff_s": 3
+   }
+  }
+ }
+}

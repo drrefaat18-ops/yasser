@@ -1,0 +1,317 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "project",
+  "provenance",
+  "checks",
+  "chapters",
+  "words",
+  "references",
+  "verify_refs",
+  "images",
+  "docx",
+  "pdf",
+  "hashes",
+  "volatile_excluded"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "project": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "provenance": {
+   "type": "object",
+   "required": [
+    "captured_from",
+    "tool_sha"
+   ],
+   "properties": {
+    "captured_from": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "tool_sha": {
+     "type": "string",
+     "pattern": "\\S"
+    }
+   },
+   "additionalProperties": false
+  },
+  "checks": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "target",
+     "status",
+     "measured"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "target": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "status": {
+      "enum": [
+       "pass",
+       "fail",
+       "not_applicable"
+      ]
+     },
+     "measured": {
+      "type": "object"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "chapters": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "file",
+     "title"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "file": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "title": {
+      "type": "string",
+      "pattern": "\\S"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "words": {
+   "type": "object",
+   "required": [
+    "chapters",
+    "front_matter",
+    "total"
+   ],
+   "properties": {
+    "chapters": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "integer"
+     }
+    },
+    "front_matter": {
+     "type": "integer"
+    },
+    "total": {
+     "type": "integer"
+    }
+   },
+   "additionalProperties": false
+  },
+  "references": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object",
+    "required": [
+     "count",
+     "with_doi",
+     "without_doi"
+    ],
+    "properties": {
+     "count": {
+      "type": "integer"
+     },
+     "with_doi": {
+      "type": "integer"
+     },
+     "without_doi": {
+      "type": "integer"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "verify_refs": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "chapter",
+     "n",
+     "status"
+    ],
+    "properties": {
+     "chapter": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "n": {
+      "type": "integer"
+     },
+     "status": {
+      "type": "string",
+      "pattern": "\\S"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "images": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "path",
+     "width_px",
+     "height_px",
+     "dpi"
+    ],
+    "properties": {
+     "path": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "width_px": {
+      "type": "integer"
+     },
+     "height_px": {
+      "type": "integer"
+     },
+     "dpi": {
+      "type": [
+       "array",
+       "null"
+      ],
+      "items": {
+       "type": "number"
+      }
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "docx": {
+   "type": "object",
+   "required": [
+    "parts",
+    "paragraph_styles",
+    "images",
+    "toc_field",
+    "core_properties"
+   ],
+   "properties": {
+    "parts": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "paragraph_styles": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "integer"
+     }
+    },
+    "images": {
+     "type": "integer"
+    },
+    "toc_field": {
+     "type": "boolean"
+    },
+    "core_properties": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "pdf": {
+   "type": "object",
+   "required": [
+    "pages",
+    "bookmarks"
+   ],
+   "properties": {
+    "pages": {
+     "type": "integer"
+    },
+    "bookmarks": {
+     "type": "array",
+     "items": {
+      "type": "object"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "hashes": {
+   "type": "object",
+   "required": [
+    "assembled_md",
+    "docx",
+    "chapters",
+    "docx_parts"
+   ],
+   "properties": {
+    "assembled_md": {
+     "type": "string"
+    },
+    "docx": {
+     "type": "string"
+    },
+    "chapters": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    },
+    "docx_parts": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    }
+   },
+   "additionalProperties": false
+  },
+  "volatile_excluded": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "field",
+     "reason"
+    ],
+    "properties": {
+     "field": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "reason": {
+      "type": "string",
+      "pattern": "\\S"
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

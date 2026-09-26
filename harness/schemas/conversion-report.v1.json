@@ -1,0 +1,396 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "converter",
+  "source_formats",
+  "structures"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "converter": {
+   "enum": [
+    "docx-native",
+    "markitdown"
+   ]
+  },
+  "source_formats": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "minItems": 1
+  },
+  "structures": {
+   "type": "object",
+   "required": [
+    "headings",
+    "tables",
+    "figures",
+    "equations",
+    "footnotes",
+    "text"
+   ],
+   "properties": {
+    "headings": {
+     "type": "object",
+     "required": [
+      "source_count",
+      "output_count",
+      "status"
+     ],
+     "properties": {
+      "source_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "output_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "status": {
+       "enum": [
+        "ok",
+        "lossy",
+        "lost",
+        "not_measurable"
+       ]
+      },
+      "omitted": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "required": [
+         "reason",
+         "chars",
+         "line_start",
+         "line_end"
+        ],
+        "properties": {
+         "reason": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "chars": {
+          "type": "integer"
+         },
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      }
+     },
+     "additionalProperties": false
+    },
+    "tables": {
+     "type": "object",
+     "required": [
+      "source_count",
+      "output_count",
+      "status"
+     ],
+     "properties": {
+      "source_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "output_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "status": {
+       "enum": [
+        "ok",
+        "lossy",
+        "lost",
+        "not_measurable"
+       ]
+      },
+      "omitted": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "required": [
+         "reason",
+         "chars",
+         "line_start",
+         "line_end"
+        ],
+        "properties": {
+         "reason": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "chars": {
+          "type": "integer"
+         },
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      }
+     },
+     "additionalProperties": false
+    },
+    "figures": {
+     "type": "object",
+     "required": [
+      "source_count",
+      "output_count",
+      "status"
+     ],
+     "properties": {
+      "source_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "output_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "status": {
+       "enum": [
+        "ok",
+        "lossy",
+        "lost",
+        "not_measurable"
+       ]
+      },
+      "omitted": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "required": [
+         "reason",
+         "chars",
+         "line_start",
+         "line_end"
+        ],
+        "properties": {
+         "reason": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "chars": {
+          "type": "integer"
+         },
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      }
+     },
+     "additionalProperties": false
+    },
+    "equations": {
+     "type": "object",
+     "required": [
+      "source_count",
+      "output_count",
+      "status"
+     ],
+     "properties": {
+      "source_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "output_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "status": {
+       "enum": [
+        "ok",
+        "lossy",
+        "lost",
+        "not_measurable"
+       ]
+      },
+      "omitted": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "required": [
+         "reason",
+         "chars",
+         "line_start",
+         "line_end"
+        ],
+        "properties": {
+         "reason": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "chars": {
+          "type": "integer"
+         },
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      }
+     },
+     "additionalProperties": false
+    },
+    "footnotes": {
+     "type": "object",
+     "required": [
+      "source_count",
+      "output_count",
+      "status"
+     ],
+     "properties": {
+      "source_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "output_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "status": {
+       "enum": [
+        "ok",
+        "lossy",
+        "lost",
+        "not_measurable"
+       ]
+      },
+      "omitted": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "required": [
+         "reason",
+         "chars",
+         "line_start",
+         "line_end"
+        ],
+        "properties": {
+         "reason": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "chars": {
+          "type": "integer"
+         },
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      }
+     },
+     "additionalProperties": false
+    },
+    "text": {
+     "type": "object",
+     "required": [
+      "source_count",
+      "output_count",
+      "status"
+     ],
+     "properties": {
+      "source_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "output_count": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "status": {
+       "enum": [
+        "ok",
+        "lossy",
+        "lost",
+        "not_measurable"
+       ]
+      },
+      "omitted": {
+       "type": "array",
+       "items": {
+        "type": "object",
+        "required": [
+         "reason",
+         "chars",
+         "line_start",
+         "line_end"
+        ],
+        "properties": {
+         "reason": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "chars": {
+          "type": "integer"
+         },
+         "line_start": {
+          "type": "integer"
+         },
+         "line_end": {
+          "type": "integer"
+         }
+        },
+        "additionalProperties": false
+       }
+      }
+     },
+     "additionalProperties": false
+    }
+   },
+   "additionalProperties": false
+  }
+ },
+ "additionalProperties": false
+}

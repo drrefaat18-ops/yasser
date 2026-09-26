@@ -1,0 +1,92 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "findings"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "findings": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "pillar_id",
+     "severity",
+     "tags",
+     "location",
+     "claim",
+     "evidence",
+     "source",
+     "fix_hint"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^F-\\d{3,}$"
+     },
+     "pillar_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "severity": {
+      "enum": [
+       "blocker",
+       "major",
+       "minor"
+      ]
+     },
+     "tags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "location": {
+      "type": "object",
+      "required": [
+       "file",
+       "line_start",
+       "line_end"
+      ],
+      "properties": {
+       "file": {
+        "type": "string",
+        "pattern": "\\S"
+       },
+       "line_start": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "line_end": {
+        "type": "integer",
+        "minimum": 1
+       }
+      },
+      "additionalProperties": false
+     },
+     "claim": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "evidence": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "source": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "fix_hint": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

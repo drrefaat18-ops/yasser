@@ -1,0 +1,230 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "project_id",
+  "core_version",
+  "pillars",
+  "provenance"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "project_id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "core_version": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "pillars": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "kind",
+     "name",
+     "description",
+     "weight",
+     "anchors",
+     "hard_caps",
+     "reviewer_ids",
+     "applicable"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "kind": {
+      "enum": [
+       "fixed",
+       "domain"
+      ]
+     },
+     "name": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "description": {
+      "type": "string"
+     },
+     "weight": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+     },
+     "anchors": {
+      "type": "object",
+      "required": [
+       "9-10",
+       "7-8",
+       "4-6",
+       "1-3"
+      ],
+      "properties": {
+       "9-10": {
+        "type": "object",
+        "required": [
+         "text",
+         "evidence_required"
+        ],
+        "properties": {
+         "text": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "evidence_required": {
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       },
+       "7-8": {
+        "type": "object",
+        "required": [
+         "text",
+         "evidence_required"
+        ],
+        "properties": {
+         "text": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "evidence_required": {
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       },
+       "4-6": {
+        "type": "object",
+        "required": [
+         "text",
+         "evidence_required"
+        ],
+        "properties": {
+         "text": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "evidence_required": {
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       },
+       "1-3": {
+        "type": "object",
+        "required": [
+         "text",
+         "evidence_required"
+        ],
+        "properties": {
+         "text": {
+          "type": "string",
+          "pattern": "\\S"
+         },
+         "evidence_required": {
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     },
+     "hard_caps": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": [
+        "trigger",
+        "max_score",
+        "description"
+       ],
+       "properties": {
+        "trigger": {
+         "type": "object",
+         "required": [
+          "severity",
+          "min_count",
+          "tag"
+         ],
+         "properties": {
+          "severity": {
+           "enum": [
+            "blocker",
+            "major",
+            "minor"
+           ]
+          },
+          "min_count": {
+           "type": "integer",
+           "minimum": 1
+          },
+          "tag": {
+           "type": [
+            "string",
+            "null"
+           ]
+          }
+         },
+         "additionalProperties": false
+        },
+        "max_score": {
+         "type": "number",
+         "minimum": 1,
+         "maximum": 10
+        },
+        "description": {
+         "type": "string"
+        }
+       },
+       "additionalProperties": false
+      }
+     },
+     "reviewer_ids": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+      },
+      "minItems": 1
+     },
+     "applicable": {
+      "type": "boolean"
+     }
+    },
+    "additionalProperties": false
+   },
+   "minItems": 5
+  },
+  "provenance": {
+   "type": "object",
+   "required": [
+    "generated_by",
+    "from_brief_sha256",
+    "edited_by_user"
+   ],
+   "properties": {
+    "generated_by": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "from_brief_sha256": {
+     "type": "string",
+     "pattern": "^[0-9a-f]{64}$"
+    },
+    "edited_by_user": {
+     "type": "boolean"
+    }
+   },
+   "additionalProperties": false
+  }
+ },
+ "additionalProperties": false
+}

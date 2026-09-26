@@ -1,0 +1,50 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "target",
+  "checks"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "target": {
+   "type": "string",
+   "pattern": "\\S"
+  },
+  "checks": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "status",
+     "message",
+     "measured"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "status": {
+      "enum": [
+       "pass",
+       "fail",
+       "not_applicable"
+      ]
+     },
+     "message": {
+      "type": "string"
+     },
+     "measured": {
+      "type": "object"
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

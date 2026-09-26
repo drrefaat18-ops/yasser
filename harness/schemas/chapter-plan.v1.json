@@ -1,0 +1,113 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "project_id",
+  "chapters",
+  "parts",
+  "dropped"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "project_id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "chapters": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "file",
+     "title",
+     "word_budget",
+     "part_id",
+     "source_refs"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "file": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "title": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "word_budget": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "part_id": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "source_refs": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "additionalProperties": false
+   },
+   "minItems": 1
+  },
+  "parts": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "label",
+     "title"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+     },
+     "label": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "title": {
+      "type": "string",
+      "pattern": "\\S"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "dropped": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "source_unit",
+     "reason"
+    ],
+    "properties": {
+     "source_unit": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "reason": {
+      "type": "string",
+      "pattern": "\\S"
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ },
+ "additionalProperties": false
+}

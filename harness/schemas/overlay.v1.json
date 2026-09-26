@@ -1,0 +1,62 @@
+{
+ "type": "object",
+ "required": [
+  "schema_version",
+  "id",
+  "base_persona",
+  "scope",
+  "criteria",
+  "exclusions",
+  "evidence_expectations",
+  "pillar_ids"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": 1
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "base_persona": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9-]{1,62}$"
+  },
+  "scope": {
+   "type": "string",
+   "pattern": "\\S"
+  },
+  "criteria": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "\\S"
+   },
+   "maxItems": 12
+  },
+  "exclusions": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "\\S"
+   },
+   "maxItems": 8
+  },
+  "evidence_expectations": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "\\S"
+   },
+   "maxItems": 8
+  },
+  "pillar_ids": {
+   "type": "array",
+   "items": {
+    "type": "string",
+    "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$"
+   }
+  }
+ },
+ "additionalProperties": false
+}
