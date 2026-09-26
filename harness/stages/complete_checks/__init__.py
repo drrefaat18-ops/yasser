@@ -4,12 +4,14 @@ from harness.stages.complete_checks.common import fixes_rows, review_header, sco
 from harness.stages.complete_checks.design import design
 from harness.stages.complete_checks.evaluate import evaluate
 from harness.stages.complete_checks.intake import intake, overlay_cap_problems, rubric_problems
+from harness.stages.complete_checks.rework import rework
 
-# (project, active_run, unit) -> (extras, problems). rework and translate join in Tasks 8.3 and 11.x.
+# (project, active_run, unit) -> (extras, problems). translate joins in Task 11.x.
 CHECKS = {
     "intake": lambda p, ar, unit: intake(p),
     "evaluate": lambda p, ar, unit: evaluate(p, ar),
     "design": lambda p, ar, unit: design(p, ar),
+    "rework": lambda p, ar, unit: rework(p, ar, unit),
     "audit": lambda p, ar, unit: audit(p, ar),
 }
 

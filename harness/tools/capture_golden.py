@@ -543,6 +543,32 @@ def harness_reference_counts(cfg):
     return out
 
 
+REF_STATUS = {None: "ok", "REF-NOT-FOUND": "not_found", "REF-TITLE-MISMATCH": "title_mismatch",
+              "REF-NO-DOI-DISALLOWED": "no_doi_disallowed"}
+
+
+def harness_refs(project_dir, layout, paths):
+    """verify_refs rows from the gated harness tool (Task 8.3) when the repo has it, else the legacy project tool."""
+    repo = pathlib.Path(project_dir).resolve().parents[1]
+    tool = repo / "harness/tools/verify_refs.py"
+    if not tool.is_file():
+        return refs(project_dir, layout, paths)
+    r = subprocess.run([sys.executable, str(tool), "--project", str(project_dir), "--json"], cwd=repo,
+                       capture_output=True, text=True, encoding="utf-8")
+    if r.returncode == 1 and not r.stdout.strip():
+        raise GateRefused(r.stderr.strip()[-300:])
+    if r.returncode not in (0, 1):
+        raise LayoutError(f"verify_refs exit {r.returncode}: {r.stderr.strip()[-300:]}")
+    rows = []
+    for chapter, found in json.loads(r.stdout)["chapters"].items():
+        for x in found:
+            if x["check_id"] == "REF-ERROR":   # a flaky result is never frozen (core §9.1)
+                raise NetworkError(f"{chapter}: reference {x['n']}: {x.get('error')}")
+            status = "no_doi_allowed" if x["doi_status"] == "no_doi" and x["check_id"] is None else REF_STATUS[x["check_id"]]
+            rows.append({"chapter": chapter, "n": x["n"], "status": status})
+    return rows
+
+
 def _git_sha(repo, rel):
     r = subprocess.run(["git", "log", "-1", "--format=%H", "--", rel], cwd=repo, capture_output=True, text=True)
     if r.returncode != 0 or not r.stdout.strip():
@@ -568,7 +594,7 @@ def capture_harness(project_dir, *, slug, run_refs=True, docx_from="build"):
         "chapters": _chapter_list(project_dir, paths),
         "words": words,
         "references": harness_reference_counts(cfg),
-        "verify_refs": refs(project_dir, layout, paths) if run_refs else None,
+        "verify_refs": harness_refs(project_dir, layout, paths) if run_refs else None,
         **_tail(project_dir, layout, paths, _git_sha(project_dir.resolve().parents[1], "harness/tools")),
     }
 

@@ -136,13 +136,15 @@
  },
  "references": {
   "section_role": "references",
-  "entry_pattern": "^(\\d+)\\. ",
+  "entry_pattern": "^(\\d+)\\. (.+)$",
   "identifier_patterns": [
    "10\\.\\d{4,}/\\S+"
   ],
   "no_doi_policy": {
-   "allowed_types": [],
-   "requires_url": true
+   "allowed_types": [
+    "book"
+   ],
+   "requires_url": false
   },
   "title_match": {
    "mode": "heuristic",
@@ -150,7 +152,10 @@
    "threshold": 0.6
   },
   "original_title_marker": null,
-  "providers": {}
+  "providers": {},
+  "type_patterns": {
+   "book": "(?i)\\b(royal society|wiley)\\b"
+  }
  },
  "locale_overrides": {},
  "glossary": {

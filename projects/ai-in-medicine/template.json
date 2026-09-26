@@ -255,7 +255,12 @@
    "threshold": 0.6
   },
   "original_title_marker": null,
-  "providers": {}
+  "providers": {},
+  "type_patterns": {
+   "law": "\\bLaw No\\.",
+   "regulation": "\\bRegulation\\b",
+   "guidance": "(?i)\\b(guidance|guideline|guidelines|recommendations|framework|standardising)\\b"
+  }
  },
  "locale_overrides": {},
  "glossary": {

@@ -577,6 +577,13 @@
       }
      },
      "additionalProperties": false
+    },
+    "type_patterns": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string",
+      "pattern": "\\S"
+     }
     }
    },
    "additionalProperties": false

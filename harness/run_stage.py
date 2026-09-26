@@ -56,8 +56,13 @@ def cmd_complete(project, a):
     reasons = a.subagent or []
     if any(not r.strip() for r in reasons):
         raise ValueError("--subagent needs a non-empty reason")
-    if len(reasons) > MAX_SUBAGENTS:   # ponytail: per complete call; a unit stage's cap across units is STEP 8's
-        raise state.GateError("SUBAGENT-CAP", f"{len(reasons)} subagents logged; Rule 11 allows at most {MAX_SUBAGENTS}")
+    earlier = 0
+    if a.stage in contracts.UNIT_STAGES:   # S7-10: the cap covers the whole stage, across its unit receipts
+        units = st["receipts"].get(a.stage, {}).get("units", {})
+        earlier = sum(len(r.get("subagents", [])) for u, r in units.items() if u != a.unit)
+    if earlier + len(reasons) > MAX_SUBAGENTS:
+        raise state.GateError("SUBAGENT-CAP", f"{earlier + len(reasons)} subagents logged for {a.stage} "
+                                              f"({earlier} in earlier units); Rule 11 allows at most {MAX_SUBAGENTS}")
     if a.stage not in complete_checks.CHECKS:
         raise state.GateError("NOT-IMPLEMENTED", f"{a.stage} has no completion checks yet (STEP 8/11)")
     extras, probs = complete_checks.CHECKS[a.stage](project, st["active_run"], a.unit)

@@ -109,10 +109,11 @@ def files(project, stage_id, unit=None):
         if tr:
             common += (_glob(project, "translation", "*.md") + ["trace/translation-map.json", "termbase.json"]
                        + _optional(project, "termbase-additions.json"))
-        if unit is not None:
-            return common, [_chapter_file(project, unit)]
+        if unit is not None:   # a unit is checked against the glossary too (GLOSS-MISSING), so it is an input
+            gl = [f"{p['chapters']}/{p['glossary']}"] if p.get("glossary") else []
+            return common + gl, [_chapter_file(project, unit)]
         outs = _chapter_files(project) + _book_files(project) + _glob(project, f"{p['figures']}/src")
-        outs += [f"{p['figures']}/figures.json"]
+        outs += _optional(project, f"{p['figures']}/figures.json")   # required once the figure system ships (STEP 9)
         if tr:
             outs += ["trace/source-target-map.json", "terms/rework-proposals.json"]
         return common, outs

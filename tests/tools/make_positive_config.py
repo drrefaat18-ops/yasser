@@ -146,6 +146,9 @@ def template(slug):
                                "rationale_required": True, "answers_section_role": "answers"},
                        "case_question": {"required": True, "label": "Case Question."}}
     t["citations"] = {"style": "numeric-bracket", "pattern": "\\[(\\d+(?:\\s*[,–-]\\s*\\d+)*)\\]"}
+    t["references"] = dict(t["references"], entry_pattern=r"^(\d+)\. (.+)$",
+                           no_doi_policy={"allowed_types": ["book"], "requires_url": False},
+                           type_patterns={"book": r"(?i)\b(royal society|wiley)\b"})
     t["glossary"] = {"enabled": True, "term_syntax": "bold", "excluded_callout_ids": ["viewpoints"], "minimum_terms": 3}
     t["readability"] = {"mean_sentence_max": 16, "long_sentence_words": 28, "long_share_max": 0.05}
     t["budgets"] = {"tolerance": 0.2, "total": {"min": 300, "max": 800}, "front_matter": 50}

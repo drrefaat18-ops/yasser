@@ -18,6 +18,8 @@ HARNESS = [
     {"path": "harness/tools/check_book.py", "gate": "rework", "why_ungated": None},
     {"path": "harness/tools/assemble.py", "gate": "build", "why_ungated": None},
     {"path": "harness/tools/build_book.py", "gate": "build", "why_ungated": None},
+    {"path": "harness/tools/verify_refs.py", "gate": "rework", "why_ungated": None},
+    {"path": "harness/tools/renumber_refs.py", "gate": "rework", "why_ungated": None},
     {"path": "harness/tools/leak_scan.py", "gate": None, "why_ungated": "scans shared harness code, reads no project"},
     {"path": "harness/tools/capture_golden.py", "gate": None,
      "why_ungated": "read-only regression capture; still enforces the projects rule"},
