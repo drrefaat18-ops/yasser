@@ -1,5 +1,5 @@
 """`complete audit` (core §2.2 audit row, §5.4, §7.5)."""
-import json, subprocess
+import json, re, subprocess
 from harness import hashing, state
 from harness.stages import contracts
 from harness.stages.complete_checks.common import findings_scorecard, review_header, table
@@ -25,12 +25,7 @@ def audit(project, active_run):
     # ruling (step7-rulings): the audited inputs are identified by the commit Codex reviewed plus the saved review
     extras["codex_audited_inputs"] = {"reviewed_commit": head.get("reviewed_commit", ""),
                                       "review_sha256": hashing.hash_file(review) if review.is_file() else ""}
-    report = project / "build" / "build-report.json"
-    unverified = json.loads(report.read_text(encoding="utf-8")).get("chem_unverified", []) if report.is_file() else []
-    ruled = {r["ID"] for r in table(project / "audit" / "fixes.md", "ID")
-             if r.get("status", "").strip().lower() == "ruled by user" and r.get("DEC")}
-    probs += [f"CHEM-UNVERIFIED {fid}: needs a later online build or a `ruled by user` fixes row with a DEC"
-              for fid in unverified if fid not in ruled]
+    probs += chem_unverified_problems(project)
     # ponytail: TB-PROPOSAL-OPEN (translation contract §3.3) is added with the termbase in Task 11.x
     return extras, probs
 
@@ -46,3 +41,21 @@ def reviewed_commit_problems(project, commit, rels):
     untracked = git("ls-files", "--others", "--exclude-standard", "--", *rels).stdout.split()
     return [f"AUDIT-COMMIT {f}: differs from reviewed_commit {commit[:12]}; Codex did not review this content"
             for f in changed + untracked]
+
+
+def chem_unverified_problems(project):
+    """Core §7.5: every figure the build left CHEM-UNVERIFIED needs a later online build (which clears it from
+    build-report.json) or an audit fixes.md row `ID = <figure id>`, status `ruled by user`, citing a DEC."""
+    report = project / "build" / "build-report.json"
+    unverified = json.loads(report.read_text(encoding="utf-8")).get("chem_unverified", []) if report.is_file() else []
+
+    def cites_dec(cell):
+        m = re.search(r"\bDEC-\d{3,}\b", cell or "")
+        try:
+            return bool(m) and bool(state.dec_row_hash(project, m.group(0)))
+        except state.GateError:   # the cited DEC must be a real row of the project's decisions.md
+            return False
+    ruled = {r["ID"] for r in table(project / "audit" / "fixes.md", "ID")
+             if r.get("status", "").strip().lower() == "ruled by user" and cites_dec(r.get("DEC"))}
+    return [f"CHEM-UNVERIFIED {fid}: needs a later online build or a `ruled by user` fixes row with a DEC"
+            for fid in unverified if fid not in ruled]
