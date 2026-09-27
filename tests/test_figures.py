@@ -1,6 +1,7 @@
 # tests/test_figures.py
 """Figure system (core §7; plan Task 9.1): deterministic renders, the figure checker, numbering, build gating."""
-import json, pathlib, tempfile, unittest
+import json, os, pathlib, tempfile, unittest
+from unittest import mock
 from harness import figures, preflight
 from harness.figures import check_figures, render
 from harness.tools import config
@@ -10,6 +11,7 @@ SLUG = "figures-book"
 P = ["--project", f"projects/{SLUG}"]
 BROWSER = preflight.check_browser("figures")["ok"]
 WORD = preflight.check_word()["ok"]
+CHEM = preflight.check_rdkit()["ok"]
 
 
 def load(p):
@@ -68,14 +70,14 @@ class Figures(unittest.TestCase):
             render.rasterise_svg(src, b, 14)
             self.assertEqual(a.read_bytes(), b.read_bytes())
 
-    @unittest.skipUnless(BROWSER, "no Edge or Chrome")
+    @unittest.skipUnless(BROWSER and CHEM, "needs Edge/Chrome and rdkit (the fixture has chemistry figures)")
     def test_clean_fixture_passes(self):
         with self.fixture() as root, tempfile.TemporaryDirectory() as t:
             rep = self.render_check(root / "projects" / SLUG, pathlib.Path(t, "out"))
             self.assertEqual(check_figures.blocking(rep), [])
             self.assertEqual({c["status"] for c in rep["checks"] if c["id"].startswith("FIG-")}, {"pass"})
 
-    @unittest.skipUnless(BROWSER, "no Edge or Chrome")
+    @unittest.skipUnless(BROWSER and CHEM, "needs Edge/Chrome and rdkit (the fixture has chemistry figures)")
     def test_each_fig_id(self):
         """One fixture defect per check ID (core §7.3) -> that ID fails and the checker CLI logic exits 1."""
         defects = {
@@ -117,6 +119,24 @@ class Figures(unittest.TestCase):
                 rep = check_figures.check(p, config.load(p), pathlib.Path(t, "out"))
                 self.assertIn("FIG-MANIFEST", {c["id"] for c in check_figures.blocking(rep)})
 
+    @unittest.skipUnless(CHEM and BROWSER, "needs rdkit and Edge/Chrome")
+    def test_invalid_smiles_fails_the_figure_check(self):
+        """TICKET STEP 9 exit: one invalid SMILES must fail (a blocking ID, so `run build` fails too)."""
+        with self.fixture() as root, tempfile.TemporaryDirectory() as t:
+            p = root / "projects" / SLUG
+            spec = p / "figures/src/caffeine.json"
+            spec.write_text(json.dumps(dict(load(spec), smiles="C1CC(")), encoding="utf-8")
+            rep = self.render_check(p, pathlib.Path(t, "out"))   # the invalid figure is not rendered; the rest are
+            self.assertEqual({c["id"] for c in check_figures.blocking(rep)}, {"CHEM-SMILES-INVALID"})
+            self.assertEqual(check_figures.ids_of(rep, "CHEM-SMILES-INVALID"), ["caffeine"])
+
+    @unittest.skipUnless(CHEM and BROWSER, "needs rdkit and Edge/Chrome")
+    def test_offline_chemistry_is_unverified_not_blocking(self):
+        with self.fixture() as root, tempfile.TemporaryDirectory() as t:
+            rep = self.render_check(root / "projects" / SLUG, pathlib.Path(t, "out"))
+            self.assertEqual(check_figures.blocking(rep), [])
+            self.assertEqual(check_figures.ids_of(rep, "CHEM-UNVERIFIED"), ["aspirin", "caffeine"])   # never `pass`
+
     def test_numbering_by_first_reference(self):
         with self.fixture() as root:
             cfg = config.load(root / "projects" / SLUG)
@@ -147,7 +167,7 @@ class Figures(unittest.TestCase):
                 finish_rework(root)
             self.assertIn("figures/figures.json", str(e.exception))
 
-    @unittest.skipUnless(BROWSER, "no Edge or Chrome")
+    @unittest.skipUnless(BROWSER and CHEM, "needs Edge/Chrome and rdkit (the fixture has chemistry figures)")
     def test_png_300dpi_at_text_width(self):
         with self.fixture() as root, tempfile.TemporaryDirectory() as t:
             p = root / "projects" / SLUG
@@ -161,21 +181,23 @@ class Figures(unittest.TestCase):
                     self.assertEqual(tuple(round(x) for x in im.info["dpi"]), (300, 300), name)   # ruling R2
                     self.assertEqual(im.size[0], want, name)
 
-    @unittest.skipUnless(BROWSER and WORD, "needs Edge/Chrome and Word COM")
+    @unittest.skipUnless(BROWSER and WORD and CHEM, "needs Edge/Chrome, Word COM and rdkit")
     def test_build_with_figures(self):
         """Full `run build`: renders in figures/out, alt text and computed captions in the DOCX, verify exit 0."""
         with self.fixture() as root:
             p = root / "projects" / SLUG
             finish_rework(root)
-            r = run_cli(root, *P, "run", "build")
+            with mock.patch.dict(os.environ, {check_figures.OFFLINE_ENV: "1"}):   # PubChem is never called in tests
+                r = run_cli(root, *P, "run", "build")
             self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
             rec = load(p / "state.json")["receipts"]["build"]
             self.assertEqual(rec["figures"], "manifest")
             self.assertIn("figures/out/speed-bar.png", rec["outputs"])
             self.assertIn("figures/figures.json", rec["inputs"])
             report = load(p / "build/build-report.json")
-            self.assertEqual(report["docx"]["images"], 4)
-            self.assertEqual(report["chem_unverified"], [])
+            self.assertEqual(report["docx"]["images"], 7)
+            self.assertEqual(report["chem_unverified"], ["aspirin", "caffeine"])   # offline: listed for the audit gate
+            self.assertIn("rdkit", report["figure_versions"])
             import zipfile
             with zipfile.ZipFile(p / "build/motion-and-figures.docx") as z:
                 doc = z.read("word/document.xml").decode("utf-8")

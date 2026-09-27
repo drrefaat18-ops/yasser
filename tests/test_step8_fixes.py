@@ -1,6 +1,7 @@
 # tests/test_step8_fixes.py
 """Regression tests for the STEP 8 Codex review findings (docs/harness/reviews/step8-fixes.md)."""
 import json, pathlib, shutil, subprocess, sys, tempfile, unittest
+from harness.figures import render
 from harness.stages import complete_checks as cc
 from harness.tools import build_book, check_book, config, convert_docx
 from tests.helpers import REPO, stamp_project, temp_repo
@@ -175,7 +176,9 @@ class BuilderLabels(unittest.TestCase):                                       # 
             edit(p / "theme.json", lambda t: t["labels"].update(question_prefix="Question ", objective_prefix="Goal "))
             edit(p / "template.json", lambda t: t["assessment"]["mcq"].update(option_display_labels=["a", "b", "c", "d"]))
             from docx import Document
-            doc = Document(str(build_book.build(config.load(p))))
+            cfg = config.load(p)
+            render.render_all(p, cfg)   # manifest figures are rendered by run build before the builder (STEP 9)
+            doc = Document(str(build_book.build(cfg)))
             texts = [x.text for x in doc.paragraphs] + [x.text for t in doc.tables for row in t.rows for c in row.cells
                                                          for x in c.paragraphs]
             self.assertTrue(any(t.startswith("Question 1  ") for t in texts), texts)

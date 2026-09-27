@@ -1,0 +1,6 @@
+{
+ "kind": "chem.structure",
+ "name": "aspirin",
+ "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+ "pubchem_cid": 2244
+}

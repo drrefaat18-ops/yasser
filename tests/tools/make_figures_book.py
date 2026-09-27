@@ -62,6 +62,12 @@ DIAGRAM = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width
 </svg>
 '''
 
+CHEM = {
+    "aspirin": {"kind": "chem.structure", "name": "aspirin", "smiles": "CC(=O)Oc1ccccc1C(=O)O", "pubchem_cid": 2244},
+    "caffeine": {"kind": "chem.structure", "name": "caffeine", "smiles": "Cn1cnc2c1c(=O)n(C)c(=O)n2C", "pubchem_cid": 2519},
+    "ethanol-oxidation": {"kind": "chem.reaction", "name": "ethanol oxidation", "smarts": "CCO>>CC=O",
+                          "conditions": "acidified potassium dichromate, warm"},
+}
 CH1_FIGS = "\n![](fig:rolling-ball)\n\n![](fig:speed-bar)\n"
 CH2 = """# Chapter 2: Friction and Graphs
 
@@ -93,6 +99,16 @@ A graph of distance against time shows motion at a glance. A straight line means
 > - **Theory:** The slope of a distance graph is the speed. A flat line means the object has stopped.
 > - **Experiment:** Time a toy car every second. Plot the points and join them. The shape tells you the story.
 > - **Engineering:** Car makers log speed and distance. The graphs show them how well the brakes work.
+
+## 2.3 Friction and Heat
+
+Friction turns the energy of motion into heat. Chemists draw the molecules that store and release energy. Aspirin and caffeine are two small molecules. When ethanol is oxidised, it becomes a new molecule called ethanal.
+
+![](fig:aspirin)
+
+![](fig:caffeine)
+
+![](fig:ethanol-oxidation)
 
 ## Key Points
 
@@ -150,6 +166,12 @@ FIGURES = [
         "Bar chart: bicycle 5, car 27, train 83 and plane 250 metres per second"),
     fig("speed-line", "ch02", "chart.line", "figures/src/speed-line.py", "Steady and slowing motion on a distance graph",
         "Line chart of distance against time: one straight line, one that flattens"),
+    fig("aspirin", "ch02", "chem.structure", "figures/src/aspirin.json", "Aspirin (acetylsalicylic acid)",
+        "Skeletal structure of aspirin: a benzene ring with an ester group and a carboxylic acid group"),
+    fig("caffeine", "ch02", "chem.structure", "figures/src/caffeine.json", "Caffeine",
+        "Skeletal structure of caffeine: two fused rings with three methyl groups and two carbonyl groups"),
+    fig("ethanol-oxidation", "ch02", "chem.reaction", "figures/src/ethanol-oxidation.json", "Oxidation of ethanol to ethanal",
+        "Reaction scheme: ethanol, an arrow, then ethanal"),
     fig("friction-diagram", "ch02", "diagram.svg", "figures/src/friction-diagram.svg", "Push and friction on a sliding box",
         "A box on a floor with a push arrow to the right and a friction arrow to the left"),
 ]
@@ -185,6 +207,7 @@ def make():
             j["budgets"]["total"] = {"min": 600, "max": 1400}
         if name == "brief.json":
             j["identity"]["title"] = "Motion and Figures"
+            j["figures"]["packs"] = ["charts", "chemistry"]
         if name == "theme.json":
             j["output"]["basename"] = "motion-and-figures"
         if name == "design/chapter-plan.json":
@@ -206,6 +229,8 @@ def make():
     for name, text in (("speed-bar.py", BAR), ("speed-line.py", LINE), ("friction-diagram.svg", DIAGRAM)):
         (src / name).write_text(text, encoding="utf-8", newline="\n")
     pc.write_json(src / "speed-line.json", LINE_DATA)
+    for name, spec in CHEM.items():
+        pc.write_json(src / f"{name}.json", spec)
     pc.write_json(d / "figures" / "figures.json", {"schema_version": 1, "figures": FIGURES})
 
 

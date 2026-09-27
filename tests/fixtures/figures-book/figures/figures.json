@@ -35,6 +35,39 @@
    "status": "generated"
   },
   {
+   "id": "aspirin",
+   "chapter_id": "ch02",
+   "kind": "chem.structure",
+   "source": "figures/src/aspirin.json",
+   "caption": "Aspirin (acetylsalicylic acid)",
+   "alt": "Skeletal structure of aspirin: a benzene ring with an ester group and a carboxylic acid group",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "caffeine",
+   "chapter_id": "ch02",
+   "kind": "chem.structure",
+   "source": "figures/src/caffeine.json",
+   "caption": "Caffeine",
+   "alt": "Skeletal structure of caffeine: two fused rings with three methyl groups and two carbonyl groups",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ethanol-oxidation",
+   "chapter_id": "ch02",
+   "kind": "chem.reaction",
+   "source": "figures/src/ethanol-oxidation.json",
+   "caption": "Oxidation of ethanol to ethanal",
+   "alt": "Reaction scheme: ethanol, an arrow, then ethanal",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
    "id": "friction-diagram",
    "chapter_id": "ch02",
    "kind": "diagram.svg",

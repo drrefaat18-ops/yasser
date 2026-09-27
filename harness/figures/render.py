@@ -62,13 +62,17 @@ def rasterise_svg(svg_path, out_png, width_cm, dpi=DPI):
                         "img{display:block;width:100vw;height:100vh}</style></head><body>"
                         f"<img src=\"{svg_path.as_uri()}\"></body></html>", encoding="utf-8")
         shot = t / "shot.png"
-        r = subprocess.run([_browser(), "--headless", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
-                            "--allow-file-access-from-files", f"--user-data-dir={t / 'profile'}",
-                            f"--screenshot={shot}", f"--window-size={css_w},{css_h}",
-                            f"--force-device-scale-factor={scale}", html.as_uri()],
-                           capture_output=True, text=True, timeout=120)
+        try:
+            r = subprocess.run([_browser(), "--headless", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
+                                "--allow-file-access-from-files", f"--user-data-dir={t / 'profile'}",
+                                f"--screenshot={shot}", f"--window-size={css_w},{css_h}",
+                                f"--force-device-scale-factor={scale}", html.as_uri()],
+                               capture_output=True, text=True, timeout=120)
+        except subprocess.TimeoutExpired:   # headless Edge can hang on exit after writing the screenshot
+            r = None
         if not shot.is_file():
-            raise RenderError(f"{svg_path.name}: browser screenshot failed: {r.stderr.strip()[-300:]}")
+            why = r.stderr.strip()[-300:] if r else "browser timed out"
+            raise RenderError(f"{svg_path.name}: browser screenshot failed: {why}")
         with Image.open(shot) as im:
             im.load()
             if im.size != (want_w, want_h):

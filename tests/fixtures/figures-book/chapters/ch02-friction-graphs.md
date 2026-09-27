@@ -29,6 +29,16 @@ A graph of distance against time shows motion at a glance. A straight line means
 > - **Experiment:** Time a toy car every second. Plot the points and join them. The shape tells you the story.
 > - **Engineering:** Car makers log speed and distance. The graphs show them how well the brakes work.
 
+## 2.3 Friction and Heat
+
+Friction turns the energy of motion into heat. Chemists draw the molecules that store and release energy. Aspirin and caffeine are two small molecules. When ethanol is oxidised, it becomes a new molecule called ethanal.
+
+![](fig:aspirin)
+
+![](fig:caffeine)
+
+![](fig:ethanol-oxidation)
+
 ## Key Points
 
 - Friction acts against motion and slows objects down.

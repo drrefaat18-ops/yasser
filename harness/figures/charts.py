@@ -18,7 +18,7 @@ sys.path.insert(0, args["repo"])
 from harness.figures import png
 matplotlib.rcParams.update({"svg.hashsalt": "harness", "svg.fonttype": "none", "font.family": "DejaVu Sans",
                             "path.simplify": True})
-runpy.run_path(args["source"], run_name="__main__")
+runpy.run_path(args["source"], run_name="figure_source")   # top-level drawing; not run as a script
 fig = plt.gcf()
 w, h = fig.get_size_inches()
 width_in = args["width_cm"] / 2.54
