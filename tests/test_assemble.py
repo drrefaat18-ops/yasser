@@ -52,8 +52,10 @@ class AssembleTest(unittest.TestCase):
         # through the CLI a changed chapter or asset stales an upstream receipt first; the check itself is here
         with temp_repo("positive-config/no-mcq", slug="no-mcq") as root:
             cfg = config.load(root / "projects/no-mcq")
-            (cfg.path("chapters") / "figures/ball.png").unlink()
-            self.assertEqual(assemble.assemble(cfg)[1], ["ch01-forces.md: missing image figures/ball.png"])
+            ch = cfg.path("chapters") / "ch01-forces.md"
+            ch.write_text(ch.read_text(encoding="utf-8") + "\n![x](figures/none.png)\n![y](fig:no-such)\n", encoding="utf-8")
+            self.assertEqual(assemble.assemble(cfg)[1], ["ch01-forces.md: missing image figures/none.png",
+                                                         "ch01-forces.md: fig:no-such is not in the figure manifest"])
 
     def test_contents_inserted_before_configured_section(self):
         cfg = config.load(REPO / "tests/fixtures/positive-config/no-mcq")
@@ -62,7 +64,7 @@ class AssembleTest(unittest.TestCase):
         self.assertLess(book.index("## Contents"), book.index("## Using This Book"))
         self.assertIn("- [Chapter 1: Forces and Motion](#chapter-1-forces-and-motion)", book)
         self.assertIn("- [Glossary](#glossary)", book)
-        self.assertIn("](../chapters/figures/ball.png)", book)
+        self.assertIn("![Figure 1.1 — A ball rolling to a stop](../figures/out/ball.png)", book)   # manifest figure (STEP 9)
 
 
 if __name__ == "__main__":

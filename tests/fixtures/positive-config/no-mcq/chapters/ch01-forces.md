@@ -22,7 +22,7 @@ Newton described this in three laws. The second law is the one we use most. It l
 
 **Acceleration** is the rate at which speed or direction changes. We measure it in metres per second squared. The second law says that force equals mass times acceleration [2]. Double the force and the acceleration doubles. Double the mass and the acceleration halves.
 
-![Figure 1.1 — A ball rolling to a stop](figures/ball.png)
+![A ball rolling to a stop](fig:ball)
 
 > **Key Idea:** Force causes a change in motion. It does not keep motion going. An object keeps moving at a steady speed unless a force acts on it.
 

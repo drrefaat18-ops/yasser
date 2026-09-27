@@ -113,17 +113,17 @@ def files(project, stage_id, unit=None):
             gl = [f"{p['chapters']}/{p['glossary']}"] if p.get("glossary") else []
             return common + gl, [_chapter_file(project, unit)]
         outs = _chapter_files(project) + _book_files(project) + _glob(project, f"{p['figures']}/src")
-        outs += _optional(project, f"{p['figures']}/figures.json")   # required once the figure system ships (STEP 9)
+        outs.append(f"{p['figures']}/figures.json")   # the figure manifest (core §7.1); `[]` for a book without figures
         if tr:
             outs += ["trace/source-target-map.json", "terms/rework-proposals.json"]
         return common, outs
     if stage_id == "build":
         theme = _json(project, "theme.json") or {}
         base = theme.get("output", {}).get("basename", "book")
-        # every file under the asset roots and the figures dir is read (images, legacy PNG mirrors, cover); figures.json
-        # joins when the figure system ships (STEP 9)
+        # every file under the asset roots and the figures dir is read (figures.json, figure sources, images, cover,
+        # legacy PNG mirrors); not the renders (outputs) nor the PubChem cache (a lookup cache the build writes)
         assets = sorted({f for root in p.get("allowed_asset_roots", []) + [p["figures"]] for f in _glob(project, root)}
-                        - {f for f in _glob(project, f"{p['figures']}/out")})
+                        - set(_glob(project, f"{p['figures']}/out")) - set(_glob(project, f"{p['figures']}/.cache")))
         ins = (_chapter_files(project) + _book_files(project) + ["brief.json", "template.json", "theme.json",
                "design/chapter-plan.json"] + assets)
         outs = _glob(project, f"{p['figures']}/out") + [f"build/{base}.{ext}" for ext in ("md", "docx", "pdf")]

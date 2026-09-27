@@ -35,7 +35,7 @@ Newton described this in three laws. The second law is the one we use most. It l
 
 **Acceleration** is the rate at which speed or direction changes. We measure it in metres per second squared. The second law says that force equals mass times acceleration [2]. Double the force and the acceleration doubles. Double the mass and the acceleration halves.
 
-![Figure 1.1 — A ball rolling to a stop](figures/ball.png)
+![A ball rolling to a stop](fig:ball)
 
 > **Key Idea:** Force causes a change in motion. It does not keep motion going. An object keeps moving at a steady speed unless a force acts on it.
 
@@ -229,6 +229,10 @@ def make(name):
     (ch / "figures").mkdir(parents=True)
     (ch / "ch01-forces.md").write_text(chapter, encoding="utf-8", newline="\n")
     (ch / "figures" / "ball.png").write_bytes(png())
+    write_json(d / "figures" / "figures.json", {"schema_version": 1, "figures": [   # core §7.1 manifest (STEP 9)
+        {"id": "ball", "chapter_id": "ch01", "kind": "raster.existing", "source": "chapters/figures/ball.png",
+         "caption": "A ball rolling to a stop", "alt": "An orange ball slowing down on grass", "credit": "Test fixture",
+         "licence": "original", "status": "existing"}]})
     (ch / "00-front.md").write_text(FRONT, encoding="utf-8", newline="\n")
     if t["paths"]["glossary"]:
         (ch / "glossary.md").write_text(GLOSSARY, encoding="utf-8", newline="\n")

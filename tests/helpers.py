@@ -23,7 +23,8 @@ def temp_repo(fixture=None, slug="fixture-book", *, stamp=False, with_legacy=Fal
         run = lambda *a: subprocess.run(a, cwd=root, check=True, capture_output=True)
         run("git", "init", "-q")
         run("git", "config", "user.email", "t@t"); run("git", "config", "user.name", "t")
-        tracked = ["harness"]
+        shutil.copyfile(REPO / ".gitignore", root / ".gitignore")   # like the real repo: __pycache__ is never dirty
+        tracked = ["harness", ".gitignore"]
         if with_legacy:
             for d in LEGACY_TOOL_DIRS:
                 shutil.copytree(REPO / d, root / d, ignore=shutil.ignore_patterns("__pycache__"))

@@ -122,12 +122,19 @@ class ToolPathsTest(unittest.TestCase):
                 if m in seen:
                     continue
                 seen.add(m)
-                self.assertIn(m, tp, f"{stage}: {m} is executed but not in tool_paths")
+                covered = m in tp or any(m.startswith(d.rstrip("/") + "/") for d in tp)   # a listed directory covers it
+                self.assertTrue(covered, f"{stage}: {m} is executed but not in tool_paths")
                 src = (REPO / m).read_text(encoding="utf-8")
-                for pkg, names in re.findall(r"^\s*from (harness(?:\.tools|\.stages)?) import (.+?)(?:\s+#.*)?$", src, re.M):
+                for pkg, names in re.findall(r"^\s*from (harness(?:\.[a-z_]+)*) import (.+?)(?:\s+#.*)?$", src, re.M):
+                    if pkg.split(".")[-1] in control:
+                        continue
+                    init = REPO / pkg.replace(".", "/") / "__init__.py"
+                    if pkg != "harness" and init.is_file() and init.read_text(encoding="utf-8").strip():
+                        todo.append(f"{pkg.replace('.', '/')}/__init__.py")   # importing from a package runs it
                     for n in (x.strip().split(" as ")[0] for x in names.split(",")):
                         if n not in control:
-                            todo.append(f"{pkg.replace('.', '/')}/{n}.py")
+                            base = f"{pkg.replace('.', '/')}/{n}"
+                            todo.append(f"{base}/__init__.py" if (REPO / base / "__init__.py").is_file() else f"{base}.py")
 
 
 class CheckerCliTest(unittest.TestCase):

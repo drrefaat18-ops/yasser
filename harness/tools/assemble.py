@@ -10,6 +10,7 @@ import os, pathlib, re, sys
 REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
+from harness import figures  # noqa: E402
 from harness.tools import config  # noqa: E402
 
 IMAGE_LINK = re.compile(r"(!\[[^\]]*\]\()([^)\s]+)(\))")
@@ -33,8 +34,20 @@ def resolve_asset(source_file, link, cfg):
 
 
 def rewrite_links(text, source_file, out_dir, cfg, problems):
+    man = figures.load(cfg)
+    by_id = {f["id"]: f for f in man["figures"]} if man else {}
+    numbers = figures.numbering(cfg) if man else {}
+
     def one(m):
         link = m.group(2)
+        if link.startswith("fig:"):   # a manifest figure: its render in <figures>/out, captioned from the manifest
+            fig = by_id.get(link[4:])
+            if fig is None:
+                problems.append(f"{pathlib.Path(source_file).name}: {link} is not in the figure manifest")
+                return m.group(0)
+            path = figures.out_paths(cfg, fig)[1]
+            label = numbers[fig["id"]][1] if fig["id"] in numbers else ""
+            return (f"![{label} — {fig['caption']}](" if label else f"![{fig['caption']}](") +                 pathlib.Path(os.path.relpath(path, out_dir)).as_posix() + m.group(3)
         if _external(link):
             return m.group(0)
         try:

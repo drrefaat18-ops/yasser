@@ -21,6 +21,8 @@ HARNESS = [
     {"path": "harness/tools/convert_docx.py", "gate": "ingest", "why_ungated": None},
     {"path": "harness/tools/verify_refs.py", "gate": "rework", "why_ungated": None},
     {"path": "harness/tools/renumber_refs.py", "gate": "rework", "why_ungated": None},
+    {"path": "harness/figures/render.py", "gate": "build", "why_ungated": None},
+    {"path": "harness/figures/check_figures.py", "gate": "build", "why_ungated": None},
     {"path": "harness/tools/leak_scan.py", "gate": None, "why_ungated": "scans shared harness code, reads no project"},
     {"path": "harness/tools/capture_golden.py", "gate": None,
      "why_ungated": "read-only regression capture; still enforces the projects rule"},

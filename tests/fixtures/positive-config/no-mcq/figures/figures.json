@@ -1,0 +1,16 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "ball",
+   "chapter_id": "ch01",
+   "kind": "raster.existing",
+   "source": "chapters/figures/ball.png",
+   "caption": "A ball rolling to a stop",
+   "alt": "An orange ball slowing down on grass",
+   "credit": "Test fixture",
+   "licence": "original",
+   "status": "existing"
+  }
+ ]
+}

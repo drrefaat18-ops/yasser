@@ -3,8 +3,11 @@
 Usage: python harness/tools/build_book.py --project projects/<slug> [--no-pdf]
 Reads the chapter files named by chapter-plan.json, brief.json (title, credits, audience line), theme.json (fonts,
 palette, callouts, labels, page) and the preset's title-page layout. Writes build/<basename>.docx and, through the
-Word COM backend, build/<basename>.pdf. SVG figures are read from their PNG mirror in <paths.figures>/png/ (legacy
-figures until STEP 9). Exit 0 ok; 1 on a refused gate or a build error; 2 on a config error.
+Word COM backend, build/<basename>.pdf. Figures: with a figure manifest (<paths.figures>/figures.json, core §7) a
+chapter places `![](fig:<id>)`; the raster comes from <paths.figures>/out/ (rendered by `run build` first), the
+caption and alt text from the manifest and the number is computed. A project without a manifest is a legacy
+(history-imported) book: SVG links are read from their PNG mirror in <paths.figures>/png/ and captions from the
+chapter. Exit 0 ok; 1 on a refused gate or a build error; 2 on a config error.
 
 Text direction and language go through one factory (make_paragraph / make_run / make_table, EXT-LOC-2). LTR adds no
 run-level properties (the language sits on the Normal style); RTL rendering is STEP 10.
@@ -14,6 +17,7 @@ import json, math, pathlib, re, sys
 REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
+from harness import figures  # noqa: E402
 from harness.tools import assemble, check_book, config  # noqa: E402
 
 # Preset constants of the ltr-textbook layout (sizes in pt, rules and grid colours): tested layout, not project config
@@ -65,6 +69,9 @@ class Book:
         self.audience = b["audience"]["display_line"]
         self.preset = json.loads((REPO / "harness" / "presets" / f"{th['preset']}.json").read_text(encoding="utf-8"))
         self.figures_dir = cfg.path("figures")
+        man = figures.load(cfg)
+        self.manifest = {f["id"]: f for f in man["figures"]} if man is not None else None
+        self.fig_numbers = {k: label for k, (_, label) in figures.numbering(cfg).items()} if man is not None else {}
         cover = th["cover"]["asset"]
         self.cover = (cfg["project"] / cover).resolve() if cover else None
 
@@ -535,23 +542,42 @@ class Renderer:
         self.after_table(container)
 
     def figure_file(self, source, link):
+        if link.startswith("fig:"):
+            fig = (self.bk.manifest or {}).get(link[4:])
+            if fig is None:
+                raise BuildError(f"figure {link}: not in the figure manifest")
+            src = figures.out_paths(self.bk.cfg, fig)[1]
+            if not src.is_file():
+                raise BuildError(f"figure {link}: {src} not rendered")
+            return src
         src = assemble.resolve_asset(source, link, self.bk.cfg)
-        if src.suffix == ".svg":   # legacy figures until STEP 9: the PNG mirror beside the SVG sources
+        if self.bk.manifest is not None:
+            if self.bk.cover and src.resolve() == self.bk.cover:
+                return src
+            raise BuildError(f"image {link} is placed without the figure manifest (use fig:<id>)")
+        if src.suffix == ".svg":   # legacy book: the PNG mirror beside the SVG sources
             src = self.bk.figures_dir / "png" / (src.stem + ".png")
         if not src.is_file():
             raise BuildError(f"figure {link}: {src} missing")
         return src
 
-    def figure(self, container, src, caption):
+    def figure(self, container, src, caption, fig=None):
+        """`fig`: the manifest entry (caption, alt and number from the manifest); None: a legacy figure."""
         from PIL import Image
         Cm = self.d["Cm"]
         with Image.open(src) as im:
             w_px, h_px = im.size
-        width = min(self.text_w, Cm(14))
-        if h_px / w_px > 0.9:  # tall figures narrower
-            width = Cm(10)
+        width = Cm(figures.placed_width_cm(w_px, h_px, self.bk.cfg["theme"]["layout"]["text_width"]))
         p = self.f.make_paragraph(container, style="Figure")
-        p.add_run().add_picture(str(src), width=width)
+        shape = p.add_run().add_picture(str(src), width=width)
+        if fig is not None:
+            shape._inline.docPr.set("descr", fig["alt"])
+            cp = self.f.make_paragraph(container, style="Caption Text")
+            self.f.make_run(cp, self.bk.fig_numbers[fig["id"]] + "  ", bold=True, colour=self.bk.primary)
+            self.inline(cp, fig["caption"])
+            credit = self.f.make_paragraph(container, style="Caption Text")
+            self.f.make_run(credit, fig["credit"], colour=self.bk.muted, size=8)
+            return
         if caption:
             cp = self.f.make_paragraph(container, style="Caption Text")
             m = re.match(rf"({re.escape(self.bk.labels['figure'])} \d+\.\d+)\s*[—-]\s*(.+)", caption)
@@ -646,6 +672,10 @@ class Renderer:
                 flush()
                 src = self.figure_file(source, m.group(2))
                 if bk.cover and src.resolve() == bk.cover:
+                    i += 1
+                    continue
+                if m.group(2).startswith("fig:"):
+                    self.figure(container, src, None, bk.manifest[m.group(2)[4:]])
                     i += 1
                     continue
                 cap = ""

@@ -22,7 +22,9 @@ Newton described this in three laws. The second law is the one we use most. It l
 
 **Acceleration** is the rate at which speed or direction changes. We measure it in metres per second squared. The second law says that force equals mass times acceleration [2]. Double the force and the acceleration doubles. Double the mass and the acceleration halves.
 
-![A ball rolling to a stop](fig:ball)
+![](fig:rolling-ball)
+
+![](fig:speed-bar)
 
 > **Key Idea:** Force causes a change in motion. It does not keep motion going. An object keeps moving at a steady speed unless a force acts on it.
 
@@ -60,6 +62,8 @@ A) It doubles.
 B) It stays the same.
 C) It becomes smaller.
 D) It becomes negative.
+
+**Case Question.** Sami pushes a shopping trolley and lets go. Explain why it stops, and what would happen on a smooth floor.
 
 ## Answers
 
