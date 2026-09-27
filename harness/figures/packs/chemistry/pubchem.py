@@ -1,26 +1,30 @@
 """PubChem cross-check of a chem.structure (core §7.5). Stdlib only.
 
-Compares the connectivity (stereo-free canonical SMILES, both sides canonicalised by RDKit) of the spec's SMILES with
-PubChem's record for `pubchem_cid`, else for `name`. Live mode: one request, timeout 10 s, successful responses cached
-under the given cache folder. Offline mode, a network failure or an unreadable answer is `unverified`, never `pass`.
+Compares the spec's SMILES with PubChem's record for `pubchem_cid`, else for `name`, both sides canonicalised by
+RDKit. A spec that states stereochemistry is compared with PubChem's isomeric SMILES, stereo included (an enantiomer
+is a mismatch); a spec without stereo is compared by connectivity. Live mode: one request, timeout 10 s, successful
+responses cached under the given cache folder. Offline mode, a network failure or an unreadable answer is
+`unverified`, never `pass`. Every judged result carries the request URL, `live`/`cached` and the SHA-256 of the
+answer it used, so the build report binds the evidence.
 """
 import hashlib, json, pathlib, urllib.parse, urllib.request
 
 BASE = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound"
 TIMEOUT_S = 10
-SMILES_KEYS = ("CanonicalSMILES", "ConnectivitySMILES", "IsomericSMILES", "SMILES")   # PubChem renamed them in 2025
+SMILES_KEYS = ("IsomericSMILES", "SMILES", "CanonicalSMILES", "ConnectivitySMILES")   # PubChem renamed them in 2025
+ISOMERIC_KEYS = ("IsomericSMILES", "SMILES")   # old and new name of the SMILES with stereo
 
 
 def _url(spec):
     if spec.get("pubchem_cid"):
-        return f"{BASE}/cid/{int(spec['pubchem_cid'])}/property/CanonicalSMILES/JSON"
-    return f"{BASE}/name/{urllib.parse.quote(spec['name'], safe='')}/property/CanonicalSMILES/JSON"
+        return f"{BASE}/cid/{int(spec['pubchem_cid'])}/property/IsomericSMILES/JSON"
+    return f"{BASE}/name/{urllib.parse.quote(spec['name'], safe='')}/property/IsomericSMILES/JSON"
 
 
-def _connectivity(smiles):
+def _canonical(smiles, stereo):
     from rdkit import Chem
     m = Chem.MolFromSmiles(smiles)
-    return None if m is None else Chem.MolToSmiles(m, isomericSmiles=False)
+    return None if m is None else Chem.MolToSmiles(m, isomericSmiles=stereo)
 
 
 def _fetch(url, cache_dir):
@@ -49,20 +53,27 @@ def crosscheck(spec, mode, cache_dir):
         return {"status": "unverified", "detail": "offline mode: not checked against PubChem"}
     if not spec.get("pubchem_cid") and not spec.get("name"):
         return {"status": "unverified", "detail": "no name or pubchem_cid to look up"}
-    ours = _connectivity(spec.get("smiles") or "")
-    if ours is None:
+    smiles = spec.get("smiles") or ""
+    ours_flat = _canonical(smiles, False)
+    if ours_flat is None:
         return {"status": "fail", "detail": "the spec SMILES does not parse"}
-    body, how = _fetch(_url(spec), cache_dir)
+    stereo = _canonical(smiles, True) != ours_flat
+    url = _url(spec)
+    body, how = _fetch(url, cache_dir)
     if body is None:
-        return {"status": "unverified", "detail": how}
+        return {"status": "unverified", "detail": how, "url": url}
+    ev = {"url": url, "how": how,
+          "response_sha256": hashlib.sha256(json.dumps(body, sort_keys=True).encode("utf-8")).hexdigest()}
     try:
         props = body["PropertyTable"]["Properties"][0]
-        theirs_raw = next(props[k] for k in SMILES_KEYS if k in props)
+        theirs_raw = next(props[k] for k in (ISOMERIC_KEYS if stereo else SMILES_KEYS) if k in props)
     except (KeyError, IndexError, TypeError, StopIteration):
-        return {"status": "unverified", "detail": f"PubChem answer has no SMILES ({how})"}
-    theirs = _connectivity(theirs_raw)
+        why = "no isomeric SMILES to compare stereo with" if stereo else "no SMILES"
+        return {"status": "unverified", "detail": f"PubChem answer has {why} ({how})", **ev}
+    theirs = _canonical(theirs_raw, stereo)
     if theirs is None:
-        return {"status": "unverified", "detail": f"PubChem SMILES {theirs_raw!r} does not parse"}
-    if theirs != ours:
-        return {"status": "fail", "detail": f"PubChem {theirs_raw} for {spec.get('name')!r} differs from {spec['smiles']}"}
-    return {"status": "pass", "detail": f"matches PubChem ({how})"}
+        return {"status": "unverified", "detail": f"PubChem SMILES {theirs_raw!r} does not parse", **ev}
+    if theirs != _canonical(smiles, stereo):
+        return {"status": "fail", "detail": f"PubChem {theirs_raw} for {spec.get('name')!r} differs from {smiles}"
+                                           + (" (stereo compared)" if stereo else ""), **ev}
+    return {"status": "pass", "detail": f"matches PubChem ({how}{', stereo compared' if stereo else ''})", **ev}

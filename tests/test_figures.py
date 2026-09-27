@@ -45,7 +45,10 @@ class Figures(unittest.TestCase):
 
     def render_check(self, project, out):
         cfg = config.load(project)
-        render.render_all(project, cfg, out)
+        try:
+            render.render_all(project, cfg, out)
+        except render.FiguresBlocked:   # the pre-render pass blocks: nothing rendered, report that pass (S9-02)
+            return check_figures.check(project, cfg, crosscheck_mode="offline", rendered=False)
         return check_figures.check(project, cfg, out, crosscheck_mode="offline")
 
     def test_chart_bytes_identical(self):
@@ -126,9 +129,66 @@ class Figures(unittest.TestCase):
             p = root / "projects" / SLUG
             spec = p / "figures/src/caffeine.json"
             spec.write_text(json.dumps(dict(load(spec), smiles="C1CC(")), encoding="utf-8")
-            rep = self.render_check(p, pathlib.Path(t, "out"))   # the invalid figure is not rendered; the rest are
+            rep = self.render_check(p, pathlib.Path(t, "out"))   # blocked by the pre-render pass: nothing rendered
             self.assertEqual({c["id"] for c in check_figures.blocking(rep)}, {"CHEM-SMILES-INVALID"})
             self.assertEqual(check_figures.ids_of(rep, "CHEM-SMILES-INVALID"), ["caffeine"])
+            self.assertFalse(pathlib.Path(t, "out").exists())
+
+    @unittest.skipUnless(CHEM, "rdkit missing")
+    def test_manifest_kind_must_match_spec_kind(self):   # S9-04, both directions
+        for fid, kind in (("caffeine", "chem.reaction"), ("ethanol-oxidation", "chem.structure")):
+            with self.subTest(fid), self.fixture() as root:
+                p = root / "projects" / SLUG
+                edit_manifest(p, fid, kind=kind)
+                rep = check_figures.check(p, config.load(p), crosscheck_mode="offline", rendered=False)
+                self.assertEqual({c["id"] for c in check_figures.blocking(rep)}, {"FIG-MANIFEST"})
+                self.assertEqual(check_figures.ids_of(rep, "FIG-MANIFEST"), [fid])
+
+    def test_prerender_check_runs_nothing_unchecked(self):   # S9-02
+        with self.fixture() as root, tempfile.TemporaryDirectory() as t:
+            p = root / "projects" / SLUG
+            marker = pathlib.Path(t, "ran")
+            (p / "chapters/evil.py").write_text(f"open({str(marker)!r}, 'w').close()\n", encoding="utf-8")
+            edit_manifest(p, "speed-bar", source="chapters/evil.py")   # a chart source outside figures/src/
+            with self.assertRaises(render.FiguresBlocked) as e:
+                render.render_all(p, config.load(p), pathlib.Path(t, "out"))
+            self.assertIn("FIG-MANIFEST", str(e.exception))
+            self.assertFalse(marker.exists())
+            (p / "figures/figures.json").write_text("{", encoding="utf-8")   # malformed: a stable ID, not a crash
+            with self.assertRaises(render.FiguresBlocked) as e:
+                render.render_all(p, config.load(p), pathlib.Path(t, "out"))
+            self.assertIn("FIG-MANIFEST: figures.json is not JSON", str(e.exception))
+
+    def test_random_chart_bytes_identical(self):   # S9-07: fixed seeds, separate subprocesses
+        with self.fixture() as root, tempfile.TemporaryDirectory() as t:
+            src = root / "projects" / SLUG / "figures/src/noise.py"
+            src.write_text("import random\nimport numpy as np\nimport matplotlib.pyplot as plt\n"
+                           "plt.figure(figsize=(6, 3))\n"
+                           "plt.plot(np.random.rand(20), [random.random() for _ in range(20)], 'o')\n",
+                           encoding="utf-8")
+            from harness.figures import charts
+            runs = []
+            for k in (1, 2):
+                svg, png = pathlib.Path(t, f"{k}.svg"), pathlib.Path(t, f"{k}.png")
+                charts.render(src, svg, png, 14)
+                runs.append((svg.read_bytes(), png.read_bytes()))
+            self.assertEqual(runs[0], runs[1])
+
+    @unittest.skipUnless(os.name == "nt", "junctions are a Windows feature")
+    def test_build_output_through_a_junction_is_refused(self):   # S9-01
+        import _winapi
+        from harness.stages import build
+        with tempfile.TemporaryDirectory() as t:
+            p, elsewhere = pathlib.Path(t, "proj"), pathlib.Path(t, "elsewhere")
+            (p / "figures").mkdir(parents=True)
+            elsewhere.mkdir()
+            build._contained(p, [p / "build", p / "figures/out"])
+            _winapi.CreateJunction(str(elsewhere), str(p / "build"))
+            try:
+                with self.assertRaises(build.BuildStepFailed):
+                    build._contained(p, [p / "build"])
+            finally:
+                os.rmdir(p / "build")
 
     @unittest.skipUnless(CHEM and BROWSER, "needs rdkit and Edge/Chrome")
     def test_offline_chemistry_is_unverified_not_blocking(self):
@@ -203,6 +263,10 @@ class Figures(unittest.TestCase):
                 doc = z.read("word/document.xml").decode("utf-8")
             self.assertIn('descr="A box on a floor with a push arrow', doc)
             self.assertIn("Figure 2.1", doc)
+            self.assertIn("Figures-book fixture (original)", doc)   # S9-08: credit with its licence
+            cross = next(c for c in report["figure_checks"] if c["id"] == "CHEM-PUBCHEM-MISMATCH")["measured"]
+            self.assertEqual([(x["figure"], x["status"]) for x in cross["crosschecks"]],
+                             [("aspirin", "unverified"), ("caffeine", "unverified")])   # S9-06: evidence in the report
             v = run_cli(root, *P, "verify", "--through", "build")
             self.assertEqual(v.returncode, 0, v.stderr)
 

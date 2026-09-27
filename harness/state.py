@@ -42,7 +42,7 @@ STAGES = [
                                                    "harness/tools/config.py", "harness/tools/capture_golden.py",   # report facts
                                                    "harness/tools/check_book.py", "harness/text.py", "harness/locales.py",  # via capture
                                                    "harness/preflight.py", "harness/presets", "harness/figures",
-                                                   "harness/schema.py", "harness/schemas/figures.v1.json"]},
+                                                   "harness/schema.py", "harness/schemas/figures.v1.json", "requirements-chemistry.txt"]},
     {"id": "audit", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/common.py", "harness/stages/complete_checks/audit.py",
                                                       "harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"]},
 ]

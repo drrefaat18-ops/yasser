@@ -2,7 +2,8 @@
 
 The source runs in a subprocess (MPLBACKEND=Agg, cwd = its folder) and draws on the current figure. Its own
 figsize sets the aspect ratio; the harness sets the width to the theme's text width. Output is deterministic:
-fixed SVG hash salt, text kept as text, no date or creator metadata, PNG re-encoded by png.write_canonical.
+fixed seeds (random, numpy), fixed SVG hash salt, text kept as text, no date or creator metadata, PNG re-encoded
+by png.write_canonical.
 """
 import json, os, pathlib, subprocess, sys
 
@@ -18,6 +19,9 @@ sys.path.insert(0, args["repo"])
 from harness.figures import png
 matplotlib.rcParams.update({"svg.hashsalt": "harness", "svg.fonttype": "none", "font.family": "DejaVu Sans",
                             "path.simplify": True})
+import random, numpy
+random.seed(0)
+numpy.random.seed(0)   # fixed seeds (core 7.2): a source drawing random data renders the same bytes
 runpy.run_path(args["source"], run_name="figure_source")   # top-level drawing; not run as a script
 fig = plt.gcf()
 w, h = fig.get_size_inches()

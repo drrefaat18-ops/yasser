@@ -24,7 +24,8 @@ def temp_repo(fixture=None, slug="fixture-book", *, stamp=False, with_legacy=Fal
         run("git", "init", "-q")
         run("git", "config", "user.email", "t@t"); run("git", "config", "user.name", "t")
         shutil.copyfile(REPO / ".gitignore", root / ".gitignore")   # like the real repo: __pycache__ is never dirty
-        tracked = ["harness", ".gitignore"]
+        shutil.copyfile(REPO / "requirements-chemistry.txt", root / "requirements-chemistry.txt")   # a build tool path
+        tracked = ["harness", ".gitignore", "requirements-chemistry.txt"]
         if with_legacy:
             for d in LEGACY_TOOL_DIRS:
                 shutil.copytree(REPO / d, root / d, ignore=shutil.ignore_patterns("__pycache__"))

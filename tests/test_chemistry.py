@@ -79,6 +79,20 @@ class Chemistry(unittest.TestCase):
                 self.assertEqual(u.call_count, 1)             # the second lookup came from the cache
                 self.assertIn("timeout", u.call_args.kwargs)
 
+    def test_enantiomer_is_a_mismatch(self):   # S9-05
+        l_ala = {"kind": "chem.structure", "name": "L-alanine", "smiles": "C[C@@H](C(=O)O)N"}
+        with mock.patch("urllib.request.urlopen", return_value=answer("C[C@H](C(=O)O)N", "SMILES")):
+            self.assertEqual(chem.crosscheck(l_ala, "live", self.cache)["status"], "fail")
+        with tempfile.TemporaryDirectory() as c, \
+                mock.patch("urllib.request.urlopen", return_value=answer("N[C@@H](C)C(=O)O", "IsomericSMILES")):
+            r = chem.crosscheck(l_ala, "live", c)
+        self.assertEqual(r["status"], "pass")
+        self.assertTrue(r["url"].endswith("/property/IsomericSMILES/JSON"))
+        self.assertEqual((r["how"], len(r["response_sha256"])), ("live", 64))   # S9-06: the evidence it judged on
+        with tempfile.TemporaryDirectory() as c, \
+                mock.patch("urllib.request.urlopen", return_value=answer("CC(C(=O)O)N", "ConnectivitySMILES")):
+            self.assertEqual(chem.crosscheck(l_ala, "live", c)["status"], "unverified")   # no stereo to compare
+
     def test_bad_answer_is_unverified(self):
         body = mock.MagicMock(__enter__=lambda s: s, __exit__=lambda *a: False, read=lambda: b"<html>busy</html>")
         with mock.patch("urllib.request.urlopen", return_value=body):

@@ -63,24 +63,27 @@ def mode():
     return "offline" if os.environ.get(OFFLINE_ENV) else "live"
 
 
-def check(project, cfg, out_dir=None, crosscheck_mode=None):
-    """-> checker-report.v1 dict. `out_dir` holds the renders (default <figures>/out)."""
+def check(project, cfg, out_dir=None, crosscheck_mode=None, rendered=True):
+    """-> checker-report.v1 dict. `out_dir` holds the renders (default <figures>/out). `rendered=False` is the
+    pre-render pass (render.render_all runs it first): manifest, references, fields, sources, packs and local
+    chemistry validation, no resolution and no PubChem cross-check, so nothing unchecked is read or executed."""
     project = pathlib.Path(project)
     out_dir = out_dir or figures.out_dir(cfg)
     found = {i: [] for i in FIG_IDS + CHEM_IDS}   # id -> [(figure id or None, message)]
+    found["_crosschecks"] = []   # the PubChem answer each structure was judged on (bound into build-report.json)
     man_path = figures.manifest_path(cfg)
     if not man_path.is_file():
         found["FIG-MANIFEST"].append((None, f"{man_path.relative_to(project).as_posix()} missing"))
-        return _report(found, chem=False)
+        return _report(found, chem=False, crosschecks=None)
     try:
         man = json.loads(man_path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
         found["FIG-MANIFEST"].append((None, f"figures.json is not JSON: {e}"))
-        return _report(found, chem=False)
+        return _report(found, chem=False, crosschecks=None)
     errs = schema.validate(man, _item_schema())
     if errs:
         found["FIG-MANIFEST"] += [(None, e) for e in errs]
-        return _report(found, chem=False)
+        return _report(found, chem=False, crosschecks=None)
     figs = man["figures"]
     by_id = {}
     for f in figs:
@@ -130,10 +133,15 @@ def check(project, cfg, out_dir=None, crosscheck_mode=None):
     for fid in by_id:
         if fid not in referenced:
             found["FIG-UNREFERENCED"].append((fid, "in figures.json, never placed in a chapter"))
+    chem = [f for f in figs if f["kind"].startswith("chem.")]
+    for f in chem:
+        _chemistry(cfg, f, registry, crosscheck_mode or mode(), found, rendered)
+    if not rendered:
+        return _report(found, chem=bool(chem), crosschecks=None)
     width = cfg["theme"]["layout"]["text_width"]
     from harness.figures import render
     for f in figs:
-        if not render.renderable(cfg, f, registry) or found["FIG-MANIFEST"]:
+        if found["FIG-MANIFEST"] or not render.renderable(cfg, f, registry):
             continue
         _, raster = figures.out_paths(cfg, f, out_dir)
         if not raster.is_file():
@@ -146,32 +154,41 @@ def check(project, cfg, out_dir=None, crosscheck_mode=None):
         dpi = w / (placed / 2.54)
         if dpi < MIN_DPI:
             found["FIG-RESOLUTION"].append((f["id"], f"{dpi:.0f} dpi at {placed:g} cm (needs 300)"))
-    chem = [f for f in figs if f["kind"].startswith("chem.")]
-    for f in chem:
-        _chemistry(cfg, f, registry, crosscheck_mode or mode(), found)
-    return _report(found, chem=bool(chem))
+    return _report(found, chem=bool(chem), crosschecks=found["_crosschecks"])
 
 
-def _chemistry(cfg, f, registry, cmode, found):
+def _chemistry(cfg, f, registry, cmode, found, rendered):
     name, mod = packs.pack_for(f["kind"], registry)
     src = cfg["project"] / f["source"]
-    if mod is None or mod.preflight() or not src.is_file():
+    if mod is None or mod.preflight() or _source_problem(cfg, f):
         return   # reported as FIG-MANIFEST
-    spec = json.loads(src.read_text(encoding="utf-8"))
+    try:
+        spec = json.loads(src.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        found["FIG-MANIFEST"].append((f["id"], f"source {f['source']} is not JSON: {e}"))
+        return
+    if not isinstance(spec, dict) or spec.get("kind") != f["kind"]:
+        got = spec.get("kind") if isinstance(spec, dict) else type(spec).__name__
+        found["FIG-MANIFEST"].append((f["id"], f"manifest kind {f['kind']} but source kind {got!r}"))
+        return
     findings = mod.validate(spec)
     for x in findings:
         found[x["id"]].append((f["id"], x["message"]))
-    if findings or f["kind"] not in getattr(mod, "CROSSCHECK_KINDS", mod.KINDS):
+    if findings or not rendered or f["kind"] not in getattr(mod, "CROSSCHECK_KINDS", mod.KINDS):
         return
     r = mod.crosscheck(spec, cmode, cfg.path("figures") / ".cache" / "pubchem")
+    found["_crosschecks"].append({"figure": f["id"], **{k: r[k] for k in ("status", "url", "how", "response_sha256")
+                                                          if k in r}})
     if r["status"] == "fail":
         found["CHEM-PUBCHEM-MISMATCH"].append((f["id"], r["detail"]))
     elif r["status"] == "unverified":
         found["CHEM-UNVERIFIED"].append((f["id"], r["detail"]))
 
 
-def _report(found, chem):
-    """One check per ID; `measured.figures` lists the figure ids it names (build-report reads CHEM-UNVERIFIED's)."""
+def _report(found, chem, crosschecks):
+    """One check per ID; `measured.figures` lists the figure ids it names (build-report reads CHEM-UNVERIFIED's).
+    CHEM-PUBCHEM-MISMATCH also records `measured.crosschecks`: per structure the request URL, whether the answer
+    was live or cached, and the SHA-256 of the answer used."""
     checks = []
     for cid in FIG_IDS + CHEM_IDS:
         if cid in CHEM_IDS and not chem:
@@ -181,6 +198,8 @@ def _report(found, chem):
         msgs = [f"{fid}: {m}" if fid else m for fid, m in hits]
         checks.append({"id": cid, "status": "fail" if hits else "pass", "message": "; ".join(msgs),
                        "measured": {"count": len(hits), "figures": sorted({fid for fid, _ in hits if fid})}})
+        if cid == "CHEM-PUBCHEM-MISMATCH" and crosschecks is not None:
+            checks[-1]["measured"]["crosschecks"] = crosschecks
     return {"schema_version": 1, "target": "figures", "checks": checks}
 
 
@@ -202,8 +221,11 @@ def main(project, argv):
         cfg = config.load(project)
         with tempfile.TemporaryDirectory() as t:
             out = pathlib.Path(t) / "out"
-            render.render_all(project, cfg, out)
-            report = check(project, cfg, out)
+            try:
+                render.render_all(project, cfg, out)
+                report = check(project, cfg, out)
+            except render.FiguresBlocked:   # the pre-render pass failed: report it, render nothing
+                report = check(project, cfg, rendered=False)
     except config.ConfigError as e:
         print(f"ERROR CONFIG: {e}", file=sys.stderr)
         return 2

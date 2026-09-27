@@ -35,7 +35,7 @@ class AssembleTest(unittest.TestCase):
             with self.assertRaises(assemble.AssetOutside):
                 assemble.resolve_asset(ch, bad, cfg)
 
-    def test_cli_gated_on_rework_and_writes_build(self):
+    def test_cli_gated_on_rework_and_dry_run(self):   # S9-03: `run build` is the only writer of build/
         run = lambda root, slug: subprocess.run([sys.executable, "harness/tools/assemble.py", "--project", f"projects/{slug}"],
                                                 cwd=root, capture_output=True, text=True, encoding="utf-8")
         with temp_repo("positive-config/no-mcq", slug="no-mcq", stamp=True) as root:
@@ -45,8 +45,8 @@ class AssembleTest(unittest.TestCase):
         with temp_repo(project_from="projects/ai-in-medicine", stamp=True) as root:
             r = run(root, "ai-in-medicine")
             self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-            out = root / "projects/ai-in-medicine/build/AI_in_Health_Care_Interprofessional.md"
-            self.assertEqual(out.read_text(encoding="utf-8"), assemble.assemble(config.load(MED))[0])
+            self.assertIn("(dry run, not written)", r.stdout)
+            self.assertFalse((root / "projects/ai-in-medicine/build/AI_in_Health_Care_Interprofessional.md").exists())
 
     def test_missing_image_is_a_problem(self):
         # through the CLI a changed chapter or asset stales an upstream receipt first; the check itself is here
@@ -64,7 +64,8 @@ class AssembleTest(unittest.TestCase):
         self.assertLess(book.index("## Contents"), book.index("## Using This Book"))
         self.assertIn("- [Chapter 1: Forces and Motion](#chapter-1-forces-and-motion)", book)
         self.assertIn("- [Glossary](#glossary)", book)
-        self.assertIn("![Figure 1.1 — A ball rolling to a stop](../figures/out/ball.png)", book)   # manifest figure (STEP 9)
+        self.assertIn("![An orange ball slowing down on grass](../figures/out/ball.png)\n\n"   # manifest figure (STEP 9):
+                      "*Figure 1.1 — A ball rolling to a stop*  \nTest fixture (original)\n", book)   # alt, caption, credit, licence
 
 
 if __name__ == "__main__":

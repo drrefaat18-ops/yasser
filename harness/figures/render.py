@@ -23,6 +23,10 @@ class RenderError(Exception):
     """A figure could not be rendered; the message names it."""
 
 
+class FiguresBlocked(RenderError):
+    """The pre-render check found a blocking figure ID; the message names them."""
+
+
 def _browser():
     c = preflight.check_browser("figures")
     if not c["ok"]:
@@ -119,10 +123,15 @@ def _spec(src):
 
 def render_all(project, cfg, out_dir=None):
     """-> [{id, svg, png, status}]. Clears the output folder (default <figures>/out) first: it holds only this
-    build's renders."""
-    man = figures.load(cfg)
-    if man is None:
+    build's renders. The checker's pre-render pass runs first: on a blocking ID nothing is read or executed and
+    FiguresBlocked names the IDs."""
+    if not figures.manifest_path(cfg).is_file():
         return []
+    from harness.figures import check_figures
+    bad = check_figures.blocking(check_figures.check(project, cfg, rendered=False))
+    if bad:
+        raise FiguresBlocked("; ".join(f"{c['id']}: {c['message']}" for c in bad))
+    man = figures.load(cfg)
     out_dir = out_dir or figures.out_dir(cfg)
     if out_dir.exists():
         shutil.rmtree(out_dir)

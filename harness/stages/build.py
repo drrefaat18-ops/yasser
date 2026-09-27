@@ -1,11 +1,11 @@
 """`run build` (core §2.2 build row; plan Task 8.2): figures, assemble, DOCX, PDF, build-report.json.
 
-Figures (core §7): with a manifest, every figure is rendered into <paths.figures>/out/ and the figure checker runs
-before anything is assembled; a blocking check ID fails the build. Without a manifest, only a book whose rework
+Figures (core §7): with a manifest, the checker's pre-render pass runs, every figure is rendered into
+<paths.figures>/out/ and the full figure check runs before anything is assembled; a blocking check ID fails the build. Without a manifest, only a book whose rework
 was history-imported (plan N2) may build, reading its existing PNG mirrors (`figures: legacy`); any other book
 fails with FIG-MANIFEST. A failing step raises; the runner then writes a `failed` receipt naming it.
 """
-import json
+import json, os, pathlib
 from harness import figures, preflight, state
 from harness.figures import check_figures, render
 from harness.tools import assemble, build_book, capture_golden, config
@@ -30,6 +30,7 @@ def run(project):
     if missing:
         raise BuildStepFailed("preflight: " + "; ".join(f"{c['name']}: {c['detail']}" for c in missing))
     cfg = config.load(project)
+    _contained(project, [project / "build", figures.out_dir(cfg), cfg.path("figures") / ".cache"])
     fig_mode, fig_report = _figures(project, cfg)
 
     def do_assemble():
@@ -56,15 +57,31 @@ def run(project):
             "bookmarks_count": report["pdf"]["bookmarks"]}
 
 
+def _contained(project, dirs):
+    """Each folder the build writes must resolve to itself inside the project: a symlink or junction anywhere on its
+    path would carry the writes (and the clearing of <figures>/out) outside it (step9 fix S9-01)."""
+    root = pathlib.Path(os.path.realpath(project))
+    for d in dirs:
+        rel = os.path.relpath(os.path.abspath(d), os.path.abspath(project))
+        if os.path.normcase(os.path.realpath(d)) != os.path.normcase(str(root / rel)):
+            raise BuildStepFailed(f"output: {pathlib.Path(rel).as_posix()} resolves to {os.path.realpath(d)}, "
+                                  "not inside the project (a link or junction)")
+
+
 def _figures(project, cfg):
     """-> (mode, build-report additions). Renders, then checks; raises BuildStepFailed on a blocking check ID."""
-    if figures.load(cfg) is None:
+    if not figures.manifest_path(cfg).is_file():   # a malformed manifest is FIG-MANIFEST in the pre-render check
         rework = state.load(project)["receipts"].get("rework", {})
         if rework.get("imported"):
             return "legacy", None
         raise BuildStepFailed(f"figures: FIG-MANIFEST: {figures.manifest_path(cfg).relative_to(project).as_posix()} "
                               "missing (only a history-imported book may build without one)")
-    results = _step("figures (render)", lambda: render.render_all(project, cfg))
+    try:   # render_all runs the checker's pre-render pass first; a blocking ID stops before any source is read
+        results = render.render_all(project, cfg)
+    except render.FiguresBlocked as e:
+        raise BuildStepFailed(f"figures: {e}") from e
+    except Exception as e:
+        raise BuildStepFailed(f"figures (render): {type(e).__name__}: {e}") from e
     report = check_figures.check(project, cfg)
     bad = check_figures.blocking(report)
     if bad:
