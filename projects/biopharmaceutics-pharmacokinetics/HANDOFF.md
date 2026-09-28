@@ -4,8 +4,8 @@ Paste everything below the line into a new Claude Code session opened at `D:\AI\
 
 ---
 
-Continue the book at `projects/biopharmaceutics-pharmacokinetics`. Chapters 1–6 are written and each
-passes all 33 harness checks. Write **ch07 through ch14**, then the front matter, the glossary tail and
+Continue the book at `projects/biopharmaceutics-pharmacokinetics`. Chapters 1–7 are written and each
+passes all 33 harness checks. Write **ch08 through ch14**, then the front matter, the glossary tail and
 the errata ledger, then close the rework stage, build and audit. Read `CLAUDE.md` first — Rules 7, 8
 and 11 bind you.
 
@@ -15,11 +15,16 @@ and 11 bind you.
 - `rework` is the open stage. **Do not run `begin rework` if a run is already active** — run
   `python harness/run_stage.py --project projects/biopharmaceutics-pharmacokinetics verify` first and
   read the nonce out of any `RUN-ACTIVE` line.
-- Written and passing: ch01–ch06, `rework/glossary.md` (49 of the 90 terms required),
-  `rework/figures/figures.json` with 8 figures.
-- Still to write: ch07–ch14, `rework/00-front-matter.md`, `rework/errata-ledger.md`, and the rest of
+- Written and passing: ch01–ch07, `rework/glossary.md` (58 of the 90 terms required),
+  `rework/figures/figures.json` with 9 figures.
+- Still to write: ch08–ch14, `rework/00-front-matter.md`, `rework/errata-ledger.md`, and the rest of
   the glossary.
-- Last commit: `e2e6f32`.
+- Last commit: `7d8692e`.
+- **Check `rework/ch08.md` before writing ch08.** An untracked `ch08.md` and an untracked
+  `rework/figures/src/ch08-accumulation.svg` are present on disk. They were not written by the
+  session that produced ch01–ch07 and their provenance is unconfirmed. Read the file and decide
+  whether to keep, rewrite or delete it; do not assume it is correct, and note that its figure is
+  not registered in `figures.json`.
 
 ## Environment quirks that will cost you an hour if you miss them
 
@@ -85,6 +90,11 @@ Exact formats it demands — these are not style preferences, they are regexes:
 - Readability: mean sentence ≤ 16 words, and at most 5% of sentences over 28 words.
 - Budget: the chapter's `word_budget` in `design/chapter-plan.json` ±15%.
 
+**The checker does not validate `fig:` links.** `check_assets` skips any link whose target matches a
+URI scheme, and `fig:ch08-accumulation` matches. A chapter can therefore pass all 33 checks while
+referencing a figure that is missing from `figures.json`. Register every figure in the manifest by
+hand and confirm it at build time; a green chapter is not evidence the figures resolve.
+
 `GLOSS-MISSING` failures are fixed by appending to `rework/glossary.md` in the format
 `**term** — definition`, one blank line between entries, alphabetical.
 
@@ -92,7 +102,6 @@ Exact formats it demands — these are not style preferences, they are regexes:
 
 | id | title | budget | source pages |
 |---|---|---|---|
-| ch07 | Oral Absorption | 4200 | 30–38 |
 | ch08 | Multiple Dose Regimens | 3400 | 39–42 |
 | ch09 | Non-Compartmental Analysis | 2800 | 43–46 |
 | ch10 | Non-Linear Pharmacokinetics | 2400 | 47–48 |
@@ -146,8 +155,6 @@ Do not reuse the PDF's raster images — the user asked for everything redrawn.
 
 `design/errata-seed.md` holds 32 rows. These belong to the remaining chapters:
 
-- **ch07** — E-013 (F-014): the Wagner–Nelson example tabulates Cp in mg/mL; it is µg·mL⁻¹, and the
-  units must be carried through AUC and every derived column.
 - **ch08** — E-032 (F-035): the accumulation-half-life formula and its IV collapse are asserted.
   Derive them, show log(1) = 0 as the reason the bracket collapses, and state the Ka > K assumption.
 - **ch09** — E-019 (F-027): a procainamide observation is followed by about seventy exclamation
@@ -202,12 +209,13 @@ The book-level check `ERRATA-OPEN` fails while any row is still `open`, so every
   1 mg·kg⁻¹ bolus is exactly Css·Vd so the combined curve is flat. Used in ch05.
 - Example 18: Vd = 16.4 L, Cl_T = 5.68 L·h⁻¹, fu = 0.70, Cl_r = 3.98, Cl_nr = 1.70 L·h⁻¹, clearance
   ratio 0.54. Used in ch06.
-- **Example 22 (ch07) was not finished.** The terminal fit over t = 16–28 h gives K = 0.0867 h⁻¹
-  (t½ = 8.0 h) and A ≈ 105 µg·mL⁻¹, but the residual line is not straight: successive residual
-  slopes steepen from −0.26 to −0.29 h⁻¹, and the resulting Ka does not reproduce the observed peak
-  near 7 h. Fit the full biexponential Cp = A(e^(−Kt) − e^(−Ka·t)) numerically before you write
-  anything, and if the data are internally inconsistent, say so in the chapter rather than quoting a
-  number the data do not support. Dose is 500 mg with F = 0.80.
+- Example 22 (ch07) is exactly A = 160 µg·mL⁻¹, K = 0.100 h⁻¹, Ka = 0.200 h⁻¹ — all fourteen points
+  reproduce to the last printed digit. Hence t½ = tmax = 6.93 h, Cpmax = 40.0 µg·mL⁻¹, Vd = 5.0 L,
+  Cl = 0.5 L·h⁻¹, AUC = 800 µg·h·mL⁻¹ and Cp(11 h) = 35.5 µg·mL⁻¹. Dose 500 mg, F = 0.80. Because
+  Ka is only twice K, naive feathering is biased and ch07 teaches that failure deliberately.
+- Example 23 (ch07) is **zero-order** absorption: the Wagner–Nelson fraction unabsorbed falls by a
+  constant 0.25 per hour, so absorption is complete at 4 h and there is no first-order Ka. K =
+  0.147 h⁻¹, (AUC)₀^∞ = 67.0 µg·h·mL⁻¹.
 
 ## Finishing the book
 
