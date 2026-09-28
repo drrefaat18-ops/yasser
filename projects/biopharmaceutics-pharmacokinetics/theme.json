@@ -1,0 +1,139 @@
+{
+ "schema_version": 1,
+ "project_id": "biopharmaceutics-pharmacokinetics",
+ "preset": "ltr-textbook",
+ "direction": "ltr",
+ "lang_tag": "en-GB",
+ "page": {
+  "size": "A4",
+  "margins": {
+   "top": 2.6,
+   "bottom": 2.4,
+   "left": 3.5,
+   "right": 3.5
+  },
+  "header_distance": 1.3,
+  "footer_distance": 1.2
+ },
+ "fonts": {
+  "serif": "Sitka Text",
+  "serif_heading": "Sitka Heading",
+  "sans": "Segoe UI",
+  "complex_script": null,
+  "complex_script_heading": null
+ },
+ "palette": {
+  "ink": "1D2A38",
+  "primary": "104C4A",
+  "accent": "B26B00",
+  "muted": "5A6470"
+ },
+ "layout": {
+  "text_width": 14
+ },
+ "alignment": {
+  "body": "justify",
+  "headings": "left"
+ },
+ "lists": {
+  "indent": 1.2,
+  "hanging": 0.6
+ },
+ "callouts": {
+  "equation": {
+   "fill": "E9F1F0",
+   "label_colour": "104C4A",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "B7CFCD"
+   }
+  },
+  "worked": {
+   "fill": "F3F5F7",
+   "label_colour": "1D3E63",
+   "layout": "box"
+  },
+  "units": {
+   "fill": "FBF3E0",
+   "label_colour": "7A5200",
+   "layout": "box"
+  },
+  "pitfall": {
+   "fill": "FBEAEA",
+   "label_colour": "A12B2B",
+   "layout": "box"
+  },
+  "practice": {
+   "fill": "E6F2E6",
+   "label_colour": "2F6A36",
+   "layout": "box"
+  },
+  "deeper": {
+   "fill": "F1F1EE",
+   "label_colour": "4A5560",
+   "layout": "box"
+  },
+  "objectives": {
+   "fill": "FFFFFF",
+   "label_colour": "104C4A",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "C9D1D9"
+   }
+  }
+ },
+ "boxed_section_ids": [
+  "objectives"
+ ],
+ "toc_excluded_section_ids": [
+  "takeaways",
+  "answers"
+ ],
+ "toc": {
+  "levels": 2
+ },
+ "cover": {
+  "asset": null,
+  "design": {
+   "eyebrow": "PT-312",
+   "institution": "Faculty of Pharmacy - Pharmaceutical Technology Department",
+   "logos": []
+  }
+ },
+ "title_page": {
+  "notices": [
+   "These notes are for teaching. They are not prescribing guidance. Doses, product performance and regulatory requirements change; check the current official sources before applying any figure in practice."
+  ]
+ },
+ "labels": {
+  "contents": "Contents",
+  "update_toc_instruction": "Right-click and choose Update Field to build the contents.",
+  "chapter": "Chapter",
+  "part": "Part",
+  "glossary": "Glossary",
+  "figure": "Figure",
+  "table": "Table",
+  "question_prefix": "Q",
+  "objective_prefix": "LO",
+  "chapters": "Chapters"
+ },
+ "output": {
+  "basename": "Biopharmaceutics_and_Pharmacokinetics_PT312"
+ },
+ "build": {
+  "backend": "word_com",
+  "word_com": {
+   "toc_styles": [
+    "TOC 1",
+    "TOC 2"
+   ]
+  },
+  "pdf": {
+   "bookmarks": "headings",
+   "embed_fonts": true,
+   "engine": "html"
+  }
+ }
+}

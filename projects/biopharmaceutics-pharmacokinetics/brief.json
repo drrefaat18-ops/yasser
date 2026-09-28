@@ -1,0 +1,212 @@
+{
+ "schema_version": 1,
+ "project_id": "biopharmaceutics-pharmacokinetics",
+ "identity": {
+  "title": "Biopharmaceutics and Pharmacokinetics",
+  "subtitle": "PT-312 Theoretical Notes",
+  "edition": "2026-2027",
+  "authors": [
+   {
+    "name": "Staff Members of the Pharmaceutical Technology Department",
+    "credit_line": "Prepared by the Staff Members of the Pharmaceutical Technology Department",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "Departmental credit exactly as printed on the source title page; no individual names are added or invented.",
+  "rework_authorised": "unknown",
+  "rework_authorised_note": "No written authorisation from the department is on file; the user commissioned the rework and confirmed the departmental credit line at intake."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "intake/Biopharmaceutics and Pharmacokinetics Portsaid.pdf",
+    "format": "pdf",
+    "sha256": "3cfc215a8b569de440b4e11d79812ef7a0393cfa74b6a3502118bae4b15b9ff9"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Biopharmaceutics and pharmacokinetics",
+  "subfields": [
+   "compartmental modelling",
+   "intravenous bolus and infusion kinetics",
+   "clearance",
+   "oral absorption",
+   "multiple dosing and dosage regimens",
+   "non-compartmental analysis",
+   "non-linear pharmacokinetics",
+   "metabolite kinetics",
+   "biopharmaceutical factors and the BCS",
+   "bioavailability and bioequivalence",
+   "dissolution testing"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Concentration-time curves, semilog plots, compartment schematics and dissolution profiles are redrawn as SVG sources in rework/figures; the source PDF's raster figures are not reused."
+ },
+ "audience": {
+  "year_of_study": "Year 3 (PT-312)",
+  "programmes": [
+   "Pharmacy"
+  ],
+  "prior_knowledge": "Physical pharmacy, pharmaceutics and basic calculus (logarithms, exponentials, slopes); no prior pharmacokinetics assumed.",
+  "display_line": "For pharmacy students taking PT-312 Biopharmaceutics and Pharmacokinetics"
+ },
+ "perspectives": {
+  "enabled": false,
+  "items": []
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "simplify"
+  ],
+  "notes": "Simplify and organise only: same scientific content as the source notes, explained more clearly and laid out as a textbook. No new topics are introduced; worked examples are kept and expanded step by step, and end-of-chapter questions are added as study support."
+ },
+ "language": {
+  "source": "en",
+  "output": "en",
+  "translation_required": false,
+  "terminology": "Keep the standard pharmacokinetic symbols used in the source (Cp, Cp0, AUC, Ke, Ka, t1/2, Vd, CL, MRT, F) and define each on first use."
+ },
+ "size": {
+  "target_words_total": 45000,
+  "chapter_count_target": 14,
+  "restructuring": "keep_chapters",
+  "restructuring_note": "The 14 subjects of the source contents page become the 14 chapters, in the printed order."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 10,
+   "options": 4,
+   "format": "Four-option stems tagged to a learning objective; answers with worked rationales at the end of each chapter."
+  },
+  "cases": {
+   "enabled": false
+  },
+  "exercises": {
+   "enabled": true
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [],
+  "frameworks": [
+   "US FDA",
+   "EMA",
+   "USP",
+   "Egyptian Drug Authority"
+  ]
+ },
+ "references": {
+  "style": "vancouver",
+  "style_note": "Numbered square-bracket citations in the text; a single consolidated reference list at the end of the book, as in the source.",
+  "recency": null,
+  "evidence_cutoff": null
+ },
+ "constraints": {
+  "must_keep": [
+   "Departmental credit line and the PT-312 course code",
+   "The 14 subjects and their printed order",
+   "Every worked example in the source"
+  ],
+  "must_not_change": [
+   "No invented ISBN, publisher or copyright registration",
+   "No new topics beyond the source syllabus"
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "docx",
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Fonts installed on stock Windows",
+  "branding": {
+   "logo": null,
+   "colours": []
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Mathematical and unit accuracy",
+   "weight": 20,
+   "reviewer_ids": [
+    "statistician",
+    "pharmacokinetics-reviewer"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Derivation and worked-calculation clarity",
+   "weight": 20,
+   "reviewer_ids": [
+    "pharmacokinetics-reviewer",
+    "instructional-designer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": "Title, subtitle and 2026-2027 edition from the source title page; the user confirmed the departmental credit line and that rework authorisation is not on file."
+  },
+  "B": {
+   "provenance": "default-confirmed",
+   "note": "Domain and subfields read off the source contents page; charts pack only."
+  },
+  "C": {
+   "provenance": "default-confirmed",
+   "note": "PT-312 is a Year 3 pharmacy course; prior knowledge inferred from the source's assumed background."
+  },
+  "D": {
+   "provenance": "default-confirmed",
+   "note": "Single-programme book, so no professional perspective boxes."
+  },
+  "E": {
+   "provenance": "user",
+   "note": "The user chose simplify and organise only, with no new content."
+  },
+  "F": {
+   "provenance": "user",
+   "note": "The user chose English output, as the source."
+  },
+  "G": {
+   "provenance": "user",
+   "note": "The user chose to keep the 14 subjects in their printed order."
+  },
+  "H": {
+   "provenance": "user",
+   "note": "The user chose 10 four-option MCQs plus step-by-step calculation exercises per chapter; no clinical cases."
+  },
+  "I": {
+   "provenance": "default-confirmed",
+   "note": "Egypt; the regulatory frames the source itself cites (FDA, EMA, USP) plus the national authority."
+  },
+  "J": {
+   "provenance": "user",
+   "note": "The user chose one consolidated reference list at the end of the book."
+  },
+  "K": {
+   "provenance": "default-confirmed",
+   "note": "No ISBN, publisher or deadline; the source syllabus bounds the content."
+  },
+  "L": {
+   "provenance": "user",
+   "note": "The user chose Word plus a designed PDF, A4, stock Windows fonts."
+  },
+  "M": {
+   "provenance": "user",
+   "note": "The user chose mathematical accuracy and calculation clarity as the two domain pillars, 20 each."
+  }
+ },
+ "unresolved": []
+}

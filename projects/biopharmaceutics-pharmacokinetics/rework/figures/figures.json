@@ -1,0 +1,71 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "ch01-release-to-response",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch01-release-to-response.svg",
+   "caption": "From dosage form to response. Biopharmaceutics governs the steps up to systemic circulation; pharmacokinetics governs what happens after. No step in the chain can be skipped.",
+   "alt": "A left-to-right chain of four boxes: drug in dosage form, drug released and dissolved, drug in systemic circulation, drug in tissues. An arrow runs down from tissues to pharmacological response, and out from systemic circulation to elimination by metabolism and excretion. A bracket labelled Biopharmaceutics spans the first three boxes; a bracket labelled Pharmacokinetics spans from systemic circulation onwards.",
+   "credit": "Original diagram, redrawn from the first edition page 4",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch01-plasma-curve",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch01-plasma-curve.svg",
+   "caption": "The plasma concentration-time curve after an oral dose. Cpmax and tmax describe the rate of absorption; the shaded area (AUC) describes its extent. The band between MEC and MTC is the therapeutic range.",
+   "alt": "A concentration-time curve rising to a peak at about two hours and then falling. The area beneath it is shaded and labelled AUC. Dashed lines mark the peak concentration on the vertical axis and the time of the peak on the horizontal axis. Two horizontal dashed lines mark the minimum effective concentration and the minimum toxic concentration, with the band between them bracketed and labelled therapeutic range.",
+   "credit": "Original diagram, redrawn from the first edition page 5",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch01-compartment-models",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch01-compartment-models.svg",
+   "caption": "One-, two- and three-compartment open models. Peripheral compartments exchange only with the central compartment, and elimination takes place only from the central compartment.",
+   "alt": "Three schematics. One compartment: a central box with an elimination arrow labelled K. Two compartments: a central box exchanging with a tissue box through arrows K12 and K21, with elimination K leaving the central box. Three compartments: a central box exchanging with two separate tissue boxes through K12, K21, K13 and K31, with elimination K leaving the central box; the two tissue boxes are not connected to each other.",
+   "credit": "Original diagram, redrawn from the first edition pages 6 and 7",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch02-semilog",
+   "chapter_id": "ch02",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch02-semilog.svg",
+   "caption": "The same seven plasma concentrations after a 300 mg IV bolus, plotted on linear and on semilogarithmic axes. Only the semilogarithmic plot gives a straight line, from which Cp⁰ is read at the intercept and K from the slope.",
+   "alt": "Two plots side by side sharing the same data. On the left, linear axes show a falling curve from which no constant can be read. On the right, semilogarithmic axes show the same points on a straight line; the intercept is marked Cp zero equals 8.57 and the slope is annotated as minus K over 2.303, with K equal to 0.170 per hour and half-life 4.07 hours.",
+   "credit": "Original diagram, drawn from the first edition Example 6 dataset, page 11",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch03-urine-methods",
+   "chapter_id": "ch03",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch03-urine-methods.svg",
+   "caption": "The two ways of reading urine data, both applied to the Example 3.1 collection. Filled points are plotted correctly; open points show the characteristic error of each method — end-of-interval time on the left, and an underestimated Du∞ on the right.",
+   "alt": "Two semilogarithmic plots. On the left, urinary excretion rate against time: filled points plotted at interval midpoints lie on a straight line, while open points plotted at end-of-interval times curve above it and flatten the slope. On the right, the amount remaining to be excreted against time: filled points using Du infinity of 1000 mg lie on a straight line from an intercept of 1000, while open points using 984 mg fall away below the line at the late times.",
+   "credit": "Original diagram, drawn from the first edition Example 8 dataset, page 16",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch04-residuals",
+   "chapter_id": "ch04",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch04-residuals.svg",
+   "caption": "The method of residuals applied to the Example 4.1 data. The terminal line is fitted to the late points and extrapolated back to give b and B; subtracting it from each early point gives the residuals, whose own line gives a and A.",
+   "alt": "A semilogarithmic plot of plasma concentration against time. Filled circles curve steeply at first and then straighten from four hours onwards. A dashed line fitted to the straight portion is extrapolated back to an intercept marked B equals 15, with slope minus b over 2.303 and b equal to 0.21 per hour. Open squares below the early circles show the residuals, lying on a steeper dotted line back-extrapolated to an intercept marked A equals 45, with slope minus a over 2.303 and a equal to 1.8 per hour.",
+   "credit": "Original diagram, drawn from the first edition Example 10 dataset, page 20",
+   "licence": "original",
+   "status": "generated"
+  }
+ ]
+}

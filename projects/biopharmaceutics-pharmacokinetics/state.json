@@ -1,0 +1,184 @@
+{
+ "aborts": [
+  {
+   "nonce": "535cab88c94a212f",
+   "reason": "reopen design to raise ch01 word budget",
+   "stage": "rework",
+   "time": "2026-09-28T18:41:07Z"
+  }
+ ],
+ "active_run": {
+  "author_model": "claude",
+  "nonce": "c79007418960173a",
+  "pid": 20476,
+  "stage": "rework",
+  "started_at": "2026-09-28T18:42:51Z",
+  "unit": null
+ },
+ "approvals": {
+  "design": {
+   "approved_at": "2026-09-28T18:42:38Z",
+   "approved_by": "user",
+   "dec_id": "DEC-003",
+   "dec_row_sha256": "aa0c248927bf277bda0f0e0cdb63a7e500bc91e6458ed3193c23d2ae763c9292",
+   "files": {
+    "design/chapter-plan.json": "342a202ad9f0e61f544da3a7e076bb333f218f46d6804514efc9fd2cde928149",
+    "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
+    "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39"
+   },
+   "kind": "design"
+  },
+  "intake": {
+   "approved_at": "2026-09-28T17:50:20Z",
+   "approved_by": "user",
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "ab3253466a3b30d61014beb5c024ad2ea87238e0224960a00c085f18f77b9cc4",
+   "files": {
+    "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
+    "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
+    "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
+    "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
+    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "biopharmaceutics-pharmacokinetics",
+ "receipts": {
+  "design": {
+   "args": {},
+   "chapter_count": 14,
+   "inputs": {
+    "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
+    "evaluation/codex-review.md": "a92c70697bc6547588b4598b3a63441490de37059181fc36ac6b2a92202487f6",
+    "evaluation/findings.json": "63d86ca3b7bd837ef83c1889bdf7c0f34ad8ee7e330ced5beee98b1650262250",
+    "evaluation/fixes.md": "00ff94c43e5ad2d0483a20c749dbc6ff459152a1faf9b350fae883d3c604d065",
+    "evaluation/report.md": "84e68dd8db87d699687e4fe58b0efb71175ad352c7a7b716f0fef4a38ed56720",
+    "evaluation/scorecard.json": "4cdb05c322b4922f6eb0d4a364e39ec597faa0f6b559d6cd6423e356ff7e67eb",
+    "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
+    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+   },
+   "outputs": {
+    "design/chapter-plan.json": "342a202ad9f0e61f544da3a7e076bb333f218f46d6804514efc9fd2cde928149",
+    "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
+    "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39"
+   },
+   "stage": "design",
+   "status": "ok",
+   "time": "2026-09-28T18:42:02Z",
+   "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
+   "total_budget": 47400
+  },
+  "evaluate": {
+   "args": {},
+   "author_model": "claude",
+   "inputs": {
+    "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
+    "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
+    "ingest/conversion-report.json": "1c79469cb828530ba786c33d233929b6116c656dc635b4ff7f63a89ee685bbd1",
+    "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
+    "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497"
+   },
+   "outputs": {
+    "evaluation/codex-review.md": "a92c70697bc6547588b4598b3a63441490de37059181fc36ac6b2a92202487f6",
+    "evaluation/findings.json": "63d86ca3b7bd837ef83c1889bdf7c0f34ad8ee7e330ced5beee98b1650262250",
+    "evaluation/fixes.md": "00ff94c43e5ad2d0483a20c749dbc6ff459152a1faf9b350fae883d3c604d065",
+    "evaluation/report.md": "84e68dd8db87d699687e4fe58b0efb71175ad352c7a7b716f0fef4a38ed56720",
+    "evaluation/scorecard.json": "4cdb05c322b4922f6eb0d4a364e39ec597faa0f6b559d6cd6423e356ff7e67eb"
+   },
+   "personas": [
+    "instructional-designer",
+    "pharmacokinetics-reviewer",
+    "psychologist",
+    "research-synthesist",
+    "statistician",
+    "subject-reviewer"
+   ],
+   "reviewer_model": "gpt-5",
+   "rubric_digest": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
+   "rulings": {},
+   "stage": "evaluate",
+   "status": "ok",
+   "time": "2026-09-28T18:13:50Z",
+   "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
+  },
+  "ingest": {
+   "args": {},
+   "converter": "markitdown",
+   "inputs": {
+    "intake/Biopharmaceutics and Pharmacokinetics Portsaid.pdf": "3cfc215a8b569de440b4e11d79812ef7a0393cfa74b6a3502118bae4b15b9ff9",
+    "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71"
+   },
+   "outputs": {
+    "ingest/conversion-report.json": "1c79469cb828530ba786c33d233929b6116c656dc635b4ff7f63a89ee685bbd1",
+    "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
+    "ingest/units.json": "8665278f5eac761139d4e734dab6defbaa5ac1f507d595d43c338b755ae9e3c3",
+    "source-manifest.json": "485e1b4b4e5a4ea62467edc786e008d3ff49f64692f495c95c6cf78b71454fd2",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/Biopharmaceutics and Pharmacokinetics Portsaid.pdf": "3cfc215a8b569de440b4e11d79812ef7a0393cfa74b6a3502118bae4b15b9ff9"
+   },
+   "source_formats": [
+    "pdf"
+   ],
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-09-28T17:50:45Z",
+   "tool_sha": "2889f760f71017d4e2d0a30c76e975ec4f606bfa"
+  },
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook.json": "3383379144735ef9af43519a1ccab51232a2fe7b7f7f596764e9a37de4a3cf31",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
+    "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
+    "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
+    "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
+    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-09-28T17:50:07Z",
+   "tool_sha": "5576469032c9e048801d28aac2854462348308b2"
+  },
+  "new": {
+   "args": {
+    "slug": "biopharmaceutics-pharmacokinetics"
+   },
+   "inputs": {},
+   "outputs": {
+    "agents/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "design/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-09-28T17:39:26Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  }
+ },
+ "schema_version": 1
+}

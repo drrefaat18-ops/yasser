@@ -1,0 +1,34 @@
+{
+ "schema_version": 1,
+ "id": "pharmacokinetics-reviewer",
+ "base_persona": "subject-reviewer",
+ "scope": "Biopharmaceutics and pharmacokinetics for third-year pharmacy students: equation correctness, unit consistency, model assumptions, and whether every worked calculation can be reproduced from the printed steps.",
+ "criteria": [
+  "Every equation is dimensionally consistent and its symbols are defined where first used.",
+  "Units are carried through each calculation step and the final answer carries the right unit.",
+  "Ln and log10 forms are not mixed; the 2.303 factor appears only where the base changes.",
+  "Model assumptions are stated before the equations they justify (one- versus two-compartment, first- versus zero-order).",
+  "Elimination rate constant, half-life, volume of distribution and clearance are related consistently (CL = Ke x Vd).",
+  "Apparent volume of distribution is described as apparent, not as a physiological volume.",
+  "Absorption parameters are distinguished: Ka and tmax describe rate, AUC and F describe extent.",
+  "Superposition, steady state and accumulation are derived, not asserted.",
+  "Non-linear kinetics uses Michaelis-Menten terms correctly (Vmax, Km) and says when linear equations stop applying.",
+  "Bioequivalence acceptance criteria, BCS classes and dissolution apparatus are stated as the current regulatory texts state them.",
+  "Every worked example is reproducible: each arithmetic step is shown and the printed answer is recomputed.",
+  "Graph descriptions match the plot: semilog axes, slope sign and intercept meaning."
+ ],
+ "exclusions": [
+  "Do not request topics outside the source syllabus; this rework simplifies and organises, it does not broaden.",
+  "Do not request clinical dosing recommendations for named patients."
+ ],
+ "evidence_expectations": [
+  "Quote the exact text and give file and line for every finding.",
+  "Recompute any number challenged, and show the recomputation.",
+  "Give replacement text, not only a critique.",
+  "Cite a standard text or the regulatory document for any corrected definition or criterion."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2"
+ ]
+}

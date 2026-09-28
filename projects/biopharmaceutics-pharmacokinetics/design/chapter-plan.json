@@ -1,0 +1,136 @@
+{
+ "schema_version": 1,
+ "project_id": "biopharmaceutics-pharmacokinetics",
+ "parts": [
+  {
+   "id": "P1",
+   "label": "Part I",
+   "title": "One-Compartment Kinetics"
+  },
+  {
+   "id": "P2",
+   "label": "Part II",
+   "title": "Extended Models, Clearance and Dosing"
+  },
+  {
+   "id": "P3",
+   "label": "Part III",
+   "title": "Biopharmaceutics, Bioequivalence and Dissolution"
+  }
+ ],
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01.md",
+   "title": "Introduction to Biopharmaceutics and Pharmacokinetics",
+   "word_budget": 2700,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch02",
+   "file": "ch02.md",
+   "title": "One Compartment, IV Bolus: Plasma Data",
+   "word_budget": 3400,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch03",
+   "file": "ch03.md",
+   "title": "One Compartment, IV Bolus: Urine Data",
+   "word_budget": 2800,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch04",
+   "file": "ch04.md",
+   "title": "Two Compartment, IV Bolus: Plasma Data",
+   "word_budget": 3200,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch05",
+   "file": "ch05.md",
+   "title": "Intravenous Infusion",
+   "word_budget": 3000,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch06",
+   "file": "ch06.md",
+   "title": "Clearance",
+   "word_budget": 3400,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch07",
+   "file": "ch07.md",
+   "title": "Oral Absorption",
+   "word_budget": 4200,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch08",
+   "file": "ch08.md",
+   "title": "Multiple Dose Regimens",
+   "word_budget": 3400,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch09",
+   "file": "ch09.md",
+   "title": "Non-Compartmental Analysis",
+   "word_budget": 2800,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch10",
+   "file": "ch10.md",
+   "title": "Non-Linear Pharmacokinetics",
+   "word_budget": 2400,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch11",
+   "file": "ch11.md",
+   "title": "Pharmacokinetics of Metabolites",
+   "word_budget": 2700,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch12",
+   "file": "ch12.md",
+   "title": "Biopharmaceutical Considerations",
+   "word_budget": 5000,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch13",
+   "file": "ch13.md",
+   "title": "Bioavailability and Bioequivalence",
+   "word_budget": 5000,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch14",
+   "file": "ch14.md",
+   "title": "Dissolution",
+   "word_budget": 3400,
+   "part_id": "P3",
+   "source_refs": []
+  }
+ ],
+ "dropped": []
+}
