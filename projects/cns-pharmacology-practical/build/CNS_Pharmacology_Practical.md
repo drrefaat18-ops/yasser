@@ -1092,7 +1092,7 @@ TCAs block SERT and NET. They also block several receptors, and these blocks exp
 | α1 | Postural hypotension, dizziness, falls | TCAs, trazodone |
 | H1 | Sedation, weight gain | TCAs, mirtazapine, trazodone |
 | Muscarinic | Dry mouth, constipation, urinary retention, blurred vision, confusion | TCAs (least with nortriptyline) |
-| Cardiac Na⁺ channels | QRS widening, arrhythmia (in overdose) | TCAs |
+| Cardiac Na^+^ channels | QRS widening, arrhythmia (in overdose) | TCAs |
 | 5-HT (raised serotonin) | Nausea, sexual dysfunction, insomnia | SSRIs, SNRIs |
 
 *Table 4.2 — Adverse effects explained by receptors.*
@@ -1133,7 +1133,7 @@ TCAs are dangerous in overdose; a week's supply can kill. Features are:
 
 - Antimuscarinic toxicity: hot dry skin, dilated pupils, urinary retention, confusion.
 - Seizures and coma.
-- Cardiotoxicity from Na⁺ channel block: wide QRS, ventricular arrhythmia and hypotension.
+- Cardiotoxicity from Na^+^ channel block: wide QRS, ventricular arrhythmia and hypotension.
 - Metabolic acidosis, which worsens cardiotoxicity.
 
 Treatment: airway support and an ECG. Give IV **sodium bicarbonate** if the QRS is wide, there is arrhythmia or hypotension, or acidosis is present. Treat seizures with a benzodiazepine. Avoid flumazenil and class Ia and Ic antiarrhythmics.
@@ -1265,7 +1265,7 @@ D) Trazodone
 
 **Q4. C** — Mental change, hyperthermia and clonus after an MAO inhibitor plus tramadol is serotonin syndrome. A is a hypertensive crisis from tyramine. B follows D2 block and causes rigidity, not clonus. D has no clonus.
 
-**Q5. A** — Sodium bicarbonate treats the Na⁺ channel block and acidosis. B can cause seizures in TCA overdose. C is for serotonin syndrome. D alone is not enough.
+**Q5. A** — Sodium bicarbonate treats the Na^+^ channel block and acidosis. B can cause seizures in TCA overdose. C is for serotonin syndrome. D alone is not enough.
 
 **Q6. B** — SSRI sexual dysfunction often persists and must be managed. A is the old error. C is wrong; it is serotonergic. D does not treat it.
 
@@ -1303,7 +1303,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Select a drug for each seizure type and for women who could become pregnant.
 5. [LO5] Outline the drug treatment of status epilepticus.
 
-> **Quick Recap:** Neurons fire when Na⁺ enters through voltage-gated Na⁺ channels. Glutamate is the main excitatory transmitter; it acts on NMDA and AMPA/kainate receptors. GABA is the main inhibitory transmitter; GABA-A receptors are Cl⁻ channels, and more Cl⁻ entry makes the neuron harder to fire. T-type Ca²⁺ channels in the thalamus drive rhythmic thalamocortical firing. Liver CYP enzymes metabolise many drugs; inducers speed this up and inhibitors slow it down.
+> **Quick Recap:** Neurons fire when Na^+^ enters through voltage-gated Na^+^ channels. Glutamate is the main excitatory transmitter; it acts on NMDA and AMPA/kainate receptors. GABA is the main inhibitory transmitter; GABA-A receptors are Cl^-^ channels, and more Cl^-^ entry makes the neuron harder to fire. T-type Ca^2+^ channels in the thalamus drive rhythmic thalamocortical firing. Liver CYP enzymes metabolise many drugs; inducers speed this up and inhibitors slow it down.
 
 ## 5.1 The Disease in Brief
 
@@ -1327,13 +1327,13 @@ The ILAE classifies seizures by where they start [2].
 
 *Table 5.1 — Main seizure types.*
 
-Absence seizures come from rhythmic firing between the thalamus and cortex, driven by T-type Ca²⁺ channels. This is why ethosuximide, a T-type blocker, treats them.
+Absence seizures come from rhythmic firing between the thalamus and cortex, driven by T-type Ca^2+^ channels. This is why ethosuximide, a T-type blocker, treats them.
 
 > **Clinical Pearl:** Not every generalised seizure removes awareness. A patient with myoclonic jerks is usually aware of them. Ask about morning jerks when you take a history; they point to juvenile myoclonic epilepsy.
 
 ## 5.2 How Antiseizure Drugs Work
 
-Antiseizure drugs reduce excitation or increase inhibition. Most drugs act in more than one way. The old rule that "first-generation drugs act on inhibition and second-generation drugs act on excitation" is false. Phenytoin and carbamazepine block Na⁺ channels, and several newer drugs enhance GABA.
+Antiseizure drugs reduce excitation or increase inhibition. Most drugs act in more than one way. The old rule that "first-generation drugs act on inhibition and second-generation drugs act on excitation" is false. Phenytoin and carbamazepine block Na^+^ channels, and several newer drugs enhance GABA.
 
 ![Left: glutamate nerve ending with Na+ channels, the alpha-2-delta Ca2+ subunit and SV2A, and postsynaptic AMPA receptors, with the drugs acting at each. Right: GABA nerve ending with GABA transaminase blocked by valproate, the GABA-A receptor enhanced by benzodiazepines and phenobarbital, and thalamic T-type Ca2+ channels blocked by ethosuximide.](../figures/out/antiseizure-targets.png)
 
@@ -1342,9 +1342,9 @@ Original diagram for this book (original)
 
 | Mechanism | Drugs |
 |---|---|
-| Block voltage-gated Na⁺ channels | Phenytoin, carbamazepine, lamotrigine, topiramate, valproate (in part) |
-| Block T-type Ca²⁺ channels | Ethosuximide, valproate |
-| Bind the α2δ subunit of Ca²⁺ channels (less glutamate release) | Gabapentin, pregabalin |
+| Block voltage-gated Na^+^ channels | Phenytoin, carbamazepine, lamotrigine, topiramate, valproate (in part) |
+| Block T-type Ca^2+^ channels | Ethosuximide, valproate |
+| Bind the α2δ subunit of Ca^2+^ channels (less glutamate release) | Gabapentin, pregabalin |
 | Enhance GABA-A receptors | Benzodiazepines, phenobarbital, topiramate |
 | Raise GABA levels | Valproate (inhibits GABA transaminase) |
 | Bind the vesicle protein SV2A (less transmitter release) | Levetiracetam |
@@ -1356,7 +1356,7 @@ Original diagram for this book (original)
 
 ### Phenytoin
 
-Phenytoin blocks Na⁺ channels. It is used for focal and tonic–clonic seizures and, IV, in status epilepticus. It has **non-linear (saturable) kinetics**: a small dose increase can cause a large rise in blood level. Monitor plasma levels.
+Phenytoin blocks Na^+^ channels. It is used for focal and tonic–clonic seizures and, IV, in status epilepticus. It has **non-linear (saturable) kinetics**: a small dose increase can cause a large rise in blood level. Monitor plasma levels.
 
 Adverse effects:
 
@@ -1369,7 +1369,7 @@ Adverse effects:
 
 ### Carbamazepine
 
-Carbamazepine blocks Na⁺ channels. It is used for focal seizures and is first choice for **trigeminal neuralgia**. It is also a mood stabiliser. It can worsen absence and myoclonic seizures.
+Carbamazepine blocks Na^+^ channels. It is used for focal seizures and is first choice for **trigeminal neuralgia**. It is also a mood stabiliser. It can worsen absence and myoclonic seizures.
 
 It induces liver enzymes, including its own metabolism (**auto-induction**). So its half-life falls over the first weeks and the dose must be raised slowly.
 
@@ -1377,7 +1377,7 @@ Adverse effects: dizziness, diplopia, ataxia, hyponatraemia (an ADH-like effect)
 
 ### Valproate
 
-Valproate is a broad-spectrum drug. It blocks Na⁺ channels and T-type Ca²⁺ channels and raises GABA by inhibiting GABA transaminase. It treats all seizure types: tonic–clonic, absence, myoclonic and focal. It is also a mood stabiliser and is used in migraine prevention.
+Valproate is a broad-spectrum drug. It blocks Na^+^ channels and T-type Ca^2+^ channels and raises GABA by inhibiting GABA transaminase. It treats all seizure types: tonic–clonic, absence, myoclonic and focal. It is also a mood stabiliser and is used in migraine prevention.
 
 Adverse effects:
 
@@ -1392,7 +1392,7 @@ Valproate is an **enzyme inhibitor**. It raises the levels of lamotrigine and ph
 
 ### Ethosuximide
 
-Ethosuximide blocks T-type Ca²⁺ channels in the thalamus. It is used **only for absence seizures**, where it is first choice. It does not protect against tonic–clonic seizures. Adverse effects: nausea, abdominal pain, headache and drowsiness.
+Ethosuximide blocks T-type Ca^2+^ channels in the thalamus. It is used **only for absence seizures**, where it is first choice. It does not protect against tonic–clonic seizures. Adverse effects: nausea, abdominal pain, headache and drowsiness.
 
 ### Phenobarbital and benzodiazepines
 
@@ -1402,10 +1402,10 @@ Phenobarbital enhances GABA-A receptors. It is cheap and long-acting but sedatin
 
 Newer drugs cause fewer interactions and are often better tolerated. They are not free of serious adverse effects.
 
-- **Lamotrigine** blocks Na⁺ channels and reduces glutamate release. It treats focal and generalised seizures and is a first-choice drug in women who could become pregnant. Its main risk is **rash**, including Stevens–Johnson syndrome. The risk is highest with fast titration and with valproate, which doubles lamotrigine levels. Increase the dose slowly. Oestrogen-containing pills lower lamotrigine levels.
+- **Lamotrigine** blocks Na^+^ channels and reduces glutamate release. It treats focal and generalised seizures and is a first-choice drug in women who could become pregnant. Its main risk is **rash**, including Stevens–Johnson syndrome. The risk is highest with fast titration and with valproate, which doubles lamotrigine levels. Increase the dose slowly. Oestrogen-containing pills lower lamotrigine levels.
 - **Levetiracetam** binds SV2A and reduces transmitter release. It treats focal and generalised seizures. It has few interactions and is one of the safest options in pregnancy. It can cause irritability, low mood and, rarely, suicidal thoughts.
-- **Topiramate** blocks Na⁺ channels, enhances GABA and blocks AMPA/kainate receptors. It is also used to prevent migraine. Adverse effects: weight loss, word-finding difficulty, kidney stones, paraesthesia and, rarely, acute angle-closure glaucoma. It is teratogenic (cleft lip and palate).
-- **Gabapentin and pregabalin** bind the α2δ subunit of voltage-gated Ca²⁺ channels and reduce glutamate release. They are used mainly for neuropathic pain and as add-on drugs for focal seizures. They cause sedation and dizziness. They can be misused, pregabalin more than gabapentin. With opioids they increase the risk of breathing depression.
+- **Topiramate** blocks Na^+^ channels, enhances GABA and blocks AMPA/kainate receptors. It is also used to prevent migraine. Adverse effects: weight loss, word-finding difficulty, kidney stones, paraesthesia and, rarely, acute angle-closure glaucoma. It is teratogenic (cleft lip and palate).
+- **Gabapentin and pregabalin** bind the α2δ subunit of voltage-gated Ca^2+^ channels and reduce glutamate release. They are used mainly for neuropathic pain and as add-on drugs for focal seizures. They cause sedation and dizziness. They can be misused, pregabalin more than gabapentin. With opioids they increase the risk of breathing depression.
 
 ## 5.5 Comparing the Main Drugs
 
@@ -1463,7 +1463,7 @@ Status epilepticus is a seizure that lasts more than 5 minutes, or repeated seiz
 
 ## Key Takeaways
 - Seizures are focal or generalised; awareness is lost in tonic–clonic and absence seizures but usually kept in myoclonic seizures.
-- Antiseizure drugs block Na⁺ or T-type Ca²⁺ channels, enhance GABA, bind SV2A or α2δ, or block glutamate.
+- Antiseizure drugs block Na^+^ or T-type Ca^2+^ channels, enhance GABA, bind SV2A or α2δ, or block glutamate.
 - Phenytoin, carbamazepine and phenobarbital are inducers; valproate is an inhibitor.
 - Valproate is broad-spectrum but most teratogenic; lamotrigine or levetiracetam are preferred in women who could become pregnant.
 - Ethosuximide is first choice for absence seizures; carbamazepine and phenytoin worsen them.
@@ -1483,9 +1483,9 @@ C) Phenytoin
 D) Gabapentin
 
 **Q3.** What is the mechanism of levetiracetam? [LO2]
-A) Block of T-type Ca²⁺ channels
+A) Block of T-type Ca^2+^ channels
 B) Inhibition of GABA transaminase
-C) Binding to the α2δ subunit of Ca²⁺ channels
+C) Binding to the α2δ subunit of Ca^2+^ channels
 D) Binding to the synaptic vesicle protein SV2A
 
 **Q4.** Which drug is a liver enzyme inhibitor? [LO3]
@@ -1541,7 +1541,7 @@ D) Levetiracetam
 ## Answers and Rationales
 **Q1. C** — A brief stare many times a day without post-ictal confusion is an absence seizure. A keeps awareness. B is jerking. D is stiffening and jerking.
 
-**Q2. A** — Ethosuximide blocks thalamic T-type Ca²⁺ channels. B and C can worsen absence seizures. D is not effective.
+**Q2. A** — Ethosuximide blocks thalamic T-type Ca^2+^ channels. B and C can worsen absence seizures. D is not effective.
 
 **Q3. D** — Levetiracetam binds SV2A. A is ethosuximide. B is valproate. C is gabapentin and pregabalin.
 
@@ -1586,7 +1586,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Identify key adverse effects, interactions and withdrawal risks of muscle relaxants.
 5. [LO5] Outline the recognition and treatment of malignant hyperthermia.
 
-> **Quick Recap:** A motor nerve releases acetylcholine (ACh) at the neuromuscular junction. ACh acts on nicotinic (Nm) receptors on the muscle, which are ion channels; Na⁺ enters and the muscle fibre depolarises. The signal travels into the fibre and releases Ca²⁺ from the sarcoplasmic reticulum through the ryanodine receptor (RyR1). Ca²⁺ triggers contraction. Acetylcholinesterase ends the signal in milliseconds. In the spinal cord, GABA and α2 receptors on sensory nerve endings reduce reflex firing.
+> **Quick Recap:** A motor nerve releases acetylcholine (ACh) at the neuromuscular junction. ACh acts on nicotinic (Nm) receptors on the muscle, which are ion channels; Na^+^ enters and the muscle fibre depolarises. The signal travels into the fibre and releases Ca^2+^ from the sarcoplasmic reticulum through the ryanodine receptor (RyR1). Ca^2+^ triggers contraction. Acetylcholinesterase ends the signal in milliseconds. In the spinal cord, GABA and α2 receptors on sensory nerve endings reduce reflex firing.
 
 ## 6.1 Two Groups, Two Aims
 
@@ -1611,8 +1611,8 @@ Original diagram for this book (original)
 
 Baclofen is a GABA derivative that is active by mouth. It is an agonist at **GABA-B** receptors in the spinal cord. GABA-B is a G-protein-coupled receptor, not a chloride channel. Its activation:
 
-- Opens K⁺ channels, so the neuron hyperpolarises.
-- Reduces Ca²⁺ entry into nerve endings, so less excitatory transmitter is released.
+- Opens K^+^ channels, so the neuron hyperpolarises.
+- Reduces Ca^2+^ entry into nerve endings, so less excitatory transmitter is released.
 
 Reflex firing falls and tone improves [1]. Severe spasticity can be treated with intrathecal baclofen by pump.
 
@@ -1647,7 +1647,7 @@ Many products in Egypt combine a relaxant with paracetamol or ibuprofen. Count e
 
 ## 6.4 Dantrolene: a Direct-Acting Relaxant
 
-Dantrolene is a hydantoin derivative, related to phenytoin. It acts **inside the muscle**. It blocks the **RyR1** channel and so reduces Ca²⁺ release from the sarcoplasmic reticulum. Contraction becomes weaker. It has little effect on heart or smooth muscle.
+Dantrolene is a hydantoin derivative, related to phenytoin. It acts **inside the muscle**. It blocks the **RyR1** channel and so reduces Ca^2+^ release from the sarcoplasmic reticulum. Contraction becomes weaker. It has little effect on heart or smooth muscle.
 
 Uses:
 
@@ -1692,14 +1692,14 @@ Succinylcholine (suxamethonium) is two ACh molecules joined together. It is not 
 
 **Mechanism in two phases:**
 
-- **Phase I (depolarising block):** succinylcholine activates Nm receptors and holds the end-plate in a state of **persistent depolarisation**. Brief muscle twitches (fasciculations) are seen, then flaccid paralysis. The Na⁺ channels near the end-plate stay inactivated. Neostigmine **worsens** this phase.
+- **Phase I (depolarising block):** succinylcholine activates Nm receptors and holds the end-plate in a state of **persistent depolarisation**. Brief muscle twitches (fasciculations) are seen, then flaccid paralysis. The Na^+^ channels near the end-plate stay inactivated. Neostigmine **worsens** this phase.
 - **Phase II (desensitising block):** with long exposure or large doses, the membrane repolarises, but the receptors become desensitised. This block resembles a non-depolarising block.
 
 **Adverse effects:**
 
 | Effect | Cause and at-risk patients |
 |---|---|
-| Hyperkalaemia | K⁺ leaves depolarised muscle; dangerous after burns, crush injury, denervation or long immobility; can cause cardiac arrest |
+| Hyperkalaemia | K^+^ leaves depolarised muscle; dangerous after burns, crush injury, denervation or long immobility; can cause cardiac arrest |
 | Bradycardia | Muscarinic stimulation, especially after a second dose and in children; treat with atropine |
 | Postoperative muscle pain | Fasciculations |
 | Raised intraocular, intragastric and intracranial pressure | Muscle contraction; care in open eye injury |
@@ -1722,7 +1722,7 @@ Succinylcholine (suxamethonium) is two ACh molecules joined together. It is not 
 
 ## 6.6 Malignant Hyperthermia
 
-Malignant hyperthermia is a rare inherited disorder, usually linked to a mutation of **RyR1**. Volatile anaesthetics (halothane, sevoflurane, desflurane) or succinylcholine trigger uncontrolled Ca²⁺ release in muscle [4].
+Malignant hyperthermia is a rare inherited disorder, usually linked to a mutation of **RyR1**. Volatile anaesthetics (halothane, sevoflurane, desflurane) or succinylcholine trigger uncontrolled Ca^2+^ release in muscle [4].
 
 Features: a rise in end-tidal CO₂ that does not respond to ventilation, tachycardia, muscle rigidity (often the jaw), then fever, acidosis, hyperkalaemia and myoglobinuria.
 
@@ -1759,8 +1759,8 @@ Features: a rise in end-tidal CO₂ that does not respond to ventilation, tachyc
 
 ## Key Takeaways
 - Spasticity (brain or cord damage) is treated with baclofen, tizanidine, dantrolene or diazepam; spasm (local injury) with short courses of antispasmodics after NSAIDs and physiotherapy.
-- Baclofen is a GABA-B agonist: more K⁺ conductance and less presynaptic Ca²⁺ entry; never stop it suddenly.
-- Dantrolene blocks Ca²⁺ release through RyR1 and is the treatment of malignant hyperthermia.
+- Baclofen is a GABA-B agonist: more K^+^ conductance and less presynaptic Ca^2+^ entry; never stop it suddenly.
+- Dantrolene blocks Ca^2+^ release through RyR1 and is the treatment of malignant hyperthermia.
 - NMBs paralyse without sedation or analgesia.
 - Non-depolarising blockers are competitive antagonists, reversed by neostigmine with glycopyrrolate, or rocuronium by sugammadex.
 - Succinylcholine causes persistent depolarisation; watch for hyperkalaemia, bradycardia, prolonged apnoea and malignant hyperthermia.
@@ -1775,8 +1775,8 @@ D) An anticholinesterase
 **Q2.** How does baclofen reduce spasticity? [LO2]
 A) It opens GABA-A chloride channels.
 B) It blocks nicotinic receptors at the junction.
-C) It activates GABA-B receptors, increasing K⁺ conductance and reducing Ca²⁺ entry.
-D) It blocks Ca²⁺ release from the sarcoplasmic reticulum.
+C) It activates GABA-B receptors, increasing K^+^ conductance and reducing Ca^2+^ entry.
+D) It blocks Ca^2+^ release from the sarcoplasmic reticulum.
 
 **Q3.** A patient on tizanidine is prescribed ciprofloxacin. What is the likely result? [LO4]
 A) Loss of tizanidine effect
@@ -1845,9 +1845,9 @@ D) Rocuronium
 
 **Q6. B** — Succinylcholine is an agonist that holds the end-plate depolarised. A is a common error. C is non-depolarising blockers. D is wrong.
 
-**Q7. C** — Burns increase extra-junctional receptors, so K⁺ release is large. A is atracurium. B is wrong; burns do not cause malignant hyperthermia. D is wrong.
+**Q7. C** — Burns increase extra-junctional receptors, so K^+^ release is large. A is atracurium. B is wrong; burns do not cause malignant hyperthermia. D is wrong.
 
-**Q8. D** — This is malignant hyperthermia; dantrolene blocks Ca²⁺ release. A and B reverse NMBs. C does not treat it.
+**Q8. D** — This is malignant hyperthermia; dantrolene blocks Ca^2+^ release. A and B reverse NMBs. C does not treat it.
 
 **Q9. B** — Low or atypical plasma cholinesterase slows succinylcholine breakdown. A causes fever and rigidity. C causes awareness. D applies to atracurium.
 
@@ -1855,7 +1855,7 @@ D) Rocuronium
 
 **Clinical Case — model answer.**
 
-*Case 1.* (a) An Nm receptor agonist that causes persistent depolarisation at the end-plate, then flaccid paralysis. (b) Malignant hyperthermia, triggered by halothane and succinylcholine in a susceptible patient. (c) IV dantrolene. It blocks RyR1 and stops Ca²⁺ release from the sarcoplasmic reticulum. Also stop the triggers, give 100% oxygen and cool him. His family should be tested.
+*Case 1.* (a) An Nm receptor agonist that causes persistent depolarisation at the end-plate, then flaccid paralysis. (b) Malignant hyperthermia, triggered by halothane and succinylcholine in a susceptible patient. (c) IV dantrolene. It blocks RyR1 and stops Ca^2+^ release from the sarcoplasmic reticulum. Also stop the triggers, give 100% oxygen and cool him. His family should be tested.
 
 *Case 2.* (a) Keeping active, heat, physiotherapy and an NSAID such as ibuprofen if there is no contraindication. (b) It is TCA-like and can cause serotonin syndrome with sertraline; it also sedates. (c) Norgesic contains paracetamol. With 4 g daily already, he would exceed the maximum dose and risk liver injury. If a relaxant is needed, a short course of methocarbamol without paracetamol is safer.
 
@@ -1878,7 +1878,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Compare buspirone, antidepressants and benzodiazepines in the treatment of anxiety.
 5. [LO5] Plan the drug and non-drug treatment of generalised anxiety disorder and insomnia.
 
-> **Quick Recap:** GABA is the main inhibitory transmitter in the brain. The GABA-A receptor is a chloride channel made of five subunits (mostly two α, two β and one γ). When GABA binds, the channel opens, Cl⁻ enters and the neuron hyperpolarises, so it fires less. Drugs that enhance this effect produce, with rising dose, anxiety relief, sedation, sleep, anaesthesia, coma and finally breathing depression.
+> **Quick Recap:** GABA is the main inhibitory transmitter in the brain. The GABA-A receptor is a chloride channel made of five subunits (mostly two α, two β and one γ). When GABA binds, the channel opens, Cl^-^ enters and the neuron hyperpolarises, so it fires less. Drugs that enhance this effect produce, with rising dose, anxiety relief, sedation, sleep, anaesthesia, coma and finally breathing depression.
 
 ## 7.1 Anxiety, Insomnia and CNS Depression
 
@@ -1902,7 +1902,7 @@ Sedative–hypnotic drugs depress the CNS in a dose-related way:
 
 ### Mechanism
 
-Benzodiazepines bind to their own site on the GABA-A receptor, at the junction of the α and γ subunits. This site is separate from the GABA site. They are **positive allosteric modulators**: they do not open the channel alone. They make GABA more effective, so the channel **opens more often** when GABA binds [1]. More Cl⁻ enters, and the neuron is inhibited.
+Benzodiazepines bind to their own site on the GABA-A receptor, at the junction of the α and γ subunits. This site is separate from the GABA site. They are **positive allosteric modulators**: they do not open the channel alone. They make GABA more effective, so the channel **opens more often** when GABA binds [1]. More Cl^-^ enters, and the neuron is inhibited.
 
 ![Top view of five subunits (two alpha, two beta, one gamma) around a chloride channel, with GABA sites between alpha and beta and the benzodiazepine site between alpha and gamma. A side panel summarises the action of each drug group.](../figures/out/gabaa-receptor.png)
 
@@ -2172,7 +2172,7 @@ D) Phenobarbital
 
 **Clinical Case — model answer.**
 
-*Case 1.* (a) The GABA-A receptor; it increases the frequency of Cl⁻ channel opening when GABA binds. (b) A short- or intermediate-acting drug, such as temazepam, or a Z-drug. (c) Use only for a few nights to 2 weeks; do not drink alcohol or drive if drowsy; expect some rebound insomnia on stopping.
+*Case 1.* (a) The GABA-A receptor; it increases the frequency of Cl^-^ channel opening when GABA binds. (b) A short- or intermediate-acting drug, such as temazepam, or a Z-drug. (c) Use only for a few nights to 2 weeks; do not drink alcohol or drive if drowsy; expect some rebound insomnia on stopping.
 
 *Case 2.* (a) Benzodiazepines. (b) Chlordiazepoxide or diazepam are standard. In liver disease, lorazepam is preferred, because it has no active metabolites. (c) Buspirone has no anticonvulsant action and does not act at the GABA-A receptor, so it does not prevent withdrawal seizures.
 
@@ -2197,7 +2197,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Compare the main intravenous anaesthetics and their adverse effects.
 5. [LO5] Select an anaesthetic for a patient and recognise malignant hyperthermia.
 
-> **Quick Recap:** GABA-A receptors are Cl⁻ channels that inhibit neurons (Chapter 7). NMDA receptors are glutamate-gated channels that excite them. Lipid-soluble drugs enter well-perfused organs such as the brain, heart and liver first, then move to muscle and fat. This **redistribution** ends the action of a single IV dose before the drug is metabolised.
+> **Quick Recap:** GABA-A receptors are Cl^-^ channels that inhibit neurons (Chapter 7). NMDA receptors are glutamate-gated channels that excite them. Lipid-soluble drugs enter well-perfused organs such as the brain, heart and liver first, then move to muscle and fat. This **redistribution** ends the action of a single IV dose before the drug is metabolised.
 
 ## 8.1 Goals and Balanced Anaesthesia
 
@@ -2231,7 +2231,7 @@ Anaesthetics act on ion channels that control neuron excitability [1]:
 |---|---|
 | Enhance GABA-A receptors | Propofol, etomidate, thiopental, benzodiazepines, volatile agents |
 | Block NMDA receptors | Ketamine, nitrous oxide, xenon |
-| Open two-pore K⁺ (K2P) channels | Volatile agents |
+| Open two-pore K^+^ (K2P) channels | Volatile agents |
 
 *Table 8.1 — Main mechanisms of general anaesthetics.*
 
@@ -2420,7 +2420,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Recognise and manage local anaesthetic systemic toxicity (LAST).
 5. [LO5] Choose a local anaesthetic for a patient.
 
-> **Quick Recap:** A nerve impulse travels when voltage-gated Na⁺ channels open and Na⁺ enters. Weak bases exist in two forms: the uncharged (unionised) base, which crosses lipid membranes, and the charged (ionised) cation, which does not. The pKa is the pH at which half is in each form. The lower the pH, the more a weak base is ionised.
+> **Quick Recap:** A nerve impulse travels when voltage-gated Na^+^ channels open and Na^+^ enters. Weak bases exist in two forms: the uncharged (unionised) base, which crosses lipid membranes, and the charged (ionised) cation, which does not. The pKa is the pH at which half is in each form. The lower the pH, the more a weak base is ionised.
 
 ## 9.1 What Local Anaesthesia Does
 
@@ -2438,7 +2438,7 @@ Original diagram for this book (original)
 1. Local anaesthetics are weak bases (pKa about 7.6 to 9).
 2. The **unionised** base crosses the nerve membrane.
 3. Inside the axon, part of it takes up a proton and becomes **ionised**.
-4. The ionised form binds the inner side of the voltage-gated **Na⁺ channel** and blocks it. The nerve cannot fire [1].
+4. The ionised form binds the inner side of the voltage-gated **Na^+^ channel** and blocks it. The nerve cannot fire [1].
 
 Channels that open often are blocked more (use-dependent block). This is why lidocaine also treats fast ventricular arrhythmias.
 
@@ -2552,14 +2552,14 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 3. A patient says "I am allergic to all local anaesthetics". What would you ask?
 
 ## Key Takeaways
-- The unionised base crosses the membrane; the ionised form blocks the Na⁺ channel from inside.
+- The unionised base crosses the membrane; the ionised form blocks the Na^+^ channel from inside.
 - Acidic (infected) tissue weakens the block.
 - Esters are broken down by plasma cholinesterase and cause more allergy; amides are broken down by the liver.
 - Adrenaline prolongs the block and lowers toxicity, but avoid it in end-arteries.
 - LAST starts with CNS signs and can end in cardiac arrest; stop injecting, treat seizures and give 20% lipid emulsion.
 
 ## Self-Assessment
-**Q1.** Which form of a local anaesthetic blocks the Na⁺ channel? [LO1]
+**Q1.** Which form of a local anaesthetic blocks the Na^+^ channel? [LO1]
 A) The unionised form outside the nerve
 B) The unionised form inside the nerve
 C) The ionised form inside the nerve

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Arial, Helvetica, sans-serif">
-  <rect width="900" height="420" fill="#FFFFFF"/>
+  <rect width="900" height="420" fill="#FAF8F1"/>
   <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
   <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">How a local anaesthetic reaches and blocks the Na⁺ channel</text>
   <text x="80" y="80" font-size="15" font-weight="bold" fill="#5A6072">Outside the nerve (tissue fluid)</text>

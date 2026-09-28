@@ -275,14 +275,14 @@
  "figures": "manifest",
  "pdf": {
   "bookmarks": 156,
-  "pages": 93
+  "pages": 94
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 93
+    "pages": 94
    },
    "message": "",
    "status": "pass"
@@ -322,18 +322,18 @@
   {
    "id": "PDF-FONTS",
    "measured": {
-    "count": 2
+    "count": 0
    },
-   "message": "TimesNewRomanPS-BoldMT (first on page 87); TimesNewRomanPSMT (first on page 10)",
-   "status": "fail"
+   "message": "",
+   "status": "pass"
   },
   {
    "id": "PDF-OUTLINE",
    "measured": {
-    "count": 3
+    "count": 0
    },
-   "message": "0 bookmarks titled '2 Psychosis and Antipsychotic Drugs' (need exactly 1); 0 bookmarks titled '4 Depression and Antidepressant Drugs' (need exactly 1); 0 bookmarks titled '7 Anxiolytics, Sedatives and Hypnotics' (need exactly 1)",
-   "status": "fail"
+   "message": "",
+   "status": "pass"
   }
  ],
  "pdf_engine": "html",
