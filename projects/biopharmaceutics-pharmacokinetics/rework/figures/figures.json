@@ -110,6 +110,17 @@
    "credit": "Original diagram, redrawn from the first edition pages 39-40",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch09-moments",
+   "chapter_id": "ch09",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch09-moments.svg",
+   "caption": "The two moment curves for Example 9.1. Multiplying by time shifts weight to late times, so the part of AUMC beyond the last sample is four times larger, as a share, than the part of AUC. AUMC, and everything derived from it, depends on how long sampling continued.",
+   "alt": "Two side-by-side plots over 0 to 36 hours. Left: plasma concentration falls exponentially from about 8.6 milligrams per litre, with seven measured points; a thin shaded sliver beyond the last sample at 18 hours is labelled tail 4.5 percent of AUC. Right: concentration multiplied by time rises to a peak near 6 hours and falls slowly; the shaded region beyond 18 hours is much larger and is labelled tail 19 percent of AUMC. A dashed vertical line marks the last sample in each plot.",
+   "credit": "Original diagram, drawn from the first edition data on page 45",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
