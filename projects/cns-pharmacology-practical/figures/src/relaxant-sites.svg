@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="440" fill="#FFFFFF"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Where skeletal muscle relaxants act</text>
+  <g font-size="15">
+    <rect x="40" y="55" width="260" height="70" rx="10" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="170" y="86" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Brain and brainstem</text>
+    <text x="170" y="108" text-anchor="middle" font-size="12" fill="#1A1F36">motor control centres</text>
+    <rect x="40" y="150" width="260" height="70" rx="10" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="170" y="181" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Spinal cord</text>
+    <text x="170" y="203" text-anchor="middle" font-size="12" fill="#1A1F36">reflex arcs, motor neurons</text>
+    <rect x="40" y="245" width="260" height="70" rx="10" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="170" y="276" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Neuromuscular junction</text>
+    <text x="170" y="298" text-anchor="middle" font-size="12" fill="#1A1F36">ACh at nicotinic (Nm) receptors</text>
+    <rect x="40" y="340" width="260" height="70" rx="10" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="170" y="371" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Muscle fibre</text>
+    <text x="170" y="393" text-anchor="middle" font-size="12" fill="#1A1F36">Ca²⁺ release from SR via RyR1</text>
+  </g>
+  <g stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)">
+    <line x1="170" y1="126" x2="170" y2="146"/><line x1="170" y1="221" x2="170" y2="241"/><line x1="170" y1="316" x2="170" y2="336"/>
+  </g>
+  <g stroke="#1A1F36" stroke-width="2" stroke-dasharray="5,4">
+    <line x1="302" y1="90" x2="370" y2="90"/><line x1="302" y1="185" x2="370" y2="185"/>
+    <line x1="302" y1="280" x2="370" y2="280"/><line x1="302" y1="375" x2="370" y2="375"/>
+  </g>
+  <rect x="370" y="55" width="510" height="70" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="385" y="82" font-size="14" font-weight="bold" fill="#2E7D32">Antispasmodics (muscle spasm)</text>
+  <text x="385" y="106" font-size="13" fill="#1A1F36">Cyclobenzaprine, orphenadrine, methocarbamol</text>
+  <rect x="370" y="150" width="510" height="70" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="385" y="177" font-size="14" font-weight="bold" fill="#2E7D32">Antispastics (spasticity)</text>
+  <text x="385" y="201" font-size="13" fill="#1A1F36">Baclofen (GABA-B), tizanidine (α2), diazepam (GABA-A); chlorzoxazone</text>
+  <rect x="370" y="245" width="510" height="70" rx="8" fill="#FDF4DC" stroke="#8A6100" stroke-width="2"/>
+  <text x="385" y="272" font-size="14" font-weight="bold" fill="#8A6100">Neuromuscular blockers (anaesthesia only)</text>
+  <text x="385" y="296" font-size="13" fill="#1A1F36">Rocuronium, atracurium (competitive); succinylcholine (depolarising)</text>
+  <rect x="370" y="340" width="510" height="70" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="385" y="367" font-size="14" font-weight="bold" fill="#2E7D32">Direct-acting relaxant</text>
+  <text x="385" y="391" font-size="13" fill="#1A1F36">Dantrolene blocks RyR1 (spasticity, malignant hyperthermia)</text>
+</svg>

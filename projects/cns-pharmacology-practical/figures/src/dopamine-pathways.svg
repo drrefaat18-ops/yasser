@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="440" fill="#FFFFFF"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Four dopamine pathways and the effect of D2 block</text>
+  <text x="140" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#5A6072">Pathway</text>
+  <text x="400" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#5A6072">Normal role</text>
+  <text x="720" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#5A6072">Effect of D2 block</text>
+  <g font-size="14" fill="#1A1F36">
+    <rect x="20" y="78" width="240" height="72" rx="8" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="140" y="108" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Mesolimbic</text>
+    <text x="140" y="130" text-anchor="middle" font-size="12">midbrain → limbic system</text>
+    <rect x="300" y="78" width="200" height="72" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+    <text x="400" y="110" text-anchor="middle">Reward, emotion</text>
+    <text x="400" y="130" text-anchor="middle" font-size="12">(overactive in psychosis)</text>
+    <rect x="560" y="78" width="320" height="72" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="720" y="110" text-anchor="middle" font-weight="bold" fill="#2E7D32">Fewer positive symptoms</text>
+    <text x="720" y="130" text-anchor="middle" font-size="12">(the therapeutic effect)</text>
+    <rect x="20" y="166" width="240" height="72" rx="8" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="140" y="196" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Mesocortical</text>
+    <text x="140" y="218" text-anchor="middle" font-size="12">midbrain → prefrontal cortex</text>
+    <rect x="300" y="166" width="200" height="72" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+    <text x="400" y="198" text-anchor="middle">Thinking, motivation</text>
+    <text x="400" y="218" text-anchor="middle" font-size="12">(underactive in psychosis)</text>
+    <rect x="560" y="166" width="320" height="72" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+    <text x="720" y="198" text-anchor="middle" font-weight="bold" fill="#B3261E">Negative and cognitive</text>
+    <text x="720" y="218" text-anchor="middle" font-size="12">symptoms may worsen</text>
+    <rect x="20" y="254" width="240" height="72" rx="8" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="140" y="284" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Nigrostriatal</text>
+    <text x="140" y="306" text-anchor="middle" font-size="12">substantia nigra → striatum</text>
+    <rect x="300" y="254" width="200" height="72" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+    <text x="400" y="296" text-anchor="middle">Control of movement</text>
+    <rect x="560" y="254" width="320" height="72" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+    <text x="720" y="286" text-anchor="middle" font-weight="bold" fill="#B3261E">Extrapyramidal effects</text>
+    <text x="720" y="308" text-anchor="middle" font-size="12">dystonia, parkinsonism, akathisia, TD</text>
+    <rect x="20" y="342" width="240" height="72" rx="8" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="140" y="372" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Tuberoinfundibular</text>
+    <text x="140" y="394" text-anchor="middle" font-size="12">hypothalamus → pituitary</text>
+    <rect x="300" y="342" width="200" height="72" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+    <text x="400" y="374" text-anchor="middle">Dopamine inhibits</text>
+    <text x="400" y="394" text-anchor="middle">prolactin release</text>
+    <rect x="560" y="342" width="320" height="72" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+    <text x="720" y="374" text-anchor="middle" font-weight="bold" fill="#B3261E">Raised prolactin</text>
+    <text x="720" y="396" text-anchor="middle" font-size="12">galactorrhoea, amenorrhoea, sexual dysfunction</text>
+  </g>
+  <g stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)">
+    <line x1="262" y1="114" x2="296" y2="114"/><line x1="502" y1="114" x2="556" y2="114"/>
+    <line x1="262" y1="202" x2="296" y2="202"/><line x1="502" y1="202" x2="556" y2="202"/>
+    <line x1="262" y1="290" x2="296" y2="290"/><line x1="502" y1="290" x2="556" y2="290"/>
+    <line x1="262" y1="378" x2="296" y2="378"/><line x1="502" y1="378" x2="556" y2="378"/>
+  </g>
+</svg>

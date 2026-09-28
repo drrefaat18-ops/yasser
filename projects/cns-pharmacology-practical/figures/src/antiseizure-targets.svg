@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="440" fill="#FFFFFF"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
+  <text x="225" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">A. Excitatory synapse</text>
+  <path d="M60,50 h330 v140 q-165,55 -330,0 z" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="225" y="72" font-size="14" text-anchor="middle" fill="#1A1F36">Glutamate nerve ending</text>
+  <rect x="75" y="90" width="90" height="30" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="120" y="110" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Na⁺ channel</text>
+  <rect x="180" y="130" width="90" height="30" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="225" y="150" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Ca²⁺ α2δ</text>
+  <rect x="285" y="90" width="90" height="30" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="330" y="110" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">SV2A</text>
+  <line x1="225" y1="200" x2="225" y2="265" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="235" y="238" font-size="12" fill="#1A1F36">glutamate</text>
+  <path d="M60,420 h330 v-100 q-165,-50 -330,0 z" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+  <rect x="165" y="270" width="120" height="30" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="225" y="290" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">AMPA / NMDA</text>
+  <text x="225" y="370" font-size="13" text-anchor="middle" fill="#1A1F36">Postsynaptic neuron fires</text>
+  <g font-size="12" fill="#2E7D32" font-weight="bold">
+    <text x="10" y="215">Phenytoin, carbamazepine,</text>
+    <text x="10" y="231">lamotrigine → Na⁺</text>
+    <text x="10" y="262">Gabapentin,</text>
+    <text x="10" y="278">pregabalin → α2δ</text>
+    <text x="310" y="215">Levetiracetam</text>
+    <text x="310" y="231">→ SV2A</text>
+    <text x="300" y="300">Topiramate,</text>
+    <text x="300" y="316">perampanel → AMPA</text>
+  </g>
+  <line x1="450" y1="45" x2="450" y2="425" stroke="#C5CCE8" stroke-width="2" stroke-dasharray="6,6"/>
+  <text x="675" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">B. Inhibitory synapse and thalamus</text>
+  <path d="M510,50 h330 v140 q-165,55 -330,0 z" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="675" y="72" font-size="14" text-anchor="middle" fill="#1A1F36">GABA nerve ending</text>
+  <rect x="525" y="95" width="130" height="30" rx="6" fill="#FDF4DC" stroke="#8A6100" stroke-width="2"/>
+  <text x="590" y="115" font-size="13" text-anchor="middle" font-weight="bold" fill="#8A6100">GABA-T</text>
+  <text x="755" y="115" font-size="12" text-anchor="middle" fill="#1A1F36">breaks down GABA</text>
+  <line x1="675" y1="200" x2="675" y2="265" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="685" y="238" font-size="12" fill="#1A1F36">GABA</text>
+  <path d="M510,420 h330 v-100 q-165,-50 -330,0 z" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+  <rect x="600" y="270" width="150" height="30" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="675" y="290" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">GABA-A (Cl⁻)</text>
+  <text x="675" y="360" font-size="13" text-anchor="middle" fill="#1A1F36">Postsynaptic neuron inhibited</text>
+  <rect x="560" y="378" width="230" height="30" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="675" y="398" font-size="12" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Thalamic T-type Ca²⁺ channel</text>
+  <g font-size="12" fill="#2E7D32" font-weight="bold">
+    <text x="530" y="160">Valproate blocks GABA-T</text>
+    <text x="760" y="262">Benzodiazepines,</text>
+    <text x="760" y="278">phenobarbital,</text>
+    <text x="760" y="294">topiramate</text>
+    <text x="800" y="385">Ethosuximide,</text>
+    <text x="800" y="401">valproate</text>
+  </g>
+</svg>

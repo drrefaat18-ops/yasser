@@ -1,4 +1,4 @@
-f Chapter 2: Psychosis and Antipsychotic Drugs
+# Chapter 2: Psychosis and Antipsychotic Drugs
 
 ## Learning Objectives
 By the end of this chapter you will be able to:

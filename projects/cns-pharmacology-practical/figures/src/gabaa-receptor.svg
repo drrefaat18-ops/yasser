@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="440" fill="#FFFFFF"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">The GABA-A receptor: binding sites of sedative drugs</text>
+  <text x="250" y="60" font-size="14" text-anchor="middle" fill="#5A6072">Top view: five subunits around a Cl⁻ channel</text>
+  <g stroke="#1B2A8C" stroke-width="2">
+    <circle cx="250" cy="120" r="42" fill="#EAF0FB"/>
+    <circle cx="330" cy="180" r="42" fill="#FDF4DC" stroke="#8A6100"/>
+    <circle cx="300" cy="275" r="42" fill="#EAF0FB"/>
+    <circle cx="200" cy="275" r="42" fill="#FDF4DC" stroke="#8A6100"/>
+    <circle cx="170" cy="180" r="42" fill="#E8F3E9" stroke="#2E7D32"/>
+  </g>
+  <circle cx="250" cy="205" r="26" fill="#FFFFFF" stroke="#1A1F36" stroke-width="2"/>
+  <text x="250" y="210" font-size="13" text-anchor="middle" font-weight="bold" fill="#1A1F36">Cl⁻</text>
+  <g font-size="18" font-weight="bold" text-anchor="middle">
+    <text x="250" y="126" fill="#1B2A8C">α</text>
+    <text x="330" y="186" fill="#8A6100">β</text>
+    <text x="300" y="281" fill="#1B2A8C">α</text>
+    <text x="200" y="281" fill="#8A6100">β</text>
+    <text x="170" y="186" fill="#2E7D32">γ</text>
+  </g>
+  <circle cx="205" cy="145" r="9" fill="#2E7D32"/>
+  <circle cx="300" cy="140" r="9" fill="#1B2A8C"/>
+  <circle cx="250" cy="287" r="9" fill="#1B2A8C"/>
+  <rect x="90" y="340" width="330" height="80" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="1.5"/>
+  <circle cx="110" cy="360" r="7" fill="#1B2A8C"/><text x="124" y="365" font-size="13" fill="#1A1F36">GABA site (between α and β)</text>
+  <circle cx="110" cy="385" r="7" fill="#2E7D32"/><text x="124" y="390" font-size="13" fill="#1A1F36">Benzodiazepine site (between α and γ)</text>
+  <text x="110" y="410" font-size="12" fill="#1A1F36">Barbiturates bind within the channel wall</text>
+  <line x1="460" y1="50" x2="460" y2="425" stroke="#C5CCE8" stroke-width="2" stroke-dasharray="6,6"/>
+  <g font-size="13" fill="#1A1F36">
+    <rect x="480" y="55" width="400" height="62" rx="8" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+    <text x="495" y="78" font-weight="bold" fill="#1B2A8C">GABA</text>
+    <text x="495" y="100">Opens the channel; Cl⁻ enters; neuron hyperpolarises</text>
+    <rect x="480" y="127" width="400" height="62" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="495" y="150" font-weight="bold" fill="#2E7D32">Benzodiazepines (α/γ site)</text>
+    <text x="495" y="172">More frequent opening; need GABA to act (ceiling)</text>
+    <rect x="480" y="199" width="400" height="62" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="495" y="222" font-weight="bold" fill="#2E7D32">Z-drugs (same site, α1-selective)</text>
+    <text x="495" y="244">Hypnotic; little anxiolytic or anticonvulsant effect</text>
+    <rect x="480" y="271" width="400" height="62" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+    <text x="495" y="294" font-weight="bold" fill="#B3261E">Barbiturates (separate site)</text>
+    <text x="495" y="316">Longer opening; open it without GABA at high dose</text>
+    <rect x="480" y="343" width="400" height="62" rx="8" fill="#FDF4DC" stroke="#8A6100" stroke-width="2"/>
+    <text x="495" y="366" font-weight="bold" fill="#8A6100">Flumazenil</text>
+    <text x="495" y="388">Antagonist at the benzodiazepine site; reverses BZs and Z-drugs</text>
+  </g>
+</svg>

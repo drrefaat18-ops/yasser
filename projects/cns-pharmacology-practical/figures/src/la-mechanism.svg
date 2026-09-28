@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="420" fill="#FFFFFF"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">How a local anaesthetic reaches and blocks the Na⁺ channel</text>
+  <text x="80" y="80" font-size="15" font-weight="bold" fill="#5A6072">Outside the nerve (tissue fluid)</text>
+  <rect x="40" y="170" width="820" height="50" fill="#FDF4DC" stroke="#8A6100" stroke-width="2"/>
+  <text x="120" y="200" font-size="14" font-weight="bold" fill="#8A6100">Nerve membrane (lipid)</text>
+  <text x="80" y="265" font-size="15" font-weight="bold" fill="#5A6072">Inside the axon</text>
+  <rect x="610" y="150" width="90" height="90" rx="10" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="3"/>
+  <rect x="640" y="150" width="30" height="90" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="1"/>
+  <text x="655" y="140" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">Na⁺ channel</text>
+  <g font-size="16" font-weight="bold">
+    <rect x="250" y="95" width="90" height="40" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="295" y="121" text-anchor="middle" fill="#2E7D32">B</text>
+    <rect x="420" y="95" width="90" height="40" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+    <text x="465" y="121" text-anchor="middle" fill="#B3261E">BH⁺</text>
+    <rect x="250" y="255" width="90" height="40" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+    <text x="295" y="281" text-anchor="middle" fill="#2E7D32">B</text>
+    <rect x="420" y="255" width="90" height="40" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+    <text x="465" y="281" text-anchor="middle" fill="#B3261E">BH⁺</text>
+  </g>
+  <text x="380" y="112" font-size="14" text-anchor="middle" fill="#1A1F36">+ H⁺ ⇌</text>
+  <text x="380" y="272" font-size="14" text-anchor="middle" fill="#1A1F36">+ H⁺ ⇌</text>
+  <line x1="295" y1="137" x2="295" y2="251" stroke="#2E7D32" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="305" y="160" font-size="12" fill="#2E7D32">unionised base</text>
+  <text x="305" y="238" font-size="12" fill="#2E7D32">crosses</text>
+  <line x1="512" y1="275" x2="636" y2="228" stroke="#B3261E" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="560" y="275" font-size="12" fill="#B3261E">binds inside</text>
+  <text x="465" y="160" font-size="12" text-anchor="middle" fill="#B3261E">cannot cross</text>
+  <line x1="465" y1="137" x2="465" y2="166" stroke="#B3261E" stroke-width="2"/>
+  <line x1="452" y1="166" x2="478" y2="166" stroke="#B3261E" stroke-width="3"/>
+  <rect x="40" y="320" width="820" height="80" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="1.5"/>
+  <text x="60" y="345" font-size="13" fill="#1A1F36">1. The unionised base (B) crosses the lipid membrane.</text>
+  <text x="60" y="366" font-size="13" fill="#1A1F36">2. Inside, it takes up H⁺; the ionised form (BH⁺) blocks the channel from the inner side.</text>
+  <text x="60" y="387" font-size="13" fill="#1A1F36">3. Acidic (infected) tissue ionises more drug outside the nerve, so less crosses and the block is weak.</text>
+</svg>

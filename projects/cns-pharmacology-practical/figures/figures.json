@@ -1,0 +1,104 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "ache-synapse",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "figures/src/ache-synapse.svg",
+   "caption": "Cholinergic and glutamatergic synapses: where cholinesterase inhibitors and memantine act.",
+   "alt": "Two panels. Left: acetylcholine released into the synapse is broken down by acetylcholinesterase, which donepezil blocks. Right: excess glutamate over-activates NMDA receptors; memantine blocks the open channel.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "dopamine-pathways",
+   "chapter_id": "ch02",
+   "kind": "diagram.svg",
+   "source": "figures/src/dopamine-pathways.svg",
+   "caption": "The four dopamine pathways and the effect of D2-receptor block in each.",
+   "alt": "Table-like diagram with four rows: mesolimbic, mesocortical, nigrostriatal and tuberoinfundibular pathways, their normal roles, and the result of D2 block: fewer positive symptoms, worse negative symptoms, extrapyramidal effects and raised prolactin.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "levodopa-path",
+   "chapter_id": "ch03",
+   "kind": "diagram.svg",
+   "source": "figures/src/levodopa-path.svg",
+   "caption": "Levodopa from gut to brain, with the sites of carbidopa, entacapone and MAO-B inhibitors.",
+   "alt": "In the periphery, levodopa is converted by AADC to dopamine (blocked by carbidopa) and by COMT to 3-O-methyldopa (blocked by entacapone). Levodopa crosses the blood-brain barrier and brain AADC makes dopamine, which MAO-B breaks down; selegiline and rasagiline block this.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "monoamine-synapse",
+   "chapter_id": "ch04",
+   "kind": "diagram.svg",
+   "source": "figures/src/monoamine-synapse.svg",
+   "caption": "Serotonin and noradrenaline synapse: targets of the antidepressant classes.",
+   "alt": "Presynaptic neuron with MAO blocked by MAO inhibitors, SERT and NET blocked by SSRIs, SNRIs and TCAs, and the alpha-2 autoreceptor blocked by mirtazapine. A side note links alpha-1, H1 and muscarinic block to adverse effects.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "antiseizure-targets",
+   "chapter_id": "ch05",
+   "kind": "diagram.svg",
+   "source": "figures/src/antiseizure-targets.svg",
+   "caption": "Targets of antiseizure drugs at excitatory and inhibitory synapses.",
+   "alt": "Left: glutamate nerve ending with Na+ channels, the alpha-2-delta Ca2+ subunit and SV2A, and postsynaptic AMPA receptors, with the drugs acting at each. Right: GABA nerve ending with GABA transaminase blocked by valproate, the GABA-A receptor enhanced by benzodiazepines and phenobarbital, and thalamic T-type Ca2+ channels blocked by ethosuximide.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "relaxant-sites",
+   "chapter_id": "ch06",
+   "kind": "diagram.svg",
+   "source": "figures/src/relaxant-sites.svg",
+   "caption": "Sites of action of skeletal muscle relaxants from brain to muscle fibre.",
+   "alt": "A vertical chain: brain and brainstem, spinal cord, neuromuscular junction and muscle fibre, each linked to the drugs acting there: antispasmodics, antispastics, neuromuscular blockers and dantrolene.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "gabaa-receptor",
+   "chapter_id": "ch07",
+   "kind": "diagram.svg",
+   "source": "figures/src/gabaa-receptor.svg",
+   "caption": "The GABA-A receptor and the binding sites of GABA, benzodiazepines, Z-drugs, barbiturates and flumazenil.",
+   "alt": "Top view of five subunits (two alpha, two beta, one gamma) around a chloride channel, with GABA sites between alpha and beta and the benzodiazepine site between alpha and gamma. A side panel summarises the action of each drug group.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "balanced-anaesthesia",
+   "chapter_id": "ch08",
+   "kind": "diagram.svg",
+   "source": "figures/src/balanced-anaesthesia.svg",
+   "caption": "Balanced anaesthesia: the five goals and the drugs that provide each.",
+   "alt": "A central hub labelled general anaesthesia linked to five boxes: unconsciousness, amnesia, analgesia, muscle relaxation and loss of autonomic reflexes, each with example drugs.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "la-mechanism",
+   "chapter_id": "ch09",
+   "kind": "diagram.svg",
+   "source": "figures/src/la-mechanism.svg",
+   "caption": "How a local anaesthetic crosses the nerve membrane and blocks the Na+ channel from inside.",
+   "alt": "Outside the nerve the drug exists as base and cation. The unionised base crosses the lipid membrane; inside, it becomes ionised and binds the inner side of the Na+ channel. Acidic tissue leaves more drug ionised outside.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  }
+ ]
+}

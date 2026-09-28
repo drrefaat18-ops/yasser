@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="430" fill="#FFFFFF"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker></defs>
+  <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Levodopa from gut to brain, and where add-on drugs act</text>
+  <rect x="20" y="50" width="520" height="350" rx="10" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+  <text x="280" y="75" font-size="15" font-weight="bold" text-anchor="middle" fill="#5A6072">Periphery (gut, blood, liver)</text>
+  <rect x="560" y="50" width="320" height="350" rx="10" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="720" y="75" font-size="15" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Brain (striatum)</text>
+  <rect x="544" y="50" width="12" height="350" fill="#C5CCE8"/>
+  <text x="550" y="420" font-size="12" text-anchor="middle" fill="#5A6072">blood-brain barrier</text>
+  <text x="75" y="205" font-size="13" text-anchor="middle" fill="#1A1F36">oral dose</text>
+  <line x1="118" y1="210" x2="196" y2="210" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="200" y="190" width="120" height="40" rx="8" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="260" y="215" font-size="15" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Levodopa</text>
+  <line x1="260" y1="188" x2="260" y2="132" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="270" y="170" font-size="13" fill="#1A1F36">AADC</text>
+  <rect x="160" y="88" width="200" height="40" rx="8" fill="#FBEAEA" stroke="#B3261E" stroke-width="2"/>
+  <text x="260" y="106" font-size="13" text-anchor="middle" fill="#B3261E" font-weight="bold">Peripheral dopamine</text>
+  <text x="260" y="122" font-size="11" text-anchor="middle" fill="#B3261E">nausea, hypotension</text>
+  <rect x="380" y="145" width="130" height="30" rx="6" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="445" y="165" font-size="13" text-anchor="middle" font-weight="bold" fill="#2E7D32">Carbidopa</text>
+  <line x1="380" y1="160" x2="264" y2="160" stroke="#B3261E" stroke-width="3"/>
+  <line x1="260" y1="232" x2="260" y2="290" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="270" y="255" font-size="13" fill="#1A1F36">COMT</text>
+  <rect x="180" y="294" width="160" height="36" rx="8" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+  <text x="260" y="317" font-size="13" text-anchor="middle" fill="#1A1F36">3-O-methyldopa</text>
+  <rect x="380" y="255" width="130" height="30" rx="6" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="445" y="275" font-size="13" text-anchor="middle" font-weight="bold" fill="#2E7D32">Entacapone</text>
+  <line x1="380" y1="270" x2="264" y2="270" stroke="#B3261E" stroke-width="3"/>
+  <line x1="322" y1="210" x2="610" y2="210" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="450" y="200" font-size="12" text-anchor="middle" fill="#1A1F36">amino-acid transporter</text>
+  <rect x="614" y="190" width="100" height="40" rx="8" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="664" y="215" font-size="14" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Levodopa</text>
+  <line x1="664" y1="232" x2="664" y2="280" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="674" y="260" font-size="13" fill="#1A1F36">AADC</text>
+  <rect x="604" y="284" width="120" height="40" rx="8" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="664" y="309" font-size="14" font-weight="bold" text-anchor="middle" fill="#2E7D32">Dopamine</text>
+  <line x1="726" y1="304" x2="790" y2="304" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="758" y="296" font-size="12" text-anchor="middle" fill="#1A1F36">MAO-B</text>
+  <text x="832" y="309" font-size="13" text-anchor="middle" fill="#1A1F36">DOPAC</text>
+  <rect x="690" y="345" width="170" height="30" rx="6" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="775" y="365" font-size="12" text-anchor="middle" font-weight="bold" fill="#2E7D32">Selegiline, rasagiline</text>
+  <line x1="758" y1="345" x2="758" y2="308" stroke="#B3261E" stroke-width="3"/>
+  <text x="720" y="118" font-size="13" text-anchor="middle" fill="#1A1F36">Carbidopa does not cross</text>
+  <text x="720" y="136" font-size="13" text-anchor="middle" fill="#1A1F36">the barrier, so brain AADC</text>
+  <text x="720" y="154" font-size="13" text-anchor="middle" fill="#1A1F36">still makes dopamine</text>
+  <text x="280" y="380" font-size="12" text-anchor="middle" fill="#B3261E">red bar = step blocked by the drug</text>
+</svg>
