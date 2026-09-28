@@ -16,6 +16,8 @@
 
 **AUC** — Area under the plasma concentration–time curve, in concentration × time units (for example µg·h·mL⁻¹). It is proportional to the total amount of drug reaching the systemic circulation, and so measures the *extent* of absorption.
 
+**AUMC** — Area under the first moment curve: the area under a plot of Cp·t against t, in concentration × time² units. Divided by AUC it gives the mean residence time.
+
 **average steady-state concentration** — Css,av. The constant concentration giving the same area as the real curve over one steady-state dosing interval, F·D₀/(Cl·τ). It lies below the arithmetic mean of the peak and the trough.
 
 **Bioavailability** — The rate and the extent of absorption of a drug from its dosage form into the systemic circulation. Both parts are required: two products with the same AUC can differ in tmax and behave differently in a patient.
@@ -72,6 +74,12 @@
 
 **loading dose** — Dₗ. An intravenous bolus given at the start of an infusion, sized as Css · Vd (equivalently R/K) so that the target concentration is reached immediately instead of over about five half-lives.
 
+**mean absorption time** — MAT. The average time absorbed molecules spend at the absorption site before reaching the systemic circulation, MTT(oral) − MRT(IV). For first order absorption it equals 1/Ka.
+
+**Mean residence time** — MRT. The average time the molecules of a dose spend in the body after an instantaneous (IV) dose, AUMC/AUC. For a one-compartment drug it equals 1/K.
+
+**mean transit time** — MTT. The mean residence time measured after a non-instantaneous input such as an oral dose; it includes the time spent at the absorption site.
+
 **metabolism** — The enzymatic conversion of drug into one or more chemically different metabolites. Part of elimination, and the subject of Chapter 11.
 
 **method of residuals** — Also feathering or stripping. A graphical method that separates two exponential processes by fitting the slower one to the terminal data, extrapolating it back, and subtracting it from the earlier points. Used for distribution in Chapter 4 and for absorption in Chapter 7.
@@ -81,6 +89,8 @@
 **minimum effective concentration** — MEC. The plasma concentration below which the drug produces no therapeutic effect. The lower boundary of the therapeutic range.
 
 **minimum toxic concentration** — MTC. The plasma concentration above which the drug produces toxic effects. The upper boundary of the therapeutic range.
+
+**Non-compartmental analysis** — Estimation of pharmacokinetic parameters from the areas under the plasma curve (statistical moments) without fitting any compartmental model. It requires only linear kinetics.
 
 **non-renal elimination rate constant** — Knr. The part of the total elimination rate constant that does not represent renal excretion of intact drug, chiefly metabolism.
 
@@ -100,6 +110,8 @@
 
 **residual concentration** — The difference Cp − Cp′ between a measured concentration and the value extrapolated from the terminal line at the same time. Its logarithm falls linearly with time during the distribution phase.
 
+**statistical moment** — A summary of a distribution. In pharmacokinetics the zero moment of the plasma curve is AUC and the first is AUMC.
+
 **steady-state concentration** — Css. The plateau concentration reached during a constant-rate infusion, at which the rate of elimination equals the rate of input. Css = R/Cl, so it depends on the infusion rate and clearance but not on Vd.
 
 **therapeutic index** — A dimensionless ratio expressing the margin between toxic and effective exposure, classically TD50/ED50, or on a concentration basis MTC/MEC. It is a number, not a band of concentrations.
@@ -115,6 +127,8 @@
 **Tubular reabsorption** — Return of drug from the tubular fluid to the blood. It favours the more lipid-soluble, unionised form, so for weak acids and weak bases its extent depends on urinary pH and on the pKa of the drug.
 
 **two-compartment open model** — A model in which drug distributes rapidly into a central compartment and more slowly into a peripheral compartment, with first-order transfer between them (K₁₂ and K₂₁) and elimination from the central compartment only.
+
+**volume of distribution at steady state** — Vss. The volume relating amount in the body to plasma concentration when distribution is at equilibrium, Cl·MRT = D₀·AUMC/AUC² after an IV bolus. It needs no model.
 
 **volume of the central compartment** — Vp. The apparent volume of the rapidly equilibrating compartment, obtained as the dose divided by (A + B). It is smaller than the total apparent volume of distribution, and it is the volume a loading dose fills immediately.
 
