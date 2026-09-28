@@ -74,8 +74,10 @@ def check_fonts():
     windir = os.environ.get("WINDIR") or os.environ.get("SystemRoot")
     if not windir:
         return _c("fonts", "build", False, "WINDIR and SystemRoot unset: cannot locate the Windows font folder")
-    fonts = pathlib.Path(windir) / "Fonts"
-    missing = [f for f in FONT_FILES if not (fonts / f).exists()]
+    dirs = [pathlib.Path(windir) / "Fonts"]
+    if os.environ.get("LOCALAPPDATA"):   # per-user installs (no admin) land here
+        dirs.append(pathlib.Path(os.environ["LOCALAPPDATA"]) / "Microsoft" / "Windows" / "Fonts")
+    missing = [f for f in FONT_FILES if not any((d / f).exists() for d in dirs)]
     return _c("fonts", "build", not missing, "missing: " + ", ".join(missing) if missing else "all present")
 
 

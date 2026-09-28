@@ -70,6 +70,8 @@ class CheckPdfTest(unittest.TestCase):
         self.assertEqual(check_pdf.family("/ABCDEF+SitkaHeading-Bold"), "sitkaheading")
         self.assertEqual(check_pdf.family("Sitka Heading"), "sitkaheading")
         self.assertEqual(check_pdf.family("/BCDEEE+SegoeUI"), "segoeui")
+        self.assertEqual(check_pdf.family("/ABCDEF+SourceSerif4-BoldIt"), "sourceserif4")   # Adobe "It" suffix
+        self.assertEqual(check_pdf.family("SourceSerif4-It"), "sourceserif4")
 
 
 if __name__ == "__main__":

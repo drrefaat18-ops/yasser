@@ -23,7 +23,7 @@ IDS = ["PDF-SIZE", "PDF-BLANK", "PDF-META", "PDF-TYPE3", "PDF-EMBED", "PDF-FONTS
 PT_PER_CM = 72 / 2.54
 # fonts each engine adds on its own: Word's list bullets (Symbol), its default theme fonts and table fallbacks
 ENGINE_FALLBACKS = {"word_com": {"symbol", "symbolmt", "calibri", "cambria", "arial", "arialmt"}, "html": set()}
-STYLE_SUFFIX = re.compile(r"[-,](bold|italic|oblique|regular|semibold|light|black|boldmt|italicmt|bolditalic|bolditalicmt|mt)+$", re.I)
+STYLE_SUFFIX = re.compile(r"[-,](bold|italic|oblique|regular|semibold|light|black|boldmt|italicmt|bolditalic|bolditalicmt|mt|it)+$", re.I)
 
 
 def family(base_font):
