@@ -196,7 +196,8 @@
  "readability": {
   "mean_sentence_max": 16,
   "long_sentence_words": 28,
-  "long_share_max": 0.05
+  "long_share_max": 0.05,
+  "max_prose_run_words": 450
  },
  "budgets": {
   "tolerance": 0.2,

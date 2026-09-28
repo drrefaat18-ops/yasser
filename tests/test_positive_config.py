@@ -22,7 +22,7 @@ class PositiveConfig(unittest.TestCase):
                 for cid in ALWAYS_ON:   # the features that stay on are really checked, never skipped
                     self.assertEqual({c["status"] for c in checks if c["id"] == cid}, {"pass"}, cid)
                 others = {c["id"] for c in checks if c["status"] == "not_applicable"} - set(disabled)
-                self.assertEqual(others - DISABLED_ELSEWHERE[name], set(), f"{name}: unexpected not_applicable")
+                self.assertEqual(others - DISABLED_ELSEWHERE[name] - OPT_IN, set(), f"{name}: unexpected not_applicable")
 
     def test_committed_fixtures_equal_the_generator(self):
         spec = importlib.util.spec_from_file_location("make_positive_config", REPO / "tests/tools/make_positive_config.py")
@@ -42,6 +42,9 @@ DISABLED_ELSEWHERE = {
     "no-mcq": {"MCQ-EXTRA-OPTION", "MCQ-OPTIONS", "MCQ-LO-TAG", "MCQ-LO-UNKNOWN", "KEY-RATIONALE", "KEY-MISSING", "KEY-RUN"},
     "no-glossary": set(), "no-cases": set(), "no-perspectives": set(), "no-errata": set(),
 }
+
+# checks a book turns on in its own config (Task 9b.5): prose rhythm needs a limit, formulas need the chemistry pack
+OPT_IN = {"RHYTHM-PROSE", "CHEM-FORMULA-PLAIN"}
 
 if __name__ == "__main__":
     unittest.main()

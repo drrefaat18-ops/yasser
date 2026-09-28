@@ -794,6 +794,13 @@
       "number",
       "null"
      ]
+    },
+    "max_prose_run_words": {
+     "type": [
+      "integer",
+      "null"
+     ],
+     "minimum": 1
     }
    },
    "additionalProperties": false

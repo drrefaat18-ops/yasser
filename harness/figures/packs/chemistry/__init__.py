@@ -153,3 +153,35 @@ def render(spec, out_svg, out_png, width_cm=14, dpi=300):
 
 
 from harness.figures.packs.chemistry.pubchem import crosscheck  # noqa: E402,F401  (pack interface member)
+
+
+# ---------- chapter text (plan Task 9b.5): formulas must carry real subscripts ----------
+
+TEXT_IDS = ["CHEM-FORMULA-PLAIN"]
+ELEMENTS = set("""H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb
+Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir
+Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr""".split())
+FORMULA = re.compile(r"(?<![\w~^/.#-])((?:\(?(?:[A-Z][a-z]?\d*)+\)?\d*){1,})(?![\w~^])")
+PART = re.compile(r"([A-Z][a-z]?)(\d*)")
+DIATOMIC = {"H2", "N2", "O2", "O3", "F2", "Cl2", "Br2", "I2"}
+
+
+def plain_formulas(text):
+    """Formulas written with bare digits (CO2, H2SO4, (NH4)2SO4): every symbol an element, a digit right after one,
+    and two or more elements (or a common diatomic). Written CO~2~ they are skipped.
+    ponytail: one element with a number (a vitamin 'B12', an ion 'Ca2+') is not flagged; add ions if books need it."""
+    out = []
+    for m in FORMULA.finditer(text):
+        tok = m.group(1)
+        body = tok.replace("(", "").replace(")", "")
+        parts = PART.findall(body)
+        if not all(s in ELEMENTS for s, _ in parts) or not re.search(r"[A-Za-z)]\d", tok):
+            continue
+        if len(parts) >= 2 or tok in DIATOMIC:
+            out.append(tok)
+    return out
+
+
+def check_text(text):
+    found = sorted(set(plain_formulas(text)))
+    return {"CHEM-FORMULA-PLAIN": [f"formula without subscripts: {f} (write it with ~n~, e.g. CO~2~)" for f in found[:15]]}

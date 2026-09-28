@@ -18,9 +18,9 @@ if str(REPO) not in sys.path:
 from harness import figures, preflight  # noqa: E402
 from harness.figures import annotated  # noqa: E402
 from harness.tools import blocks, build_book, config  # noqa: E402
-from harness.tools.build_book import BuildError  # noqa: E402
 
 GRID, STRIPE, LINK = build_book.GRID, build_book.STRIPE, build_book.LINK
+BuildError = build_book.BuildError
 TIMEOUT_S = 300
 
 

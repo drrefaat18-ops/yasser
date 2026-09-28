@@ -33,6 +33,8 @@ IDS = {  # emission order per function; every ID appears once per target
     "budget": ["BUDGET-CHAPTER"],
     "glossary": ["GLOSS-MISSING"],
     "assets": ["ASSET-MISSING", "ASSET-OUTSIDE-ROOT"],
+    "typography": ["TYPO-LATEX"],
+    "rhythm": ["RHYTHM-PROSE"],
     "book": ["BOOK-CHAPTER-COUNT", "BOOK-FRONT-MISSING", "BUDGET-TOTAL", "BUDGET-FRONT", "ERRATA-OPEN", "GLOSS-MIN"],
 }
 
@@ -403,6 +405,57 @@ def check_assets(text, cfg, path):
     return f
 
 
+LATEX = re.compile(r"\$[^$\n]+\$|\\(?:frac|text|mathrm|xrightarrow|longrightarrow|rightarrow|ce|sub|sup|times|circ)\b")
+VISUAL = ("![", "|", ">")   # a figure, a table or a box breaks a prose run (plan Task 9b.5)
+
+
+def _prose_lines(text, cfg):
+    """Chapter lines before the references, outside code fences."""
+    fence = False
+    for line in no_refs(text, cfg).splitlines():
+        s = line.strip()
+        if s.startswith("```"):
+            fence = not fence
+            continue
+        if not fence:
+            yield s
+
+
+def check_typography(text, cfg):
+    """TYPO-LATEX: TeX left in the text; the writers print none of it (formulas use ~sub~ and ^sup^)."""
+    hits = sorted({m.group(0) for s in _prose_lines(text, cfg) for m in LATEX.finditer(s)})
+    return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in hits[:10]]}
+
+
+def check_rhythm(text, cfg):
+    """RHYTHM-PROSE: prose words between two visuals (figure, table, box) above template.readability.max_prose_run_words."""
+    limit = cfg["template"]["readability"].get("max_prose_run_words")
+    if not limit:
+        return None
+    prof, run, start, out = cfg["profile_out"], 0, None, []
+    for s in list(_prose_lines(prose_body(text, cfg), cfg)) + ["!["]:
+        if s.startswith(VISUAL):
+            if run > limit:
+                out.append(f"prose run of {run} words without a figure, table or box (from '{start[:60]}…'), limit {limit}")
+            run, start = 0, None
+        elif s and not s.startswith("#"):
+            run += tx.words(re.sub(r"[*_`]", "", s), prof)
+            start = start or s
+    return {"RHYTHM-PROSE": out}
+
+
+def pack_checks(text, cfg):
+    """[(group, result)] from each figure pack in brief.figures.packs that checks text (TEXT_IDS, check_text)."""
+    from harness.figures import packs
+    on = set(cfg["brief"]["figures"]["packs"])
+    out = []
+    for name, mod in packs.text_packs().items():
+        IDS.setdefault(f"pack:{name}", list(mod.TEXT_IDS))
+        body = "\n".join(_prose_lines(text, cfg))
+        out.append((f"pack:{name}", mod.check_text(body) if name in on else None))
+    return out
+
+
 # ---------- measured values (the golden records these, core §9.1) ----------
 
 def measured(text, cfg, budget):
@@ -446,7 +499,8 @@ def check_chapter(path, cfg, chapter):
               ("objectives", check_objectives(text, cfg)), ("mcqs", check_mcqs(text, cfg)),
               ("citations", check_citations(text, cfg)), ("sentences", check_sentences(text, cfg)),
               ("banned", check_banned(text, cfg)), ("budget", check_budget(text, cfg, budget)),
-              ("glossary", check_glossary(text, cfg)), ("assets", check_assets(text, cfg, pathlib.Path(path)))]
+              ("glossary", check_glossary(text, cfg)), ("assets", check_assets(text, cfg, pathlib.Path(path))),
+              ("typography", check_typography(text, cfg)), ("rhythm", check_rhythm(text, cfg))] + pack_checks(text, cfg)
     return _entries(chapter["id"], groups, measured(text, cfg, budget))
 
 

@@ -25,7 +25,7 @@ def failing(r):
 
 class Mutations(unittest.TestCase):
     def test_each_mutation_yields_named_id(self):
-        self.assertEqual(len(MUT), 7)
+        self.assertEqual(len(MUT), 8)
         for m in MUT:
             with self.subTest(m["name"]), temp_repo(project_from="projects/ai-in-medicine", stamp=True) as root:
                 f = root / "projects/ai-in-medicine" / m["file"]

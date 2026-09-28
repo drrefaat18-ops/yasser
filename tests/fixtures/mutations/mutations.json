@@ -5,5 +5,6 @@
  {"name": "reopen-erratum", "fixture": "ai-in-medicine", "file": "rework/errata-ledger.md", "op": "replace_first", "arg": ["| removed-with-content |", "| open |"], "expect": "ERRATA-OPEN"},
  {"name": "break-citation", "fixture": "ai-in-medicine", "file": "rework/ch03-how-models-learn.md", "op": "append_to_first_prose", "arg": " [999]", "expect": "CIT-MISSING"},
  {"name": "drop-perspective", "fixture": "ai-in-medicine", "file": "rework/ch04-reading-performance-claims.md", "op": "delete_first_perspective_item", "arg": null, "expect": "PERSP-MISSING"},
- {"name": "exceed-word-budget", "fixture": "ai-in-medicine", "file": "rework/ch05-generative-ai-llms.md", "op": "append_prose_words", "arg": 900, "expect": "BUDGET-CHAPTER"}
+ {"name": "exceed-word-budget", "fixture": "ai-in-medicine", "file": "rework/ch05-generative-ai-llms.md", "op": "append_prose_words", "arg": 900, "expect": "BUDGET-CHAPTER"},
+ {"name": "raw-tex-formula", "fixture": "ai-in-medicine", "file": "rework/ch03-how-models-learn.md", "op": "append_to_first_prose", "arg": " The gas is $CO_2$.", "expect": "TYPO-LATEX"}
 ]

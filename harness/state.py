@@ -35,7 +35,7 @@ STAGES = [
                                                        "harness/locales.py"]},
     {"id": "translate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_translation.py, complete_checks/translate.py in 11.x
     {"id": "rework", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/rework.py", "harness/tools/check_book.py",
-                                                       "harness/tools/verify_refs.py", "harness/tools/assemble.py", "harness/figures/__init__.py",
+                                                       "harness/tools/verify_refs.py", "harness/tools/assemble.py", "harness/figures",   # packs check text (9b.5)
                                                        "harness/tools/config.py", "harness/text.py", "harness/locales.py",
                                                        "harness/defaults.json"]},
     {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/build.py", "harness/tools/assemble.py", "harness/tools/build_book.py", "harness/tools/blocks.py", "harness/tools/build_html.py", "harness/tools/check_pdf.py",
