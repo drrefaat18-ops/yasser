@@ -61,7 +61,7 @@ def title_matches(line, title, cfg):
 
 def identifier(line, cfg):
     for pat in cfg["template"]["references"]["identifier_patterns"]:
-        m = re.search(pat, line)
+        m = re.search(pat, line, re.IGNORECASE)   # `doi:` and `DOI:` alike; a missed DOI would pass as an unverified type
         if m:
             return next((g for g in m.groups() if g), m.group(0))
     return None

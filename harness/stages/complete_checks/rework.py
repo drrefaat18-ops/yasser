@@ -20,6 +20,8 @@ def rework(project, active_run, unit, fetch=None):
         if entry is None:
             return {}, [f"UNIT-UNKNOWN {unit}: not in chapter-plan.json"]
         path = cfg.path("chapters") / entry["file"]
+        if not path.is_file():
+            return {}, [f"UNIT-FILE-MISSING {unit}: {entry['file']} (named in chapter-plan.json) is not in chapters/"]
         report = check_book.check_chapter(path, cfg, entry)
         probs += [f"{c['id']} {unit}: {c['message']}" for c in report["checks"] if c["status"] == "fail"]
         refs = verify_refs.check_chapter(path, cfg, fetch)

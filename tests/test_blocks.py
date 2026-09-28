@@ -23,6 +23,10 @@ class BlocksTest(unittest.TestCase):
         self.assertEqual(spans, [("H", False, False), ("2", True, False), ("O and Ca", False, False), ("2+", False, True)])
         self.assertEqual(blocks.plain("**CO~2~** [site](https://x.org)"), "CO2 site")
 
+    def test_unicode_scripts_become_sub_and_sup(self):
+        spans = [(s["text"], s["sub"], s["sup"]) for s in blocks.inline("Ca²⁺ and CO₂")]
+        self.assertEqual(spans, [("Ca", False, False), ("2+", False, True), (" and CO", False, False), ("2", True, False)])
+
     def test_tilde_with_spaces_is_text(self):
         self.assertEqual([s["text"] for s in blocks.inline("about ~5 % and ~10 %")], ["about ~5 % and ~10 %"])
 

@@ -27,6 +27,18 @@ LO_TAIL = re.compile(r"\s*(\[LO\d+(?:,\s*LO\d+)*\])\s*$")
 INLINE = re.compile(r"(\*\*\*.+?\*\*\*|\*\*.+?\*\*|(?<![\w*])\*[^*\s][^*]*?\*(?![\w*])|\[[^\]]+\]\([^)\s]+\))")
 SUBSUP = re.compile(r"(~[^~\s]+~|\^[^^\s]+\^)")
 URL = re.compile(r"(https?://[^\s)]+[^\s).,;])")
+SUP_CH, SUB_CH = "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾", "₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
+SCRIPT_RUN = re.compile(f"[{SUP_CH}]+|[{SUB_CH}]+")
+
+
+def _script_markup(t):
+    """Unicode super/subscript runs (Ca²⁺, CO₂) -> `^2+^` / `~2~`: real sup/sub text, never a glyph the font may lack."""
+    def one(m):
+        run = m.group()
+        if run[0] in SUP_CH:
+            return "^" + run.translate(str.maketrans(SUP_CH, "0123456789+-=()")) + "^"
+        return "~" + run.translate(str.maketrans(SUB_CH, "0123456789+-=()")) + "~"
+    return SCRIPT_RUN.sub(one, t)
 
 
 def _span(text, bold=False, italic=False, sub=False, sup=False, url=None):
@@ -53,7 +65,7 @@ def inline(text, links=True):
         if url and links:
             out.append(_span(t, b, i, url=url))
             continue
-        for seg in SUBSUP.split(t):
+        for seg in SUBSUP.split(_script_markup(t)):
             if not seg:
                 continue
             if SUBSUP.fullmatch(seg):

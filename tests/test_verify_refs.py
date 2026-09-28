@@ -23,6 +23,11 @@ class VerifyRefs(unittest.TestCase):
         bare = vr.classify_line(2, "Org. A web page on things.", CFG, fetch=None)
         self.assertEqual(bare["check_id"], "REF-NO-DOI-DISALLOWED")
 
+    def test_lower_case_doi_is_still_checked(self):
+        r = vr.classify_line(6, "Doe A. Deep learning for images of cells. J. 2021. doi:10.1/y", CFG,
+                             fetch=lambda d: "Deep learning for images of cells")
+        self.assertEqual((r["doi"], r["doi_status"]), ("10.1/y", "exists"))
+
     def test_network_error_is_ref_error(self):
         def boom(doi):
             raise OSError("timed out")

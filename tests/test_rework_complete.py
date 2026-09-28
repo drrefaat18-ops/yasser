@@ -27,6 +27,16 @@ class ReworkComplete(unittest.TestCase):
             self.assertEqual(r.returncode, 1)
             self.assertIn("CIT-MISSING ch01", r.stderr)
 
+    def test_misnamed_chapter_file_is_a_clear_error(self):
+        with temp_repo(f"positive-config/{SLUG}", slug=SLUG, stamp=True) as root:
+            ch = root / "projects" / SLUG / "chapters/ch01-forces.md"
+            ch.rename(ch.with_name("ch01-other-name.md"))
+            n = begin(root)
+            r = run_cli(root, *P, "complete", "rework", "--nonce", n, "--unit", "ch01")
+            self.assertEqual(r.returncode, 1)
+            self.assertIn("UNIT-FILE-MISSING ch01: ch01-forces.md", r.stderr)
+            self.assertNotIn("Traceback", r.stderr)
+
     def test_units_then_final_writes_one_stage_receipt(self):
         with temp_repo(f"positive-config/{SLUG}", slug=SLUG, stamp=True) as root:
             n = begin(root)
