@@ -19,6 +19,29 @@
  },
  "project_id": "cns-pharmacology-practical",
  "receipts": {
+  "ingest": {
+   "args": {},
+   "converter": "markitdown",
+   "inputs": {
+    "original/cns-sections-combined.pdf": "ad3493e94351f49c837dcb5a382c9ad63963a866046427d3c00d5f22aacf2ac9",
+    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a"
+   },
+   "outputs": {
+    "ingest/conversion-report.json": "05a6336ed9b46b61ca09531e5bd1a64ce1569619e2350d37b075ddd15f53ac1b",
+    "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
+    "ingest/units.json": "8665278f5eac761139d4e734dab6defbaa5ac1f507d595d43c338b755ae9e3c3",
+    "source-manifest.json": "52abc497161652d46d249adba6235037738933cb44e8ceb0e8e210140cd03ed2",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/cns-sections-combined.pdf": "ad3493e94351f49c837dcb5a382c9ad63963a866046427d3c00d5f22aacf2ac9"
+   },
+   "source_formats": [
+    "pdf"
+   ],
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-09-28T13:19:07Z",
+   "tool_sha": "2889f760f71017d4e2d0a30c76e975ec4f606bfa"
+  },
   "intake": {
    "args": {},
    "inputs": {

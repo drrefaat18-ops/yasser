@@ -1,0 +1,39 @@
+{
+ "converter": "markitdown",
+ "schema_version": 1,
+ "source_formats": [
+  "pdf"
+ ],
+ "structures": {
+  "equations": {
+   "output_count": 0,
+   "source_count": null,
+   "status": "not_measurable"
+  },
+  "figures": {
+   "output_count": 0,
+   "source_count": null,
+   "status": "not_measurable"
+  },
+  "footnotes": {
+   "output_count": 0,
+   "source_count": null,
+   "status": "not_measurable"
+  },
+  "headings": {
+   "output_count": 0,
+   "source_count": null,
+   "status": "not_measurable"
+  },
+  "tables": {
+   "output_count": 11,
+   "source_count": null,
+   "status": "not_measurable"
+  },
+  "text": {
+   "output_count": 72048,
+   "source_count": null,
+   "status": "not_measurable"
+  }
+ }
+}
