@@ -180,6 +180,12 @@
     },
     "drop_cap": {
      "type": "boolean"
+    },
+    "heading2_font": {
+     "enum": [
+      "sans",
+      "serif_heading"
+     ]
     }
    },
    "additionalProperties": false
@@ -277,6 +283,12 @@
        }
       },
       "additionalProperties": false
+     },
+     "edge": {
+      "enum": [
+       "top",
+       "left"
+      ]
      }
     },
     "additionalProperties": false

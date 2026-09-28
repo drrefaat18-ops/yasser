@@ -252,6 +252,7 @@ def stylesheet(bk, chapters):
     for key, e in th["callouts"].items():
         border = e.get("border")
         edge = (f"border:{border['size_eighths_pt'] / 8}pt solid {hexc(border['colour'])}" if border
+                else f"border-top:0;border-left:3pt solid {hexc(e['label_colour'])}" if e.get("edge") == "left"
                 else f"border-top:1.5pt solid {hexc(e['label_colour'])}")
         boxes.append(f".c-{key}{{background:{hexc(e['fill'])};{edge}}}.c-{key} .label,.c-{key} .part,.c-{key} .name"
                      f"{{color:{hexc(e['label_colour'])}}}")
@@ -269,7 +270,7 @@ h1,h2,h3,.h2,.label,.qnum,.stem,figcaption,th,td,.toc,.part-page{{text-align:{he
 h1{{font-family:{ff('serif_heading')};font-size:25pt;font-weight:700;color:{pri};line-height:1.08;margin:1.6cm 0 0.75cm;
   padding-bottom:0.3cm;border-bottom:1.5pt solid {acc};break-after:avoid}}
 h1 .num{{color:{acc};margin-right:0.15em}}
-h2,.h2{{font-family:{ff('sans')};font-size:12.5pt;font-weight:700;color:{pri};margin:16pt 0 5pt;break-after:avoid}}
+h2,.h2{{font-family:{ff(th['layout'].get('heading2_font') or 'sans')};font-size:{13.5 if th['layout'].get('heading2_font') == 'serif_heading' else 12.5}pt;font-weight:700;color:{pri};margin:16pt 0 5pt;break-after:avoid}}
 h3{{font-family:{ff('sans')};font-size:11pt;font-weight:700;color:{ink};margin:10pt 0 3pt;break-after:avoid}}
 ul{{margin:0 0 6pt;padding-left:0.6cm}}li{{margin-bottom:3pt}}
 .box{{background:#F1F1EE;border-top:1.5pt solid {pri};padding:0.3cm 0.34cm;margin:8pt 0 10pt;break-inside:avoid;border-radius:1.5pt}}
@@ -491,12 +492,24 @@ def outline(pdf):
     return out, len(r.pages)
 
 
+def _depths(levels):
+    """Tree depth of each heading, as a PDF outline nests them: a skipped level (h2 under no h1) closes up."""
+    stack, out = [], []
+    for lvl in levels:
+        while stack and stack[-1] >= lvl:
+            stack.pop()
+        stack.append(lvl)
+        out.append(len(stack))
+    return out
+
+
 def _match(heads, marks, what):
     """Edge's outline lists the same headings the writer placed, in the same order; anything else is a bug."""
     got = [(lvl, re.sub(r"\s+", " ", t).strip()) for lvl, t, _ in marks]
-    want = [(lvl, re.sub(r"\s+", " ", t).strip()) for lvl, t in heads]
-    if got != want:
-        first = next((k for k, (a, b) in enumerate(zip(got, want)) if a != b), min(len(got), len(want)))
+    want = [(d, re.sub(r"\s+", " ", t).strip()) for d, (_, t) in zip(_depths([lvl for lvl, _ in heads]), heads)]
+    key = lambda xs: [(lvl, re.sub(r"\s+", "", t)) for lvl, t in xs]   # Edge drops the space at a wrapped heading's line break
+    if key(got) != key(want):
+        first = next((k for k, (a, b) in enumerate(zip(key(got), key(want))) if a != b), min(len(got), len(want)))
         raise BuildError(f"{what}: the printed outline ({len(got)} headings) does not match the placed headings "
                          f"({len(want)}); first difference at #{first + 1}: "
                          f"{got[first] if first < len(got) else None} vs {want[first] if first < len(want) else None}")
@@ -550,8 +563,8 @@ def build_pdf(cfg, out_pdf):
             offset = len(writer.pages)
         if cfg["theme"]["build"]["pdf"]["bookmarks"] == "headings":
             parents = {}
-            for name, marks in (("front", front_marks), ("body", body_marks)):
-                for lvl, title, p in marks:
+            for name, marks, heads in (("front", front_marks, how_heads), ("body", body_marks, body_heads)):
+                for (lvl, _, p), (_, title) in zip(marks, heads):   # _match paired them; the placed title keeps its spaces
                     item = writer.add_outline_item(re.sub(r"\s+", " ", title).strip(), starts[name] + p, parent=parents.get(lvl - 1))
                     parents[lvl] = item
         writer.add_metadata({"/Title": f"{bk.title}: {bk.subtitle}" if bk.subtitle else bk.title, "/Author": bk.credits,

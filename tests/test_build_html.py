@@ -40,8 +40,30 @@ class WriterTest(unittest.TestCase):
         css = build_html.stylesheet(self.w.bk, [(1, "A")])
         self.assertIn("background:#" + self.cfg["theme"]["palette"]["paper"], css.split("}")[0])   # on @page itself
 
+    def test_left_callout_edge_and_serif_h2(self):
+        th = self.cfg["theme"]
+        key = next(iter(th["callouts"]))
+        th["callouts"][key].pop("border", None)
+        th["callouts"][key]["edge"] = "left"
+        th["layout"]["heading2_font"] = "serif_heading"
+        css = build_html.stylesheet(self.w.bk, [(1, "A")])
+        self.assertIn(f".c-{key}{{background:#{th['callouts'][key]['fill']};border-top:0;border-left:3pt solid", css)
+        self.assertIn('h2,.h2{font-family:"' + th["fonts"]["serif_heading"] + '"', css)
+
     def test_css_string_escapes_quotes(self):
         self.assertEqual(build_html.css_string('a "b" \\ c'), '"a \\"b\\" \\\\ c"')
+
+    def test_outline_match_ignores_a_wrapped_heading_space(self):
+        heads = [(1, "2 Psychosis and Antipsychotic Drugs")]
+        build_html._match(heads, [(1, "2 Psychosis and AntipsychoticDrugs", 0)], "body")   # Edge drops the wrap space
+        with self.assertRaises(build_html.BuildError):
+            build_html._match(heads, [(1, "2 Psychosis and Antidepressant Drugs", 0)], "body")
+
+    def test_outline_match_closes_a_skipped_level(self):
+        heads = [(2, "How to Use This Book"), (3, "The boxes"), (2, "Next")]
+        build_html._match(heads, [(1, "How to Use This Book", 0), (2, "The boxes", 0), (1, "Next", 0)], "front")
+        with self.assertRaises(build_html.BuildError):
+            build_html._match(heads, [(1, "How to Use This Book", 0), (1, "The boxes", 0), (1, "Next", 0)], "front")
 
     def test_engine_defaults_to_word(self):
         cfg = config.load(REPO / "projects/ai-in-medicine")
