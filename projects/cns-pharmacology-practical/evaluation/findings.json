@@ -60,10 +60,10 @@
     "line_start": 106,
     "line_end": 125
    },
-   "claim": "Cholinesterase-inhibitor safety omits the cardiac contraindications (bradycardia, sick sinus, heart block) and syncope risk, and gives no titration advice.",
+   "claim": "Cholinesterase-inhibitor safety lists bradycardia but omits syncope and heart-block risk, pulse review, caution in conduction disease or with other bradycardic drugs, and titration advice.",
    "evidence": "\"Adverse effects include: ... Bradycardia. Salivation and Urination. Diarrhea\"",
    "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
-   "fix_hint": "Add: check pulse/ECG before starting; caution with beta-blockers and digoxin; start low and titrate; take donepezil at night, rivastigmine with food; patch reduces GI effects."
+   "fix_hint": "Add: review pulse before and during treatment; caution in conduction disease and with beta-blockers or digoxin; start low and titrate; rivastigmine with food; patch reduces GI effects."
   },
   {
    "id": "F-005",
@@ -124,10 +124,10 @@
     "line_start": 336,
     "line_end": 342
    },
-   "claim": "Neuroleptic malignant syndrome is described wrongly (convulsion, hypertension) and without management.",
+   "claim": "The neuroleptic malignant syndrome description omits altered mental status, autonomic lability, raised creatine kinase/rhabdomyolysis and urgent management; convulsions are not a defining feature.",
    "evidence": "\"Hyperthermia ,Convulsion ,Muscle rigidity ,hypertension and sweating\"",
    "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
-   "fix_hint": "NMS: fever, lead-pipe rigidity, altered mental state, autonomic instability, raised CK. Management: stop the antipsychotic, cool, fluids, dantrolene or bromocriptine."
+   "fix_hint": "NMS: fever, lead-pipe rigidity, altered mental state, autonomic instability (labile or raised BP, tachycardia, sweating), raised CK. Management: stop the antipsychotic, cool, fluids, supportive care; dantrolene or bromocriptine in severe cases."
   },
   {
    "id": "F-009",
@@ -328,7 +328,7 @@
    "claim": "Psychotherapy is presented as first line for all depression; guidelines reserve psychotherapy alone for less severe depression and combine it with an antidepressant for moderate-severe depression.",
    "evidence": "\"Psychotherapy with our without medication is the first line treatment to depression.\"",
    "source": "NICE NG222 Depression in adults (2022)",
-   "fix_hint": "Stratify by severity: less severe - psychological therapy first; more severe - antidepressant plus psychological therapy."
+   "fix_hint": "Stratify by severity and shared decision: less severe - guided self-help or psychological therapy first, antidepressant only if preferred; more severe - CBT plus antidepressant, an antidepressant, or psychological therapy according to need and preference (NICE NG222 1.5-1.6)."
   },
   {
    "id": "F-022",
@@ -596,7 +596,7 @@
   {
    "id": "F-039",
    "pillar_id": "G1",
-   "severity": "major",
+   "severity": "minor",
    "tags": [],
    "location": {
     "file": "ingest/source.md",
@@ -975,10 +975,10 @@
     "line_start": 3251,
     "line_end": 3255
    },
-   "claim": "Adrenaline with local anaesthetics is not contraindicated-flagged for end-arteries or cocaine combinations.",
+   "claim": "The adrenaline statement gives no cautions: severely impaired peripheral circulation, and combination with cocaine or other potent sympathomimetics.",
    "evidence": "\"added to as epinephrine a vasoconstrictor\"",
    "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
-   "fix_hint": "Add Caution: avoid adrenaline in digital, penile or ear blocks with poor collateral supply (traditional teaching) and in patients with arrhythmia."
+   "fix_hint": "Add Caution: adrenaline-containing solutions are acceptable for most selected digital blocks; avoid or use specialist caution with severely impaired circulation, and avoid with cocaine or other potent sympathomimetics."
   },
   {
    "id": "F-064",
@@ -1099,6 +1099,175 @@
    "evidence": "\"Treatment of Parkinson's disease will focus on ...\"",
    "source": "NICE NG71, NG217, NG222; APA schizophrenia guideline 2020",
    "fix_hint": "Add a 'Choosing a drug' table per chapter."
+  },
+  {
+   "id": "F-072",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 71,
+    "line_end": 79
+   },
+   "claim": "Cholinesterase inhibitors and memantine are presented as slowing disease progression; they are symptomatic treatments with modest, temporary benefit and do not modify the disease course (repeated at lines 101-104 and 196-228).",
+   "evidence": "\"medication only serves to slow the progression of disease\"",
+   "source": "NICE NG97 (2018); Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Say 'may give modest temporary benefit in cognition or function'; contrast with anti-amyloid antibodies for eligible early disease."
+  },
+  {
+   "id": "F-073",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1185,
+    "line_end": 1188
+   },
+   "claim": "SSRI sexual dysfunction is said to disappear after two weeks; nausea often settles, but sexual dysfunction commonly persists and must be reviewed.",
+   "evidence": "\"GIT disturbance ... and erectile dysfunctions are the most common side effects of SSRI and they disappear after 2 weeks\"",
+   "source": "NICE NG222 (2022); Taylor D et al. The Maudsley Prescribing Guidelines. 15th ed. 2025",
+   "fix_hint": "Separate early transient effects (nausea) from persistent ones (sexual dysfunction) and give management options."
+  },
+  {
+   "id": "F-074",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 824,
+    "line_end": 828
+   },
+   "claim": "Amantadine is said to potentiate dopamine reuptake; it increases release, inhibits reuptake and antagonises NMDA receptors (useful for levodopa-induced dyskinesia).",
+   "evidence": "\"it may potentiate dopamine synthesis ,release and reuptake\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Replace with release, reuptake inhibition and NMDA antagonism; note use in dyskinesia."
+  },
+  {
+   "id": "F-075",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1557,
+    "line_end": 1559
+   },
+   "claim": "Loss of consciousness is said to be constant in all generalised seizures; awareness can be preserved in myoclonic seizures.",
+   "evidence": "\"Loss of consciousness is constant with all three types of generalized seizures.\"",
+   "source": "Fisher RS et al. Operational classification of seizure types (ILAE). Epilepsia. 2017;58(4):522-530",
+   "fix_hint": "Describe awareness per seizure type (absence, tonic-clonic, myoclonic)."
+  },
+  {
+   "id": "F-076",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2164,
+    "line_end": 2166
+   },
+   "claim": "Vecuronium is said to form inactive metabolites; its 3-desacetyl metabolite is active and can accumulate.",
+   "evidence": "\"vecuronium is hepatically metabolized to inactive metabolites\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Mention the active 3-desacetyl metabolite and prolonged block in organ dysfunction."
+  },
+  {
+   "id": "F-077",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2433,
+    "line_end": 2511
+   },
+   "claim": "Benzodiazepine indications mislead: OCD is listed as a routine indication, anticonvulsant use is 'no longer accepted', and diazepam is the only status-epilepticus choice; IV lorazepam or buccal/IM midazolam are preferred by setting and clobazam/clonazepam keep selected roles.",
+   "evidence": "\"The use of BZ in treatment of epilepsy is no longer accepted\" / \"Diazepam is the drug of choice in terminating status epilepticus.\"",
+   "source": "NICE NG217 (2022); Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Remove OCD; separate rescue/status use (route-dependent choices) from maintenance use."
+  },
+  {
+   "id": "F-078",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2725,
+    "line_end": 2738
+   },
+   "claim": "Z-drugs are said to show few withdrawal effects and little tolerance; they can cause dependence, withdrawal, next-day impairment and complex sleep behaviours (FDA boxed warning).",
+   "evidence": "\"They show few withdrawal effects, exhibits minimal rebound insomnia, and little tolerance occurs\"",
+   "source": "FDA Drug Safety Communication: boxed warning for complex sleep behaviours (2019)",
+   "fix_hint": "Add duration limits, dependence counselling, driving caution and the boxed warning."
+  },
+  {
+   "id": "F-079",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3104,
+    "line_end": 3166
+   },
+   "claim": "Ketamine is called generally preferred in paediatrics and the MCQ keys it without a scenario; induction-agent choice depends on haemodynamics, airway, procedure and need for analgesia.",
+   "evidence": "\"The adverse effects are less marked in children making it preferred in pediatrics.\"",
+   "source": "Gropper MA, ed. Miller's Anesthesia. 10th ed. Elsevier; 2024; Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Teach patient-specific selection; rewrite the MCQ around a haemodynamically unstable child needing painful procedural sedation."
+  },
+  {
+   "id": "F-080",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 526,
+    "line_end": 541
+   },
+   "claim": "The schizophrenia case answer switches to risperidone for involuntary movements without identifying the movement disorder; risperidone has dose-related EPS and anticholinergics can worsen tardive dyskinesia.",
+   "evidence": "\"He had developed Extrapyramidal side effects, Which can be avoided by shifting to Atypical anti psychotic drugs (Risperidone)\"",
+   "source": "Maudsley Prescribing Guidelines 15th ed.; APA Practice Guideline for Schizophrenia (2020)",
+   "fix_hint": "Identify the EPS type and timing, then give subtype-specific management."
+  },
+  {
+   "id": "F-081",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1574,
+    "line_end": 1576
+   },
+   "claim": "Benzodiazepines in epilepsy are limited to status and febrile seizures; clobazam and clonazepam have maintenance roles in selected epilepsies.",
+   "evidence": "\"Benzodiazipens. (limited to status epileptics I.V only and febrile sezuires I.V or rectal suppositories)\"",
+   "source": "NICE NG217 (2022)",
+   "fix_hint": "Add clobazam/clonazepam as adjuncts."
+  },
+  {
+   "id": "F-082",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2167,
+    "line_end": 2169
+   },
+   "claim": "Pancuronium is said to be eliminated renally unchanged; it is mainly renal but partly hepatic, with an active 3-hydroxy metabolite.",
+   "evidence": "\"pancuronium is eliminated renally unchanged\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Say 'mainly renal excretion; avoid in renal failure'."
   }
  ]
 }

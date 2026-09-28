@@ -4,7 +4,7 @@
  "pillars": [
   {
    "id": "G1",
-   "score": 3.5,
+   "score": 3,
    "applicable": true,
    "evidence_finding_ids": [
     "F-001",
@@ -44,12 +44,18 @@
     "F-055",
     "F-057",
     "F-059",
-    "F-061"
+    "F-061",
+    "F-072",
+    "F-073",
+    "F-074",
+    "F-075",
+    "F-076",
+    "F-082"
    ]
   },
   {
    "id": "G2",
-   "score": 3,
+   "score": 4,
    "applicable": true,
    "evidence_finding_ids": [
     "F-012",
@@ -61,7 +67,7 @@
   },
   {
    "id": "G3",
-   "score": 3,
+   "score": 4,
    "applicable": true,
    "evidence_finding_ids": [
     "F-040",
@@ -88,7 +94,8 @@
     "F-014",
     "F-046",
     "F-054",
-    "F-056"
+    "F-056",
+    "F-081"
    ]
   },
   {
@@ -99,12 +106,14 @@
     "F-002",
     "F-021",
     "F-036",
-    "F-071"
+    "F-071",
+    "F-077",
+    "F-079"
    ]
   },
   {
    "id": "D3",
-   "score": 3.5,
+   "score": 4,
    "applicable": true,
    "evidence_finding_ids": [
     "F-004",
@@ -119,7 +128,9 @@
     "F-045",
     "F-058",
     "F-062",
-    "F-063"
+    "F-063",
+    "F-078",
+    "F-080"
    ]
   }
  ],
@@ -132,6 +143,6 @@
    ]
   }
  ],
- "total": 34.0,
+ "total": 36.5,
  "review_kind": "self"
 }

@@ -19,6 +19,38 @@
  },
  "project_id": "cns-pharmacology-practical",
  "receipts": {
+  "evaluate": {
+   "args": {},
+   "author_model": "claude",
+   "inputs": {
+    "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
+    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "ingest/conversion-report.json": "05a6336ed9b46b61ca09531e5bd1a64ce1569619e2350d37b075ddd15f53ac1b",
+    "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
+    "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd"
+   },
+   "outputs": {
+    "evaluation/codex-review.md": "152a9f99d1330af2fe875edd8ee46426bdf3d35d624558fe456e327837be7c80",
+    "evaluation/findings.json": "22502c883bbf955ae420f83901ff0db708fdd3b72c2b98a8578a9af457ca42d7",
+    "evaluation/fixes.md": "aacd34aa3649c3f65c15c3a4e57ba943e67298e9e84a2c3df44246708993c38d",
+    "evaluation/report.md": "e1ffd8dc1884f65e96f5c9d02eae9f1e64e3749fbf1ba144a962d5ceb64924ad",
+    "evaluation/scorecard.json": "6b33f7349e257c47b88719aee9cd855598b954e874baf513f23deb2c61ad4352"
+   },
+   "personas": [
+    "instructional-designer",
+    "pharmacology-reviewer",
+    "psychologist",
+    "research-synthesist",
+    "subject-reviewer"
+   ],
+   "reviewer_model": "GPT-5",
+   "rubric_digest": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
+   "rulings": {},
+   "stage": "evaluate",
+   "status": "ok",
+   "time": "2026-09-28T13:25:16Z",
+   "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
+  },
   "ingest": {
    "args": {},
    "converter": "markitdown",
