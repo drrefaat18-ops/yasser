@@ -734,7 +734,7 @@ class Pages:
             r = p.add_run(f"{number}")
             r.font.color.rgb = self.d["RGBColor"].from_string(self.bk.accent)
             p.add_run(GAP)
-        if blocks.plain(title) == title:   # plain title: one bare run, as before (the medical golden)
+        if blocks.plain(title) == title:   # plain title: one bare run, as before (keeps existing DOCX output byte-identical)
             p.add_run(title)
         else:   # inline markup, the same grammar as the HTML writer (step9b fix S9b-01)
             self.R.inline(p, title, links=False)
