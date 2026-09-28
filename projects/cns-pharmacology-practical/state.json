@@ -22,22 +22,33 @@
    "kind": "design"
   },
   "intake": {
-   "approved_at": "2026-09-28T13:42:06Z",
+   "approved_at": "2026-09-28T14:53:39Z",
    "approved_by": "user",
-   "dec_id": "DEC-004",
-   "dec_row_sha256": "60155e6f51cc75daad514ad2c921ae5914dfa2827be73f8ae2f2f47293a21a85",
+   "dec_id": "DEC-007",
+   "dec_row_sha256": "77531ef96a717726c7ba52697146bd7de1bd4b0d7f1ad873764cad183afc01c3",
    "files": {
     "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
     "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
     "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
     "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+    "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
    },
    "kind": "intake"
   }
  },
  "project_id": "cns-pharmacology-practical",
  "receipts": {
+  "build": {
+   "args": {},
+   "error": "BuildStepFailed: BUILD: pdf checks: PDF-FONTS: TimesNewRomanPS-BoldMT (first on page 87); TimesNewRomanPSMT (first on page 10); PDF-OUTLINE: 0 bookmarks titled '2 Psychosis and Antipsychotic Drugs' (need exactly 1); 0 bookmarks titled '4 Depression and Antidepressant Drugs' (need exactly 1); 0 bookmarks titled '7 Anxiolytics, Sedatives and Hypnotics' (need exactly 1)",
+   "inputs": {},
+   "invalidated_by": "rework@2026-09-28T14:54:12Z",
+   "outputs": {},
+   "stage": "build",
+   "status": "failed",
+   "time": "2026-09-28T14:11:49Z",
+   "tool_sha": "unknown"
+  },
   "design": {
    "args": {},
    "chapter_count": 9,
@@ -49,7 +60,7 @@
     "evaluation/report.md": "e1ffd8dc1884f65e96f5c9d02eae9f1e64e3749fbf1ba144a962d5ceb64924ad",
     "evaluation/scorecard.json": "6b33f7349e257c47b88719aee9cd855598b954e874baf513f23deb2c61ad4352",
     "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+    "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
    },
    "outputs": {
     "design/chapter-plan.json": "dd35bbebec7eff7d6c791829ad3521e5ef0222b99915dd7ea535c09dd2f96ab7",
@@ -58,7 +69,7 @@
    },
    "stage": "design",
    "status": "ok",
-   "time": "2026-09-28T13:43:07Z",
+   "time": "2026-09-28T14:54:00Z",
    "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
    "total_budget": 22400
   },
@@ -129,7 +140,7 @@
     "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
     "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
     "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+    "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
    },
    "questionnaire_ids": [
     "A",
@@ -148,8 +159,8 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-09-28T13:41:33Z",
-   "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3"
+   "time": "2026-09-28T14:53:23Z",
+   "tool_sha": "5576469032c9e048801d28aac2854462348308b2"
   },
   "new": {
    "args": {
@@ -173,7 +184,7 @@
   },
   "rework": {
    "args": {},
-   "checker_report_sha256": "1b22dd745f847d0ecd852d67a26353fc21d0ff29b52d9c20d5c2157d2a2cc9e7",
+   "checker_report_sha256": "28ec7e6f5d5060f239755d55b0ef7d09b8110f46eb87c94e6414db0417c9b4aa",
    "inputs": {
     "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
     "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
@@ -183,37 +194,37 @@
     "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
     "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
     "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+    "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
    },
    "outputs": {
     "chapters/00-front-matter.md": "95128f9162a32f2443249d072da396efd0e1063f82f25fcca48a1edc2e7def0d",
     "chapters/ch01-alzheimers-disease.md": "018adaddfc779aa6d7162608ac6d683edd1a4f58fda039291fca0582211bcf06",
     "chapters/ch02-psychosis.md": "6e33bb2c55d8cd32fc07327bbc51f88ffab648f3edc4e25488a56a0ee41844ad",
     "chapters/ch03-parkinsons-disease.md": "1d43f92f13d3f46ea0436a0eb70ae607a81163ee3b90687890eb6d04bbc1b9fd",
-    "chapters/ch04-depression.md": "10ff81ca0cc732f580b7c3b5d334708deb22bd72c69a05f4c71ea120bd6ba75e",
-    "chapters/ch05-epilepsy.md": "edfd2861a2152f67fe2876220b4aa344dc8220f0867d8a479c56399025f7752e",
-    "chapters/ch06-skeletal-muscle-relaxants.md": "4332f7994cc59aa115e20e95195dc6f6a5356924494972cf0702c9bf991bd2a4",
-    "chapters/ch07-anxiolytics-hypnotics.md": "6e05466319cf11ab3de7421d26e112da4c84536c0a3b715d69f9541c49f1a56a",
-    "chapters/ch08-general-anaesthetics.md": "cc106a703c402b5aa71b51bb0d1767b1ceee87dfc138d1ec9851cca8916d6160",
-    "chapters/ch09-local-anaesthetics.md": "bb67205833c0d7220066efad4f87f794a4eb1e575d20ea2980bd820195976541",
+    "chapters/ch04-depression.md": "f0a47f4b52518ffd6e59e0256d33ba096a027deb3f2b62772ce20b27cc47b36f",
+    "chapters/ch05-epilepsy.md": "da3158d21955f80ed72a8ed3357af60c31499d5350c6b2c7e8091e9c1f64b563",
+    "chapters/ch06-skeletal-muscle-relaxants.md": "453e73ce49d17e5cc9e0b5f8866253a3e45cfe0965784fb0a6fe119b467630bf",
+    "chapters/ch07-anxiolytics-hypnotics.md": "5d1f66750bdb7b0da20d1bd47222ee5808ed57a62030ef02bcb89e0ea0395221",
+    "chapters/ch08-general-anaesthetics.md": "f395798bcdf8e4f9f5b62a150a51e35b54abd6244995cf93bcc6b6d3e02e92f0",
+    "chapters/ch09-local-anaesthetics.md": "3fdd125e5220dae5e6a5e083f75cd6dae606f6077cf382045665f2700ff6b8c7",
     "chapters/errata-ledger.md": "9bed8d0c81345f3e60e6bdc808b2206ec95d266b69d4554d66bf57869bdd4344",
     "figures/figures.json": "2667ae473bec6889a6f80a5c29c0b426095155225abdd34ae2823bc7ab507cc7",
     "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "figures/src/ache-synapse.svg": "bc46c55ed9a339d9eb8e0f6cd327aa1b0191ca3ab040112987a2ce32fcb0e152",
-    "figures/src/antiseizure-targets.svg": "086492b9e100380fd3923b912131e6db2811e861eefba43694348a9228d84010",
-    "figures/src/balanced-anaesthesia.svg": "0f73fd5f55b56ba363b96f3bf333d0e1d2dda5f16cc89ada10d9530ee12e9dcc",
-    "figures/src/dopamine-pathways.svg": "ee1c07623146f50bd8e3d72f91e403c391627bea141ca91f00790c90575bb312",
-    "figures/src/gabaa-receptor.svg": "0885bf333b9e32530b3b56ea1e2725616c667e310975bf928582e5e98f747d04",
-    "figures/src/la-mechanism.svg": "8cb1138a7ec6db2a98b1c4d6fde1a59869a50aea4a6fab39a79868cc70dd89f5",
-    "figures/src/levodopa-path.svg": "f45c38f763a77a2b7a15e3ceffb3e168a3a63c575af0505cc33b6dfb3e12217d",
-    "figures/src/monoamine-synapse.svg": "c196eda79c6879743523a0a62a0c4e69048e25d84c3cff466767d2f491b3be25",
-    "figures/src/relaxant-sites.svg": "cd242e878bafa7c89280e6c019a0d0e5813242678baa960f8a9f678a7284d2cd"
+    "figures/src/ache-synapse.svg": "4077343893ce9e531f4ef97b0ecaccb0cf3718342e10d014d507a18f4aa9fb27",
+    "figures/src/antiseizure-targets.svg": "9ab494e949053c2dca2294ac8811dd3450b528f331f4da9c512ebe61f1b05eca",
+    "figures/src/balanced-anaesthesia.svg": "cdd2049bccb97d808fcac40fc86b3fb89a822f428af3d127fc9335925a7e6801",
+    "figures/src/dopamine-pathways.svg": "26caddde046a893d6554ac57c222442616d5817075557a31adef3eea565e0f37",
+    "figures/src/gabaa-receptor.svg": "49a0644506e4743d5c9af7fbea1b8f451c24aa763c73cbaf38dcca39535c63a4",
+    "figures/src/la-mechanism.svg": "47d0b6cac71962c0e4243e0ebd13fcfe20053b1359d36229a4f7ebb48c89c115",
+    "figures/src/levodopa-path.svg": "5b1749282def47417c554f74edb4c248cb1ed65324847f7a514d3466ba7ebb85",
+    "figures/src/monoamine-synapse.svg": "b018a13b904ed14dd547423171359999147f3707401b351a6b8fcebb109aea6d",
+    "figures/src/relaxant-sites.svg": "519be134457f170b34a6de743487d47916adbb71bfad163629fc8e428acecb93"
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-28T14:02:40Z",
+   "time": "2026-09-28T14:55:03Z",
    "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
-   "total_words": 22068,
+   "total_words": 22090,
    "units": {
     "ch01": {
      "args": {
@@ -229,13 +240,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
       "chapters/ch01-alzheimers-disease.md": "018adaddfc779aa6d7162608ac6d683edd1a4f58fda039291fca0582211bcf06"
      },
      "status": "ok",
-     "time": "2026-09-28T13:43:49Z",
+     "time": "2026-09-28T14:54:22Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 2,
@@ -257,13 +268,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
       "chapters/ch02-psychosis.md": "6e33bb2c55d8cd32fc07327bbc51f88ffab648f3edc4e25488a56a0ee41844ad"
      },
      "status": "ok",
-     "time": "2026-09-28T13:44:09Z",
+     "time": "2026-09-28T14:54:26Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 1,
@@ -285,13 +296,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
       "chapters/ch03-parkinsons-disease.md": "1d43f92f13d3f46ea0436a0eb70ae607a81163ee3b90687890eb6d04bbc1b9fd"
      },
      "status": "ok",
-     "time": "2026-09-28T13:47:35Z",
+     "time": "2026-09-28T14:54:30Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 0,
@@ -313,13 +324,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
-      "chapters/ch04-depression.md": "10ff81ca0cc732f580b7c3b5d334708deb22bd72c69a05f4c71ea120bd6ba75e"
+      "chapters/ch04-depression.md": "f0a47f4b52518ffd6e59e0256d33ba096a027deb3f2b62772ce20b27cc47b36f"
      },
      "status": "ok",
-     "time": "2026-09-28T13:49:12Z",
+     "time": "2026-09-28T14:54:33Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 0,
@@ -331,7 +342,7 @@
      "args": {
       "unit": "ch05"
      },
-     "checker_report_sha256": "9c6da63c577677c15c6737b09ab32e56fb0c9fde96686fcaf65d7506c523fbcd",
+     "checker_report_sha256": "3d5ed8e1bc80842551cc1897333c7783bf5f738a33a9eded5ff81fff4a3089dd",
      "inputs": {
       "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
       "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
@@ -341,13 +352,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
-      "chapters/ch05-epilepsy.md": "edfd2861a2152f67fe2876220b4aa344dc8220f0867d8a479c56399025f7752e"
+      "chapters/ch05-epilepsy.md": "da3158d21955f80ed72a8ed3357af60c31499d5350c6b2c7e8091e9c1f64b563"
      },
      "status": "ok",
-     "time": "2026-09-28T13:56:19Z",
+     "time": "2026-09-28T14:54:39Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 2,
@@ -359,7 +370,7 @@
      "args": {
       "unit": "ch06"
      },
-     "checker_report_sha256": "e506563cbeedb419b60ed688bf7cc9e7acf1fd96db1de9331159c989dbd20b7c",
+     "checker_report_sha256": "5381ebf19483b14711db0cad9d78a2d9a7741ba7c8fb71c96a631145adcbb0fd",
      "inputs": {
       "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
       "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
@@ -369,13 +380,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
-      "chapters/ch06-skeletal-muscle-relaxants.md": "4332f7994cc59aa115e20e95195dc6f6a5356924494972cf0702c9bf991bd2a4"
+      "chapters/ch06-skeletal-muscle-relaxants.md": "453e73ce49d17e5cc9e0b5f8866253a3e45cfe0965784fb0a6fe119b467630bf"
      },
      "status": "ok",
-     "time": "2026-09-28T13:57:06Z",
+     "time": "2026-09-28T14:54:45Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 2,
@@ -397,13 +408,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
-      "chapters/ch07-anxiolytics-hypnotics.md": "6e05466319cf11ab3de7421d26e112da4c84536c0a3b715d69f9541c49f1a56a"
+      "chapters/ch07-anxiolytics-hypnotics.md": "5d1f66750bdb7b0da20d1bd47222ee5808ed57a62030ef02bcb89e0ea0395221"
      },
      "status": "ok",
-     "time": "2026-09-28T13:56:28Z",
+     "time": "2026-09-28T14:54:50Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 1,
@@ -425,13 +436,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
-      "chapters/ch08-general-anaesthetics.md": "cc106a703c402b5aa71b51bb0d1767b1ceee87dfc138d1ec9851cca8916d6160"
+      "chapters/ch08-general-anaesthetics.md": "f395798bcdf8e4f9f5b62a150a51e35b54abd6244995cf93bcc6b6d3e02e92f0"
      },
      "status": "ok",
-     "time": "2026-09-28T13:57:12Z",
+     "time": "2026-09-28T14:54:55Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 1,
@@ -453,13 +464,13 @@
       "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
       "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
       "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
-      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+      "theme.json": "89242bf48737ad938811fb721888b48fe1f08c954305116c7a6bfefb3a52b09f"
      },
      "outputs": {
-      "chapters/ch09-local-anaesthetics.md": "bb67205833c0d7220066efad4f87f794a4eb1e575d20ea2980bd820195976541"
+      "chapters/ch09-local-anaesthetics.md": "3fdd125e5220dae5e6a5e083f75cd6dae606f6077cf382045665f2700ff6b8c7"
      },
      "status": "ok",
-     "time": "2026-09-28T14:02:35Z",
+     "time": "2026-09-28T14:54:59Z",
      "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
      "verify_refs_summary": {
       "exists": 1,

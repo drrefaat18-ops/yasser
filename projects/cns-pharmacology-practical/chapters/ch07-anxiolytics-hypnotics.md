@@ -8,7 +8,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Compare buspirone, antidepressants and benzodiazepines in the treatment of anxiety.
 5. [LO5] Plan the drug and non-drug treatment of generalised anxiety disorder and insomnia.
 
-> **Quick Recap:** GABA is the main inhibitory transmitter in the brain. The GABA-A receptor is a chloride channel made of five subunits (mostly two α, two β and one γ). When GABA binds, the channel opens, Cl⁻ enters and the neuron hyperpolarises, so it fires less. Drugs that enhance this effect produce, with rising dose, anxiety relief, sedation, sleep, anaesthesia, coma and finally breathing depression.
+> **Quick Recap:** GABA is the main inhibitory transmitter in the brain. The GABA-A receptor is a chloride channel made of five subunits (mostly two α, two β and one γ). When GABA binds, the channel opens, Cl^-^ enters and the neuron hyperpolarises, so it fires less. Drugs that enhance this effect produce, with rising dose, anxiety relief, sedation, sleep, anaesthesia, coma and finally breathing depression.
 
 ## 7.1 Anxiety, Insomnia and CNS Depression
 
@@ -32,7 +32,7 @@ Sedative–hypnotic drugs depress the CNS in a dose-related way:
 
 ### Mechanism
 
-Benzodiazepines bind to their own site on the GABA-A receptor, at the junction of the α and γ subunits. This site is separate from the GABA site. They are **positive allosteric modulators**: they do not open the channel alone. They make GABA more effective, so the channel **opens more often** when GABA binds [1]. More Cl⁻ enters, and the neuron is inhibited.
+Benzodiazepines bind to their own site on the GABA-A receptor, at the junction of the α and γ subunits. This site is separate from the GABA site. They are **positive allosteric modulators**: they do not open the channel alone. They make GABA more effective, so the channel **opens more often** when GABA binds [1]. More Cl^-^ enters, and the neuron is inhibited.
 
 ![](fig:gabaa-receptor)
 
@@ -299,7 +299,7 @@ D) Phenobarbital
 
 **Clinical Case — model answer.**
 
-*Case 1.* (a) The GABA-A receptor; it increases the frequency of Cl⁻ channel opening when GABA binds. (b) A short- or intermediate-acting drug, such as temazepam, or a Z-drug. (c) Use only for a few nights to 2 weeks; do not drink alcohol or drive if drowsy; expect some rebound insomnia on stopping.
+*Case 1.* (a) The GABA-A receptor; it increases the frequency of Cl^-^ channel opening when GABA binds. (b) A short- or intermediate-acting drug, such as temazepam, or a Z-drug. (c) Use only for a few nights to 2 weeks; do not drink alcohol or drive if drowsy; expect some rebound insomnia on stopping.
 
 *Case 2.* (a) Benzodiazepines. (b) Chlordiazepoxide or diazepam are standard. In liver disease, lorazepam is preferred, because it has no active metabolites. (c) Buspirone has no anticonvulsant action and does not act at the GABA-A receptor, so it does not prevent withdrawal seizures.
 

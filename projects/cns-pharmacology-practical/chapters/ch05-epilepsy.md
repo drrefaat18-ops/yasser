@@ -8,7 +8,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Select a drug for each seizure type and for women who could become pregnant.
 5. [LO5] Outline the drug treatment of status epilepticus.
 
-> **Quick Recap:** Neurons fire when Na⁺ enters through voltage-gated Na⁺ channels. Glutamate is the main excitatory transmitter; it acts on NMDA and AMPA/kainate receptors. GABA is the main inhibitory transmitter; GABA-A receptors are Cl⁻ channels, and more Cl⁻ entry makes the neuron harder to fire. T-type Ca²⁺ channels in the thalamus drive rhythmic thalamocortical firing. Liver CYP enzymes metabolise many drugs; inducers speed this up and inhibitors slow it down.
+> **Quick Recap:** Neurons fire when Na^+^ enters through voltage-gated Na^+^ channels. Glutamate is the main excitatory transmitter; it acts on NMDA and AMPA/kainate receptors. GABA is the main inhibitory transmitter; GABA-A receptors are Cl^-^ channels, and more Cl^-^ entry makes the neuron harder to fire. T-type Ca^2+^ channels in the thalamus drive rhythmic thalamocortical firing. Liver CYP enzymes metabolise many drugs; inducers speed this up and inhibitors slow it down.
 
 ## 5.1 The Disease in Brief
 
@@ -32,21 +32,21 @@ The ILAE classifies seizures by where they start [2].
 
 *Table 5.1 — Main seizure types.*
 
-Absence seizures come from rhythmic firing between the thalamus and cortex, driven by T-type Ca²⁺ channels. This is why ethosuximide, a T-type blocker, treats them.
+Absence seizures come from rhythmic firing between the thalamus and cortex, driven by T-type Ca^2+^ channels. This is why ethosuximide, a T-type blocker, treats them.
 
 > **Clinical Pearl:** Not every generalised seizure removes awareness. A patient with myoclonic jerks is usually aware of them. Ask about morning jerks when you take a history; they point to juvenile myoclonic epilepsy.
 
 ## 5.2 How Antiseizure Drugs Work
 
-Antiseizure drugs reduce excitation or increase inhibition. Most drugs act in more than one way. The old rule that "first-generation drugs act on inhibition and second-generation drugs act on excitation" is false. Phenytoin and carbamazepine block Na⁺ channels, and several newer drugs enhance GABA.
+Antiseizure drugs reduce excitation or increase inhibition. Most drugs act in more than one way. The old rule that "first-generation drugs act on inhibition and second-generation drugs act on excitation" is false. Phenytoin and carbamazepine block Na^+^ channels, and several newer drugs enhance GABA.
 
 ![](fig:antiseizure-targets)
 
 | Mechanism | Drugs |
 |---|---|
-| Block voltage-gated Na⁺ channels | Phenytoin, carbamazepine, lamotrigine, topiramate, valproate (in part) |
-| Block T-type Ca²⁺ channels | Ethosuximide, valproate |
-| Bind the α2δ subunit of Ca²⁺ channels (less glutamate release) | Gabapentin, pregabalin |
+| Block voltage-gated Na^+^ channels | Phenytoin, carbamazepine, lamotrigine, topiramate, valproate (in part) |
+| Block T-type Ca^2+^ channels | Ethosuximide, valproate |
+| Bind the α2δ subunit of Ca^2+^ channels (less glutamate release) | Gabapentin, pregabalin |
 | Enhance GABA-A receptors | Benzodiazepines, phenobarbital, topiramate |
 | Raise GABA levels | Valproate (inhibits GABA transaminase) |
 | Bind the vesicle protein SV2A (less transmitter release) | Levetiracetam |
@@ -58,7 +58,7 @@ Antiseizure drugs reduce excitation or increase inhibition. Most drugs act in mo
 
 ### Phenytoin
 
-Phenytoin blocks Na⁺ channels. It is used for focal and tonic–clonic seizures and, IV, in status epilepticus. It has **non-linear (saturable) kinetics**: a small dose increase can cause a large rise in blood level. Monitor plasma levels.
+Phenytoin blocks Na^+^ channels. It is used for focal and tonic–clonic seizures and, IV, in status epilepticus. It has **non-linear (saturable) kinetics**: a small dose increase can cause a large rise in blood level. Monitor plasma levels.
 
 Adverse effects:
 
@@ -71,7 +71,7 @@ Adverse effects:
 
 ### Carbamazepine
 
-Carbamazepine blocks Na⁺ channels. It is used for focal seizures and is first choice for **trigeminal neuralgia**. It is also a mood stabiliser. It can worsen absence and myoclonic seizures.
+Carbamazepine blocks Na^+^ channels. It is used for focal seizures and is first choice for **trigeminal neuralgia**. It is also a mood stabiliser. It can worsen absence and myoclonic seizures.
 
 It induces liver enzymes, including its own metabolism (**auto-induction**). So its half-life falls over the first weeks and the dose must be raised slowly.
 
@@ -79,7 +79,7 @@ Adverse effects: dizziness, diplopia, ataxia, hyponatraemia (an ADH-like effect)
 
 ### Valproate
 
-Valproate is a broad-spectrum drug. It blocks Na⁺ channels and T-type Ca²⁺ channels and raises GABA by inhibiting GABA transaminase. It treats all seizure types: tonic–clonic, absence, myoclonic and focal. It is also a mood stabiliser and is used in migraine prevention.
+Valproate is a broad-spectrum drug. It blocks Na^+^ channels and T-type Ca^2+^ channels and raises GABA by inhibiting GABA transaminase. It treats all seizure types: tonic–clonic, absence, myoclonic and focal. It is also a mood stabiliser and is used in migraine prevention.
 
 Adverse effects:
 
@@ -94,7 +94,7 @@ Valproate is an **enzyme inhibitor**. It raises the levels of lamotrigine and ph
 
 ### Ethosuximide
 
-Ethosuximide blocks T-type Ca²⁺ channels in the thalamus. It is used **only for absence seizures**, where it is first choice. It does not protect against tonic–clonic seizures. Adverse effects: nausea, abdominal pain, headache and drowsiness.
+Ethosuximide blocks T-type Ca^2+^ channels in the thalamus. It is used **only for absence seizures**, where it is first choice. It does not protect against tonic–clonic seizures. Adverse effects: nausea, abdominal pain, headache and drowsiness.
 
 ### Phenobarbital and benzodiazepines
 
@@ -104,10 +104,10 @@ Phenobarbital enhances GABA-A receptors. It is cheap and long-acting but sedatin
 
 Newer drugs cause fewer interactions and are often better tolerated. They are not free of serious adverse effects.
 
-- **Lamotrigine** blocks Na⁺ channels and reduces glutamate release. It treats focal and generalised seizures and is a first-choice drug in women who could become pregnant. Its main risk is **rash**, including Stevens–Johnson syndrome. The risk is highest with fast titration and with valproate, which doubles lamotrigine levels. Increase the dose slowly. Oestrogen-containing pills lower lamotrigine levels.
+- **Lamotrigine** blocks Na^+^ channels and reduces glutamate release. It treats focal and generalised seizures and is a first-choice drug in women who could become pregnant. Its main risk is **rash**, including Stevens–Johnson syndrome. The risk is highest with fast titration and with valproate, which doubles lamotrigine levels. Increase the dose slowly. Oestrogen-containing pills lower lamotrigine levels.
 - **Levetiracetam** binds SV2A and reduces transmitter release. It treats focal and generalised seizures. It has few interactions and is one of the safest options in pregnancy. It can cause irritability, low mood and, rarely, suicidal thoughts.
-- **Topiramate** blocks Na⁺ channels, enhances GABA and blocks AMPA/kainate receptors. It is also used to prevent migraine. Adverse effects: weight loss, word-finding difficulty, kidney stones, paraesthesia and, rarely, acute angle-closure glaucoma. It is teratogenic (cleft lip and palate).
-- **Gabapentin and pregabalin** bind the α2δ subunit of voltage-gated Ca²⁺ channels and reduce glutamate release. They are used mainly for neuropathic pain and as add-on drugs for focal seizures. They cause sedation and dizziness. They can be misused, pregabalin more than gabapentin. With opioids they increase the risk of breathing depression.
+- **Topiramate** blocks Na^+^ channels, enhances GABA and blocks AMPA/kainate receptors. It is also used to prevent migraine. Adverse effects: weight loss, word-finding difficulty, kidney stones, paraesthesia and, rarely, acute angle-closure glaucoma. It is teratogenic (cleft lip and palate).
+- **Gabapentin and pregabalin** bind the α2δ subunit of voltage-gated Ca^2+^ channels and reduce glutamate release. They are used mainly for neuropathic pain and as add-on drugs for focal seizures. They cause sedation and dizziness. They can be misused, pregabalin more than gabapentin. With opioids they increase the risk of breathing depression.
 
 ## 5.5 Comparing the Main Drugs
 
@@ -165,7 +165,7 @@ Status epilepticus is a seizure that lasts more than 5 minutes, or repeated seiz
 
 ## Key Takeaways
 - Seizures are focal or generalised; awareness is lost in tonic–clonic and absence seizures but usually kept in myoclonic seizures.
-- Antiseizure drugs block Na⁺ or T-type Ca²⁺ channels, enhance GABA, bind SV2A or α2δ, or block glutamate.
+- Antiseizure drugs block Na^+^ or T-type Ca^2+^ channels, enhance GABA, bind SV2A or α2δ, or block glutamate.
 - Phenytoin, carbamazepine and phenobarbital are inducers; valproate is an inhibitor.
 - Valproate is broad-spectrum but most teratogenic; lamotrigine or levetiracetam are preferred in women who could become pregnant.
 - Ethosuximide is first choice for absence seizures; carbamazepine and phenytoin worsen them.
@@ -185,9 +185,9 @@ C) Phenytoin
 D) Gabapentin
 
 **Q3.** What is the mechanism of levetiracetam? [LO2]
-A) Block of T-type Ca²⁺ channels
+A) Block of T-type Ca^2+^ channels
 B) Inhibition of GABA transaminase
-C) Binding to the α2δ subunit of Ca²⁺ channels
+C) Binding to the α2δ subunit of Ca^2+^ channels
 D) Binding to the synaptic vesicle protein SV2A
 
 **Q4.** Which drug is a liver enzyme inhibitor? [LO3]
@@ -243,7 +243,7 @@ D) Levetiracetam
 ## Answers and Rationales
 **Q1. C** — A brief stare many times a day without post-ictal confusion is an absence seizure. A keeps awareness. B is jerking. D is stiffening and jerking.
 
-**Q2. A** — Ethosuximide blocks thalamic T-type Ca²⁺ channels. B and C can worsen absence seizures. D is not effective.
+**Q2. A** — Ethosuximide blocks thalamic T-type Ca^2+^ channels. B and C can worsen absence seizures. D is not effective.
 
 **Q3. D** — Levetiracetam binds SV2A. A is ethosuximide. B is valproate. C is gabapentin and pregabalin.
 

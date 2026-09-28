@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Arial, Helvetica, sans-serif">
-  <rect width="900" height="440" fill="#FAF8F1"/>
+  <rect width="900" height="440" fill="#FFFFFF"/>
   <text x="450" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">Balanced anaesthesia: five goals, several drugs</text>
   <g stroke="#5A6072" stroke-width="2">
     <line x1="450" y1="225" x2="160" y2="110"/><line x1="450" y1="225" x2="740" y2="110"/>

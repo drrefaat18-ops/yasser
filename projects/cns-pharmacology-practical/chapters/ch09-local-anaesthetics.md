@@ -8,7 +8,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Recognise and manage local anaesthetic systemic toxicity (LAST).
 5. [LO5] Choose a local anaesthetic for a patient.
 
-> **Quick Recap:** A nerve impulse travels when voltage-gated Na⁺ channels open and Na⁺ enters. Weak bases exist in two forms: the uncharged (unionised) base, which crosses lipid membranes, and the charged (ionised) cation, which does not. The pKa is the pH at which half is in each form. The lower the pH, the more a weak base is ionised.
+> **Quick Recap:** A nerve impulse travels when voltage-gated Na^+^ channels open and Na^+^ enters. Weak bases exist in two forms: the uncharged (unionised) base, which crosses lipid membranes, and the charged (ionised) cation, which does not. The pKa is the pH at which half is in each form. The lower the pH, the more a weak base is ionised.
 
 ## 9.1 What Local Anaesthesia Does
 
@@ -23,7 +23,7 @@ Small fibres are blocked first: thin myelinated Aδ fibres and unmyelinated C fi
 1. Local anaesthetics are weak bases (pKa about 7.6 to 9).
 2. The **unionised** base crosses the nerve membrane.
 3. Inside the axon, part of it takes up a proton and becomes **ionised**.
-4. The ionised form binds the inner side of the voltage-gated **Na⁺ channel** and blocks it. The nerve cannot fire [1].
+4. The ionised form binds the inner side of the voltage-gated **Na^+^ channel** and blocks it. The nerve cannot fire [1].
 
 Channels that open often are blocked more (use-dependent block). This is why lidocaine also treats fast ventricular arrhythmias.
 
@@ -137,14 +137,14 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 3. A patient says "I am allergic to all local anaesthetics". What would you ask?
 
 ## Key Takeaways
-- The unionised base crosses the membrane; the ionised form blocks the Na⁺ channel from inside.
+- The unionised base crosses the membrane; the ionised form blocks the Na^+^ channel from inside.
 - Acidic (infected) tissue weakens the block.
 - Esters are broken down by plasma cholinesterase and cause more allergy; amides are broken down by the liver.
 - Adrenaline prolongs the block and lowers toxicity, but avoid it in end-arteries.
 - LAST starts with CNS signs and can end in cardiac arrest; stop injecting, treat seizures and give 20% lipid emulsion.
 
 ## Self-Assessment
-**Q1.** Which form of a local anaesthetic blocks the Na⁺ channel? [LO1]
+**Q1.** Which form of a local anaesthetic blocks the Na^+^ channel? [LO1]
 A) The unionised form outside the nerve
 B) The unionised form inside the nerve
 C) The ionised form inside the nerve

@@ -67,7 +67,7 @@ TCAs block SERT and NET. They also block several receptors, and these blocks exp
 | α1 | Postural hypotension, dizziness, falls | TCAs, trazodone |
 | H1 | Sedation, weight gain | TCAs, mirtazapine, trazodone |
 | Muscarinic | Dry mouth, constipation, urinary retention, blurred vision, confusion | TCAs (least with nortriptyline) |
-| Cardiac Na⁺ channels | QRS widening, arrhythmia (in overdose) | TCAs |
+| Cardiac Na^+^ channels | QRS widening, arrhythmia (in overdose) | TCAs |
 | 5-HT (raised serotonin) | Nausea, sexual dysfunction, insomnia | SSRIs, SNRIs |
 
 *Table 4.2 — Adverse effects explained by receptors.*
@@ -108,7 +108,7 @@ TCAs are dangerous in overdose; a week's supply can kill. Features are:
 
 - Antimuscarinic toxicity: hot dry skin, dilated pupils, urinary retention, confusion.
 - Seizures and coma.
-- Cardiotoxicity from Na⁺ channel block: wide QRS, ventricular arrhythmia and hypotension.
+- Cardiotoxicity from Na^+^ channel block: wide QRS, ventricular arrhythmia and hypotension.
 - Metabolic acidosis, which worsens cardiotoxicity.
 
 Treatment: airway support and an ECG. Give IV **sodium bicarbonate** if the QRS is wide, there is arrhythmia or hypotension, or acidosis is present. Treat seizures with a benzodiazepine. Avoid flumazenil and class Ia and Ic antiarrhythmics.
@@ -240,7 +240,7 @@ D) Trazodone
 
 **Q4. C** — Mental change, hyperthermia and clonus after an MAO inhibitor plus tramadol is serotonin syndrome. A is a hypertensive crisis from tyramine. B follows D2 block and causes rigidity, not clonus. D has no clonus.
 
-**Q5. A** — Sodium bicarbonate treats the Na⁺ channel block and acidosis. B can cause seizures in TCA overdose. C is for serotonin syndrome. D alone is not enough.
+**Q5. A** — Sodium bicarbonate treats the Na^+^ channel block and acidosis. B can cause seizures in TCA overdose. C is for serotonin syndrome. D alone is not enough.
 
 **Q6. B** — SSRI sexual dysfunction often persists and must be managed. A is the old error. C is wrong; it is serotonergic. D does not treat it.
 

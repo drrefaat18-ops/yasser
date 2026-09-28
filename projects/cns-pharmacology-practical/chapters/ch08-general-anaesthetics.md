@@ -8,7 +8,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Compare the main intravenous anaesthetics and their adverse effects.
 5. [LO5] Select an anaesthetic for a patient and recognise malignant hyperthermia.
 
-> **Quick Recap:** GABA-A receptors are Cl⁻ channels that inhibit neurons (Chapter 7). NMDA receptors are glutamate-gated channels that excite them. Lipid-soluble drugs enter well-perfused organs such as the brain, heart and liver first, then move to muscle and fat. This **redistribution** ends the action of a single IV dose before the drug is metabolised.
+> **Quick Recap:** GABA-A receptors are Cl^-^ channels that inhibit neurons (Chapter 7). NMDA receptors are glutamate-gated channels that excite them. Lipid-soluble drugs enter well-perfused organs such as the brain, heart and liver first, then move to muscle and fat. This **redistribution** ends the action of a single IV dose before the drug is metabolised.
 
 ## 8.1 Goals and Balanced Anaesthesia
 
@@ -39,7 +39,7 @@ Anaesthetics act on ion channels that control neuron excitability [1]:
 |---|---|
 | Enhance GABA-A receptors | Propofol, etomidate, thiopental, benzodiazepines, volatile agents |
 | Block NMDA receptors | Ketamine, nitrous oxide, xenon |
-| Open two-pore K⁺ (K2P) channels | Volatile agents |
+| Open two-pore K^+^ (K2P) channels | Volatile agents |
 
 *Table 8.1 — Main mechanisms of general anaesthetics.*
 

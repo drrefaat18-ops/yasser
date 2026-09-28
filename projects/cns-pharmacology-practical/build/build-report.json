@@ -1,0 +1,341 @@
+{
+ "backend": "word_com",
+ "checkpoints": {
+  "cover": "build/checkpoints/cover.png",
+  "first-chapter": "build/checkpoints/first-chapter.png",
+  "first-figure": "build/checkpoints/first-figure.png",
+  "last": "build/checkpoints/last.png"
+ },
+ "chem_unverified": [],
+ "docx": {
+  "images": 9,
+  "parts": [
+   "[Content_Types].xml",
+   "_rels/.rels",
+   "customXml/_rels/item1.xml.rels",
+   "customXml/item1.xml",
+   "customXml/itemProps1.xml",
+   "docProps/app.xml",
+   "docProps/core.xml",
+   "word/_rels/document.xml.rels",
+   "word/_rels/fontTable.xml.rels",
+   "word/document.xml",
+   "word/endnotes.xml",
+   "word/fontTable.xml",
+   "word/fonts/font1.odttf",
+   "word/fonts/font10.odttf",
+   "word/fonts/font11.odttf",
+   "word/fonts/font12.odttf",
+   "word/fonts/font13.odttf",
+   "word/fonts/font14.odttf",
+   "word/fonts/font15.odttf",
+   "word/fonts/font2.odttf",
+   "word/fonts/font3.odttf",
+   "word/fonts/font4.odttf",
+   "word/fonts/font5.odttf",
+   "word/fonts/font6.odttf",
+   "word/fonts/font7.odttf",
+   "word/fonts/font8.odttf",
+   "word/fonts/font9.odttf",
+   "word/footer1.xml",
+   "word/footer10.xml",
+   "word/footer11.xml",
+   "word/footer12.xml",
+   "word/footer13.xml",
+   "word/footer14.xml",
+   "word/footer15.xml",
+   "word/footer16.xml",
+   "word/footer17.xml",
+   "word/footer18.xml",
+   "word/footer19.xml",
+   "word/footer2.xml",
+   "word/footer20.xml",
+   "word/footer21.xml",
+   "word/footer22.xml",
+   "word/footer3.xml",
+   "word/footer4.xml",
+   "word/footer5.xml",
+   "word/footer6.xml",
+   "word/footer7.xml",
+   "word/footer8.xml",
+   "word/footer9.xml",
+   "word/footnotes.xml",
+   "word/header1.xml",
+   "word/header10.xml",
+   "word/header11.xml",
+   "word/header12.xml",
+   "word/header13.xml",
+   "word/header14.xml",
+   "word/header15.xml",
+   "word/header16.xml",
+   "word/header17.xml",
+   "word/header18.xml",
+   "word/header19.xml",
+   "word/header2.xml",
+   "word/header20.xml",
+   "word/header21.xml",
+   "word/header22.xml",
+   "word/header3.xml",
+   "word/header4.xml",
+   "word/header5.xml",
+   "word/header6.xml",
+   "word/header7.xml",
+   "word/header8.xml",
+   "word/header9.xml",
+   "word/media/image1.png",
+   "word/media/image2.png",
+   "word/media/image3.png",
+   "word/media/image4.png",
+   "word/media/image5.png",
+   "word/media/image6.png",
+   "word/media/image7.png",
+   "word/media/image8.png",
+   "word/media/image9.png",
+   "word/numbering.xml",
+   "word/settings.xml",
+   "word/styles.xml",
+   "word/theme/theme1.xml",
+   "word/webSettings.xml"
+  ],
+  "toc_field": true
+ },
+ "figure_checks": [
+  {
+   "id": "FIG-MANIFEST",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-UNREFERENCED",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-UNKNOWN",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-CAPTION",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-ALT",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-LICENCE",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-RESOLUTION",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-AUTHOR-ASSET",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-ANNOT",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "CHEM-SMILES-INVALID",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-SANITIZE",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-SMARTS-INVALID",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-PUBCHEM-MISMATCH",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-UNVERIFIED",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  }
+ ],
+ "figure_renders": [
+  {
+   "id": "ache-synapse",
+   "png": "figures/out/ache-synapse.png",
+   "status": "rendered",
+   "svg": "figures/out/ache-synapse.svg"
+  },
+  {
+   "id": "dopamine-pathways",
+   "png": "figures/out/dopamine-pathways.png",
+   "status": "rendered",
+   "svg": "figures/out/dopamine-pathways.svg"
+  },
+  {
+   "id": "levodopa-path",
+   "png": "figures/out/levodopa-path.png",
+   "status": "rendered",
+   "svg": "figures/out/levodopa-path.svg"
+  },
+  {
+   "id": "monoamine-synapse",
+   "png": "figures/out/monoamine-synapse.png",
+   "status": "rendered",
+   "svg": "figures/out/monoamine-synapse.svg"
+  },
+  {
+   "id": "antiseizure-targets",
+   "png": "figures/out/antiseizure-targets.png",
+   "status": "rendered",
+   "svg": "figures/out/antiseizure-targets.svg"
+  },
+  {
+   "id": "relaxant-sites",
+   "png": "figures/out/relaxant-sites.png",
+   "status": "rendered",
+   "svg": "figures/out/relaxant-sites.svg"
+  },
+  {
+   "id": "gabaa-receptor",
+   "png": "figures/out/gabaa-receptor.png",
+   "status": "rendered",
+   "svg": "figures/out/gabaa-receptor.svg"
+  },
+  {
+   "id": "balanced-anaesthesia",
+   "png": "figures/out/balanced-anaesthesia.png",
+   "status": "rendered",
+   "svg": "figures/out/balanced-anaesthesia.svg"
+  },
+  {
+   "id": "la-mechanism",
+   "png": "figures/out/la-mechanism.png",
+   "status": "rendered",
+   "svg": "figures/out/la-mechanism.svg"
+  }
+ ],
+ "figure_versions": {
+  "Pillow": "12.3.0",
+  "browser": "msedge 154.0.4258.37"
+ },
+ "figures": "manifest",
+ "pdf": {
+  "bookmarks": 156,
+  "pages": 93
+ },
+ "pdf_checks": [
+  {
+   "id": "PDF-SIZE",
+   "measured": {
+    "count": 0,
+    "pages": 93
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-BLANK",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-META",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-TYPE3",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-EMBED",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-FONTS",
+   "measured": {
+    "count": 2
+   },
+   "message": "TimesNewRomanPS-BoldMT (first on page 87); TimesNewRomanPSMT (first on page 10)",
+   "status": "fail"
+  },
+  {
+   "id": "PDF-OUTLINE",
+   "measured": {
+    "count": 3
+   },
+   "message": "0 bookmarks titled '2 Psychosis and Antipsychotic Drugs' (need exactly 1); 0 bookmarks titled '4 Depression and Antidepressant Drugs' (need exactly 1); 0 bookmarks titled '7 Anxiolytics, Sedatives and Hypnotics' (need exactly 1)",
+   "status": "fail"
+  }
+ ],
+ "pdf_engine": "html",
+ "schema_version": 1
+}

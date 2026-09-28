@@ -25,12 +25,14 @@
  "palette": {
   "ink": "1A1F36",
   "primary": "1B2A8C",
-  "accent": "2E7D32",
+  "accent": "B08534",
   "muted": "5A6072",
-  "paper": "FFFFFF"
+  "paper": "FAF8F1"
  },
  "layout": {
-  "text_width": 14
+  "text_width": 14,
+  "drop_cap": true,
+  "heading2_font": "serif_heading"
  },
  "alignment": {
   "body": "justify",
@@ -44,25 +46,29 @@
   "recap": {
    "fill": "EAF0FB",
    "label_colour": "1B2A8C",
-   "layout": "box"
+   "layout": "box",
+   "edge": "left"
   },
   "pearl": {
    "fill": "E8F3E9",
    "label_colour": "2E7D32",
-   "layout": "box"
+   "layout": "box",
+   "edge": "left"
   },
   "caution": {
    "fill": "FBEAEA",
    "label_colour": "B3261E",
-   "layout": "box"
+   "layout": "box",
+   "edge": "left"
   },
   "exam-tip": {
    "fill": "FDF4DC",
    "label_colour": "8A6100",
-   "layout": "box"
+   "layout": "box",
+   "edge": "left"
   },
   "objectives": {
-   "fill": "FFFFFF",
+   "fill": "FAF8F1",
    "label_colour": "1B2A8C",
    "layout": "box",
    "border": {

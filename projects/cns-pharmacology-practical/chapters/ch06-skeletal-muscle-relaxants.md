@@ -8,7 +8,7 @@ By the end of this chapter you will be able to:
 4. [LO4] Identify key adverse effects, interactions and withdrawal risks of muscle relaxants.
 5. [LO5] Outline the recognition and treatment of malignant hyperthermia.
 
-> **Quick Recap:** A motor nerve releases acetylcholine (ACh) at the neuromuscular junction. ACh acts on nicotinic (Nm) receptors on the muscle, which are ion channels; Na⁺ enters and the muscle fibre depolarises. The signal travels into the fibre and releases Ca²⁺ from the sarcoplasmic reticulum through the ryanodine receptor (RyR1). Ca²⁺ triggers contraction. Acetylcholinesterase ends the signal in milliseconds. In the spinal cord, GABA and α2 receptors on sensory nerve endings reduce reflex firing.
+> **Quick Recap:** A motor nerve releases acetylcholine (ACh) at the neuromuscular junction. ACh acts on nicotinic (Nm) receptors on the muscle, which are ion channels; Na^+^ enters and the muscle fibre depolarises. The signal travels into the fibre and releases Ca^2+^ from the sarcoplasmic reticulum through the ryanodine receptor (RyR1). Ca^2+^ triggers contraction. Acetylcholinesterase ends the signal in milliseconds. In the spinal cord, GABA and α2 receptors on sensory nerve endings reduce reflex firing.
 
 ## 6.1 Two Groups, Two Aims
 
@@ -30,8 +30,8 @@ Muscle relaxants form two groups with different uses [1]:
 
 Baclofen is a GABA derivative that is active by mouth. It is an agonist at **GABA-B** receptors in the spinal cord. GABA-B is a G-protein-coupled receptor, not a chloride channel. Its activation:
 
-- Opens K⁺ channels, so the neuron hyperpolarises.
-- Reduces Ca²⁺ entry into nerve endings, so less excitatory transmitter is released.
+- Opens K^+^ channels, so the neuron hyperpolarises.
+- Reduces Ca^2+^ entry into nerve endings, so less excitatory transmitter is released.
 
 Reflex firing falls and tone improves [1]. Severe spasticity can be treated with intrathecal baclofen by pump.
 
@@ -66,7 +66,7 @@ Many products in Egypt combine a relaxant with paracetamol or ibuprofen. Count e
 
 ## 6.4 Dantrolene: a Direct-Acting Relaxant
 
-Dantrolene is a hydantoin derivative, related to phenytoin. It acts **inside the muscle**. It blocks the **RyR1** channel and so reduces Ca²⁺ release from the sarcoplasmic reticulum. Contraction becomes weaker. It has little effect on heart or smooth muscle.
+Dantrolene is a hydantoin derivative, related to phenytoin. It acts **inside the muscle**. It blocks the **RyR1** channel and so reduces Ca^2+^ release from the sarcoplasmic reticulum. Contraction becomes weaker. It has little effect on heart or smooth muscle.
 
 Uses:
 
@@ -111,14 +111,14 @@ Succinylcholine (suxamethonium) is two ACh molecules joined together. It is not 
 
 **Mechanism in two phases:**
 
-- **Phase I (depolarising block):** succinylcholine activates Nm receptors and holds the end-plate in a state of **persistent depolarisation**. Brief muscle twitches (fasciculations) are seen, then flaccid paralysis. The Na⁺ channels near the end-plate stay inactivated. Neostigmine **worsens** this phase.
+- **Phase I (depolarising block):** succinylcholine activates Nm receptors and holds the end-plate in a state of **persistent depolarisation**. Brief muscle twitches (fasciculations) are seen, then flaccid paralysis. The Na^+^ channels near the end-plate stay inactivated. Neostigmine **worsens** this phase.
 - **Phase II (desensitising block):** with long exposure or large doses, the membrane repolarises, but the receptors become desensitised. This block resembles a non-depolarising block.
 
 **Adverse effects:**
 
 | Effect | Cause and at-risk patients |
 |---|---|
-| Hyperkalaemia | K⁺ leaves depolarised muscle; dangerous after burns, crush injury, denervation or long immobility; can cause cardiac arrest |
+| Hyperkalaemia | K^+^ leaves depolarised muscle; dangerous after burns, crush injury, denervation or long immobility; can cause cardiac arrest |
 | Bradycardia | Muscarinic stimulation, especially after a second dose and in children; treat with atropine |
 | Postoperative muscle pain | Fasciculations |
 | Raised intraocular, intragastric and intracranial pressure | Muscle contraction; care in open eye injury |
@@ -141,7 +141,7 @@ Succinylcholine (suxamethonium) is two ACh molecules joined together. It is not 
 
 ## 6.6 Malignant Hyperthermia
 
-Malignant hyperthermia is a rare inherited disorder, usually linked to a mutation of **RyR1**. Volatile anaesthetics (halothane, sevoflurane, desflurane) or succinylcholine trigger uncontrolled Ca²⁺ release in muscle [4].
+Malignant hyperthermia is a rare inherited disorder, usually linked to a mutation of **RyR1**. Volatile anaesthetics (halothane, sevoflurane, desflurane) or succinylcholine trigger uncontrolled Ca^2+^ release in muscle [4].
 
 Features: a rise in end-tidal CO₂ that does not respond to ventilation, tachycardia, muscle rigidity (often the jaw), then fever, acidosis, hyperkalaemia and myoglobinuria.
 
@@ -178,8 +178,8 @@ Features: a rise in end-tidal CO₂ that does not respond to ventilation, tachyc
 
 ## Key Takeaways
 - Spasticity (brain or cord damage) is treated with baclofen, tizanidine, dantrolene or diazepam; spasm (local injury) with short courses of antispasmodics after NSAIDs and physiotherapy.
-- Baclofen is a GABA-B agonist: more K⁺ conductance and less presynaptic Ca²⁺ entry; never stop it suddenly.
-- Dantrolene blocks Ca²⁺ release through RyR1 and is the treatment of malignant hyperthermia.
+- Baclofen is a GABA-B agonist: more K^+^ conductance and less presynaptic Ca^2+^ entry; never stop it suddenly.
+- Dantrolene blocks Ca^2+^ release through RyR1 and is the treatment of malignant hyperthermia.
 - NMBs paralyse without sedation or analgesia.
 - Non-depolarising blockers are competitive antagonists, reversed by neostigmine with glycopyrrolate, or rocuronium by sugammadex.
 - Succinylcholine causes persistent depolarisation; watch for hyperkalaemia, bradycardia, prolonged apnoea and malignant hyperthermia.
@@ -194,8 +194,8 @@ D) An anticholinesterase
 **Q2.** How does baclofen reduce spasticity? [LO2]
 A) It opens GABA-A chloride channels.
 B) It blocks nicotinic receptors at the junction.
-C) It activates GABA-B receptors, increasing K⁺ conductance and reducing Ca²⁺ entry.
-D) It blocks Ca²⁺ release from the sarcoplasmic reticulum.
+C) It activates GABA-B receptors, increasing K^+^ conductance and reducing Ca^2+^ entry.
+D) It blocks Ca^2+^ release from the sarcoplasmic reticulum.
 
 **Q3.** A patient on tizanidine is prescribed ciprofloxacin. What is the likely result? [LO4]
 A) Loss of tizanidine effect
@@ -264,9 +264,9 @@ D) Rocuronium
 
 **Q6. B** — Succinylcholine is an agonist that holds the end-plate depolarised. A is a common error. C is non-depolarising blockers. D is wrong.
 
-**Q7. C** — Burns increase extra-junctional receptors, so K⁺ release is large. A is atracurium. B is wrong; burns do not cause malignant hyperthermia. D is wrong.
+**Q7. C** — Burns increase extra-junctional receptors, so K^+^ release is large. A is atracurium. B is wrong; burns do not cause malignant hyperthermia. D is wrong.
 
-**Q8. D** — This is malignant hyperthermia; dantrolene blocks Ca²⁺ release. A and B reverse NMBs. C does not treat it.
+**Q8. D** — This is malignant hyperthermia; dantrolene blocks Ca^2+^ release. A and B reverse NMBs. C does not treat it.
 
 **Q9. B** — Low or atypical plasma cholinesterase slows succinylcholine breakdown. A causes fever and rigidity. C causes awareness. D applies to atracurium.
 
@@ -274,7 +274,7 @@ D) Rocuronium
 
 **Clinical Case — model answer.**
 
-*Case 1.* (a) An Nm receptor agonist that causes persistent depolarisation at the end-plate, then flaccid paralysis. (b) Malignant hyperthermia, triggered by halothane and succinylcholine in a susceptible patient. (c) IV dantrolene. It blocks RyR1 and stops Ca²⁺ release from the sarcoplasmic reticulum. Also stop the triggers, give 100% oxygen and cool him. His family should be tested.
+*Case 1.* (a) An Nm receptor agonist that causes persistent depolarisation at the end-plate, then flaccid paralysis. (b) Malignant hyperthermia, triggered by halothane and succinylcholine in a susceptible patient. (c) IV dantrolene. It blocks RyR1 and stops Ca^2+^ release from the sarcoplasmic reticulum. Also stop the triggers, give 100% oxygen and cool him. His family should be tested.
 
 *Case 2.* (a) Keeping active, heat, physiotherapy and an NSAID such as ibuprofen if there is no contraindication. (b) It is TCA-like and can cause serotonin syndrome with sertraline; it also sedates. (c) Norgesic contains paracetamol. With 4 g daily already, he would exceed the maximum dose and risk liver injury. If a relaxant is needed, a short course of methocarbamol without paracetamol is safer.
 
