@@ -1,0 +1,42 @@
+{
+ "kind": "diagram.annotated",
+ "base": "chapters/figures/apparatus.png",
+ "callouts": [
+  {
+   "n": 1,
+   "at": [
+    600,
+    580
+   ],
+   "badge": [
+    250,
+    520
+   ],
+   "label": "Sample in the round-bottom flask"
+  },
+  {
+   "n": 2,
+   "at": [
+    490,
+    680
+   ],
+   "badge": [
+    250,
+    760
+   ],
+   "label": "Heater with temperature dial"
+  },
+  {
+   "n": 3,
+   "at": [
+    830,
+    200
+   ],
+   "badge": [
+    900,
+    380
+   ],
+   "label": "Condenser that returns the vapour"
+  }
+ ]
+}

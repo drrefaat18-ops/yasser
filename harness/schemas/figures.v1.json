@@ -34,7 +34,7 @@
      },
      "kind": {
       "type": "string",
-      "pattern": "^(chart\\.[a-z0-9_-]+|diagram\\.svg|chem\\.structure|chem\\.reaction|raster\\.existing|author-asset)$"
+      "pattern": "^(chart\\.[a-z0-9_-]+|diagram\\.svg|diagram\\.annotated|chem\\.structure|chem\\.reaction|raster\\.existing|author-asset)$"
      },
      "source": {
       "type": "string",

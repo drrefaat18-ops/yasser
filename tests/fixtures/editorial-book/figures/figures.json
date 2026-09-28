@@ -77,6 +77,17 @@
    "credit": "Figures-book fixture",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "reflux-setup",
+   "chapter_id": "ch01",
+   "kind": "diagram.annotated",
+   "source": "figures/src/reflux-setup.json",
+   "caption": "A heated flask under a reflux condenser",
+   "alt": "Round-bottom flask on a heater with a condenser above, three numbered parts",
+   "credit": "Editorial-book fixture",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }

@@ -24,6 +24,13 @@ A graph of distance against time shows motion at a glance. A straight line means
 
 ![](fig:speed-line)
 
+| Time (s) | Steady car (m) | Slowing car (m) |
+|---|---|---|
+| 0 | 0 | 0 |
+| 1 | 2 | 3 |
+| 2 | 4 | 5.5 |
+| 3 | 6 | 7 |
+
 > **Viewpoints**
 > - **Theory:** The slope of a distance graph is the speed. A flat line means the object has stopped.
 > - **Experiment:** Time a toy car every second. Plot the points and join them. The shape tells you the story.

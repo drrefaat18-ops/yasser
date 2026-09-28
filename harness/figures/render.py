@@ -12,7 +12,7 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures, preflight  # noqa: E402
-from harness.figures import charts, packs, png  # noqa: E402
+from harness.figures import annotated, charts, packs, png  # noqa: E402
 from harness.tools import config  # noqa: E402
 
 DPI = 300
@@ -91,7 +91,7 @@ def versions(project_figs):
     kinds = {f["kind"] for f in project_figs}
     if any(k.startswith("chart.") for k in kinds):
         v.update(charts.versions())
-    if "diagram.svg" in kinds:
+    if kinds & {"diagram.svg", annotated.KIND}:
         v["browser"] = _browser_version()
     for name, mod in packs.registry().items():
         if name != "charts" and kinds & set(getattr(mod, "KINDS", ())):
@@ -154,6 +154,8 @@ def render_all(project, cfg, out_dir=None):
             elif fig["kind"] == "diagram.svg":
                 shutil.copyfile(src, svg)
                 rasterise_svg(src, raster, width, DPI)
+            elif fig["kind"] == annotated.KIND:
+                annotated.render(cfg, _spec(src), svg, raster, width, DPI)
             else:
                 name, mod = packs.pack_for(fig["kind"], registry)
                 if mod is None:

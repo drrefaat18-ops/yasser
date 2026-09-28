@@ -16,6 +16,7 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures, preflight  # noqa: E402
+from harness.figures import annotated  # noqa: E402
 from harness.tools import blocks, build_book, config  # noqa: E402
 from harness.tools.build_book import BuildError  # noqa: E402
 
@@ -85,6 +86,9 @@ class Writer:
         if fig is not None:
             out.append(f'<figcaption><span class="fignum">{esc(self.bk.fig_numbers[fig["id"]])}</span> '
                        f'{self.inline(fig["caption"])}</figcaption>')
+            if fig["kind"] == annotated.KIND:   # the numbered key under the caption (Task 9b.4)
+                out.append('<div class="figkey">' + "".join(f'<span class="badge">{n}</span>{self.inline(label)}'
+                                                            for n, label in annotated.key(self.bk.cfg, fig)) + "</div>")
             out.append(f'<div class="credit">{esc(fig["credit"])} ({esc(fig["licence"])})</div>')
         elif caption:
             m = re.match(rf"({re.escape(self.bk.labels['figure'])} \d+\.\d+)\s*[—-]\s*(.+)", caption)

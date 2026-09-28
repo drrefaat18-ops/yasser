@@ -28,6 +28,8 @@ Newton described this in three laws. The second law is the one we use most. It l
 
 > **Key Idea:** Force causes a change in motion. It does not keep motion going. An object keeps moving at a steady speed unless a force acts on it.
 
+![](fig:reflux-setup)
+
 ## 1.3 Friction
 
 Friction is a force between two surfaces that touch. It acts against the motion. On a road, friction slows the bike. On ice, friction is small, so the bike rolls much further. Engineers use this idea when they design brakes and tyres [2].

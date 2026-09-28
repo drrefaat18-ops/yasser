@@ -11,11 +11,11 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures, schema  # noqa: E402
-from harness.figures import packs  # noqa: E402
+from harness.figures import annotated, packs  # noqa: E402
 from harness.tools import config  # noqa: E402
 
 FIG_IDS = ["FIG-MANIFEST", "FIG-UNREFERENCED", "FIG-UNKNOWN", "FIG-CAPTION", "FIG-ALT", "FIG-LICENCE",
-           "FIG-RESOLUTION", "FIG-AUTHOR-ASSET"]
+           "FIG-RESOLUTION", "FIG-AUTHOR-ASSET", "FIG-ANNOT"]
 CHEM_IDS = ["CHEM-SMILES-INVALID", "CHEM-SANITIZE", "CHEM-SMARTS-INVALID", "CHEM-PUBCHEM-MISMATCH", "CHEM-UNVERIFIED"]
 NON_BLOCKING = {"CHEM-UNVERIFIED"}
 OWN_FIELDS = {"caption": "FIG-CAPTION", "alt": "FIG-ALT", "licence": "FIG-LICENCE", "credit": "FIG-LICENCE"}
@@ -103,7 +103,14 @@ def check(project, cfg, out_dir=None, crosscheck_mode=None, rendered=True):
         p = _source_problem(cfg, f)
         if p:
             found["FIG-MANIFEST"].append((fid, p))
-        if f["kind"] not in STATUS_OF and f["kind"] != "diagram.svg":
+        if f["kind"] == annotated.KIND and not p:
+            try:
+                spec = annotated.load(cfg, f)
+            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+                spec = f"not JSON: {e}"
+            for msg in annotated.problems(cfg, spec):
+                found["FIG-ANNOT"].append((fid, msg))
+        if f["kind"] not in STATUS_OF and f["kind"] not in ("diagram.svg", annotated.KIND):
             name, mod = packs.pack_for(f["kind"], registry)
             if mod is None:
                 found["FIG-MANIFEST"].append((fid, f"no registered pack renders kind {f['kind']}"))

@@ -19,6 +19,7 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures  # noqa: E402
+from harness.figures import annotated  # noqa: E402
 from harness.tools import assemble, blocks, config  # noqa: E402
 
 # Preset constants of the ltr-textbook layout (sizes in pt, rules and grid colours): tested layout, not project config
@@ -554,6 +555,11 @@ class Renderer:
             cp = self.f.make_paragraph(container, style="Caption Text")
             self.f.make_run(cp, self.bk.fig_numbers[fig["id"]] + "  ", bold=True, colour=self.bk.primary)
             self.inline(cp, fig["caption"])
+            if fig["kind"] == annotated.KIND:   # the numbered key under the caption (Task 9b.4)
+                kp = self.f.make_paragraph(container, style="Caption Text")
+                for k, (n, label) in enumerate(annotated.key(self.bk.cfg, fig)):
+                    self.f.make_run(kp, ("   " if k else "") + f"{n} ", bold=True, colour=self.bk.primary)
+                    self.inline(kp, label, colour=self.bk.ink)
             credit = self.f.make_paragraph(container, style="Caption Text")
             self.f.make_run(credit, f"{fig['credit']} ({fig['licence']})", colour=self.bk.muted, size=8)
             return
