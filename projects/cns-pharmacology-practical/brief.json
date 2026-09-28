@@ -1,0 +1,237 @@
+{
+ "schema_version": 1,
+ "project_id": "cns-pharmacology-practical",
+ "identity": {
+  "title": "Practical Pharmacology of the Central Nervous System",
+  "subtitle": "A Laboratory and Section Guide",
+  "edition": null,
+  "authors": [
+   {
+    "name": "Assoc. Prof. Dr. Ahmed Mourad",
+    "credit_line": "Assoc. Prof. Dr. Ahmed Mourad",
+    "role": "author"
+   },
+   {
+    "name": "Assoc. Prof. Dr. Ahmed Gaafar",
+    "credit_line": "Assoc. Prof. Dr. Ahmed Gaafar",
+    "role": "author"
+   },
+   {
+    "name": "Assoc. Prof. Dr. Ahmed Saad",
+    "credit_line": "Assoc. Prof. Dr. Ahmed Saad",
+    "role": "author"
+   },
+   {
+    "name": "Dr. Riffat Ibrahim Riffat",
+    "credit_line": "Dr. Riffat Ibrahim Riffat, Teaching Assistant, Department of Pharmacology & Toxicology",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "Four co-authors. The three associate professors are listed first because they hold the higher academic rank (user, 2026-09-28); the section slides are by Dr. Riffat Ibrahim Riffat.",
+  "rework_authorised": "yes",
+  "rework_authorised_note": "Dr. Riffat Ibrahim Riffat, author of the source slides, approved rewording and improvements in chat on 2026-09-28."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "original/cns-sections-combined.pdf",
+    "format": "pdf",
+    "sha256": "ad3493e94351f49c837dcb5a382c9ad63963a866046427d3c00d5f22aacf2ac9"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Pharmacology of the central nervous system",
+  "subfields": [
+   "mechanism of action",
+   "pharmacokinetics",
+   "clinical uses",
+   "adverse effects",
+   "drug interactions and contraindications",
+   "clinical case studies"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Mechanism diagrams and drug-comparison tables; no chemical structures (user). Slide images are not carried over; diagrams are redrawn."
+ },
+ "audience": {
+  "year_of_study": "Level 3",
+  "programmes": [
+   "Clinical Pharmacy Program (PharmD)"
+  ],
+  "prior_knowledge": "Pharmacology 1 (general principles and autonomic pharmacology) and physiology are complete; each chapter opens with a very short recap of the essentials only.",
+  "display_line": "For Level 3 students of the Clinical Pharmacy Program, Pharmacology 2"
+ },
+ "perspectives": {
+  "enabled": false,
+  "items": []
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "simplify",
+   "restructure",
+   "update"
+  ],
+  "notes": "Turn nine section slide decks into one practical book for Pharmacology 2 sections: clearer and simpler, gaps filled, same scientific scope."
+ },
+ "language": {
+  "source": "en",
+  "output": "en-GB",
+  "translation_required": false,
+  "terminology": "English only; INN drug names; no Arabic text in the book."
+ },
+ "size": {
+  "target_words_total": 42000,
+  "chapter_count_target": 9,
+  "restructuring": "merge_split_allowed",
+  "restructuring_note": "Chapter order is fixed by the Pharmacology 2 section schedule: 1. Alzheimer's disease; 2. Psychosis; 3. Parkinson's disease; 4. Depression; 5. Epilepsy; 6. Skeletal muscle relaxants; 7. Anxiolytics, sedatives and hypnotics; 8. General anaesthetics; 9. Local anaesthetics. Sections inside a chapter may be reordered. Target about 120-160 A4 pages."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 10,
+   "options": 4,
+   "format": "Single best answer from four options (A-D); answers with short rationales in the answers section."
+  },
+  "cases": {
+   "enabled": true
+  },
+  "exercises": {
+   "enabled": false
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [
+   "NARS - Clinical Pharmacy Program (PharmD)"
+  ],
+  "frameworks": [
+   "Egyptian Drug Authority (EDA)"
+  ]
+ },
+ "references": {
+  "style": "vancouver",
+  "style_note": "Numbered square-bracket citations; one reference list per chapter. Core texts: latest editions of Katzung, Lippincott Illustrated Reviews: Pharmacology, and Rang & Dale; clinical guidelines from the last five years.",
+  "recency": {
+   "min_share_since": {
+    "year": 2021,
+    "share": 0.5
+   }
+  },
+  "evidence_cutoff": "2026-09-28"
+ },
+ "constraints": {
+  "must_keep": [
+   "Chapter order of the section schedule",
+   "Co-author credit and order"
+  ],
+  "must_not_change": [
+   "No invented ISBN, publisher or copyright registration"
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": "2026-10-01"
+ },
+ "output": {
+  "formats": [
+   "docx",
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Source Serif 4, Playfair Display, Alexandria (ltr-textbook-alexandria preset)",
+  "branding": {
+   "logo": "images/logos/faculty-of-pharmacy.png",
+   "colours": [
+    "1B2A8C",
+    "2E7D32",
+    "C62828",
+    "F2B81D"
+   ]
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Mechanism and drug-class coverage",
+   "weight": 15,
+   "reviewer_ids": [
+    "pharmacology-reviewer"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Clinical therapeutics",
+   "weight": 15,
+   "reviewer_ids": [
+    "pharmacology-reviewer"
+   ]
+  },
+  {
+   "id": "D3",
+   "name": "Drug safety",
+   "weight": 10,
+   "reviewer_ids": [
+    "pharmacology-reviewer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": "Title and subtitle accepted; four co-authors, the three associate professors first by rank; Faculty of Pharmacy, Port Said University; rework approved; nine chapters in the section-schedule order, SMR after epilepsy, cough and asthma excluded (CNS only)."
+  },
+  "B": {
+   "provenance": "user",
+   "note": "CNS pharmacology; mechanism diagrams and comparison tables, no chemical structures."
+  },
+  "C": {
+   "provenance": "user",
+   "note": "Level 3 Clinical Pharmacy; Pharmacology 1 done; very short recap at the start of each chapter."
+  },
+  "D": {
+   "provenance": "user",
+   "note": "No perspective lenses; three recurring boxes: Clinical Pearl, Caution, Exam Tip."
+  },
+  "E": {
+   "provenance": "user",
+   "note": "Evaluate, then rewrite simpler and clearer and fill gaps, keeping the same scientific scope."
+  },
+  "F": {
+   "provenance": "user",
+   "note": "English source, English output, no translation."
+  },
+  "G": {
+   "provenance": "user",
+   "note": "About 120-160 A4 pages; section order inside a chapter may change; chapter order fixed."
+  },
+  "H": {
+   "provenance": "user",
+   "note": "10 single-best-answer MCQs (A-D) and 2-3 clinical cases with answers per chapter."
+  },
+  "I": {
+   "provenance": "user",
+   "note": "Egypt; NARS Clinical Pharmacy (PharmD); Egyptian Drug Authority for marketed products."
+  },
+  "J": {
+   "provenance": "user",
+   "note": "Vancouver; Katzung, Lippincott, Rang & Dale latest editions; guidelines from the last five years."
+  },
+  "K": {
+   "provenance": "user",
+   "note": "First section Thursday 2026-10-01; the whole book is produced now; no ISBN or publisher."
+  },
+  "L": {
+   "provenance": "user",
+   "note": "Word and PDF, A4, html PDF engine, Alexandria preset fonts; palette taken from the faculty and university logos; both logos on the cover."
+  },
+  "M": {
+   "provenance": "user",
+   "note": "Domain pillars D1 mechanism and drug-class coverage 15, D2 clinical therapeutics 15, D3 drug safety 10."
+  }
+ },
+ "unresolved": []
+}

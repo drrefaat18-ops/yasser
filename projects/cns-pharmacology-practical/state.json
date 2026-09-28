@@ -1,0 +1,78 @@
+{
+ "aborts": [],
+ "active_run": null,
+ "approvals": {
+  "intake": {
+   "approved_at": "2026-09-28T12:42:39Z",
+   "approved_by": "user",
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "bb06a101734654b741ef9e9e604d42542d68417656d950fa18105fa5556d80e2",
+   "files": {
+    "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
+    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
+    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "cns-pharmacology-practical",
+ "receipts": {
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook-alexandria.json": "2428dca0de71742cc70c9bb4c0ecd3da7d19b8435fcb009d996d55bd1a71cc17",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
+    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
+    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-09-28T12:40:10Z",
+   "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3"
+  },
+  "new": {
+   "args": {
+    "slug": "cns-pharmacology-practical"
+   },
+   "inputs": {},
+   "outputs": {
+    "agents/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "design/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-09-28T12:23:58Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  }
+ },
+ "schema_version": 1
+}

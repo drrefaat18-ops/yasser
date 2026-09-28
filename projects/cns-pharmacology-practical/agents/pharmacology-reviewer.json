@@ -1,0 +1,31 @@
+{
+ "schema_version": 1,
+ "id": "pharmacology-reviewer",
+ "base_persona": "subject-reviewer",
+ "scope": "CNS pharmacology for Level 3 Clinical Pharmacy students in Egypt (Pharmacology 2 sections): mechanisms, drug classes, therapeutic choice, safety and case realism.",
+ "criteria": [
+  "Mechanisms name the receptor, transporter or enzyme and link it to the clinical effect and the adverse effects.",
+  "Each chapter covers every drug class with its prototype and main members.",
+  "First-line therapy follows current guidelines (e.g. NICE, APA, ILAE) and is distinguished from alternatives.",
+  "Adverse effects, black-box warnings, contraindications and major interactions are complete.",
+  "Toxicity and overdose management is given where clinically relevant (e.g. benzodiazepines, local anaesthetics).",
+  "Doses, if given, are correct adult doses in standard units.",
+  "Comparison tables are accurate and help the student choose between drugs.",
+  "Cases are realistic Egyptian practice scenarios that require a decision.",
+  "MCQ distractors are plausible; rationales explain the mechanism."
+ ],
+ "exclusions": [
+  "Chemical structures and structure-activity relationships are out of scope (user).",
+  "Cough and asthma are out of scope (CNS only)."
+ ],
+ "evidence_expectations": [
+  "Quote the exact text and give file and line for every finding.",
+  "Give replacement text, not only a critique.",
+  "Cite a standard textbook edition or a current guideline for any correction."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2",
+  "D3"
+ ]
+}

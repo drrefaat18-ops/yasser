@@ -1,0 +1,130 @@
+{
+ "schema_version": 1,
+ "project_id": "cns-pharmacology-practical",
+ "preset": "ltr-textbook-alexandria",
+ "direction": "ltr",
+ "lang_tag": "en-GB",
+ "page": {
+  "size": "A4",
+  "margins": {
+   "top": 2.6,
+   "bottom": 2.4,
+   "left": 3.5,
+   "right": 3.5
+  },
+  "header_distance": 1.3,
+  "footer_distance": 1.2
+ },
+ "fonts": {
+  "serif": "Source Serif 4",
+  "serif_heading": "Playfair Display",
+  "sans": "Alexandria",
+  "complex_script": null,
+  "complex_script_heading": null
+ },
+ "palette": {
+  "ink": "1A1F36",
+  "primary": "1B2A8C",
+  "accent": "2E7D32",
+  "muted": "5A6072",
+  "paper": "FFFFFF"
+ },
+ "layout": {
+  "text_width": 14
+ },
+ "alignment": {
+  "body": "justify",
+  "headings": "left"
+ },
+ "lists": {
+  "indent": 1.2,
+  "hanging": 0.6
+ },
+ "callouts": {
+  "recap": {
+   "fill": "EAF0FB",
+   "label_colour": "1B2A8C",
+   "layout": "box"
+  },
+  "pearl": {
+   "fill": "E8F3E9",
+   "label_colour": "2E7D32",
+   "layout": "box"
+  },
+  "caution": {
+   "fill": "FBEAEA",
+   "label_colour": "B3261E",
+   "layout": "box"
+  },
+  "exam-tip": {
+   "fill": "FDF4DC",
+   "label_colour": "8A6100",
+   "layout": "box"
+  },
+  "objectives": {
+   "fill": "FFFFFF",
+   "label_colour": "1B2A8C",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "C5CCE8"
+   }
+  }
+ },
+ "boxed_section_ids": [
+  "objectives"
+ ],
+ "toc_excluded_section_ids": [
+  "takeaways",
+  "answers"
+ ],
+ "toc": {
+  "levels": 2
+ },
+ "cover": {
+  "asset": null,
+  "design": {
+   "eyebrow": "Pharmacology 2 · Clinical Pharmacy Program · Level 3",
+   "institution": "Faculty of Pharmacy, Port Said University",
+   "logos": [
+    "images/logos/port-said-university.png",
+    "images/logos/faculty-of-pharmacy.png"
+   ]
+  }
+ },
+ "title_page": {
+  "notices": [
+   "This book is for education. It is not clinical guidance; check current prescribing information before relying on any dose.",
+   "The patients in the clinical cases are fictional."
+  ]
+ },
+ "labels": {
+  "contents": "Contents",
+  "update_toc_instruction": "Right-click and choose Update Field to build the contents.",
+  "chapter": "Chapter",
+  "part": "Part",
+  "glossary": "Glossary",
+  "figure": "Figure",
+  "table": "Table",
+  "question_prefix": "Q",
+  "objective_prefix": "LO",
+  "chapters": "Chapters"
+ },
+ "output": {
+  "basename": "CNS_Pharmacology_Practical"
+ },
+ "build": {
+  "backend": "word_com",
+  "word_com": {
+   "toc_styles": [
+    "TOC 1",
+    "TOC 2"
+   ]
+  },
+  "pdf": {
+   "bookmarks": "headings",
+   "embed_fonts": true,
+   "engine": "html"
+  }
+ }
+}

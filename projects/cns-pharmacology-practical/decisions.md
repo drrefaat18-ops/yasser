@@ -1,0 +1,3 @@
+| DEC | Date | Kind | Decision | User words |
+|---|---|---|---|---|
+| DEC-001 | 2026-09-28 | user | approve intake: the five intake files of cns-pharmacology-practical at harness SHA-256 brief.json a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89, rubric.json a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd, template.json 5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a, theme.json 6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764, agents/pharmacology-reviewer.json 542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc | "موافق" (I approve) |
