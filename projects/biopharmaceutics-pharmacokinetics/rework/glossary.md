@@ -2,6 +2,12 @@
 
 **absorption** — The movement of drug from the site of administration into the systemic circulation. The first process of ADME, and the only one a dosage form can be designed to control.
 
+**absorption rate constant** — Ka. The first-order rate constant governing transfer of drug from solution in the gut into the systemic circulation, in reciprocal time.
+
+**accumulation half-life** — t½,acc. The time taken to reach half of the steady-state level on a multiple dose regimen, t½·[1 + 3.32·log(Ka/(Ka − K))] for Ka > K. For repeated intravenous doses it equals the elimination half-life.
+
+**accumulation index** — R. The ratio of the steady-state peak to the peak after the first dose, 1/(1 − e^(−Kτ)). It depends on K and the dosage interval, not on the dose; R = 1 means no accumulation.
+
 **Active tubular secretion** — Carrier-mediated transport of drug from blood into the tubular fluid, against its concentration gradient, requiring energy. The kidney has separate carriers for weak acids and weak bases, and drugs sharing a carrier compete.
 
 **amount remaining to be excreted** — ARE. The quantity (Du∞ − Du): the amount of drug still to appear unchanged in the urine at time t. Its logarithm falls linearly with time, which is the basis of the sigma-minus method.
@@ -9,6 +15,8 @@
 **apparent volume of distribution** — Vd. The proportionality constant linking the amount of drug in the body to the plasma concentration, Vd = D_B / Cp. It is the volume the drug would occupy if it were present throughout at the plasma concentration, and it need not correspond to any real body volume.
 
 **AUC** — Area under the plasma concentration–time curve, in concentration × time units (for example µg·h·mL⁻¹). It is proportional to the total amount of drug reaching the systemic circulation, and so measures the *extent* of absorption.
+
+**average steady-state concentration** — Css,av. The constant concentration giving the same area as the real curve over one steady-state dosing interval, F·D₀/(Cl·τ). It lies below the arithmetic mean of the peak and the trough.
 
 **Bioavailability** — The rate and the extent of absorption of a drug from its dosage form into the systemic circulation. Both parts are required: two products with the same AUC can differ in tmax and behave differently in a patient.
 
@@ -26,6 +34,8 @@
 
 **distribution phase** — The early, steeply falling part of a biexponential plasma curve, during which drug is moving from the central compartment into the peripheral compartment faster than it is being eliminated.
 
+**dosage interval** — τ. The time from one dose to the next in a multiple dose regimen. With the dose size, it is one of the two quantities a prescriber controls.
+
 **elimination** — The irreversible loss of drug from the body, by excretion, by metabolism, or by both.
 
 **elimination half-life** — t½. The time taken for the amount of drug in the body, or its plasma concentration, to fall by half. For a first-order process t½ = 0.693/K and is independent of the dose.
@@ -36,11 +46,19 @@
 
 **first order** — Describing a process whose rate is proportional to the amount or concentration of drug driving it. A constant *fraction* is lost per unit time, so the plot of log concentration against time is a straight line. Contrast zero order, where a constant *amount* is lost per unit time.
 
+**First-order absorption** — Absorption at a rate proportional to the amount of drug still in solution at the absorption site, so that a constant *fraction* is absorbed per unit time. Typical of rapidly dissolving forms such as immediate-release tablets and capsules.
+
+**Flip-flop** — The situation in which the elimination rate constant exceeds the absorption rate constant, so that the terminal phase of an oral curve reflects absorption rather than elimination and the two constants are assigned the wrong way round. Only intravenous data can resolve it.
+
+**fraction unabsorbed** — 1 − Ab/Ab∞, the proportion of the ultimately absorbed dose that has not yet been absorbed at time t. Plotted against time it is linear on semilogarithmic axes for first-order absorption and on ordinary axes for zero-order absorption.
+
 **Glomerular filtration** — Passive movement of free drug from blood into the glomerular filtrate, with the concentration gradient. Protein-bound drug is not filtered, because the complex is too large to cross.
 
 **glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin or creatinine.
 
 **hybrid rate constants** — a and b, the two exponents of a biexponential plasma curve. Neither is a single physical process: each combines K, K₁₂ and K₂₁, subject to a + b = K + K₁₂ + K₂₁ and a·b = K·K₂₁. Always a > b.
+
+**Ka** — The absorption rate constant. See [[absorption-rate-constant]].
 
 **Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See [[renal-excretion-rate-constant]].
 
@@ -49,6 +67,8 @@
 **K₁₂** — The first-order rate constant for transfer of drug from the central compartment to the peripheral (tissue) compartment.
 
 **K₂₁** — The first-order rate constant for transfer of drug from the peripheral (tissue) compartment back to the central compartment.
+
+**Lag time** — t₀. The delay between administration and the start of absorption, caused by slow gastric emptying, reduced motility or any other factor that stops absorption beginning at once. It is shorter than the onset of action.
 
 **loading dose** — Dₗ. An intravenous bolus given at the start of an infusion, sized as Css · Vd (equivalently R/K) so that the target concentration is reached immediately instead of over about five half-lives.
 
@@ -69,6 +89,10 @@
 **pharmacokinetic model** — A set of equations that simulates the rate processes of ADME and so predicts the concentration of drug in the body at any time.
 
 **Pharmacokinetics** — The kinetic study of absorption, distribution, metabolism and elimination: how fast each process occurs and what drug concentration results at any given time.
+
+**post-absorption phase** — The later part of an oral plasma curve, after the absorption term has decayed, during which the concentration falls with the elimination rate constant alone. It is the straight terminal portion on semilogarithmic axes.
+
+**principle of superposition** — For first order (linear) kinetics, the concentration after several doses is the sum of the concentrations each dose would give on its own. It is the basis of all multiple dose equations.
 
 **rate constant** — The proportionality constant linking a rate to the amount or concentration driving it. A first-order rate constant has units of reciprocal time (h⁻¹); a zero-order rate constant has units of amount or concentration per unit time.
 
@@ -96,4 +120,8 @@
 
 **Vp** — The volume of the central compartment. See [[volume-of-the-central-compartment]].
 
+**Wagner–Nelson method** — A method for determining the amount of drug absorbed at each time by mass balance, requiring only that the body behaves as one compartment and that elimination is first order. Because it assumes nothing about absorption, it can be used to decide whether absorption is first order or zero order.
+
 **zero order** — Describing a process whose rate is constant and independent of the amount of drug present, so that a constant *amount* is transferred per unit time. A constant-rate infusion is zero-order input; saturated metabolism is zero-order output (Chapter 10).
+
+**Zero-order absorption** — Absorption at a constant rate, independent of the amount of drug remaining at the absorption site, so that a constant *amount* is absorbed per unit time. Produced by osmotic pumps and well-designed sustained-release forms.

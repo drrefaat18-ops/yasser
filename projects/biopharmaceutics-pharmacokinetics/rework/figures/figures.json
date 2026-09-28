@@ -88,6 +88,28 @@
    "credit": "Original diagram, redrawn from the first edition pages 25 to 28",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch07-oral-feathering",
+   "chapter_id": "ch07",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch07-oral-feathering.svg",
+   "caption": "Feathering the oral curve of Example 7.1, and the sign that it has not worked. The residuals do not fall on a straight line, and the apparent Ka taken from successive pairs climbs steadily instead of scattering about one value. Ka here is only twice K, so the two exponentials never separate and no terminal window is free of absorption.",
+   "alt": "Two panels. On the left, a semilogarithmic plot of an oral plasma curve rising to a peak near seven hours and then falling. A dashed line fitted to the points from sixteen hours onwards is extrapolated back to an intercept marked A approximately 105. Open squares below it show the residuals, which follow a visibly curved path rather than a straight line. On the right, the apparent absorption rate constant calculated from each successive pair of residuals is plotted against the midpoint of the pair; the values climb steadily from 0.25 to 0.36 per hour, well above a dashed reference line at the true value of 0.200 per hour.",
+   "credit": "Original diagram, drawn from the first edition Example 22 dataset, page 33",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch08-accumulation",
+   "chapter_id": "ch08",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch08-accumulation.svg",
+   "caption": "Repeated IV bolus doses of Example 8.1. Each dose adds to what the previous doses left, so peaks and troughs climb until the loss in one interval equals one dose. The average level lies below the midpoint of peak and trough.",
+   "alt": "A sawtooth plasma concentration curve over 36 hours. A dose every 6 hours produces a vertical jump followed by an exponential fall. The first peak is 50 micrograms per millilitre; later peaks rise towards a dashed line at 66.7 and troughs towards a dashed line at 16.7, with a third dashed line at the average of 36.1. A dotted curve shows the first dose alone decaying to near zero.",
+   "credit": "Original diagram, redrawn from the first edition pages 39-40",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
