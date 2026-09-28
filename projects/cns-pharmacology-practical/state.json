@@ -2,6 +2,18 @@
  "aborts": [],
  "active_run": null,
  "approvals": {
+  "design": {
+   "approved_at": "2026-09-28T13:32:33Z",
+   "approved_by": "user",
+   "dec_id": "DEC-003",
+   "dec_row_sha256": "21da4ab5dd1a1cd1114d2d67464cdcee574ce1fdc30c99c5bcede5b20245e862",
+   "files": {
+    "design/chapter-plan.json": "00f5cd933ab8c4fe6f78540b691d182718db88f4299525eb4c8654462c83fe4d",
+    "design/design.md": "7d2e27a4a8d338a820b5c556cd649e306cbd40ff0c11339458666d1cb19a64a9",
+    "design/errata-seed.md": "bc5ab3831a5f7f7bd61130aaa9184ffb84c6cda68090c1aac7116d26e75f949b"
+   },
+   "kind": "design"
+  },
   "intake": {
    "approved_at": "2026-09-28T12:42:39Z",
    "approved_by": "user",
