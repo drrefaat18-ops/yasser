@@ -26,7 +26,8 @@
   "ink": "1E2A26",
   "primary": "0F5132",
   "accent": "B08534",
-  "muted": "5F6B66"
+  "muted": "5F6B66",
+  "paper": "FAF7F1"
  },
  "layout": {
   "text_width": 14,

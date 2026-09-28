@@ -231,6 +231,7 @@ def stylesheet(bk, chapters):
     title = css_string(bk.title)
     pages = [
         f"@page{{size:{pg['width_cm']}cm {pg['height_cm']}cm;margin:{m['top']}cm {m['right']}cm {m['bottom']}cm {m['left']}cm;"
+        f"background:{hexc(bk.pal.get('paper') or 'FFFFFF')};"
         f"@top-left{{content:{title};{head_box}}}@top-right{{content:'';{head_box}}}"
         f"@bottom-center{{content:counter(page);font-family:{ff('sans')};font-size:8.5pt;color:{mut}}}}}",
         "@page plain{@top-left{content:none;border:0}@top-right{content:none;border:0}@bottom-center{content:none}}",
@@ -251,9 +252,10 @@ def stylesheet(bk, chapters):
                      f"{{color:{hexc(e['label_colour'])}}}")
     drop = (f".dropcap::first-letter{{float:left;font-family:{ff('serif_heading')};font-size:3.4em;line-height:0.86;"
             f"padding:0.06em 0.08em 0 0;color:{pri};font-weight:700}}") if th["layout"].get("drop_cap") else ""
+    paper = hexc(bk.pal.get("paper") or "FFFFFF")   # page background, margins included (theme.palette.paper; also on @page)
     return "".join(pages) + font_faces(bk.cfg) + f"""
 *{{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-html{{font-family:{ff('serif')};font-size:10.5pt;color:{ink};line-height:1.42}}
+html{{font-family:{ff('serif')};font-size:10.5pt;color:{ink};line-height:1.42;background:{paper}}}
 body{{margin:0}}
 p{{margin:0 0 6pt;text-align:{body_align};orphans:2;widows:2;hyphens:auto}}
 a{{color:#{LINK};text-decoration:none}}

@@ -36,6 +36,10 @@ class WriterTest(unittest.TestCase):
         fonts = set(re.findall(r'font-family:"([^"]+)"', css))
         self.assertEqual(fonts, {self.cfg["theme"]["fonts"][k] for k in ("serif", "serif_heading", "sans")})
 
+    def test_paper_colour_is_the_page_background(self):
+        css = build_html.stylesheet(self.w.bk, [(1, "A")])
+        self.assertIn("background:#" + self.cfg["theme"]["palette"]["paper"], css.split("}")[0])   # on @page itself
+
     def test_css_string_escapes_quotes(self):
         self.assertEqual(build_html.css_string('a "b" \\ c'), '"a \\"b\\" \\\\ c"')
 
