@@ -12,15 +12,15 @@ Readers: students who finished Pharmacology 1. Each chapter opens with a very sh
 
 | # | ID | Title | Words | Source deck |
 |---|---|---|---|---|
-| 1 | ch01 | Alzheimer's Disease | 3800 | Alzheimer's disease (19 slides) |
-| 2 | ch02 | Psychosis and Antipsychotic Drugs | 5000 | Psychosis (33) |
-| 3 | ch03 | Parkinson's Disease | 4600 | Parkinson's disease (21) |
-| 4 | ch04 | Depression and Antidepressant Drugs | 5200 | Depression (35) |
-| 5 | ch05 | Epilepsy and Antiseizure Drugs | 5000 | Epilepsy (27) |
-| 6 | ch06 | Skeletal Muscle Relaxants | 4700 | SMR (41) |
-| 7 | ch07 | Anxiolytics, Sedatives and Hypnotics | 5400 | Anxiolytic and hypnotic drugs (58) |
-| 8 | ch08 | General Anaesthetics | 4600 | General anaesthetics (22) |
-| 9 | ch09 | Local Anaesthetics | 3700 | Local anaesthetics (13) |
+| 1 | ch01 | Alzheimer's Disease | 3200 | Alzheimer's disease (19 slides) |
+| 2 | ch02 | Psychosis and Antipsychotic Drugs | 5200 | Psychosis (33) |
+| 3 | ch03 | Parkinson's Disease | 4400 | Parkinson's disease (21) |
+| 4 | ch04 | Depression and Antidepressant Drugs | 5600 | Depression (35) |
+| 5 | ch05 | Epilepsy and Antiseizure Drugs | 5400 | Epilepsy (27) |
+| 6 | ch06 | Skeletal Muscle Relaxants | 4600 | SMR (41) |
+| 7 | ch07 | Anxiolytics, Sedatives and Hypnotics | 6000 | Anxiolytic and hypnotic drugs (58) |
+| 8 | ch08 | General Anaesthetics | 4400 | General anaesthetics (22) |
+| 9 | ch09 | Local Anaesthetics | 3200 | Local anaesthetics (13) |
 
 Total 42,000 words (template range 36,000-50,000, ±20% per chapter), about 130-150 A4 pages with tables and figures. No parts. Nothing dropped: every source topic is kept; duplicated MCQs (F-040, F-064) are removed.
 
@@ -53,7 +53,7 @@ Title, co-authors in the approved order, `## How to Use This Book` (chapter patt
 
 | ID | Chapter | Shows |
 |---|---|---|
-| ache-synapse | ch01 | Cholinergic synapse: AChE inhibitors and memantine at the NMDA receptor |
+| ache-synapse | ch01 | Two separate panels: (A) cholinergic synapse with AChE and its inhibitors; (B) glutamatergic synapse with the NMDA receptor and memantine (D-01) |
 | dopamine-pathways | ch02 | Four dopamine pathways and the effect of D2 block in each |
 | levodopa-path | ch03 | Levodopa from gut to brain: AADC, COMT, MAO-B and where carbidopa, entacapone and selegiline act |
 | monoamine-synapse | ch04 | Serotonin/noradrenaline synapse: SERT/NET, MAO, alpha2 autoreceptor, with SSRI, SNRI, TCA, MAOI, mirtazapine |
@@ -113,6 +113,6 @@ Minor findings follow the same line-to-chapter mapping and are fixed in the chap
 
 ## 7. Decisions for the user
 
-1. **Brand tables instead of package photos.** The 19 brand slides are photographs of packs. The book lists the names in a table (no photos: trademark packaging, low print quality). Four names could not be read with certainty (Achtenon, Dimra, Migrainil, Sleep-aid) and are marked for your check.
+1. **Brand tables instead of package photos.** The 19 brand slides are photographs of packs. The book lists the names in a table (no photos: trademark packaging, low print quality). Only names that are clearly legible on your slides are listed; four unclear names (Achtenon, Dimra, Migrainil, Sleep-aid) are left out unless you confirm them. You, as the author of the slides, confirm the brand list at design approval; the book tells readers the EDA list is the current reference (D-02).
 2. **Anti-amyloid antibodies, sugammadex, non-ergot dopamine agonists, MAC and LAST** are added as short sections: they are needed to correct the findings and are standard in the core textbooks.
 3. **Doses** appear only where safety depends on them.

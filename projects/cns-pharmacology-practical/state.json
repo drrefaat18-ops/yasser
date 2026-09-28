@@ -33,13 +33,13 @@
     "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
    },
    "outputs": {
-    "design/chapter-plan.json": "487648efef62a49275d5fb4b7c2c74bd2f570e1197bf26eb8b99da3efd53b390",
-    "design/design.md": "7396518f0b179851b0abf7c79918e2f01e07ecd28d7d268c3ed704f7f7d35207",
+    "design/chapter-plan.json": "00f5cd933ab8c4fe6f78540b691d182718db88f4299525eb4c8654462c83fe4d",
+    "design/design.md": "7d2e27a4a8d338a820b5c556cd649e306cbd40ff0c11339458666d1cb19a64a9",
     "design/errata-seed.md": "bc5ab3831a5f7f7bd61130aaa9184ffb84c6cda68090c1aac7116d26e75f949b"
    },
    "stage": "design",
    "status": "ok",
-   "time": "2026-09-28T13:26:53Z",
+   "time": "2026-09-28T13:30:03Z",
    "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
    "total_budget": 42000
   },
