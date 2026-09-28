@@ -10,7 +10,7 @@ roman), the body (parts, chapters, glossary; arabic from 1). The body is printed
 its own is printed twice for the same reason. pypdf then writes the bookmarks and the metadata.
 Exit 0 ok; 1 on a refused gate or a build error; 2 on a config error.
 """
-import html, json, pathlib, re, subprocess, sys, tempfile
+import html, pathlib, re, subprocess, sys, tempfile
 
 REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
@@ -33,7 +33,8 @@ def esc(s):
 
 
 def css_string(s):
-    return '"' + s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ") + '"'
+    """A CSS string literal; `<` is escaped too, so a config string cannot close the <style> element (S9b-C01)."""
+    return '"' + s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ").replace("<", "\\3c ") + '"'
 
 
 def hexc(v):
@@ -218,7 +219,7 @@ def font_faces(cfg):
     for family, files in (cfg["theme"].get("font_files") or {}).items():
         for k, rel in files.items():
             w, s = weights[k]
-            out.append(f"@font-face{{font-family:{css_string(family)};src:url('{(cfg['project'] / rel).resolve().as_uri()}');"
+            out.append(f"@font-face{{font-family:{css_string(family)};src:url({css_string((cfg['project'] / rel).resolve().as_uri())});"
                        f"font-weight:{w};font-style:{s}}}")
     return "".join(out)
 

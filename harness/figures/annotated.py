@@ -38,9 +38,12 @@ def problems(cfg, spec):
         return [f"base {base!r} must lie under an allowed asset root"]
     if not src.is_file():
         return [f"base {base} missing"]
-    from PIL import Image
-    with Image.open(src) as im:
-        w, h = im.size
+    from PIL import Image, UnidentifiedImageError
+    try:
+        with Image.open(src) as im:
+            w, h = im.size
+    except (UnidentifiedImageError, OSError) as e:   # a report, not a crash (step9b fix S9b-06)
+        return [f"base {base} is not a readable image: {e}"]
     out = []
     cs = spec.get("callouts")
     if not isinstance(cs, list) or not cs:

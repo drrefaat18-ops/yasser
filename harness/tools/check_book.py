@@ -405,7 +405,10 @@ def check_assets(text, cfg, path):
     return f
 
 
-LATEX = re.compile(r"\$[^$\n]+\$|\\(?:frac|text|mathrm|xrightarrow|longrightarrow|rightarrow|ce|sub|sup|times|circ)\b")
+# TeX math between dollars (with a TeX sign inside, so prices pass), any control word (\frac, \alpha, \begin),
+# display delimiters \[ \] \( \) (step9b fix S9b-04: a short allowlist missed most TeX)
+LATEX = re.compile(r"\$[^$\n]*[\\_^{][^$\n]*\$|(?<![\w\\])\\[A-Za-z]+|\\[\[\]()]")
+CODE_SPAN = re.compile(r"`[^`]*`")
 VISUAL = ("![", "|", ">")   # a figure, a table or a box breaks a prose run (plan Task 9b.5)
 
 
@@ -423,7 +426,7 @@ def _prose_lines(text, cfg):
 
 def check_typography(text, cfg):
     """TYPO-LATEX: TeX left in the text; the writers print none of it (formulas use ~sub~ and ^sup^)."""
-    hits = sorted({m.group(0) for s in _prose_lines(text, cfg) for m in LATEX.finditer(s)})
+    hits = sorted({m.group(0) for s in _prose_lines(text, cfg) for m in LATEX.finditer(CODE_SPAN.sub("", s))})
     return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in hits[:10]]}
 
 

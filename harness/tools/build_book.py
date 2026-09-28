@@ -601,8 +601,8 @@ class Renderer:
                     _, container = self.box(doc, b["label"], fill, colour, bd)
                 else:
                     f.make_paragraph(doc, b["label"], style="Heading 2 Unlisted" if b["unlisted"] else "Heading 2")
-            elif t == "h3":
-                f.make_paragraph(container, b["text"], style="Heading 3")
+            elif t == "h3":   # inline markup rendered, like every other block (step9b fix S9b-01)
+                self.inline(f.make_paragraph(container, style="Heading 3"), b["text"])
             elif t == "grid":
                 fill, colour, _, _ = bk.style_of(b["key"])
                 self.grid(container, b["label"], b["items"], fill, colour)
@@ -734,7 +734,10 @@ class Pages:
             r = p.add_run(f"{number}")
             r.font.color.rgb = self.d["RGBColor"].from_string(self.bk.accent)
             p.add_run(GAP)
-        p.add_run(title)
+        if blocks.plain(title) == title:   # plain title: one bare run, as before (the medical golden)
+            p.add_run(title)
+        else:   # inline markup, the same grammar as the HTML writer (step9b fix S9b-01)
+            self.R.inline(p, title, links=False)
         self.x.para_border(p, "bottom", 18, RULE, 10)
         return p
 
@@ -898,7 +901,7 @@ def build(cfg, out=None):
         if first:
             x.page_numbering(s, "decimal", 1)
             first = False
-        pages.running_head(s, bk.title, f"{bk.labels['chapter']} {n} · {title}")
+        pages.running_head(s, bk.title, f"{bk.labels['chapter']} {n} · {blocks.plain(title)}")
         pages.heading1(n, title)
         R.markdown(text, "chapter", path)
 

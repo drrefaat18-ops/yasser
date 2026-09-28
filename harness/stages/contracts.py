@@ -124,8 +124,10 @@ def files(project, stage_id, unit=None):
         # legacy PNG mirrors); not the renders (outputs) nor the PubChem cache (a lookup cache the build writes)
         assets = sorted({f for root in p.get("allowed_asset_roots", []) + [p["figures"]] for f in _glob(project, root)}
                         - set(_glob(project, f"{p['figures']}/out")) - set(_glob(project, f"{p['figures']}/.cache")))
+        design = (theme.get("cover") or {}).get("design") or {}
+        named = list(design.get("logos", [])) + [f for files in (theme.get("font_files") or {}).values() for f in files.values()]
         ins = (_chapter_files(project) + _book_files(project) + ["brief.json", "template.json", "theme.json",
-               "design/chapter-plan.json"] + assets)
+               "design/chapter-plan.json"] + sorted(set(assets) | set(named)))   # configured files always (S9b-02)
         outs = (_glob(project, f"{p['figures']}/out") + [f"build/{base}.{ext}" for ext in ("md", "docx", "pdf")]
                 + _glob(project, "build/checkpoints", "*.png"))   # PDF checkpoint pages (Task 9b.3), when PyMuPDF is present
         return ins, outs + ["build/build-report.json"]

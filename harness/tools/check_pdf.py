@@ -67,6 +67,33 @@ def outline_titles(reader):
     return out
 
 
+def _squash(s):
+    """Whitespace removed and words rejoined where the layout hyphenated them at a line end."""
+    return re.sub(r"\s+", "", re.sub(r"[-­]\s*\n", "", s))
+
+
+def outline_problems(cfg, reader):
+    """Each chapter has exactly one bookmark `<n> <title>`, in plan order, pointing at a page that shows the title
+    (step9b fix S9b-03: a substring anywhere was not enough)."""
+    marks = [(re.sub(r"\s+", " ", t).strip(), p) for t, p in outline_titles(reader)]
+    out, last = [], -1
+    for _, path in cfg.chapters():
+        n, chapter = build_book.chapter_heading(path.read_text(encoding="utf-8"), cfg)
+        title = re.sub(r"\s+", " ", blocks.plain(chapter)).strip()
+        want = f"{n} {title}"
+        hits = [k for k, (t, _) in enumerate(marks) if t == want]
+        if len(hits) != 1:
+            out.append(f"{len(hits)} bookmarks titled {want!r} (need exactly 1)")
+            continue
+        k = hits[0]
+        if k < last:
+            out.append(f"bookmark {want!r} is out of chapter order")
+        last = k
+        if _squash(blocks.plain(chapter)) not in _squash(reader.pages[marks[k][1]].extract_text()):
+            out.append(f"bookmark {want!r} points at page {marks[k][1] + 1}, which does not show the chapter title")
+    return out
+
+
 def check(cfg, pdf):
     from pypdf import PdfReader
     bk = build_book.Book(cfg)
@@ -101,11 +128,7 @@ def check(cfg, pdf):
         if (meta.get(key) or "") != value:
             found["PDF-META"].append(f"{key} is {meta.get(key)!r}, not {value!r}")
     if cfg["theme"]["build"]["pdf"]["bookmarks"] == "headings":
-        titles = [re.sub(r"\s+", " ", t) for t, _ in outline_titles(r)]
-        for _, path in cfg.chapters():
-            _, chapter = build_book.chapter_heading(path.read_text(encoding="utf-8"), cfg)
-            if not any(blocks.plain(chapter) in t for t in titles):
-                found["PDF-OUTLINE"].append(f"no bookmark for {blocks.plain(chapter)!r}")
+        found["PDF-OUTLINE"] = outline_problems(cfg, r)
     checks = [{"id": i, "status": "fail" if found[i] else "pass", "message": "; ".join(found[i]),
                "measured": {"count": len(found[i])}} for i in IDS]
     checks[0]["measured"]["pages"] = len(r.pages)

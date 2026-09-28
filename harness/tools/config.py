@@ -3,7 +3,7 @@
 `load` refuses a config that would make a tool read or write outside the project (core §1.1) or that enables a
 feature without the fields its checks need (S8-01, S8-05); `problems` is the same test for `complete intake`.
 """
-import json, pathlib, re
+import json, pathlib, posixpath, re
 from harness import locales
 
 
@@ -63,8 +63,11 @@ def path_problems(project, brief, template, theme, plan):
     extra = [("theme.cover.design.logos", r) for r in design.get("logos", [])]
     extra += [(f"theme.font_files.{fam}", r) for fam, files in (theme.get("font_files") or {}).items() for r in files.values()]
     for where, r in extra:
-        if _outside(project, r) or not any(pathlib.PurePosixPath(r).as_posix().startswith(root) for root in roots):
+        norm = posixpath.normpath(str(r).replace("\\", "/"))
+        if _outside(project, r) or not any(norm.startswith(root) for root in roots):
             probs.append(f"{where}: {r!r} must be a file under one of template.paths.allowed_asset_roots")
+        elif not (pathlib.Path(project) / norm).is_file():   # a missing logo or font would silently drop (S9b-02)
+            probs.append(f"{where}: {r!r} is not an existing file")
     base = (theme.get("output") or {}).get("basename", "")
     if not re.fullmatch(r"[^/\\:*?\"<>|]+", base or "") or base in (".", ".."):
         probs.append(f"theme.output.basename: {base!r} must be a plain file name")
