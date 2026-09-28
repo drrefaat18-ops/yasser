@@ -6,7 +6,7 @@
    "id": "ch01",
    "file": "ch01-alzheimers-disease.md",
    "title": "Alzheimer's Disease",
-   "word_budget": 3200,
+   "word_budget": 2200,
    "part_id": null,
    "source_refs": []
   },
@@ -14,7 +14,7 @@
    "id": "ch02",
    "file": "ch02-psychosis.md",
    "title": "Psychosis and Antipsychotic Drugs",
-   "word_budget": 5200,
+   "word_budget": 2600,
    "part_id": null,
    "source_refs": []
   },
@@ -22,7 +22,7 @@
    "id": "ch03",
    "file": "ch03-parkinsons-disease.md",
    "title": "Parkinson's Disease",
-   "word_budget": 4400,
+   "word_budget": 2200,
    "part_id": null,
    "source_refs": []
   },
@@ -30,7 +30,7 @@
    "id": "ch04",
    "file": "ch04-depression.md",
    "title": "Depression and Antidepressant Drugs",
-   "word_budget": 5600,
+   "word_budget": 2600,
    "part_id": null,
    "source_refs": []
   },
@@ -38,7 +38,7 @@
    "id": "ch05",
    "file": "ch05-epilepsy.md",
    "title": "Epilepsy and Antiseizure Drugs",
-   "word_budget": 5400,
+   "word_budget": 3000,
    "part_id": null,
    "source_refs": []
   },
@@ -46,7 +46,7 @@
    "id": "ch06",
    "file": "ch06-skeletal-muscle-relaxants.md",
    "title": "Skeletal Muscle Relaxants",
-   "word_budget": 4600,
+   "word_budget": 2600,
    "part_id": null,
    "source_refs": []
   },
@@ -54,7 +54,7 @@
    "id": "ch07",
    "file": "ch07-anxiolytics-hypnotics.md",
    "title": "Anxiolytics, Sedatives and Hypnotics",
-   "word_budget": 6000,
+   "word_budget": 3200,
    "part_id": null,
    "source_refs": []
   },
@@ -62,7 +62,7 @@
    "id": "ch08",
    "file": "ch08-general-anaesthetics.md",
    "title": "General Anaesthetics",
-   "word_budget": 4400,
+   "word_budget": 2200,
    "part_id": null,
    "source_refs": []
   },
@@ -70,7 +70,7 @@
    "id": "ch09",
    "file": "ch09-local-anaesthetics.md",
    "title": "Local Anaesthetics",
-   "word_budget": 3200,
+   "word_budget": 1800,
    "part_id": null,
    "source_refs": []
   }

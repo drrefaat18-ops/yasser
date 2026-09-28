@@ -4,7 +4,7 @@ Book: `cns-pharmacology-practical`. Inputs: approved intake (DEC-001), evaluatio
 
 ## 1. What the new edition is
 
-A practical companion for the Pharmacology 2 CNS sections (Level 3, Clinical Pharmacy Program, Faculty of Pharmacy, Port Said University). One chapter per section topic, in the section-schedule order. Each chapter turns a slide deck into short, connected explanations, comparison tables, one mechanism diagram, safety boxes, Egyptian brand names, and a full self-assessment. The scientific scope stays that of the slides; errors are corrected and the gaps in the evaluation are filled.
+A practical companion for the two-hour Pharmacology 2 CNS sections (Level 3, Clinical Pharmacy Program, Faculty of Pharmacy, Port Said University). One chapter per section topic, in the section-schedule order. Each chapter turns a slide deck into short, connected explanations, comparison tables, one mechanism diagram, safety boxes, Egyptian brand names, and a full self-assessment. The scientific scope stays that of the slides; errors are corrected and the gaps in the evaluation are filled.
 
 Readers: students who finished Pharmacology 1. Each chapter opens with a very short Quick Recap of the prerequisites (receptor or transmitter physiology) and nothing more.
 
@@ -12,17 +12,17 @@ Readers: students who finished Pharmacology 1. Each chapter opens with a very sh
 
 | # | ID | Title | Words | Source deck |
 |---|---|---|---|---|
-| 1 | ch01 | Alzheimer's Disease | 3200 | Alzheimer's disease (19 slides) |
-| 2 | ch02 | Psychosis and Antipsychotic Drugs | 5200 | Psychosis (33) |
-| 3 | ch03 | Parkinson's Disease | 4400 | Parkinson's disease (21) |
-| 4 | ch04 | Depression and Antidepressant Drugs | 5600 | Depression (35) |
-| 5 | ch05 | Epilepsy and Antiseizure Drugs | 5400 | Epilepsy (27) |
-| 6 | ch06 | Skeletal Muscle Relaxants | 4600 | SMR (41) |
-| 7 | ch07 | Anxiolytics, Sedatives and Hypnotics | 6000 | Anxiolytic and hypnotic drugs (58) |
-| 8 | ch08 | General Anaesthetics | 4400 | General anaesthetics (22) |
-| 9 | ch09 | Local Anaesthetics | 3200 | Local anaesthetics (13) |
+| 1 | ch01 | Alzheimer's Disease | 2200 | Alzheimer's disease (19 slides) |
+| 2 | ch02 | Psychosis and Antipsychotic Drugs | 2600 | Psychosis (33) |
+| 3 | ch03 | Parkinson's Disease | 2200 | Parkinson's disease (21) |
+| 4 | ch04 | Depression and Antidepressant Drugs | 2600 | Depression (35) |
+| 5 | ch05 | Epilepsy and Antiseizure Drugs | 3000 | Epilepsy (27) |
+| 6 | ch06 | Skeletal Muscle Relaxants | 2600 | SMR (41) |
+| 7 | ch07 | Anxiolytics, Sedatives and Hypnotics | 3200 | Anxiolytic and hypnotic drugs (58) |
+| 8 | ch08 | General Anaesthetics | 2200 | General anaesthetics (22) |
+| 9 | ch09 | Local Anaesthetics | 1800 | Local anaesthetics (13) |
 
-Total 42,000 words (template range 36,000-50,000, ±20% per chapter), about 130-150 A4 pages with tables and figures. No parts. Nothing dropped: every source topic is kept; duplicated MCQs (F-040, F-064) are removed.
+Total 22,400 words (template range 22,000-30,000, ±20% per chapter), about 80-100 A4 pages with tables and figures. This is a book for two-hour practical sections, not a lecture text (DEC-004). Weeks that teach two topics together (Alzheimer's + Psychosis, Parkinson's + Depression, General + Local Anaesthesia) have shorter chapters. No parts. Nothing dropped: every source topic is kept; duplicated MCQs (F-040, F-064) are removed.
 
 ## 3. Chapter pattern
 

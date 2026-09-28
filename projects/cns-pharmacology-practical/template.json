@@ -197,8 +197,8 @@
  "budgets": {
   "tolerance": 0.2,
   "total": {
-   "min": 36000,
-   "max": 50000
+   "min": 22000,
+   "max": 30000
   },
   "front_matter": 600
  },

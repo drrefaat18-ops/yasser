@@ -85,10 +85,10 @@
   "terminology": "English only; INN drug names; no Arabic text in the book."
  },
  "size": {
-  "target_words_total": 42000,
+  "target_words_total": 22500,
   "chapter_count_target": 9,
   "restructuring": "merge_split_allowed",
-  "restructuring_note": "Chapter order is fixed by the Pharmacology 2 section schedule: 1. Alzheimer's disease; 2. Psychosis; 3. Parkinson's disease; 4. Depression; 5. Epilepsy; 6. Skeletal muscle relaxants; 7. Anxiolytics, sedatives and hypnotics; 8. General anaesthetics; 9. Local anaesthetics. Sections inside a chapter may be reordered. Target about 120-160 A4 pages."
+  "restructuring_note": "Chapter order is fixed by the Pharmacology 2 section schedule: 1. Alzheimer's disease; 2. Psychosis; 3. Parkinson's disease; 4. Depression; 5. Epilepsy; 6. Skeletal muscle relaxants; 7. Anxiolytics, sedatives and hypnotics; 8. General anaesthetics; 9. Local anaesthetics. Sections inside a chapter may be reordered. Chapters serve two-hour practical sections; some sections teach two chapters together (Alzheimer's + Psychosis, Parkinson's + Depression, General + Local Anaesthesia), so those chapters are shorter; target about 80-100 A4 pages (user, 2026-09-28: \"this is the practical part, a two-hour section, not the lecture\")."
  },
  "assessment": {
   "mcq": {
@@ -206,7 +206,7 @@
   },
   "G": {
    "provenance": "user",
-   "note": "About 120-160 A4 pages; section order inside a chapter may change; chapter order fixed."
+   "note": "Practical-section book, not a lecture text: about 22,500 words (80-100 A4 pages). Paired-section chapters about 1,800-2,600 words; single-section chapters about 2,600-3,200. Section order inside a chapter may change; chapter order fixed."
   },
   "H": {
    "provenance": "user",

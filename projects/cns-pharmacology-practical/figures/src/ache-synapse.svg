@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="420" fill="#FFFFFF"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1A1F36"/></marker>
+  </defs>
+  <!-- Panel A: cholinergic synapse -->
+  <text x="225" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">A. Cholinergic synapse</text>
+  <path d="M95,55 h260 v95 q-130,45 -260,0 z" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="225" y="85" font-size="15" text-anchor="middle" fill="#1A1F36">Presynaptic cholinergic neuron</text>
+  <circle cx="175" cy="125" r="12" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/><text x="175" y="130" font-size="11" text-anchor="middle">ACh</text>
+  <circle cx="225" cy="130" r="12" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/><text x="225" y="135" font-size="11" text-anchor="middle">ACh</text>
+  <circle cx="275" cy="125" r="12" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/><text x="275" y="130" font-size="11" text-anchor="middle">ACh</text>
+  <line x1="225" y1="172" x2="225" y2="228" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="240" y="205" font-size="13" fill="#1A1F36">release</text>
+  <rect x="330" y="195" width="100" height="40" rx="8" fill="#FDF4DC" stroke="#8A6100" stroke-width="2"/>
+  <text x="380" y="220" font-size="15" text-anchor="middle" font-weight="bold" fill="#8A6100">AChE</text>
+  <text x="380" y="258" font-size="12" text-anchor="middle" fill="#1A1F36">ACh → choline + acetate</text>
+  <rect x="325" y="145" width="120" height="30" rx="6" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="385" y="165" font-size="12" text-anchor="middle" fill="#2E7D32" font-weight="bold">Donepezil etc.</text>
+  <line x1="385" y1="175" x2="385" y2="193" stroke="#B3261E" stroke-width="3"/>
+  <line x1="372" y1="186" x2="398" y2="186" stroke="#B3261E" stroke-width="3"/>
+  <path d="M95,370 h260 v-80 q-130,-40 -260,0 z" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+  <rect x="160" y="282" width="30" height="18" fill="#1B2A8C"/><rect x="260" y="282" width="30" height="18" fill="#1B2A8C"/>
+  <text x="225" y="330" font-size="14" text-anchor="middle" fill="#1A1F36">Postsynaptic neuron</text>
+  <text x="225" y="350" font-size="12" text-anchor="middle" fill="#1A1F36">nicotinic / muscarinic receptors</text>
+  <text x="225" y="400" font-size="13" text-anchor="middle" fill="#2E7D32">Inhibiting AChE keeps ACh in the synapse longer</text>
+  <line x1="450" y1="45" x2="450" y2="405" stroke="#C5CCE8" stroke-width="2" stroke-dasharray="6,6"/>
+  <!-- Panel B: glutamatergic synapse -->
+  <text x="675" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#1B2A8C">B. Glutamatergic synapse</text>
+  <path d="M545,55 h260 v95 q-130,45 -260,0 z" fill="#EAF0FB" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="675" y="85" font-size="15" text-anchor="middle" fill="#1A1F36">Presynaptic glutamate neuron</text>
+  <text x="675" y="130" font-size="13" text-anchor="middle" fill="#1A1F36">excess, constant glutamate</text>
+  <line x1="675" y1="172" x2="675" y2="258" stroke="#1A1F36" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M545,370 h260 v-80 q-130,-40 -260,0 z" fill="#F1F3F5" stroke="#5A6072" stroke-width="2"/>
+  <rect x="645" y="262" width="60" height="40" rx="6" fill="#FFFFFF" stroke="#1B2A8C" stroke-width="2"/>
+  <text x="675" y="287" font-size="13" text-anchor="middle" font-weight="bold" fill="#1B2A8C">NMDA</text>
+  <text x="675" y="330" font-size="13" text-anchor="middle" fill="#1A1F36">Ca²⁺ leak → excitotoxicity</text>
+  <rect x="740" y="200" width="110" height="30" rx="6" fill="#E8F3E9" stroke="#2E7D32" stroke-width="2"/>
+  <text x="795" y="220" font-size="13" text-anchor="middle" fill="#2E7D32" font-weight="bold">Memantine</text>
+  <line x1="760" y1="232" x2="712" y2="270" stroke="#B3261E" stroke-width="3"/>
+  <text x="675" y="400" font-size="13" text-anchor="middle" fill="#2E7D32">Memantine blocks the open channel at low affinity</text>
+</svg>

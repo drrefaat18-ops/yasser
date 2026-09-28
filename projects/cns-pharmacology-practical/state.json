@@ -1,5 +1,12 @@
 {
- "aborts": [],
+ "aborts": [
+  {
+   "nonce": "798804e4978abd8f",
+   "reason": "budgets resized: user asked for a two-hour-section book, not a lecture text",
+   "stage": "rework",
+   "time": "2026-09-28T13:40:35Z"
+  }
+ ],
  "active_run": null,
  "approvals": {
   "design": {
@@ -15,15 +22,15 @@
    "kind": "design"
   },
   "intake": {
-   "approved_at": "2026-09-28T12:42:39Z",
+   "approved_at": "2026-09-28T13:42:06Z",
    "approved_by": "user",
-   "dec_id": "DEC-001",
-   "dec_row_sha256": "bb06a101734654b741ef9e9e604d42542d68417656d950fa18105fa5556d80e2",
+   "dec_id": "DEC-004",
+   "dec_row_sha256": "60155e6f51cc75daad514ad2c921ae5914dfa2827be73f8ae2f2f47293a21a85",
    "files": {
     "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
-    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
     "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
-    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+    "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
     "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
    },
    "kind": "intake"
@@ -35,32 +42,32 @@
    "args": {},
    "chapter_count": 9,
    "inputs": {
-    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
     "evaluation/codex-review.md": "152a9f99d1330af2fe875edd8ee46426bdf3d35d624558fe456e327837be7c80",
     "evaluation/findings.json": "22502c883bbf955ae420f83901ff0db708fdd3b72c2b98a8578a9af457ca42d7",
     "evaluation/fixes.md": "aacd34aa3649c3f65c15c3a4e57ba943e67298e9e84a2c3df44246708993c38d",
     "evaluation/report.md": "e1ffd8dc1884f65e96f5c9d02eae9f1e64e3749fbf1ba144a962d5ceb64924ad",
     "evaluation/scorecard.json": "6b33f7349e257c47b88719aee9cd855598b954e874baf513f23deb2c61ad4352",
-    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+    "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
     "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
    },
    "outputs": {
-    "design/chapter-plan.json": "00f5cd933ab8c4fe6f78540b691d182718db88f4299525eb4c8654462c83fe4d",
-    "design/design.md": "7d2e27a4a8d338a820b5c556cd649e306cbd40ff0c11339458666d1cb19a64a9",
+    "design/chapter-plan.json": "dd35bbebec7eff7d6c791829ad3521e5ef0222b99915dd7ea535c09dd2f96ab7",
+    "design/design.md": "3e347f264094eaa1dd53eecc990ced2819ab532aa2a462ee5e39ec4a72bfe7ff",
     "design/errata-seed.md": "bc5ab3831a5f7f7bd61130aaa9184ffb84c6cda68090c1aac7116d26e75f949b"
    },
    "stage": "design",
    "status": "ok",
-   "time": "2026-09-28T13:30:03Z",
+   "time": "2026-09-28T13:43:07Z",
    "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
-   "total_budget": 42000
+   "total_budget": 22400
   },
   "evaluate": {
    "args": {},
    "author_model": "claude",
    "inputs": {
     "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
-    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
     "ingest/conversion-report.json": "05a6336ed9b46b61ca09531e5bd1a64ce1569619e2350d37b075ddd15f53ac1b",
     "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
     "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd"
@@ -84,7 +91,7 @@
    "rulings": {},
    "stage": "evaluate",
    "status": "ok",
-   "time": "2026-09-28T13:25:16Z",
+   "time": "2026-09-28T13:42:47Z",
    "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
   },
   "ingest": {
@@ -92,7 +99,7 @@
    "converter": "markitdown",
    "inputs": {
     "original/cns-sections-combined.pdf": "ad3493e94351f49c837dcb5a382c9ad63963a866046427d3c00d5f22aacf2ac9",
-    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a"
+    "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c"
    },
    "outputs": {
     "ingest/conversion-report.json": "05a6336ed9b46b61ca09531e5bd1a64ce1569619e2350d37b075ddd15f53ac1b",
@@ -107,7 +114,7 @@
    ],
    "stage": "ingest",
    "status": "ok",
-   "time": "2026-09-28T13:19:07Z",
+   "time": "2026-09-28T13:42:42Z",
    "tool_sha": "2889f760f71017d4e2d0a30c76e975ec4f606bfa"
   },
   "intake": {
@@ -119,9 +126,9 @@
    },
    "outputs": {
     "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
-    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "brief.json": "0b6ceaae51f4a0e6530f164e7f117fd376067f6693106667a91b1185924369d8",
     "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
-    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+    "template.json": "37b4c73b9f94ad62a5db2a2f46f218fec2857bc615acc1fa9fc9c69efe67443c",
     "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
    },
    "questionnaire_ids": [
@@ -141,7 +148,7 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-09-28T12:40:10Z",
+   "time": "2026-09-28T13:41:33Z",
    "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3"
   },
   "new": {
@@ -163,6 +170,47 @@
    "status": "ok",
    "time": "2026-09-28T12:23:58Z",
    "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  },
+  "rework": {
+   "args": {},
+   "error": "units in progress; stage not completed",
+   "inputs": {},
+   "invalidated_by": "design@2026-09-28T13:42:51Z",
+   "outputs": {},
+   "stage": "rework",
+   "status": "failed",
+   "time": "2026-09-28T13:33:50Z",
+   "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
+   "units": {
+    "ch01": {
+     "args": {
+      "unit": "ch01"
+     },
+     "checker_report_sha256": "f68e4cad4bf2130c1e13b9d3417748e7ddbfcc4cd10acd16a2eeee5680a3da51",
+     "inputs": {
+      "agents/pharmacology-reviewer.json": "542fbd567c1e3118da40c1dc26e0511b68539877a4dcec1e8fce6658f4c59dcc",
+      "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+      "design/chapter-plan.json": "00f5cd933ab8c4fe6f78540b691d182718db88f4299525eb4c8654462c83fe4d",
+      "design/design.md": "7d2e27a4a8d338a820b5c556cd649e306cbd40ff0c11339458666d1cb19a64a9",
+      "design/errata-seed.md": "bc5ab3831a5f7f7bd61130aaa9184ffb84c6cda68090c1aac7116d26e75f949b",
+      "ingest/source.md": "26d0b1a4a665b0d6bc1baa92929b9a1ca88c0bb64a3f98b4a957ebcd1fae9111",
+      "rubric.json": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
+      "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+      "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+     },
+     "outputs": {
+      "chapters/ch01-alzheimers-disease.md": "018adaddfc779aa6d7162608ac6d683edd1a4f58fda039291fca0582211bcf06"
+     },
+     "status": "ok",
+     "time": "2026-09-28T13:33:50Z",
+     "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 4,
+      "total": 6
+     }
+    }
+   }
   }
  },
  "schema_version": 1
