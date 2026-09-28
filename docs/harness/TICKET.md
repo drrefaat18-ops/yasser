@@ -107,7 +107,7 @@ The user wants to run **the same pipeline on other textbooks in any science, in 
     - `peer-review` and `master-instructional-design` (pre-installed) for evaluation and design.
     - `dataviz` for chart style, only if the host session provides it. It is a built-in skill, not a file on disk, so nothing may depend on it.
     
-    Never use `scientific-schematics` or any paid AI image generation for book figures.
+    Never use `scientific-schematics` or any paid AI image generation for book figures. Images the user brings, AI-made ones included, are author-supplied figures and carry no AI label (DEC-044).
 
 13. **One Codex review per artifact, then Claude fixes it (DEC-030; this supersedes DEC-025).**
     - Claude dispatches exactly **one** Codex review per artifact.
@@ -493,6 +493,29 @@ Also:
 
 ---
 
+## STEP 9b: Claude: absorb the Dr. Mo book-designer skill (DEC-043, DEC-044, DEC-045)
+
+**Owner:** Claude.
+**Starts when:** STEP 9 is done. Runs before STEP 10 (DEC-045).
+
+**Task:** Take what the skill in `dr mo skill/SKILL.md` does better, as shared code driven by project config and packs; leave its book-specific content out of `harness/` (Standing Rule 8). The plan's STEP 9b tasks:
+- **9b.1** One block grammar that both the DOCX and the HTML writer consume, plus inline subscript and superscript (`H~2~O`, `Ca^2+^`).
+- **9b.2** The HTML PDF engine (`theme.build.pdf.engine: "html"`, headless Edge): designed cover, title page, contents with page numbers, running heads, chapter pages, bookmarks and PDF metadata. `word_com` stays the default.
+- **9b.3** PDF quality gates (`check_pdf.py`) for both engines, and checkpoint PNGs.
+- **9b.4** Annotated figures (`diagram.annotated`): numbered callouts with leader lines on a base image, and a key under the caption.
+- **9b.5** Checker IDs: raw LaTeX left in text, prose runs longer than the configured limit, and (chemistry pack) formulas written without subscripts.
+- **9b.6** An `editorial-book` fixture built with the HTML engine, and evidence PNGs.
+
+**Scope lock: do NOT:** render RTL in the HTML engine (STEP 10); generate images with any AI service (DEC-044); copy the skill's palette, fonts, reference book or regulations into `harness/`.
+
+**Exit criteria:**
+- Tests pass; the medical build still matches its golden (the DOCX is written through the shared grammar).
+- Every new check ID has a failing fixture.
+- The `editorial-book` fixture builds with the HTML engine, passes `check_pdf.py`, and its evidence PNGs are committed under `docs/harness/reviews/step9b-evidence/`.
+- Codex review done, and it inspected every evidence PNG.
+
+---
+
 ## STEP 10: Claude: implement the Arabic locale per its STEP 2 contract
 
 **Owner:** Claude.
@@ -593,6 +616,7 @@ The medical book reproduces its golden report from `projects/ai-in-medicine/`.
 | 5 | 0 | Codex review 3 | 2026-09-25 | STEP 13 compared against HEAD; approval question pointed at v2; `verify` had no stage boundary | Fixed in v3.1 (DEC-022). Codex review 4 marked 3 of 5 resolved |
 | 6 | 0 | Codex review 4 | 2026-09-25 | A path-only check could not isolate the ledger hunks; the approval question still used a version label | Fixed in v3.2 (DEC-023): the ledger moved to its own file, and approval is now bound to a SHA. Codex review 5 marked 6 of 7 resolved |
 | 7 | 13 | Codex review 5 | 2026-09-25 | An endpoint `git diff` misses a forbidden edit that was later reverted | Fixed in v3.3 (DEC-024). Codex review 6 found the check still passed when `git log` failed; Claude fixed that in v3.4, as the cap allows (DEC-025) |
+| 8 | 9b | Claude | 2026-09-28 | PDF engine for the Dr. Mo design: keep Word, or add HTML/Edge for the PDF | **Resolved**: DEC-043, option (b) |
 
 ## Step Ledger
 

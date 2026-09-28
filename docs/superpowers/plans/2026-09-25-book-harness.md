@@ -2187,6 +2187,66 @@ The STEP 9 Codex brief lists all six PNG paths and requires a per-file verdict f
 
 ---
 
+## STEP 9b — Absorb the Dr. Mo book-designer skill (DEC-043, DEC-044, DEC-045)
+
+Source compared: `dr mo skill/SKILL.md` and its 208-page PDF. Taken: layout quality, annotated apparatus figures, chemical typesetting, PDF-level gates, checkpoint pages, the prose-rhythm rule. Not taken: its absolute paths, palette, fonts, reference book, regulations and chapter vocabulary (Rule 8); they belong in a project's `theme.json` / `template.json`.
+
+### Task 9b.1: One block grammar, inline sub/superscript
+
+**Files:** Create `harness/tools/blocks.py`; Modify `harness/tools/build_book.py` (the DOCX renderer consumes blocks), `harness/state.py` (`build` tool_paths += `harness/tools/blocks.py`); Test `tests/test_blocks.py`.
+
+**Interfaces:** `blocks.parse(text, cfg, kind) -> list[dict]` (kind `chapter` or `glossary`). Block types: `section` (id, role, label, boxed, unlisted), `h3`, `para`, `callout` (key, text), `grid` (key, label, items), `table` (rows), `image` (link, alt, caption), `question` (num, stem, los, options), `bullet`, `numbered` (num, body, lo), `glossary`, `answer` (head, text). `blocks.inline(text) -> list[(text, style)]`; `~x~` is subscript and `^x^` superscript.
+
+- [ ] Tests: every medical chapter parses and each block type occurs; `H~2~O` splits into H, subscript 2, O; the DOCX run for `~2~` has `w:vertAlign=subscript`.
+- [ ] Gate: `python -m unittest tests.test_blocks tests.test_build -v` → 0 (the medical golden still matches).
+- [ ] Commit `refactor(harness): one block grammar for all writers, inline sub/superscript (STEP 9b task 1)`.
+
+### Task 9b.2: HTML PDF engine
+
+**Files:** Create `harness/tools/build_html.py`, `harness/presets/ltr-editorial.json`; Modify `harness/schemas/theme.v1.json` (optional `build.pdf.engine` in {`word_com`, `html`}, default `word_com`; optional `cover.design` {eyebrow, institution, logos}; optional `layout.drop_cap`; optional `font_files` {family: project-relative font file}), `harness/tools/build_book.py` (`word_finish(..., export_pdf)`), `harness/stages/build.py` (engine switch; report `pdf_engine`), `harness/registry.py` (`build_html.py` gate `build`); Test `tests/test_build_html.py`.
+
+**Behaviour:** blocks → one HTML file for the front (cover, title page, contents) and one for the body (chapters, glossary); CSS generated only from theme and preset tokens. Headless Edge `--print-to-pdf --no-pdf-header-footer --generate-pdf-document-outline`. The body is rendered first; its outline gives each heading's page, which fills the contents page numbers; front and body are merged with pypdf, which also writes the bookmarks and the metadata (title, author, subject, language). Running heads use `@page` margin boxes and one named page per chapter. RTL raises (STEP 10).
+
+- [ ] Tests (skip without Edge): the fixture builds; bookmarks equal the DOCX headings in order; contents numbers equal outline pages; title/author metadata match the brief; `~2~` renders as `<sub>`.
+- [ ] Commit `feat(harness): HTML/Edge PDF engine (STEP 9b task 2)`.
+
+### Task 9b.3: PDF gates and checkpoints
+
+**Files:** Create `harness/tools/check_pdf.py`; Modify `harness/stages/build.py` (runs after the PDF for both engines; a blocking ID fails the build; report `pdf_checks`, `checkpoints`), `harness/preflight.py` (optional group `evidence`: pymupdf), `harness/state.py`, `harness/registry.py`; Test `tests/test_check_pdf.py`.
+
+**IDs:** `PDF-SIZE` (every page is the preset page size within 1 pt), `PDF-BLANK` (a page with no text and no image), `PDF-META` (title and author equal the brief), `PDF-TYPE3` (a Type 3 font), `PDF-EMBED` (a font without an embedded font file), `PDF-FONTS` (a family outside the theme fonts, plus the engine's own fallbacks), `PDF-OUTLINE` (bookmarks are `headings` but a chapter title is missing from the outline). Checkpoints: `build/checkpoints/{cover,first-chapter,first-figure,last}.png` at 100 dpi when PyMuPDF is present; otherwise the report says `skipped`.
+
+- [ ] Tests: one defect PDF per ID fails with that ID; the medical deliverable PDF passes every ID.
+- [ ] Commit `feat(harness): PDF quality gates and checkpoint pages (STEP 9b task 3)`.
+
+### Task 9b.4: Annotated figures
+
+**Files:** Create `harness/figures/annotated.py`; Modify `harness/schemas/figures.v1.json` (kind `diagram.annotated`), `harness/figures/render.py`, `harness/figures/check_figures.py` (`FIG-ANNOT`), `harness/tools/build_book.py` and `build_html.py` (the key under the caption); Test in `tests/test_figures.py`.
+
+**Spec** (`<figures>/src/<id>.json`): `{"kind": "diagram.annotated", "base": "<project-relative raster under an allowed asset root>", "callouts": [{"n": 1, "at": [x, y], "badge": [x, y], "label": "..."}]}`, coordinates in base-image pixels. Render: an SVG with the base embedded, leader lines, dots and numbered badges in the theme's colours, rasterised by the existing browser path. `FIG-ANNOT`: base missing or outside the asset roots, numbers not 1..n, a point outside the image, a blank label.
+
+- [ ] Tests: renders twice byte-identical; each defect gives `FIG-ANNOT`; the key line lists every label in number order.
+- [ ] Commit `feat(harness): annotated figures (STEP 9b task 4)`.
+
+### Task 9b.5: Text checks
+
+**Files:** Modify `harness/tools/check_book.py` (`TYPO-LATEX`: `$…$`, `\frac`, `\text{`, `\xrightarrow` or `\ce{` left in prose; `RHYTHM-PROSE`: a run of prose longer than `template.readability.max_prose_run_words`, off when absent), `harness/schemas/template.v1.json` (optional `readability.max_prose_run_words`), `harness/figures/packs/chemistry/__init__.py` (`check_text` → `CHEM-FORMULA-PLAIN`: a formula such as `CO2` or `H2SO4` whose digits are not in `~…~`; runs when `chemistry` is in `brief.figures.packs`), `harness/state.py` (`rework` tool_paths += the chemistry pack); Tests: mutations in `tests/test_mutations.py`.
+
+- [ ] Tests: one mutation per ID; the medical chapters and the positive-config fixtures raise none of them.
+- [ ] Commit `feat(harness): LaTeX, prose-rhythm and formula checks (STEP 9b task 5)`.
+
+### Task 9b.6: Editorial fixture and evidence
+
+**Files:** Create `tests/fixtures/editorial-book/` (HTML engine, designed cover, one annotated figure, one chemistry structure, formulas with subscripts, one table, MCQs), `tests/tools/make_step9b_evidence.py`, `docs/harness/reviews/step9b-evidence/*.png`; Modify `docs/harness/INTAKE_QUESTIONNAIRE.md` (topic L: palette, logos and seal, PDF engine).
+
+- [ ] `python tests/tools/make_step9b_evidence.py` → 0: builds the fixture in a temp repo, runs `check_pdf.py` (exit 0), copies the checkpoint PNGs plus a table page and the annotated-figure page.
+- [ ] Inspect every PNG; fix defects; repeat.
+- [ ] Full suite → 0. Commit `docs(harness): STEP 9b fixture and evidence`.
+
+**STEP 9b exit:** as in the ticket. One Codex review (read-only) over the whole step, then the Fix Protocol into `reviews/step9b-fixes.md`; LEDGER row 9b.
+
+---
+
 ## STEP 10 — Arabic locale
 
 ### Task 10.1: `ar.json`, tokenizer, sentences, digits, calibration
