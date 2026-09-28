@@ -19,6 +19,30 @@
  },
  "project_id": "cns-pharmacology-practical",
  "receipts": {
+  "design": {
+   "args": {},
+   "chapter_count": 9,
+   "inputs": {
+    "brief.json": "a5c7f5aa43bea20ef50f4a78f6b189acbc4f39c3ea842994d0c00ac168dc6d89",
+    "evaluation/codex-review.md": "152a9f99d1330af2fe875edd8ee46426bdf3d35d624558fe456e327837be7c80",
+    "evaluation/findings.json": "22502c883bbf955ae420f83901ff0db708fdd3b72c2b98a8578a9af457ca42d7",
+    "evaluation/fixes.md": "aacd34aa3649c3f65c15c3a4e57ba943e67298e9e84a2c3df44246708993c38d",
+    "evaluation/report.md": "e1ffd8dc1884f65e96f5c9d02eae9f1e64e3749fbf1ba144a962d5ceb64924ad",
+    "evaluation/scorecard.json": "6b33f7349e257c47b88719aee9cd855598b954e874baf513f23deb2c61ad4352",
+    "template.json": "5fba340c687bee0473f1d3a3b31f34b854d92c76b7058ac0123269dc0c268e9a",
+    "theme.json": "6a775377a9babdf25de84d119d0c7244da5034e5864b0df97b026b713bc17764"
+   },
+   "outputs": {
+    "design/chapter-plan.json": "487648efef62a49275d5fb4b7c2c74bd2f570e1197bf26eb8b99da3efd53b390",
+    "design/design.md": "7396518f0b179851b0abf7c79918e2f01e07ecd28d7d268c3ed704f7f7d35207",
+    "design/errata-seed.md": "bc5ab3831a5f7f7bd61130aaa9184ffb84c6cda68090c1aac7116d26e75f949b"
+   },
+   "stage": "design",
+   "status": "ok",
+   "time": "2026-09-28T13:26:53Z",
+   "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
+   "total_budget": 42000
+  },
   "evaluate": {
    "args": {},
    "author_model": "claude",

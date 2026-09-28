@@ -1,0 +1,80 @@
+{
+ "schema_version": 1,
+ "project_id": "cns-pharmacology-practical",
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01-alzheimers-disease.md",
+   "title": "Alzheimer's Disease",
+   "word_budget": 3800,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch02",
+   "file": "ch02-psychosis.md",
+   "title": "Psychosis and Antipsychotic Drugs",
+   "word_budget": 5000,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch03",
+   "file": "ch03-parkinsons-disease.md",
+   "title": "Parkinson's Disease",
+   "word_budget": 4600,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch04",
+   "file": "ch04-depression.md",
+   "title": "Depression and Antidepressant Drugs",
+   "word_budget": 5200,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch05",
+   "file": "ch05-epilepsy.md",
+   "title": "Epilepsy and Antiseizure Drugs",
+   "word_budget": 5000,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch06",
+   "file": "ch06-skeletal-muscle-relaxants.md",
+   "title": "Skeletal Muscle Relaxants",
+   "word_budget": 4700,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch07",
+   "file": "ch07-anxiolytics-hypnotics.md",
+   "title": "Anxiolytics, Sedatives and Hypnotics",
+   "word_budget": 5400,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch08",
+   "file": "ch08-general-anaesthetics.md",
+   "title": "General Anaesthetics",
+   "word_budget": 4600,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch09",
+   "file": "ch09-local-anaesthetics.md",
+   "title": "Local Anaesthetics",
+   "word_budget": 3700,
+   "part_id": null,
+   "source_refs": []
+  }
+ ],
+ "parts": [],
+ "dropped": []
+}
