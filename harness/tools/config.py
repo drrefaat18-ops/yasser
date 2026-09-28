@@ -57,6 +57,14 @@ def path_problems(project, brief, template, theme, plan):
     cover = (theme.get("cover") or {}).get("asset")
     if cover is not None and _outside(project, cover):
         probs.append(f"theme.cover.asset: {cover!r} is not a path inside the project")
+    # logos and font files are build inputs: under an asset root, so the build receipt hashes them (contracts.py)
+    roots = [r.rstrip("/") + "/" for r in p.get("allowed_asset_roots", [])]
+    design = (theme.get("cover") or {}).get("design") or {}
+    extra = [("theme.cover.design.logos", r) for r in design.get("logos", [])]
+    extra += [(f"theme.font_files.{fam}", r) for fam, files in (theme.get("font_files") or {}).items() for r in files.values()]
+    for where, r in extra:
+        if _outside(project, r) or not any(pathlib.PurePosixPath(r).as_posix().startswith(root) for root in roots):
+            probs.append(f"{where}: {r!r} must be a file under one of template.paths.allowed_asset_roots")
     base = (theme.get("output") or {}).get("basename", "")
     if not re.fullmatch(r"[^/\\:*?\"<>|]+", base or "") or base in (".", ".."):
         probs.append(f"theme.output.basename: {base!r} must be a plain file name")

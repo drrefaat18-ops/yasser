@@ -929,19 +929,20 @@ def _bgr(hexcol):
     return int(hexcol[4:6] + hexcol[2:4] + hexcol[0:2], 16)
 
 
-def word_finish(cfg, docx):
-    """Word COM backend (INV-38): hidden instance, update the contents, style it, embed fonts, save, export PDF.
-    -> (pdf path, page count)."""
+def word_finish(cfg, docx, export_pdf=True):
+    """Word COM backend (INV-38): hidden instance, update the contents, style it, embed fonts, save, export PDF
+    (not when the theme's PDF engine is `html`: `export_pdf` False). -> (pdf path or None, Word's page count)."""
     import win32com.client as win32
     th = cfg["theme"]
     bk = Book(cfg)
     if th["build"]["backend"] != "word_com":
         raise BuildError(f"build backend {th['build']['backend']!r} is not supported")
     pdf = docx.with_suffix(".pdf")
-    try:
-        open(pdf, "ab").close()
-    except PermissionError:
-        raise BuildError(f"{pdf.name} is open in another program; close it and re-run build")
+    if export_pdf:
+        try:
+            open(pdf, "ab").close()
+        except PermissionError:
+            raise BuildError(f"{pdf.name} is open in another program; close it and re-run build")
     toc = [(bk.sans, 10.5, True, 8, bk.primary, 0), (bk.serif, 10, False, 0, bk.ink, 28)]   # preset TOC levels 1, 2
     word = win32.DispatchEx("Word.Application")
     word.Visible = False
@@ -964,14 +965,15 @@ def word_finish(cfg, docx):
         doc.EmbedTrueTypeFonts = bool(th["build"]["pdf"]["embed_fonts"])
         doc.SaveSubsetFonts = False
         doc.Save()
-        bookmarks = 1 if th["build"]["pdf"]["bookmarks"] == "headings" else 0
-        # 17 = wdExportFormatPDF, 0 = print quality; CreateBookmarks: 1 = headings
-        doc.ExportAsFixedFormat(str(pdf), 17, False, 0, 0, 1, 1, 0, True, True, bookmarks, True, True, False)
+        if export_pdf:
+            bookmarks = 1 if th["build"]["pdf"]["bookmarks"] == "headings" else 0
+            # 17 = wdExportFormatPDF, 0 = print quality; CreateBookmarks: 1 = headings
+            doc.ExportAsFixedFormat(str(pdf), 17, False, 0, 0, 1, 1, 0, True, True, bookmarks, True, True, False)
         pages = doc.ComputeStatistics(2)
         doc.Close(False)
     finally:
         word.Quit()
-    return pdf, pages
+    return (pdf if export_pdf else None), pages
 
 
 def main(project, argv):

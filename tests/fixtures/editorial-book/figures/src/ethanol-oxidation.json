@@ -1,0 +1,6 @@
+{
+ "kind": "chem.reaction",
+ "name": "ethanol oxidation",
+ "smarts": "CCO>>CC=O",
+ "conditions": "acidified potassium dichromate, warm"
+}

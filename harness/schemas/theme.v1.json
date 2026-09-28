@@ -173,6 +173,9 @@
     "text_width": {
      "type": "number",
      "minimum": 0
+    },
+    "drop_cap": {
+     "type": "boolean"
     }
    },
    "additionalProperties": false
@@ -314,6 +317,39 @@
       "string",
       "null"
      ]
+    },
+    "design": {
+     "type": [
+      "object",
+      "null"
+     ],
+     "required": [
+      "eyebrow",
+      "institution",
+      "logos"
+     ],
+     "properties": {
+      "eyebrow": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "institution": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "logos": {
+       "type": "array",
+       "items": {
+        "type": "string",
+        "pattern": "\\S"
+       }
+      }
+     },
+     "additionalProperties": false
     }
    },
    "additionalProperties": false
@@ -447,12 +483,44 @@
       },
       "embed_fonts": {
        "type": "boolean"
+      },
+      "engine": {
+       "enum": [
+        "word_com",
+        "html"
+       ]
       }
      },
      "additionalProperties": false
     }
    },
    "additionalProperties": false
+  },
+  "font_files": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "object",
+    
+    "properties": {
+     "regular": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "bold": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "italic": {
+      "type": "string",
+      "pattern": "\\S"
+     },
+     "bold_italic": {
+      "type": "string",
+      "pattern": "\\S"
+     }
+    },
+    "additionalProperties": false
+   }
   }
  },
  "additionalProperties": false

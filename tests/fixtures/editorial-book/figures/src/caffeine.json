@@ -1,0 +1,6 @@
+{
+ "kind": "chem.structure",
+ "name": "caffeine",
+ "smiles": "Cn1cnc2c1c(=O)n(C)c(=O)n2C",
+ "pubchem_cid": 2519
+}

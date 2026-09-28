@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <rect x="0" y="0" width="600" height="300" fill="#ffffff"/>
+  <line x1="40" y1="240" x2="560" y2="240" stroke="#1B1B1B" stroke-width="3"/>
+  <rect x="230" y="160" width="140" height="80" fill="#E8EEF4" stroke="#2B5D8A" stroke-width="3"/>
+  <text x="300" y="207" font-family="Arial" font-size="20" text-anchor="middle" fill="#1B1B1B">Box</text>
+  <line x1="370" y1="200" x2="500" y2="200" stroke="#2B5D8A" stroke-width="5"/>
+  <polygon points="500,188 524,200 500,212" fill="#2B5D8A"/>
+  <text x="440" y="185" font-family="Arial" font-size="18" text-anchor="middle" fill="#2B5D8A">Push</text>
+  <line x1="230" y1="228" x2="110" y2="228" stroke="#B5462F" stroke-width="5"/>
+  <polygon points="110,216 86,228 110,240" fill="#B5462F"/>
+  <text x="165" y="265" font-family="Arial" font-size="18" text-anchor="middle" fill="#B5462F">Friction</text>
+  <text x="300" y="60" font-family="Arial" font-size="22" text-anchor="middle" fill="#1B1B1B">Forces on a sliding box</text>
+</svg>

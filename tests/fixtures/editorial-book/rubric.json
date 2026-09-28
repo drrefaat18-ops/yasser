@@ -1,0 +1,162 @@
+{
+ "schema_version": 1,
+ "project_id": "editorial-book",
+ "core_version": 1,
+ "pillars": [
+  {
+   "id": "G1",
+   "kind": "fixed",
+   "name": "G1",
+   "description": "",
+   "weight": 20,
+   "anchors": {
+    "9-10": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "7-8": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "4-6": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "1-3": {
+     "text": "t",
+     "evidence_required": "e"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "subject-reviewer"
+   ],
+   "applicable": true
+  },
+  {
+   "id": "G2",
+   "kind": "fixed",
+   "name": "G2",
+   "description": "",
+   "weight": 30,
+   "anchors": {
+    "9-10": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "7-8": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "4-6": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "1-3": {
+     "text": "t",
+     "evidence_required": "e"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "instructional-designer"
+   ],
+   "applicable": true
+  },
+  {
+   "id": "G3",
+   "kind": "fixed",
+   "name": "G3",
+   "description": "",
+   "weight": 10,
+   "anchors": {
+    "9-10": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "7-8": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "4-6": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "1-3": {
+     "text": "t",
+     "evidence_required": "e"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "instructional-designer"
+   ],
+   "applicable": false
+  },
+  {
+   "id": "G4",
+   "kind": "fixed",
+   "name": "G4",
+   "description": "",
+   "weight": 10,
+   "anchors": {
+    "9-10": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "7-8": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "4-6": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "1-3": {
+     "text": "t",
+     "evidence_required": "e"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "research-synthesist"
+   ],
+   "applicable": true
+  },
+  {
+   "id": "D1",
+   "kind": "domain",
+   "name": "D1",
+   "description": "",
+   "weight": 40,
+   "anchors": {
+    "9-10": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "7-8": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "4-6": {
+     "text": "t",
+     "evidence_required": "e"
+    },
+    "1-3": {
+     "text": "t",
+     "evidence_required": "e"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "subject-reviewer"
+   ],
+   "applicable": true
+  }
+ ],
+ "provenance": {
+  "generated_by": "fixture",
+  "from_brief_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "edited_by_user": false
+ }
+}

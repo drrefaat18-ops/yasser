@@ -126,7 +126,8 @@ def files(project, stage_id, unit=None):
                         - set(_glob(project, f"{p['figures']}/out")) - set(_glob(project, f"{p['figures']}/.cache")))
         ins = (_chapter_files(project) + _book_files(project) + ["brief.json", "template.json", "theme.json",
                "design/chapter-plan.json"] + assets)
-        outs = _glob(project, f"{p['figures']}/out") + [f"build/{base}.{ext}" for ext in ("md", "docx", "pdf")]
+        outs = (_glob(project, f"{p['figures']}/out") + [f"build/{base}.{ext}" for ext in ("md", "docx", "pdf")]
+                + _glob(project, "build/checkpoints", "*.png"))   # PDF checkpoint pages (Task 9b.3), when PyMuPDF is present
         return ins, outs + ["build/build-report.json"]
     if stage_id == "audit":
         _, build_outs = files(project, "build")

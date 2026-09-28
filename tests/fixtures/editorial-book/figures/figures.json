@@ -1,0 +1,82 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "rolling-ball",
+   "chapter_id": "ch01",
+   "kind": "raster.existing",
+   "source": "chapters/figures/rolling-ball.png",
+   "caption": "A ball rolling to a stop",
+   "alt": "An orange ball on green grass, slowing down",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "existing"
+  },
+  {
+   "id": "speed-bar",
+   "chapter_id": "ch01",
+   "kind": "chart.bar",
+   "source": "figures/src/speed-bar.py",
+   "caption": "Typical top speeds of four vehicles",
+   "alt": "Bar chart: bicycle 5, car 27, train 83 and plane 250 metres per second",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "speed-line",
+   "chapter_id": "ch02",
+   "kind": "chart.line",
+   "source": "figures/src/speed-line.py",
+   "caption": "Steady and slowing motion on a distance graph",
+   "alt": "Line chart of distance against time: one straight line, one that flattens",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "aspirin",
+   "chapter_id": "ch02",
+   "kind": "chem.structure",
+   "source": "figures/src/aspirin.json",
+   "caption": "Aspirin (acetylsalicylic acid)",
+   "alt": "Skeletal structure of aspirin: a benzene ring with an ester group and a carboxylic acid group",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "caffeine",
+   "chapter_id": "ch02",
+   "kind": "chem.structure",
+   "source": "figures/src/caffeine.json",
+   "caption": "Caffeine",
+   "alt": "Skeletal structure of caffeine: two fused rings with three methyl groups and two carbonyl groups",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ethanol-oxidation",
+   "chapter_id": "ch02",
+   "kind": "chem.reaction",
+   "source": "figures/src/ethanol-oxidation.json",
+   "caption": "Oxidation of ethanol to ethanal",
+   "alt": "Reaction scheme: ethanol, an arrow, then ethanal",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "friction-diagram",
+   "chapter_id": "ch02",
+   "kind": "diagram.svg",
+   "source": "figures/src/friction-diagram.svg",
+   "caption": "Push and friction on a sliding box",
+   "alt": "A box on a floor with a push arrow to the right and a friction arrow to the left",
+   "credit": "Figures-book fixture",
+   "licence": "original",
+   "status": "generated"
+  }
+ ]
+}

@@ -1,4 +1,4 @@
-"""`run build` (core §2.2 build row; plan Task 8.2): figures, assemble, DOCX, PDF, build-report.json.
+"""`run build` (core §2.2 build row; plan Tasks 8.2, 9b.2-9b.3): figures, assemble, DOCX, PDF, PDF gates, build-report.json.
 
 Figures (core §7): with a manifest, the checker's pre-render pass runs, every figure is rendered into
 <paths.figures>/out/ and the full figure check runs before anything is assembled; a blocking check ID fails the build. Without a manifest, only a book whose rework
@@ -8,7 +8,7 @@ fails with FIG-MANIFEST. A failing step raises; the runner then writes a `failed
 import json, os, pathlib
 from harness import figures, preflight, state
 from harness.figures import check_figures, render
-from harness.tools import assemble, build_book, capture_golden, config
+from harness.tools import assemble, build_book, build_html, capture_golden, check_pdf, config
 
 
 class BuildStepFailed(Exception):
@@ -42,18 +42,29 @@ def run(project):
         out.write_text(book, encoding="utf-8", newline="\n")
     _step("assemble", do_assemble)
     docx = _step("docx", lambda: build_book.build(cfg))
-    pdf, pages = _step("pdf (word_com)", lambda: build_book.word_finish(cfg, docx))
+    engine = build_html.engine(cfg)
+    if engine == "html":   # DEC-043: Word writes the DOCX, headless Edge prints the PDF from the same blocks
+        _step("docx (word_com)", lambda: build_book.word_finish(cfg, docx, export_pdf=False))
+        pdf, pages = _step("pdf (html)", lambda: build_html.build_pdf(cfg, docx.with_suffix(".pdf")))
+    else:
+        pdf, pages = _step("pdf (word_com)", lambda: build_book.word_finish(cfg, docx))
+    pdf_report = _step("pdf checks", lambda: check_pdf.check(cfg, pdf))
+    shots = _step("checkpoints", lambda: check_pdf.checkpoints(cfg, pdf, project / "build" / "checkpoints"))
     facts = _step("report", lambda: {"docx": capture_golden.docx_facts(docx), "pdf": capture_golden.pdf_facts(pdf)})
-    report = {"schema_version": 1, "backend": cfg["theme"]["build"]["backend"], "figures": fig_mode,
+    report = {"schema_version": 1, "backend": cfg["theme"]["build"]["backend"], "pdf_engine": engine, "figures": fig_mode,
               "docx": {k: facts["docx"][k] for k in ("parts", "images", "toc_field")},
               "pdf": {"pages": facts["pdf"]["pages"], "bookmarks": len(facts["pdf"]["bookmarks"])}}
+    report.update({"pdf_checks": pdf_report["checks"], "checkpoints": shots})
     if fig_report is not None:
         report.update(fig_report)
     (project / "build" / "build-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
                                                         encoding="utf-8", newline="\n")
     if not report["docx"]["toc_field"]:
         raise BuildStepFailed("report: the DOCX has no TOC field")
-    return {"backend": report["backend"], "figures": fig_mode, "page_count": pages,
+    bad = check_pdf.failures(pdf_report)
+    if bad:
+        raise BuildStepFailed("pdf checks: " + "; ".join(f"{c['id']}: {c['message'][:300]}" for c in bad))
+    return {"backend": report["backend"], "pdf_engine": engine, "figures": fig_mode, "page_count": pages,
             "bookmarks_count": report["pdf"]["bookmarks"]}
 
 

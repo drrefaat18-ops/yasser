@@ -38,7 +38,7 @@ STAGES = [
                                                        "harness/tools/verify_refs.py", "harness/tools/assemble.py", "harness/figures/__init__.py",
                                                        "harness/tools/config.py", "harness/text.py", "harness/locales.py",
                                                        "harness/defaults.json"]},
-    {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/build.py", "harness/tools/assemble.py", "harness/tools/build_book.py", "harness/tools/blocks.py",
+    {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/build.py", "harness/tools/assemble.py", "harness/tools/build_book.py", "harness/tools/blocks.py", "harness/tools/build_html.py", "harness/tools/check_pdf.py",
                                                    "harness/tools/config.py", "harness/tools/capture_golden.py",   # report facts
                                                    "harness/tools/check_book.py", "harness/text.py", "harness/locales.py",  # via capture
                                                    "harness/preflight.py", "harness/presets", "harness/figures",
