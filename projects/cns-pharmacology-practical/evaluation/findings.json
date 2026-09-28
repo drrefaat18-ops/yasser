@@ -1,0 +1,1104 @@
+{
+ "schema_version": 1,
+ "findings": [
+  {
+   "id": "F-001",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 34,
+    "line_end": 45
+   },
+   "claim": "Early-onset Alzheimer's disease is defined as onset below 65 years, not below 40; the 1% figure applies to autosomal-dominant familial disease.",
+   "evidence": "\"early onset (ages below 40), inherited due to defective genes ... accounts to 1% of the cases\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Early-onset (<65 y, ~5% of cases; familial autosomal-dominant APP/PSEN1/PSEN2 <1%); late-onset (>=65 y, sporadic, APOE e4 risk)."
+  },
+  {
+   "id": "F-002",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 129,
+    "line_end": 135
+   },
+   "claim": "Memantine is licensed for moderate-to-severe Alzheimer's disease, alone or added to a cholinesterase inhibitor; it is not only an add-on for rapid progression.",
+   "evidence": "\"NMDA-receptor antagonists are usually used as Add-on drug in case of Sever and rapid progression\"",
+   "source": "NICE NG97 Dementia (2018, updated 2023)",
+   "fix_hint": "State the NICE sequence: AChEI for mild-moderate; memantine for severe, for AChEI intolerance, or added in moderate-severe."
+  },
+  {
+   "id": "F-003",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [
+    "update"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 71,
+    "line_end": 90
+   },
+   "claim": "The chapter omits the anti-amyloid monoclonal antibodies (lecanemab, donanemab) now approved for early Alzheimer's disease, and their ARIA risk.",
+   "evidence": "\"Treatment available are: Cholinesterase inhibitors ... NMDA blockers\"",
+   "source": "FDA approvals of lecanemab (2023) and donanemab (2024)",
+   "fix_hint": "Add a short 'Newer agents' paragraph: mechanism, eligibility (early AD, amyloid-positive), ARIA monitoring by MRI."
+  },
+  {
+   "id": "F-004",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 106,
+    "line_end": 125
+   },
+   "claim": "Cholinesterase-inhibitor safety omits the cardiac contraindications (bradycardia, sick sinus, heart block) and syncope risk, and gives no titration advice.",
+   "evidence": "\"Adverse effects include: ... Bradycardia. Salivation and Urination. Diarrhea\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add: check pulse/ECG before starting; caution with beta-blockers and digoxin; start low and titrate; take donepezil at night, rivastigmine with food; patch reduces GI effects."
+  },
+  {
+   "id": "F-005",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 264,
+    "line_end": 268
+   },
+   "claim": "Positive symptoms are linked to mesolimbic dopamine excess; the mesocortical pathway is hypoactive in schizophrenia.",
+   "evidence": "\"Dopamine increase in mesolimbic and mesocortical track is responsible for these abnormalities\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Positive symptoms: mesolimbic hyperactivity. Negative and cognitive symptoms: mesocortical hypoactivity."
+  },
+  {
+   "id": "F-006",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 275,
+    "line_end": 279
+   },
+   "claim": "Negative symptoms are attributed to serotonin; the accepted model links them to mesocortical dopamine hypofunction (5-HT2A block helps indirectly).",
+   "evidence": "\"Negative symptoms: Serotonin is responsible for these manifestations.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Rewrite: negative symptoms reflect reduced dopamine in the mesocortical pathway; 5-HT2A antagonism by SGAs releases dopamine there."
+  },
+  {
+   "id": "F-007",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 324,
+    "line_end": 335
+   },
+   "claim": "Extrapyramidal effects are misclassified: acute dystonia is reversible; tardive dyskinesia (late, potentially irreversible) and drug-induced parkinsonism are missing.",
+   "evidence": "\"Dystonia abnormal uncontrolled body motions (irreversible)\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Table of EPS by time of onset: acute dystonia (hours-days; IM anticholinergic), parkinsonism (weeks), akathisia (days-weeks; propranolol), tardive dyskinesia (months-years; often irreversible; valbenazine)."
+  },
+  {
+   "id": "F-008",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 336,
+    "line_end": 342
+   },
+   "claim": "Neuroleptic malignant syndrome is described wrongly (convulsion, hypertension) and without management.",
+   "evidence": "\"Hyperthermia ,Convulsion ,Muscle rigidity ,hypertension and sweating\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "NMS: fever, lead-pipe rigidity, altered mental state, autonomic instability, raised CK. Management: stop the antipsychotic, cool, fluids, dantrolene or bromocriptine."
+  },
+  {
+   "id": "F-009",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 383,
+    "line_end": 390
+   },
+   "claim": "The text says FGAs treat only negative symptoms; FGAs mainly treat positive symptoms.",
+   "evidence": "\"SGAs improve treatment of –ve and +ve symptoms when compared to FGAs that treat only –ve symptoms.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Replace '–ve' with '+ve' for FGAs."
+  },
+  {
+   "id": "F-010",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 420,
+    "line_end": 425
+   },
+   "claim": "Metabolic effects of SGAs are attributed to 5-HT2A block; they are mainly due to H1 and 5-HT2C antagonism.",
+   "evidence": "\"Weight gain, diabetes, and hyperclosterolima due to 5-HT2A block\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Weight gain and metabolic syndrome: H1 and 5-HT2C block (highest with clozapine and olanzapine); monitor weight, glucose and lipids."
+  },
+  {
+   "id": "F-011",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 428,
+    "line_end": 428
+   },
+   "claim": "Clozapine agranulocytosis is called 'leukopenia, often fatal and common' with no monitoring protocol.",
+   "evidence": "\"Leukopenia: often fatal and is common with Clozapine.\"",
+   "source": "Clozapine prescribing information (REMS) 2025",
+   "fix_hint": "Agranulocytosis ~1%; baseline ANC, weekly for 18 weeks, then every 2 weeks to 1 year, then monthly; also myocarditis, seizures, constipation."
+  },
+  {
+   "id": "F-012",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 499,
+    "line_end": 505
+   },
+   "claim": "The cariprazine paragraph mixes olanzapine into its sentence, so 'It has a low liability for metabolic effects' has an unclear subject.",
+   "evidence": "\"Olanzapine and others are widely used ... It has a low liability for metabolic effects\"",
+   "source": "editorial",
+   "fix_hint": "Make cariprazine the explicit subject; move the olanzapine sentence to the SGA comparison table."
+  },
+  {
+   "id": "F-013",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 298,
+    "line_end": 304
+   },
+   "claim": "The FGA section lists only chlorpromazine, haloperidol and droperidol; low- versus high-potency differences (sedation/antimuscarinic vs EPS) are not explained.",
+   "evidence": "\"Phenothiazines class :Chlorpromazine ... Butyrophenones class : Haloperidol and Droperidol\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add a potency table: chlorpromazine, thioridazine (low); fluphenazine, haloperidol (high) with typical adverse-effect profile."
+  },
+  {
+   "id": "F-014",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 694,
+    "line_end": 704
+   },
+   "claim": "Non-ergot dopamine agonists (pramipexole, ropinirole, rotigotine) are not taught, although they are standard therapy and appear in the chapter's own MCQs; only bromocriptine is covered.",
+   "evidence": "\"D2 agonists (ergot alkaloids)\"",
+   "source": "NICE NG71 Parkinson's disease (2017)",
+   "fix_hint": "Add non-ergot agonists as the main agonist class; keep bromocriptine as a historical ergot example."
+  },
+  {
+   "id": "F-015",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 711,
+    "line_end": 721
+   },
+   "claim": "Levodopa's short half-life is attributed to hepatic decarboxylases; peripheral AADC (gut wall, blood vessels) and COMT are responsible, and on/off fluctuations reflect disease progression plus short half-life.",
+   "evidence": "\"due to peripheral decarboxylation by hepatic decarboxylases and COMT\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Say 'peripheral dopa decarboxylase (AADC)'. Separate wearing-off and on/off from peripheral metabolism."
+  },
+  {
+   "id": "F-016",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 767,
+    "line_end": 770
+   },
+   "claim": "Dark urine and sweat with levodopa come from oxidation of catecholamine metabolites (melanin-like pigments), not specifically homovanillic acid.",
+   "evidence": "\"brownish urine and sweat due to secretion of homovanillic acid\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "State the effect as harmless discoloration and counsel the patient."
+  },
+  {
+   "id": "F-017",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 777,
+    "line_end": 779
+   },
+   "claim": "Pyridoxine is said to be contraindicated with levodopa; the interaction applies to levodopa alone and is abolished by carbidopa, which almost all patients take.",
+   "evidence": "\"Pyridoxine(Vitamin B6) is contraindicated with Levodopa\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Pyridoxine enhances peripheral decarboxylation of levodopa given alone; with carbidopa/levodopa it is not clinically relevant."
+  },
+  {
+   "id": "F-018",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 784,
+    "line_end": 796
+   },
+   "claim": "MAO-B inhibitor interactions (serotonin syndrome with SSRIs, SNRIs, pethidine, tramadol; loss of selectivity at high doses) are missing.",
+   "evidence": "\"No cheese reaction.\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Add: selectivity is dose-dependent; avoid pethidine and serotonergic drugs."
+  },
+  {
+   "id": "F-019",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 818,
+    "line_end": 818
+   },
+   "claim": "Pulmonary fibrosis is called 'very specific to bromocriptine'; fibrotic reactions are an ergot-derivative class effect (also cardiac valvulopathy).",
+   "evidence": "\"Pulmonary fibrosis very specific to bromocriptin.\"",
+   "source": "Ritter JM et al. Rang & Dale's Pharmacology. 10th ed. Elsevier; 2023",
+   "fix_hint": "Say 'ergot-derived agonists (bromocriptine, cabergoline) can cause pulmonary, retroperitoneal and valvular fibrosis'."
+  },
+  {
+   "id": "F-020",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 738,
+    "line_end": 756
+   },
+   "claim": "Levodopa adverse effects omit dyskinesias, impulse-control disorders (also with agonists) and the MAOI-A hypertensive crisis interaction.",
+   "evidence": "\"Adverse effects: CNS related side effects: Nausea and Vomiting ...\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add dyskinesia (peak-dose), impulse-control disorders, and 'never with non-selective MAOIs'."
+  },
+  {
+   "id": "F-021",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1022,
+    "line_end": 1033
+   },
+   "claim": "Psychotherapy is presented as first line for all depression; guidelines reserve psychotherapy alone for less severe depression and combine it with an antidepressant for moderate-severe depression.",
+   "evidence": "\"Psychotherapy with our without medication is the first line treatment to depression.\"",
+   "source": "NICE NG222 Depression in adults (2022)",
+   "fix_hint": "Stratify by severity: less severe - psychological therapy first; more severe - antidepressant plus psychological therapy."
+  },
+  {
+   "id": "F-022",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1036,
+    "line_end": 1041
+   },
+   "claim": "MAO-B is said to be in brain only and metabolise dopamine only; MAO-B is also in platelets and liver, and MAO-A metabolises serotonin, noradrenaline and tyramine.",
+   "evidence": "\"Type B in brain only and metabolizes dopamine only\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Table: MAO-A substrates (5-HT, NA, tyramine; gut and liver); MAO-B (dopamine, phenylethylamine; brain, platelets)."
+  },
+  {
+   "id": "F-023",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1061,
+    "line_end": 1082
+   },
+   "claim": "Orthostatic hypotension and sedation are listed as effects of all antidepressants due to raised amines; they are due to alpha1 and H1 block (TCAs, trazodone, mirtazapine) and are rare with SSRIs.",
+   "evidence": "\"The following adverse effects are common with all anti-depressants: Orthostatic (Postural) hypotension, due to overall increase of bio amines\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Attribute each effect to its receptor: alpha1 (hypotension), H1 (sedation, weight gain), M (anticholinergic), 5-HT (GI, sexual)."
+  },
+  {
+   "id": "F-024",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1072,
+    "line_end": 1075
+   },
+   "claim": "Serotonin syndrome is described incompletely (no triad, no management).",
+   "evidence": "\"Serotonin Syndrome (hyperthermia , arrhythmia and increased mortality rate)\"",
+   "source": "Hunter criteria; Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Triad: mental-status change, autonomic instability, neuromuscular hyperactivity (clonus, hyperreflexia); stop drugs, supportive care, cyproheptadine."
+  },
+  {
+   "id": "F-025",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1086,
+    "line_end": 1091
+   },
+   "claim": "Yogurt is given as the typical tyramine food; the high-risk foods are aged cheese, cured or fermented meats, soy sauce and tap beer.",
+   "evidence": "\"Certain foods like yogurt contain tyramine\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Replace the example with aged cheese and cured meats."
+  },
+  {
+   "id": "F-026",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1100,
+    "line_end": 1102
+   },
+   "claim": "The MAOI combination warning gives no washout periods.",
+   "evidence": "\"MAO inhibitors are contraindicated in combination with other antidepressants\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Washout: 2 weeks after stopping an MAOI; 5 weeks after fluoxetine before starting an MAOI."
+  },
+  {
+   "id": "F-027",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1115,
+    "line_end": 1115
+   },
+   "claim": "'Nor-amitriptyline' is not a drug name; the drug is nortriptyline.",
+   "evidence": "\"Nor-amitriptyline .\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Use nortriptyline."
+  },
+  {
+   "id": "F-028",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1130,
+    "line_end": 1133
+   },
+   "claim": "TCA sedation is attributed to atropine-like action; it is due to H1 antagonism.",
+   "evidence": "\"CNS sedation (due to Atropine like action).\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Sedation: H1 block."
+  },
+  {
+   "id": "F-029",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1183,
+    "line_end": 1188
+   },
+   "claim": "Routine PPI prescribing for SSRI GI upset is not standard advice; take with food, start low; PPI is considered only with added bleeding risk (NSAIDs, anticoagulants).",
+   "evidence": "\"GIT disturbance (prescribe PPI)\"",
+   "source": "NICE NG222 (2022)",
+   "fix_hint": "Counsel to take with food; GI effects settle in 1-2 weeks; gastroprotection if combined with NSAIDs."
+  },
+  {
+   "id": "F-030",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1206,
+    "line_end": 1216
+   },
+   "claim": "The mechanisms of mirtazapine and trazodone are wrong or incomplete: mirtazapine is mainly an alpha2 antagonist (also 5-HT2, 5-HT3 and H1 block); trazodone is a 5-HT2A antagonist and weak SERT inhibitor.",
+   "evidence": "\"Mirtazapine blocks 5HT2C\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Mirtazapine: alpha2 antagonist raising NA and 5-HT release; 5-HT2/5-HT3 and H1 block (sedation, weight gain). Trazodone: 5-HT2A antagonist, weak SERT inhibitor, alpha1 and H1 block (priapism, sedation)."
+  },
+  {
+   "id": "F-031",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1158,
+    "line_end": 1198
+   },
+   "claim": "The chapter never mentions the boxed warning for suicidality in children and young adults starting antidepressants.",
+   "evidence": "\"SSRI are first line treatment in major depression due to their safety even in large doses\"",
+   "source": "FDA boxed warning for antidepressants (2007)",
+   "fix_hint": "Add a Caution box: monitor for suicidal thoughts in patients under 25 during the first weeks and after dose changes."
+  },
+  {
+   "id": "F-032",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1189,
+    "line_end": 1191
+   },
+   "claim": "SSRI withdrawal is described as an 'acute attack of depression'; it is a discontinuation syndrome (dizziness, paraesthesia, irritability), worst with paroxetine.",
+   "evidence": "\"SSRIs must stopped gradually (over 4 weeks) to avoid Acute attack of Depression.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Name discontinuation syndrome; taper over at least 4 weeks; fluoxetine least affected."
+  },
+  {
+   "id": "F-033",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1561,
+    "line_end": 1581
+   },
+   "claim": "First-generation drugs are said to act mainly on the inhibitory pathway and second-generation on the excitatory pathway; phenytoin and carbamazepine block Na+ channels and several second-generation drugs enhance GABA. The generalisation is false.",
+   "evidence": "\"They mainly act on the inhibitory pathway.\" / \"They mainly act on the excitatory pathway.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Classify by mechanism (Na+ channel, T-type Ca2+, GABA, SV2A, alpha2delta, glutamate) in one table."
+  },
+  {
+   "id": "F-034",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1599,
+    "line_end": 1618
+   },
+   "claim": "Enzyme induction, megaloblastic anaemia and teratogenicity are said to be common to all first-generation drugs; valproate is an enzyme inhibitor and ethosuximide is not an inducer.",
+   "evidence": "\"The following adverse effects are common with all 1st generation epileptic drugs: ... Liver (microsomal enzyme induction)\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Group inducers (phenytoin, carbamazepine, phenobarbital) versus inhibitor (valproate); teratogenicity highest with valproate."
+  },
+  {
+   "id": "F-035",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1637,
+    "line_end": 1655
+   },
+   "claim": "Carbamazepine safety omits SJS/TEN with HLA-B*1502, aplastic anaemia/agranulocytosis, and failure of hormonal contraception through induction.",
+   "evidence": "\"Adverse effects: Increase ADH secretion ... auto-induction\"",
+   "source": "Carbamazepine prescribing information (boxed warning)",
+   "fix_hint": "Add the boxed warnings and interactions (oral contraceptives, warfarin)."
+  },
+  {
+   "id": "F-036",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1524,
+    "line_end": 1560
+   },
+   "claim": "The chapter has no drug-of-choice table by seizure type and no status epilepticus algorithm.",
+   "evidence": "\"Classification of Epilepsy ... Generalized Onset seizures\"",
+   "source": "NICE NG217 Epilepsies (2022)",
+   "fix_hint": "Add a seizure-type table (focal: lamotrigine/levetiracetam; generalised tonic-clonic: valproate in males, lamotrigine/levetiracetam in women of child-bearing potential; absence: ethosuximide) and a status epilepticus box (benzodiazepine then second-line agent)."
+  },
+  {
+   "id": "F-037",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1669,
+    "line_end": 1680
+   },
+   "claim": "Valproate's haematological effect is thrombocytopenia (neutropenia is less typical), and the pregnancy rule is a pregnancy-prevention programme rather than an absolute prohibition.",
+   "evidence": "\"Neutropenia .\" / \"Valproic acid is strictly prohibited in pregnancy\"",
+   "source": "MHRA valproate safety measures (2024)",
+   "fix_hint": "Say thrombocytopenia; valproate must not be used in women of child-bearing potential unless the pregnancy prevention programme is met."
+  },
+  {
+   "id": "F-038",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1745,
+    "line_end": 1745
+   },
+   "claim": "'AMBA receptors' should be AMPA/kainate receptors.",
+   "evidence": "\"Block AMBA receptors. (similar to NMDA receptor)\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "AMPA/kainate glutamate receptors."
+  },
+  {
+   "id": "F-039",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1779,
+    "line_end": 1786
+   },
+   "claim": "Gabapentin and pregabalin bind the alpha2delta subunit of voltage-gated Ca2+ channels, not 'P/Q calcium channels'.",
+   "evidence": "\"Binding to pre-synaptic P/Q calcium channels\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Bind alpha2delta-1 subunit of presynaptic voltage-gated Ca2+ channels, reducing glutamate release."
+  },
+  {
+   "id": "F-040",
+   "pillar_id": "G3",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1858,
+    "line_end": 1883
+   },
+   "claim": "The valproate/pregnancy MCQ is printed twice.",
+   "evidence": "Lines 1831-1856 repeat at 1858-1883",
+   "source": "editorial",
+   "fix_hint": "Keep one copy."
+  },
+  {
+   "id": "F-041",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1489,
+    "line_end": 1507
+   },
+   "claim": "The pathophysiology sentence is garbled and the absence-seizure mechanism ('during the day causing a sleep-like state') is unclear.",
+   "evidence": "\"An imbalance between glutamate and which activates NMDA receptors\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Absence seizures: T-type Ca2+ currents in thalamocortical relay neurons generate 3 Hz spike-and-wave discharges."
+  },
+  {
+   "id": "F-042",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1942,
+    "line_end": 1953
+   },
+   "claim": "Baclofen is said to increase chloride influx; GABA-B is a G-protein-coupled receptor that opens K+ channels and reduces presynaptic Ca2+ influx.",
+   "evidence": "\"hypothesized to cause An Increase chloride influx which causes nerve hyperpolarization\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "GABA-B agonist: increases K+ conductance (hyperpolarisation) and reduces Ca2+ entry, lowering excitatory transmitter release in the spinal cord."
+  },
+  {
+   "id": "F-043",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2078,
+    "line_end": 2079
+   },
+   "claim": "'hydration derivative' should read 'hydantoin derivative'.",
+   "evidence": "\"Dantrolene is a hydration derivative related to phenytoin\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Hydantoin derivative."
+  },
+  {
+   "id": "F-044",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2109,
+    "line_end": 2117
+   },
+   "claim": "The classification table says depolarising blockers cause hyperpolarisation; they cause persistent depolarisation.",
+   "evidence": "\"by constant activation of the receptor which causes a state of hyperpolarization\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Persistent depolarisation (phase I) followed by desensitisation (phase II)."
+  },
+  {
+   "id": "F-045",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2204,
+    "line_end": 2225
+   },
+   "claim": "Succinylcholine safety omits hyperkalaemia (burns, crush injury, denervation, myopathy), bradycardia, raised intra-ocular pressure and muscle pain.",
+   "evidence": "\"Adverse effects : Malignant hyperthermia ... Apnea\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add hyperkalaemia with contraindications, bradycardia (atropine), myalgia, raised IOP and ICP."
+  },
+  {
+   "id": "F-046",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [
+    "update"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2143,
+    "line_end": 2154
+   },
+   "claim": "Reversal covers only neostigmine; sugammadex, the selective reversal agent for rocuronium and vecuronium, is missing.",
+   "evidence": "\"Their competitive action can be overcome by administration of small doses of cholinesterase inhibitors, such as neostigmine.\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Add sugammadex: encapsulates rocuronium/vecuronium; no muscarinic side effects."
+  },
+  {
+   "id": "F-047",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2173,
+    "line_end": 2173
+   },
+   "claim": "'These agents are safe with minimal side effects' ignores histamine release (atracurium, mivacurium), residual paralysis and awareness risk.",
+   "evidence": "\"In general, these agents are safe with minimal side effects.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "State the main adverse effects and the need for monitoring (train-of-four)."
+  },
+  {
+   "id": "F-048",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2355,
+    "line_end": 2378
+   },
+   "claim": "Benzodiazepine half-life classes are wrong: diazepam and clonazepam are long-acting (diazepam 20-80 h plus active nordiazepam); oxazepam is short-intermediate; lorazepam, used later, is missing.",
+   "evidence": "\"intermediate acting BZ (t1/2 10-20 hour) Diazepam ... Clonazepam ... Oxazepam\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Short: midazolam, triazolam. Intermediate: alprazolam, lorazepam, oxazepam, temazepam. Long: diazepam, chlordiazepoxide, clonazepam, flurazepam."
+  },
+  {
+   "id": "F-049",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2347,
+    "line_end": 2353
+   },
+   "claim": "The mechanism slide contradicts itself: it says BZs increase channel opening frequency, then that they 'do not affect the opening of the ion channel'.",
+   "evidence": "\"benzodiazepines do not affect the opening of the ion channel\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "BZs are positive allosteric modulators: no effect without GABA; with GABA they increase opening frequency."
+  },
+  {
+   "id": "F-050",
+   "pillar_id": "G1",
+   "severity": "blocker",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2536,
+    "line_end": 2538
+   },
+   "claim": "Benzodiazepines are called 'very safe' with a toxic dose 1000-fold the therapeutic dose; combined with alcohol, opioids or other depressants they cause fatal respiratory depression (FDA boxed warning).",
+   "evidence": "\"Benzodiazepines are very safe as toxic dose is 1000 fold the therapeutic dose.\"",
+   "source": "FDA boxed warning: benzodiazepines with opioids (2016); abuse and dependence (2020)",
+   "fix_hint": "Replace with: wide margin when taken alone, but combined with alcohol, opioids or other CNS depressants they can cause fatal respiratory depression; elderly: falls and confusion."
+  },
+  {
+   "id": "F-051",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2541,
+    "line_end": 2546
+   },
+   "claim": "Flumazenil is an antagonist at the benzodiazepine site, not a GABA receptor antagonist.",
+   "evidence": "\"is a GABA receptor antagonist\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Competitive antagonist at the BZ site of the GABA-A receptor; short half-life, re-sedation possible."
+  },
+  {
+   "id": "F-052",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2578,
+    "line_end": 2580
+   },
+   "claim": "Buspirone acts as a 5-HT1A partial agonist; the 5-HT2A attribution is wrong.",
+   "evidence": "\"The actions of buspirone appear to be mediated by serotonin (5-HT1A) and (5-HT2A) receptors\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "5-HT1A partial agonist (some D2 affinity); onset 1-2 weeks or more."
+  },
+  {
+   "id": "F-053",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2704,
+    "line_end": 2710
+   },
+   "claim": "Barbiturates are anticonvulsants; it is their withdrawal that lowers the seizure threshold.",
+   "evidence": "\"Barbiturates ... can lower the seizure threshold.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Say 'abrupt withdrawal can precipitate seizures'."
+  },
+  {
+   "id": "F-054",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2642,
+    "line_end": 2655
+   },
+   "claim": "The barbiturate mechanism omits increased duration of chloride-channel opening and direct GABA-mimetic action at high doses, which explains their lower safety margin.",
+   "evidence": "\"Allosteric modulation of GABA receptor ... action similar to BZ action\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Contrast: BZs raise frequency; barbiturates raise duration and can open the channel without GABA."
+  },
+  {
+   "id": "F-055",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2796,
+    "line_end": 2803
+   },
+   "claim": "Doxepin is a tricyclic antidepressant; its hypnotic effect at low dose is from H1 antagonism, not an SNRI mechanism.",
+   "evidence": "\"Doxepin an older tricyclic agent with SNRI mechanisms\"",
+   "source": "Whalen K. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Wolters Kluwer; 2023",
+   "fix_hint": "Low-dose doxepin (3-6 mg): selective H1 antagonism for sleep maintenance."
+  },
+  {
+   "id": "F-056",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2952,
+    "line_end": 2995
+   },
+   "claim": "Inhaled-anaesthetic pharmacokinetics are absent: MAC, blood:gas partition coefficient and speed of induction/recovery are not taught.",
+   "evidence": "\"Classification of general anesthetics: I. Inhalation agents ...\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add MAC (potency) and blood:gas solubility (speed) with a comparison table for N2O, sevoflurane, desflurane, isoflurane."
+  },
+  {
+   "id": "F-057",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 2997,
+    "line_end": 3001
+   },
+   "claim": "Malignant hyperthermia is said to occur when anaesthetics are used 'with' succinylcholine; either trigger alone can cause it.",
+   "evidence": "\"may occur when anesthetics are used with NMBs like succinylcholine\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Triggered by volatile anaesthetics and/or succinylcholine in susceptible (RYR1) patients."
+  },
+  {
+   "id": "F-058",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3025,
+    "line_end": 3121
+   },
+   "claim": "Etomidate is listed but not described; its adrenal suppression and haemodynamic stability are key selection points.",
+   "evidence": "\"Propofol – thiopental – etomidate – ketamine – midazolam\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add etomidate: haemodynamically stable induction; adrenal suppression, myoclonus, PONV."
+  },
+  {
+   "id": "F-059",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3096,
+    "line_end": 3110
+   },
+   "claim": "Ketamine 'does not affect respiration' overstates; it causes minimal respiratory depression and preserves airway reflexes, but increases secretions.",
+   "evidence": "\"Does not affect respiration.\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Minimal respiratory depression; bronchodilator; increases secretions."
+  },
+  {
+   "id": "F-060",
+   "pillar_id": "G3",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3168,
+    "line_end": 3187
+   },
+   "claim": "The endoscopy MCQ key says D (sevoflurane) but the rationale explains midazolam (C).",
+   "evidence": "\"Correct answer = D. Midazolam is used as a sole agent\"",
+   "source": "internal contradiction",
+   "fix_hint": "Correct key: C."
+  },
+  {
+   "id": "F-061",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3236,
+    "line_end": 3242
+   },
+   "claim": "Amides are labelled 'topical local anesthetics for the eyes'; the eye agents are esters/amides such as tetracaine and proxymetacaine; amides are mainly injected.",
+   "evidence": "\"Amides: (topical local anesthetics for the eyes).\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Remove the label; list ophthalmic agents separately."
+  },
+  {
+   "id": "F-062",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3257,
+    "line_end": 3268
+   },
+   "claim": "Local anaesthetic systemic toxicity lacks seizures, bupivacaine cardiotoxicity, maximum doses and the 20% lipid emulsion treatment.",
+   "evidence": "\"Adverse effects of local anesthetics due to over dose or inadvertent injection ...\"",
+   "source": "AAGBI/ASRA LAST guideline (2020)",
+   "fix_hint": "Add LAST: CNS excitation then depression, arrhythmia/arrest (bupivacaine), max doses with/without adrenaline, 20% lipid emulsion."
+  },
+  {
+   "id": "F-063",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3251,
+    "line_end": 3255
+   },
+   "claim": "Adrenaline with local anaesthetics is not contraindicated-flagged for end-arteries or cocaine combinations.",
+   "evidence": "\"added to as epinephrine a vasoconstrictor\"",
+   "source": "Katzung BG, Vanderah TW. Basic and Clinical Pharmacology. 16th ed. McGraw Hill; 2024",
+   "fix_hint": "Add Caution: avoid adrenaline in digital, penile or ear blocks with poor collateral supply (traditional teaching) and in patients with arrhythmia."
+  },
+  {
+   "id": "F-064",
+   "pillar_id": "G3",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 3333,
+    "line_end": 3352
+   },
+   "claim": "The general-anaesthesia endoscopy MCQ is repeated at the end of the local-anaesthetics chapter.",
+   "evidence": "Lines 3168-3187 repeat at 3333-3352",
+   "source": "editorial",
+   "fix_hint": "Remove the duplicate."
+  },
+  {
+   "id": "F-065",
+   "pillar_id": "G2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1,
+    "line_end": 3352
+   },
+   "claim": "The source is nine slide decks: fragmented bullets, no learning objectives, no recap of prerequisites, no key takeaways, and teacher prompts ('4 minutes', 'the slides mention') mixed with student text.",
+   "evidence": "\"Here is where your presentation begins\"; \"Case Study Deep Dive: Mr. S (4 minutes)\"",
+   "source": "brief.goal; instructional-designer",
+   "fix_hint": "Rewrite into continuous chapters with objectives, Quick Recap, core sections, boxes, takeaways and assessment."
+  },
+  {
+   "id": "F-066",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1466,
+    "line_end": 1500
+   },
+   "claim": "Spelling errors are frequent (seizuers, epilpsey, Benzodiazpeines, Barbiutates, hyperclosterolima, torsadogenic durgs).",
+   "evidence": "\"is a disease charactraized by recurrent episodes of seizuers\"",
+   "source": "editorial",
+   "fix_hint": "Copy-edit to en-GB."
+  },
+  {
+   "id": "F-067",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 940,
+    "line_end": 1466
+   },
+   "claim": "Section numbering disagrees with the schedule (Depression numbered 05 before Epilepsy 04; two sections numbered 03 in the anxiolytics deck).",
+   "evidence": "\"05 Depression\" ... \"04 epilepsy\"",
+   "source": "brief.size.restructuring_note",
+   "fix_hint": "Use the approved chapter order."
+  },
+  {
+   "id": "F-068",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 127,
+    "line_end": 2780
+   },
+   "claim": "Nineteen 'Brands' slides are package photographs only; the brand names are not in the text and product photos cannot be reproduced.",
+   "evidence": "\"Brands\" (19 slides with no text)",
+   "source": "source PDF pages 10, 12, 30, 36, 41, 63, 67, 91, 145, 147, 151, 153, 156, 158, 161, 204, 208, 219, 225",
+   "fix_hint": "Transcribe brand names into a 'Brands in Egypt' table per chapter; verify against the EDA list."
+  },
+  {
+   "id": "F-069",
+   "pillar_id": "G3",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 180,
+    "line_end": 3352
+   },
+   "claim": "Assessment is uneven: 0-4 MCQs per chapter (none for skeletal muscle relaxants), five options (A-E) instead of four, and some rationales lack the answer letter.",
+   "evidence": "\"Cases\" slides; SMR has one case and no MCQ",
+   "source": "brief.assessment (10 MCQs A-D + 2-3 cases per chapter)",
+   "fix_hint": "Write 10 four-option MCQs and 2-3 clinical cases per chapter with rationales."
+  },
+  {
+   "id": "F-070",
+   "pillar_id": "G4",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1,
+    "line_end": 3352
+   },
+   "claim": "The source cites no references at all.",
+   "evidence": "No reference list in any deck",
+   "source": "brief.references",
+   "fix_hint": "Add a Vancouver reference list per chapter (core textbooks and current guidelines)."
+  },
+  {
+   "id": "F-071",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1,
+    "line_end": 3352
+   },
+   "claim": "Across chapters, therapeutic choice is rarely justified by guideline or patient factors (Parkinson's initial therapy, epilepsy by seizure type, insomnia and GAD algorithms are thin or absent).",
+   "evidence": "\"Treatment of Parkinson's disease will focus on ...\"",
+   "source": "NICE NG71, NG217, NG222; APA schizophrenia guideline 2020",
+   "fix_hint": "Add a 'Choosing a drug' table per chapter."
+  }
+ ]
+}

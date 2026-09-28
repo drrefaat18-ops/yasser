@@ -1,0 +1,137 @@
+{
+ "schema_version": 1,
+ "rubric_digest": "a1f6cb21f322bda2ddf4f9d199779099d08ae8139f4b2b38fd752290d154d4bd",
+ "pillars": [
+  {
+   "id": "G1",
+   "score": 3.5,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-001",
+    "F-005",
+    "F-006",
+    "F-007",
+    "F-009",
+    "F-010",
+    "F-015",
+    "F-016",
+    "F-017",
+    "F-019",
+    "F-022",
+    "F-023",
+    "F-025",
+    "F-027",
+    "F-028",
+    "F-029",
+    "F-030",
+    "F-032",
+    "F-033",
+    "F-034",
+    "F-037",
+    "F-038",
+    "F-039",
+    "F-041",
+    "F-042",
+    "F-043",
+    "F-044",
+    "F-047",
+    "F-048",
+    "F-049",
+    "F-050",
+    "F-051",
+    "F-052",
+    "F-053",
+    "F-055",
+    "F-057",
+    "F-059",
+    "F-061"
+   ]
+  },
+  {
+   "id": "G2",
+   "score": 3,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-012",
+    "F-065",
+    "F-066",
+    "F-067",
+    "F-068"
+   ]
+  },
+  {
+   "id": "G3",
+   "score": 3,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-040",
+    "F-060",
+    "F-064",
+    "F-069"
+   ]
+  },
+  {
+   "id": "G4",
+   "score": 1,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-070"
+   ]
+  },
+  {
+   "id": "D1",
+   "score": 5,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-003",
+    "F-013",
+    "F-014",
+    "F-046",
+    "F-054",
+    "F-056"
+   ]
+  },
+  {
+   "id": "D2",
+   "score": 4,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-002",
+    "F-021",
+    "F-036",
+    "F-071"
+   ]
+  },
+  {
+   "id": "D3",
+   "score": 3.5,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-004",
+    "F-008",
+    "F-011",
+    "F-018",
+    "F-020",
+    "F-024",
+    "F-026",
+    "F-031",
+    "F-035",
+    "F-045",
+    "F-058",
+    "F-062",
+    "F-063"
+   ]
+  }
+ ],
+ "caps_applied": [
+  {
+   "pillar_id": "G1",
+   "cap_index": 0,
+   "finding_ids": [
+    "F-050"
+   ]
+  }
+ ],
+ "total": 34.0,
+ "review_kind": "self"
+}
