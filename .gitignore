@@ -5,3 +5,9 @@ _preview*.png
 
 # source copy of the Dr. Mo reference (kept in docs/harness/references/dr-mo-food-analysis/)
 dr mo skill/
+
+# impeccable by-products (review screenshots, diffs, mocks, build state, local config)
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/build/
+.impeccable/config.local.json
