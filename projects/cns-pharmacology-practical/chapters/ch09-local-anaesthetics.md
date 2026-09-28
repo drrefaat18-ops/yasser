@@ -76,7 +76,7 @@ Most local anaesthetics dilate blood vessels. Adrenaline (epinephrine), a vasoco
 - Lowers blood levels and the risk of toxicity, so a higher dose is allowed.
 - Reduces bleeding in the surgical field.
 
-> **Caution:** Avoid adrenaline-containing solutions in **end-arteries**: fingers, toes, penis, nose tip and ear lobes. Vasoconstriction can cause ischaemia and gangrene. Use them with care in severe heart disease, uncontrolled hypertension and hyperthyroidism.
+> **Caution:** Adrenaline was once banned in fingers, toes, nose and ears for fear of gangrene. Current evidence shows that dilute adrenaline (1:100,000 to 1:200,000) is safe in digits with normal circulation [4]. Avoid it where circulation is poor, such as in peripheral vascular disease, Raynaud's phenomenon or a crushed digit, and avoid it in the penis. Use it with care in severe heart disease, uncontrolled hypertension and hyperthyroidism.
 
 ## 9.5 Adverse Effects and LAST
 
@@ -121,7 +121,7 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 | Situation | Suitable choice |
 |---|---|
 | Suturing a small cut on the arm | Lidocaine with adrenaline |
-| Ring block of a finger | Plain lidocaine (no adrenaline) |
+| Ring block of a finger | Lidocaine; dilute adrenaline only if circulation is normal |
 | Long-lasting nerve block or epidural | Bupivacaine or ropivacaine (ropivacaine is safer for the heart) |
 | Allergy to an ester (for example procaine) | An amide |
 | Eye procedure | Tetracaine or proxymetacaine drops |
@@ -130,7 +130,16 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 
 *Table 9.5 — Choosing a local anaesthetic [1, 2].*
 
-## 9.7 For Discussion
+## 9.7 Brands in Egypt
+
+| Generic name | Brand examples | Dosage forms |
+|---|---|---|
+| Lidocaine | Xylocaine | Injection (plain and with adrenaline), gel, spray |
+| Bupivacaine | Marcaine | Injection; heavy solution for spinal use |
+
+*Table 9.6 — Brand examples. Availability changes; check the current Egyptian Drug Authority list.*
+
+## 9.8 For Discussion
 
 1. Why is a dental block harder to achieve near an abscess?
 2. Why can more lidocaine be given when adrenaline is added?
@@ -140,7 +149,7 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 - The unionised base crosses the membrane; the ionised form blocks the Na^+^ channel from inside.
 - Acidic (infected) tissue weakens the block.
 - Esters are broken down by plasma cholinesterase and cause more allergy; amides are broken down by the liver.
-- Adrenaline prolongs the block and lowers toxicity, but avoid it in end-arteries.
+- Adrenaline prolongs the block and lowers toxicity; avoid it where the circulation is poor.
 - LAST starts with CNS signs and can end in cardiac arrest; stop injecting, treat seizures and give 20% lipid emulsion.
 
 ## Self-Assessment
@@ -174,11 +183,11 @@ B) To speed onset by raising pH
 C) To treat allergy
 D) To prevent seizures
 
-**Q6.** In which site should adrenaline-containing local anaesthetic be avoided? [LO3]
-A) The forearm
-B) The scalp
-C) A finger
-D) The thigh
+**Q6.** In which patient should adrenaline-containing local anaesthetic be avoided? [LO3]
+A) A healthy adult with a forearm cut
+B) A child with a scalp wound
+C) A patient with Raynaud's phenomenon who needs a finger block
+D) A healthy adult with a thigh wound
 
 **Q7.** During a nerve block, a patient reports a metallic taste and numb lips, then has a seizure. What is the diagnosis? [LO4]
 A) Anaphylaxis
@@ -221,7 +230,7 @@ D) Procaine
 
 **Q5. A** — Vasoconstriction slows absorption, prolonging the block and lowering toxicity. B, C and D are wrong.
 
-**Q6. C** — Fingers are supplied by end-arteries; ischaemia can occur. A, B and D have good collateral supply.
+**Q6. C** — Poor digital circulation plus vasoconstriction can cause ischaemia. A, B and D have normal circulation; adrenaline is suitable.
 
 **Q7. B** — Metallic taste, numb lips and seizure are early LAST. A causes rash and wheeze. C causes fainting. D occurs with volatile agents.
 
@@ -241,3 +250,4 @@ D) Procaine
 1. Vanderah TW, editor. Katzung's Basic and Clinical Pharmacology. 16th ed. New York: McGraw Hill; 2024.
 2. Whalen K, editor. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Philadelphia: Wolters Kluwer; 2023.
 3. Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine Local Anesthetic Systemic Toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021;46(1):81-2. DOI: 10.1136/rapm-2020-101986
+4. Lalonde D, Bell M, Benoit P, et al. A multicenter prospective study of 3,110 consecutive cases of elective epinephrine use in the fingers and hand: the Dalhousie Project clinical phase. J Hand Surg Am. 2005;30(5):1061-7. DOI: 10.1016/j.jhsa.2005.05.006

@@ -274,15 +274,15 @@
  },
  "figures": "manifest",
  "pdf": {
-  "bookmarks": 156,
-  "pages": 94
+  "bookmarks": 159,
+  "pages": 95
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 94
+    "pages": 95
    },
    "message": "",
    "status": "pass"

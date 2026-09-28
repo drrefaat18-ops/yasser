@@ -152,12 +152,24 @@ Start with **one drug** (monotherapy) at a low dose and increase slowly. Monothe
 Status epilepticus is a seizure that lasts more than 5 minutes, or repeated seizures without recovery between them. It is an emergency. Brain damage becomes likely after about 30 minutes [4].
 
 > **Caution:** Manage status epilepticus by time:
-> - **0–5 minutes:** airway, oxygen, check glucose; give thiamine then glucose if needed.
+> - **0–5 minutes:** airway and oxygen. Check blood glucose at once and treat low glucose without delay. If alcohol misuse or malnutrition is likely, give IV thiamine as well; it must not delay glucose.
 > - **5–20 minutes:** a benzodiazepine: IV lorazepam, or IM midazolam, or rectal diazepam or buccal midazolam if there is no IV access. Repeat once if needed.
 > - **20–40 minutes:** a second-line drug: IV levetiracetam, fosphenytoin or valproate.
 > - **After 40 minutes:** refractory status; anaesthesia in intensive care (propofol, midazolam or thiopental infusion).
 
-## 5.8 For Discussion
+## 5.8 Brands in Egypt
+
+| Generic name | Brand examples | Dosage forms |
+|---|---|---|
+| Sodium valproate | Depakine | Tablets, modified-release tablets, syrup |
+| Carbamazepine | Tegretol | Tablets, modified-release tablets |
+| Lamotrigine | Lamictal | Tablets |
+| Levetiracetam | Keppra | Tablets, oral solution, injection |
+| Phenytoin | Epanutin | Capsules |
+
+*Table 5.5 — Brand examples. Availability changes; check the current Egyptian Drug Authority list.*
+
+## 5.9 For Discussion
 
 1. Why does ethosuximide treat absence seizures but not tonic–clonic seizures?
 2. A woman on carbamazepine wants to use the combined pill. What would you advise, and why?

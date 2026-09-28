@@ -102,7 +102,17 @@ Features: rising end-tidal CO₂, tachycardia, muscle rigidity, fever, acidosis 
 
 > **Caution:** Always ask about personal or family history of problems with anaesthesia. For a susceptible patient, use a trigger-free technique: propofol infusion, opioids and a non-depolarising blocker, with a vapour-free machine.
 
-## 8.6 For Discussion
+## 8.6 Brands in Egypt
+
+| Generic name | Brand examples | Dosage forms |
+|---|---|---|
+| Propofol | Diprivan | 1% emulsion for injection |
+| Ketamine | Ketalar | Injection |
+| Midazolam | Dormicum | Injection, tablets |
+
+*Table 8.4 — Brand examples. Availability changes; check the current Egyptian Drug Authority list.*
+
+## 8.7 For Discussion
 
 1. Why do we use four or five drugs for one anaesthetic instead of one strong drug?
 2. Sevoflurane and desflurane are both fast. Why is sevoflurane used for inhaled induction in children?

@@ -12,7 +12,7 @@ By the end of this chapter you will be able to:
 
 ## 3.1 The Disease in Brief
 
-Parkinson's disease is a chronic neurodegenerative disease of unknown cause. Dopamine neurons of the substantia nigra die. They project to the striatum (the nigrostriatal pathway). Dopamine is inhibitory there, and acetylcholine is excitatory. With less dopamine, acetylcholine becomes relatively dominant [1].
+Parkinson's disease is a chronic neurodegenerative disease of unknown cause. Dopamine neurons of the substantia nigra die. They project to the striatum (the nigrostriatal pathway). There, dopamine stimulates D1 receptors on the direct pathway and inhibits D2 receptors on the indirect pathway. Both actions make movement easier. Acetylcholine from striatal interneurons opposes dopamine. With less dopamine, movement becomes slow and acetylcholine becomes relatively dominant [1].
 
 **Motor features:**
 

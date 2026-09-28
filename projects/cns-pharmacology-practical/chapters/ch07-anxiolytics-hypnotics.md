@@ -272,7 +272,7 @@ D) Phenobarbital
 
 *Case 1.* An 18-year-old man cannot sleep since his grandfather died 2 weeks ago. He is given a benzodiazepine. (a) Which receptor does it act on, and how? (b) Which type of benzodiazepine suits trouble falling asleep? (c) Give three counselling points.
 
-*Case 2.* A 45-year-old man is brought to the emergency department after a car accident. His blood alcohol is 275 mg/dL. He has had alcohol-withdrawal seizures before. (a) Which drug group treats alcohol withdrawal? (b) Name one suitable drug and explain the choice if he has liver disease. (c) Why is buspirone not useful here?
+*Case 2.* A 45-year-old man is brought to the emergency department after a car accident. His blood alcohol is 275 mg/dL. He has had alcohol-withdrawal seizures before. Two days after admission he becomes tremulous, sweaty and agitated. (a) Which drug group treats alcohol withdrawal, and why is it not given on admission while he is intoxicated? (b) Name one suitable drug and explain the choice if he has liver disease. (c) Why is buspirone not useful here?
 
 *Case 3.* A 70-year-old woman has taken diazepam 10 mg every night for 5 years. She had a fall last month. (a) Why did the fall happen? (b) Why must diazepam not be stopped suddenly? (c) What is the plan?
 
@@ -301,7 +301,7 @@ D) Phenobarbital
 
 *Case 1.* (a) The GABA-A receptor; it increases the frequency of Cl^-^ channel opening when GABA binds. (b) A short- or intermediate-acting drug, such as temazepam, or a Z-drug. (c) Use only for a few nights to 2 weeks; do not drink alcohol or drive if drowsy; expect some rebound insomnia on stopping.
 
-*Case 2.* (a) Benzodiazepines. (b) Chlordiazepoxide or diazepam are standard. In liver disease, lorazepam is preferred, because it has no active metabolites. (c) Buspirone has no anticonvulsant action and does not act at the GABA-A receptor, so it does not prevent withdrawal seizures.
+*Case 2.* (a) Benzodiazepines, because they act on the same GABA-A receptors as alcohol and prevent withdrawal seizures and delirium. On admission he is intoxicated: benzodiazepines would add to the breathing depression. First protect the airway and monitor him. Start a monitored benzodiazepine regimen only when withdrawal signs appear, as now, and give thiamine. (b) Chlordiazepoxide or diazepam are standard. In liver disease, lorazepam is preferred, because it has no active metabolites. (c) Buspirone has no anticonvulsant action and does not act at the GABA-A receptor, so it does not prevent withdrawal seizures.
 
 *Case 3.* (a) Long-acting diazepam builds up in older people and causes sedation, poor balance and confusion. (b) She is dependent; sudden stopping can cause severe anxiety, insomnia, confusion and seizures. (c) Explain the plan and taper slowly over weeks to months, for example by reducing the dose every 2 weeks. Support her with sleep hygiene and CBT-I.
 

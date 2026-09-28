@@ -118,7 +118,7 @@ Affinities differ between drugs. Risperidone at high doses acts much like a firs
 - Where dopamine is high (mesolimbic), they compete with dopamine and act as antagonists.
 - Where dopamine is low (mesocortical), they give some stimulation.
 
-This gives a lower risk of raised prolactin, weight gain and EPS. Akathisia and restlessness are common early. Partial agonists may be less effective in severe or resistant illness.
+This gives a lower risk of parkinsonism, raised prolactin and weight gain. Akathisia and restlessness are common, especially early. Partial agonists may be less effective in severe or resistant illness.
 
 **Cariprazine** is a D3-preferring D2/D3 partial agonist. Its D3 activity may help negative symptoms. It has a low risk of weight gain, metabolic change, raised prolactin and QT prolongation. It is licensed for schizophrenia and bipolar disorder.
 

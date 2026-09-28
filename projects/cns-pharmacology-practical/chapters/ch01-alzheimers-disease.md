@@ -258,7 +258,7 @@ D) After 3 to 6 months at a tolerated dose
 
 **Clinical Case.**
 
-*Case 1.* The wife of Mr N, a 68-year-old man, asks the pharmacist for advice. Over the last few months his mood has become unstable. His memory and concentration are poor. He is impulsive and uses rude language, which is new for him. A neurologist diagnoses mild to moderate Alzheimer's disease. (a) Which drug group is first-line, and how does it work? (b) What would you tell his wife about the expected benefit? (c) Mr N later develops depression. How would you choose an antidepressant?
+*Case 1.* The wife of Mr N, a 68-year-old man, asks the pharmacist for advice. Over the last two years he has become more and more forgetful. He repeats questions, forgets recent conversations and misplaces things. He now needs help with paying bills. A neurologist diagnoses mild to moderate Alzheimer's disease. (a) Which drug group is first-line, and how does it work? (b) What would you tell his wife about the expected benefit? (c) Mr N later develops depression. How would you choose an antidepressant?
 
 *Case 2.* Mrs S, 82, has moderate Alzheimer's disease. She takes donepezil 10 mg, bisoprolol 5 mg and oxybutynin 5 mg twice daily for bladder urgency. She has fallen twice this month. (a) Which drug-related causes of her falls do you suspect? (b) What changes would you suggest?
 

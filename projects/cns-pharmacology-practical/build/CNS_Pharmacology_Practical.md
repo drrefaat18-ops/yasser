@@ -339,7 +339,7 @@ D) After 3 to 6 months at a tolerated dose
 
 **Clinical Case.**
 
-*Case 1.* The wife of Mr N, a 68-year-old man, asks the pharmacist for advice. Over the last few months his mood has become unstable. His memory and concentration are poor. He is impulsive and uses rude language, which is new for him. A neurologist diagnoses mild to moderate Alzheimer's disease. (a) Which drug group is first-line, and how does it work? (b) What would you tell his wife about the expected benefit? (c) Mr N later develops depression. How would you choose an antidepressant?
+*Case 1.* The wife of Mr N, a 68-year-old man, asks the pharmacist for advice. Over the last two years he has become more and more forgetful. He repeats questions, forgets recent conversations and misplaces things. He now needs help with paying bills. A neurologist diagnoses mild to moderate Alzheimer's disease. (a) Which drug group is first-line, and how does it work? (b) What would you tell his wife about the expected benefit? (c) Mr N later develops depression. How would you choose an antidepressant?
 
 *Case 2.* Mrs S, 82, has moderate Alzheimer's disease. She takes donepezil 10 mg, bisoprolol 5 mg and oxybutynin 5 mg twice daily for bladder urgency. She has fallen twice this month. (a) Which drug-related causes of her falls do you suspect? (b) What changes would you suggest?
 
@@ -508,7 +508,7 @@ Affinities differ between drugs. Risperidone at high doses acts much like a firs
 - Where dopamine is high (mesolimbic), they compete with dopamine and act as antagonists.
 - Where dopamine is low (mesocortical), they give some stimulation.
 
-This gives a lower risk of raised prolactin, weight gain and EPS. Akathisia and restlessness are common early. Partial agonists may be less effective in severe or resistant illness.
+This gives a lower risk of parkinsonism, raised prolactin and weight gain. Akathisia and restlessness are common, especially early. Partial agonists may be less effective in severe or resistant illness.
 
 **Cariprazine** is a D3-preferring D2/D3 partial agonist. Its D3 activity may help negative symptoms. It has a low risk of weight gain, metabolic change, raised prolactin and QT prolongation. It is licensed for schizophrenia and bipolar disorder.
 
@@ -772,7 +772,7 @@ By the end of this chapter you will be able to:
 
 ## 3.1 The Disease in Brief
 
-Parkinson's disease is a chronic neurodegenerative disease of unknown cause. Dopamine neurons of the substantia nigra die. They project to the striatum (the nigrostriatal pathway). Dopamine is inhibitory there, and acetylcholine is excitatory. With less dopamine, acetylcholine becomes relatively dominant [1].
+Parkinson's disease is a chronic neurodegenerative disease of unknown cause. Dopamine neurons of the substantia nigra die. They project to the striatum (the nigrostriatal pathway). There, dopamine stimulates D1 receptors on the direct pathway and inhibits D2 receptors on the indirect pathway. Both actions make movement easier. Acetylcholine from striatal interneurons opposes dopamine. With less dopamine, movement becomes slow and acetylcholine becomes relatively dominant [1].
 
 **Motor features:**
 
@@ -1450,12 +1450,24 @@ Start with **one drug** (monotherapy) at a low dose and increase slowly. Monothe
 Status epilepticus is a seizure that lasts more than 5 minutes, or repeated seizures without recovery between them. It is an emergency. Brain damage becomes likely after about 30 minutes [4].
 
 > **Caution:** Manage status epilepticus by time:
-> - **0–5 minutes:** airway, oxygen, check glucose; give thiamine then glucose if needed.
+> - **0–5 minutes:** airway and oxygen. Check blood glucose at once and treat low glucose without delay. If alcohol misuse or malnutrition is likely, give IV thiamine as well; it must not delay glucose.
 > - **5–20 minutes:** a benzodiazepine: IV lorazepam, or IM midazolam, or rectal diazepam or buccal midazolam if there is no IV access. Repeat once if needed.
 > - **20–40 minutes:** a second-line drug: IV levetiracetam, fosphenytoin or valproate.
 > - **After 40 minutes:** refractory status; anaesthesia in intensive care (propofol, midazolam or thiopental infusion).
 
-## 5.8 For Discussion
+## 5.8 Brands in Egypt
+
+| Generic name | Brand examples | Dosage forms |
+|---|---|---|
+| Sodium valproate | Depakine | Tablets, modified-release tablets, syrup |
+| Carbamazepine | Tegretol | Tablets, modified-release tablets |
+| Lamotrigine | Lamictal | Tablets |
+| Levetiracetam | Keppra | Tablets, oral solution, injection |
+| Phenytoin | Epanutin | Capsules |
+
+*Table 5.5 — Brand examples. Availability changes; check the current Egyptian Drug Authority list.*
+
+## 5.9 For Discussion
 
 1. Why does ethosuximide treat absence seizures but not tonic–clonic seizures?
 2. A woman on carbamazepine wants to use the combined pill. What would you advise, and why?
@@ -2145,7 +2157,7 @@ D) Phenobarbital
 
 *Case 1.* An 18-year-old man cannot sleep since his grandfather died 2 weeks ago. He is given a benzodiazepine. (a) Which receptor does it act on, and how? (b) Which type of benzodiazepine suits trouble falling asleep? (c) Give three counselling points.
 
-*Case 2.* A 45-year-old man is brought to the emergency department after a car accident. His blood alcohol is 275 mg/dL. He has had alcohol-withdrawal seizures before. (a) Which drug group treats alcohol withdrawal? (b) Name one suitable drug and explain the choice if he has liver disease. (c) Why is buspirone not useful here?
+*Case 2.* A 45-year-old man is brought to the emergency department after a car accident. His blood alcohol is 275 mg/dL. He has had alcohol-withdrawal seizures before. Two days after admission he becomes tremulous, sweaty and agitated. (a) Which drug group treats alcohol withdrawal, and why is it not given on admission while he is intoxicated? (b) Name one suitable drug and explain the choice if he has liver disease. (c) Why is buspirone not useful here?
 
 *Case 3.* A 70-year-old woman has taken diazepam 10 mg every night for 5 years. She had a fall last month. (a) Why did the fall happen? (b) Why must diazepam not be stopped suddenly? (c) What is the plan?
 
@@ -2174,7 +2186,7 @@ D) Phenobarbital
 
 *Case 1.* (a) The GABA-A receptor; it increases the frequency of Cl^-^ channel opening when GABA binds. (b) A short- or intermediate-acting drug, such as temazepam, or a Z-drug. (c) Use only for a few nights to 2 weeks; do not drink alcohol or drive if drowsy; expect some rebound insomnia on stopping.
 
-*Case 2.* (a) Benzodiazepines. (b) Chlordiazepoxide or diazepam are standard. In liver disease, lorazepam is preferred, because it has no active metabolites. (c) Buspirone has no anticonvulsant action and does not act at the GABA-A receptor, so it does not prevent withdrawal seizures.
+*Case 2.* (a) Benzodiazepines, because they act on the same GABA-A receptors as alcohol and prevent withdrawal seizures and delirium. On admission he is intoxicated: benzodiazepines would add to the breathing depression. First protect the airway and monitor him. Start a monitored benzodiazepine regimen only when withdrawal signs appear, as now, and give thiamine. (b) Chlordiazepoxide or diazepam are standard. In liver disease, lorazepam is preferred, because it has no active metabolites. (c) Buspirone has no anticonvulsant action and does not act at the GABA-A receptor, so it does not prevent withdrawal seizures.
 
 *Case 3.* (a) Long-acting diazepam builds up in older people and causes sedation, poor balance and confusion. (b) She is dependent; sudden stopping can cause severe anxiety, insomnia, confusion and seizures. (c) Explain the plan and taper slowly over weeks to months, for example by reducing the dose every 2 weeks. Support her with sleep hygiene and CBT-I.
 
@@ -2294,7 +2306,17 @@ Features: rising end-tidal CO₂, tachycardia, muscle rigidity, fever, acidosis 
 
 > **Caution:** Always ask about personal or family history of problems with anaesthesia. For a susceptible patient, use a trigger-free technique: propofol infusion, opioids and a non-depolarising blocker, with a vapour-free machine.
 
-## 8.6 For Discussion
+## 8.6 Brands in Egypt
+
+| Generic name | Brand examples | Dosage forms |
+|---|---|---|
+| Propofol | Diprivan | 1% emulsion for injection |
+| Ketamine | Ketalar | Injection |
+| Midazolam | Dormicum | Injection, tablets |
+
+*Table 8.4 — Brand examples. Availability changes; check the current Egyptian Drug Authority list.*
+
+## 8.7 For Discussion
 
 1. Why do we use four or five drugs for one anaesthetic instead of one strong drug?
 2. Sevoflurane and desflurane are both fast. Why is sevoflurane used for inhaled induction in children?
@@ -2491,7 +2513,7 @@ Most local anaesthetics dilate blood vessels. Adrenaline (epinephrine), a vasoco
 - Lowers blood levels and the risk of toxicity, so a higher dose is allowed.
 - Reduces bleeding in the surgical field.
 
-> **Caution:** Avoid adrenaline-containing solutions in **end-arteries**: fingers, toes, penis, nose tip and ear lobes. Vasoconstriction can cause ischaemia and gangrene. Use them with care in severe heart disease, uncontrolled hypertension and hyperthyroidism.
+> **Caution:** Adrenaline was once banned in fingers, toes, nose and ears for fear of gangrene. Current evidence shows that dilute adrenaline (1:100,000 to 1:200,000) is safe in digits with normal circulation [4]. Avoid it where circulation is poor, such as in peripheral vascular disease, Raynaud's phenomenon or a crushed digit, and avoid it in the penis. Use it with care in severe heart disease, uncontrolled hypertension and hyperthyroidism.
 
 ## 9.5 Adverse Effects and LAST
 
@@ -2536,7 +2558,7 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 | Situation | Suitable choice |
 |---|---|
 | Suturing a small cut on the arm | Lidocaine with adrenaline |
-| Ring block of a finger | Plain lidocaine (no adrenaline) |
+| Ring block of a finger | Lidocaine; dilute adrenaline only if circulation is normal |
 | Long-lasting nerve block or epidural | Bupivacaine or ropivacaine (ropivacaine is safer for the heart) |
 | Allergy to an ester (for example procaine) | An amide |
 | Eye procedure | Tetracaine or proxymetacaine drops |
@@ -2545,7 +2567,16 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 
 *Table 9.5 — Choosing a local anaesthetic [1, 2].*
 
-## 9.7 For Discussion
+## 9.7 Brands in Egypt
+
+| Generic name | Brand examples | Dosage forms |
+|---|---|---|
+| Lidocaine | Xylocaine | Injection (plain and with adrenaline), gel, spray |
+| Bupivacaine | Marcaine | Injection; heavy solution for spinal use |
+
+*Table 9.6 — Brand examples. Availability changes; check the current Egyptian Drug Authority list.*
+
+## 9.8 For Discussion
 
 1. Why is a dental block harder to achieve near an abscess?
 2. Why can more lidocaine be given when adrenaline is added?
@@ -2555,7 +2586,7 @@ To prevent LAST: calculate the dose by weight, aspirate before injecting, inject
 - The unionised base crosses the membrane; the ionised form blocks the Na^+^ channel from inside.
 - Acidic (infected) tissue weakens the block.
 - Esters are broken down by plasma cholinesterase and cause more allergy; amides are broken down by the liver.
-- Adrenaline prolongs the block and lowers toxicity, but avoid it in end-arteries.
+- Adrenaline prolongs the block and lowers toxicity; avoid it where the circulation is poor.
 - LAST starts with CNS signs and can end in cardiac arrest; stop injecting, treat seizures and give 20% lipid emulsion.
 
 ## Self-Assessment
@@ -2589,11 +2620,11 @@ B) To speed onset by raising pH
 C) To treat allergy
 D) To prevent seizures
 
-**Q6.** In which site should adrenaline-containing local anaesthetic be avoided? [LO3]
-A) The forearm
-B) The scalp
-C) A finger
-D) The thigh
+**Q6.** In which patient should adrenaline-containing local anaesthetic be avoided? [LO3]
+A) A healthy adult with a forearm cut
+B) A child with a scalp wound
+C) A patient with Raynaud's phenomenon who needs a finger block
+D) A healthy adult with a thigh wound
 
 **Q7.** During a nerve block, a patient reports a metallic taste and numb lips, then has a seizure. What is the diagnosis? [LO4]
 A) Anaphylaxis
@@ -2636,7 +2667,7 @@ D) Procaine
 
 **Q5. A** — Vasoconstriction slows absorption, prolonging the block and lowering toxicity. B, C and D are wrong.
 
-**Q6. C** — Fingers are supplied by end-arteries; ischaemia can occur. A, B and D have good collateral supply.
+**Q6. C** — Poor digital circulation plus vasoconstriction can cause ischaemia. A, B and D have normal circulation; adrenaline is suitable.
 
 **Q7. B** — Metallic taste, numb lips and seizure are early LAST. A causes rash and wheeze. C causes fainting. D occurs with volatile agents.
 
@@ -2656,3 +2687,4 @@ D) Procaine
 1. Vanderah TW, editor. Katzung's Basic and Clinical Pharmacology. 16th ed. New York: McGraw Hill; 2024.
 2. Whalen K, editor. Lippincott Illustrated Reviews: Pharmacology. 8th ed. Philadelphia: Wolters Kluwer; 2023.
 3. Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine Local Anesthetic Systemic Toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021;46(1):81-2. DOI: 10.1136/rapm-2020-101986
+4. Lalonde D, Bell M, Benoit P, et al. A multicenter prospective study of 3,110 consecutive cases of elective epinephrine use in the fingers and hand: the Dalhousie Project clinical phase. J Hand Surg Am. 2005;30(5):1061-7. DOI: 10.1016/j.jhsa.2005.05.006
