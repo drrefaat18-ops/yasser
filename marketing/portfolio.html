@@ -1,0 +1,715 @@
+﻿<title>طبعات مِعيار المعتمدة</title>
+<meta name="description" content="نستلم الكتاب الجامعي في أي تخصص، بالعربية أو الإنجليزية، نقيّمه بمعايير تخصصه، نصلح كل ثغرة، ونسلّم Word وPDF مع درجة الكتاب قبل العمل وبعده.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Readex+Pro:wght@300;400;500;600&family=Reem+Kufi:wght@500;700&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --field:#0c372d; --field-deep:#072620; --field-line:#2f6e57; --field-glow:#1b5443;
+  --on-field:#e8f2ea; --on-field-2:#a9cdb9;
+  --paper:#e4eee2; --paper-2:#d4e3d1; --paper-ink:#122b25; --paper-ink-2:#3b584f; --rule:#9fbfae;
+  --stamp:#2b3fae; --red:#c3341a; --gold:#c9a64c;
+  --ruqaa:"Aref Ruqaa","Amiri","Traditional Arabic",serif;
+  --kufi:"Reem Kufi","Readex Pro","Segoe UI",Tahoma,sans-serif;
+  --sans:"Readex Pro","Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--field); color:var(--on-field);
+  font:400 17px/1.75 var(--sans);
+  padding-inline:20px; overflow-x:hidden;
+  scrollbar-color:var(--field-line) var(--field-deep);
+}
+::selection{background:var(--stamp);color:#fff}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin-inline:auto}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+.num s,.arr{display:inline-block}
+.arr{font-size:.6em;color:var(--paper-ink-2);margin-inline:4px 8px;vertical-align:.15em;text-decoration:none}
+
+/* ---------- security micro-text ---------- */
+.micro{
+  font:500 7.5px/1 var(--kufi); letter-spacing:.08em; color:var(--field-line);
+  white-space:nowrap; overflow:hidden; user-select:none;
+  border-block:1px solid var(--field-line); padding-block:4px; margin-block:0;
+}
+.micro.on-paper{color:var(--rule);border-color:var(--rule)}
+
+/* ---------- header ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand canvas{width:40px;height:40px}
+.brand b{font:700 30px/1 var(--ruqaa)}
+.brand small{display:block;font:400 12px/1.2 var(--sans);color:var(--on-field-2);margin-top:4px}
+.nav{display:flex;align-items:center;gap:26px;font-size:15px}
+.nav a{text-decoration:none;color:var(--on-field-2);transition:color .2s}
+.nav a:hover{color:var(--on-field)}
+.nav a.btn,.nav a.btn:hover{color:var(--field)}
+@media (max-width:860px){.nav a:not(.btn){display:none}}
+
+/* ---------- buttons: a ticket with a certificate double rule ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font:700 16px/1 var(--kufi); text-decoration:none; cursor:pointer;
+  background:var(--paper); color:var(--field);
+  padding:15px 22px; border:0; border-radius:3px;
+  box-shadow:inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--field-line), 0 6px 18px -8px rgba(0,0,0,.6);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s;
+}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--stamp), 0 12px 24px -10px rgba(0,0,0,.7)}
+.btn:active{transform:translateY(0)}
+.btn.small{padding:11px 16px;font-size:14px}
+.btn.ink{background:var(--stamp);color:#fff;box-shadow:inset 0 0 0 3px var(--stamp), inset 0 0 0 4px rgba(255,255,255,.55), 0 6px 18px -8px rgba(0,0,0,.5)}
+.btn.ink:hover{box-shadow:inset 0 0 0 3px var(--stamp), inset 0 0 0 4px #fff, 0 12px 24px -10px rgba(0,0,0,.6)}
+.link{color:var(--on-field-2);text-underline-offset:6px;text-decoration-color:var(--field-line);font-size:15px}
+.link:hover{color:var(--on-field);text-decoration-color:var(--gold)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:56px 88px}
+.hero-copy{position:relative;z-index:2}
+.hero h1{font:700 clamp(46px,6.4vw,88px)/1.18 var(--ruqaa);letter-spacing:0}
+.hero h1 span{display:block}
+.hero h1 .second{color:var(--gold)}
+.hero .lede{margin-top:26px;max-width:36em;font-size:19px;font-weight:300;color:var(--on-field-2)}
+.hero .lede strong{color:var(--on-field);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:36px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;padding-top:20px;border-top:1px solid var(--field-line);font-size:14px;color:var(--on-field-2)}
+.facts b{font:700 15px var(--kufi);color:var(--on-field);margin-inline-end:6px}
+.hero-doc{position:relative;display:grid;place-items:center;min-height:560px}
+.hero-doc > canvas{position:absolute;width:min(680px,120%);aspect-ratio:1;inset-inline-start:50%;top:50%;translate:50% -50%;pointer-events:none;opacity:.9}
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;padding-block:28px 64px;gap:28px}
+  .hero-doc{min-height:0;padding-block:24px}
+}
+
+/* ---------- the certificate ---------- */
+.cert{
+  position:relative;z-index:1;width:min(460px,100%);
+  padding:14px; border-radius:2px; rotate:-2.2deg;
+  background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cg fill='none' stroke='%232f6e57' stroke-width='.7'%3E%3Cpath d='M0 10Q10 0 20 10T40 10'/%3E%3Cpath d='M0 10Q10 20 20 10T40 10'/%3E%3Cpath d='M0 5Q10-5 20 5T40 5'/%3E%3Cpath d='M0 15Q10 25 20 15T40 15'/%3E%3C/g%3E%3C/svg%3E");
+  box-shadow:0 30px 60px -24px rgba(0,0,0,.75), 0 2px 0 rgba(255,255,255,.2) inset;
+  color:var(--paper-ink);
+}
+.cert-in{position:relative;overflow:hidden;background:var(--paper);padding:26px 26px 22px;outline:1px solid var(--field-line);outline-offset:-6px}
+.cert-in > canvas.wm{position:absolute;width:320px;height:320px;inset-inline-start:50%;top:46%;translate:50% -50%;opacity:.22;pointer-events:none}
+.cert-head{position:relative;text-align:center}
+.cert-head .serial{display:flex;justify-content:space-between;font:500 11px var(--kufi);color:var(--paper-ink-2);letter-spacing:.04em}
+.cert-head .serial b{color:var(--red);font-weight:700}
+.cert-head h2{font:700 30px/1.3 var(--ruqaa);margin-top:10px}
+.cert-head p{font-size:12.5px;color:var(--paper-ink-2)}
+.cert dl{position:relative;margin:20px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.cert dt{color:var(--paper-ink-2)}
+.cert dd{margin:0;font-weight:500;border-bottom:1px dotted var(--rule)}
+.gauge{position:relative;margin-top:22px}
+.gauge-label{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;color:var(--paper-ink-2)}
+.gauge-label .big{font:700 30px/1 var(--kufi);color:var(--paper-ink)}
+.gauge-label .big s{color:var(--red);text-decoration-thickness:2px;font-size:22px;margin-inline-end:10px}
+.gauge svg{display:block;width:100%;height:auto;margin-top:8px}
+.cert-foot{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:22px}
+.sig{font-size:12px;color:var(--paper-ink-2);min-width:130px}
+.sig .line{display:block;height:30px;border-bottom:1px solid var(--paper-ink-2);margin-bottom:4px}
+.sig .line svg{height:30px;width:auto;display:block}
+.sample-tag{position:absolute;inset-block-start:-12px;inset-inline-end:18px;z-index:3;rotate:2.2deg;background:var(--red);color:#fff;font:700 12px/1 var(--kufi);padding:7px 10px;border-radius:2px;letter-spacing:.03em}
+.cert .stamp{position:absolute;inset-block-end:10px;inset-inline-start:22px;width:148px;rotate:-12deg}
+
+/* ---------- stamps ---------- */
+.stamp svg{display:block;width:100%;height:auto;overflow:visible}
+.stamp text{font-family:var(--kufi)}
+.stamp.press svg{animation:press .7s cubic-bezier(.16,1,.3,1) both}
+@keyframes press{
+  0%{transform:scale(1.22);opacity:.25;filter:blur(1.5px)}
+  55%{transform:scale(.97);opacity:1;filter:blur(0)}
+  100%{transform:scale(1);opacity:1}
+}
+@media (prefers-reduced-motion:reduce){.stamp.press svg{animation:none}}
+
+/* ---------- sections ---------- */
+section{padding-block:88px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 64px;align-items:end;margin-bottom:40px}
+.sec-head h2{font:700 clamp(34px,4.4vw,56px)/1.25 var(--ruqaa)}
+.sec-head p{color:var(--on-field-2);max-width:34em}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}section{padding-block:64px}}
+
+/* paper documents that sit on the green field */
+.doc{background:var(--paper);color:var(--paper-ink);border-radius:2px;box-shadow:0 24px 50px -30px rgba(0,0,0,.8);position:relative}
+.doc-title{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 28px;border-bottom:2px solid var(--paper-ink);font:700 14px var(--kufi);letter-spacing:.02em}
+.doc-title span{font:400 12px var(--sans);color:var(--paper-ink-2)}
+
+/* ---------- ledger: copy shop vs us ---------- */
+.ledger{display:grid;grid-template-columns:minmax(120px,.7fr) 1fr 1.25fr}
+.ledger > div{padding:16px 28px;border-bottom:1px solid var(--rule)}
+.ledger .h{font:700 15px var(--kufi);padding-block:18px;border-bottom:2px solid var(--paper-ink)}
+.ledger .h.shop{color:var(--paper-ink-2)}
+.ledger .h.us{color:var(--stamp)}
+.ledger .k{font-weight:500;color:var(--paper-ink-2);font-size:15px}
+.ledger .shop{color:var(--paper-ink-2)}
+.ledger .shop:not(.h){text-decoration:line-through;text-decoration-color:rgba(195,52,26,.55);text-decoration-thickness:1.5px}
+.ledger .us:not(.h){font-weight:500;background:linear-gradient(90deg,transparent,rgba(43,63,174,.05))}
+.ledger > div:nth-last-child(-n+3){border-bottom:0}
+@media (max-width:760px){
+  .ledger{grid-template-columns:1fr 1fr}
+  .ledger .k{grid-column:1/-1;padding-bottom:4px;border-bottom:0;font-weight:700;color:var(--paper-ink);padding-top:18px}
+  .ledger .h.k{display:none}
+  .ledger > div{padding-inline:16px}
+  .ledger > div:nth-last-child(-n+3){border-bottom:1px solid var(--rule)}
+  .ledger > div:nth-last-child(-n+2){border-bottom:0}
+}
+
+/* ---------- routing slip ---------- */
+.slip-row{display:grid;grid-template-columns:92px 1.3fr 1fr 150px;gap:28px;align-items:center;padding:26px 28px;border-bottom:1px solid var(--rule)}
+.slip-row:last-child{border-bottom:0}
+.office{font:700 13px/1.3 var(--kufi);color:var(--paper-ink-2);text-align:center;border:1.5px solid var(--paper-ink-2);border-radius:2px;padding:10px 6px}
+.office b{display:block;font-size:34px;line-height:1.1;color:var(--paper-ink)}
+.slip-row h3{font:700 22px/1.4 var(--kufi)}
+.slip-row p{font-size:15.5px;color:var(--paper-ink-2);margin-top:6px;max-width:44ch}
+.receive{font-size:14.5px;line-height:1.6}
+.receive small{display:block;font:700 11.5px var(--kufi);color:var(--paper-ink-2);letter-spacing:.04em;margin-bottom:4px}
+.receive.gate{border:1.5px dashed var(--stamp);padding:12px 14px;border-radius:2px;color:var(--stamp)}
+.receive.gate small{color:var(--stamp)}
+.slip-row .stamp{width:132px;justify-self:center}
+.slip-row:nth-child(odd) .stamp{rotate:-9deg}
+.slip-row:nth-child(even) .stamp{rotate:7deg}
+@media (max-width:900px){
+  .slip-row{grid-template-columns:64px 1fr;gap:14px 18px;padding:22px 16px;position:relative}
+  .office b{font-size:26px}
+  .office{padding:8px 4px;font-size:11px}
+  .receive{grid-column:2;grid-row:2}
+  .slip-row .stamp{grid-column:1;grid-row:2;width:64px;align-self:start}
+}
+
+/* ---------- red pen specimen ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{font:700 15px var(--kufi);background:transparent;color:var(--on-field-2);border:1.5px solid var(--field-line);border-radius:2px;padding:10px 18px;cursor:pointer;transition:all .2s}
+.tab:hover{color:var(--on-field);border-color:var(--on-field-2)}
+.tab[aria-selected="true"]{background:var(--paper);color:var(--field);border-color:var(--paper)}
+.specimen{display:grid;grid-template-columns:1.35fr 1fr}
+.spec-page{padding:34px 36px 38px;border-inline-end:1px solid var(--rule);background:repeating-linear-gradient(var(--paper) 0 33px, rgba(159,191,174,.35) 33px 34px)}
+.spec-page .chap{font:700 12.5px var(--kufi);color:var(--paper-ink-2);letter-spacing:.04em}
+.spec-page h3{font:700 24px/1.4 var(--kufi);margin:4px 0 12px}
+.spec-page p{font-size:17px;line-height:34px}
+.spec-page p + p{margin-top:0}
+.mark{position:relative;text-decoration:underline wavy var(--red);text-decoration-thickness:1.4px;text-underline-offset:7px;cursor:help;border-radius:2px;transition:background .2s}
+.mark sup{font:700 11px/1 var(--kufi);color:#fff;background:var(--red);border-radius:50%;display:inline-grid;place-items:center;width:18px;height:18px;margin-inline-start:3px;vertical-align:4px;text-decoration:none}
+.mark.lit,.mark:hover,.mark:focus-visible{background:rgba(195,52,26,.12)}
+.notes{list-style:none;margin:0;padding:28px 28px 30px;display:grid;gap:14px;align-content:start}
+.notes li{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:12px 14px;border-radius:2px;transition:background .2s, box-shadow .2s}
+.notes li.lit{background:rgba(195,52,26,.08);box-shadow:inset 0 0 0 1px rgba(195,52,26,.35)}
+.notes .n{font:700 12px/1 var(--kufi);color:#fff;background:var(--red);border-radius:50%;width:24px;height:24px;display:grid;place-items:center;margin-top:3px}
+.notes .cat{font:700 11.5px var(--kufi);color:var(--red);letter-spacing:.04em}
+.notes .fix{font-family:"Aref Ruqaa",var(--sans);font-size:19px;line-height:1.55;color:var(--red)}
+.notes .why{font-size:13.5px;color:var(--paper-ink-2);line-height:1.6;margin-top:2px}
+@media (max-width:860px){
+  .specimen{grid-template-columns:1fr}
+  .spec-page{border-inline-end:0;border-bottom:1px solid var(--rule);padding:24px 18px}
+  .notes{padding:18px 12px}
+}
+
+/* ---------- score card ---------- */
+.score{display:grid;grid-template-columns:1fr 300px}
+.pillars{padding:26px 28px 30px;display:grid;gap:14px}
+.pillar{display:grid;grid-template-columns:190px 1fr 64px;gap:18px;align-items:center}
+.pillar .name{font-weight:500;font-size:15px}
+.pillar .name small{display:block;font-size:12px;color:var(--paper-ink-2);font-weight:400}
+.pillar svg{width:100%;height:30px;display:block;overflow:visible}
+.pillar .val{font:700 15px var(--kufi);text-align:end}
+.pillar .val s{color:var(--red);font-weight:500;margin-inline-end:6px}
+.total{border-inline-start:1px solid var(--rule);padding:28px;display:grid;align-content:center;justify-items:center;text-align:center;gap:6px}
+.total small{font:700 12px var(--kufi);color:var(--paper-ink-2);letter-spacing:.04em}
+.total .from{font:700 30px/1 var(--kufi);color:var(--red);text-decoration:line-through;text-decoration-thickness:2px}
+.total .to{font:700 88px/1 var(--kufi);color:var(--stamp)}
+.total .to span{font-size:24px;color:var(--paper-ink-2)}
+.total p{font-size:13.5px;color:var(--paper-ink-2);max-width:24ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;padding:0 28px 22px;font-size:13px;color:var(--paper-ink-2)}
+.legend i{display:inline-block;width:14px;height:10px;vertical-align:middle;margin-inline-end:6px;border-radius:1px}
+@media (max-width:900px){
+  .score{grid-template-columns:1fr}
+  .total{border-inline-start:0;border-top:1px solid var(--rule)}
+  .pillar{grid-template-columns:1fr 56px;gap:4px 12px;padding-inline:0}
+  .pillar svg{grid-column:1/-1;grid-row:2}
+  .pillars{padding:20px 16px}
+  .legend{padding-inline:16px}
+}
+
+/* ---------- deliverables: envelope manifest ---------- */
+.manifest{display:grid;grid-template-columns:repeat(3,1fr)}
+.manifest > div{padding:24px 28px;border-inline-start:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.manifest > div:nth-child(3n+1){border-inline-start:0}
+.manifest > div:nth-last-child(-n+3){border-bottom:0}
+.manifest h3{font:700 18px/1.4 var(--kufi);display:flex;gap:10px;align-items:center}
+.manifest h3 svg{width:22px;height:22px;flex:none;color:var(--stamp)}
+.manifest p{font-size:14.5px;color:var(--paper-ink-2);margin-top:6px}
+@media (max-width:860px){
+  .manifest{grid-template-columns:1fr}
+  .manifest > div{border-inline-start:0 !important;border-bottom:1px solid var(--rule) !important;padding:18px 16px}
+  .manifest > div:last-child{border-bottom:0 !important}
+}
+
+/* ---------- audiences + close ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0;border-block:1px solid var(--field-line)}
+.two > div{padding:34px 36px}
+.two > div + div{border-inline-start:1px solid var(--field-line)}
+.two h3{font:700 32px/1.3 var(--ruqaa)}
+.two p{color:var(--on-field-2);margin-top:10px;max-width:38ch}
+.two ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px}
+.two li{display:flex;gap:10px}
+.two li::before{content:"";flex:none;width:7px;height:7px;margin-top:11px;border:1.5px solid var(--gold);rotate:45deg}
+@media (max-width:760px){.two{grid-template-columns:1fr}.two > div{padding:26px 4px}.two > div + div{border-inline-start:0;border-top:1px solid var(--field-line)}}
+
+.close{position:relative;text-align:center;padding-block:110px 90px;overflow:hidden}
+.close > canvas{position:absolute;width:760px;height:760px;inset-inline-start:50%;top:50%;translate:50% -50%;opacity:.55;pointer-events:none}
+.close > *:not(canvas){position:relative}
+.close h2{font:700 clamp(40px,5.6vw,76px)/1.25 var(--ruqaa)}
+.close p{color:var(--on-field-2);max-width:40em;margin:18px auto 0}
+.close .actions{justify-content:center}
+.wa-number{font:500 15px var(--kufi);color:var(--on-field-2);direction:ltr;unicode-bidi:isolate}
+.copy{background:none;border:1px solid var(--field-line);color:var(--on-field-2);font:500 12px var(--kufi);padding:5px 10px;border-radius:2px;cursor:pointer;margin-inline-start:8px}
+
+footer{padding-block:26px 40px;font-size:13px;color:var(--on-field-2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="3" seed="11" result="s"/>
+      <feColorMatrix in="s" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -3.2 2.35" result="m"/>
+      <feComposite in="d" in2="m" operator="in"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="wrap" dir="rtl" lang="ar">
+
+<header class="top">
+  <a class="brand" href="#top" aria-label="مِعيار، إلى أعلى الصفحة">
+    <canvas class="rosette" data-set="mark" width="40" height="40" aria-hidden="true"></canvas>
+    <span><b>مِعيار</b><small>طبعات جامعية معتمدة</small></span>
+  </a>
+  <nav class="nav" aria-label="أقسام الصفحة">
+    <a href="#route">مراحل الاعتماد</a>
+    <a href="#redpen">القلم الأحمر</a>
+    <a href="#score">بطاقة الدرجة</a>
+    <a class="btn small wa" href="#contact" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 10.5c.5 2 2 3.5 4.5 4.5" stroke-linecap="round"/></svg>
+      تواصل على واتساب
+    </a>
+  </nav>
+</header>
+<p class="micro" aria-hidden="true" data-micro="مِعيار · طبعة جامعية معتمدة · تقييم · تصميم · تحرير · إخراج · إعادة تقييم · "></p>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="hero-copy">
+    <h1><span>مكتبة التصوير تنسخ كتابك.</span><span class="second">نحن نعتمده.</span></h1>
+    <p class="lede">نستلم الكتاب الجامعي في <strong>أي تخصص</strong>، بالعربية أو الإنجليزية، ونقيّمه بمعايير تخصصه، ونصلح كل ثغرة، ثم نسلّمك طبعة <strong>Word وPDF</strong> ومعها درجة الكتاب قبل العمل وبعده.</p>
+    <div class="actions">
+      <a class="btn wa" href="#contact" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 10.5c.5 2 2 3.5 4.5 4.5" stroke-linecap="round"/></svg>
+        أرسل كتابك على واتساب
+      </a>
+      <a class="link" href="#route">اطّلع على مراحل الاعتماد الست</a>
+    </div>
+    <div class="facts">
+      <span><b>٦</b>مراحل موثّقة</span>
+      <span><b>٢</b>توقيعان منك قبل أن نكتب</span>
+      <span><b>ع ⇄ En</b>ترجمة بين اللغتين</span>
+    </div>
+  </div>
+
+  <div class="hero-doc">
+    <canvas class="rosette" data-set="hero" aria-hidden="true"></canvas>
+    <article class="cert" aria-label="نموذج شهادة اعتماد طبعة، مثال توضيحي">
+      <span class="sample-tag">نموذج توضيحي</span>
+      <div class="cert-in">
+        <canvas class="rosette wm" data-set="wm" aria-hidden="true"></canvas>
+        <div class="cert-head">
+          <div class="serial"><span>رقم الطبعة <b class="num">م-٠٠٠٠</b></span><span>مِعيار</span></div>
+          <h2>شهادة اعتماد طبعة جامعية</h2>
+          <p>قُيّمت هذه الطبعة بمعيار تخصصها قبل العمل وبعده</p>
+        </div>
+        <dl>
+          <dt>الكتاب</dt><dd>مبادئ الكيمياء العضوية</dd>
+          <dt>التخصص</dt><dd>كيمياء، الفرقة الثانية</dd>
+          <dt>اللغة</dt><dd>الإنجليزية ← العربية</dd>
+          <dt>الملاحظات</dt><dd class="num">٦٤ ملاحظة، صُحّحت كلها</dd>
+        </dl>
+        <div class="gauge">
+          <div class="gauge-label"><span>الدرجة من ١٠٠</span><span class="big num"><s>٤٣</s><span class="arr">←</span>٩٠</span></div>
+          <svg viewBox="0 0 400 44" role="img" aria-label="الدرجة ارتفعت من ٤٣ إلى ٩٠ من ١٠٠">
+            <g transform="translate(400,0) scale(-1,1)">
+              <rect x="0" y="12" width="400" height="10" fill="#d4e3d1"/>
+              <rect x="0" y="12" width="360" height="10" fill="#2b3fae"/>
+              <rect x="0" y="12" width="172" height="10" fill="#c3341a" opacity=".85"/>
+              <g stroke="#3b584f" stroke-width="1">
+                <line x1="0" y1="24" x2="0" y2="31"/><line x1="40" y1="24" x2="40" y2="28"/><line x1="80" y1="24" x2="80" y2="28"/><line x1="120" y1="24" x2="120" y2="28"/><line x1="160" y1="24" x2="160" y2="28"/><line x1="200" y1="24" x2="200" y2="31"/><line x1="240" y1="24" x2="240" y2="28"/><line x1="280" y1="24" x2="280" y2="28"/><line x1="320" y1="24" x2="320" y2="28"/><line x1="360" y1="24" x2="360" y2="28"/><line x1="400" y1="24" x2="400" y2="31"/>
+              </g>
+            </g>
+            <g font-family="Reem Kufi, sans-serif" font-size="11" fill="#3b584f" text-anchor="middle">
+              <text x="396" y="43">٠</text><text x="200" y="43">٥٠</text><text x="8" y="43">١٠٠</text>
+            </g>
+          </svg>
+        </div>
+        <div class="cert-foot">
+          <div class="sig">
+            <span class="line"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M112 22c-10-14-18 6-26-2s-6-14-14-6-4 14-14 8-10-10-18-2-12 8-28 4" fill="none" stroke="#2b3fae" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            موافقة المؤلف على التصميم
+          </div>
+          <div class="sig" style="text-align:end">
+            <span class="line"></span>
+            مراجع التخصص
+          </div>
+        </div>
+        <div class="stamp" data-stamp='{"word":"معتمد","ring":"مِعيار · مراجعة أكاديمية · قبل وبعد · ","sub":"طبعة جامعية","hero":true}'></div>
+      </div>
+    </article>
+  </div>
+</div>
+
+<p class="micro" aria-hidden="true" data-micro="النسخ يكرر الخطأ · الاعتماد يصححه · "></p>
+
+<!-- ================= LEDGER ================= -->
+<section id="diff" aria-labelledby="diff-h">
+  <div class="sec-head">
+    <h2 id="diff-h">ماكينة التصوير لا تقرأ الكتاب.</h2>
+    <p>المكتبة تطبع ما يصلها كما هو، بأخطائه وصوره الباهتة. نحن نقرأ الكتاب كاملاً قبل أن نلمسه، ونقيس كل فصل بما يطلبه تخصصه من دقة ووضوح وأمثلة.</p>
+  </div>
+  <div class="doc">
+    <div class="doc-title">مقارنة بندًا ببند <span>ما يحدث لكتابك في كل حالة</span></div>
+    <div class="ledger">
+      <div class="h k">البند</div><div class="h shop">مكتبة التصوير</div><div class="h us">مِعيار</div>
+      <div class="k">المحتوى</div><div class="shop">يُنسخ كما وصل</div><div class="us">يُقرأ كاملاً ويُقيَّم بمعيار التخصص</div>
+      <div class="k">الأخطاء العلمية</div><div class="shop">تتكرر في كل نسخة</div><div class="us">تُسجَّل برقم ودليل، ثم تُصحَّح</div>
+      <div class="k">الأشكال والمعادلات</div><div class="shop">صورة ممسوحة باهتة</div><div class="us">تُعاد رسمًا: تراكيب كيميائية، مخططات، رسوم بيانية</div>
+      <div class="k">بناء الفصل</div><div class="shop">كما هو</div><div class="us">أهداف تعلّم، أمثلة محلولة، أسئلة تقويم</div>
+      <div class="k">اللغة</div><div class="shop">لغة الأصل فقط</div><div class="us">عربي أو إنجليزي، مع الترجمة بينهما</div>
+      <div class="k">ما تستلمه</div><div class="shop">ورق مدبّس</div><div class="us">Word وPDF وسجل الملاحظات والدرجة قبل وبعد</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROUTING SLIP ================= -->
+<section id="route" aria-labelledby="route-h">
+  <div class="sec-head">
+    <h2 id="route-h">استمارة مرور الكتاب</h2>
+    <p>يمر كل كتاب على ستة مكاتب بالترتيب نفسه، ولا ينتقل من مكتب إلى الذي يليه قبل أن يُختم. في مرحلتين لا نبدأ إلا بتوقيعك أنت.</p>
+  </div>
+  <div class="doc">
+    <div class="doc-title">استمارة مرور <span>الختم يعني أن المرحلة اكتملت وسُلّمت</span></div>
+    <div class="slip" id="slip"></div>
+  </div>
+</section>
+
+<!-- ================= RED PEN ================= -->
+<section id="redpen" aria-labelledby="redpen-h">
+  <div class="sec-head">
+    <h2 id="redpen-h">القلم الأحمر يعرف التخصص</h2>
+    <p>معيار الكيمياء غير معيار الإحصاء. اختر تخصصًا وشاهد نوع الملاحظات التي نسجّلها على صفحة واحدة. مرّر على الكلمة المعلَّمة لترى ملاحظتها.</p>
+  </div>
+  <div class="tabs" role="tablist" aria-label="التخصص">
+    <button class="tab" role="tab" id="tab-chem" aria-selected="true" aria-controls="spec" data-k="chem">كيمياء</button>
+    <button class="tab" role="tab" id="tab-pharm" aria-selected="false" aria-controls="spec" data-k="pharm">صيدلة وطب</button>
+    <button class="tab" role="tab" id="tab-eng" aria-selected="false" aria-controls="spec" data-k="eng">هندسة</button>
+    <button class="tab" role="tab" id="tab-stat" aria-selected="false" aria-controls="spec" data-k="stat">إحصاء</button>
+  </div>
+  <div class="doc" id="spec" role="tabpanel" aria-labelledby="tab-chem">
+    <div class="doc-title">صفحة مثال <span>نص توضيحي كُتب لهذا العرض، ليس من كتاب عميل</span></div>
+    <div class="specimen">
+      <div class="spec-page"><div class="chap" id="sp-chap"></div><h3 id="sp-title"></h3><p id="sp-text"></p></div>
+      <ol class="notes" id="sp-notes"></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCORE ================= -->
+<section id="score" aria-labelledby="score-h">
+  <div class="sec-head">
+    <h2 id="score-h">درجة تُقاس، لا وعد يُقال</h2>
+    <p>قبل أن نكتب حرفًا نقيّم الكتاب على محاور ثابتة من صفر إلى خمسة، وبعد التسليم نعيد التقييم بالمحاور نفسها. الفرق بين الرقمين هو ما دفعت مقابله.</p>
+  </div>
+  <div class="doc">
+    <div class="doc-title">بطاقة الدرجة <span>مثال توضيحي لكتاب كيمياء</span></div>
+    <div class="score">
+      <div>
+        <div class="pillars" id="pillars"></div>
+        <div class="legend"><span><i style="background:#c3341a"></i>قبل العمل</span><span><i style="background:#2b3fae"></i>بعد العمل</span><span>المقياس من ٠ إلى ٥ لكل محور</span></div>
+      </div>
+      <div class="total">
+        <small>المجموع من ١٠٠</small>
+        <div class="from num">٤٣</div>
+        <div class="to num">٩٠<span>/١٠٠</span></div>
+        <p>مجموع المحاور الستة محوَّلًا إلى ١٠٠</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DELIVERABLES ================= -->
+<section id="deliver" aria-labelledby="deliver-h">
+  <div class="sec-head">
+    <h2 id="deliver-h">محتويات المظروف</h2>
+    <p>ستة ملفات تستلمها في نهاية العمل. كلها قابلة للمراجعة، ولا شيء فيها يُخفى عنك.</p>
+  </div>
+  <div class="doc">
+    <div class="doc-title">كشف التسليم <span>ما يصلك مع كل طبعة</span></div>
+    <div class="manifest">
+      <div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12l1.5 5 1.5-4 1.5 4 1.5-5"/></svg>طبعة Word</h3><p>ملف قابل للتعديل، تضيف عليه في الفصل الدراسي القادم دون أن تبدأ من الصفر.</p></div>
+      <div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 17v-5h2a1.5 1.5 0 0 1 0 3H9"/></svg>طبعة PDF</h3><p>جاهزة للمطبعة، بخط وقالب موحّدين وفهرس وترقيم صحيح.</p></div>
+      <div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg>بطاقة الدرجة</h3><p>الدرجة قبل وبعد على كل محور، بالمعيار الذي وافقت عليه في البداية.</p></div>
+      <div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>سجل الملاحظات</h3><p>كل ثغرة وجدناها، برقمها وموضعها ودليلها.</p></div>
+      <div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></svg>سجل التصحيحات</h3><p>ما الذي تغيّر في كل ملاحظة ولماذا، لتراجعه قبل الطباعة.</p></div>
+      <div><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l3 6 6 .5-4.5 4 1.5 6.5-6-3.5-6 3.5 1.5-6.5L3 9.5 9 9z"/></svg>الأشكال منفصلة</h3><p>كل شكل أُعيد رسمه في ملف مستقل، تستخدمه في المحاضرة والعرض.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIENCES ================= -->
+<section aria-label="لمن هذه الخدمة" style="padding-block:40px">
+  <div class="two">
+    <div>
+      <h3>لعضو هيئة التدريس</h3>
+      <p>عندك مذكرة أو كتاب مقرر تدرّسه كل عام، وتريد له طبعة تليق باسمك.</p>
+      <ul><li>تبقى صاحب القرار: لا نكتب قبل موافقتك على الخطة والتصميم</li><li>مذكرات متفرقة تتحول إلى كتاب واحد متماسك</li><li>ترجمة كتابك إلى العربية أو الإنجليزية</li></ul>
+    </div>
+    <div>
+      <h3>للأقسام والكليات</h3>
+      <p>مقررات كاملة تخرج بقالب واحد ومعيار واحد، لكل تخصص معياره.</p>
+      <ul><li>معيار تقييم مكتوب لكل تخصص قبل البدء</li><li>درجة قبل وبعد لكل كتاب في المجموعة</li><li>ملفات Word قابلة للتحديث كل عام</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSE ================= -->
+<section class="close" id="contact-sec" aria-labelledby="close-h">
+  <canvas class="rosette" data-set="close" aria-hidden="true"></canvas>
+  <h2 id="close-h">ابدأ برسالة واحدة.</h2>
+  <p>أرسل عنوان الكتاب وتخصصه ولغته وعدد صفحاته تقريبًا، ونرد عليك بخطة العمل.</p>
+  <div class="actions">
+    <a class="btn ink wa" href="#contact" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 10.5c.5 2 2 3.5 4.5 4.5" stroke-linecap="round"/></svg>
+      أرسل كتابك على واتساب
+    </a>
+    <span id="wa-line" hidden><span class="wa-number" id="wa-num"></span><button class="copy" id="wa-copy" type="button">نسخ الرقم</button></span>
+  </div>
+</section>
+</main>
+
+<p class="micro" aria-hidden="true" data-micro="مِعيار · طبعة جامعية معتمدة · "></p>
+<footer>
+  <span>مِعيار، طبعات جامعية معتمدة</span>
+  <span>الأرقام والصفحات المعروضة هنا أمثلة توضيحية، وليست من كتب عملاء.</span>
+</footer>
+</div>
+
+<script>
+/* ============ edit these two lines ============ */
+const WHATSAPP_NUMBER = "";   // e.g. "201001234567" (country code, no + or spaces)
+const WHATSAPP_MESSAGE = "السلام عليكم، أريد طبعة معتمدة لكتاب جامعي.\nالعنوان:\nالتخصص:\nاللغة:\nعدد الصفحات تقريبًا:";
+/* ============================================== */
+
+(function(){
+  const toAr = n => String(n).replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
+
+  /* ---- WhatsApp links ---- */
+  const wa = (WHATSAPP_NUMBER ? `https://wa.me/${WHATSAPP_NUMBER}` : "https://wa.me/") + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  document.querySelectorAll("a.wa").forEach(a => a.href = wa);
+  if (WHATSAPP_NUMBER) {
+    document.getElementById("wa-line").hidden = false;
+    const shown = "+" + WHATSAPP_NUMBER;
+    document.getElementById("wa-num").textContent = shown;
+    const btn = document.getElementById("wa-copy");
+    btn.addEventListener("click", () => {
+      const done = () => { btn.textContent = "نُسخ الرقم"; setTimeout(() => btn.textContent = "نسخ الرقم", 1800); };
+      try { navigator.clipboard.writeText(shown).then(done, () => selectNum()); } catch (e) { selectNum(); }
+    });
+    function selectNum(){ const r = document.createRange(); r.selectNodeContents(document.getElementById("wa-num")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  }
+
+  /* ---- micro-text lines ---- */
+  document.querySelectorAll("[data-micro]").forEach(el => el.textContent = el.dataset.micro.repeat(40));
+
+  /* ---- guilloche rosettes (canvas) ---- */
+  const SETS = {
+    hero:  {c:"rgba(126,196,160,.30)", w:.7, rings:[[178,10,44,9],[150,16,36,11],[112,14,28,10],[72,11,20,9],[34,7,12,7]]},
+    close: {c:"rgba(126,196,160,.28)", w:.7, rings:[[190,9,48,9],[160,15,40,10],[120,13,30,10],[80,10,22,8]]},
+    wm:    {c:"rgba(47,110,87,.55)",   w:.6, rings:[[180,12,36,8],[130,14,28,9],[80,10,18,8]]},
+    mark:  {c:"#c9a64c",               w:.9, rings:[[180,20,14,6],[110,18,10,5]]}
+  };
+  function draw(cv){
+    const set = SETS[cv.dataset.set]; if (!set) return;
+    const s = cv.clientWidth || 40, dpr = Math.min(devicePixelRatio || 1, 2);
+    cv.width = s * dpr; cv.height = s * dpr;
+    const x = cv.getContext("2d");
+    x.setTransform(dpr,0,0,dpr,s/2,s/2);
+    const k = s / 400;
+    x.strokeStyle = set.c; x.lineWidth = set.w * (s < 80 ? 1.4 : 1);
+    for (const [A,B,petals,n] of set.rings) {
+      const steps = petals * 26;
+      for (let i = 0; i < n; i++) {
+        const ph = i * (2*Math.PI / petals) / n;
+        x.beginPath();
+        for (let j = 0; j <= steps; j++) {
+          const t = j / steps * 2 * Math.PI;
+          const r = (A + B*Math.cos(petals*t + ph) + B*.35*Math.sin(2*petals*t - ph)) * k;
+          j ? x.lineTo(r*Math.cos(t), r*Math.sin(t)) : x.moveTo(r*Math.cos(t), r*Math.sin(t));
+        }
+        x.stroke();
+      }
+    }
+  }
+  const canvases = [...document.querySelectorAll("canvas.rosette")];
+  canvases.forEach(draw);
+  if ("ResizeObserver" in window) { const ro = new ResizeObserver(es => es.forEach(e => draw(e.target))); canvases.forEach(c => ro.observe(c)); }
+  document.fonts && document.fonts.ready.then(() => canvases.forEach(draw));
+
+  /* ---- rubber stamps (svg) ---- */
+  let sid = 0;
+  function stamp(el, o){
+    const id = "sp" + (sid++), color = o.color || "#2b3fae";
+    el.innerHTML = `<svg viewBox="0 0 200 200" role="img" aria-label="ختم: ${o.word}">
+      <defs><path id="${id}" d="M 100,100 m -79,0 a 79,79 0 1,1 158,0 a 79,79 0 1,1 -158,0"/></defs>
+      <g filter="url(#ink)" fill="none" stroke="${color}" opacity=".9">
+        <circle cx="100" cy="100" r="95" stroke-width="4.5"/>
+        <circle cx="100" cy="100" r="89" stroke-width="1.2"/>
+        <circle cx="100" cy="100" r="64" stroke-width="1.6"/>
+        <text fill="${color}" stroke="none" font-size="14.5" font-weight="700"><textPath href="#${id}" textLength="486" lengthAdjust="spacing">${o.ring}</textPath></text>
+        <line x1="44" y1="84" x2="156" y2="84" stroke-width="1.2"/>
+        <line x1="44" y1="124" x2="156" y2="124" stroke-width="1.2"/>
+        <text x="100" y="114" fill="${color}" stroke="none" text-anchor="middle" font-size="${o.word.length > 5 ? 28 : 34}" font-weight="700">${o.word}</text>
+        <text x="100" y="142" fill="${color}" stroke="none" text-anchor="middle" font-size="11.5" font-weight="500">${o.sub}</text>
+        <text x="100" y="72" fill="${color}" stroke="none" text-anchor="middle" font-size="11" font-weight="500">${o.top || "مِعيار"}</text>
+      </g></svg>`;
+  }
+
+  /* ---- routing slip ---- */
+  const PHASES = [
+    {name:"الاستلام والتعريف", word:"استُلم", desc:"نستلم ما عندك: PDF أو Word أو مذكرات متفرقة، ونسألك عن المقرر وطلابه ومستواهم قبل أي عمل.", gate:true, rec:"توقيعك على ملف التعريف ومعايير التقييم. لا نبدأ قبله."},
+    {name:"التقييم", word:"قُيِّم", desc:"نقرأ الكتاب كاملًا ونقيسه بمعيار تخصصه، ونسجّل كل ثغرة برقم وموضع ودليل.", rec:"الدرجة الأولى وسجل الملاحظات."},
+    {name:"التصميم", word:"صُمِّم", desc:"نخطط طبعة أقوى وأبسط: ترتيب الفصول، أهداف التعلم، الأمثلة، أسئلة التقويم، وشكل الصفحة.", gate:true, rec:"توقيعك على التصميم قبل أن نكتب حرفًا."},
+    {name:"إعادة الكتابة", word:"حُرِّر", desc:"نترجم أولًا عند الحاجة، ثم نصحح كل ملاحظة ونعيد رسم الأشكال: تراكيب كيميائية، مخططات تفاعل، رسوم بيانية.", rec:"الفصول المحررة وسجل التصحيحات."},
+    {name:"الإخراج", word:"أُخرج", desc:"نبني الكتاب بقالب واحد: خطوط، فهرس، ترقيم، أشكال في مكانها الصحيح.", rec:"ملف Word قابل للتعديل وPDF جاهز للمطبعة."},
+    {name:"إعادة التقييم", word:"اعتُمد", desc:"نقيّم الطبعة الجديدة بالمعيار نفسه الذي قيّمنا به الأصل، محورًا محورًا.", rec:"الدرجة بعد العمل بجانب الدرجة قبله."}
+  ];
+  const slip = document.getElementById("slip");
+  PHASES.forEach((p, i) => {
+    const row = document.createElement("div");
+    row.className = "slip-row";
+    row.innerHTML = `<div class="office">مكتب<b>${toAr(i+1)}</b></div>
+      <div><h3>${p.name}</h3><p>${p.desc}</p></div>
+      <div class="receive${p.gate ? " gate" : ""}"><small>${p.gate ? "بتوقيعك" : "تستلم"}</small>${p.rec}</div>
+      <div class="stamp"></div>`;
+    slip.appendChild(row);
+    stamp(row.querySelector(".stamp"), {word:p.word, ring:`استمارة مرور · المرحلة ${toAr(i+1)} من ٦ · مِعيار · `, sub:p.name, color: p.gate ? "#2b3fae" : (i === 5 ? "#2b3fae" : "#34479b")});
+  });
+
+  /* hero stamp */
+  document.querySelectorAll("[data-stamp]").forEach(el => stamp(el, JSON.parse(el.dataset.stamp)));
+
+  /* press stamps: visible by default, the press plays once as each comes into view */
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("press"); io.unobserve(e.target); }
+    }), {threshold:.6});
+    document.querySelectorAll(".stamp").forEach(s => io.observe(s));
+  }
+
+  /* ---- red pen specimen ---- */
+  const SPEC = {
+    chem: {chap:"الفصل الرابع · الكحولات", title:"نزع الماء من الإيثانول",
+      text:"يتفاعل الإيثانول مع حمض الكبريتيك المركّز [[عند ١٤٠° م لينتج الإيثين]]. وتُحسب كمية الناتج من [[الكتلة المولية للإيثانول (٤٦ جم)]]. ويوضح [[الشكل ٤-٣]] آلية التفاعل خطوة بخطوة.",
+      notes:[
+        {cat:"دقة علمية", fix:"عند ١٧٠° م تقريبًا ينتج الإيثين", why:"عند ١٤٠° م يتكوّن ثنائي إيثيل الإيثر. درجة الحرارة تحدد الناتج."},
+        {cat:"وحدات", fix:"٤٦ جم/مول", why:"الكتلة المولية وحدتها جم/مول، لا جم."},
+        {cat:"أشكال", fix:"يُعاد رسم الآلية", why:"الشكل غير موجود في الفصل. نرسم الآلية بتراكيب كيميائية واضحة وأسهم حركة الإلكترونات."}
+      ]},
+    pharm: {chap:"الفصل الثاني · المسكنات", title:"الباراسيتامول",
+      text:"[[الباراسيتامول مضاد التهاب قوي]] يُستخدم في الألم والحمى. [[وأقصى جرعة للبالغ ٨ جم يوميًا]]، وتسبب الجرعة الزائدة تلفًا في الكبد. [[يبدأ الفصل مباشرة بالأدوية]].",
+      notes:[
+        {cat:"دقة علمية", fix:"مسكن وخافض حرارة، وتأثيره المضاد للالتهاب ضعيف", why:"وصفه بمضاد التهاب قوي خطأ يتكرر في المذكرات."},
+        {cat:"سلامة", fix:"٤ جم يوميًا للبالغ", why:"الرقم المكتوب ضعف الحد الأقصى المعتمد، وخطؤه في الجرعة خطر حقيقي."},
+        {cat:"بناء التعلم", fix:"إضافة أهداف تعلم في أول الفصل", why:"الطالب لا يعرف ما المطلوب منه قبل أن يقرأ."}
+      ]},
+    eng: {chap:"الفصل الثالث · مقاومة المواد", title:"الإجهاد العمودي",
+      text:"يُعرَّف الإجهاد بأنه [[القوة مضروبة في المساحة]]. وفي المثال التالي نحسب الإجهاد [[بوحدة كجم/سم²]] لقضيب من الصلب. [[الحل: ٢٥٠]].",
+      notes:[
+        {cat:"دقة علمية", fix:"الإجهاد = القوة ÷ المساحة", why:"التعريف مقلوب، وكل حساب في الفصل يبنى عليه."},
+        {cat:"وحدات", fix:"نيوتن/مم² (ميجاباسكال)", why:"نوحّد الوحدات على النظام الدولي في الكتاب كله."},
+        {cat:"بناء التعلم", fix:"إظهار خطوات الحل", why:"مثال محلول بلا خطوات لا يعلّم الطالب الطريقة."}
+      ]},
+    stat: {chap:"الفصل الخامس · اختبار الفروض", title:"قيمة p",
+      text:"إذا كانت p = 0.03 [[فإن احتمال صحة الفرضية الصفرية ٣٪]]. ونذكّر بأن [[الانحراف المعياري هو مربع التباين]]. ويُجرى التحليل [[ببرنامج SPSS الإصدار ١٠ (١٩٩٩)]].",
+      notes:[
+        {cat:"دقة علمية", fix:"احتمال الحصول على نتيجة بهذا التطرف أو أكثر إذا كانت الفرضية الصفرية صحيحة", why:"قيمة p لا تعطي احتمال صحة الفرضية."},
+        {cat:"دقة علمية", fix:"الانحراف المعياري هو الجذر التربيعي للتباين", why:"العلاقة مقلوبة."},
+        {cat:"حداثة", fix:"تحديث الأداة والإصدار", why:"إصدار عمره أكثر من عشرين عامًا. نحدّث الخطوات والصور لإصدار حالي أو لبديل مجاني."}
+      ]}
+  };
+  const chap = document.getElementById("sp-chap"), ttl = document.getElementById("sp-title"), txt = document.getElementById("sp-text"), notes = document.getElementById("sp-notes"), panel = document.getElementById("spec");
+  function render(k){
+    const s = SPEC[k];
+    chap.textContent = s.chap; ttl.textContent = s.title;
+    let n = 0;
+    txt.innerHTML = s.text.replace(/\[\[(.+?)\]\]/g, (_, w) => { n++; return `<span class="mark" tabindex="0" data-n="${n}" aria-describedby="note-${n}">${w}<sup>${toAr(n)}</sup></span>`; });
+    notes.innerHTML = s.notes.map((x, i) => `<li id="note-${i+1}" data-n="${i+1}"><span class="n">${toAr(i+1)}</span><div><div class="cat">${x.cat}</div><div class="fix">${x.fix}</div><div class="why">${x.why}</div></div></li>`).join("");
+    const light = (num, on) => panel.querySelectorAll(`[data-n="${num}"]`).forEach(e => e.classList.toggle("lit", on));
+    panel.querySelectorAll("[data-n]").forEach(e => {
+      ["mouseenter","focus"].forEach(ev => e.addEventListener(ev, () => light(e.dataset.n, true)));
+      ["mouseleave","blur"].forEach(ev => e.addEventListener(ev, () => light(e.dataset.n, false)));
+    });
+  }
+  const tabs = [...document.querySelectorAll(".tab")];
+  tabs.forEach(t => {
+    t.addEventListener("click", () => select(t));
+    t.addEventListener("keydown", e => {
+      const i = tabs.indexOf(t);
+      // RTL: ArrowLeft moves forward
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        const d = e.key === "ArrowLeft" ? 1 : -1;
+        const nx = tabs[(i + d + tabs.length) % tabs.length]; nx.focus(); select(nx);
+      }
+    });
+  });
+  function select(t){
+    tabs.forEach(x => { const on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; });
+    panel.setAttribute("aria-labelledby", t.id);
+    render(t.dataset.k);
+  }
+  tabs.forEach((x, i) => x.tabIndex = i ? -1 : 0);
+  render("chem");
+
+  /* ---- score card: bars drawn on one 0..5 scale ---- */
+  const PILLARS = [
+    ["الدقة العلمية","المعلومة صحيحة وحديثة",2,5],
+    ["الوضوح والتبسيط","لغة يفهمها طالب الفرقة",3,4],
+    ["بناء التعلم","أهداف، أمثلة محلولة، تقويم",1,4],
+    ["الأشكال والمعادلات","مرسومة، مرقّمة، مذكورة في النص",2,5],
+    ["المصطلحات واللغة","مصطلح واحد للمفهوم الواحد",3,4],
+    ["الإخراج","قالب، فهرس، ترقيم",2,5]
+  ];
+  const W = 500, U = W / 5;
+  document.getElementById("pillars").innerHTML = PILLARS.map(([n, sub, b, a]) => {
+    let ticks = "";
+    for (let v = 0; v <= 5; v++) ticks += `<line x1="${W - v*U}" y1="20" x2="${W - v*U}" y2="${v % 5 ? 24 : 27}" stroke="#3b584f" stroke-width="1"/>`;
+    return `<div class="pillar">
+      <div class="name">${n}<small>${sub}</small></div>
+      <svg viewBox="0 0 ${W} 30" preserveAspectRatio="none" role="img" aria-label="${n}: ${toAr(b)} من ٥ قبل، ${toAr(a)} من ٥ بعد">
+        <rect x="0" y="6" width="${W}" height="12" fill="#d4e3d1"/>
+        <rect x="${W - a*U}" y="6" width="${a*U}" height="12" fill="#2b3fae"/>
+        <rect x="${W - b*U}" y="6" width="${b*U}" height="12" fill="#c3341a" opacity=".9"/>
+        ${ticks}
+      </svg>
+      <div class="val num"><s>${toAr(b)}</s><span class="arr">←</span>${toAr(a)}</div>
+    </div>`;
+  }).join("");
+})();
+</script>
