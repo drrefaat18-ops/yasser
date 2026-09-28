@@ -19,18 +19,14 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures  # noqa: E402
-from harness.tools import assemble, check_book, config  # noqa: E402
+from harness.tools import assemble, blocks, config  # noqa: E402
 
 # Preset constants of the ltr-textbook layout (sizes in pt, rules and grid colours): tested layout, not project config
 RULE, GRID, STRIPE, LINK, WHITE = "F0B429", "C9D1D9", "F4F6F8", "2B5D8A", "FFFFFF"
 DEFAULT_BOX = "F1F1EE"
 GAP = "\u00a0\u00a0 "   # two no-break spaces and a space between a heading number and its title
-Q_LINE = re.compile(r"\*\*(Q\d+)\.\*\*\s*(.+)")   # marker grammar constant (core §4.3)
 LO_ITEM = re.compile(r"\[(LO\d+)\]\s*(.+)")
-LO_TAIL = re.compile(r"\s*(\[LO\d+(?:,\s*LO\d+)*\])\s*$")
-INLINE = re.compile(r"(\*\*\*.+?\*\*\*|\*\*.+?\*\*|(?<![\w*])\*[^*\s][^*]*?\*(?![\w*])|\[[^\]]+\]\([^)\s]+\))")
 DOI = re.compile(r"(10\.\d{4,9}/[^\s]+[^\s.,;])")
-URL = re.compile(r"(https?://[^\s)]+[^\s).,;])")
 
 
 class BuildError(Exception):
@@ -103,10 +99,14 @@ class Factory:
         return container.add_paragraph(text, style=style) if text is not None else (
             container.add_paragraph(style=style) if style else container.add_paragraph())
 
-    def make_run(self, p, text, *, bold=False, italic=False, colour=None, size=None):
+    def make_run(self, p, text, *, bold=False, italic=False, colour=None, size=None, sub=False, sup=False):
         r = p.add_run(text)
         r.bold = bold or None
         r.italic = italic or None
+        if sub:
+            r.font.subscript = True
+        elif sup:
+            r.font.superscript = True
         if colour:
             r.font.color.rgb = self.d["RGBColor"].from_string(colour)
         if size:
@@ -409,32 +409,12 @@ class Renderer:
 
     # inline markdown
     def inline(self, p, text, bold=False, italic=False, colour=None, size=None, links=True):
-        for tok in INLINE.split(text):
-            if not tok:
-                continue
-            b, i, t, url = bold, italic, tok, None
-            if tok.startswith("***") and tok.endswith("***") and len(tok) > 6:
-                b, i, t = True, True, tok[3:-3]
-            elif tok.startswith("**") and tok.endswith("**") and len(tok) > 4:
-                b, t = True, tok[2:-2]
-            elif tok.startswith("[") and "](" in tok and tok.endswith(")"):
-                t, url = tok[1:].split("](", 1)
-                url = url[:-1]
-            elif tok.startswith("*") and tok.endswith("*") and len(tok) > 2:
-                i, t = True, tok[1:-1]
-            if url and links:
-                self.x.add_hyperlink(p, t, url, b, i)
-                continue
-            if links and URL.search(t):
-                for k, seg in enumerate(URL.split(t)):
-                    if not seg:
-                        continue
-                    if k % 2:
-                        self.x.add_hyperlink(p, seg, seg, b, i)
-                    else:
-                        self.f.make_run(p, seg, bold=b, italic=i, colour=colour, size=size)
-                continue
-            self.f.make_run(p, t, bold=b, italic=i, colour=colour, size=size)
+        for sp in blocks.inline(text, links):
+            b, i = bold or sp["bold"], italic or sp["italic"]
+            if sp["url"]:
+                self.x.add_hyperlink(p, sp["text"], sp["url"], b, i)
+            else:
+                self.f.make_run(p, sp["text"], bold=b, italic=i, colour=colour, size=size, sub=sp["sub"], sup=sp["sup"])
 
     def reference_runs(self, p, text):
         """References: DOIs become links; the rest is inline markdown."""
@@ -517,9 +497,7 @@ class Renderer:
                 self.inline(p, ch)
         self.after_table(container)
 
-    def md_table(self, container, rows):
-        cells = [[x.strip() for x in r.strip().strip("|").split("|")] for r in rows]
-        cells = [r for r in cells if not all(re.fullmatch(r":?-+:?", x) for x in r)]
+    def md_table(self, container, cells):
         n = len(cells[0])
         t = self.f.make_table(container, len(cells), n)
         t.alignment = self.d["WD_TABLE_ALIGNMENT"].CENTER
@@ -589,147 +567,70 @@ class Renderer:
                 self.inline(cp, caption)
 
     def markdown(self, text, kind, source):
-        """kind: 'chapter' or 'glossary'; `source` is the file the text came from (image links are relative to it)."""
+        """kind: 'chapter' or 'glossary'; `source` is the file the text came from (image links are relative to it).
+        The blocks come from the shared grammar (blocks.parse), which the HTML writer reads too."""
         d, doc, bk, f = self.d, self.doc, self.bk, self.f
         Pt, Cm, A = d["Pt"], d["Cm"], d["WD_ALIGN_PARAGRAPH"]
-        lines = text.splitlines()
-        parsed = check_book.parse(text, bk.cfg)   # INV-30: sections and callouts by ID, from the checker's parser
-        sec_at = {x["line"]: x for x in parsed["sections"]}
-        callout_at = {x["line"]: x["id"] for x in parsed["callouts"]}
-        th = bk.cfg["theme"]
-        i = 0
-        container = doc
-        role = None
-        buf = []
-        opt = re.compile(r"(" + "|".join(re.escape(o) for o in bk.options) + r")\)\s") if bk.options else None
+        container, role = doc, None
+        resolved = {}
 
-        def flush():
-            nonlocal buf
-            if buf:
+        def is_cover(link):
+            resolved[link] = self.figure_file(source, link)
+            return bool(bk.cover) and resolved[link].resolve() == bk.cover
+
+        for b in blocks.parse(text, bk.cfg, kind, is_cover):
+            t = b["t"]
+            if t == "para":
                 style = "Answer" if role == "answers" else None
                 if container is not doc:
                     style = "Box Text"
-                p = f.make_paragraph(container, style=style)
-                self.inline(p, " ".join(buf))
-                buf = []
-
-        while i < len(lines):
-            s = lines[i].strip()
-            if not s:
-                flush()
-                i += 1
-                continue
-            if s.startswith("# "):
-                flush()
-                i += 1
-                continue  # H1 handled by the caller
-            if s.startswith("## "):
-                flush()
+                self.inline(f.make_paragraph(container, style=style), b["text"])
+            elif t == "section":
                 if container is not doc:
                     self.after_table(doc)
-                container = doc
-                sec = sec_at[i + 1]
-                role, label = sec["role"], sec["label"]
-                if sec["id"] in th["boxed_section_ids"]:
-                    fill, colour, _, border = bk.style_of(sec["id"])
-                    b = (border["size_eighths_pt"], border["colour"].lstrip("#")) if border else None
-                    _, container = self.box(doc, label, fill, colour, b)
+                container, role = doc, b["role"]
+                if b["boxed"]:
+                    fill, colour, _, border = bk.style_of(b["id"])
+                    bd = (border["size_eighths_pt"], border["colour"].lstrip("#")) if border else None
+                    _, container = self.box(doc, b["label"], fill, colour, bd)
                 else:
-                    unlisted = sec["id"] in th["toc_excluded_section_ids"]
-                    f.make_paragraph(doc, label, style="Heading 2 Unlisted" if unlisted else "Heading 2")
-                i += 1
-                continue
-            if s.startswith("### "):
-                flush()
-                f.make_paragraph(container, s[4:], style="Heading 3")
-                i += 1
-                continue
-            if s.startswith(">"):
-                flush()
-                key = callout_at.get(i + 1)
-                block = []
-                while i < len(lines) and lines[i].strip().startswith(">"):
-                    block.append(lines[i].strip()[1:].strip())
-                    i += 1
-                head = block[0]
-                if key and bk.style_of(key)[2] == "grid":
-                    items = [(m.group(1), m.group(2)) for m in (re.match(r"-\s*\*\*(.+?):\*\*\s*(.+)", b) for b in block[1:]) if m]
-                    fill, colour, _, _ = bk.style_of(key)
-                    self.grid(container, bk.callout_by_id[key]["label"], items, fill, colour)
+                    f.make_paragraph(doc, b["label"], style="Heading 2 Unlisted" if b["unlisted"] else "Heading 2")
+            elif t == "h3":
+                f.make_paragraph(container, b["text"], style="Heading 3")
+            elif t == "grid":
+                fill, colour, _, _ = bk.style_of(b["key"])
+                self.grid(container, b["label"], b["items"], fill, colour)
+            elif t == "callout":
+                self.callout(container, b["key"], b["text"])
+            elif t == "table":
+                self.md_table(container, b["rows"])
+            elif t == "image":
+                src = resolved[b["link"]]
+                if b["link"].startswith("fig:"):
+                    self.figure(container, src, None, bk.manifest[b["link"][4:]])
                 else:
-                    body = head[len(bk.callout_by_id[key]["syntax"].lstrip("> ")):].strip() if key else head
-                    self.callout(container, key, " ".join([body] + block[1:]))
-                continue
-            if s.startswith("|"):
-                flush()
-                rows = []
-                while i < len(lines) and lines[i].strip().startswith("|"):
-                    rows.append(lines[i])
-                    i += 1
-                self.md_table(container, rows)
-                continue
-            m = re.match(r"!\[(.*?)\]\((.+?)\)", s)
-            if m:
-                flush()
-                src = self.figure_file(source, m.group(2))
-                if bk.cover and src.resolve() == bk.cover:
-                    i += 1
-                    continue
-                if m.group(2).startswith("fig:"):
-                    self.figure(container, src, None, bk.manifest[m.group(2)[4:]])
-                    i += 1
-                    continue
-                cap = ""
-                j = i + 1
-                while j < len(lines) and not lines[j].strip():
-                    j += 1
-                if j < len(lines) and re.match(rf"\*{re.escape(bk.labels['figure'])}", lines[j].strip()):
-                    cap = lines[j].strip().strip("*")
-                    i = j
-                self.figure(container, src, cap or m.group(1))
-                i += 1
-                continue
-            m = Q_LINE.match(s)
-            if m and role == "assessment" and opt:
-                flush()
+                    self.figure(container, src, b["caption"] or b["alt"])
+            elif t == "question":
                 p = f.make_paragraph(container, style="Question")
-                f.make_run(p, bk.question(m.group(1)[1:]) + "  ", bold=True, colour=bk.primary)
-                stem = m.group(2)
-                lo = LO_TAIL.search(stem)
-                if lo:
-                    stem = stem[: lo.start()]
-                self.inline(p, stem)
-                if lo:
-                    tags = re.findall(r"LO(\d+)", lo.group(1))
-                    f.make_run(p, "  " + ", ".join(bk.objective(t) for t in tags), colour=bk.muted, size=8)
-                i += 1
-                opts = []
-                while i < len(lines) and opt.match(lines[i].strip()):
-                    opts.append(lines[i].strip())
-                    i += 1
-                for k, o in enumerate(opts):
-                    label = opt.match(o).group(1)
+                f.make_run(p, bk.question(b["num"]) + "  ", bold=True, colour=bk.primary)
+                self.inline(p, b["stem"])
+                if b["los"]:
+                    f.make_run(p, "  " + ", ".join(bk.objective(x) for x in b["los"]), colour=bk.muted, size=8)
+                for k, (label, body) in enumerate(b["options"]):
                     op = f.make_paragraph(container, style="Option")
                     f.make_run(op, bk.option_display[label] + "\t", bold=True, colour=bk.primary)
-                    self.inline(op, o[len(label) + 1:].strip())
+                    self.inline(op, body)
                     op.paragraph_format.tab_stops.add_tab_stop(Cm(bk.cfg["theme"]["lists"]["indent"]))
-                    if k == len(opts) - 1:
+                    if k == len(b["options"]) - 1:
                         op.paragraph_format.keep_with_next = False
                         op.paragraph_format.space_after = Pt(6)
-                continue
-            m = re.match(r"[-*]\s+(.+)", s)
-            if m:
-                flush()
+            elif t == "bullet":
                 p = f.make_paragraph(container, style="List Bullet")
                 if container is not doc:
                     p.paragraph_format.space_after = Pt(2)
-                self.inline(p, m.group(1))
-                i += 1
-                continue
-            m = re.match(r"(\d+)\.\s+(.+)", s)
-            if m:
-                flush()
-                num, body = m.group(1), m.group(2)
+                self.inline(p, b["text"])
+            elif t == "numbered":
+                num, body = b["num"], b["body"]
                 if role == "references":
                     p = f.make_paragraph(container, style="Reference")
                     f.make_run(p, num + ".\t", colour=bk.muted)
@@ -750,27 +651,15 @@ class Renderer:
                     p.paragraph_format.tab_stops.add_tab_stop(Cm(0.7))
                     f.make_run(p, num + ".\t", bold=True, colour=bk.primary)
                     self.inline(p, body)
-                i += 1
-                continue
-            if kind == "glossary":
-                p = f.make_paragraph(container, style="Glossary Entry")
-                self.inline(p, s)
-                i += 1
-                continue
-            if role == "answers" and s.startswith("**"):
-                flush()
+            elif t == "glossary":
+                self.inline(f.make_paragraph(container, style="Glossary Entry"), b["text"])
+            elif t == "answer":
                 p = f.make_paragraph(container, style="Answer")
-                m = re.match(r"\*\*(.+?)\*\*\s*(.*)", s)
-                key_m = re.fullmatch(r"Q(\d+)\. (\S+)", m.group(1))
+                key_m = re.fullmatch(r"Q(\d+)\. (\S+)", b["head"])
                 head = (f"{bk.question(key_m.group(1))}. {bk.option_display.get(key_m.group(2), key_m.group(2))}"
-                        if key_m else m.group(1))
+                        if key_m else b["head"])
                 f.make_run(p, head + " ", bold=True, colour=bk.primary)
-                self.inline(p, m.group(2))
-                i += 1
-                continue
-            buf.append(s)
-            i += 1
-        flush()
+                self.inline(p, b["text"])
         if container is not doc:
             self.after_table(doc)
 
