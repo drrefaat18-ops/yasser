@@ -2,6 +2,8 @@
 
 **absorption** — The movement of drug from the site of administration into the systemic circulation. The first process of ADME, and the only one a dosage form can be designed to control.
 
+**Active tubular secretion** — Carrier-mediated transport of drug from blood into the tubular fluid, against its concentration gradient, requiring energy. The kidney has separate carriers for weak acids and weak bases, and drugs sharing a carrier compete.
+
 **amount remaining to be excreted** — ARE. The quantity (Du∞ − Du): the amount of drug still to appear unchanged in the urine at time t. Its logarithm falls linearly with time, which is the basis of the sigma-minus method.
 
 **apparent volume of distribution** — Vd. The proportionality constant linking the amount of drug in the body to the plasma concentration, Vd = D_B / Cp. It is the volume the drug would occupy if it were present throughout at the plasma concentration, and it need not correspond to any real body volume.
@@ -34,6 +36,10 @@
 
 **first order** — Describing a process whose rate is proportional to the amount or concentration of drug driving it. A constant *fraction* is lost per unit time, so the plot of log concentration against time is a straight line. Contrast zero order, where a constant *amount* is lost per unit time.
 
+**Glomerular filtration** — Passive movement of free drug from blood into the glomerular filtrate, with the concentration gradient. Protein-bound drug is not filtered, because the complex is too large to cross.
+
+**glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin or creatinine.
+
 **hybrid rate constants** — a and b, the two exponents of a biexponential plasma curve. Neither is a single physical process: each combines K, K₁₂ and K₂₁, subject to a + b = K + K₁₂ + K₂₁ and a·b = K·K₂₁. Always a > b.
 
 **Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See [[renal-excretion-rate-constant]].
@@ -43,6 +49,8 @@
 **K₁₂** — The first-order rate constant for transfer of drug from the central compartment to the peripheral (tissue) compartment.
 
 **K₂₁** — The first-order rate constant for transfer of drug from the peripheral (tissue) compartment back to the central compartment.
+
+**loading dose** — Dₗ. An intravenous bolus given at the start of an infusion, sized as Css · Vd (equivalently R/K) so that the target concentration is reached immediately instead of over about five half-lives.
 
 **metabolism** — The enzymatic conversion of drug into one or more chemically different metabolites. Part of elimination, and the subject of Chapter 11.
 
@@ -68,6 +76,8 @@
 
 **residual concentration** — The difference Cp − Cp′ between a measured concentration and the value extrapolated from the terminal line at the same time. Its logarithm falls linearly with time during the distribution phase.
 
+**steady-state concentration** — Css. The plateau concentration reached during a constant-rate infusion, at which the rate of elimination equals the rate of input. Css = R/Cl, so it depends on the infusion rate and clearance but not on Vd.
+
 **therapeutic index** — A dimensionless ratio expressing the margin between toxic and effective exposure, classically TD50/ED50, or on a concentration basis MTC/MEC. It is a number, not a band of concentrations.
 
 **therapeutic range** — The band of plasma concentrations between the MEC and the MTC, within which the drug is effective without being toxic. Also called the therapeutic window. It is not the therapeutic index.
@@ -78,8 +88,12 @@
 
 **Total body clearance** — Cl. The volume of plasma completely cleared of drug per unit time, in volume per time. It is the sum of all clearing processes, Cl = K·Vd, and says nothing about which organ is responsible.
 
+**Tubular reabsorption** — Return of drug from the tubular fluid to the blood. It favours the more lipid-soluble, unionised form, so for weak acids and weak bases its extent depends on urinary pH and on the pKa of the drug.
+
 **two-compartment open model** — A model in which drug distributes rapidly into a central compartment and more slowly into a peripheral compartment, with first-order transfer between them (K₁₂ and K₂₁) and elimination from the central compartment only.
 
 **volume of the central compartment** — Vp. The apparent volume of the rapidly equilibrating compartment, obtained as the dose divided by (A + B). It is smaller than the total apparent volume of distribution, and it is the volume a loading dose fills immediately.
 
 **Vp** — The volume of the central compartment. See [[volume-of-the-central-compartment]].
+
+**zero order** — Describing a process whose rate is constant and independent of the amount of drug present, so that a constant *amount* is transferred per unit time. A constant-rate infusion is zero-order input; saturated metabolism is zero-order output (Chapter 10).

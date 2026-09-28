@@ -66,6 +66,28 @@
    "credit": "Original diagram, drawn from the first edition Example 10 dataset, page 20",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch05-infusion",
+   "chapter_id": "ch05",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch05-infusion.svg",
+   "caption": "Left: three infusion rates of the same drug. The plateau is proportional to the rate, but all three reach 95% of their own plateau at the same moment, because the time course depends only on the half-life. Right: the effect of a loading dose. A dose of exactly Css · Vd holds the concentration flat at Css from the first instant.",
+   "alt": "Two plots of plasma concentration against time over 24 hours. On the left, three rising curves for infusion rates of 7.5, 15 and 30 mg per hour approach plateaus of 5, 10 and 20 micrograms per millilitre; a vertical dashed line at 15 hours marks the point where all three have reached 95 per cent of their own plateau. On the right, three curves with the same infusion: one starting at 15 and falling to the plateau of 10, one flat at 10 throughout, and one starting at zero and rising to 10.",
+   "credit": "Original diagram, drawn from the first edition Example 14 dataset, page 24",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch06-renal-handling",
+   "chapter_id": "ch06",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch06-renal-handling.svg",
+   "caption": "Top: the three renal processes acting on a drug. Filtration and secretion move drug towards the urine; reabsorption returns it to the blood, which is why it enters the balance with a minus sign. Bottom: what the clearance ratio reveals about which process dominates.",
+   "alt": "Two panels. The upper panel shows a blood channel above a tubular fluid channel. Arrows point down for glomerular filtration, described as passive and free drug only with a GFR of 125 to 130 millilitres per minute, and down for active secretion, described as carrier and energy against the gradient. A third arrow points up for reabsorption, described as favouring the unionised form and set by urine pH and pKa. The tubular fluid channel leads out to urine, and a caption reads excretion equals filtration plus secretion minus reabsorption. The lower panel is a horizontal scale of the clearance ratio marked at zero for completely reabsorbed as for glucose, less than one for filtered then partially reabsorbed, equal to one for filtered only as for inulin, and greater than one for actively secreted as for PAH.",
+   "credit": "Original diagram, redrawn from the first edition pages 25 to 28",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
