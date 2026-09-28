@@ -196,7 +196,8 @@ class HarnessModeTest(unittest.TestCase):
         d = compare_golden.diff(step6, g, [], checks_from=step6)["diffs"]
         self.assertEqual([x["pointer"] for x in d], ["/verify_refs"])   # None here: not captured
         new = {c["id"] for c in g["checks"]} - {c["id"] for c in step6["checks"]}
-        self.assertEqual(new, {"TPL-CALLOUT-COUNT", "BUDGET-FRONT", "ASSET-MISSING", "ASSET-OUTSIDE-ROOT"})
+        self.assertEqual(new, {"TPL-CALLOUT-COUNT", "BUDGET-FRONT", "ASSET-MISSING", "ASSET-OUTSIDE-ROOT",
+                               "TYPO-LATEX", "RHYTHM-PROSE", "CHEM-FORMULA-PLAIN"})   # the last three: STEP 9b
 
     def test_capture_refuses_a_gated_refusal(self):
         from tests.helpers import temp_repo

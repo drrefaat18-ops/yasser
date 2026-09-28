@@ -9,5 +9,6 @@
 | S9b-05 | accepted-minor | A vector-only page counts as blank. | — | Ruling R6 (documented; no such page is placed today). | — |
 | S9b-06 | real | `annotated.problems` opened the base image without catching an unreadable file. | `to_svg` opens it only after `problems` passes. | Unreadable base → `FIG-ANNOT` message. | `test_s9b06_corrupt_base_is_reported` → OK |
 | S9b-C01 | found-by-claude | `css_string` did not escape `<`, so a config string (title, chapter title, label) could close the `<style>` element. | `@font-face` URLs were quoted with `'` by hand. | `<` escaped as `\3c`; font URLs through `css_string`. | `test_s9b_c01_css_string_cannot_close_style` → OK |
+| S9b-C02 | found-by-claude | A comment in `build_book.py` named a project (leak scan hit), and `test_golden` listed the new check IDs explicitly. | — | Comment reworded; the three STEP 9b IDs added to the expected new-ID set. | leak scan → 0 hits; `tests.test_golden` → OK; full suite on a clean worktree of ae6d627: 245 tests, 1 failure (this one) before the fix |
 
 Evidence PNGs: Codex passed all seven (`step9b-review.md`, "Evidence PNGs").
