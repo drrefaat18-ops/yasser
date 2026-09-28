@@ -15,7 +15,7 @@ Claude asks these questions at the `intake` stage for every new book, one topic 
 | I | Context | Country; curriculum standards (e.g. NARS); the regulatory or professional framework |
 | J | References | Citation style (Vancouver, APA, …); how recent references should be |
 | K | Constraints | Content that must be kept; things that must not change; ISBN or publisher; deadline |
-| L | Output | Word and/or PDF; page size; fonts; logo or branding |
+| L | Output | Word and/or PDF; page size; fonts; logo or branding; PDF engine (`word_com`, or `html` for the designed layout, DEC-043); palette and page (paper) colour; cover logos, institution line and eyebrow |
 | M | Domain rubric pillars | Claude proposes the domain pillars and their weights; the user approves or edits them |
 
 The exact field names in `brief.json` are defined by the STEP 1 spec (schema `brief`). They must cover A–M.
