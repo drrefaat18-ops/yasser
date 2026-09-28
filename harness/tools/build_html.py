@@ -227,7 +227,8 @@ def font_faces(cfg):
 def stylesheet(bk, chapters):
     th, pg = bk.cfg["theme"], bk.preset["page"]
     m = th["page"]["margins"]
-    ff = lambda k: css_string(bk.fonts[k])
+    # a glyph missing from a display or UI font falls back to the body serif, never to the browser default
+    ff = lambda k: css_string(bk.fonts[k]) + ("" if k == "serif" else "," + css_string(bk.fonts["serif"]))
     ink, pri, acc, mut = hexc(bk.ink), hexc(bk.primary), hexc(bk.accent), hexc(bk.muted)
     align = {"left": "left", "justify": "justify", "right": "right", "center": "center"}
     body_align, head_align = align[th["alignment"]["body"]], align[th["alignment"]["headings"]]

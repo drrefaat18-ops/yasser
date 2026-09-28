@@ -50,6 +50,11 @@ class WriterTest(unittest.TestCase):
         self.assertIn(f".c-{key}{{background:#{th['callouts'][key]['fill']};border-top:0;border-left:3pt solid", css)
         self.assertIn('h2,.h2{font-family:"' + th["fonts"]["serif_heading"] + '"', css)
 
+    def test_fonts_fall_back_to_the_body_serif(self):
+        css = build_html.stylesheet(self.w.bk, [(1, "A")])
+        f = self.cfg["theme"]["fonts"]
+        self.assertIn(f'font-family:"{f["sans"]}","{f["serif"]}"', css)
+
     def test_css_string_escapes_quotes(self):
         self.assertEqual(build_html.css_string('a "b" \\ c'), '"a \\"b\\" \\\\ c"')
 
