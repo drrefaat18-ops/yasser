@@ -3,34 +3,27 @@
 Paste this into a new Claude Code session opened in `D:\yasser`:
 
 ```text
-Execute the book-harness ticket, STEP 8 (generalise the tools and implement ingest). STEPs 1-7 are done; HEAD is df16e7d.
+Continue the book-harness ticket, STEP 9b (absorb the Dr. Mo book-designer skill). Tasks 9b.1-9b.3 are committed; HEAD is 6ee44fe (c995741 is pushed to origin/master; 6ee44fe is not).
 
 Read these first, in full:
 - CLAUDE.md (root: Rules 7, 8, 11)
-- docs/harness/TICKET.md (rules + "STEP 8")
-- docs/harness/LEDGER.md, docs/harness/DECISIONS.md (last DEC is DEC-040; next is DEC-041)
-- docs/superpowers/plans/2026-09-25-book-harness.md: "Plan-spec notes" (N1-N9, esp. N3, N6, N7, N9) and "STEP 8" Tasks 8.1-8.4
-- docs/superpowers/specs/2026-09-25-book-harness-core-design.md (checker IDs §9.3, golden §9.1-9.2, leak scan, ingest)
-- docs/harness/reviews/step7-rulings.md and step7-fixes.md (carry-forward items below)
+- docs/harness/TICKET.md ("STEP 9b"), docs/harness/LEDGER.md, docs/harness/DECISIONS.md (DEC-043..046; next is DEC-047)
+- docs/superpowers/plans/2026-09-25-book-harness.md: "STEP 9b" Tasks 9b.1-9b.6
+- docs/harness/references/dr-mo-food-analysis/README.md (the benchmark and the defects to avoid)
 
-Binding rules:
-- Stay inline. At most 2 Claude subagents, each with a stated reason; Codex does not count.
-- Four tasks, each separately committed after its gates pass: 8.1 checker + assembler + positive-config fixtures + mutations + leak scan; 8.2 build; 8.3 verify_refs no-DOI policy; 8.4 ingest + fidelity. Each task makes the STAGES tool_paths and registry edits the plan names for it.
-- One read-only Codex review over the whole of STEP 8, only after all four tasks pass, via codex-delegate relay.mjs with --read-only and WITHOUT --ignore-user-config (the user config's elevated Windows sandbox is needed). Save it verbatim to docs/harness/reviews/step8-review.md, then the Fix Protocol (confirm, root cause, hunt siblings, fix, verify) into step8-fixes.md. Deviations from the plan go in step8-rulings.md. No second round.
-- Commit after gates pass; never push. Stop and ask me at every approval point.
-- Never modify projects/ai-in-medicine/original/ or deliverables/ (Rule 5). Never edit state.json by hand.
-- Scope lock: no Arabic parsing or rendering (STEP 10).
+Done:
+- 9b.1 harness/tools/blocks.py: one block grammar for DOCX and HTML; ~x~ subscript, ^x^ superscript. Medical golden matched.
+- 9b.2 harness/tools/build_html.py: theme.build.pdf.engine "html" (Edge print, pypdf merge, contents page numbers from the outline, bookmarks, metadata); theme schema: build.pdf.engine, cover.design, layout.drop_cap, font_files. Fixture tests/fixtures/editorial-book.
+- 9b.3 harness/tools/check_pdf.py: PDF-SIZE/BLANK/META/TYPE3/EMBED/FONTS/OUTLINE, run by `run build` for both engines; checkpoints in build/checkpoints (PyMuPDF, optional group evidence).
 
-Carry-forward from STEP 7:
-- The leak-scan term list (tests/fixtures/leak/clinical.txt, Task 8.1) must include diagnos, DSM and CBT (S7-09).
-- The Rule 11 subagent cap is enforced per `complete` call only; enforce it across a unit stage's units when rework completion lands (S7-10).
-- harness/figures/packs goes into intake's tool_paths when it is created (S7-04, STEP 9).
-- verify now rebuilds each receipt's file sets from harness/stages/contracts.py, so a contract change stales existing receipts; the medical receipts are imported (DEC-039) and bind history/import.json.
-- Any approval: show hashes from harness.hashing.hash_file, never sha256sum; approve refuses unless the DEC row contains the full hash of every approved file.
-- docs/harness/DECISIONS.md and this file are CRLF: edit bytes and keep the line endings. Most harness files are LF.
-- Full suite takes about 10 minutes and the bypass matrix about 8: run them in the background. Codex's sandbox cannot run the temp-repo tests, so run them yourself.
+To do, in order:
+1. Confirm tests.test_bypass_matrix and tests.test_build (medical golden, now with check_pdf in the build) pass on c995741; fix in a new commit if not.
+2. 9b.4 annotated figures (diagram.annotated, FIG-ANNOT, key under the caption in both writers).
+3. 9b.5 TYPO-LATEX, RHYTHM-PROSE (template.readability.max_prose_run_words), CHEM-FORMULA-PLAIN (chemistry pack check_text); mutations per ID.
+4. 9b.6 editorial-book gains an annotated figure and a case table; tests/tools/make_step9b_evidence.py; evidence PNGs under docs/harness/reviews/step9b-evidence/; INTAKE_QUESTIONNAIRE topic L (palette, logos, PDF engine).
+5. Deviations from the plan go in reviews/step9b-rulings.md: no ltr-editorial preset was needed (the HTML engine reads the theme's own preset); chapter opener pages keep the running head (Chromium has no per-named-page :first).
+6. Full suite (background), one read-only Codex review of STEP 9b via codex-delegate (no --ignore-user-config), Fix Protocol into step9b-fixes.md, including every evidence PNG.
+7. Refresh the medical intake receipt (config.py and theme.v1.json changed; precedent 30dfdfe), then `verify --through rework` exit 0; LEDGER row 9b done.
 
-Exit criteria (ticket STEP 8): unittest exits 0 with every mutation yielding its named check ID and a non-zero checker exit; the medical golden matches STEP 6 except the listed verify_refs change (N7 comparison); positive-config fixtures pass; the scoped leak scan exits 0; Codex review done; LEDGER row 8 updated.
-
-Talk to me in simple Arabic, briefly. Start with Task 8.1.
+Rules: inline, at most 2 Claude subagents with a reason; commit after gates pass; push only when the user asks (DEC-028); stop at every approval point. Talk to me in simple Arabic, briefly.
 ```
