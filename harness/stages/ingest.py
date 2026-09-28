@@ -115,6 +115,10 @@ def run(project):
         if lost:
             raise IngestError("INGEST-LOST", f"structures lost in conversion: {', '.join(lost)} (see the report; previous "
                                              "outputs are unchanged)", exit_code=2)
+        for d in ("source", paths["assets"]):   # a `new` skeleton marker lives in these dirs; the swap must not drop it
+            if (project / d / ".keep").is_file():
+                (stage / d).mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(project / d / ".keep", stage / d / ".keep")
         swap_dirs(project, ["source", "source-manifest.json", paths["normalized_source"], "ingest/units.json",
                             "ingest/conversion-report.json", paths["assets"]])
     finally:

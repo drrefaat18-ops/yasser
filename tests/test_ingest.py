@@ -100,6 +100,19 @@ class IngestFixtures(unittest.TestCase):
             self.assertIn("ERROR INGEST-RECOVERY", r.stderr)
             self.assertTrue((p / ".ingest-old").is_dir())   # never deleted silently
 
+    def test_new_skeleton_marker_survives_the_swap(self):
+        with temp_repo(f"positive-config/{SLUG}", slug=SLUG) as root:
+            p = root / "projects" / SLUG
+            (p / "source").mkdir(exist_ok=True)
+            (p / "source/.keep").write_text("", encoding="utf-8")
+            edit_json(p / "state.json", lambda st: st["receipts"]["new"]["outputs"].update({"source/.keep": ""}))
+            p = ingest_project(root, "headings")   # re-stamps: `new` records source/.keep, as a fresh `new` does
+            r = run_ingest(root)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertTrue((p / "source/.keep").is_file())
+            v = run_cli(root, "--project", f"projects/{SLUG}", "verify", "--through", "ingest")
+            self.assertEqual(v.returncode, 0, v.stderr)
+
     def test_non_docx_needs_markitdown(self):
         from harness.stages import ingest
         with mock.patch.dict("sys.modules", {"markitdown": None}):
