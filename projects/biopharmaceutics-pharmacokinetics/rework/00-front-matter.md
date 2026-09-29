@@ -31,10 +31,12 @@ recalculation disagreed with the printed answer, the disagreement is explained r
 
 A small number of statements in the first edition were wrong, and they have been corrected. Several
 follow international guidance that was revised after those notes were printed. The rest are ordinary
-slips of the kind that survive any number of readings until someone works the arithmetic again. Every
-correction is listed in the errata ledger at the back, with what the first edition said, what this
-edition says, and where the corrected figure comes from. Nothing there reflects on the teachers who
-wrote the original notes.
+slips of the kind that survive any number of readings until someone works the arithmetic again. Each
+correction is made in the chapter where the statement belongs, and the reasoning is given there rather
+than being left for the reader to reconstruct. A separate errata ledger, issued with the course
+materials alongside this book, tabulates all of them: what the first edition said, what this edition
+says, and where the corrected figure comes from. Nothing there reflects on the teachers who wrote the
+original notes.
 
 ## How to Use This Book
 

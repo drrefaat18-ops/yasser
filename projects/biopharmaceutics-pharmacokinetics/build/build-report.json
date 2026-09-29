@@ -24,11 +24,6 @@
    "word/fontTable.xml",
    "word/fonts/font1.odttf",
    "word/fonts/font10.odttf",
-   "word/fonts/font11.odttf",
-   "word/fonts/font12.odttf",
-   "word/fonts/font13.odttf",
-   "word/fonts/font14.odttf",
-   "word/fonts/font15.odttf",
    "word/fonts/font2.odttf",
    "word/fonts/font3.odttf",
    "word/fonts/font4.odttf",
@@ -360,14 +355,14 @@
  "figures": "manifest",
  "pdf": {
   "bookmarks": 145,
-  "pages": 164
+  "pages": 158
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 164
+    "pages": 158
    },
    "message": "",
    "status": "pass"
@@ -391,10 +386,10 @@
   {
    "id": "PDF-TYPE3",
    "measured": {
-    "count": 30
+    "count": 0
    },
-   "message": "page 1: ?; page 1: ?; page 1: ?; page 1: ?; page 1: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 4: ?; page 4: ?; page 4: ?; page 9: ?; page 9: ?; page 9: ?; page 9: ?; page 9: ?; page 10: ?; page 10: ?; page 10: ?; page 10: ?; page 11: ?; page 12: ?; page 12: ?; page 15: ?; page 15: ?; page 17: ?; page 18: ?",
-   "status": "fail"
+   "message": "",
+   "status": "pass"
   },
   {
    "id": "PDF-EMBED",
@@ -407,10 +402,10 @@
   {
    "id": "PDF-FONTS",
    "measured": {
-    "count": 4
+    "count": 0
    },
-   "message": "CambriaMath (first on page 101); SegoeUIBlack (first on page 109); TimesNewRomanPS-ItalicMT (first on page 71); TimesNewRomanPSMT (first on page 41)",
-   "status": "fail"
+   "message": "",
+   "status": "pass"
   },
   {
    "id": "PDF-OUTLINE",

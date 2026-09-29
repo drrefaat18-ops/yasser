@@ -79,7 +79,7 @@
    "id": "ch08",
    "file": "ch08.md",
    "title": "Multiple Dose Regimens",
-   "word_budget": 3400,
+   "word_budget": 3450,
    "part_id": "P2",
    "source_refs": []
   },
@@ -95,7 +95,7 @@
    "id": "ch10",
    "file": "ch10.md",
    "title": "Non-Linear Pharmacokinetics",
-   "word_budget": 2400,
+   "word_budget": 2700,
    "part_id": "P2",
    "source_refs": []
   },
@@ -103,7 +103,7 @@
    "id": "ch11",
    "file": "ch11.md",
    "title": "Pharmacokinetics of Metabolites",
-   "word_budget": 2700,
+   "word_budget": 2900,
    "part_id": "P2",
    "source_refs": []
   },

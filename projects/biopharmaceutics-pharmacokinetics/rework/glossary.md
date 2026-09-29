@@ -162,6 +162,8 @@
 
 **peripheral (tissue) compartment** — In a two- or three-compartment model, a kinetic space that exchanges drug with the central compartment by first-order transfer but from which no elimination occurs.
 
+**permeability coefficient** — p = D·K/h, the velocity (cm·s⁻¹) at which a drug crosses unit area of a membrane per unit concentration gradient. It describes the membrane and the drug only. Multiplied by the available surface area it gives the permeability–surface-area product, p·A, a volume per time; the two are often confused, and only the product depends on anatomy.
+
 **pH-partition hypothesis** — The proposal that drugs are absorbed by passive diffusion in proportion to their unionised fraction at the local pH. A useful first guide that ignores surface area, residence time and lipid solubility.
 
 **Pharmaceutical alternatives** — Products containing the same active moiety by the same route but differing in dosage form (including release type) or in chemical form, such as the salt or ester.

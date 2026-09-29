@@ -6,6 +6,7 @@
   "chapter_glob": "ch*.md",
   "front_matter": "00-front-matter.md",
   "glossary": "glossary.md",
+  "references": "references.md",
   "errata": "errata-ledger.md",
   "figures": "rework/figures",
   "normalized_source": "ingest/normalized.md",
