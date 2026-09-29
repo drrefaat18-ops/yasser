@@ -27,7 +27,7 @@ IDS = {  # emission order per function; every ID appears once per target
     "objectives": ["LO-COUNT", "LO-VERB"],
     "mcqs": ["MCQ-EXTRA-OPTION", "MCQ-OPTIONS", "MCQ-LO-TAG", "MCQ-COUNT", "MCQ-CASE", "MCQ-LO-UNKNOWN",
              "LO-UNASSESSED", "KEY-RATIONALE", "KEY-MISSING", "KEY-BALANCE", "KEY-RUN"],
-    "citations": ["CIT-MISSING", "CIT-UNCITED"],
+    "citations": ["CIT-MISSING", "CIT-UNCITED", "CIT-DUPLICATE"],
     "sentences": ["READ-MEAN", "READ-LONG", "READ-NOPROSE"],
     "banned": ["BANNED-TERM"],
     "budget": ["BUDGET-CHAPTER"],
@@ -345,9 +345,15 @@ def check_mcqs(text, cfg):
 def check_citations(text, cfg):
     if cfg["template"]["citations"]["style"] != "numeric-bracket":
         raise ConfigError(f"citations.style {cfg['template']['citations']['style']!r} is not supported")
-    cited, refs = cited_numbers(text, cfg), {n for n, _ in reference_entries(text, cfg)}
+    cited = cited_numbers(text, cfg)
+    numbers = [n for n, _ in reference_entries(text, cfg)]
+    refs = set(numbers)
+    # two entries under one number read as one reference, so the second is silently unreachable: every
+    # `[n]` still resolves and nothing else notices that a work has dropped out of the list
+    dup = sorted({n for n in numbers if numbers.count(n) > 1})
     return {"CIT-MISSING": [f"missing reference {n}" for n in sorted(cited - refs)],
-            "CIT-UNCITED": [f"uncited reference {n}" for n in sorted(refs - cited)]}
+            "CIT-UNCITED": [f"uncited reference {n}" for n in sorted(refs - cited)],
+            "CIT-DUPLICATE": [f"reference {n} is listed {numbers.count(n)} times" for n in dup]}
 
 
 def check_sentences(text, cfg):

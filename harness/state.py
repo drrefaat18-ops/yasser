@@ -36,10 +36,12 @@ STAGES = [
     {"id": "translate", "kind": "agentic", "tool_paths": ["harness/stages/contracts.py"]},  # -> check_translation.py, complete_checks/translate.py in 11.x
     {"id": "rework", "kind": "agentic", "tool_paths": ["harness/stages/complete_checks/rework.py", "harness/tools/check_book.py",
                                                        "harness/tools/verify_refs.py", "harness/tools/assemble.py", "harness/figures",   # packs check text (9b.5)
+                                                       "harness/tools/mathml.py",   # the checker reads math to exclude it
                                                        "harness/tools/config.py", "harness/text.py", "harness/locales.py",
                                                        "harness/defaults.json"]},
     {"id": "build", "kind": "auto", "tool_paths": ["harness/stages/build.py", "harness/tools/assemble.py", "harness/tools/build_book.py", "harness/tools/blocks.py", "harness/tools/build_html.py", "harness/tools/check_pdf.py",
                                                    "harness/tools/config.py", "harness/tools/capture_golden.py",   # report facts
+                                                   "harness/tools/check_math.py", "harness/tools/mathml.py",
                                                    "harness/tools/check_book.py", "harness/text.py", "harness/locales.py",  # via capture
                                                    "harness/preflight.py", "harness/presets", "harness/figures",
                                                    "harness/schema.py", "harness/schemas/figures.v1.json", "requirements-chemistry.txt"]},

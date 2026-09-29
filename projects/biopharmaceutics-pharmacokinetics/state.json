@@ -31,7 +31,14 @@
    "time": "2026-09-29T12:13:16Z"
   }
  ],
- "active_run": null,
+ "active_run": {
+  "author_model": "claude",
+  "nonce": "16cb349a1ee5f582",
+  "pid": 23620,
+  "stage": "rework",
+  "started_at": "2026-09-29T16:32:46Z",
+  "unit": null
+ },
  "approvals": {
   "design": {
    "approved_at": "2026-09-29T16:15:26Z",
@@ -107,6 +114,7 @@
     "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
+   "invalidated_by": "rework@2026-09-29T16:32:46Z",
    "outputs": {
     "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "e332406f0711297089fd390aa6fc3383f4796a3a565e31aeca36c20ad46feef9",
     "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "e8b73e35082e305fab4b48b3e33d4ef549de0b25fb5a1cc9f028c322981ed1c2",

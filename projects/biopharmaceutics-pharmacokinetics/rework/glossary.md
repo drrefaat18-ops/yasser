@@ -94,7 +94,7 @@
 
 **Glomerular filtration** — Passive movement of free drug from blood into the glomerular filtrate, with the concentration gradient. Protein-bound drug is not filtered, because the complex is too large to cross.
 
-**glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin or creatinine.
+**glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin. Creatinine clearance is the practical substitute but reads above the true GFR, because creatinine is also secreted by the proximal tubule.
 
 **Henderson–Hasselbalch equation** — The relation between pH, pKa and the ratio of ionised to unionised drug: for a weak acid pKa − pH = log([U]/[I]), for a weak base pKa − pH = log([I]/[U]).
 
@@ -152,7 +152,7 @@
 
 **non-renal elimination rate constant** — Knr. The part of the total elimination rate constant that does not represent renal excretion of intact drug, chiefly metabolism.
 
-**Noyes–Whitney equation** — dC/dt = (D·A/h)(Cs − C): the dissolution rate is proportional to the surface area and to the concentration gradient across the stagnant layer. Taken literally D·A(Cs − C)/h is a mass rate, and dividing by the medium volume gives dC/dt.
+**Noyes–Whitney equation** — dm/dt = (D·A/h)(Cs − C): the rate at which mass dissolves is proportional to the surface area and to the concentration gradient across the stagnant layer. The right-hand side is a mass per time, so the concentration form carries the volume of the medium: dC/dt = (D·A)/(h·V) · (Cs − C).
 
 **P-glycoprotein** — P-gp. An efflux transporter in the intestinal brush border that pumps many lipophilic and cytotoxic drugs back into the gut lumen, reducing their absorption. Inhibiting it increases their absorption.
 
@@ -202,7 +202,7 @@
 
 **Therapeutic equivalents** — Pharmaceutical equivalents that give the same clinical efficacy and safety when given to the same patients in the same regimen.
 
-**therapeutic index** — A dimensionless ratio expressing the margin between toxic and effective exposure, classically TD50/ED50, or on a concentration basis MTC/MEC. It is a number, not a band of concentrations.
+**therapeutic index** — TD50/ED50, the dimensionless ratio of the dose toxic to half a population to the dose effective in half of it. It is a number, not a band of concentrations, and it is not MTC/MEC: that ratio of two plasma concentrations is the therapeutic concentration ratio, and neither can be computed from the other.
 
 **therapeutic range** — The band of plasma concentrations between the MEC and the MTC, within which the drug is effective without being toxic. Also called the therapeutic window. It is not the therapeutic index.
 
