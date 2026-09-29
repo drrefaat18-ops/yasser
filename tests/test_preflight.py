@@ -48,20 +48,10 @@ class PreflightTest(unittest.TestCase):
         preset = "ltr-textbook"
         need = preflight.preset_fonts(preset)
         self.assertLess(len(need), len(preflight.preset_fonts()))
-        env = self._fonts_dir([n if isinstance(n, str) else n[0] for n in need])
+        env = self._fonts_dir(need)
         with mock.patch.dict(os.environ, env, clear=True):
             self.assertTrue(preflight.check_fonts(preset)["ok"])
             self.assertFalse(preflight.check_fonts()["ok"])   # the union still demands the other presets' fonts
-
-    def test_font_alternative_satisfies_requirement(self):
-        """Windows 11 ships Sitka as SitkaVF.ttf; either file satisfies a preset naming Sitka.ttc."""
-        need = [n for n in preflight.preset_fonts("ltr-textbook") if n != "Sitka.ttc"]
-        with mock.patch.dict(os.environ, self._fonts_dir(need + ["SitkaVF.ttf"]), clear=True):
-            self.assertTrue(preflight.check_fonts("ltr-textbook")["ok"])
-        with mock.patch.dict(os.environ, self._fonts_dir(need), clear=True):
-            c = preflight.check_fonts("ltr-textbook")
-        self.assertFalse(c["ok"])
-        self.assertIn("Sitka.ttc", c["detail"])
 
     def test_unknown_preset_fails_named(self):
         with mock.patch.dict(os.environ, self._fonts_dir([]), clear=True):

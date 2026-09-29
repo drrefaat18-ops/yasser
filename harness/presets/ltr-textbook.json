@@ -3,8 +3,8 @@
  "id": "ltr-textbook",
  "direction": "ltr",
  "fonts": {
-  "serif": "Sitka Text",
-  "serif_heading": "Sitka Heading",
+  "serif": "Cambria",
+  "serif_heading": "Cambria",
   "sans": "Segoe UI",
   "complex_script": null,
   "complex_script_heading": null
@@ -76,7 +76,7 @@
   }
  ],
  "required_font_files": [
-  "Sitka.ttc",
+  "cambria.ttc",
   "segoeui.ttf"
  ]
 }

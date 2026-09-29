@@ -5,9 +5,6 @@ import argparse, importlib.util, json, os, pathlib, subprocess, sys
 REPO = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_GROUPS = ["core", "ingest", "build", "figures", "golden"]
 PRESETS = REPO / "harness" / "presets"
-# Font files that Windows ships under another name; any one of them satisfies the named file.
-# Windows 11 replaced the Sitka collection with a variable font.
-FONT_ALTERNATIVES = {"Sitka.ttc": ("SitkaVF.ttf",)}
 
 
 def preset_fonts(preset=None):
@@ -90,8 +87,7 @@ def check_fonts(preset=None):
     dirs = [pathlib.Path(windir) / "Fonts"]
     if os.environ.get("LOCALAPPDATA"):   # per-user installs (no admin) land here
         dirs.append(pathlib.Path(os.environ["LOCALAPPDATA"]) / "Microsoft" / "Windows" / "Fonts")
-    present = lambda f: any((d / n).exists() for d in dirs for n in (f,) + FONT_ALTERNATIVES.get(f, ()))
-    missing = [f for f in needed if not present(f)]
+    missing = [f for f in needed if not any((d / f).exists() for d in dirs)]
     scope = f"preset {preset}" if preset else "all presets"
     return _c("fonts", "build", not missing, f"{scope}: " + ("missing: " + ", ".join(missing) if missing else "all present"))
 

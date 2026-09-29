@@ -22,22 +22,33 @@
    "kind": "design"
   },
   "intake": {
-   "approved_at": "2026-09-28T17:50:20Z",
+   "approved_at": "2026-09-29T08:29:38Z",
    "approved_by": "user",
-   "dec_id": "DEC-001",
-   "dec_row_sha256": "ab3253466a3b30d61014beb5c024ad2ea87238e0224960a00c085f18f77b9cc4",
+   "dec_id": "DEC-004",
+   "dec_row_sha256": "fd9f7cbbfb6f656c42195d61ceb0a199c60d299263cf1bf1bba43c6f3afa1b50",
    "files": {
     "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
     "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+    "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "kind": "intake"
   }
  },
  "project_id": "biopharmaceutics-pharmacokinetics",
  "receipts": {
+  "build": {
+   "args": {},
+   "error": "BuildStepFailed: BUILD: pdf checks: PDF-TYPE3: page 1: ?; page 1: ?; page 1: ?; page 1: ?; page 1: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 4: ?; page 4: ?; page 4: ?; page 9: ?; page 9: ?; page 9: ?; page 9: ?; page 9: ?; page 10: ?; page 10: ?; page 10: ?; page 10: ?; page 11: ?; page 12: ?; page 12: ?; page 15; PDF-FONTS: CambriaMath (first on page 101); SegoeUIBlack (first on page 109); TimesNewRomanPS-ItalicMT (first on page 71); TimesNewRomanPSMT (first on page 41)",
+   "inputs": {},
+   "invalidated_by": "rework@2026-09-29T08:30:11Z",
+   "outputs": {},
+   "stage": "build",
+   "status": "failed",
+   "time": "2026-09-29T07:16:39Z",
+   "tool_sha": "b6a32b598dbb9f2faa2ce6439116083102d4c239"
+  },
   "design": {
    "args": {},
    "chapter_count": 14,
@@ -49,7 +60,7 @@
     "evaluation/report.md": "84e68dd8db87d699687e4fe58b0efb71175ad352c7a7b716f0fef4a38ed56720",
     "evaluation/scorecard.json": "4cdb05c322b4922f6eb0d4a364e39ec597faa0f6b559d6cd6423e356ff7e67eb",
     "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+    "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
     "design/chapter-plan.json": "342a202ad9f0e61f544da3a7e076bb333f218f46d6804514efc9fd2cde928149",
@@ -58,7 +69,7 @@
    },
    "stage": "design",
    "status": "ok",
-   "time": "2026-09-28T18:42:02Z",
+   "time": "2026-09-29T08:30:08Z",
    "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
    "total_budget": 47400
   },
@@ -122,7 +133,7 @@
    "args": {},
    "inputs": {
     "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
-    "../../harness/presets/ltr-textbook.json": "3383379144735ef9af43519a1ccab51232a2fe7b7f7f596764e9a37de4a3cf31",
+    "../../harness/presets/ltr-textbook.json": "075302844e57524ac3ca57b29030dcb6377b36c85ba54c0b16ead2d75148aa7e",
     "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
    },
    "outputs": {
@@ -130,7 +141,7 @@
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
     "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+    "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "questionnaire_ids": [
     "A",
@@ -149,7 +160,7 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-09-28T17:50:07Z",
+   "time": "2026-09-29T08:29:38Z",
    "tool_sha": "5576469032c9e048801d28aac2854462348308b2"
   },
   "new": {
@@ -184,7 +195,7 @@
     "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
     "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-    "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+    "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
     "rework/00-front-matter.md": "e5606df13075c641a51d102e001381117e3d8d27b600b74dcb23bcb202f8ab83",
@@ -198,8 +209,8 @@
     "rework/ch08.md": "f579b676500f01e5683eb494c8de221ac9131ca82a3c4e5f38720eaefc21bc81",
     "rework/ch09.md": "262ef925ec8efe08692e67fea299081891de67310fd5f1eb88090b45cd8ccce3",
     "rework/ch10.md": "043f6ca952a142df4dad328ea088d957f11f02f73ac6d94ade883f1b33dc6bdc",
-    "rework/ch11.md": "49f8d0ee177d6f5d66800dc86bd134254ec4bacaa0afcba49abc2076694371be",
-    "rework/ch12.md": "015ed6dd81ce997e423c2c38971f1d18fc3f0b9c7f0b991c1defc661e97a81e0",
+    "rework/ch11.md": "edbda7f0f42d6612620e8cb5c8c95713196d38d157d37144ff5871096b5bf6d0",
+    "rework/ch12.md": "278f79725514500610e605f4ae39c1b87630f9057b0b6c3b1029b5541ddbbeac",
     "rework/ch13.md": "a04321f358f7413390e4c30fd3d8e22be5e3eafd7d6490f3202515ccff5f8f95",
     "rework/ch14.md": "130cc1cc701316e2271696ad2a23c2a186b5168293974e67f4c3334edbf57263",
     "rework/errata-ledger.md": "0d9ea6fa5b590890315797e3083d7ebdd8e6207e4bb29c75ab55940d43820358",
@@ -224,7 +235,7 @@
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-29T03:45:05Z",
+   "time": "2026-09-29T08:31:17Z",
    "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
    "total_words": 48927,
    "units": {
@@ -243,13 +254,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch01.md": "bd4dd0c68b60d093efbd6e73704d895d25e8a5ecd8271de69c32cc1850cd2fa8"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:38Z",
+     "time": "2026-09-29T08:30:37Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -272,13 +283,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch02.md": "a91367ce34cfd4592df6173c1102366284290d2c6f5f49c71c43c375478d45ec"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:40Z",
+     "time": "2026-09-29T08:30:40Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -301,13 +312,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch03.md": "d6aaf72f80cc6d3a9f703c6c4057d78ee0c00e9dfbb2164d7d39aa26e33c634a"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:43Z",
+     "time": "2026-09-29T08:30:42Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -330,13 +341,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch04.md": "4cf279a9e7de8bd1e3a1f0fbe5fb6a58327b1998bddefb23dfb2931d98bf5339"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:45Z",
+     "time": "2026-09-29T08:30:45Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -359,13 +370,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch05.md": "db8443bd7168e48d098425b46c2946e483c779d077fb13643b9d4f467e7f8e2f"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:47Z",
+     "time": "2026-09-29T08:30:47Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -388,13 +399,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch06.md": "cbd288ee6cef9fcc9f6a6c5d7c0a56eba6148f155e10c39116b0fe743c012684"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:50Z",
+     "time": "2026-09-29T08:30:50Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -417,13 +428,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch07.md": "a79d02594de942bb44bdedf03d84f679a0582feafbd6517dcfddf71cc023fe6b"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:53Z",
+     "time": "2026-09-29T08:30:52Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -446,13 +457,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch08.md": "f579b676500f01e5683eb494c8de221ac9131ca82a3c4e5f38720eaefc21bc81"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:56Z",
+     "time": "2026-09-29T08:30:54Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -475,13 +486,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch09.md": "262ef925ec8efe08692e67fea299081891de67310fd5f1eb88090b45cd8ccce3"
      },
      "status": "ok",
-     "time": "2026-09-29T03:43:58Z",
+     "time": "2026-09-29T08:30:57Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -504,13 +515,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch10.md": "043f6ca952a142df4dad328ea088d957f11f02f73ac6d94ade883f1b33dc6bdc"
      },
      "status": "ok",
-     "time": "2026-09-29T03:44:01Z",
+     "time": "2026-09-29T08:30:59Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -533,13 +544,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch11.md": "49f8d0ee177d6f5d66800dc86bd134254ec4bacaa0afcba49abc2076694371be"
+      "rework/ch11.md": "edbda7f0f42d6612620e8cb5c8c95713196d38d157d37144ff5871096b5bf6d0"
      },
      "status": "ok",
-     "time": "2026-09-29T03:44:03Z",
+     "time": "2026-09-29T08:31:02Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -562,13 +573,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch12.md": "015ed6dd81ce997e423c2c38971f1d18fc3f0b9c7f0b991c1defc661e97a81e0"
+      "rework/ch12.md": "278f79725514500610e605f4ae39c1b87630f9057b0b6c3b1029b5541ddbbeac"
      },
      "status": "ok",
-     "time": "2026-09-29T03:44:06Z",
+     "time": "2026-09-29T08:31:04Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,
@@ -591,13 +602,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch13.md": "a04321f358f7413390e4c30fd3d8e22be5e3eafd7d6490f3202515ccff5f8f95"
      },
      "status": "ok",
-     "time": "2026-09-29T03:44:54Z",
+     "time": "2026-09-29T08:31:08Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 1,
@@ -620,13 +631,13 @@
       "rework/glossary.md": "e3f2466b2790921236efc1ee18168d9a1ff674538a57761403295a42e21b3aec",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
       "template.json": "718d6a823de55699286078d65a0e28efc650030e89229d062801ab38bdf1cf71",
-      "theme.json": "de53e9846444098593d848615acf76af775c81bf94b6038dea8f62567df9b589"
+      "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch14.md": "130cc1cc701316e2271696ad2a23c2a186b5168293974e67f4c3334edbf57263"
      },
      "status": "ok",
-     "time": "2026-09-29T03:44:57Z",
+     "time": "2026-09-29T08:31:10Z",
      "tool_sha": "8a094dd3d12e473b3fb2afd6ea681b2e948a5faf",
      "verify_refs_summary": {
       "exists": 0,

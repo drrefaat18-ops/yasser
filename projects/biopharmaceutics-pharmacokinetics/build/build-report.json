@@ -1,0 +1,426 @@
+{
+ "backend": "word_com",
+ "checkpoints": {
+  "cover": "build/checkpoints/cover.png",
+  "first-chapter": "build/checkpoints/first-chapter.png",
+  "first-figure": "build/checkpoints/first-figure.png",
+  "last": "build/checkpoints/last.png"
+ },
+ "chem_unverified": [],
+ "docx": {
+  "images": 16,
+  "parts": [
+   "[Content_Types].xml",
+   "_rels/.rels",
+   "customXml/_rels/item1.xml.rels",
+   "customXml/item1.xml",
+   "customXml/itemProps1.xml",
+   "docProps/app.xml",
+   "docProps/core.xml",
+   "word/_rels/document.xml.rels",
+   "word/_rels/fontTable.xml.rels",
+   "word/document.xml",
+   "word/endnotes.xml",
+   "word/fontTable.xml",
+   "word/fonts/font1.odttf",
+   "word/fonts/font10.odttf",
+   "word/fonts/font11.odttf",
+   "word/fonts/font12.odttf",
+   "word/fonts/font13.odttf",
+   "word/fonts/font14.odttf",
+   "word/fonts/font15.odttf",
+   "word/fonts/font2.odttf",
+   "word/fonts/font3.odttf",
+   "word/fonts/font4.odttf",
+   "word/fonts/font5.odttf",
+   "word/fonts/font6.odttf",
+   "word/fonts/font7.odttf",
+   "word/fonts/font8.odttf",
+   "word/fonts/font9.odttf",
+   "word/footer1.xml",
+   "word/footer10.xml",
+   "word/footer11.xml",
+   "word/footer12.xml",
+   "word/footer13.xml",
+   "word/footer14.xml",
+   "word/footer15.xml",
+   "word/footer16.xml",
+   "word/footer17.xml",
+   "word/footer18.xml",
+   "word/footer19.xml",
+   "word/footer2.xml",
+   "word/footer20.xml",
+   "word/footer21.xml",
+   "word/footer22.xml",
+   "word/footer23.xml",
+   "word/footer24.xml",
+   "word/footer25.xml",
+   "word/footer26.xml",
+   "word/footer27.xml",
+   "word/footer28.xml",
+   "word/footer29.xml",
+   "word/footer3.xml",
+   "word/footer30.xml",
+   "word/footer31.xml",
+   "word/footer32.xml",
+   "word/footer33.xml",
+   "word/footer34.xml",
+   "word/footer35.xml",
+   "word/footer36.xml",
+   "word/footer37.xml",
+   "word/footer38.xml",
+   "word/footer39.xml",
+   "word/footer4.xml",
+   "word/footer40.xml",
+   "word/footer5.xml",
+   "word/footer6.xml",
+   "word/footer7.xml",
+   "word/footer8.xml",
+   "word/footer9.xml",
+   "word/footnotes.xml",
+   "word/header1.xml",
+   "word/header10.xml",
+   "word/header11.xml",
+   "word/header12.xml",
+   "word/header13.xml",
+   "word/header14.xml",
+   "word/header15.xml",
+   "word/header16.xml",
+   "word/header17.xml",
+   "word/header18.xml",
+   "word/header19.xml",
+   "word/header2.xml",
+   "word/header20.xml",
+   "word/header21.xml",
+   "word/header22.xml",
+   "word/header23.xml",
+   "word/header24.xml",
+   "word/header25.xml",
+   "word/header26.xml",
+   "word/header27.xml",
+   "word/header28.xml",
+   "word/header29.xml",
+   "word/header3.xml",
+   "word/header30.xml",
+   "word/header31.xml",
+   "word/header32.xml",
+   "word/header33.xml",
+   "word/header34.xml",
+   "word/header35.xml",
+   "word/header36.xml",
+   "word/header37.xml",
+   "word/header38.xml",
+   "word/header39.xml",
+   "word/header4.xml",
+   "word/header40.xml",
+   "word/header5.xml",
+   "word/header6.xml",
+   "word/header7.xml",
+   "word/header8.xml",
+   "word/header9.xml",
+   "word/media/image1.png",
+   "word/media/image10.png",
+   "word/media/image11.png",
+   "word/media/image12.png",
+   "word/media/image13.png",
+   "word/media/image14.png",
+   "word/media/image15.png",
+   "word/media/image16.png",
+   "word/media/image2.png",
+   "word/media/image3.png",
+   "word/media/image4.png",
+   "word/media/image5.png",
+   "word/media/image6.png",
+   "word/media/image7.png",
+   "word/media/image8.png",
+   "word/media/image9.png",
+   "word/numbering.xml",
+   "word/settings.xml",
+   "word/styles.xml",
+   "word/theme/theme1.xml",
+   "word/webSettings.xml"
+  ],
+  "toc_field": true
+ },
+ "figure_checks": [
+  {
+   "id": "FIG-MANIFEST",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-UNREFERENCED",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-UNKNOWN",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-CAPTION",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-ALT",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-LICENCE",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-RESOLUTION",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-AUTHOR-ASSET",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "FIG-ANNOT",
+   "measured": {
+    "count": 0,
+    "figures": []
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "CHEM-SMILES-INVALID",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-SANITIZE",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-SMARTS-INVALID",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-PUBCHEM-MISMATCH",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  },
+  {
+   "id": "CHEM-UNVERIFIED",
+   "measured": {},
+   "message": "no chemistry figures",
+   "status": "not_applicable"
+  }
+ ],
+ "figure_renders": [
+  {
+   "id": "ch01-release-to-response",
+   "png": "rework/figures/out/ch01-release-to-response.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch01-release-to-response.svg"
+  },
+  {
+   "id": "ch01-plasma-curve",
+   "png": "rework/figures/out/ch01-plasma-curve.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch01-plasma-curve.svg"
+  },
+  {
+   "id": "ch01-compartment-models",
+   "png": "rework/figures/out/ch01-compartment-models.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch01-compartment-models.svg"
+  },
+  {
+   "id": "ch02-semilog",
+   "png": "rework/figures/out/ch02-semilog.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch02-semilog.svg"
+  },
+  {
+   "id": "ch03-urine-methods",
+   "png": "rework/figures/out/ch03-urine-methods.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch03-urine-methods.svg"
+  },
+  {
+   "id": "ch04-residuals",
+   "png": "rework/figures/out/ch04-residuals.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch04-residuals.svg"
+  },
+  {
+   "id": "ch05-infusion",
+   "png": "rework/figures/out/ch05-infusion.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch05-infusion.svg"
+  },
+  {
+   "id": "ch06-renal-handling",
+   "png": "rework/figures/out/ch06-renal-handling.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch06-renal-handling.svg"
+  },
+  {
+   "id": "ch07-oral-feathering",
+   "png": "rework/figures/out/ch07-oral-feathering.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch07-oral-feathering.svg"
+  },
+  {
+   "id": "ch08-accumulation",
+   "png": "rework/figures/out/ch08-accumulation.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch08-accumulation.svg"
+  },
+  {
+   "id": "ch09-moments",
+   "png": "rework/figures/out/ch09-moments.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch09-moments.svg"
+  },
+  {
+   "id": "ch10-saturation",
+   "png": "rework/figures/out/ch10-saturation.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch10-saturation.svg"
+  },
+  {
+   "id": "ch11-rate-limiting",
+   "png": "rework/figures/out/ch11-rate-limiting.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch11-rate-limiting.svg"
+  },
+  {
+   "id": "ch12-transport",
+   "png": "rework/figures/out/ch12-transport.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch12-transport.svg"
+  },
+  {
+   "id": "ch13-rate-extent",
+   "png": "rework/figures/out/ch13-rate-extent.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch13-rate-extent.svg"
+  },
+  {
+   "id": "ch14-noyes-whitney",
+   "png": "rework/figures/out/ch14-noyes-whitney.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch14-noyes-whitney.svg"
+  }
+ ],
+ "figure_versions": {
+  "Pillow": "12.2.0",
+  "browser": "msedge 154.0.4258.37"
+ },
+ "figures": "manifest",
+ "pdf": {
+  "bookmarks": 145,
+  "pages": 164
+ },
+ "pdf_checks": [
+  {
+   "id": "PDF-SIZE",
+   "measured": {
+    "count": 0,
+    "pages": 164
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-BLANK",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-META",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-TYPE3",
+   "measured": {
+    "count": 30
+   },
+   "message": "page 1: ?; page 1: ?; page 1: ?; page 1: ?; page 1: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 2: ?; page 4: ?; page 4: ?; page 4: ?; page 9: ?; page 9: ?; page 9: ?; page 9: ?; page 9: ?; page 10: ?; page 10: ?; page 10: ?; page 10: ?; page 11: ?; page 12: ?; page 12: ?; page 15: ?; page 15: ?; page 17: ?; page 18: ?",
+   "status": "fail"
+  },
+  {
+   "id": "PDF-EMBED",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-FONTS",
+   "measured": {
+    "count": 4
+   },
+   "message": "CambriaMath (first on page 101); SegoeUIBlack (first on page 109); TimesNewRomanPS-ItalicMT (first on page 71); TimesNewRomanPSMT (first on page 41)",
+   "status": "fail"
+  },
+  {
+   "id": "PDF-OUTLINE",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  }
+ ],
+ "pdf_engine": "html",
+ "schema_version": 1
+}
