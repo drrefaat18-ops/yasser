@@ -1,5 +1,7 @@
 # Glossary
 
+**Absolute bioavailability** — F. The fraction of an extravascular dose that reaches the systemic circulation, found by comparing its dose-normalised AUC (or Du∞) with that of an intravenous dose, provided clearance is unchanged.
+
 **absorption** — The movement of drug from the site of administration into the systemic circulation. The first process of ADME, and the only one a dosage form can be designed to control.
 
 **absorption rate constant** — Ka. The first-order rate constant governing transfer of drug from solution in the gut into the systemic circulation, in reciprocal time.
@@ -26,7 +28,13 @@
 
 **Bioavailability** — The rate and the extent of absorption of a drug from its dosage form into the systemic circulation. Both parts are required: two products with the same AUC can differ in tmax and behave differently in a patient.
 
+**bioequivalent** — Describing pharmaceutical equivalents or alternatives that give the same rate and extent of absorption under the same conditions, judged by the 90% confidence interval of the geometric mean ratio of AUC and Cmax.
+
 **Biopharmaceutics** — The study of how the physicochemical properties of the drug, the dosage form and the route of administration control the rate and extent of drug absorption.
+
+**Biopharmaceutics Classification System** — BCS. The scheme of Amidon and colleagues (1995) that classifies drug substances by aqueous solubility and intestinal permeability into Classes 1–4. Under ICH M9 it supports biowaivers for Classes 1 and 3.
+
+**biowaiver** — Acceptance of bioequivalence without an in-vivo study, for example on the basis of the BCS class of the drug and the dissolution of the product.
 
 **brush border** — The luminal surface of the intestinal epithelial cells, covered with microvilli that resemble the bristles of a brush. Its embedded enzymes, including peptidases and disaccharidases, are brush-border enzymes.
 
@@ -35,6 +43,8 @@
 **compartmental** — Describing a model that represents the body as one or more kinetic spaces rather than as anatomical organs. Contrast with non-compartmental analysis, which uses statistical moments instead.
 
 **Cpmax** — The peak plasma concentration reached after a dose. It depends on the dose, on the absorption rate constant Ka and on the elimination rate constant K, so it reflects both the rate and the extent of absorption.
+
+**crossover design** — A study design in which each subject receives every product, in randomised order and in separate periods, so that each subject serves as his or her own control.
 
 **Crystal polymorphism** — The ability of a drug to crystallise in more than one arrangement. Polymorphs share a chemical structure but differ in solubility, stability and compressibility, so they can differ in bioavailability.
 
@@ -66,6 +76,8 @@
 
 **First-order absorption** — Absorption at a rate proportional to the amount of drug still in solution at the absorption site, so that a constant *fraction* is absorbed per unit time. Typical of rapidly dissolving forms such as immediate-release tablets and capsules.
 
+**first-pass effect** — Loss of an oral dose to metabolism in the gut wall or the liver before it reaches the systemic circulation. It makes F smaller than the fraction absorbed: F = fa × Fg × Fh.
+
 **Flip-flop** — The situation in which the elimination rate constant exceeds the absorption rate constant, so that the terminal phase of an oral curve reflects absorption rather than elimination and the two constants are assigned the wrong way round. Only intravenous data can resolve it.
 
 **formation-rate-limited** — Describes a metabolite eliminated faster than it is formed (Kmet > K). It declines in parallel with the parent, and its own half-life cannot be read from its curve.
@@ -73,6 +85,8 @@
 **fraction unabsorbed** — 1 − Ab/Ab∞, the proportion of the ultimately absorbed dose that has not yet been absorbed at time t. Plotted against time it is linear on semilogarithmic axes for first-order absorption and on ordinary axes for zero-order absorption.
 
 **genetic polymorphism** — A gene variant common in a population. In drug-metabolising enzymes such as NAT2, CYP2D6 and CYP2C19 it makes individuals slow, normal or rapid metabolisers; it is a property of the individual's genotype.
+
+**geometric mean ratio** — The ratio of the geometric means of a pharmacokinetic measure, such as AUC, for test and reference products, obtained by back-transforming the mean difference of the log-transformed values.
 
 **Glomerular filtration** — Passive movement of free drug from blood into the glomerular filtrate, with the concentration gradient. Protein-bound drug is not filtered, because the complex is too large to cross.
 
@@ -140,6 +154,10 @@
 
 **pH-partition hypothesis** — The proposal that drugs are absorbed by passive diffusion in proportion to their unionised fraction at the local pH. A useful first guide that ignores surface area, residence time and lipid solubility.
 
+**Pharmaceutical alternatives** — Products containing the same active moiety by the same route but differing in dosage form (including release type) or in chemical form, such as the salt or ester.
+
+**Pharmaceutical equivalents** — Products containing the same molar amount of the same active ingredient, in the same dosage form (including release type), meeting comparable standards and given by the same route. They may differ in shape, scoring, packaging, excipients and expiry date.
+
 **pharmacokinetic model** — A set of equations that simulates the rate processes of ADME and so predicts the concentration of drug in the body at any time.
 
 **Pharmacokinetics** — The kinetic study of absorption, distribution, metabolism and elimination: how fast each process occurs and what drug concentration results at any given time.
@@ -156,6 +174,8 @@
 
 **rate-limiting step** — The slowest step in a series of kinetic processes, which sets the overall rate. For a tablet it is often disintegration or dissolution rather than membrane transport.
 
+**Relative bioavailability** — The bioavailability of a product compared with a reference product rather than with an intravenous dose: the ratio of their dose-normalised AUCs. It can exceed 100%.
+
 **renal excretion rate constant** — Ke. The first-order rate constant for excretion of intact drug into the urine, so that dDu/dt = Ke·D_B. It equals fe × K, and is always less than or equal to K.
 
 **residual concentration** — The difference Cp − Cp′ between a measured concentration and the value extrapolated from the terminal line at the same time. Its logarithm falls linearly with time during the distribution phase.
@@ -163,6 +183,8 @@
 **statistical moment** — A summary of a distribution. In pharmacokinetics the zero moment of the plasma curve is AUC and the first is AUMC.
 
 **steady-state concentration** — Css. The plateau concentration reached during a constant-rate infusion, at which the rate of elimination equals the rate of input. Css = R/Cl, so it depends on the infusion rate and clearance but not on Vd.
+
+**Therapeutic equivalents** — Pharmaceutical equivalents that give the same clinical efficacy and safety when given to the same patients in the same regimen.
 
 **therapeutic index** — A dimensionless ratio expressing the margin between toxic and effective exposure, classically TD50/ED50, or on a concentration basis MTC/MEC. It is a number, not a band of concentrations.
 
@@ -178,6 +200,8 @@
 
 **Tubular reabsorption** — Return of drug from the tubular fluid to the blood. It favours the more lipid-soluble, unionised form, so for weak acids and weak bases its extent depends on urinary pH and on the pKa of the drug.
 
+**two one-sided tests** — The equivalence procedure behind bioequivalence: one test that the ratio is not below the lower limit and one that it is not above the upper limit, each at α = 0.05. Together they equal a 90% confidence interval lying inside the limits.
+
 **two-compartment open model** — A model in which drug distributes rapidly into a central compartment and more slowly into a peripheral compartment, with first-order transfer between them (K₁₂ and K₂₁) and elimination from the central compartment only.
 
 **vesicular transport** — Uptake of particles or fluid by invagination and engulfment of the cell membrane: pinocytosis, phagocytosis and receptor-mediated endocytosis, as for vitamin B₁₂ bound to intrinsic factor.
@@ -191,6 +215,8 @@
 **Vp** — The volume of the central compartment. See [[volume-of-the-central-compartment]].
 
 **Wagner–Nelson method** — A method for determining the amount of drug absorbed at each time by mass balance, requiring only that the body behaves as one compartment and that elimination is first order. Because it assumes nothing about absorption, it can be used to decide whether absorption is first order or zero order.
+
+**washout period** — The interval between periods of a crossover study, long enough for pre-dose concentrations to be negligible; ICH M13A asks for at least five terminal half-lives, and the Egyptian guideline also for at least seven days.
 
 **zero order** — Describing a process whose rate is constant and independent of the amount of drug present, so that a constant *amount* is transferred per unit time. A constant-rate infusion is zero-order input; saturated metabolism is zero-order output (Chapter 10).
 

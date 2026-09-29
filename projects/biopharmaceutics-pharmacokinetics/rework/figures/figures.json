@@ -154,6 +154,17 @@
    "credit": "Original diagram, redrawn from the first edition pages 61-66",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch13-rate-extent",
+   "chapter_id": "ch13",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch13-rate-extent.svg",
+   "caption": "Rate and extent read from plasma curves, for the three formulations of the first edition's example. A and B have the same AUC and so the same extent, but A peaks earlier and so is absorbed faster. C has the same tmax as A and so the same rate, but half the AUC and so half the extent.",
+   "alt": "Three plasma concentration curves over 24 hours. Curve A rises steeply to the highest peak, about 6.7 relative units, at 2 hours. Curve B rises more slowly to a lower, broader peak of about 4.5 at 4 hours and stays higher than A later on. Curve C peaks at 2 hours like A but at half its height. Dashed lines drop from each peak to the time axis. A key at the right lists A with AUC 50 and tmax 2 hours, B with AUC 50 and tmax 4 hours, and C with AUC 25 and tmax 2 hours.",
+   "credit": "Original diagram, redrawn from the first edition page 92",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
