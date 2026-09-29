@@ -296,3 +296,41 @@ given: visits=6, vp=30
 expr: visits/2*vp
 expect: exact 90
 ```
+
+## Added sections — digital campaigns and discounting
+
+```math-check
+label: ch03 Worked Example - cost per booking, search
+given: spend=6000, n=150
+expr: spend/n
+expect: exact 40
+```
+
+```math-check
+label: ch03 Worked Example - cost per booking, social media
+given: spend=4000, n=50
+expr: spend/n
+expect: exact 80
+```
+
+```math-check
+label: ch11 Worked Example - discount factor at 3% for 5 years
+given: r=3/100, t=5
+expr: (1+r)**t
+expect: 1.159 +- 0.0005
+```
+
+```math-check
+label: ch11 Worked Example - present value of the saving
+given: F=10000, r=3/100, t=5
+expr: F/(1+r)**t
+expect: 8626 +- 0.5
+```
+
+```math-check
+label: ch11 Worked Example - overstatement at face value
+given: F=10000, r=3/100, t=5
+expr: (F - F/(1+r)**t)/(F/(1+r)**t)
+expect: 0.16 +- 0.005
+```
+

@@ -10,6 +10,8 @@
 
 **advertising agency** — A firm that plans, creates and manages paid marketing communication for advertisers.
 
+**affordable method** — Setting a promotion budget at what the organisation can spare.
+
 **auction price** — A price set by competitive bidding; it may differ sharply from the usual market price.
 
 **audience** — The target group of an advertisement: the people most likely to need the product.
@@ -20,9 +22,13 @@
 
 **bundled pricing** — Selling several products or services together for one price, as in a check-up package.
 
+**catchment area** — The area from which a service draws most of its patients.
+
 **channel level** — The number of intermediaries between producer and consumer in a distribution channel.
 
 **Clinical outcomes** — Medical events that result from disease or treatment, such as laboratory values, lives saved or disability days avoided.
+
+**competitive-parity method** — Setting a promotion budget to match competitors' spending.
 
 **Consequences** — The effects, outputs or outcomes of an intervention in an economic evaluation.
 
@@ -41,6 +47,8 @@
 **cost-effectiveness plane** — A graph with the difference in effect on one axis and the difference in cost on the other; its quadrant shows dominance or a trade-off.
 
 **cost-effectiveness ratio (CER)** — The cost of one option divided by its effect.
+
+**cost-effectiveness threshold** — The most a decision-maker is willing to pay for one unit of effect, usually one QALY.
 
 **Cost-minimisation analysis** — An economic evaluation that compares only costs, used when outcomes have been shown to be equivalent.
 
@@ -72,6 +80,10 @@
 
 **Discount pricing** — Charging less than competitors to attract price-sensitive customers.
 
+**discount rate** — The yearly rate used in discounting future costs and outcomes.
+
+**Discounting** — Converting future costs and outcomes to their value today, so options with different timings can be compared.
+
 **Distribution** — Planning, organising and controlling the movement of products from where they are made to where they are used.
 
 **distribution channel** — The set of firms or individuals that take ownership of a product, or help transfer it, from producer to consumer.
@@ -87,6 +99,8 @@
 **elastic** — Describes demand whose percentage change exceeds the percentage change in price (absolute elasticity above 1).
 
 **exchange** — Obtaining something of value by offering something in return.
+
+**fail points** — The steps of a service where it most often goes wrong, such as sample labelling or safety screening.
 
 **Fixed costs** — Costs that do not change with volume in the short run, such as rent and equipment leases.
 
@@ -142,6 +156,8 @@
 
 **law of demand** — Other things equal, the quantity demanded falls as the price rises.
 
+**line of visibility** — In a service blueprint, the line separating the staff actions the customer sees from those behind the scenes.
+
 **market** — The set of actual and potential buyers of a product.
 
 **market segmentation** — Dividing a market into groups of buyers who respond differently to marketing, including price.
@@ -176,6 +192,8 @@
 
 **Non-durable goods** — Goods used once or over a short time, such as reagents and most medicines.
 
+**objective-and-task method** — Setting a promotion budget by costing the tasks needed to reach the campaign's objective.
+
 **opinion leader** — A person whose views influence others.
 
 **Opportunity cost** — The value of the best alternative use of the resources actually used.
@@ -194,6 +212,8 @@
 
 **People** — In the services mix, everyone who meets the customer during the service.
 
+**percentage-of-sales method** — Setting a promotion budget as a fixed share of revenue.
+
 **Personal selling** — Face-to-face presentation to buyers, such as a representative's visit to a doctor.
 
 **Perspective** — Whose costs and consequences an economic evaluation counts: patient, provider, payer or society.
@@ -211,6 +231,8 @@
 **Place** — The element of the mix concerned with how a product reaches its customers.
 
 **Premium pricing** — Charging more than competitors, justified by better service or a stronger brand.
+
+**present value** — The value today of a future cost or outcome: F ÷ (1 + r) to the power t.
 
 **Price** — The amount charged for a product, or the total of what customers give up to obtain it.
 
@@ -263,6 +285,8 @@
 **Sensitivity analysis** — Recalculating a result with different plausible values to see whether the conclusion changes.
 
 **service** — An act or performance offered to another; intangible, perishable and produced as it is consumed.
+
+**service blueprint** — A diagram of every step a customer takes through a service, with the staff actions and support processes behind each step.
 
 **Shopping products** — Products compared on quality, price and suitability before purchase.
 
