@@ -139,7 +139,18 @@ def parse(text, cfg, kind, is_cover=None):
                 out.append({"t": "grid", "key": key, "label": callout_by_id[key]["label"], "items": items})
             else:
                 body = block[0][len(callout_by_id[key]["syntax"].lstrip("> ")):].strip() if key else block[0]
-                out.append({"t": "callout", "key": key, "text": " ".join([body] + block[1:])})
+                # a blank `>` line is a paragraph break inside the box: an author who put an equation on
+                # its own line meant it to stay there, not to run into the sentence before it
+                paras, cur = [], [body] if body else []
+                for line in block[1:]:
+                    if line:
+                        cur.append(line)
+                    elif cur:
+                        paras.append(" ".join(cur))
+                        cur = []
+                if cur:
+                    paras.append(" ".join(cur))
+                out.append({"t": "callout", "key": key, "text": " ".join(paras), "paras": paras})
             continue
         if s.startswith("|"):
             flush()

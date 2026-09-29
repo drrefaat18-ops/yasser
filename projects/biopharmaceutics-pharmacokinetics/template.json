@@ -258,5 +258,8 @@
  },
  "front_matter": {
   "toc_insert_before_section_id": "how-to-use"
+ },
+ "math": {
+  "enabled": true
  }
 }

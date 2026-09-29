@@ -85,7 +85,14 @@ def prose_body(text, cfg):
 
 
 def words(text, cfg):
-    return tx.words(no_refs(text, cfg), cfg["profile_out"])
+    """Prose words. A chapter's equations are not prose, so with math on the TeX is replaced by one
+    token each: an equation carries reading load, but not the load of its own markup, and a budget must
+    not move because a formula was written as \frac rather than a slash."""
+    t = no_refs(text, cfg)
+    if (cfg["template"].get("math") or {}).get("enabled"):
+        t = mathml.DISPLAY_MATH.sub("equation", t)
+        t = "".join("equation" if is_math else frag for is_math, frag in mathml.split_inline(t))
+    return tx.words(t, cfg["profile_out"])
 
 
 def clean_prose_lines(text, cfg):

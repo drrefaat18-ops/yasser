@@ -489,24 +489,31 @@ class Renderer:
             self.inline(p2, text)
         self.after_table(container)
 
-    def callout(self, container, key, text):
-        """`key` is the callout ID from the parsed chapter (None: a quote block that is no configured callout)."""
+    def callout(self, container, key, text, paras=None):
+        """`key` is the callout ID from the parsed chapter (None: a quote block that is no configured callout).
+        `paras` keeps the author's paragraph breaks inside the box; `text` is the whole body for a split layout."""
         label = self.bk.callout_by_id[key]["label"] if key else None
         fill, colour, layout, _ = self.bk.style_of(key)
         t, c = self.box(container, label, fill, colour)
         self.x.cant_split(t.rows[0])
-        chunks = [text]
+        chunks = list(paras) if paras else [text]
         parts = self.bk.callout_by_id[key]["parts"] if key else []
         if layout == "split" and parts:
             rx = r"\s+".join(rf"{re.escape(pt)}:\s*(.+?)" for pt in parts[:-1]) + rf"\s+{re.escape(parts[-1])}:\s*(.+)"
             m = re.match(rx, text)
             if m:
                 chunks = list(zip(parts, m.groups()))
+        math_on = (self.bk.cfg["template"].get("math") or {}).get("enabled")
         for ch in chunks:
             p = self.f.make_paragraph(c, style="Box Text")
             if isinstance(ch, tuple):
                 self.f.make_run(p, ch[0] + "  ", bold=True, colour=colour)
                 self.inline(p, ch[1])
+                continue
+            tex = mathml.display(ch) if math_on else None
+            if tex is not None:      # a line in the box that is only `$$...$$` is a display equation
+                p.alignment = self.d["WD_ALIGN_PARAGRAPH"].CENTER
+                self.x.add_math(p, tex, display=True)
             else:
                 self.inline(p, ch)
         self.after_table(container)
@@ -626,7 +633,7 @@ class Renderer:
                 fill, colour, _, _ = bk.style_of(b["key"])
                 self.grid(container, b["label"], b["items"], fill, colour)
             elif t == "callout":
-                self.callout(container, b["key"], b["text"])
+                self.callout(container, b["key"], b["text"], b.get("paras"))
             elif t == "table":
                 self.md_table(container, b["rows"])
             elif t == "image":

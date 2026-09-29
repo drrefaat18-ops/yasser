@@ -353,6 +353,33 @@
   "browser": "msedge 154.0.4258.37"
  },
  "figures": "manifest",
+ "math_checks": [
+  {
+   "id": "MATH-SYNTAX",
+   "measured": {
+    "blocks": 31,
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "MATH-UNBOUND",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "MATH-MISMATCH",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  }
+ ],
  "pdf": {
   "bookmarks": 145,
   "pages": 158

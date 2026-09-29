@@ -105,12 +105,13 @@ class Writer:
                        if m else f"<figcaption>{self.inline(caption)}</figcaption>")
         return "".join(out) + "</figure>"
 
-    def callout(self, key, text):
+    def callout(self, key, text, paras=None):
+        """`paras` keeps the author's paragraph breaks inside the box; `text` is the whole body for a split layout."""
         bk = self.bk
         label = bk.callout_by_id[key]["label"] if key else None
         layout = bk.style_of(key)[2]
         parts = bk.callout_by_id[key]["parts"] if key else []
-        body = f"<p>{self.inline(text)}</p>"
+        body = "".join(self._box_para(x) for x in (paras or [text]))
         if layout == "split" and parts:
             rx = r"\s+".join(rf"{re.escape(pt)}:\s*(.+?)" for pt in parts[:-1]) + rf"\s+{re.escape(parts[-1])}:\s*(.+)"
             m = re.match(rx, text)
@@ -118,6 +119,13 @@ class Writer:
                 body = "".join(f'<p><span class="part">{esc(pt)}</span> {self.inline(g)}</p>' for pt, g in zip(parts, m.groups()))
         head = f'<div class="label">{esc(label)}</div>' if label is not None else ""
         return f'<div class="box {self._cls(key)}">{head}{body}</div>'
+
+    def _box_para(self, text):
+        """One paragraph inside a box; a paragraph that is only `$$...$$` is centred as a display equation."""
+        tex = mathml.display(text) if (self.bk.cfg["template"].get("math") or {}).get("enabled") else None
+        if tex is not None:
+            return f'<p class="display-math">{mathml.mathml(tex, display=True)}</p>'
+        return f"<p>{self.inline(text)}</p>"
 
     @staticmethod
     def _cls(key):
@@ -177,7 +185,7 @@ class Writer:
                 out.append(f'<div class="box grid {self._cls(b["key"])}"><div class="label">{esc(b["label"])}</div>'
                            f'<div class="cells">{items}</div></div>')
             elif t == "callout":
-                out.append(self.callout(b["key"], b["text"]))
+                out.append(self.callout(b["key"], b["text"], b.get("paras")))
             elif t == "table":
                 rows = b["rows"]
                 n = len(rows[0])
