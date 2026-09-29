@@ -178,7 +178,7 @@ Drawing the model is not decoration. The diagram lets you write the differential
 
 > **Key Equation:** Equation 1.1 — total amount in the body
 >
-> D_B = Cp × Vd
+> $$D_B = C_p \times V_d$$
 >
 > where D_B is the total amount of drug in the body (mg), Cp the plasma concentration (mg·L⁻¹) and Vd the apparent volume of distribution (L). This is the bridge between what you can measure and what you want to know. Chapter 2 derives Vd and explains why it is *apparent*.
 
@@ -380,11 +380,11 @@ The minus sign says the amount is falling. K is the **elimination rate constant*
 >
 > In exponential form:
 >
-> D_B = D_B⁰ · e^(−Kt)    and    Cp = Cp⁰ · e^(−Kt)
+> $$D_B = D_B^0\, e^{-Kt} \qquad \text{and} \qquad C_p = C_p^0\, e^{-Kt}$$
 >
 > In logarithmic form:
 >
-> log Cp = log Cp⁰ − Kt / 2.303
+> $$\log C_p = \log C_p^0 - \frac{Kt}{2.303}$$
 >
 > where Cp⁰ is the plasma concentration extrapolated back to time zero, and 2.303 converts natural logarithms to base 10. The two forms carry identical information [1]. The second is the useful one, because it is the equation of a straight line.
 
@@ -412,7 +412,7 @@ The **elimination half-life** (t½) is the time taken for the amount of drug in 
 
 > **Key Equation:** Equation 2.2 — half-life
 >
-> t½ = 0.693 / K
+> $$t_{1/2} = \frac{0.693}{K}$$
 >
 > where 0.693 is ln 2. The relationship works both ways: K = 0.693 / t½.
 
@@ -474,7 +474,7 @@ This route needs no extrapolation, and Chapter 9 generalises it to drugs that do
 
 > **Key Equation:** Equation 2.3 — clearance from K and Vd
 >
-> Cl = K · Vd = 0.693 · Vd / t½
+> $$Cl = K \cdot V_d = \frac{0.693\, V_d}{t_{1/2}}$$
 >
 > Clearance is therefore inversely proportional to half-life at constant Vd. Doubling clearance halves the half-life.
 
@@ -718,7 +718,7 @@ where **Knr** is the **non-renal elimination rate constant**, mostly metabolism.
 
 > **Key Equation:** Equation 3.1 — fraction excreted unchanged
 >
-> fe = Du∞ / D_B⁰ = Ke / K
+> $$f_e = \frac{D_u^\infty}{D_B^0} = \frac{K_e}{K}$$
 >
 > where Du∞ is the total amount ultimately recovered unchanged and D_B⁰ is the intravenous dose. A drug with fe = 1 is cleared entirely by renal excretion of unchanged drug. A drug with fe = 0.1 loses 90% of the dose by other routes.
 
@@ -730,11 +730,11 @@ Substituting the first-order decline of D_B from Chapter 2 into the excretion eq
 
 > **Key Equation:** Equation 3.2 — excretion rate
 >
-> dDu/dt = Ke · D_B⁰ · e^(−Kt)
+> $$\frac{dD_u}{dt} = K_e\, D_B^0\, e^{-Kt}$$
 >
 > and in logarithmic form:
 >
-> log(dDu/dt) = log(Ke · D_B⁰) − Kt / 2.303
+> $$\log \frac{dD_u}{dt} = \log\left(K_e\, D_B^0\right) - \frac{Kt}{2.303}$$
 
 Read the second line carefully, because it contains the point of the method. The *slope* carries K, the total elimination rate constant. The *intercept* carries Ke·D_B⁰. Plot the excretion rate on semilog axes against time and both constants fall out of one straight line.
 
@@ -763,11 +763,11 @@ At infinite time the exponential vanishes, so Du∞ = Ke·D_B⁰/K. Substituting
 
 > **Key Equation:** Equation 3.3 — sigma-minus
 >
-> Du∞ − Du = Du∞ · e^(−Kt)
+> $$D_u^\infty - D_u = D_u^\infty\, e^{-Kt}$$
 >
 > and in logarithmic form:
 >
-> log(Du∞ − Du) = log Du∞ − Kt / 2.303
+> $$\log\left(D_u^\infty - D_u\right) = \log D_u^\infty - \frac{Kt}{2.303}$$
 
 The term (Du∞ − Du) is the **amount remaining to be excreted**, abbreviated ARE. The method is named for the sigma, the summation, that produces the cumulative Du.
 
@@ -1070,7 +1070,7 @@ Solving the two simultaneous differential equations gives the plasma concentrati
 
 > **Key Equation:** Equation 4.1 — the biexponential decline
 >
-> Cp = A·e^(−at) + B·e^(−bt)
+> $$C_p = A\, e^{-at} + B\, e^{-bt}$$
 >
 > where a and b are **hybrid rate constants** for the distribution and elimination phases, A and B are the zero-time intercepts of the two exponential terms, and a > b always.
 
@@ -1110,13 +1110,13 @@ A, B, a and b are what the plot gives. K, K₁₂, K₂₁ and Vp are what the m
 
 > **Key Equation:** Equation 4.2 — from intercepts and hybrids to model constants
 >
-> K₂₁ = (A·b + B·a) / (A + B)
+> $$K_{21} = \frac{A b + B a}{A + B}$$
 >
-> K = a·b / K₂₁
+> $$K = \frac{a b}{K_{21}}$$
 >
-> K₁₂ = a + b − K₂₁ − K
+> $$K_{12} = a + b - K_{21} - K$$
 >
-> Vp = D_B⁰ / (A + B)
+> $$V_p = \frac{D_B^0}{A + B}$$
 >
 > The order matters: K₂₁ must be found first, because K depends on it and K₁₂ depends on both.
 
@@ -1408,11 +1408,11 @@ Integrating that equation from an empty body at time zero, and dividing by Vd to
 
 > **Key Equation:** Equation 5.1 — the approach to steady state
 >
-> Cp = [R / (K · Vd)] · (1 − e^(−Kt))
+> $$C_p = \frac{R}{K V_d}\left(1 - e^{-Kt}\right)$$
 >
 > As t → ∞ the exponential vanishes and the bracket becomes 1, leaving:
 >
-> Css = R / (K · Vd) = R / Cl
+> $$C_{ss} = \frac{R}{K V_d} = \frac{R}{Cl}$$
 >
 > where Cl is total body clearance from Chapter 2.
 
@@ -1471,7 +1471,7 @@ The requirement is simply that the bolus fills the volume of distribution to the
 
 > **Key Equation:** Equation 5.2 — loading dose
 >
-> D_L = Css · Vd = R / K
+> $$D_L = C_{ss} V_d = \frac{R}{K}$$
 >
 > The two forms are the same equation. Substituting Css = R/(K·Vd) into the first gives the second, and the Vd cancels.
 
@@ -1781,9 +1781,9 @@ Chapter 2 introduced clearance as K·Vd. The definition behind that product is a
 
 > **Key Equation:** Equation 6.2 — clearance, two equivalent forms
 >
-> Cl = (rate of drug elimination) / Cp = (dDe/dt) / Cp
+> $$Cl = \frac{\text{rate of drug elimination}}{C_p} = \frac{dD_e/dt}{C_p}$$
 >
-> Cl = K · Vd = 0.693 · Vd / t½
+> $$Cl = K \cdot V_d = \frac{0.693\, V_d}{t_{1/2}}$$
 >
 > The first form is the definition; the second follows from it when elimination is first order.
 
@@ -1799,13 +1799,13 @@ Clearances by different routes add, because the organs work in parallel on the s
 
 > **Key Equation:** Equation 6.3 — additivity and its consequences
 >
-> Cl_T = Cl_r + Cl_nr    (total = renal + non-renal)
+> $$Cl_T = Cl_r + Cl_{nr} \qquad \text{(total = renal + non-renal)}$$
 >
-> Cl_r = Ke · Vd    and    Cl_nr = Knr · Vd
+> $$Cl_r = K_e V_d \qquad \text{and} \qquad Cl_{nr} = K_{nr} V_d$$
 >
-> fe = Du∞ / (dose reaching the circulation) = Ke / K = Cl_r / Cl_T
+> $$f_e = \frac{D_u^\infty}{\text{dose reaching the circulation}} = \frac{K_e}{K} = \frac{Cl_r}{Cl_T}$$
 >
-> so    Cl_r = fe · Cl_T    and    Cl_nr = (1 − fe) · Cl_T
+> $$Cl_r = f_e\, Cl_T \qquad \text{and} \qquad Cl_{nr} = (1 - f_e)\, Cl_T$$
 >
 > where Knr is the non-renal elimination rate constant and fe is the fraction of the available dose
 > excreted unchanged, the same fe defined in Chapter 3.
@@ -2145,7 +2145,7 @@ Differentiating Equation 7.1 and setting the derivative to zero gives the time o
 
 > **Key Equation:** Equation 7.2 — time of the peak
 >
-> tmax = ln(Ka / K) / (Ka − K)
+> $$t_{max} = \frac{\ln(K_a / K)}{K_a - K}$$
 >
 > Neither the dose nor Vd nor F appears. tmax depends on the two rate constants alone.
 
@@ -2237,7 +2237,7 @@ At infinite time the body is empty, so Ab∞ = K·Vd·(AUC)₀^∞. Dividing one
 
 > **Key Equation:** Equation 7.3 — fraction unabsorbed
 >
-> Ab/Ab∞ = [Cp + K·(AUC)₀ᵗ] / [K·(AUC)₀^∞]
+> $$\frac{Ab}{Ab_\infty} = \frac{C_p + K (AUC)_0^t}{K (AUC)_0^\infty}$$
 >
 > and the **fraction unabsorbed** is 1 − Ab/Ab∞.
 
@@ -2541,7 +2541,7 @@ That is a geometric series. Its sum is D₀(1 − fⁿ)/(1 − f). As n grows, f
 
 > **Key Equation:** Equation 8.1 — the accumulation index
 >
-> R = Css,max / Cmax,1 = 1 / (1 − e^(−Kτ))
+> $$R = \frac{C_{ss,max}}{C_{max,1}} = \frac{1}{1 - e^{-K\tau}}$$
 >
 > where Cmax,1 is the peak after the first dose, D₀/Vd, and Css,max is the peak at steady state.
 
@@ -2581,7 +2581,7 @@ t = [ln 2 + ln(Ka / (Ka − K))] / K
 
 > **Key Equation:** Equation 8.2 — the accumulation half-life
 >
-> t½,acc = t½ · [1 + 3.32 · log(Ka / (Ka − K))]
+> $$t_{1/2,acc} = t_{1/2}\left[1 + 3.32 \log\frac{K_a}{K_a - K}\right]$$
 >
 > valid when Ka > K, so that the absorption exponential can be neglected.
 
@@ -2607,7 +2607,7 @@ The limit of the geometric series in Section 8.3 gives the steady-state peak dir
 >
 > with f = e^(−Kτ). Divide each amount by Vd to obtain the concentration:
 >
-> Css,max = (D₀/Vd) / (1 − e^(−Kτ))    Css,min = Css,max · e^(−Kτ)
+> $$C_{ss,max} = \frac{D_0 / V_d}{1 - e^{-K\tau}} \qquad C_{ss,min} = C_{ss,max}\, e^{-K\tau}$$
 
 The ratio of peak to trough is Css,max / Css,min = e^(Kτ). A short interval relative to the half-life keeps the swing small. A long interval makes it large.
 
@@ -2881,9 +2881,9 @@ The zero moment is the area under the plasma concentration curve, AUC, which ear
 
 > **Key Equation:** Equation 9.1 — the two moments
 >
-> AUC = ∫₀^∞ Cp dt    (zero moment)
+> $$AUC = \int_0^\infty C_p\, dt \qquad \text{(zero moment)}$$
 >
-> AUMC = ∫₀^∞ Cp · t dt    (first moment)
+> $$AUMC = \int_0^\infty C_p\, t\, dt \qquad \text{(first moment)}$$
 >
 > AUC has units of concentration × time, such as mg·h·L⁻¹. AUMC has units of concentration × time², such as mg·h²·L⁻¹.
 
@@ -2891,9 +2891,9 @@ Both areas are measured in two parts. The part from zero to the last sample, tn,
 
 > **Key Equation:** Equation 9.2 — the extrapolated tails
 >
-> AUC(tn → ∞) = Cn / λz
+> $$AUC(t_n \to \infty) = \frac{C_n}{\lambda_z}$$
 >
-> AUMC(tn → ∞) = tn · Cn / λz + Cn / λz²
+> $$AUMC(t_n \to \infty) = \frac{t_n C_n}{\lambda_z} + \frac{C_n}{\lambda_z^2}$$
 >
 > where Cn is the last measured concentration and λz is the terminal rate constant, 2.303 × the magnitude of the terminal slope on a log₁₀ plot.
 
@@ -2912,7 +2912,7 @@ Dividing the first moment by the zero moment gives the mean of the distribution.
 
 > **Key Equation:** Equation 9.3 — mean residence time
 >
-> MRT = AUMC / AUC
+> $$MRT = \frac{AUMC}{AUC}$$
 >
 > For a one-compartment drug given by IV bolus, MRT = 1/K, so t½ = 0.693 · MRT.
 
@@ -2924,7 +2924,7 @@ After an oral dose, the average time a molecule spends in the body is longer. It
 
 > **Key Equation:** Equation 9.4 — mean absorption time
 >
-> MAT = MTT(oral) − MRT(IV)
+> $$MAT = MRT_{oral} - MRT_{IV}$$
 >
 > For first order absorption, MAT = 1/Ka, so the absorption half-life is 0.693 · MAT.
 
@@ -2938,7 +2938,7 @@ Clearance needs only the zero moment. For an intravenous dose, Cl = D₀/AUC, wh
 
 > **Key Equation:** Equation 9.5 — volume of distribution at steady state
 >
-> Vss = Cl · MRT = D₀ · AUMC / AUC²    (IV bolus)
+> $$V_{ss} = Cl \cdot MRT = \frac{D_0\, AUMC}{AUC^2} \qquad \text{(IV bolus)}$$
 
 The **volume of distribution at steady state**, Vss, is the volume that relates the amount in the body to the plasma concentration when distribution is at equilibrium, as during a long infusion. It needs no model. For a one-compartment drug it equals Vd, because MRT = 1/K and Cl/K = Vd. For a multi-compartment drug it lies above the central volume, because the drug also occupies the tissues.
 
@@ -3249,7 +3249,7 @@ The rate of an enzyme-catalysed reaction is described by the **Michaelis–Mente
 
 > **Key Equation:** Equation 10.1 — the Michaelis–Menten equation
 >
-> V = −dC/dt = Vmax · C / (Km + C)
+> $$V = -\frac{dC}{dt} = \frac{V_{max}\, C}{K_m + C}$$
 >
 > where V is the rate of the reaction, C is the drug concentration, Vmax is the maximum rate, and Km is the Michaelis–Menten constant.
 
@@ -3296,7 +3296,7 @@ Rearranging for Css gives the working result.
 
 > **Key Equation:** Equation 10.2 — steady state with saturable elimination
 >
-> Css = Km · R / (Vmax − R)
+> $$C_{ss} = \frac{K_m\, R}{V_{max} - R}$$
 >
 > valid only while R < Vmax.
 
@@ -3604,7 +3604,7 @@ The first edition writes the metabolite's rate constant as K(m). This edition wr
 >
 > Cp(m) = [fm · K · D / (Vd(m) · (Kmet − K))] · (e^(−K·t) − e^(−Kmet·t))
 >
-> tmax(m) = ln(Kmet / K) / (Kmet − K)
+> $$t_{max(m)} = \frac{\ln(K_{met} / K)}{K_{met} - K}$$
 >
 > where D is the IV dose of parent and Vd(m) is the volume of distribution of the metabolite.
 
@@ -3641,11 +3641,11 @@ Integrating Equation 11.1 from zero to infinity gives the area under the metabol
 
 > **Key Equation:** Equation 11.2 — metabolite AUC, clearance and volume
 >
-> AUC(m) = fm · D / Cl(m)
+> $$AUC_{(m)} = \frac{f_m D}{Cl_{(m)}}$$
 >
 > Since D = Cl_T · AUC for the parent: AUC(m) / AUC = fm · Cl_T / Cl(m)
 >
-> Vd(m) = Cl(m) / Kmet
+> $$V_{d(m)} = \frac{Cl_{(m)}}{K_{met}}$$
 
 These hold whichever step is rate-limiting. The ratio form needs no dose: relative exposure depends only on fm and the two clearances.
 
@@ -3935,7 +3935,7 @@ Original diagram, redrawn from the first edition pages 61-66 (original)
 
 > **Key Equation:** Equation 12.1 — Fick's law for absorption
 >
-> dQ/dt = (D · A · K / h) · (C_GI − Cp) = p · A · (C_GI − Cp)
+> $$\frac{dQ}{dt} = \frac{D A K}{h}\left(C_{GI} - C_p\right) = p A \left(C_{GI} - C_p\right)$$
 >
 > Because Cp is small compared with C_GI:    dQ/dt ≈ p · A · C_GI
 >
@@ -4300,7 +4300,7 @@ Three things control how much drug reaches its site of action. The first is rele
 >
 > F = (AUC_oral / D_oral) ÷ (AUC_IV / D_IV) = (Du∞,oral / D_oral) ÷ (Du∞,IV / D_IV)
 >
-> relative bioavailability = (AUC_test / D_test) ÷ (AUC_ref / D_ref)
+> $$F_{rel} = \frac{AUC_{test} / D_{test}}{AUC_{ref} / D_{ref}}$$
 >
 > Multiply by 100 for a percentage. F = 1 for an intravenous dose, and lies between 0 and 1 for an extravascular one.
 
@@ -4312,7 +4312,7 @@ What F measures is easy to misread. It is not the fraction absorbed. A dose that
 
 > **Key Equation:** Equation 13.2 — the three parts of F
 >
-> F = fa × Fg × Fh
+> $$F = f_a \times F_g \times F_h$$
 >
 > fa is the fraction of the dose absorbed across the gut wall. Fg is the fraction escaping gut-wall metabolism, and Fh the fraction escaping the liver on its first pass.
 
@@ -4639,7 +4639,7 @@ Original diagram, drawn for the first edition page 102 (original)
 
 > **Key Equation:** Equation 14.1 — the Noyes–Whitney equation
 >
-> dm/dt = (D · A / h) · (Cs − C)    and so    dC/dt = (D · A) / (h · V) · (Cs − C)
+> $$\frac{dm}{dt} = \frac{D A}{h}\left(C_s - C\right) \qquad \text{and so} \qquad \frac{dC}{dt} = \frac{D A}{h V}\left(C_s - C\right)$$
 >
 > D is the diffusion coefficient of the drug, A the surface area of the dissolving solid, h the thickness of the stagnant layer, Cs the solubility of the drug, C its concentration in the bulk medium, V the volume of that medium, and m the mass dissolved.
 

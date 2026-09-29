@@ -24,6 +24,8 @@
    "word/fontTable.xml",
    "word/fonts/font1.odttf",
    "word/fonts/font10.odttf",
+   "word/fonts/font11.odttf",
+   "word/fonts/font12.odttf",
    "word/fonts/font2.odttf",
    "word/fonts/font3.odttf",
    "word/fonts/font4.odttf",
@@ -382,14 +384,14 @@
  ],
  "pdf": {
   "bookmarks": 145,
-  "pages": 158
+  "pages": 170
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 158
+    "pages": 170
    },
    "message": "",
    "status": "pass"
