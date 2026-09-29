@@ -115,6 +115,7 @@ CHECKS = [
     (("figures",), lambda: check_module("matplotlib", "figures")),
     (("golden",), lambda: check_module("pypdf", "golden")),
     (("build",), lambda: check_module("pypdf", "build")),   # HTML engine merge and PDF gates (Task 9b.2-9b.3)
+    (("build",), lambda: check_module("sympy", "build")),   # the math gate recomputes printed values
     (("build", "evidence"), lambda: check_module("fitz", "evidence", required=False, label="pymupdf")),   # checkpoints
 ]
 GROUPS = ["core", "ingest", "build", "figures", "golden", "chemistry", "evidence"]

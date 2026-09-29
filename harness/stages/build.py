@@ -1,4 +1,8 @@
-"""`run build` (core §2.2 build row; plan Tasks 8.2, 9b.2-9b.3): figures, assemble, DOCX, PDF, PDF gates, build-report.json.
+"""`run build` (core §2.2 build row; plan Tasks 8.2, 9b.2-9b.3): math gates, figures, assemble, DOCX, PDF, PDF gates, build-report.json.
+
+The math gate runs first, before anything is rendered or assembled: every printed value the book
+declares in its `math-checks.md` is recomputed with SymPy, and a mismatch fails the build. It costs
+nothing when a book declares no checks.
 
 Figures (core §7): with a manifest, the checker's pre-render pass runs, every figure is rendered into
 <paths.figures>/out/ and the full figure check runs before anything is assembled; a blocking check ID fails the build. Without a manifest, only a book whose rework
@@ -8,7 +12,7 @@ fails with FIG-MANIFEST. A failing step raises; the runner then writes a `failed
 import json, os, pathlib
 from harness import figures, preflight, state
 from harness.figures import check_figures, render
-from harness.tools import assemble, build_book, build_html, capture_golden, check_pdf, config
+from harness.tools import assemble, build_book, build_html, capture_golden, check_math, check_pdf, config
 
 
 class BuildStepFailed(Exception):
@@ -31,6 +35,10 @@ def run(project):
     if missing:
         raise BuildStepFailed("preflight: " + "; ".join(f"{c['name']}: {c['detail']}" for c in missing))
     _contained(project, [project / "build", figures.out_dir(cfg), cfg.path("figures") / ".cache"])
+    math_report = _step("math checks", lambda: check_math.check(cfg, check_math.files(cfg)))
+    bad = check_math.failures(math_report)
+    if bad:
+        raise BuildStepFailed("math checks: " + "; ".join(f"{c['id']}: {c['message'][:300]}" for c in bad))
     fig_mode, fig_report = _figures(project, cfg)
 
     def do_assemble():
@@ -54,7 +62,7 @@ def run(project):
     report = {"schema_version": 1, "backend": cfg["theme"]["build"]["backend"], "pdf_engine": engine, "figures": fig_mode,
               "docx": {k: facts["docx"][k] for k in ("parts", "images", "toc_field")},
               "pdf": {"pages": facts["pdf"]["pages"], "bookmarks": len(facts["pdf"]["bookmarks"])}}
-    report.update({"pdf_checks": pdf_report["checks"], "checkpoints": shots})
+    report.update({"pdf_checks": pdf_report["checks"], "math_checks": math_report["checks"], "checkpoints": shots})
     if fig_report is not None:
         report.update(fig_report)
     (project / "build" / "build-report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
