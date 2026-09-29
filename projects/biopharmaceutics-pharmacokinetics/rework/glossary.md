@@ -8,6 +8,8 @@
 
 **accumulation index** — R. The ratio of the steady-state peak to the peak after the first dose, 1/(1 − e^(−Kτ)). It depends on K and the dosage interval, not on the dose; R = 1 means no accumulation.
 
+**active metabolite** — A metabolite with pharmacological activity of its own that contributes to the response, such as norfluoxetine from fluoxetine or desipramine from imipramine.
+
 **Active tubular secretion** — Carrier-mediated transport of drug from blood into the tubular fluid, against its concentration gradient, requiring energy. The kidney has separate carriers for weak acids and weak bases, and drugs sharing a carrier compete.
 
 **amount remaining to be excreted** — ARE. The quantity (Du∞ − Du): the amount of drug still to appear unchanged in the urine at time t. Its logarithm falls linearly with time, which is the basis of the sigma-minus method.
@@ -32,6 +34,8 @@
 
 **cumulative amount excreted unchanged** — Du. The running total of intact drug recovered in the urine up to time t. Its limiting value at infinite time is Du∞.
 
+**cytochrome P450** — The family of haem-containing isoenzymes that performs most Phase I oxidations. Named from the 450 nm absorption of its carbon monoxide complex.
+
 **distribution** — The reversible transfer of drug from the systemic circulation into and out of the tissues. The second process of ADME.
 
 **distribution phase** — The early, steeply falling part of a biexponential plasma curve, during which drug is moving from the central compartment into the peripheral compartment faster than it is being eliminated.
@@ -46,13 +50,19 @@
 
 **elimination rate constant** — K. The first-order rate constant governing loss of drug from the body, in reciprocal time. It is the product of clearance and the reciprocal of Vd: K = Cl/Vd.
 
+**elimination-rate-limited** — Describes a metabolite eliminated more slowly than it is formed (Kmet < K). Its terminal decline reflects its own elimination, so its half-life can be read from its curve.
+
 **first order** — Describing a process whose rate is proportional to the amount or concentration of drug driving it. A constant *fraction* is lost per unit time, so the plot of log concentration against time is a straight line. Contrast zero order, where a constant *amount* is lost per unit time.
 
 **First-order absorption** — Absorption at a rate proportional to the amount of drug still in solution at the absorption site, so that a constant *fraction* is absorbed per unit time. Typical of rapidly dissolving forms such as immediate-release tablets and capsules.
 
 **Flip-flop** — The situation in which the elimination rate constant exceeds the absorption rate constant, so that the terminal phase of an oral curve reflects absorption rather than elimination and the two constants are assigned the wrong way round. Only intravenous data can resolve it.
 
+**formation-rate-limited** — Describes a metabolite eliminated faster than it is formed (Kmet > K). It declines in parallel with the parent, and its own half-life cannot be read from its curve.
+
 **fraction unabsorbed** — 1 − Ab/Ab∞, the proportion of the ultimately absorbed dose that has not yet been absorbed at time t. Plotted against time it is linear on semilogarithmic axes for first-order absorption and on ordinary axes for zero-order absorption.
+
+**genetic polymorphism** — A gene variant common in a population. In drug-metabolising enzymes such as NAT2, CYP2D6 and CYP2C19 it makes individuals slow, normal or rapid metabolisers; it is a property of the individual's genotype.
 
 **Glomerular filtration** — Passive movement of free drug from blood into the glomerular filtrate, with the concentration gradient. Protein-bound drug is not filtered, because the complex is too large to cross.
 
@@ -107,6 +117,10 @@
 **pharmacokinetic model** — A set of equations that simulates the rate processes of ADME and so predicts the concentration of drug in the body at any time.
 
 **Pharmacokinetics** — The kinetic study of absorption, distribution, metabolism and elimination: how fast each process occurs and what drug concentration results at any given time.
+
+**Phase I** — Metabolic reactions that add or unmask a polar group, mainly oxidation and reduction, largely catalysed by cytochrome P450 with NADPH and molecular oxygen.
+
+**Phase II** — Metabolic reactions that conjugate a drug or its Phase I product with an endogenous compound, such as glucuronic acid or an acetyl group, giving a more polar and usually inactive product.
 
 **post-absorption phase** — The later part of an oral plasma curve, after the absorption term has decayed, during which the concentration falls with the elimination rate constant alone. It is the straight terminal portion on semilogarithmic axes.
 
