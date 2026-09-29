@@ -23,6 +23,9 @@ IDS = ["PDF-SIZE", "PDF-BLANK", "PDF-META", "PDF-TYPE3", "PDF-EMBED", "PDF-FONTS
 PT_PER_CM = 72 / 2.54
 # fonts each engine adds on its own: Word's list bullets (Symbol), its default theme fonts and table fallbacks
 ENGINE_FALLBACKS = {"word_com": {"symbol", "symbolmt", "calibri", "cambria", "arial", "arialmt"}, "html": set()}
+# OMML carries no font of its own: the reader lays an equation out in the document's math font, and Word's
+# default is Cambria Math. A book with `template.math` on therefore prints it wherever it has an equation.
+MATH_FONTS = {"cambriamath"}
 STYLE_SUFFIX = re.compile(r"[-,](bold|italic|oblique|regular|semibold|light|black|boldmt|italicmt|bolditalic|bolditalicmt|mt|it)+$", re.I)
 
 
@@ -105,6 +108,8 @@ def check(cfg, pdf):
                if bk.fonts.get(k)}
     allowed |= {family(f) for f in (cfg["theme"].get("font_files") or {})}
     allowed |= ENGINE_FALLBACKS[build_html.engine(cfg)]
+    if (cfg["template"].get("math") or {}).get("enabled"):
+        allowed |= MATH_FONTS
     seen, bad_fonts = set(), {}
     for n, page in enumerate(r.pages, 1):
         w, h = float(page.mediabox.width), float(page.mediabox.height)
