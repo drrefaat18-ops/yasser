@@ -165,6 +165,17 @@
    "credit": "Original diagram, redrawn from the first edition page 92",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch14-noyes-whitney",
+   "chapter_id": "ch14",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch14-noyes-whitney.svg",
+   "caption": "The picture behind the Noyes–Whitney equation. The solution is saturated (Cs) at the surface of the solid and falls across a stagnant layer of thickness h to the bulk concentration C. The rate of dissolution is proportional to the surface area and to the gradient across the layer.",
+   "alt": "A block labelled solid drug, surface area A, on the left. To its right a shaded band labelled stagnant layer, with a bracket beneath marking its thickness h. A concentration line starts high at the solid surface, labelled Cs saturated, falls in a straight line across the stagnant layer, and then runs flat through the region labelled bulk medium, well stirred, at the level labelled C bulk. An arrow inside the stagnant layer, labelled diffusion D, points from the solid towards the bulk.",
+   "credit": "Original diagram, drawn for the first edition page 102",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }

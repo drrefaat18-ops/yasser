@@ -52,6 +52,8 @@
 
 **cytochrome P450** — The family of haem-containing isoenzymes that performs most Phase I oxidations. Named from the 450 nm absorption of its carbon monoxide complex.
 
+**Dissolution** — The process by which a solid drug substance becomes dissolved in a solvent; also the pharmacopoeial test that measures drug release from a solid or semisolid dosage form.
+
 **distribution** — The reversible transfer of drug from the systemic circulation into and out of the tissues. The second process of ADME.
 
 **distribution phase** — The early, steeply falling part of a biexponential plasma curve, during which drug is moving from the central compartment into the peripheral compartment faster than it is being eliminated.
@@ -84,6 +86,8 @@
 
 **fraction unabsorbed** — 1 − Ab/Ab∞, the proportion of the ultimately absorbed dose that has not yet been absorbed at time t. Plotted against time it is linear on semilogarithmic axes for first-order absorption and on ordinary axes for zero-order absorption.
 
+**Franz diffusion cell** — A static diffusion cell in which a skin membrane separates a donor chamber from a sampled receptor fluid, used to compare drug release and skin permeation of topical and transdermal formulations.
+
 **genetic polymorphism** — A gene variant common in a population. In drug-metabolising enzymes such as NAT2, CYP2D6 and CYP2C19 it makes individuals slow, normal or rapid metabolisers; it is a property of the individual's genotype.
 
 **geometric mean ratio** — The ratio of the geometric means of a pharmacokinetic measure, such as AUC, for test and reference products, obtained by back-transforming the mean difference of the log-transformed values.
@@ -96,7 +100,11 @@
 
 **hybrid rate constants** — a and b, the two exponents of a biexponential plasma curve. Neither is a single physical process: each combines K, K₁₂ and K₂₁, subject to a + b = K + K₁₂ + K₂₁ and a·b = K·K₂₁. Always a > b.
 
+**in-vitro–in-vivo correlation** — IVIVC. A predictive relationship between an in-vitro property of a product, such as its dissolution rate, and an in-vivo property, such as plasma concentration or absorption rate.
+
 **interdigestive migrating myoelectric complex** — IMMC. The cycle of gastrointestinal motor activity, every 1.5–2 h in the fasting state, whose phase 3 (the housekeeper wave) opens the pylorus and clears indigestible solids.
+
+**Intrinsic dissolution** — The dissolution rate of a pure drug substance from a constant surface area, without excipients, expressed in mg·cm⁻²·min⁻¹.
 
 **ion pair** — A neutral complex formed between a charged drug and an endogenous organic ion of opposite charge. It can partition into the membrane and diffuse across, the proposed route for quaternary ammonium compounds.
 
@@ -144,6 +152,8 @@
 
 **non-renal elimination rate constant** — Knr. The part of the total elimination rate constant that does not represent renal excretion of intact drug, chiefly metabolism.
 
+**Noyes–Whitney equation** — dC/dt = (D·A/h)(Cs − C): the dissolution rate is proportional to the surface area and to the concentration gradient across the stagnant layer. Taken literally D·A(Cs − C)/h is a mass rate, and dividing by the medium volume gives dC/dt.
+
 **P-glycoprotein** — P-gp. An efflux transporter in the intestinal brush border that pumps many lipophilic and cytotoxic drugs back into the gut lumen, reducing their absorption. Inhibiting it increases their absorption.
 
 **paracellular** — Describing passage between epithelial cells, through the tight junctions. It suits small polar molecules such as water, urea and some ions.
@@ -179,6 +189,10 @@
 **renal excretion rate constant** — Ke. The first-order rate constant for excretion of intact drug into the urine, so that dDu/dt = Ke·D_B. It equals fe × K, and is always less than or equal to K.
 
 **residual concentration** — The difference Cp − Cp′ between a measured concentration and the value extrapolated from the terminal line at the same time. Its logarithm falls linearly with time during the distribution phase.
+
+**sink condition** — The state in which the bulk concentration of dissolved drug stays far below its solubility (C ≪ Cs), so the dissolution rate is set by Cs and not by how much has already dissolved.
+
+**stagnant layer** — The thin layer of unstirred solvent around a dissolving particle, of thickness h, across which drug diffuses from the saturated surface (Cs) to the bulk medium (C).
 
 **statistical moment** — A summary of a distribution. In pharmacokinetics the zero moment of the plasma curve is AUC and the first is AUMC.
 
