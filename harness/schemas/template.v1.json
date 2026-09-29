@@ -98,8 +98,7 @@
      "type": [
       "string",
       "null"
-     ],
-     "description": "back-matter file holding the consolidated reference list, or null for none"
+     ]
     }
    },
    "additionalProperties": false
@@ -937,7 +936,6 @@
   },
   "math": {
    "type": "object",
-   "description": "TeX math between $...$ and $$...$$, converted to OMML for Word and MathML for the HTML engine. Absent means off, and a book that is off keeps $ as an ordinary character.",
    "required": [
     "enabled"
    ],
@@ -947,8 +945,7 @@
      "type": "boolean"
     },
     "display_style": {
-     "type": "string",
-     "description": "paragraph style for a display equation; the body style when absent"
+     "type": "string"
     }
    }
   }
