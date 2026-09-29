@@ -10,6 +10,8 @@
 
 **active metabolite** — A metabolite with pharmacological activity of its own that contributes to the response, such as norfluoxetine from fluoxetine or desipramine from imipramine.
 
+**Active transport** — Carrier-mediated movement of drug across a membrane against its concentration gradient, using energy from ATP. It is saturable and shows competition between similar molecules; glucose and galactose are carried this way by SGLT1.
+
 **Active tubular secretion** — Carrier-mediated transport of drug from blood into the tubular fluid, against its concentration gradient, requiring energy. The kidney has separate carriers for weak acids and weak bases, and drugs sharing a carrier compete.
 
 **amount remaining to be excreted** — ARE. The quantity (Du∞ − Du): the amount of drug still to appear unchanged in the urine at time t. Its logarithm falls linearly with time, which is the basis of the sigma-minus method.
@@ -26,11 +28,15 @@
 
 **Biopharmaceutics** — The study of how the physicochemical properties of the drug, the dosage form and the route of administration control the rate and extent of drug absorption.
 
+**brush border** — The luminal surface of the intestinal epithelial cells, covered with microvilli that resemble the bristles of a brush. Its embedded enzymes, including peptidases and disaccharidases, are brush-border enzymes.
+
 **central compartment** — In a compartmental model, the blood together with the highly perfused organs (heart, lung, liver, kidney), treated as one well-mixed kinetic space. Elimination is assumed to occur from here.
 
 **compartmental** — Describing a model that represents the body as one or more kinetic spaces rather than as anatomical organs. Contrast with non-compartmental analysis, which uses statistical moments instead.
 
 **Cpmax** — The peak plasma concentration reached after a dose. It depends on the dose, on the absorption rate constant Ka and on the elimination rate constant K, so it reflects both the rate and the extent of absorption.
+
+**Crystal polymorphism** — The ability of a drug to crystallise in more than one arrangement. Polymorphs share a chemical structure but differ in solubility, stability and compressibility, so they can differ in bioavailability.
 
 **cumulative amount excreted unchanged** — Du. The running total of intact drug recovered in the urine up to time t. Its limiting value at infinite time is Du∞.
 
@@ -52,6 +58,10 @@
 
 **elimination-rate-limited** — Describes a metabolite eliminated more slowly than it is formed (Kmet < K). Its terminal decline reflects its own elimination, so its half-life can be read from its curve.
 
+**excipient** — Any non-drug component of a formulation, such as a diluent, binder, lubricant, coating or surfactant. Excipients can raise or lower bioavailability.
+
+**Facilitated diffusion** — Carrier-mediated movement of drug down its concentration gradient, without energy. It is saturable and competitive; fructose is absorbed this way.
+
 **first order** — Describing a process whose rate is proportional to the amount or concentration of drug driving it. A constant *fraction* is lost per unit time, so the plot of log concentration against time is a straight line. Contrast zero order, where a constant *amount* is lost per unit time.
 
 **First-order absorption** — Absorption at a rate proportional to the amount of drug still in solution at the absorption site, so that a constant *fraction* is absorbed per unit time. Typical of rapidly dissolving forms such as immediate-release tablets and capsules.
@@ -68,7 +78,13 @@
 
 **glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin or creatinine.
 
+**Henderson–Hasselbalch equation** — The relation between pH, pKa and the ratio of ionised to unionised drug: for a weak acid pKa − pH = log([U]/[I]), for a weak base pKa − pH = log([I]/[U]).
+
 **hybrid rate constants** — a and b, the two exponents of a biexponential plasma curve. Neither is a single physical process: each combines K, K₁₂ and K₂₁, subject to a + b = K + K₁₂ + K₂₁ and a·b = K·K₂₁. Always a > b.
+
+**interdigestive migrating myoelectric complex** — IMMC. The cycle of gastrointestinal motor activity, every 1.5–2 h in the fasting state, whose phase 3 (the housekeeper wave) opens the pylorus and clears indigestible solids.
+
+**ion pair** — A neutral complex formed between a charged drug and an endogenous organic ion of opposite charge. It can partition into the membrane and diffuse across, the proposed route for quaternary ammonium compounds.
 
 **Ka** — The absorption rate constant. See [[absorption-rate-constant]].
 
@@ -100,6 +116,8 @@
 
 **Michaelis–Menten equation** — V = Vmax·C/(Km + C). The rate law of a saturable enzyme or carrier process; first order when C ≪ Km and zero order when C ≫ Km.
 
+**Micronisation** — Reduction of particle size, usually by milling, to raise surface area and dissolution rate. It improves the absorption of drugs such as griseofulvin, but can slow dissolution of hydrophobic drugs that resist wetting.
+
 **midpoint time** — The time halfway through a urine collection interval. An excretion rate calculated as ΔDu/Δt is an average over the interval, so it is plotted against the midpoint rather than the end.
 
 **minimum effective concentration** — MEC. The plasma concentration below which the drug produces no therapeutic effect. The lower boundary of the therapeutic range.
@@ -112,7 +130,15 @@
 
 **non-renal elimination rate constant** — Knr. The part of the total elimination rate constant that does not represent renal excretion of intact drug, chiefly metabolism.
 
+**P-glycoprotein** — P-gp. An efflux transporter in the intestinal brush border that pumps many lipophilic and cytotoxic drugs back into the gut lumen, reducing their absorption. Inhibiting it increases their absorption.
+
+**paracellular** — Describing passage between epithelial cells, through the tight junctions. It suits small polar molecules such as water, urea and some ions.
+
+**Passive diffusion** — Movement of drug through the lipid membrane down its concentration gradient, without a carrier or energy. It follows Fick's law and is a first order process; the commonest route of drug absorption.
+
 **peripheral (tissue) compartment** — In a two- or three-compartment model, a kinetic space that exchanges drug with the central compartment by first-order transfer but from which no elimination occurs.
+
+**pH-partition hypothesis** — The proposal that drugs are absorbed by passive diffusion in proportion to their unionised fraction at the local pH. A useful first guide that ignores surface area, residence time and lipid solubility.
 
 **pharmacokinetic model** — A set of equations that simulates the rate processes of ADME and so predicts the concentration of drug in the body at any time.
 
@@ -127,6 +153,8 @@
 **principle of superposition** — For first order (linear) kinetics, the concentration after several doses is the sum of the concentrations each dose would give on its own. It is the basis of all multiple dose equations.
 
 **rate constant** — The proportionality constant linking a rate to the amount or concentration driving it. A first-order rate constant has units of reciprocal time (h⁻¹); a zero-order rate constant has units of amount or concentration per unit time.
+
+**rate-limiting step** — The slowest step in a series of kinetic processes, which sets the overall rate. For a tablet it is often disintegration or dissolution rather than membrane transport.
 
 **renal excretion rate constant** — Ke. The first-order rate constant for excretion of intact drug into the urine, so that dDu/dt = Ke·D_B. It equals fe × K, and is always less than or equal to K.
 
@@ -146,9 +174,13 @@
 
 **Total body clearance** — Cl. The volume of plasma completely cleared of drug per unit time, in volume per time. It is the sum of all clearing processes, Cl = K·Vd, and says nothing about which organ is responsible.
 
+**transcellular** — Describing passage through epithelial cells, across both cell membranes. It suits unionised, lipid-soluble drugs.
+
 **Tubular reabsorption** — Return of drug from the tubular fluid to the blood. It favours the more lipid-soluble, unionised form, so for weak acids and weak bases its extent depends on urinary pH and on the pKa of the drug.
 
 **two-compartment open model** — A model in which drug distributes rapidly into a central compartment and more slowly into a peripheral compartment, with first-order transfer between them (K₁₂ and K₂₁) and elimination from the central compartment only.
+
+**vesicular transport** — Uptake of particles or fluid by invagination and engulfment of the cell membrane: pinocytosis, phagocytosis and receptor-mediated endocytosis, as for vitamin B₁₂ bound to intrinsic factor.
 
 **Vmax** — The maximum rate of a saturable process, reached when the enzyme or carrier is fully occupied. Expressed as concentration per time, or as amount per time when multiplied by Vd.
 

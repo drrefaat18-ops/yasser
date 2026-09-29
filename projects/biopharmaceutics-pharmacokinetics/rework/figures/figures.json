@@ -143,6 +143,17 @@
    "credit": "Original diagram, redrawn from the first edition page 53",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch12-transport",
+   "chapter_id": "ch12",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch12-transport.svg",
+   "caption": "Routes across the intestinal epithelium. Unionised, lipid-soluble drug diffuses through the cells; small polar molecules pass between them; carriers move drug in either direction and saturate; P-glycoprotein pumps drug back into the lumen; and vesicles carry large molecules such as vitamin B12 bound to intrinsic factor.",
+   "alt": "A row of four epithelial cells with microvilli on their upper surface, between a band labelled gut lumen above and a band labelled blood below. In the first cell a straight arrow runs from lumen to blood, labelled passive diffusion, unionised and lipid soluble. A dashed arrow runs down through the gap between the first and second cells, labelled paracellular, small polar molecules. In the second cell an arrow with carrier dots on both membranes runs down, labelled carrier-mediated, active or facilitated, saturable. In the third cell a red arrow runs upward from inside the cell back into the lumen, labelled P-gp efflux. In the fourth cell an arrow enters a dashed vesicle and continues to the blood, labelled vesicular transport, for example vitamin B12 with intrinsic factor.",
+   "credit": "Original diagram, redrawn from the first edition pages 61-66",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
