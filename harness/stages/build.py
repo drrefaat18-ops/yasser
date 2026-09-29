@@ -26,10 +26,10 @@ def _step(name, fn):
 
 
 def run(project):
-    missing = [c for c in preflight.run(["build"]) if c["required"] and not c["ok"]]
+    cfg = config.load(project)
+    missing = [c for c in preflight.run(["build"], cfg["theme"]["preset"]) if c["required"] and not c["ok"]]
     if missing:
         raise BuildStepFailed("preflight: " + "; ".join(f"{c['name']}: {c['detail']}" for c in missing))
-    cfg = config.load(project)
     _contained(project, [project / "build", figures.out_dir(cfg), cfg.path("figures") / ".cache"])
     fig_mode, fig_report = _figures(project, cfg)
 

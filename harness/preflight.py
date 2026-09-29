@@ -4,9 +4,17 @@ import argparse, importlib.util, json, os, pathlib, subprocess, sys
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_GROUPS = ["core", "ingest", "build", "figures", "golden"]
-# the union over tested presets; the Arabic fonts return with the RTL preset (STEP 10)
-FONT_FILES = sorted({f for p in (REPO / "harness" / "presets").glob("*.json")
-                     for f in json.loads(p.read_text(encoding="utf-8"))["required_font_files"]})
+PRESETS = REPO / "harness" / "presets"
+# Font files that Windows ships under another name; any one of them satisfies the named file.
+# Windows 11 replaced the Sitka collection with a variable font.
+FONT_ALTERNATIVES = {"Sitka.ttc": ("SitkaVF.ttf",)}
+
+
+def preset_fonts(preset=None):
+    """Font files one preset needs; with no preset, the union over tested presets (the Arabic fonts
+    return with the RTL preset, STEP 10). Raises FileNotFoundError for an unknown preset."""
+    paths = [PRESETS / f"{preset}.json"] if preset else sorted(PRESETS.glob("*.json"))
+    return sorted({f for p in paths for f in json.loads(p.read_text(encoding="utf-8"))["required_font_files"]})
 BROWSERS = [r"%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe",
             r"%ProgramFiles%\Microsoft\Edge\Application\msedge.exe",
             r"%ProgramFiles%\Google\Chrome\Application\chrome.exe"]
@@ -70,15 +78,22 @@ def check_browser(group):
     return _c("browser", group, False, "no Edge or Chrome found for SVG rasterising")
 
 
-def check_fonts():
+def check_fonts(preset=None):
+    """With `preset`, only the fonts that preset needs (a build passes the book's own); without, every preset's."""
     windir = os.environ.get("WINDIR") or os.environ.get("SystemRoot")
     if not windir:
         return _c("fonts", "build", False, "WINDIR and SystemRoot unset: cannot locate the Windows font folder")
+    try:
+        needed = preset_fonts(preset)
+    except FileNotFoundError:
+        return _c("fonts", "build", False, f"unknown preset {preset!r}: no harness/presets/{preset}.json")
     dirs = [pathlib.Path(windir) / "Fonts"]
     if os.environ.get("LOCALAPPDATA"):   # per-user installs (no admin) land here
         dirs.append(pathlib.Path(os.environ["LOCALAPPDATA"]) / "Microsoft" / "Windows" / "Fonts")
-    missing = [f for f in FONT_FILES if not any((d / f).exists() for d in dirs)]
-    return _c("fonts", "build", not missing, "missing: " + ", ".join(missing) if missing else "all present")
+    present = lambda f: any((d / n).exists() for d in dirs for n in (f,) + FONT_ALTERNATIVES.get(f, ()))
+    missing = [f for f in needed if not present(f)]
+    scope = f"preset {preset}" if preset else "all presets"
+    return _c("fonts", "build", not missing, f"{scope}: " + ("missing: " + ", ".join(missing) if missing else "all present"))
 
 
 def check_rdkit():
@@ -109,11 +124,13 @@ CHECKS = [
 GROUPS = ["core", "ingest", "build", "figures", "golden", "chemistry", "evidence"]
 
 
-def run(groups):
+def run(groups, preset=None):
+    """`preset` scopes the font check to one preset; a build passes its project's."""
     unknown = sorted(set(groups) - set(GROUPS))
     if unknown:
         raise ValueError(f"unknown group(s): {', '.join(unknown)}")
-    checks = [probe() for member, probe in CHECKS if set(member) & set(groups)]
+    checks = [check_fonts(preset) if probe is check_fonts else probe()
+              for member, probe in CHECKS if set(member) & set(groups)]
     if "chemistry" in groups:
         c = check_rdkit()
         c["required"] = True  # explicitly requested
@@ -131,9 +148,10 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
     ap.add_argument("--group", action="append", choices=GROUPS)
+    ap.add_argument("--preset", help="check only this preset's fonts (default: every preset)")
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
-    checks = run(a.group or DEFAULT_GROUPS)
+    checks = run(a.group or DEFAULT_GROUPS, a.preset)
     if a.json:
         print(json.dumps(checks, ensure_ascii=False, indent=1))
     else:

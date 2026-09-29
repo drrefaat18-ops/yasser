@@ -33,6 +33,42 @@ class PreflightTest(unittest.TestCase):
         self.assertNotEqual(out.returncode, 0)
         self.assertIn("bulid", out.stderr)
 
+    def _fonts_dir(self, names):
+        import tempfile, pathlib
+        d = tempfile.TemporaryDirectory()
+        self.addCleanup(d.cleanup)
+        fonts = pathlib.Path(d.name) / "Fonts"
+        fonts.mkdir()
+        for n in names:
+            (fonts / n).write_bytes(b"")
+        return {"WINDIR": d.name}
+
+    def test_fonts_scoped_to_named_preset(self):
+        """A book is checked against its own preset only, not the union of every preset."""
+        preset = "ltr-textbook"
+        need = preflight.preset_fonts(preset)
+        self.assertLess(len(need), len(preflight.preset_fonts()))
+        env = self._fonts_dir([n if isinstance(n, str) else n[0] for n in need])
+        with mock.patch.dict(os.environ, env, clear=True):
+            self.assertTrue(preflight.check_fonts(preset)["ok"])
+            self.assertFalse(preflight.check_fonts()["ok"])   # the union still demands the other presets' fonts
+
+    def test_font_alternative_satisfies_requirement(self):
+        """Windows 11 ships Sitka as SitkaVF.ttf; either file satisfies a preset naming Sitka.ttc."""
+        need = [n for n in preflight.preset_fonts("ltr-textbook") if n != "Sitka.ttc"]
+        with mock.patch.dict(os.environ, self._fonts_dir(need + ["SitkaVF.ttf"]), clear=True):
+            self.assertTrue(preflight.check_fonts("ltr-textbook")["ok"])
+        with mock.patch.dict(os.environ, self._fonts_dir(need), clear=True):
+            c = preflight.check_fonts("ltr-textbook")
+        self.assertFalse(c["ok"])
+        self.assertIn("Sitka.ttc", c["detail"])
+
+    def test_unknown_preset_fails_named(self):
+        with mock.patch.dict(os.environ, self._fonts_dir([]), clear=True):
+            c = preflight.check_fonts("no-such-preset")
+        self.assertFalse(c["ok"])
+        self.assertIn("no-such-preset", c["detail"])
+
     def test_fonts_without_windir_fails_named(self):
         with mock.patch.dict(os.environ, {}, clear=True):
             c = preflight.check_fonts()
