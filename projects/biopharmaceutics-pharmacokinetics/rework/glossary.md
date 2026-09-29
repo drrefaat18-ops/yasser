@@ -148,7 +148,7 @@
 
 **minimum toxic concentration** — MTC. The plasma concentration above which the drug produces toxic effects. The upper boundary of the therapeutic range.
 
-**Non-compartmental analysis** — Estimation of pharmacokinetic parameters from the areas under the plasma curve (statistical moments) without fitting any compartmental model. It requires only linear kinetics.
+**Non-compartmental analysis** — Estimation of pharmacokinetic parameters from the areas under the plasma curve (statistical moments) without fitting any compartmental model. AUC, AUMC and MRT can be computed from any data; treating the clearance and volume that follow as dose-independent parameters requires linear, time-invariant kinetics.
 
 **non-linear pharmacokinetics** — Dose-dependent kinetics: concentrations change out of proportion to the dose, and parameters such as t½ and clearance vary with it. Usually caused by a saturable enzyme or carrier.
 
@@ -210,7 +210,7 @@
 
 **three-compartment open model** — A model with a central compartment and two peripheral compartments. The two peripheral compartments are not connected to each other; each exchanges only with the central compartment, from which elimination takes place.
 
-**tmax** — The time at which Cpmax occurs. It measures the *rate* of absorption and, in linear kinetics, does not change with the dose.
+**tmax** — The time at which Cpmax occurs. It is sensitive to the *rate* of absorption but is not a unique measure of Ka, since it depends on K, any lag time and the shape of the curve as well; in linear kinetics it does not change with the dose.
 
 **Total body clearance** — Cl. The volume of plasma completely cleared of drug per unit time, in volume per time. It is the sum of all clearing processes, Cl = K·Vd, and says nothing about which organ is responsible.
 

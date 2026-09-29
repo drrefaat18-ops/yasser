@@ -448,7 +448,7 @@ The fluid is still 1000 mL. The charcoal stands for tissue binding, and the 100-
 
 *Interpreting the number.* Compare the result with the real fluid volumes of the body: plasma is about 0.04 L·kg⁻¹, extracellular fluid about 0.2 L·kg⁻¹, and total body water about 0.6 L·kg⁻¹. A low Vd, close to the plasma or extracellular volume, indicates a drug held in the circulation, usually by protein binding. Acidic, hydrophilic drugs such as the sulphonamides and aspirin behave this way. A Vd near total body water fits a drug that spreads through body water without much binding on either side. A Vd well above total body water, above about 1 L·kg⁻¹, cannot be a real volume at all: it indicates extensive binding or partitioning in tissue, typical of basic lipophilic drugs such as the amphetamines.
 
-*What changes Vd.* In one patient under stable conditions Vd behaves as a constant, which is why it can be used as a proportionality constant at all. It is not fixed for life. It changes most markedly in disease: renal dysfunction, liver cirrhosis, congestive heart failure and oedema all raise it by expanding total body water, while haemorrhage, diarrhoea and vomiting lower it by depleting body fluid. It also varies with age, with body composition, in pregnancy, and with anything that alters plasma protein binding. Treat Vd as a parameter that must be estimated for the patient in front of you [2].
+*What changes Vd.* In one patient under stable conditions Vd behaves as a constant, which is why it can be used as a proportionality constant at all. It is not fixed for life. It changes most markedly in disease, but the direction depends on the drug as well as the disease. Renal dysfunction, liver cirrhosis, congestive heart failure and oedema expand the extracellular fluid, so they raise the Vd of a hydrophilic drug that stays mainly in that fluid, such as an aminoglycoside; the same diseases can also change protein binding and tissue perfusion, and for a lipophilic, tissue-bound drug the net effect may be small or even opposite. Haemorrhage, diarrhoea and vomiting deplete body fluid and lower the Vd of such an extracellular drug. It also varies with age, with body composition, in pregnancy, and with anything that alters plasma protein binding. Treat Vd as a parameter that must be estimated for the patient in front of you [2].
 
 > **Common Mistake:** Reporting Vd in litres alone invites comparison between patients of different sizes. Normalise it. The usual forms are litres per kilogram of body weight, or litres per 1.73 m² of body surface area. A Vd of 35 L means one thing in a 50 kg woman and another in a 90 kg man.
 
@@ -575,7 +575,7 @@ B) Double Cp⁰ and leave the half-life unchanged
 C) Leave Cp⁰ unchanged and double the half-life
 D) Double both the clearance and Cp⁰
 
-**Q8.** [LO3] Which change would be expected to *decrease* the apparent volume of distribution?
+**Q8.** [LO3] A hydrophilic drug with little protein binding distributes mainly in extracellular fluid. Which change would be expected to *decrease* its apparent volume of distribution?
 A) Congestive heart failure with oedema
 B) Liver cirrhosis with ascites
 C) Renal dysfunction with fluid retention
@@ -617,7 +617,7 @@ D) The drug now follows zero-order kinetics.
 
 **Q7. B** — Linearity makes concentration proportional to dose, so Cp⁰ doubles. The half-life depends on K alone, which is unchanged. Clearance is also unchanged, ruling out D.
 
-**Q8. D** — Diarrhoea and vomiting deplete body fluid and contract the distribution space. A, B and C all expand total body water and raise Vd.
+**Q8. D** — Diarrhoea and vomiting deplete body fluid and contract the extracellular space this drug occupies. A, B and C all expand that fluid and raise its Vd. The stem specifies the drug because the answer depends on it: for a lipophilic, tissue-bound drug the fluid shifts matter much less.
 
 **Q9. A** — Cl = K·Vd, so K = 6 ÷ 30 = 0.2 h⁻¹, and t½ = 0.693 ÷ 0.2 = 3.47 h. Option B is K itself, not the half-life.
 
@@ -801,7 +801,7 @@ Seven conditions must hold before a urine collection supports a kinetic calculat
 4. The bladder must be emptied completely at each collection. Otherwise drug is carried into the next interval and the whole record is displaced.
 5. Urinary pH and volume must be taken into account, since both can alter the excretion rate of an ionisable drug.
 6. The assay must be specific for the intact drug, so that a metabolite is not counted as parent. HPLC is the usual choice.
-7. Analysis must allow for between-subject variation. Two-way analysis of variance is appropriate; a Student t-test is not, because it ignores the subject as a source of variation.
+7. Analysis must allow for between-subject variation, and the right method depends on the design. When the same subjects receive each treatment, an unpaired Student t-test is wrong, because it ignores the subject as a source of variation. A paired t-test does account for the subject when exactly two treatments are compared; a crossover design with periods and sequences needs an analysis of variance with subject, period and treatment as factors, or a mixed-effects model.
 
 Condition 4 deserves emphasis, because it is the one the subject controls rather than the investigator [2].
 
@@ -1444,7 +1444,7 @@ This is the same series as the elimination table in Chapter 2, read upside down.
 
 > **Common Mistake:** Raising the infusion rate to reach steady state sooner. It does not work. Doubling R doubles the plateau, and the concentration still takes the same number of half-lives to get there, so at every moment it is twice as high as before but exactly as far from its own target. The only way to reach a chosen concentration quickly is a loading dose, which is Section 5.5.
 
-Five half-lives is the practical rule for "at steady state", and it is when a monitoring sample should be drawn. Theophylline has a half-life of about 7 h, so a trough concentration means little before 5 × 7 = 35 h of constant infusion. A concentration measured at 10 h is not a low steady state; it is an incomplete approach to a steady state that has not arrived.
+Five half-lives is the practical rule for "at steady state". It is the usual earliest time for a monitoring sample that is to be read as a steady-state level. A constant infusion has no peak or trough, because no dose cycle exists. Such a sample is simply a steady-state concentration. Theophylline has a half-life of about 7 h, so a sample read as the steady state means little before 5 × 7 = 35 h of constant infusion. A concentration measured at 10 h is not a low steady state; it is an incomplete approach to a steady state that has not arrived. An earlier sample is not useless. If its timing is known, Equation 5.1 or a fitted model can interpret it as a point on the rising curve. That is often done when a decision cannot wait. What must not be done is to read it as the plateau.
 
 ![Two plots of plasma concentration against time over 24 hours. On the left, three rising curves for infusion rates of 7.5, 15 and 30 mg per hour approach plateaus of 5, 10 and 20 micrograms per millilitre; a vertical dashed line at 15 hours marks the point where all three have reached 95 per cent of their own plateau. On the right, three curves with the same infusion: one starting at 15 and falling to the plateau of 10, one flat at 10 throughout, and one starting at zero and rising to 10.](../rework/figures/out/ch05-infusion.png)
 
@@ -1573,7 +1573,7 @@ B) Twice as high and reached in the same time
 C) The same height and reached in half the time
 D) Four times as high and reached in the same time
 
-**Q3.** [LO3] A drug has a half-life of 8 h. A plasma sample for therapeutic monitoring during a constant infusion should be taken no earlier than about:
+**Q3.** [LO3] A drug has a half-life of 8 h. A plasma sample during a constant infusion is to be read directly as the steady-state concentration. By the five-half-life rule it should be taken no earlier than about:
 A) 40 h
 B) 16 h
 C) 8 h
@@ -1635,7 +1635,7 @@ D) 24 L·h⁻¹
 
 **Q2. B** — Css is proportional to R, so it doubles. The time course depends only on K, so the approach takes the same number of half-lives.
 
-**Q3. A** — Five half-lives is the practical rule, and 5 × 8 = 40 h. A sample at 16 h is only at two half-lives, or 75% of the plateau.
+**Q3. A** — Five half-lives is the practical rule, and 5 × 8 = 40 h. A sample at 16 h is only at two half-lives, or 75% of the plateau: usable if its timing is built into the interpretation, but not as the steady state itself.
 
 **Q4. C** — The exponential term never reaches zero, so the plateau is an asymptote. Option A states the practical rule as if it were exact, and B and D both describe a linear rise, which does not happen.
 
@@ -1849,7 +1849,7 @@ Comparing a drug's renal clearance with the glomerular filtration rate reveals w
 
 | Clearance ratio, Cl_drug / (fu × Cl_inulin) | Dominant mechanism |
 |---|---|
-| Zero | Filtered, then completely reabsorbed, as for glucose |
+| Zero | Filtered, then completely reabsorbed, as for glucose at plasma levels below its renal threshold; above it the carrier saturates and glucose appears in the urine |
 | Less than 1 | Filtered, then partially reabsorbed. Against unadjusted GFR, a ratio below 1 is equally compatible with protein binding alone |
 | Equal to 1 | Filtered only |
 | Greater than 1 | Actively secreted as well as filtered |
@@ -2296,7 +2296,7 @@ Equation 7.1 is symmetric in Ka and K: exchanging the two constants leaves the c
 
 **Flip-flop** is the name for that situation, and it occurs whenever K is greater than Ka. The terminal phase is then controlled by the slower process, which is absorption, so the terminal slope gives Ka and the residual line gives K.
 
-Suspect it in two cases. A rapidly eliminated drug, with K above about 0.69 h⁻¹, has a good chance of eliminating faster than it absorbs. A sustained-release formulation deliberately slows absorption, and can slow it below elimination.
+Suspect it in two cases. A rapidly eliminated drug, with a short half-life of an hour or so, is more likely than most to eliminate faster than it absorbs; no value of K decides it on its own, because what matters is whether Ka is smaller than K, and only an independent estimate of both can show that. A sustained-release formulation deliberately slows absorption, and can slow it below elimination.
 
 The resolution is experimental, not algebraic [2]. Give the drug intravenously, where there is no absorption at all, and measure K directly. If the intravenous K matches the terminal slope from the oral study, there is no flip-flop; if it matches the residual slope instead, there is. For one such drug the intravenous study gives K = 1.72 h⁻¹, while the oral feathering gives a terminal slope of 0.7 h⁻¹ and a residual slope of 1.72 h⁻¹ — so Ka is 0.7 h⁻¹ and the labels must be exchanged.
 
@@ -2690,7 +2690,7 @@ The designer fixes τ first, from the half-life and the width of the therapeutic
 - The accumulation index is Rac = 1/(1 − e^(−Kτ)); Rac = 2 when the drug is given once every half-life.
 - The accumulation half-life, the time for the interval AUC to reach half its steady-state value, is approximately t½·[1 + 3.32·log(Ka/(Ka − K))]. It needs Ka > K, and it is close only when Ka ≫ K; at Ka = 2K it overstates the true time by about 13%.
 - For IV dosing Ka → ∞, log 1 = 0, and the accumulation half-life equals the elimination half-life.
-- Time to steady state depends on the half-life only; 95% at 4.32 half-lives and 99% at 6.65.
+- For constant infusion and repeated IV boluses under linear kinetics, time to steady state depends on the half-life only: 95% at 4.32 half-lives and 99% at 6.65. After oral doses Ka enters too, and slow absorption can delay the approach materially (Equation 8.2).
 - At steady state D_max = D₀/(1 − f), D_min = D_max·f, and their difference is one dose.
 - Css,av = F·D₀/(Cl·τ); it is lower than the arithmetic mean of peak and trough.
 - Choose τ for an acceptable swing, then choose D₀ for the target average.
@@ -3537,7 +3537,7 @@ By the end of this chapter you will be able to:
 
 ## 11.1 Metabolism and Where It Happens
 
-Chapter 6 divided elimination into excretion and metabolism, and left metabolism for this chapter. Metabolism, or biotransformation, is the chemical process by which the body converts a drug into another chemical species, the metabolite. The metabolite is usually more polar, so it is more water soluble than the parent. That has two consequences. A polar metabolite distributes less into tissues, so its volume of distribution is smaller. It is also reabsorbed less in the renal tubule, as Chapter 6 explained, so it is excreted more readily. Metabolism often reduces the activity of the parent as well, which is why it is described as detoxification.
+Chapter 6 divided elimination into excretion and metabolism, and left metabolism for this chapter. Metabolism, or biotransformation, is the chemical process by which the body converts a drug into another chemical species, the metabolite. The metabolite is usually more polar, so it is more water soluble than the parent. That has two consequences. A polar metabolite often distributes less into tissues, so its volume of distribution is often smaller, though binding, transporters and tissue affinity can reverse that expectation for a particular metabolite. It is also reabsorbed less in the renal tubule, as Chapter 6 explained, so it is excreted more readily. Metabolism often reduces the activity of the parent as well, which is why it is described as detoxification.
 
 Metabolism is not confined to the liver. It occurs in the gut lumen and gut wall, the liver, blood, lungs, skin, kidney, brain and placenta. The gut wall and liver can metabolise an oral dose before it reaches the circulation, which Chapter 13 takes up. At therapeutic concentrations metabolism is usually a first order process. Chapter 10 showed what happens when it saturates.
 
@@ -3921,7 +3921,7 @@ Protein drugs show the first three at work. Pepsin in the stomach, and trypsin, 
 
 Slow gastric emptying delays the onset of action and reduces the rate, and perhaps the extent, of absorption. It prolongs the exposure of acid-labile drugs such as penicillin to gastric acid. It lengthens the contact of aspirin with the gastric mucosa, and so its irritation. It also delays the release of an enteric-coated tablet, which does not begin until the tablet leaves the stomach.
 
-*Food.* Food changes absorption in several ways. It raises gastric pH, which changes the dissolution of pH-sensitive drugs. Ketoconazole and itraconazole need an acid stomach to dissolve, and an acidic cola drink improves their absorption. Food delays emptying, which prolongs acid exposure and degrades acid-sensitive drugs such as erythromycin and penicillin. It increases mesenteric blood flow, so a drug such as propranolol reaches the liver faster, saturates more of its first-pass metabolism, and gives a higher bioavailability. Fatty meals increase bile flow, which emulsifies and solubilises lipophilic drugs such as griseofulvin. And food is taken with irritant drugs such as NSAIDs and iron salts to protect the stomach. That is a tolerability decision, not a kinetic one, and the two can pull against each other: food usually slows absorption without changing the extent, but for iron salts it reduces the extent as well, because phytates, polyphenols, calcium and phosphates in the meal bind iron in the lumen. The trade is real — better tolerated, less absorbed — and it is the reason iron is taken on an empty stomach where the patient can bear it.
+*Food.* Food changes absorption in several ways. It raises gastric pH, which changes the dissolution of pH-sensitive drugs. Ketoconazole and itraconazole need an acid stomach to dissolve, and an acidic cola drink improves their absorption. Food delays emptying, which prolongs acid exposure and degrades acid-sensitive drugs such as erythromycin and penicillin. It increases splanchnic blood flow, and a protein-rich meal raises the bioavailability of propranolol by reducing its first-pass hepatic extraction; the change in hepatic blood flow is part of the explanation, but the mechanism is not fully resolved. Fatty meals increase bile flow, which emulsifies and solubilises lipophilic drugs such as griseofulvin. And food is taken with irritant drugs such as NSAIDs and iron salts to protect the stomach. That is a tolerability decision, not a kinetic one, and the two can pull against each other: food usually slows absorption without changing the extent, but for iron salts it reduces the extent as well, because phytates, polyphenols, calcium and phosphates in the meal bind iron in the lumen. The trade is real — better tolerated, less absorbed — and it is the reason iron is taken on an empty stomach where the patient can bear it.
 
 *Transit.* Small-intestinal transit is fairly regular, averaging 3 ± 1 h. The effective time available for absorption is therefore about 3–8 h. That sets a limit on sustained-release design: a product releasing drug over 12 h will carry part of the dose past the small intestine before it is released. The colon has a smaller surface and a variable transit of 20–36 h. It is still the absorption site for drugs that need bacterial activation, such as sulfasalazine. Transit is measured by radiography, with a radio-opaque marker such as barium, or more safely by gamma scintigraphy, with a short-lived radionuclide such as technetium-99m.
 
@@ -4272,7 +4272,7 @@ By the end of this chapter you will be able to:
 
 ## 13.1 Terms That Recur
 
-Chapter 1 defined bioavailability as the rate and extent of absorption of a drug from its dosage form into the systemic circulation. For a product not meant to reach the blood, such as an antacid, bioavailability is judged instead by its effect at the site of action. The concept dates from 1945, when Oser and colleagues compared the absorption of vitamins from different products, in work the source notes name without citing. It became a regulatory issue in the late 1960s, as prescribing by generic name spread and pharmacists began choosing between products. The question was simple: is a cheaper product containing the same dose as good as the original?
+Chapter 1 defined bioavailability as the rate and extent of absorption of a drug from its dosage form into the systemic circulation. For a product not meant to reach the blood, such as an antacid, bioavailability is judged instead by its effect at the site of action. The concept dates from 1945, when Oser and his colleagues Melnick and Hochberg measured the physiological availability of vitamins from different products with a human bioassay [7]. It became a regulatory issue in the late 1960s, as prescribing by generic name spread and pharmacists began choosing between products. The question was simple: is a cheaper product containing the same dose as good as the original?
 
 A drug substance is the active pharmaceutical ingredient. A drug product is the finished dosage form, containing the active ingredient with inactive ingredients. The generic, or non-proprietary, name is assigned to the compound during early development, such as acetaminophen. The proprietary name is the trade name given by the innovator company. A single-source product is available from one manufacturer, usually under patent. A multi-source product contains the same active ingredient in the same dosage form but is marketed by several manufacturers.
 
@@ -4351,7 +4351,7 @@ A drug can therefore be completely absorbed, with fa = 1, and still have F well 
 
 Five methods are used, in decreasing order of precision.
 
-*Plasma data.* The AUC measures extent, and Cpmax and tmax measure rate, as Chapter 1 set out. Cpmax also shows whether the drug is absorbed enough to act, and warns of toxic levels. Chapter 7 showed that tmax depends only on Ka and K. AUC is found by the trapezoidal rule. It should rise in proportion to the dose. A rise more than proportional suggests saturation of a metabolic pathway, as in Chapter 10.
+*Plasma data.* The AUC measures extent. Cpmax and tmax are the endpoints sensitive to rate, but neither is a pure measure of it: Chapter 1 showed that Cpmax depends on both rate and extent, and Chapter 7 that tmax depends on Ka and K together, not on Ka alone. Cpmax also shows whether the drug is absorbed enough to act, and warns of toxic levels. AUC is found by the trapezoidal rule. It should rise in proportion to the dose. A rise more than proportional suggests saturation of a metabolic pathway, as in Chapter 10.
 
 *Urine data.* Du∞ is proportional to the amount absorbed. The excretion rate dDu/dt follows the plasma curve, because it equals Ke·Vd·Cp, so its peak time parallels tmax.
 
@@ -4403,7 +4403,7 @@ AUC and Cmax are first log-transformed. They are ratio-scale quantities that are
 
 The limits look lopsided but are symmetric on the log scale: ln 0.80 = −0.223 and ln 1.25 = +0.223.
 
-The interval is a 90% interval, not a 95% one, for a precise reason. The decision is made by **two one-sided tests**, each at α = 0.05. One tests that the ratio is not below 80%; the other, that it is not above 125%. Both must succeed. Passing both one-sided tests at 5% each is exactly equivalent to the 90% two-sided interval lying inside the limits [5]. The risk that a patient receives a product that is truly outside the limits is held at 5%.
+The interval is a 90% interval, not a 95% one, for a precise reason. The decision is made by **two one-sided tests**, each at α = 0.05. One tests that the ratio is not below 80%; the other, that it is not above 125%. Both must succeed. Passing both one-sided tests at 5% each is exactly equivalent to the 90% two-sided interval lying inside the limits [5]. The 5% is the study-level Type I error: the probability of wrongly concluding equivalence when the true ratio sits exactly on a limit. It is not the probability that a given patient receives a non-equivalent product, which the study cannot state.
 
 > **Common Mistake:** Concluding that two products are bioequivalent because "the difference was not significant". Absence of evidence of a difference is not evidence of equivalence. Only the confidence interval, lying inside the limits, shows equivalence.
 
@@ -4411,7 +4411,7 @@ A difference in rate alone may still be acceptable. That is so when it is intend
 
 ## 13.6 When an In-Vivo Study Is or Is Not Needed
 
-*When a study is required.* An in-vivo study is needed where there is evidence that products differ in effect, or that they are not bioequivalent. It is also needed for a narrow-therapeutic-index drug, or where non-equivalence would cause serious harm. Physicochemical warnings include aqueous solubility below 5 mg·mL⁻¹, slow dissolution (below 50% in 30 min) and a critical particle size. Poorly dissolving polymorphs or solvates, a high excipient-to-drug ratio, and excipients that affect absorption are others. Pharmacokinetic warnings include absorption from one localised site and poor absorption even from solution (F < 0.5). Extensive first-pass metabolism, rapid elimination, instability in part of the gut, and non-linear kinetics are others.
+*When a study is required.* An in-vivo study is needed where there is evidence that products differ in effect, or that they are not bioequivalent. It is also needed for a narrow-therapeutic-index drug, or where non-equivalence would cause serious harm. Physicochemical warnings include low aqueous solubility and slow dissolution; the US regulation gives, as examples, solubility below 5 mg·mL⁻¹ in water and dissolution below 50% in 30 min by the compendial or paddle method at 50 rpm in 900 mL of water at 37 °C [8]. These are warning signs that a study may be needed, not the BCS criteria of Section 13.6, which judge the highest dose in 250 mL across pH 1.2–6.8 and require at least 85% dissolved; a critical particle size is a further warning. Poorly dissolving polymorphs or solvates, a high excipient-to-drug ratio, and excipients that affect absorption are others. Pharmacokinetic warnings include absorption from one localised site and poor absorption even from solution (F < 0.5). Extensive first-pass metabolism, rapid elimination, instability in part of the gut, and non-linear kinetics are others.
 
 *When a study can be waived.* A **biowaiver** is the acceptance of bioequivalence without an in-vivo study. Bioavailability is self-evident for an intravenous solution. Inhaled gases and vapours qualify, as do oral solutions containing no excipient known to affect absorption.
 
@@ -4451,7 +4451,7 @@ The Egyptian guideline excludes every BCS biowaiver, whatever the class, for nar
 - Products differing in dosage form or salt are pharmaceutical alternatives; IR and ER products are alternatives.
 - F = (AUC/D)oral ÷ (AUC/D)IV, provided clearance is unchanged; relative bioavailability uses a reference product instead.
 - F = fa × Fg × Fh, so a completely absorbed drug can have F far below 1.
-- AUC measures extent; Cpmax and tmax measure rate.
+- AUC measures extent; Cpmax and tmax are sensitive to rate, but Cpmax also depends on extent and tmax on K as well as Ka.
 - The standard bioequivalence study is a randomised two-period crossover with a washout of at least five half-lives.
 - Bioequivalence: the 90% CI of the log-transformed geometric mean ratio of AUC and Cmax lies within 80.00–125.00%.
 - The 90% interval is two one-sided tests at α = 0.05 each; equivalence, not significance, is the question.
@@ -4542,7 +4542,7 @@ D) They cannot be compared without urine data
 
 **Q6. C** — Clinical response varies with receptor sensitivity, age, interactions and tolerance, none of which reflect absorption.
 
-**Q7. D** — Two one-sided tests at 5% each correspond exactly to a two-sided 90% interval. The patient's risk is still held at 5%.
+**Q7. D** — Two one-sided tests at 5% each correspond exactly to a two-sided 90% interval. The Type I error of the study, the chance of concluding equivalence when the true ratio lies on a limit, is still 5%; option C misreads the 90% as a 10% risk.
 
 **Q8. C** — ICH M9 uses ≥ 85%. The first edition's 90% is an older FDA figure.
 
@@ -4605,6 +4605,8 @@ e^(−0.0187) = 0.9815 and e^0.1187 = 1.1260, so the interval is 98.15% to 112.6
 4. International Council for Harmonisation. *ICH Harmonised Guideline M9: Biopharmaceutics Classification System-Based Biowaivers*. Geneva: ICH; 2019.
 5. International Council for Harmonisation. *ICH Harmonised Guideline M13A: Bioequivalence for Immediate-Release Solid Oral Dosage Forms*. Geneva: ICH; 2024.
 6. Egyptian Drug Authority. *Egyptian Guideline for Conducting Bioequivalence Studies for Marketing Authorization of Generic Products* (EDREX: GL.CAPP.024), version 04/2026. Cairo: EDA; 2026.
+7. Melnick D, Hochberg M, Oser BL. Physiological availability of the vitamins. I. The human bioassay technic. *J Nutr*. 1945;30(2):67–79. DOI: 10.1093/jn/30.2.67
+8. US Food and Drug Administration. 21 CFR 320.33, Criteria and evidence to assess actual or potential bioequivalence problems. *Code of Federal Regulations*, Title 21, Part 320.
 
 
 ---
@@ -4658,7 +4660,7 @@ The **sink condition** is the state in which the bulk concentration stays far be
 
 dm/dt ≈ (D · A / h) · Cs    and    dC/dt ≈ (D · A) / (h · V) · Cs
 
-The rate is now set by the drug and the product alone, not by how much has already dissolved. That is the condition a dissolution test tries to maintain, and inside the body it is maintained naturally, because absorption keeps removing dissolved drug. A test that loses sink conditions slows itself down artificially and underestimates the release that would occur in a patient.
+The rate is now set by the drug and the product alone, not by how much has already dissolved. That is the condition a dissolution test tries to maintain. Inside the body absorption keeps removing dissolved drug, which helps to hold a gradient. It does not guarantee one. A poorly permeable drug, a high dose, a small volume of gut fluid, or supersaturation followed by precipitation can let the dissolved concentration approach saturation. Whether sink conditions hold in vivo therefore depends on the drug, the dose and the formulation. A test that loses sink conditions slows itself down artificially and underestimates the release that would occur in a patient.
 
 ## 14.3 Test Conditions and the Compendial Apparatus
 
@@ -5084,7 +5086,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **minimum toxic concentration** — MTC. The plasma concentration above which the drug produces toxic effects. The upper boundary of the therapeutic range.
 
-**Non-compartmental analysis** — Estimation of pharmacokinetic parameters from the areas under the plasma curve (statistical moments) without fitting any compartmental model. It requires only linear kinetics.
+**Non-compartmental analysis** — Estimation of pharmacokinetic parameters from the areas under the plasma curve (statistical moments) without fitting any compartmental model. AUC, AUMC and MRT can be computed from any data; treating the clearance and volume that follow as dose-independent parameters requires linear, time-invariant kinetics.
 
 **non-linear pharmacokinetics** — Dose-dependent kinetics: concentrations change out of proportion to the dose, and parameters such as t½ and clearance vary with it. Usually caused by a saturable enzyme or carrier.
 
@@ -5146,7 +5148,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **three-compartment open model** — A model with a central compartment and two peripheral compartments. The two peripheral compartments are not connected to each other; each exchanges only with the central compartment, from which elimination takes place.
 
-**tmax** — The time at which Cpmax occurs. It measures the *rate* of absorption and, in linear kinetics, does not change with the dose.
+**tmax** — The time at which Cpmax occurs. It is sensitive to the *rate* of absorption but is not a unique measure of Ka, since it depends on K, any lag time and the shape of the curve as well; in linear kinetics it does not change with the dose.
 
 **Total body clearance** — Cl. The volume of plasma completely cleared of drug per unit time, in volume per time. It is the sum of all clearing processes, Cl = K·Vd, and says nothing about which organ is responsible.
 
@@ -5198,12 +5200,16 @@ end of its entry.
 
 6. International Council for Harmonisation. *ICH Harmonised Guideline M9: Biopharmaceutics Classification System-Based Biowaivers*. Geneva: ICH; 2019. (Chapter 13.)
 
-7. Regamey C, Gordon RC, Kirby WMM. Comparative pharmacokinetics of tobramycin and gentamicin. *Clin Pharmacol Ther*. 1973;14(3):396–403. DOI: 10.1002/cpt1973143396 (Chapter 8.)
+7. Melnick D, Hochberg M, Oser BL. Physiological availability of the vitamins. I. The human bioassay technic. *J Nutr*. 1945;30(2):67–79. DOI: 10.1093/jn/30.2.67 (Chapter 13.)
 
-8. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
+8. Regamey C, Gordon RC, Kirby WMM. Comparative pharmacokinetics of tobramycin and gentamicin. *Clin Pharmacol Ther*. 1973;14(3):396–403. DOI: 10.1002/cpt1973143396 (Chapter 8.)
 
-9. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
+9. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
 
-10. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+10. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
 
-11. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+11. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+
+12. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+
+13. US Food and Drug Administration. 21 CFR 320.33, Criteria and evidence to assess actual or potential bioequivalence problems. *Code of Federal Regulations*, Title 21, Part 320. (Chapter 13.)

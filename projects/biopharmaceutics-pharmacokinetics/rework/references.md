@@ -17,12 +17,16 @@ end of its entry.
 
 6. International Council for Harmonisation. *ICH Harmonised Guideline M9: Biopharmaceutics Classification System-Based Biowaivers*. Geneva: ICH; 2019. (Chapter 13.)
 
-7. Regamey C, Gordon RC, Kirby WMM. Comparative pharmacokinetics of tobramycin and gentamicin. *Clin Pharmacol Ther*. 1973;14(3):396–403. DOI: 10.1002/cpt1973143396 (Chapter 8.)
+7. Melnick D, Hochberg M, Oser BL. Physiological availability of the vitamins. I. The human bioassay technic. *J Nutr*. 1945;30(2):67–79. DOI: 10.1093/jn/30.2.67 (Chapter 13.)
 
-8. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
+8. Regamey C, Gordon RC, Kirby WMM. Comparative pharmacokinetics of tobramycin and gentamicin. *Clin Pharmacol Ther*. 1973;14(3):396–403. DOI: 10.1002/cpt1973143396 (Chapter 8.)
 
-9. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
+9. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
 
-10. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+10. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
 
-11. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+11. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+
+12. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+
+13. US Food and Drug Administration. 21 CFR 320.33, Criteria and evidence to assess actual or potential bioequivalence problems. *Code of Federal Regulations*, Title 21, Part 320. (Chapter 13.)

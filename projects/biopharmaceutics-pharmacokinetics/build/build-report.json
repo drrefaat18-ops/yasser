@@ -384,14 +384,14 @@
  ],
  "pdf": {
   "bookmarks": 145,
-  "pages": 173
+  "pages": 174
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 173
+    "pages": 174
    },
    "message": "",
    "status": "pass"

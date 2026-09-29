@@ -131,3 +131,31 @@ After the fixes all 14 chapters pass the checker, the build passes its 31 math c
 `check_pdf` gates (173 pages), `verify --through build` is clean, and no `[[` survives in the PDF.
 Because the chapters changed, round 3 no longer describes the content to be scored; the audit
 closes on a fresh review of this commit.
+
+## Round 4 — review of commit 5b91e15
+
+Recorded verbatim in `audit/codex-audit-r4.md`: 14 findings, 6 major and 8 minor, verdict `fail`, down
+from 18 and 14 major. Codex again reproduced every numerical answer (14 worked examples, 42 exercise
+solutions, 140 keyed MCQs). All 14 findings are real; one was narrowed. Two were siblings this agent
+missed in round 3, and are recorded as such.
+
+| ID | Root cause | Fix | Siblings hunted |
+|---|---|---|---|
+| C-001 | Disease effects on Vd stated as universal | Direction depends on the drug; Q8 stem now names a hydrophilic, extracellular drug | — |
+| C-002 | "Two-way ANOVA right, t-test wrong" without a design | Unpaired t-test wrong; paired t-test fits two treatments; crossover needs ANOVA or a mixed model | — |
+| C-003 | An infusion sample called a trough; five half-lives read as a law | Called a steady-state sample; earlier timed samples interpretable but not as the plateau; Q3 stem says "read directly as the steady state" | Only occurrence of "trough" in ch05 |
+| C-004 | Glucose clearance given as zero unconditionally | Below the renal threshold only | — |
+| C-005 | A K threshold for flip-flop | Removed as a rule; Ka < K decides, and needs both estimated | — |
+| C-006 | ch08 takeaway "half-life only" | Restricted to infusion and IV boluses; Ka named for oral | **Missed sibling of round-3 C-009** |
+| C-007 | Glossary "NCA requires only linear kinetics" | Areas computable from any data; interpretation needs linearity | **Missed sibling of round-3 C-011** |
+| C-008 | Polar metabolite "has" a smaller Vd | "Often", with the exceptions named | — |
+| C-009 | Propranolol food effect given as enzyme saturation | Reduced first-pass hepatic extraction; mechanism not fully resolved | — |
+| C-010 | Oser 1945 still uncited | Cited as Melnick, Hochberg, Oser, J Nutr 1945;30(2):67–79, DOI verified through Crossref | Errata row E-035 extended; consolidated list updated |
+| C-011 | "Cpmax and tmax measure rate" contradicted ch01 | Both rate-sensitive; Cpmax also depends on extent, tmax on K | ch13 takeaway, glossary tmax |
+| C-012 | TOST 5% read as a patient-level risk | Study-level Type I error at the limit | Q7 rationale |
+| C-013 | 5 mg/mL and 50%/30 min read as BCS criteria | **Narrowed:** Codex called them obsolete or invented; they are the current examples in 21 CFR 320.33(e), now cited, and distinguished from the BCS criteria of §13.6 | — |
+| C-014 | Sink conditions in vivo "maintained naturally" | Absorption helps; not guaranteed; drug-, dose- and formulation-dependent | Glossary sink entry defines the in-vitro term only; unchanged |
+
+Two sentences made long by these fixes were split, with nothing removed. After the fixes all 14
+chapters pass the checker (52,743 words), and the build passes its math checks and all seven
+`check_pdf` gates; `verify --through build` is clean.
