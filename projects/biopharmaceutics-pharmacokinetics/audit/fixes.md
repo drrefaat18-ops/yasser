@@ -97,3 +97,37 @@ distinct, each with 2–3 keys per letter and no run above 2.
 The errata ledger is still not printed in the book. Adding it would change `assemble()` for every
 book the harness builds and break a committed fixture that asserts the current back matter, so the
 front matter's promise was corrected instead and the gap is recorded as open finding A-001.
+
+## Round 3 — review of commit 8d64734
+
+Recorded verbatim in `audit/codex-audit-r3.md`: 18 findings, 14 major and 4 minor, verdict `fail`.
+Codex recomputed every worked example and exercise and found no arithmetic or unit error; every
+finding is about what a statement claims. Each was confirmed against the text before editing, and
+all 18 are real. No text was removed to make room: the fixes took the book to 52,187 words, and the
+ceiling was raised instead (DEC-009).
+
+| ID | Root cause | Fix | Siblings hunted |
+|---|---|---|---|
+| C-001 | A Vd range was stated without comparing it to real body-fluid volumes | ch02 §2.4 gives plasma, ECF and total body water, and reads Vd against them | Every L·kg⁻¹ value in the book; none other interprets a range |
+| C-002 | The E1.2 answer said tmax could not be predicted after predicting it | All three follow from the stated linear model; §1.3 already gives tmax's dose independence | — |
+| C-003 | The §3.5 table credited the rate method with zero order; Q10 keyed "neither" | Table separates the descriptive rate plot from Equation 3.2; Q10 stem names K and t½ | Q10 rationale updated to cite the table |
+| C-004 | The notation box reversed fe and fu | Standard notation: fe excreted unchanged, fu unbound; fu added to the glossary | `fe,unbound` and "unbound fraction times GFR" in ch06 replaced with fu × GFR |
+| C-005 | Creatinine called "filtered only" | Inulin is the reference; creatinine reads high because it is secreted | Example 6.1 Step 7 notes the bias; glossary GFR entry already correct |
+| C-006 | Ratio table compared with unadjusted GFR | Ratio is Cl / (fu × Cl_inulin); a low unadjusted ratio is compatible with binding alone | Example 6.1 already said so; takeaway aligned |
+| C-007 | Formation clearances said to sum to Cl_T | The restrictive mass-balance conditions are stated; otherwise they are partial clearances | — |
+| C-008 | Example 7.1 gave the fraction absorbed and used it as F | The input is now F = 0.80, with the fa condition stated | Example 6.1 had the same slip ("absorbed dose" for F × D₀); fixed |
+| C-009 | Equation 8.2 is an interval-AUC result presented as a general time to steady state | Named as the time for the interval AUC (Css,av) to reach half; IV bolus peaks and troughs shown to share it; oral peaks and troughs do not | Common Mistake box, takeaway and glossary entry aligned |
+| C-010 | Two named studies left uncited, one untraceable | DeHaan 1973 and Regamey 1973 traced by search and cited in ch08 and the consolidated list; procainamide labelled an illustration | Errata row E-035 added for F-031; Oser (ch13) was not flagged and is left as disclosed |
+| C-011 | "NCA needs only linearity" contradicted ch10 | Areas compute for any drug; linearity is needed to interpret and scale them | §9.1, takeaway and Q1 rewritten; key unchanged (B), balance unchanged |
+| C-012 | Q6 said "non-linear" where only saturable elimination fits the key | Stem narrowed to capacity-limited elimination | — |
+| C-013 | Oral protein absorption stated as zero | Very poor, usually below 1%, with vesicular uptake and enhancer products noted | — |
+| C-014 | K reused for the partition coefficient | K_part in Equation 12.1, its text and the glossary | No other chapter uses K for partitioning |
+| C-015 | Solutions said to give complete absorption | No dissolution step; completeness still depends on stability, permeability and first pass | — |
+| C-016 | Equal tmax read as equal rate | tmax is a rate-related endpoint, not Ka; equal rate needs the whole profile | — |
+| C-017 | USP <711> A1 written as "less than 10%" | "No individual value exceeds 10%"; exactly 10% passes | §14.4, the summary line, Q8 option A and its rationale |
+| C-018 | `[[...]]` wiki tokens in three glossary entries printed literally | Plain italic cross-references | Harness: new `TYPO-WIKILINK` and `BOOK-WIKILINK` checks (commit `9adb992`) scan chapters, front matter, glossary and references; the old glossary fails them |
+
+After the fixes all 14 chapters pass the checker, the build passes its 31 math checks and all seven
+`check_pdf` gates (173 pages), `verify --through build` is clean, and no `[[` survives in the PDF.
+Because the chapters changed, round 3 no longer describes the content to be scored; the audit
+closes on a fresh review of this commit.

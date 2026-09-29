@@ -333,7 +333,7 @@ The units cancel, as they must: a ratio of two concentrations is a pure number.
 
 *tmax.* tmax depends on Ka and K, and on neither the dose nor the volume. It is *unchanged* at 2 h. Chapter 7 derives this.
 
-*Which can you predict with confidence?* Cpmax and AUC, because linearity is an assumption you were given. tmax needs Chapter 7. All three hold only while kinetics stay linear; if the doubled dose saturates an enzyme they all fail, which is Chapter 10.
+*Which can you predict with confidence?* All three, and for the same reason: linearity with unchanged parameters is the assumption you were given. Cpmax and AUC follow from proportionality to dose. tmax follows from Section 1.3, which states that it depends on Ka and K and not on the dose; Chapter 7 supplies the derivation, but the prediction does not wait for it. All three hold only while kinetics stay linear; if the doubled dose saturates an enzyme they all fail, which is Chapter 10.
 
 **E1.3 — worked solution**
 
@@ -446,7 +446,7 @@ Vd = 100 mg ÷ 0.001 mg·mL⁻¹ = 100 000 mL
 
 The fluid is still 1000 mL. The charcoal stands for tissue binding, and the 100-fold inflation of Vd is the whole point: a large Vd means the drug has left the plasma, not that the patient is large.
 
-*Interpreting the number.* A low Vd, roughly 0.1 to 1 L·kg⁻¹, indicates a drug held in the plasma, usually by protein binding. Acidic, hydrophilic drugs such as the sulphonamides and aspirin behave this way. A high Vd, above about 1 L·kg⁻¹, indicates extensive tissue distribution, typical of basic lipophilic drugs such as the amphetamines.
+*Interpreting the number.* Compare the result with the real fluid volumes of the body: plasma is about 0.04 L·kg⁻¹, extracellular fluid about 0.2 L·kg⁻¹, and total body water about 0.6 L·kg⁻¹. A low Vd, close to the plasma or extracellular volume, indicates a drug held in the circulation, usually by protein binding. Acidic, hydrophilic drugs such as the sulphonamides and aspirin behave this way. A Vd near total body water fits a drug that spreads through body water without much binding on either side. A Vd well above total body water, above about 1 L·kg⁻¹, cannot be a real volume at all: it indicates extensive binding or partitioning in tissue, typical of basic lipophilic drugs such as the amphetamines.
 
 *What changes Vd.* In one patient under stable conditions Vd behaves as a constant, which is why it can be used as a proportionality constant at all. It is not fixed for life. It changes most markedly in disease: renal dysfunction, liver cirrhosis, congestive heart failure and oedema all raise it by expanding total body water, while haemorrhage, diarrhoea and vomiting lower it by depleting body fluid. It also varies with age, with body composition, in pregnancy, and with anything that alters plasma protein binding. Treat Vd as a parameter that must be estimated for the patient in front of you [2].
 
@@ -786,7 +786,7 @@ The method has one hard requirement, and it is a real one. Du∞ must be known b
 | Knowledge of Du∞ | Not required | Required, and a small error in it corrupts every point |
 | One missing sample | Loses that one point; the rest stand | Invalidates the cumulative total, and so every later point |
 | Scatter from incomplete bladder emptying | Shows directly as scatter about the line | Damped by cumulation, so the plot looks better than the data are |
-| Order of elimination | Works for zero-order and first-order elimination | First-order elimination only |
+| Order of elimination | The raw rate plot describes excretion of any order, but K and t½ come from Equation 3.2 only under first-order elimination | First-order elimination only |
 | Ke | Obtainable from the intercept | Not obtainable |
 
 Two entries that look like advantages of the sigma-minus method are one property seen twice. Cumulation smooths the data, and smoothing hides experimental error rather than removing it. A tidy sigma-minus plot is therefore not evidence of a careful collection. The excretion-rate plot is more honest about sample quality, at the cost of looking worse.
@@ -915,7 +915,7 @@ B) Ke
 C) The total elimination rate constant
 D) Du∞
 
-**Q10.** [LO2] A drug is eliminated by zero-order kinetics. Of the two urinary methods of Section 3.2:
+**Q10.** [LO2] A drug is eliminated by zero-order kinetics. Of the two urinary methods of Section 3.2, used to estimate K and t½:
 A) Both still apply, because urine data are model-free
 B) Sigma-minus applies, but the excretion rate method does not
 C) Neither applies, because both are derived from first-order elimination
@@ -949,7 +949,7 @@ D) The excretion rate method applies, because it plots the observed rate
 
 **Q9. B** — The sigma-minus plot contains no term in Ke: its intercept is Du∞ and its slope is −K/2.303. Ke can still be found afterwards from fe, but not from the plot.
 
-**Q10. C** — Equations 3.2 and 3.3 both substitute D_B = D_B⁰·e^(−Kt) and depend on a straight semilogarithmic line. Under zero-order elimination neither line is straight, so neither method yields K or a half-life. Option D is the trap: the observed excretion rate can still be plotted and described, but that descriptive plot is not the semilogarithmic method of this section.
+**Q10. C** — Equations 3.2 and 3.3 both substitute D_B = D_B⁰·e^(−Kt) and depend on a straight semilogarithmic line. Under zero-order elimination neither line is straight, so neither method yields K or a half-life. Option D is the trap: the observed excretion rate can still be plotted, and the table of Section 3.5 notes that such a plot describes excretion of any order, but that descriptive plot is not the semilogarithmic method of Equation 3.2 and gives no first-order K or half-life.
 
 ---
 
@@ -1815,10 +1815,11 @@ route but never the only one: biliary, intestinal, pulmonary and other losses fa
 Writing Cl_T = Cl_r + Cl_h would silently assign every non-renal loss to the liver. Where the liver
 genuinely is the whole of it, Cl_nr and Cl_h coincide.
 
-> **Watch the Units:** In most of the pharmacokinetic literature fe means the *fraction unbound* in
-> plasma, not the fraction excreted unchanged. This book uses fe for the fraction excreted unchanged
-> throughout, in Chapter 3 and here, and does not use fu at all. If you meet fu in another text,
-> check which quantity it names before putting it in an equation.
+> **Watch the Units:** Two fractions with similar symbols meet in renal clearance. fe is the fraction
+> of the available dose excreted unchanged, as in Chapter 3 and here. fu is the **fraction unbound**:
+> the fraction of the drug in plasma that is not bound to plasma protein. This is the standard
+> notation of the pharmacokinetic literature, and this book uses both symbols in that sense. Only
+> unbound drug is filtered, so the filtration clearance of a drug is fu × GFR, not fe × GFR.
 
 The symbol Kh is used deliberately. Chapter 10 needs Km for the Michaelis constant, which is a concentration and not a rate constant at all, and the two must not share a letter.
 
@@ -1830,7 +1831,7 @@ where Mu is the total amount recovered as one metabolite. Cl_f is a *formation c
 total clearance that produces that metabolite. It is not the hepatic clearance, and calling it that
 would claim three things the data do not show — that the liver made all of it, that no competing
 pathway consumed the parent, and that one mole of parent gave one mole of the metabolite recovered.
-Formation clearances for every metabolite, plus Cl_r, sum to Cl_T; a single metabolite's does not. A third route comes from an infusion at steady state, and it holds whatever the number of compartments:
+Formation clearances add up to Cl_T only under restrictive conditions: every pathway that removes the parent is measured, recovery of each metabolite is complete, amounts are expressed in moles so that one mole of parent is matched to one mole of product, a metabolite formed from another metabolite is not counted twice, and every other route of unchanged-drug loss, such as bile, is added alongside Cl_r. Those conditions are rarely all met, so measured formation clearances are best read as partial apparent clearances that need not sum to total clearance. A single metabolite's formation clearance certainly does not. A third route comes from an infusion at steady state, and it holds whatever the number of compartments:
 
 Cl_T = R / Css
 
@@ -1844,12 +1845,12 @@ Two plots follow directly from Cl_r = (dDu/dt) / Cp.
 
 ## 6.6 Which Mechanism? The Clearance Ratio
 
-Comparing a drug's renal clearance with the glomerular filtration rate reveals which of the three processes dominates. Inulin or creatinine clearance supplies the reference, since both are filtered only.
+Comparing a drug's renal clearance with the glomerular filtration rate reveals which of the three processes dominates. Inulin clearance supplies the reference, since inulin is filtered and neither secreted nor reabsorbed. Creatinine clearance is the practical substitute, but it reads modestly above the true GFR, because creatinine is also secreted by the proximal tubule. Only unbound drug is filtered, so the fair comparison for a bound drug is with fu × GFR; the ratios below assume that correction has been made, or that the drug is not bound.
 
-| Clearance ratio, Cl_drug / Cl_inulin | Dominant mechanism |
+| Clearance ratio, Cl_drug / (fu × Cl_inulin) | Dominant mechanism |
 |---|---|
 | Zero | Filtered, then completely reabsorbed, as for glucose |
-| Less than 1 | Filtered, then partially reabsorbed |
+| Less than 1 | Filtered, then partially reabsorbed. Against unadjusted GFR, a ratio below 1 is equally compatible with protein binding alone |
 | Equal to 1 | Filtered only |
 | Greater than 1 | Actively secreted as well as filtered |
 
@@ -1865,7 +1866,7 @@ Half-life depends on two independent things. A patient with oedema or obesity ha
 
 > **Worked Example:** Example 6.1 — the full clearance breakdown
 >
-> A 250 mg oral dose of an antibiotic is given to a 32-year-old man of 78 kg whose creatinine clearance is 122 mL·min⁻¹. The literature gives an apparent Vd of 21% of body weight and an elimination half-life of 2 h. The dose is 90% bioavailable, and 70% of the absorbed dose is recovered in urine as unchanged drug.
+> A 250 mg oral dose of an antibiotic is given to a 32-year-old man of 78 kg whose creatinine clearance is 122 mL·min⁻¹. The literature gives an apparent Vd of 21% of body weight and an elimination half-life of 2 h. The dose is 90% bioavailable, and 70% of the dose reaching the circulation is recovered in urine as unchanged drug.
 >
 > Determine total, renal and non-renal clearance, and identify the probable renal mechanism.
 >
@@ -1883,11 +1884,11 @@ Half-life depends on two independent things. A patient with oedema or obesity ha
 >
 > Converting: 5.68 L·h⁻¹ × 1000 ÷ 60 = 94.6 mL·min⁻¹.
 >
-> *Step 4 — the amount actually reaching the circulation.* Only the absorbed fraction can be cleared.
+> *Step 4 — the amount actually reaching the circulation.* Only the bioavailable fraction can be cleared. It is F that is 0.90 here, not the fraction absorbed across the gut wall, which could be larger (Chapter 13).
 >
-> absorbed dose = 0.90 × 250 mg = 225 mg
+> available dose = F × D₀ = 0.90 × 250 mg = 225 mg
 >
-> *Step 5 — fe.* Of that absorbed dose, 70% appears unchanged in the urine.
+> *Step 5 — fe.* Of that available dose, 70% appears unchanged in the urine.
 >
 > Du∞ = 0.70 × 225 mg = 157.5 mg, so fe = 157.5 ÷ 225 = 0.70
 >
@@ -1899,13 +1900,13 @@ Half-life depends on two independent things. A patient with oedema or obesity ha
 >
 > Cl_nr = Cl_T − Cl_r = 5.68 − 3.98 = 1.70 L·h⁻¹ = 28.4 mL·min⁻¹
 >
-> *Step 7 — the mechanism.* Creatinine clearance gives the filtration reference.
+> *Step 7 — the mechanism.* Creatinine clearance gives the practical filtration reference, remembering that it reads slightly above the true GFR.
 >
 > clearance ratio = 66.2 ÷ 122 = 0.54
 >
 > *Answer.* Cl_T = 5.68 L·h⁻¹ (94.6 mL·min⁻¹), Cl_r = 3.98 L·h⁻¹ (66.2 mL·min⁻¹) and Cl_nr = 1.70 L·h⁻¹ (28.4 mL·min⁻¹). The clearance ratio of 0.54 is below 1, so the kidney's *net* handling of this drug removes less than filtration alone would.
 >
-> *What the ratio does not settle.* It is tempting to read 0.54 as reabsorption, and that is one explanation — but not the only one. The ratio compares Cl_r with the clearance of *total* drug at the glomerulus, while only unbound drug is filtered. A drug 46% bound to plasma protein would give a ratio near 0.54 with no reabsorption at all. The mechanism is separated only by comparing Cl_r with fe,unbound × GFR, and this exercise gives no binding data, so the honest answer is that net handling is below filtration and the cause is undetermined. A ratio *above* 1 is different: no amount of binding can push clearance above the filtration of total drug, so secretion is the only explanation, which is why Q2 can be answered and this one cannot.
+> *What the ratio does not settle.* It is tempting to read 0.54 as reabsorption, and that is one explanation — but not the only one. The ratio compares Cl_r with the clearance of *total* drug at the glomerulus, while only unbound drug is filtered. A drug 46% bound to plasma protein would give a ratio near 0.54 with no reabsorption at all. The mechanism is separated only by comparing Cl_r with fu × GFR, and this exercise gives no binding data, so the honest answer is that net handling is below filtration and the cause is undetermined. A ratio *above* 1 is different: no amount of binding can push clearance above the filtration of total drug, so secretion is the only explanation, which is why Q2 can be answered and this one cannot.
 >
 > *Check the split.* Renal clearance is 70% of total, which is exactly fe, as Equation 6.3 requires. If your Cl_r came out above Cl_T, you have multiplied where you should have divided.
 
@@ -1917,7 +1918,7 @@ Half-life depends on two independent things. A patient with oedema or obesity ha
 - Clearances add: Cl_T = Cl_r + Cl_nr, and Cl_r = fe · Cl_T.
 - fe is a fraction of the dose that reached the circulation, not of the dose given.
 - Renal clearance is the slope of dDu/dt against Cp, or of Du against AUC.
-- A clearance ratio above 1 proves active secretion. A ratio below 1 means net handling is below filtration of total drug, which may be reabsorption or simply plasma protein binding; the two are separated only by comparing Cl_r with the unbound fraction times GFR.
+- A clearance ratio above 1 proves active secretion. A ratio below 1 means net handling is below filtration of total drug, which may be reabsorption or simply plasma protein binding; the two are separated only by comparing Cl_r with fu × GFR.
 - Use clearance rather than half-life, because half-life also moves when Vd moves.
 
 ## Check Your Understanding
@@ -2172,7 +2173,7 @@ Original diagram, drawn from the first edition Example 22 dataset, page 33 (orig
 
 > **Worked Example:** Example 7.1 — feathering an oral curve, and checking the result
 >
-> A 50 kg patient receives a single oral dose of 10 mg·kg⁻¹, of which 80% is absorbed. Plasma concentrations in µg·mL⁻¹ are:
+> A 50 kg patient receives a single oral dose of 10 mg·kg⁻¹, with an oral bioavailability F of 0.80: 80% of the dose reaches the systemic circulation intact. Plasma concentrations in µg·mL⁻¹ are:
 >
 > | t (h) | 2 | 4 | 6 | 8 | 10 | 12 | 14 |
 > |---|---|---|---|---|---|---|---|
@@ -2184,7 +2185,7 @@ Original diagram, drawn from the first edition Example 22 dataset, page 33 (orig
 >
 > Find Ka, t½, tmax, Vd, Cpmax and the concentration at 11 h.
 >
-> *Step 1 — the dose.* 10 mg·kg⁻¹ × 50 kg = 500 mg, and F = 0.80.
+> *Step 1 — the dose.* 10 mg·kg⁻¹ × 50 kg = 500 mg, and F = 0.80. F is given directly; had the problem given only the fraction absorbed, fa, it would equal F only if the gut wall and the liver removed nothing on the first pass.
 >
 > *Step 2 — terminal slope, from the points at 16 h and beyond.*
 >
@@ -2559,13 +2560,13 @@ Chapter 5 found that a constant infusion reaches any given fraction of steady st
 
 *Step 2 — the area at steady state.* At steady state the same argument covers every dose back to the beginning. The area in one interval is then the whole single-dose area, AUC from 0 to ∞.
 
-*Step 3 — the fraction of steady state.* Divide one by the other. The fraction of steady state reached in the interval that ends at t = nτ is:
+*Step 3 — the fraction of steady state.* Divide one by the other. The fraction of the steady-state *interval AUC* reached in the interval that ends at t = nτ — equivalently, the fraction of the steady-state average concentration Css,av — is:
 
 f_ss = AUC(0 → t) / AUC(0 → ∞) of one dose
 
-This is exact, and it holds for any route.
+This is exact, and it holds for any route. Notice what it measures: the area in one interval, which is the average concentration over that interval. It is not a statement about the peak, the trough, or the concentration at a fixed time after each dose, whose approach to steady state depends on the route and on where in the interval they fall.
 
-*Step 4 — the intravenous case.* For a bolus, AUC(0 → t) / AUC(0 → ∞) = 1 − e^(−Kt). That is Equation 5.1 read as a fraction, and it gives the table of Chapter 5 unchanged: 50% at one half-life, 90% at 3.32, 95% at 4.32 and 99% at 6.65.
+*Step 4 — the intravenous case.* For a bolus, AUC(0 → t) / AUC(0 → ∞) = 1 − e^(−Kt). That is Equation 5.1 read as a fraction, and it gives the table of Chapter 5 unchanged: 50% at one half-life, 90% at 3.32, 95% at 4.32 and 99% at 6.65. For IV bolus doses the peak and the trough happen to approach their steady-state values by the same factor, 1 − e^(−nKτ) after n doses, so here the one result covers every concentration.
 
 *Step 5 — the oral case.* For a first order absorption curve with Ka > K, the single-dose fraction of area is:
 
@@ -2585,17 +2586,17 @@ t = [ln 2 + ln(Ka / (Ka − K))] / K
 >
 > valid when Ka > K, so that the absorption exponential can be neglected.
 
-The **accumulation half-life** is the time taken to reach half of the steady-state level. For an oral drug it is longer than the elimination half-life, because the drug must first be absorbed. The slower the absorption relative to elimination, the larger the bracket.
+The **accumulation half-life** is the time taken for the interval AUC, and so the average concentration over an interval, to reach half of its steady-state value. For an oral drug it is longer than the elimination half-life, because the drug must first be absorbed. The peak and the trough of an oral regimen do not follow it exactly: each converges at a rate that also depends on the dosing interval and on the phase within the interval, and has to be worked out separately. The slower the absorption relative to elimination, the larger the bracket.
 
 *Step 7 — the intravenous collapse.* An intravenous bolus is absorption that is instantaneous, so Ka → ∞. K is then negligible beside Ka, and Ka / (Ka − K) → 1. The logarithm of 1 is 0, so the second term in the bracket vanishes and the bracket becomes 1:
 
 t½,acc = t½ · [1 + 3.32 × 0] = t½
 
-For repeated intravenous doses, the accumulation half-life equals the elimination half-life. It depends on neither the dose nor the interval.
+For repeated intravenous doses, the accumulation half-life equals the elimination half-life. It depends on neither the dose nor the interval, and for IV bolus doses it describes the peaks and troughs as well as the average.
 
 The assumption Ka > K is not decoration. If Ka < K, then Ka − K is negative and the logarithm has no real value. The derivation then fails at Step 5, because the slower exponential is now the absorption one and it is the elimination term that should have been dropped. This is the flip-flop situation, in which the terminal slope of the curve reflects absorption rather than elimination. Equation 8.2 must not be used there.
 
-> **Common Mistake:** Shortening the interval to reach steady state sooner. The time to steady state is set by the rate constants, not by the size or the frequency of the dose: doubling the dose, or halving the interval, raises the plateau without bringing it any closer. For an intravenous regimen the elimination half-life sets it alone, and reaching 99% takes 6.65 half-lives, about seven doses if the drug is given once every half-life. After oral doses absorption enters too, so the approach is slower than t½ alone predicts, and Equation 8.2 estimates it — but it is still independent of how much is given.
+> **Common Mistake:** Shortening the interval to reach steady state sooner. The time to steady state is set by the rate constants, not by the size or the frequency of the dose: doubling the dose, or halving the interval, raises the plateau without bringing it any closer. Read this for the average concentration, which is what Equation 8.2 describes; after oral doses the individual peaks and troughs converge at rates that depend on the interval as well. For an intravenous regimen the elimination half-life sets it alone, and reaching 99% takes 6.65 half-lives, about seven doses if the drug is given once every half-life. After oral doses absorption enters too, so the approach is slower than t½ alone predicts, and Equation 8.2 estimates it — but it is still independent of how much is given.
 
 ## 8.5 Amounts and Concentrations at Steady State
 
@@ -2687,7 +2688,7 @@ The designer fixes τ first, from the half-life and the width of the therapeutic
 - Repeated doses accumulate whenever part of the previous dose remains when the next is given.
 - The fraction of a dose left after one interval is f = e^(−Kτ); it depends on K and τ, not on the dose.
 - The accumulation index is Rac = 1/(1 − e^(−Kτ)); Rac = 2 when the drug is given once every half-life.
-- The accumulation half-life is approximately t½·[1 + 3.32·log(Ka/(Ka − K))]. It needs Ka > K, and it is close only when Ka ≫ K; at Ka = 2K it overstates the true time by about 13%.
+- The accumulation half-life, the time for the interval AUC to reach half its steady-state value, is approximately t½·[1 + 3.32·log(Ka/(Ka − K))]. It needs Ka > K, and it is close only when Ka ≫ K; at Ka = 2K it overstates the true time by about 13%.
 - For IV dosing Ka → ∞, log 1 = 0, and the accumulation half-life equals the elimination half-life.
 - Time to steady state depends on the half-life only; 95% at 4.32 half-lives and 99% at 6.65.
 - At steady state D_max = D₀/(1 − f), D_min = D_max·f, and their difference is one dose.
@@ -2758,9 +2759,9 @@ D) The accumulation index is doubled
 
 ### Exercises
 
-**E8.1** [LO5] For clindamycin the source notes attribute K = 0.247 h⁻¹, t½ = 2.81 h and Vd = 43.9 L per 1.73 m² to DeHaan and co-workers, without a citation this edition could trace; they are used here as a dataset, not as a source to cite. A patient of 1.73 m² takes 150 mg orally every 6 hours for a week, and the drug is completely absorbed. Calculate the average steady-state concentration, and state why a week of dosing is enough to call it steady state.
+**E8.1** [LO5] For clindamycin, DeHaan and co-workers reported pharmacokinetic studies of clindamycin phosphate [3], and the source notes quote from that work K = 0.247 h⁻¹, t½ = 2.81 h and Vd = 43.9 L per 1.73 m². The values are taken as the source notes give them; check them against the paper before using them clinically. A patient of 1.73 m² takes 150 mg orally every 6 hours for a week, and the drug is completely absorbed. Calculate the average steady-state concentration, and state why a week of dosing is enough to call it steady state.
 
-**E8.2** [LO5] For tobramycin the source notes attribute an elimination half-life of 2.15 h and a volume of distribution of 33.5% of body weight to Regamey and associates, again without a traceable citation. (a) Calculate the IV dose every 8 hours that gives an average steady-state level of 2.5 µg·mL⁻¹ in an 80 kg patient. (b) The manufacturer recommends 1 mg·kg⁻¹ every 8 hours. Calculate the average steady-state level this regimen gives, and explain why the answer is the same for any body weight.
+**E8.2** [LO5] For tobramycin, Regamey and associates compared the pharmacokinetics of tobramycin and gentamicin in healthy volunteers [4], and the source notes quote from that work an elimination half-life of 2.15 h and a volume of distribution of 33.5% of body weight; again, the values are taken as the source notes give them. (a) Calculate the IV dose every 8 hours that gives an average steady-state level of 2.5 µg·mL⁻¹ in an 80 kg patient. (b) The manufacturer recommends 1 mg·kg⁻¹ every 8 hours. Calculate the average steady-state level this regimen gives, and explain why the answer is the same for any body weight.
 
 **E8.3** [LO4] An oral drug has Ka = 1.0 h⁻¹ and K = 0.1 h⁻¹. Calculate its elimination half-life and its accumulation half-life. Verify the result by substituting it back into the exact expression for the fraction of steady state.
 
@@ -2853,6 +2854,8 @@ t½,acc = 6.93 h × (1 + 0.152) = 7.98 h
 ## References
 1. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022.
 2. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019.
+3. DeHaan RM, Metzler CM, Schellenberg D, VandenBosch WD. Pharmacokinetic studies of clindamycin phosphate. *J Clin Pharmacol*. 1973;13(5):190–209. DOI: 10.1002/j.1552-4604.1973.tb00208.x
+4. Regamey C, Gordon RC, Kirby WMM. Comparative pharmacokinetics of tobramycin and gentamicin. *Clin Pharmacol Ther*. 1973;14(3):396–403. DOI: 10.1002/cpt1973143396
 
 
 ---
@@ -2871,7 +2874,7 @@ By the end of this chapter you will be able to:
 
 Chapters 2 to 8 fitted the plasma curve to a model. One compartment gave a single exponential, two compartments gave two, and every parameter came from the fitted constants. That works well when the model is right. It raises an awkward question when the data do not clearly choose between models.
 
-**Non-compartmental analysis** avoids that question. It obtains pharmacokinetic parameters from the areas under the plasma curve, without fitting the data to any compartmental model [1]. Only one assumption is needed: the kinetics are linear. Every dose must produce a curve of the same shape, scaled by the dose. Chapter 10 describes what happens when that fails.
+**Non-compartmental analysis** avoids that question. It obtains pharmacokinetic parameters from the areas under the plasma curve, without fitting the data to any compartmental model [1]. The areas themselves, AUC and AUMC, and the MRT built from them, can be computed from any set of concentrations, linear or not. What linearity adds is the right to *interpret* them: to treat clearance and Vss as properties of the drug rather than of one dose, to scale them to another dose, and to add single doses by superposition. That needs every dose to produce a curve of the same shape, scaled by the dose. Chapter 10 describes what happens when that fails: the numbers can still be calculated, but they describe that one dose only.
 
 The method treats the time course of drug in the body statistically. Think of the dose as a very large number of molecules, each entering the body, staying for a while, and leaving. Each molecule has its own residence time. The plasma curve describes how those residence times are distributed across the whole dose. A **statistical moment** is a summary of that distribution, and the first two moments carry most of the useful information.
 
@@ -3013,7 +3016,7 @@ Non-compartmental analysis is widely used because it asks so little of the data.
 | Uses the same calculation for every drug | Quantifies an interaction, as a ratio of AUC or Cmax, but cannot explain its mechanism or predict an untested regimen |
 | | Is sensitive to sampling frequency and duration |
 
-The second advantage deserves an example. In a study the source notes report without a citation this edition could trace, procainamide was given intravenously to ten subjects. In some subjects the data were best described by a two-compartment model, and in others by a three-compartment model. That looks like a contradiction, as if the drug had changed its nature between people. It is not.
+The second advantage deserves an example. The source notes describe a study, which this edition could not trace to a published report, in which procainamide was given intravenously to ten subjects; read it as an illustration of the point rather than as citable evidence. In some subjects the data were best described by a two-compartment model, and in others by a three-compartment model. That looks like a contradiction, as if the drug had changed its nature between people. It is not.
 
 The number of compartments is a property of the data and the sampling design, not of the drug. A compartment is detected only when its exponential phase is both large enough and long enough to show up above the noise, at the times samples were taken. A fast distribution phase shows up only if several samples fall inside it. With early samples a third exponential appears. With fewer early samples, or noisier assay values, it merges into its neighbour and the fit prefers two. The subjects may differ a little in how their tissues take up the drug, or they may not differ at all. Either way, the model count answers a question about the data. Non-compartmental analysis sidesteps that question, and the clearance and MRT it gives are the same whichever model a subject's data happened to favour [2].
 
@@ -3022,7 +3025,7 @@ The number of compartments is a property of the data and the sampling design, no
 > **Why It Matters in Practice:** Bioequivalence studies, the subject of Chapter 13, compare AUC and Cmax without fitting any model. That is non-compartmental analysis. The sampling lessons of Example 9.1 apply directly: sample densely where the curve bends, and long enough that the extrapolated tail is a small part of the total.
 
 ## Key Takeaways
-- Non-compartmental analysis needs linear kinetics and no compartmental model.
+- Non-compartmental analysis needs no compartmental model. Its areas can be computed for any drug; linear kinetics is needed to treat the results as dose-independent parameters.
 - AUC is the zero moment; AUMC, the area under Cp·t against t, is the first moment.
 - Tails beyond the last sample: AUC gains Cn/λz, and AUMC gains tn·Cn/λz + Cn/λz².
 - AUMC depends more heavily than AUC on late samples and on the extrapolated tail.
@@ -3034,7 +3037,7 @@ The number of compartments is a property of the data and the sampling design, no
 
 ## Check Your Understanding
 
-**Q1.** [LO1] The one assumption non-compartmental analysis requires is that:
+**Q1.** [LO1] Non-compartmental analysis computes AUC and AUMC without any compartmental model. Before the clearance it gives can be applied to a different dose, the further assumption needed is that:
 A) The drug follows a one-compartment model
 B) The kinetics are linear
 C) The drug is given intravenously
@@ -3104,7 +3107,7 @@ D) 5 h
 
 ## Answers and Worked Solutions
 
-**Q1. B** — Linearity means every dose gives a curve of the same shape, so areas scale with dose. No particular model is assumed.
+**Q1. B** — Linearity means every dose gives a curve of the same shape, so areas scale with dose and a clearance found at one dose holds at another. The areas could be computed without it, but they would describe only the dose studied. No particular model is assumed, which rules out option A.
 
 **Q2. D** — The first moment curve is concentration multiplied by time. Option C is the ordinary plasma curve, whose area is AUC.
 
@@ -3395,7 +3398,7 @@ B) 16 mg·L⁻¹
 C) 8 mg·L⁻¹
 D) 4 mg·L⁻¹
 
-**Q6.** [LO1] For a drug with non-linear kinetics, the elimination half-life:
+**Q6.** [LO1] For a drug with capacity-limited, saturable elimination, as concentrations approach or exceed Km, the elimination half-life:
 A) Is the same at every dose
 B) Is shorter at higher doses
 C) Depends on the dose and rises as elimination saturates
@@ -3901,7 +3904,7 @@ The upper small intestine is the optimum site for absorption. It is richly perfu
 
 A drug can be degraded before it is absorbed. The causes are acid hydrolysis in the stomach, enzymatic breakdown in the stomach or intestine, metabolism in the brush border, metabolism by colonic bacteria, and metabolism in the liver.
 
-Protein drugs show the first three at work. Pepsin in the stomach, and trypsin, chymotrypsin and carboxypeptidases from the pancreas, break proteins into oligopeptides. The oligopeptides are then hydrolysed by peptidases of the brush border, such as aminopeptidase N and dipeptidyl peptidase IV, and by cytosolic peptidases inside the enterocyte. The products are free amino acids and very small peptides. Lactase and maltase, also brush-border enzymes, are disaccharidases: they digest carbohydrates, not peptides. Intact proteins have no carrier in normal enterocytes and cannot pass the tight junctions. Protein drugs are therefore not absorbed after oral administration [1].
+Protein drugs show the first three at work. Pepsin in the stomach, and trypsin, chymotrypsin and carboxypeptidases from the pancreas, break proteins into oligopeptides. The oligopeptides are then hydrolysed by peptidases of the brush border, such as aminopeptidase N and dipeptidyl peptidase IV, and by cytosolic peptidases inside the enterocyte. The products are free amino acids and very small peptides. Lactase and maltase, also brush-border enzymes, are disaccharidases: they digest carbohydrates, not peptides. Intact proteins have no dedicated carrier in normal enterocytes and pass the tight junctions only to a negligible extent. Protein drugs are therefore very poorly absorbed after oral administration: most of the dose is digested, and the conventional oral bioavailability of an unmodified protein is usually well below 1% [1]. It is not quite zero. Small amounts of intact peptide or protein can cross by vesicular or receptor-mediated uptake, and formulations with absorption enhancers have brought a few peptides to market as oral products, still at low bioavailability.
 
 ## 12.2 Physiological Factors Affecting Absorption
 
@@ -3939,13 +3942,13 @@ Original diagram, redrawn from the first edition pages 61-66 (original)
 
 > **Key Equation:** Equation 12.1 — Fick's law for absorption
 >
-> $$\frac{dQ}{dt} = \frac{D A K}{h}\left(C_{GI} - C_p\right) = p A \left(C_{GI} - C_p\right)$$
+> $$\frac{dQ}{dt} = \frac{D A K_{part}}{h}\left(C_{GI} - C_p\right) = p A \left(C_{GI} - C_p\right)$$
 >
 > Because Cp is small compared with C_GI:    dQ/dt ≈ p · A · C_GI
 >
-> D is the diffusion coefficient (cm²·s⁻¹), A the surface area (cm²), K the lipid/water partition coefficient (dimensionless), h the membrane thickness (cm), and p = D·K/h the **permeability coefficient**, in cm·s⁻¹.
+> D is the diffusion coefficient (cm²·s⁻¹), A the surface area (cm²), K_part the membrane/water partition coefficient (dimensionless), h the membrane thickness (cm), and p = D·K_part/h the **permeability coefficient**, in cm·s⁻¹. The subscript matters: everywhere else in this book K is the elimination rate constant, and the two must not be confused when equations from different chapters are combined.
 >
-> Keep the area outside the coefficient. D·K/h has units of cm²·s⁻¹ ÷ cm = cm·s⁻¹, a velocity, which is what a permeability coefficient is. Multiplying by A gives p·A in cm³·s⁻¹, a volume per time — the permeability–surface-area product, often written PS. Texts that call D·A·K/h "the permeability coefficient" have folded the anatomy of the gut into a constant that is supposed to describe the membrane alone.
+> Keep the area outside the coefficient. D·K_part/h has units of cm²·s⁻¹ ÷ cm = cm·s⁻¹, a velocity, which is what a permeability coefficient is. Multiplying by A gives p·A in cm³·s⁻¹, a volume per time — the permeability–surface-area product, often written PS. Texts that call D·A·K_part/h "the permeability coefficient" have folded the anatomy of the gut into a constant that is supposed to describe the membrane alone.
 
 The simplified form is a first order process, which is why Chapter 7 could describe absorption with a single rate constant. The membrane has much the same thickness at all absorption sites. The capillaries of the brain are the exception: tightly joined and surrounded by glial cells, they make up the blood–brain barrier.
 
@@ -4070,7 +4073,7 @@ solution > emulsion > suspension > soft gelatin capsule > hard gelatin capsule >
 
 Read it as a tendency that follows from the number of steps, not as a law. Chapter 7 showed that slowing absorption moves Cpmax and tmax but need not move the AUC. The formulation can also overturn the order entirely. An unprotected solution of erythromycin base is degraded by gastric acid, so an enteric-coated tablet of the same drug can deliver more of it than the solution. The position of any product in the ranking must be measured, not assumed.
 
-*Solutions.* Absorption is rapid and complete, and gastric emptying is often the rate-limiting step. An acidic drug given as a salt may precipitate in the stomach, but the precipitate is fine and redissolves readily. A poorly water-soluble drug can be dissolved in a mixed solvent of water with alcohol or glycerol, or given as an oily emulsion or in a soft gelatin capsule.
+*Solutions.* No dissolution step is needed, so absorption is often faster than from a solid, and gastric emptying is often the rate-limiting step. Being dissolved does not make absorption complete: stability in the gut, permeability, transporters and first-pass loss can still limit how much reaches the circulation, as the erythromycin example above shows. An acidic drug given as a salt may precipitate in the stomach, but the precipitate is fine and redissolves readily. A poorly water-soluble drug can be dissolved in a mixed solvent of water with alcohol or glycerol, or given as an oily emulsion or in a soft gelatin capsule.
 
 *Suspensions.* A well-formulated suspension is second only to a solution. A finely divided powder dissolves fast, and a surfactant improves dispersion and prevents caking. Phenytoin, poorly water soluble, is often better given this way.
 
@@ -4363,7 +4366,7 @@ Five methods are used, in decreasing order of precision.
 *Figure 13.1 — Rate and extent read from plasma curves, for the three formulations of the first edition's example. A and B have the same AUC and so the same extent, but A peaks earlier and so is absorbed faster. C has the same tmax as A and so the same rate, but half the AUC and so half the extent.*  
 Original diagram, redrawn from the first edition page 92 (original)
 
-The figure shows how plasma curves are read. Products A and B have the same AUC, so they have the same extent of bioavailability. A peaks at 2 h and B at 4 h, so A has the faster rate. Product C has half the AUC of A but the same tmax: the same rate, half the extent. Reading both features from each curve is the whole skill.
+The figure shows how plasma curves are read. Products A and B have the same AUC, so they have the same extent of bioavailability. A peaks at 2 h and B at 4 h, so A is absorbed faster. Product C has half the AUC of A but the same tmax: it has half the extent, and a peak time consistent with a similar rate. tmax is an observed endpoint related to rate, not a measure of Ka on its own: it depends on absorption and elimination together, on any lag time, and on the shape of the curve, so two products with different absorption can share a peak time. A claim of equal rate needs the whole profile and Cmax, or a fitted or deconvolved absorption rate. Reading both extent and rate from each curve, and knowing how far tmax alone can take you, is the whole skill.
 
 ## 13.4 Designing a Bioequivalence Study
 
@@ -4713,7 +4716,7 @@ The stages get more lenient on individual units but always demand that the avera
 
 *Enteric-coated products.* These are tested in the apparatus named in the monograph, usually Apparatus 1 or 2, in two phases. The acid phase uses 0.1 N HCl for 2 h; the buffer phase follows at pH 6.8, usually for 45 min, and a specified percentage must then be released. The test mirrors the product's purpose: to survive the stomach and release in the intestine.
 
-The acid phase is staged like the dissolution test itself. At A1, each of 6 units must release less than 10%. If that fails, A2 tests 12 units: their *average* must be no more than 10% and no single unit may exceed 25%. If that fails, A3 tests 24: the average must be no more than 10% and no unit may exceed 25%. The 10% figure alone is therefore the A1 rule, not a universal ceiling for every unit.
+The acid phase is staged like the dissolution test itself. At A1, no individual value among the 6 units may exceed 10% dissolved, so exactly 10% passes. If that fails, A2 tests 12 units: their *average* must be no more than 10% and no single unit may exceed 25%. If that fails, A3 tests 24: the average must be no more than 10% and no unit may exceed 25%. The 10% figure alone is therefore the A1 rule, not a universal ceiling for every unit.
 
 > **Worked Example:** Example 14.1 — a batch through the stages
 >
@@ -4777,7 +4780,7 @@ This is why the medium is degassed and the apparatus calibrated and aligned befo
 - The basket usually runs at 100 rpm; the paddle at 50 rpm for tablets and 25 rpm for suspensions.
 - Apparatus 4 flow rates are 4, 8 and 16 mL·min⁻¹.
 - S1: every unit ≥ Q + 5%. S2: average of 12 ≥ Q, none < Q − 15%. S3: average of 24 ≥ Q, at most 2 < Q − 15%, none < Q − 25%.
-- Enteric-coated products: 2 h in 0.1 N HCl (A1: each of 6 below 10%; A2/A3: average ≤ 10%, no unit above 25%), then pH 6.8 buffer.
+- Enteric-coated products: 2 h in 0.1 N HCl (A1: no unit of 6 above 10%; A2/A3: average ≤ 10%, no unit above 25%), then pH 6.8 buffer.
 - IVIVC links an in-vitro release property to an in-vivo one.
 
 ## Check Your Understanding
@@ -4825,7 +4828,7 @@ C) 150 rpm
 D) 50 rpm
 
 **Q8.** [LO4] The acid phase for an enteric-coated product is:
-A) 2 h in 0.1 N HCl, with less than 10% released from each of the six units at the first stage
+A) 2 h in 0.1 N HCl, with no more than 10% released from any of the six units at the first stage
 B) 45 min at pH 6.8
 C) 1 h in water
 D) 2 h in 0.1 N HCl, with at least 75% released
@@ -4866,7 +4869,7 @@ D) A requirement for all immediate-release products
 
 **Q7. D** — 50 rpm is usual for tablets and capsules; 25 rpm is used for suspensions, and 100 rpm is the usual basket speed.
 
-**Q8. A** — The acid phase checks that the coat survives the stomach, and at A1 the limit applies to each of the six units. Option B describes the buffer phase that follows. Note that the per-unit 10% limit is the A1 criterion; at A2 and A3 the average must be ≤ 10% with no unit above 25%.
+**Q8. A** — The acid phase checks that the coat survives the stomach, and at A1 no individual unit may exceed 10% dissolved, so a unit at exactly 10% still passes. Option B describes the buffer phase that follows. Note that the per-unit 10% limit is the A1 criterion; at A2 and A3 the average must be ≤ 10% with no unit above 25%.
 
 **Q9. B** — Intrinsic dissolution is normalised to a constant surface area, so it carries area in its units.
 
@@ -5019,6 +5022,8 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **fraction unabsorbed** — 1 − Ab/Ab∞, the proportion of the ultimately absorbed dose that has not yet been absorbed at time t. Plotted against time it is linear on semilogarithmic axes for first-order absorption and on ordinary axes for zero-order absorption.
 
+**fraction unbound** — fu. The fraction of the drug in plasma that is not bound to plasma protein. Only unbound drug is filtered at the glomerulus, so filtration clearance is fu × GFR. Not to be confused with fe, the fraction excreted unchanged.
+
 **Franz diffusion cell** — A static diffusion cell in which a skin membrane separates a donor chamber from a sampled receptor fluid, used to compare drug release and skin permeation of topical and transdermal formulations.
 
 **genetic polymorphism** — A gene variant common in a population. In drug-metabolising enzymes such as NAT2, CYP2D6 and CYP2C19 it makes individuals slow, normal or rapid metabolisers; it is a property of the individual's genotype.
@@ -5041,9 +5046,9 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **ion pair** — A neutral complex formed between a charged drug and an endogenous organic ion of opposite charge. It can partition into the membrane and diffuse across, the proposed route for quaternary ammonium compounds.
 
-**Ka** — The absorption rate constant. See [[absorption-rate-constant]].
+**Ka** — The absorption rate constant. See *absorption rate constant*.
 
-**Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See [[renal-excretion-rate-constant]].
+**Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See *renal excretion rate constant*.
 
 **Km** — The Michaelis–Menten constant: the drug concentration at which a saturable process runs at half its maximum rate. It is a concentration, not a rate constant, and reflects the affinity of the drug for the enzyme.
 
@@ -5095,7 +5100,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **peripheral (tissue) compartment** — In a two- or three-compartment model, a kinetic space that exchanges drug with the central compartment by first-order transfer but from which no elimination occurs.
 
-**permeability coefficient** — p = D·K/h, the velocity (cm·s⁻¹) at which a drug crosses unit area of a membrane per unit concentration gradient. It describes the membrane and the drug only. Multiplied by the available surface area it gives the permeability–surface-area product, p·A, a volume per time; the two are often confused, and only the product depends on anatomy.
+**permeability coefficient** — p = D·K_part/h, where K_part is the membrane/water partition coefficient, the velocity (cm·s⁻¹) at which a drug crosses unit area of a membrane per unit concentration gradient. It describes the membrane and the drug only. Multiplied by the available surface area it gives the permeability–surface-area product, p·A, a volume per time; the two are often confused, and only the product depends on anatomy.
 
 **pH-partition hypothesis** — The proposal that drugs are absorbed by passive diffusion in proportion to their unionised fraction at the local pH. A useful first guide that ignores surface area, residence time and lipid solubility.
 
@@ -5161,7 +5166,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **volume of the central compartment** — Vp. The apparent volume of the rapidly equilibrating compartment, obtained as the dose divided by (A + B). It is smaller than the total apparent volume of distribution, and it is the volume a loading dose fills immediately.
 
-**Vp** — The volume of the central compartment. See [[volume-of-the-central-compartment]].
+**Vp** — The volume of the central compartment. See *volume of the central compartment*.
 
 **Wagner–Nelson method** — A method for determining the amount of drug absorbed at each time by mass balance, requiring only that the body behaves as one compartment and that elimination is first order. Because it assumes nothing about absorption, it can be used to decide whether absorption is first order or zero order.
 
@@ -5185,16 +5190,20 @@ end of its entry.
 
 2. Aulton ME, Taylor KMG, editors. *Aulton's Pharmaceutics: The Design and Manufacture of Medicines*. 6th ed. Edinburgh: Elsevier; 2021. (Chapters 1 and 14.)
 
-3. Egyptian Drug Authority. *Egyptian Guideline for Conducting Bioequivalence Studies for Marketing Authorization of Generic Products* (EDREX: GL.CAPP.024), version 04/2026. Cairo: EDA; 2026. (Chapter 13.)
+3. DeHaan RM, Metzler CM, Schellenberg D, VandenBosch WD. Pharmacokinetic studies of clindamycin phosphate. *J Clin Pharmacol*. 1973;13(5):190–209. DOI: 10.1002/j.1552-4604.1973.tb00208.x (Chapter 8.)
 
-4. International Council for Harmonisation. *ICH Harmonised Guideline M13A: Bioequivalence for Immediate-Release Solid Oral Dosage Forms*. Geneva: ICH; 2024. (Chapter 13.)
+4. Egyptian Drug Authority. *Egyptian Guideline for Conducting Bioequivalence Studies for Marketing Authorization of Generic Products* (EDREX: GL.CAPP.024), version 04/2026. Cairo: EDA; 2026. (Chapter 13.)
 
-5. International Council for Harmonisation. *ICH Harmonised Guideline M9: Biopharmaceutics Classification System-Based Biowaivers*. Geneva: ICH; 2019. (Chapter 13.)
+5. International Council for Harmonisation. *ICH Harmonised Guideline M13A: Bioequivalence for Immediate-Release Solid Oral Dosage Forms*. Geneva: ICH; 2024. (Chapter 13.)
 
-6. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
+6. International Council for Harmonisation. *ICH Harmonised Guideline M9: Biopharmaceutics Classification System-Based Biowaivers*. Geneva: ICH; 2019. (Chapter 13.)
 
-7. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
+7. Regamey C, Gordon RC, Kirby WMM. Comparative pharmacokinetics of tobramycin and gentamicin. *Clin Pharmacol Ther*. 1973;14(3):396–403. DOI: 10.1002/cpt1973143396 (Chapter 8.)
 
-8. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+8. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
 
-9. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+9. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
+
+10. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+
+11. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)

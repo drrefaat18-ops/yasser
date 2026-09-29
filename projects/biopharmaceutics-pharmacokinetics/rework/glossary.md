@@ -86,6 +86,8 @@
 
 **fraction unabsorbed** — 1 − Ab/Ab∞, the proportion of the ultimately absorbed dose that has not yet been absorbed at time t. Plotted against time it is linear on semilogarithmic axes for first-order absorption and on ordinary axes for zero-order absorption.
 
+**fraction unbound** — fu. The fraction of the drug in plasma that is not bound to plasma protein. Only unbound drug is filtered at the glomerulus, so filtration clearance is fu × GFR. Not to be confused with fe, the fraction excreted unchanged.
+
 **Franz diffusion cell** — A static diffusion cell in which a skin membrane separates a donor chamber from a sampled receptor fluid, used to compare drug release and skin permeation of topical and transdermal formulations.
 
 **genetic polymorphism** — A gene variant common in a population. In drug-metabolising enzymes such as NAT2, CYP2D6 and CYP2C19 it makes individuals slow, normal or rapid metabolisers; it is a property of the individual's genotype.
@@ -108,9 +110,9 @@
 
 **ion pair** — A neutral complex formed between a charged drug and an endogenous organic ion of opposite charge. It can partition into the membrane and diffuse across, the proposed route for quaternary ammonium compounds.
 
-**Ka** — The absorption rate constant. See [[absorption-rate-constant]].
+**Ka** — The absorption rate constant. See *absorption rate constant*.
 
-**Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See [[renal-excretion-rate-constant]].
+**Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See *renal excretion rate constant*.
 
 **Km** — The Michaelis–Menten constant: the drug concentration at which a saturable process runs at half its maximum rate. It is a concentration, not a rate constant, and reflects the affinity of the drug for the enzyme.
 
@@ -162,7 +164,7 @@
 
 **peripheral (tissue) compartment** — In a two- or three-compartment model, a kinetic space that exchanges drug with the central compartment by first-order transfer but from which no elimination occurs.
 
-**permeability coefficient** — p = D·K/h, the velocity (cm·s⁻¹) at which a drug crosses unit area of a membrane per unit concentration gradient. It describes the membrane and the drug only. Multiplied by the available surface area it gives the permeability–surface-area product, p·A, a volume per time; the two are often confused, and only the product depends on anatomy.
+**permeability coefficient** — p = D·K_part/h, where K_part is the membrane/water partition coefficient, the velocity (cm·s⁻¹) at which a drug crosses unit area of a membrane per unit concentration gradient. It describes the membrane and the drug only. Multiplied by the available surface area it gives the permeability–surface-area product, p·A, a volume per time; the two are often confused, and only the product depends on anatomy.
 
 **pH-partition hypothesis** — The proposal that drugs are absorbed by passive diffusion in proportion to their unionised fraction at the local pH. A useful first guide that ignores surface area, residence time and lipid solubility.
 
@@ -228,7 +230,7 @@
 
 **volume of the central compartment** — Vp. The apparent volume of the rapidly equilibrating compartment, obtained as the dose divided by (A + B). It is smaller than the total apparent volume of distribution, and it is the volume a loading dose fills immediately.
 
-**Vp** — The volume of the central compartment. See [[volume-of-the-central-compartment]].
+**Vp** — The volume of the central compartment. See *volume of the central compartment*.
 
 **Wagner–Nelson method** — A method for determining the amount of drug absorbed at each time by mass balance, requiring only that the body behaves as one compartment and that elimination is first order. Because it assumes nothing about absorption, it can be used to decide whether absorption is first order or zero order.
 

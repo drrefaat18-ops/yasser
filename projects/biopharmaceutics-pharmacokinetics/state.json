@@ -46,15 +46,15 @@
    "kind": "design"
   },
   "intake": {
-   "approved_at": "2026-09-29T16:15:02Z",
+   "approved_at": "2026-09-29T20:48:34Z",
    "approved_by": "user",
-   "dec_id": "DEC-007",
-   "dec_row_sha256": "6103542cca3489522eeb5a2dd564d0cf6e299314ef69aa4ed4226308e71937e9",
+   "dec_id": "DEC-009",
+   "dec_row_sha256": "ef19bc87b37c42d644d84dbe351c1970d7cc2a866728136326f8ed104ca8015f",
    "files": {
     "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-    "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+    "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "kind": "intake"
@@ -71,21 +71,21 @@
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
     "design/chapter-plan.json": "a00f7dad21e0aae726d672901c6f802c4f93fa319bcf09d7358a850f5f45f83a",
     "rework/00-front-matter.md": "02b0af9a2ca7e4f12e47e87fb816c1e154abfec4ddf62dd33a61515c8092660d",
-    "rework/ch01.md": "7c34f350ca0980caca9d7f1cad6297e44fad28fd266fe93955dafd6b34c00e91",
-    "rework/ch02.md": "c0f3054a6c9ce5cc0cff9cb0fea3844c471095caec4073c20e402976beb9c109",
-    "rework/ch03.md": "443647538488ff0be3cc00b735bcff88e131d92db2b83d7eec3b3f9481d8cb24",
+    "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438",
+    "rework/ch02.md": "8658f13b92a5e907f5351c210936d3393e63b13ef582a07b424c2b99fd52f34b",
+    "rework/ch03.md": "df8a19748980a5b4c3fc3f49e42b8b38438209f0c694cc561ab40440c46eb956",
     "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc",
     "rework/ch05.md": "20b2bc537b4f9f149b86ec616a0825dbfde6f58944b9c39c382d8a9b3677f640",
-    "rework/ch06.md": "457e73c61e9d99c7fbfc609a84c92c990a674bb510aeb1362215736fcdd9b356",
-    "rework/ch07.md": "2858697faf95129dfa0c21063db9c6235f2cdf195cad7adf0af6e332d4e2ecd6",
-    "rework/ch08.md": "f11df2c91bd62ded11562b00e500e24dccd53576b1646383767509ac6a2e8511",
-    "rework/ch09.md": "62c50aa534045335982951d7431ae341acee3bff4d553c77422bc8fa4e4a001f",
-    "rework/ch10.md": "2ca0cb2946a04c8d29e13b6789167429fec64e7e455f4bf09aab9dbee105fa99",
+    "rework/ch06.md": "470fcea87efc40569bcc2d18fc79bd914ff967f99e23b361092af2beb90b112e",
+    "rework/ch07.md": "0f9d260d99f3c8032b38123c1c483a4b2e9fa694790d0a792e2728724c19853c",
+    "rework/ch08.md": "5b20ad5f0e4fad26a6007fcee6bc235b09f9261452f66d7c769dc34a011403aa",
+    "rework/ch09.md": "3ae2266b3d15d5009c9279434e21ce5ba3a20cfb22668c865bcb03575065daec",
+    "rework/ch10.md": "fef32071da76f4be169196b4f9142380714835259fed241957b84e3d056a9374",
     "rework/ch11.md": "a8ee84ec3a93ddf71a96cf47d98ab608ada6d435d4e335c5e51b47e7908ebbaa",
-    "rework/ch12.md": "a5decefc72e87dda4aa1806a32a6cc49c0630412c335aa92f282e33071c25c7b",
-    "rework/ch13.md": "2d33be9fcedb0dc69dd65bd41b955645a95dfedf83de04b483dc7f6df5d4f960",
-    "rework/ch14.md": "6d2e43a1faebfe9b4ef476fd697a3a76877eeb8d3c749cb45677bc7e053249c5",
-    "rework/errata-ledger.md": "7d68c9ccdf2841d8cac28c68f3acb46a8d546b2dc2837f3dcda4a60ef2371edb",
+    "rework/ch12.md": "558be0622904415a7ac3bf8c48e58cc06d3032284b8eea455771071101271b6e",
+    "rework/ch13.md": "f702d46b0bec073d773be3326067d59979080e36b78e52ddc53eb36f4157588e",
+    "rework/ch14.md": "b8c1bd21563c575aa5ba3662589e783092d7d17b8d43e288e3bb7686a2bfef13",
+    "rework/errata-ledger.md": "ea8cae7b50be1b08cd64c3cd866d5b80683c848e103a870ae8d60127d6f77fd5",
     "rework/figures/figures.json": "ab04db2712865c026a734d5e6aaeaa4f26fe08d36fa37e6dd1771e3137fe97c8",
     "rework/figures/src/ch01-compartment-models.svg": "09d45734bdcb860c06cbf9906c981dfc96994c3ae5d006a54f72b8cb7890b6de",
     "rework/figures/src/ch01-plasma-curve.svg": "58cc1fd2ef6e4f9ef066679afa9e69524655e7edc7c0a6c0faff8466d18e0365",
@@ -103,19 +103,19 @@
     "rework/figures/src/ch12-transport.svg": "1d4fc3c7d62dccd7ba6c9363fa4b123f9235e19958ed4aec8b60e4a0115b20a4",
     "rework/figures/src/ch13-rate-extent.svg": "1fcc7f71bbd61809705187cd47cb3455bb98b5c1f84eb8f38f32ff37996bfdf3",
     "rework/figures/src/ch14-noyes-whitney.svg": "24a2dbaf19ea6791a2ad2e1c4c1604daeeae9cc1f83af70fbde24c79e3f380b8",
-    "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
-    "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+    "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
+    "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "66d6b692c4c35a34714921b291005d0cc8addf01c0320ebee486e2fbd5c305ca",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "a3e129bb0818ad8482ca626abb7706bf7ba2ecb9efebea44689f33d02fb81d0c",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "e122c3d49cac3fc4fa25622a5d09c434eb7230993ae7e423ec74a960cf52cc67",
-    "build/build-report.json": "5bdf4919340c39233cb308a42e2d953853c9f2fbba9fb524a3961e725fc93dd9",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "631481f39defb1113318f3d8b56fe7f4fcaeb1144e3ab04fbb895d19c9bc1f0b",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "1e30e52ca0ae36787adff828eb0bb05bc4a166de21823a2596a69c0aaaaf023b",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "e4936b38e8861621398fce8c96ad668c88aa98b6faab9311026138e69904fbcf",
+    "build/build-report.json": "f48c8c34a5942a0f2f75198a6fe002c3d9891ed1e2ccde1775a26faed26a3b2d",
     "build/checkpoints/cover.png": "ace3380e6e2beeb592e52709b42c6ceb0a1f6760304501186acbe841c0c7c0ef",
     "build/checkpoints/first-chapter.png": "dac8054d1720dfadd24be8bc786fb33e5123dbbabd094c1cd8c1de7aa48d8723",
     "build/checkpoints/first-figure.png": "a42a8172bb6e7a8aa3c19b4ab71caeaa8556889991b9b698dfa0a77b035618a2",
-    "build/checkpoints/last.png": "6919056714833687e0aea7094dc3949c3f94a27eb08758a49150dfd5e3439c6b",
+    "build/checkpoints/last.png": "120c8a42f6650c160f0db8f6d1f2435d9f149e50e24434a540c3cdefee0b2adf",
     "rework/figures/out/ch01-compartment-models.png": "b363cf12fa0aa15645e0187d42f2512aca9c78359320474f1310fc2f2bb38761",
     "rework/figures/out/ch01-compartment-models.svg": "09d45734bdcb860c06cbf9906c981dfc96994c3ae5d006a54f72b8cb7890b6de",
     "rework/figures/out/ch01-plasma-curve.png": "b5b15ce59ed876d41d8d5c6a69538f63ddefe8835a7504a369710e2b0441ec92",
@@ -149,12 +149,12 @@
     "rework/figures/out/ch14-noyes-whitney.png": "0a62f54454fa9e03917fc8ae5e99ab5a4dd872e421af3ef4b576ae38f8e670a4",
     "rework/figures/out/ch14-noyes-whitney.svg": "24a2dbaf19ea6791a2ad2e1c4c1604daeeae9cc1f83af70fbde24c79e3f380b8"
    },
-   "page_count": 171,
+   "page_count": 173,
    "pdf_engine": "html",
    "stage": "build",
    "status": "ok",
-   "time": "2026-09-29T17:10:23Z",
-   "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4"
+   "time": "2026-09-29T20:52:58Z",
+   "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887"
   },
   "design": {
    "args": {},
@@ -166,7 +166,7 @@
     "evaluation/fixes.md": "00ff94c43e5ad2d0483a20c749dbc6ff459152a1faf9b350fae883d3c604d065",
     "evaluation/report.md": "84e68dd8db87d699687e4fe58b0efb71175ad352c7a7b716f0fef4a38ed56720",
     "evaluation/scorecard.json": "4cdb05c322b4922f6eb0d4a364e39ec597faa0f6b559d6cd6423e356ff7e67eb",
-    "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+    "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
@@ -176,7 +176,7 @@
    },
    "stage": "design",
    "status": "ok",
-   "time": "2026-09-29T17:03:03Z",
+   "time": "2026-09-29T20:49:15Z",
    "tool_sha": "bd5bc1254bf30362049b8b7aba3b5c989eafc1c1",
    "total_budget": 50250
   },
@@ -210,7 +210,7 @@
    "rulings": {},
    "stage": "evaluate",
    "status": "ok",
-   "time": "2026-09-29T16:15:21Z",
+   "time": "2026-09-29T20:49:10Z",
    "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
   },
   "ingest": {
@@ -218,7 +218,7 @@
    "converter": "markitdown",
    "inputs": {
     "intake/Biopharmaceutics and Pharmacokinetics Portsaid.pdf": "3cfc215a8b569de440b4e11d79812ef7a0393cfa74b6a3502118bae4b15b9ff9",
-    "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f"
+    "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19"
    },
    "outputs": {
     "ingest/conversion-report.json": "1c79469cb828530ba786c33d233929b6116c656dc635b4ff7f63a89ee685bbd1",
@@ -233,7 +233,7 @@
    ],
    "stage": "ingest",
    "status": "ok",
-   "time": "2026-09-29T16:15:17Z",
+   "time": "2026-09-29T20:49:05Z",
    "tool_sha": "bd5bc1254bf30362049b8b7aba3b5c989eafc1c1"
   },
   "intake": {
@@ -247,7 +247,7 @@
     "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-    "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+    "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "questionnaire_ids": [
@@ -267,7 +267,7 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-09-29T16:15:01Z",
+   "time": "2026-09-29T20:48:33Z",
    "tool_sha": "f8ac1789552998ac313c029eb9ba0ce91eb1326a"
   },
   "new": {
@@ -292,7 +292,7 @@
   },
   "rework": {
    "args": {},
-   "checker_report_sha256": "df8572cba13bf9036846d24b84997e124de86d3fe4b81a7df57a9caf5be26032",
+   "checker_report_sha256": "8f07fa0d475e27ae4b9c28f6f3cd95974dbd9824e303936578fb69091feffddb",
    "inputs": {
     "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -301,26 +301,26 @@
     "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
     "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-    "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+    "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
     "rework/00-front-matter.md": "02b0af9a2ca7e4f12e47e87fb816c1e154abfec4ddf62dd33a61515c8092660d",
-    "rework/ch01.md": "7c34f350ca0980caca9d7f1cad6297e44fad28fd266fe93955dafd6b34c00e91",
-    "rework/ch02.md": "c0f3054a6c9ce5cc0cff9cb0fea3844c471095caec4073c20e402976beb9c109",
-    "rework/ch03.md": "443647538488ff0be3cc00b735bcff88e131d92db2b83d7eec3b3f9481d8cb24",
+    "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438",
+    "rework/ch02.md": "8658f13b92a5e907f5351c210936d3393e63b13ef582a07b424c2b99fd52f34b",
+    "rework/ch03.md": "df8a19748980a5b4c3fc3f49e42b8b38438209f0c694cc561ab40440c46eb956",
     "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc",
     "rework/ch05.md": "20b2bc537b4f9f149b86ec616a0825dbfde6f58944b9c39c382d8a9b3677f640",
-    "rework/ch06.md": "457e73c61e9d99c7fbfc609a84c92c990a674bb510aeb1362215736fcdd9b356",
-    "rework/ch07.md": "2858697faf95129dfa0c21063db9c6235f2cdf195cad7adf0af6e332d4e2ecd6",
-    "rework/ch08.md": "f11df2c91bd62ded11562b00e500e24dccd53576b1646383767509ac6a2e8511",
-    "rework/ch09.md": "62c50aa534045335982951d7431ae341acee3bff4d553c77422bc8fa4e4a001f",
-    "rework/ch10.md": "2ca0cb2946a04c8d29e13b6789167429fec64e7e455f4bf09aab9dbee105fa99",
+    "rework/ch06.md": "470fcea87efc40569bcc2d18fc79bd914ff967f99e23b361092af2beb90b112e",
+    "rework/ch07.md": "0f9d260d99f3c8032b38123c1c483a4b2e9fa694790d0a792e2728724c19853c",
+    "rework/ch08.md": "5b20ad5f0e4fad26a6007fcee6bc235b09f9261452f66d7c769dc34a011403aa",
+    "rework/ch09.md": "3ae2266b3d15d5009c9279434e21ce5ba3a20cfb22668c865bcb03575065daec",
+    "rework/ch10.md": "fef32071da76f4be169196b4f9142380714835259fed241957b84e3d056a9374",
     "rework/ch11.md": "a8ee84ec3a93ddf71a96cf47d98ab608ada6d435d4e335c5e51b47e7908ebbaa",
-    "rework/ch12.md": "a5decefc72e87dda4aa1806a32a6cc49c0630412c335aa92f282e33071c25c7b",
-    "rework/ch13.md": "2d33be9fcedb0dc69dd65bd41b955645a95dfedf83de04b483dc7f6df5d4f960",
-    "rework/ch14.md": "6d2e43a1faebfe9b4ef476fd697a3a76877eeb8d3c749cb45677bc7e053249c5",
-    "rework/errata-ledger.md": "7d68c9ccdf2841d8cac28c68f3acb46a8d546b2dc2837f3dcda4a60ef2371edb",
+    "rework/ch12.md": "558be0622904415a7ac3bf8c48e58cc06d3032284b8eea455771071101271b6e",
+    "rework/ch13.md": "f702d46b0bec073d773be3326067d59979080e36b78e52ddc53eb36f4157588e",
+    "rework/ch14.md": "b8c1bd21563c575aa5ba3662589e783092d7d17b8d43e288e3bb7686a2bfef13",
+    "rework/errata-ledger.md": "ea8cae7b50be1b08cd64c3cd866d5b80683c848e103a870ae8d60127d6f77fd5",
     "rework/figures/figures.json": "ab04db2712865c026a734d5e6aaeaa4f26fe08d36fa37e6dd1771e3137fe97c8",
     "rework/figures/src/ch01-compartment-models.svg": "09d45734bdcb860c06cbf9906c981dfc96994c3ae5d006a54f72b8cb7890b6de",
     "rework/figures/src/ch01-plasma-curve.svg": "58cc1fd2ef6e4f9ef066679afa9e69524655e7edc7c0a6c0faff8466d18e0365",
@@ -338,19 +338,19 @@
     "rework/figures/src/ch12-transport.svg": "1d4fc3c7d62dccd7ba6c9363fa4b123f9235e19958ed4aec8b60e4a0115b20a4",
     "rework/figures/src/ch13-rate-extent.svg": "1fcc7f71bbd61809705187cd47cb3455bb98b5c1f84eb8f38f32ff37996bfdf3",
     "rework/figures/src/ch14-noyes-whitney.svg": "24a2dbaf19ea6791a2ad2e1c4c1604daeeae9cc1f83af70fbde24c79e3f380b8",
-    "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8"
+    "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237"
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-29T17:08:17Z",
-   "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
-   "total_words": 51161,
+   "time": "2026-09-29T20:50:23Z",
+   "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
+   "total_words": 52187,
    "units": {
     "ch01": {
      "args": {
       "unit": "ch01"
      },
-     "checker_report_sha256": "98da102c93e0dfada5e1728d02d125894cf8e2c8cf43ad8f2de976f8ac6db4fa",
+     "checker_report_sha256": "8145588e6a800643750c96d75ce02423d829a24c88e500962f49cf48e0c197b2",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -358,17 +358,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch01.md": "7c34f350ca0980caca9d7f1cad6297e44fad28fd266fe93955dafd6b34c00e91"
+      "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:37Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:33Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -379,7 +379,7 @@
      "args": {
       "unit": "ch02"
      },
-     "checker_report_sha256": "3fa6c062b973cbd93651ed1d1419aad52e9f9d98836658d7cce0a7e57dcc92c9",
+     "checker_report_sha256": "6686cfaf3a61fae5be2530ae71e4f97497ab6a45b3988dccf4d69fc7b3c9a443",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -387,17 +387,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch02.md": "c0f3054a6c9ce5cc0cff9cb0fea3844c471095caec4073c20e402976beb9c109"
+      "rework/ch02.md": "8658f13b92a5e907f5351c210936d3393e63b13ef582a07b424c2b99fd52f34b"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:39Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:36Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -408,7 +408,7 @@
      "args": {
       "unit": "ch03"
      },
-     "checker_report_sha256": "51060e14f305f34a269a8f821a86f6347dc5f12b5ea9cce2c58076d2c82b3281",
+     "checker_report_sha256": "8613a28fe3ef9dfec3ab13f849c239a6bfe8e15483b25770f1dad5977901c7b1",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -416,17 +416,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch03.md": "443647538488ff0be3cc00b735bcff88e131d92db2b83d7eec3b3f9481d8cb24"
+      "rework/ch03.md": "df8a19748980a5b4c3fc3f49e42b8b38438209f0c694cc561ab40440c46eb956"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:42Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:40Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -437,7 +437,7 @@
      "args": {
       "unit": "ch04"
      },
-     "checker_report_sha256": "7acd1e332f84130dab7d83e69ab30d8438e6fb1a33bbc46cfc1136dbd59881ca",
+     "checker_report_sha256": "e12fc14dea742f04563fe0597f76e68331bc2465b44f9a376a4c9446f0ec3db7",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -445,17 +445,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:45Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:43Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -466,7 +466,7 @@
      "args": {
       "unit": "ch05"
      },
-     "checker_report_sha256": "fa88539439856fe842537e797c4e6d7a331bf1931f5c05f01cdfcfb876ed07f1",
+     "checker_report_sha256": "bde8b16a9c2ee2eb7ae3f9a89da5ce3a7b8ff451167efae1b41365b543b8da91",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -474,17 +474,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch05.md": "20b2bc537b4f9f149b86ec616a0825dbfde6f58944b9c39c382d8a9b3677f640"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:48Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:46Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -495,7 +495,7 @@
      "args": {
       "unit": "ch06"
      },
-     "checker_report_sha256": "78cd6cf2d5a1f6d3723f826791ecd66dc052759aa4c8732f5d5794ffcb05c974",
+     "checker_report_sha256": "15341937e9cb0b4c94c8709dff2392cdc8565391489fb85dff4ebe79987f9be2",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -503,17 +503,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch06.md": "457e73c61e9d99c7fbfc609a84c92c990a674bb510aeb1362215736fcdd9b356"
+      "rework/ch06.md": "470fcea87efc40569bcc2d18fc79bd914ff967f99e23b361092af2beb90b112e"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:51Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:50Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -524,7 +524,7 @@
      "args": {
       "unit": "ch07"
      },
-     "checker_report_sha256": "783c35226808b3d741781a05b5bd71e736bdfad967428c305c578aefcb143707",
+     "checker_report_sha256": "837b885fec98ab5109e093a30447a2c138e00c0fbd3179acf7b1246fd428d460",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -532,17 +532,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch07.md": "2858697faf95129dfa0c21063db9c6235f2cdf195cad7adf0af6e332d4e2ecd6"
+      "rework/ch07.md": "0f9d260d99f3c8032b38123c1c483a4b2e9fa694790d0a792e2728724c19853c"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:53Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:53Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -553,7 +553,7 @@
      "args": {
       "unit": "ch08"
      },
-     "checker_report_sha256": "d73bc158b9183e42fa26ab02828a47062590b2cd2f7456c440e5fb791f03d86a",
+     "checker_report_sha256": "e57badc55e4830ba0709edd3c32cee3f5ee23dd459d52d66ec270f7f0971acfe",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -561,28 +561,28 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch08.md": "f11df2c91bd62ded11562b00e500e24dccd53576b1646383767509ac6a2e8511"
+      "rework/ch08.md": "5b20ad5f0e4fad26a6007fcee6bc235b09f9261452f66d7c769dc34a011403aa"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:56Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:49:58Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
-      "exists": 0,
+      "exists": 2,
       "no_doi_allowed": 2,
-      "total": 2
+      "total": 4
      }
     },
     "ch09": {
      "args": {
       "unit": "ch09"
      },
-     "checker_report_sha256": "f27fa04fbfbeb840d065851fc085d71e5fd328fe9059ee87bfb8f556e427e2b3",
+     "checker_report_sha256": "a76ac477cfa9a87d9ff601072b8ddec1c342a1bfd5089fc25803f91baf2a4ee5",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -590,17 +590,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch09.md": "62c50aa534045335982951d7431ae341acee3bff4d553c77422bc8fa4e4a001f"
+      "rework/ch09.md": "3ae2266b3d15d5009c9279434e21ce5ba3a20cfb22668c865bcb03575065daec"
      },
      "status": "ok",
-     "time": "2026-09-29T17:07:59Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:50:02Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -611,7 +611,7 @@
      "args": {
       "unit": "ch10"
      },
-     "checker_report_sha256": "35d7a995d7b986c0030a417bbec9b4cf13531765edb3680aefcae4e452e153e0",
+     "checker_report_sha256": "1cf8b41da9b866db0f781de2bd3cf3ce100395d6a1e677d0dd436c0489362535",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -619,17 +619,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch10.md": "2ca0cb2946a04c8d29e13b6789167429fec64e7e455f4bf09aab9dbee105fa99"
+      "rework/ch10.md": "fef32071da76f4be169196b4f9142380714835259fed241957b84e3d056a9374"
      },
      "status": "ok",
-     "time": "2026-09-29T17:08:02Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:50:05Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -640,7 +640,7 @@
      "args": {
       "unit": "ch11"
      },
-     "checker_report_sha256": "d7d4ec7342fe915e898bede00f3410d2f487f56d03391e564bce75e7e546e21f",
+     "checker_report_sha256": "514f9acf5f12cfa2a36dda94f6785090c49a7324653348dc40527da275f7fb26",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -648,17 +648,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
       "rework/ch11.md": "a8ee84ec3a93ddf71a96cf47d98ab608ada6d435d4e335c5e51b47e7908ebbaa"
      },
      "status": "ok",
-     "time": "2026-09-29T17:08:05Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:50:09Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -669,7 +669,7 @@
      "args": {
       "unit": "ch12"
      },
-     "checker_report_sha256": "c197cae6487e4fec293c010853d63cfd402aa22c28b204babda6f49216228fd2",
+     "checker_report_sha256": "4dbeb17474c248235bbb4b3a1f2514bb1fb917aba64b2e319c94eff1bc5d46a7",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -677,17 +677,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch12.md": "a5decefc72e87dda4aa1806a32a6cc49c0630412c335aa92f282e33071c25c7b"
+      "rework/ch12.md": "558be0622904415a7ac3bf8c48e58cc06d3032284b8eea455771071101271b6e"
      },
      "status": "ok",
-     "time": "2026-09-29T17:08:07Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:50:12Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -698,7 +698,7 @@
      "args": {
       "unit": "ch13"
      },
-     "checker_report_sha256": "24cfc0869ddb56fb134390bc6de29c3711cca554f552fc38e32733a49748b85f",
+     "checker_report_sha256": "1e516fc1cba73f35631d4f323d8c208b78063e8e70865ea9d1f056498b55266e",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -706,17 +706,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch13.md": "2d33be9fcedb0dc69dd65bd41b955645a95dfedf83de04b483dc7f6df5d4f960"
+      "rework/ch13.md": "f702d46b0bec073d773be3326067d59979080e36b78e52ddc53eb36f4157588e"
      },
      "status": "ok",
-     "time": "2026-09-29T17:08:11Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:50:16Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 1,
       "no_doi_allowed": 5,
@@ -727,7 +727,7 @@
      "args": {
       "unit": "ch14"
      },
-     "checker_report_sha256": "67dae1947b9f0f7603ff72dc36c41c0a9459fa07e7a73c032d2236aa0259ae96",
+     "checker_report_sha256": "1eac9dfc99c8d4c4233cd14636ae769662eb08bc036d97cf54d3d91d8023e975",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -735,17 +735,17 @@
       "design/design.md": "34587a65e6468860e01826bf656c5bb0d8e88a892a86909203f5ae6c6d123966",
       "design/errata-seed.md": "35bc61dec0738cd315e32f40fa2c55bbb2b4bd9ac7cf50b046490d4da98a2a39",
       "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
-      "rework/glossary.md": "92be5ca8121d4e10e6384cb22ee0c89e9c671b8fd77d43ddc8b0f0d7b1ebe0b8",
+      "rework/glossary.md": "6d0f3abc6476b5a47114c2070f83d800e6bd5fea997010f6be5294bd64c33237",
       "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
-      "template.json": "2c0b778314048965a9b44d91eeb8dc4523c09390b09997dc04444fae79c3eb7f",
+      "template.json": "f50df3e89fd99d0f86cc04f05b3390ba9601846f45eeeadb6da4bfc6512fab19",
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch14.md": "6d2e43a1faebfe9b4ef476fd697a3a76877eeb8d3c749cb45677bc7e053249c5"
+      "rework/ch14.md": "b8c1bd21563c575aa5ba3662589e783092d7d17b8d43e288e3bb7686a2bfef13"
      },
      "status": "ok",
-     "time": "2026-09-29T17:08:14Z",
-     "tool_sha": "724162e6fab3c13e5c713265420219ad505ab7c4",
+     "time": "2026-09-29T20:50:19Z",
+     "tool_sha": "9adb99207e133bca04d0cdfe8bb46882ed990887",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 4,
