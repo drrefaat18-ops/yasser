@@ -39,7 +39,7 @@
    "id": "ch03",
    "file": "ch03.md",
    "title": "One Compartment, IV Bolus: Urine Data",
-   "word_budget": 2800,
+   "word_budget": 3200,
    "part_id": "P1",
    "source_refs": []
   },
@@ -47,7 +47,7 @@
    "id": "ch04",
    "file": "ch04.md",
    "title": "Two Compartment, IV Bolus: Plasma Data",
-   "word_budget": 3200,
+   "word_budget": 3400,
    "part_id": "P2",
    "source_refs": []
   },
@@ -55,7 +55,7 @@
    "id": "ch05",
    "file": "ch05.md",
    "title": "Intravenous Infusion",
-   "word_budget": 3000,
+   "word_budget": 3100,
    "part_id": "P2",
    "source_refs": []
   },
@@ -63,7 +63,7 @@
    "id": "ch06",
    "file": "ch06.md",
    "title": "Clearance",
-   "word_budget": 3400,
+   "word_budget": 3500,
    "part_id": "P2",
    "source_refs": []
   },
@@ -79,7 +79,7 @@
    "id": "ch08",
    "file": "ch08.md",
    "title": "Multiple Dose Regimens",
-   "word_budget": 3450,
+   "word_budget": 3900,
    "part_id": "P2",
    "source_refs": []
   },
@@ -87,7 +87,7 @@
    "id": "ch09",
    "file": "ch09.md",
    "title": "Non-Compartmental Analysis",
-   "word_budget": 2800,
+   "word_budget": 3050,
    "part_id": "P2",
    "source_refs": []
   },
@@ -95,7 +95,7 @@
    "id": "ch10",
    "file": "ch10.md",
    "title": "Non-Linear Pharmacokinetics",
-   "word_budget": 2700,
+   "word_budget": 3050,
    "part_id": "P2",
    "source_refs": []
   },
@@ -103,7 +103,7 @@
    "id": "ch11",
    "file": "ch11.md",
    "title": "Pharmacokinetics of Metabolites",
-   "word_budget": 2900,
+   "word_budget": 3150,
    "part_id": "P2",
    "source_refs": []
   },
@@ -127,7 +127,7 @@
    "id": "ch14",
    "file": "ch14.md",
    "title": "Dissolution",
-   "word_budget": 3400,
+   "word_budget": 3600,
    "part_id": "P3",
    "source_refs": []
   }

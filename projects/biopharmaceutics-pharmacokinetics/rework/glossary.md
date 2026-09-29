@@ -8,7 +8,7 @@
 
 **accumulation half-life** — t½,acc. The time taken to reach half of the steady-state level on a multiple dose regimen, t½·[1 + 3.32·log(Ka/(Ka − K))] for Ka > K. For repeated intravenous doses it equals the elimination half-life.
 
-**accumulation index** — R. The ratio of the steady-state peak to the peak after the first dose, 1/(1 − e^(−Kτ)). It depends on K and the dosage interval, not on the dose; R = 1 means no accumulation.
+**accumulation index** — Rac. The ratio of the steady-state peak to the peak after the first dose, 1/(1 − e^(−Kτ)). It depends on K and the dosage interval, not on the dose; Rac = 1 means no accumulation. It is written Rac to keep it apart from R, the infusion or dosing rate of Chapters 5 and 10.
 
 **active metabolite** — A metabolite with pharmacological activity of its own that contributes to the response, such as norfluoxetine from fluoxetine or desipramine from imipramine.
 
@@ -190,7 +190,7 @@
 
 **renal excretion rate constant** — Ke. The first-order rate constant for excretion of intact drug into the urine, so that dDu/dt = Ke·D_B. It equals fe × K, and is always less than or equal to K.
 
-**residual concentration** — The difference Cp − Cp′ between a measured concentration and the value extrapolated from the terminal line at the same time. Its logarithm falls linearly with time during the distribution phase.
+**residual concentration** — The difference between a measured concentration and the value extrapolated from the terminal line at the same time, taken in whichever order keeps it positive. After an IV bolus the early measured points lie *above* the extrapolated line, so the residual is Cp − Cp′ and its slope gives the distribution constant (Chapter 4). After an oral dose they lie *below* it, so the residual is Cp′ − Cp and its slope gives Ka (Chapter 7). Subtracting the wrong way round gives negative values, whose logarithm does not exist. Either way the logarithm of the residual falls linearly with time over the phase being resolved.
 
 **sink condition** — The state in which the bulk concentration of dissolved drug stays far below its solubility (C ≪ Cs), so the dissolution rate is set by Cs and not by how much has already dissolved.
 

@@ -281,7 +281,7 @@ D) L·h⁻¹
 
 ### Exercises
 
-**E1.1** [LO2] A drug has an MEC of 4 µg·mL⁻¹ and an MTC of 12 µg·mL⁻¹. After an oral dose, Cpmax is 10 µg·mL⁻¹ at tmax = 2 h. State whether the dose is therapeutic, and give the therapeutic index on a concentration basis.
+**E1.1** [LO2] A drug has an MEC of 4 µg·mL⁻¹ and an MTC of 12 µg·mL⁻¹. After an oral dose, Cpmax is 10 µg·mL⁻¹ at tmax = 2 h. State whether the dose is therapeutic, and give the ratio of MTC to MEC.
 
 **E1.2** [LO2] The same drug is given at twice the dose. Predict what happens to Cpmax, to tmax and to AUC, and say which of the three you can predict with confidence from Chapter 1 alone.
 
@@ -293,7 +293,7 @@ D) L·h⁻¹
 
 **Q2. C** — AUC is proportional to the amount reaching the circulation, so it measures extent. tmax and Ka describe rate. Cpmax depends on both, so it measures neither alone.
 
-**Q3. A** — The therapeutic index is TD50/ED50 = 400/50 = *8*, a dimensionless ratio. Option C is the therapeutic *range*, the distractor this question exists to catch. Option B is MTC/MEC = 5, a concentration-based index, but the question gives TD50 and ED50.
+**Q3. A** — The therapeutic index is TD50/ED50 = 400/50 = *8*, a dimensionless ratio. Option C is the therapeutic *range*, the distractor this question exists to catch. Option B is MTC/MEC = 5, the therapeutic concentration ratio, which is a different quantity; the question gives TD50 and ED50.
 
 **Q4. A** — A distribution phase is time spent distributing; assumption (b) says that time is zero. B, C and D can all still hold in a two-compartment drug.
 
@@ -915,11 +915,11 @@ B) Ke
 C) The total elimination rate constant
 D) Du∞
 
-**Q10.** [LO2] For a drug eliminated by zero-order kinetics, the appropriate method is:
-A) Sigma-minus only
-B) Either method equally
-C) The urinary excretion rate method
-D) Neither, since urine data require first-order elimination
+**Q10.** [LO2] A drug is eliminated by zero-order kinetics. Of the two urinary methods of Section 3.2:
+A) Both still apply, because urine data are model-free
+B) Sigma-minus applies, but the excretion rate method does not
+C) Neither applies, because both are derived from first-order elimination
+D) The excretion rate method applies, because it plots the observed rate
 
 ### Exercises
 
@@ -949,7 +949,7 @@ D) Neither, since urine data require first-order elimination
 
 **Q9. B** — The sigma-minus plot contains no term in Ke: its intercept is Du∞ and its slope is −K/2.303. Ke can still be found afterwards from fe, but not from the plot.
 
-**Q10. C** — The excretion rate method assumes nothing about the order, since it plots the observed rate. Sigma-minus is derived from the first-order integral and fails for zero order.
+**Q10. C** — Equations 3.2 and 3.3 both substitute D_B = D_B⁰·e^(−Kt) and depend on a straight semilogarithmic line. Under zero-order elimination neither line is straight, so neither method yields K or a half-life. Option D is the trap: the observed excretion rate can still be plotted and described, but that descriptive plot is not the semilogarithmic method of this section.
 
 ---
 
@@ -1060,9 +1060,9 @@ Two constants govern transfer. **K₁₂** carries drug from central to tissue, 
 
 dCt/dt = K₁₂ · Cp − K₂₁ · Ct
 
-Concentrations are amounts divided by the volume of their own compartment. Cp = Dp/Vp in the central compartment, and Ct = Dt/Vt in the tissue compartment. **Vp**, the **volume of the central compartment**, is the one that can be measured from plasma data alone.
+Concentrations are amounts divided by the volume of their own compartment. Cp = Dp/Vp in the central compartment, and Ct = Dt/Vt in the tissue compartment. **Vp**, the **volume of the central compartment**, is the one measured directly from plasma data, as D_B⁰/(A + B).
 
-> **Watch the Units:** K, K₁₂ and K₂₁ are all first-order rate constants with units of reciprocal time. They are not interchangeable and they are not additive in any simple way. Vp and Vt are volumes, and Vt cannot be obtained from plasma data, because no plasma sample ever sees the tissue compartment directly.
+> **Watch the Units:** K, K₁₂ and K₂₁ are all first-order rate constants with units of reciprocal time. They are not interchangeable and they are not additive in any simple way. Vp and Vt are volumes. No plasma sample ever sees the tissue compartment directly, but Vt is not therefore unknowable: at distribution equilibrium the drug moving each way carries the same intercompartmental clearance, K₁₂·Vp = K₂₁·Vt, so Vt = Vp·K₁₂/K₂₁ once the microconstants are recovered. What plasma data cannot give is a *measured* tissue concentration.
 
 ## 4.3 The Biexponential Equation
 
@@ -1261,11 +1261,11 @@ B) A belongs to the elimination phase and B to the distribution phase.
 C) Their difference gives the concentration at time zero.
 D) They are the zero-time intercepts of the two exponential terms, and their sum is Cp⁰.
 
-**Q9.** [LO1] Which quantity cannot be determined from plasma data alone in this model?
-A) K₁₂
-B) K₂₁
-C) Vt, the volume of the tissue compartment
-D) Vp, the volume of the central compartment
+**Q9.** [LO1] Example 4.1 gives Vp = 5.0 L, K₁₂ = 0.780 h⁻¹ and K₂₁ = 0.608 h⁻¹. The volume of the tissue compartment is:
+A) 3.90 L
+B) 5.00 L
+C) 6.41 L
+D) Not obtainable from plasma data
 
 **Q10.** [LO5] A two-compartment drug has b = 0.1 h⁻¹ and K = 0.4 h⁻¹. A washout period between study arms should be based on:
 A) 0.693/K, because K describes true elimination
@@ -1299,7 +1299,7 @@ D) K₁₂, because distribution controls the time course
 
 **Q8. D** — Setting t = 0 in Equation 4.1 gives Cp⁰ = A + B. Option B reverses them: A belongs to the fast distribution term.
 
-**Q9. C** — No plasma sample measures the tissue compartment, so Vt is inaccessible from plasma data. K₁₂ and K₂₁ are still obtainable, because they shape the plasma curve itself.
+**Q9. C** — K₁₂·Vp = K₂₁·Vt at equilibrium, so Vt = 5.0 × 0.780 ÷ 0.608 = 6.41 L. Option A inverts the ratio. Option D is the common belief that the tissue compartment is unmeasurable: no plasma sample sees it, but its volume follows from the microconstants the plasma curve does give.
 
 **Q10. B** — A washout must let concentrations decay to negligible levels, and that is governed by the slowest phase. Here 0.693/b = 6.9 h against 0.693/K = 1.7 h, so basing the washout on K would leave carry-over into the next arm.
 
@@ -1369,7 +1369,7 @@ K = (1.2 × 0.15) ÷ 0.4125 = 0.18 ÷ 0.4125 = 0.436 h⁻¹
 
 *Which one did the colleague quote?* 4.6 h is 0.693/b, the terminal half-life.
 
-*What could go wrong.* Used as an elimination half-life it understates the body's clearing capacity by a factor of about three, so any dosing interval or infusion rate derived from it would deliver far more drug than intended and the drug would accumulate.
+*What could go wrong.* Used as an elimination half-life it understates clearance by a factor of about three, because Cl = 0.693·Vp/t½ falls as the half-life quoted rises. An infusion rate set from it would be roughly a third of what the patient needs, and a dosing interval chosen from it would be too long: the error *underdoses*. The terminal half-life has its own proper uses — it is the one to quote for a washout period, or for how long drug lingers after the last dose — and the mistake is not using it but using it where K belongs.
 
 *Answer.* K = 0.436 h⁻¹, 0.693/K = 1.59 h and 0.693/b = 4.62 h. The quoted figure is the terminal half-life, which is correct for predicting persistence and washout but wrong for estimating clearance.
 
@@ -2111,7 +2111,7 @@ The amount remaining in the gut falls exponentially:
 
 D_GI = D₀ · e^(−Ka·t)
 
-where **Ka** is the **absorption rate constant** and D₀ is the oral dose. The rate at which drug enters the body is F·Ka·D_GI, where F is the fraction of the dose absorbed.
+where **Ka** is the **absorption rate constant** and D₀ is the oral dose. The rate at which drug enters the body is F·Ka·D_GI, where F is the **bioavailability**: the fraction of the dose reaching the systemic circulation intact. It is not the fraction absorbed across the gut wall, which Chapter 13 calls fa. F is smaller than fa whenever the gut wall or the liver removes drug on the first pass, and Chapter 13 separates them as F = fa × Fg × Fh.
 
 ## 7.2 The Shape of the Oral Curve
 
@@ -2325,7 +2325,7 @@ The middle row is the one worth dwelling on. Absorbing a drug faster raises the 
 
 ## Check Your Understanding
 
-**Q1.** [LO2] In the equation Cp = A·(e^(−Kt) − e^(−Ka·t)), the slope of the terminal straight portion on semilog axes gives:
+**Q1.** [LO2] In the equation Cp = A·(e^(−Kt) − e^(−Ka·t)), with Ka > K, the slope of the terminal straight portion on semilog axes gives:
 A) −K/2.303
 B) Ka − K
 C) Ka
@@ -2395,7 +2395,7 @@ D) X is eliminated more slowly than Y.
 
 ## Answers and Worked Solutions
 
-**Q1. A** — By the terminal phase the absorption term has decayed, leaving Cp = A·e^(−Kt), whose base-10 logarithmic slope is −K/2.303. Option D is the slope of the residual line.
+**Q1. A** — With Ka > K the absorption term decays first, leaving Cp = A·e^(−Kt), whose base-10 logarithmic slope is −K/2.303. The condition in the stem is doing real work: under flip-flop kinetics, where Ka < K, the slower constant is Ka and option D would be right instead. Option D is also the slope of the residual line.
 
 **Q2. D** — An osmotic pump releases drug at a constant rate set by the device, not by how much remains, which is the definition of zero order. The other three dissolve rapidly and deliver a constant *fraction* per unit time.
 
@@ -2541,13 +2541,13 @@ That is a geometric series. Its sum is D₀(1 − fⁿ)/(1 − f). As n grows, f
 
 > **Key Equation:** Equation 8.1 — the accumulation index
 >
-> $$R = \frac{C_{ss,max}}{C_{max,1}} = \frac{1}{1 - e^{-K\tau}}$$
+> $$R_{ac} = \frac{C_{ss,max}}{C_{max,1}} = \frac{1}{1 - e^{-K\tau}}$$
 >
 > where Cmax,1 is the peak after the first dose, D₀/Vd, and Css,max is the peak at steady state.
 
-The **accumulation index**, R, measures how much higher the steady-state peak is than the first peak. R = 1 means no accumulation. R > 1 means the drug accumulates. Like f, it depends on K and τ and not on the dose.
+The **accumulation index**, Rac, measures how much higher the steady-state peak is than the first peak. It is written Rac, not R, because R is the infusion or dosing *rate* in Chapters 5 and 10 and the two must not share a letter. Rac = 1 means no accumulation. Rac > 1 means the drug accumulates. Like f, it depends on K and τ and not on the dose.
 
-Consider a drug given once every half-life, so that Kτ = 0.693 and f = 0.5. Then R = 1/(1 − 0.5) = 2. The steady-state peak is twice the first peak. Give the same drug every two half-lives and f = 0.25, so R = 1.33. Halving the frequency cut the accumulation from twofold to one third.
+Consider a drug given once every half-life, so that Kτ = 0.693 and f = 0.5. Then Rac = 1/(1 − 0.5) = 2. The steady-state peak is twice the first peak. Give the same drug every two half-lives and f = 0.25, so Rac = 1.33. Halving the frequency cut the accumulation from twofold to one third.
 
 > **Watch the Units:** K and τ must be in the same time unit, because their product sits in an exponent. An exponent must be a pure number. K = 0.231 h⁻¹ with τ = 6 h gives Kτ = 1.39. Entering τ as 360 min with K still in h⁻¹ gives Kτ = 83, a fraction remaining of essentially zero and an accumulation index of exactly 1. The answer looks reasonable and is wrong.
 
@@ -2595,7 +2595,7 @@ For repeated intravenous doses, the accumulation half-life equals the eliminatio
 
 The assumption Ka > K is not decoration. If Ka < K, then Ka − K is negative and the logarithm has no real value. The derivation then fails at Step 5, because the slower exponential is now the absorption one and it is the elimination term that should have been dropped. This is the flip-flop situation, in which the terminal slope of the curve reflects absorption rather than elimination. Equation 8.2 must not be used there.
 
-> **Common Mistake:** Shortening the interval to reach steady state sooner. The time to steady state is set by the half-life. Doubling the dose, or halving the interval, raises the plateau without bringing it any closer. If a drug is given once every half-life, reaching 99% of steady state takes 6.65 half-lives, and so about seven doses, whatever the size of each dose.
+> **Common Mistake:** Shortening the interval to reach steady state sooner. The time to steady state is set by the rate constants, not by the size or the frequency of the dose: doubling the dose, or halving the interval, raises the plateau without bringing it any closer. For an intravenous regimen the elimination half-life sets it alone, and reaching 99% takes 6.65 half-lives, about seven doses if the drug is given once every half-life. After oral doses absorption enters too, so the approach is slower than t½ alone predicts, and Equation 8.2 estimates it — but it is still independent of how much is given.
 
 ## 8.5 Amounts and Concentrations at Steady State
 
@@ -2686,8 +2686,8 @@ The designer fixes τ first, from the half-life and the width of the therapeutic
 ## Key Takeaways
 - Repeated doses accumulate whenever part of the previous dose remains when the next is given.
 - The fraction of a dose left after one interval is f = e^(−Kτ); it depends on K and τ, not on the dose.
-- The accumulation index is R = 1/(1 − e^(−Kτ)); R = 2 when the drug is given once every half-life.
-- The accumulation half-life is t½·[1 + 3.32·log(Ka/(Ka − K))], valid for Ka > K.
+- The accumulation index is Rac = 1/(1 − e^(−Kτ)); Rac = 2 when the drug is given once every half-life.
+- The accumulation half-life is approximately t½·[1 + 3.32·log(Ka/(Ka − K))]. It needs Ka > K, and it is close only when Ka ≫ K; at Ka = 2K it overstates the true time by about 13%.
 - For IV dosing Ka → ∞, log 1 = 0, and the accumulation half-life equals the elimination half-life.
 - Time to steady state depends on the half-life only; 95% at 4.32 half-lives and 99% at 6.65.
 - At steady state D_max = D₀/(1 − f), D_min = D_max·f, and their difference is one dose.
@@ -2758,9 +2758,9 @@ D) The accumulation index is doubled
 
 ### Exercises
 
-**E8.1** [LO5] For clindamycin, DeHaan and co-workers reported K = 0.247 h⁻¹, t½ = 2.81 h and Vd = 43.9 L per 1.73 m². A patient of 1.73 m² takes 150 mg orally every 6 hours for a week, and the drug is completely absorbed. Calculate the average steady-state concentration, and state why a week of dosing is enough to call it steady state.
+**E8.1** [LO5] For clindamycin the source notes attribute K = 0.247 h⁻¹, t½ = 2.81 h and Vd = 43.9 L per 1.73 m² to DeHaan and co-workers, without a citation this edition could trace; they are used here as a dataset, not as a source to cite. A patient of 1.73 m² takes 150 mg orally every 6 hours for a week, and the drug is completely absorbed. Calculate the average steady-state concentration, and state why a week of dosing is enough to call it steady state.
 
-**E8.2** [LO5] Regamey and associates reported an elimination half-life of 2.15 h for tobramycin and a volume of distribution of 33.5% of body weight. (a) Calculate the IV dose every 8 hours that gives an average steady-state level of 2.5 µg·mL⁻¹ in an 80 kg patient. (b) The manufacturer recommends 1 mg·kg⁻¹ every 8 hours. Calculate the average steady-state level this regimen gives, and explain why the answer is the same for any body weight.
+**E8.2** [LO5] For tobramycin the source notes attribute an elimination half-life of 2.15 h and a volume of distribution of 33.5% of body weight to Regamey and associates, again without a traceable citation. (a) Calculate the IV dose every 8 hours that gives an average steady-state level of 2.5 µg·mL⁻¹ in an 80 kg patient. (b) The manufacturer recommends 1 mg·kg⁻¹ every 8 hours. Calculate the average steady-state level this regimen gives, and explain why the answer is the same for any body weight.
 
 **E8.3** [LO4] An oral drug has Ka = 1.0 h⁻¹ and K = 0.1 h⁻¹. Calculate its elimination half-life and its accumulation half-life. Verify the result by substituting it back into the exact expression for the fraction of steady state.
 
@@ -2768,7 +2768,7 @@ D) The accumulation index is doubled
 
 **Q1. B** — After a week the first dose has passed through 42 half-lives and none of it remains. The second dose starts from zero, so its curve is a copy of the first.
 
-**Q2. D** — With τ = t½, f = e^(−0.693) = 0.5, and R = 1/(1 − 0.5) = 2. Option C is the factor 1/0.693 from Equation 8.4, not an accumulation index.
+**Q2. D** — With τ = t½, f = e^(−0.693) = 0.5, and Rac = 1/(1 − 0.5) = 2. Option C is the factor 1/0.693 from Equation 8.4, not an accumulation index.
 
 **Q3. B** — For a bolus Ka → ∞, so Ka/(Ka − K) → 1. Since log 1 = 0, the bracket in Equation 8.2 collapses to 1.
 
@@ -2776,15 +2776,15 @@ D) The accumulation index is doubled
 
 **Q5. A** — The average is the steady-state area in one interval divided by τ, and that area equals F·D₀/Cl. Option B is the arithmetic mean, which overestimates it; option C is the steady-state peak.
 
-**Q6. C** — R = 1/(1 − e^(−Kτ)) contains only K and τ. The dose cancels because every dose accumulates in the same proportion.
+**Q6. C** — Rac = 1/(1 − e^(−Kτ)) contains only K and τ. The dose cancels because every dose accumulates in the same proportion.
 
 **Q7. D** — Ninety-nine per cent takes 6.65 half-lives, and with τ = t½ that is about seven doses.
 
 **Q8. A** — An exponential decline falls fastest at the start of the interval. The amount therefore spends longer near D_min than near D_max, which pulls the time-average below the midpoint.
 
-**Q9. D** — Css,av depends on D₀/τ and on clearance, both unchanged. The peak-to-trough ratio is e^(Kτ), which falls when τ is shortened. Option B is wrong because R depends on τ.
+**Q9. D** — Css,av depends on D₀/τ and on clearance, both unchanged. The peak-to-trough ratio is e^(Kτ), which falls when τ is shortened. Option B is wrong because Rac depends on τ.
 
-**Q10. C** — Css,av is proportional to D₀, so it doubles. The time to steady state is set by the rate constants, not the dose, so it does not change — by t½ alone for an IV regimen, and by Ka as well after oral doses (Equation 8.2).
+**Q10. C** — Css,av is proportional to D₀, so it doubles. Doubling the dose does not change the time to steady state, because that time is set by the rate constants and not by the size of the dose. For an intravenous regimen it is governed by the elimination half-life alone; after oral doses Equation 8.2 shows that Ka enters too, so the approach is slower than t½ suggests. Either way it is independent of D₀, which is what the question asks.
 
 ---
 
@@ -3010,10 +3010,10 @@ Non-compartmental analysis is widely used because it asks so little of the data.
 | Needs fewer assumptions than a compartmental fit | Gives no number of compartments to describe disposition |
 | Avoids choosing between models the data cannot separate | Cannot show organ-specific elimination |
 | Gives Cl, Vss and MRT for any linear drug | Cannot relate its parameters to physiological quantities |
-| Uses the same calculation for every drug | Cannot show drug–drug or drug–nutrient interactions |
+| Uses the same calculation for every drug | Quantifies an interaction, as a ratio of AUC or Cmax, but cannot explain its mechanism or predict an untested regimen |
 | | Is sensitive to sampling frequency and duration |
 
-The second advantage deserves an example. Procainamide was given intravenously to ten subjects. In some subjects the data were best described by a two-compartment model, and in others by a three-compartment model. That looks like a contradiction, as if the drug had changed its nature between people. It is not.
+The second advantage deserves an example. In a study the source notes report without a citation this edition could trace, procainamide was given intravenously to ten subjects. In some subjects the data were best described by a two-compartment model, and in others by a three-compartment model. That looks like a contradiction, as if the drug had changed its nature between people. It is not.
 
 The number of compartments is a property of the data and the sampling design, not of the drug. A compartment is detected only when its exponential phase is both large enough and long enough to show up above the noise, at the times samples were taken. A fast distribution phase shows up only if several samples fall inside it. With early samples a third exponential appears. With fewer early samples, or noisier assay values, it merges into its neighbour and the fit prefers two. The subjects may differ a little in how their tissues take up the drug, or they may not differ at all. Either way, the model count answers a question about the data. Non-compartmental analysis sidesteps that question, and the clearance and MRT it gives are the same whichever model a subject's data happened to favour [2].
 
@@ -3280,9 +3280,11 @@ One drug can therefore be first order at a low dose and zero order at a high one
 
 > **Deeper Dive:** For a drug following Equation 10.1, the apparent elimination rate constant at concentration C is V/C = Vmax/(Km + C). It falls as C rises, so 0.693 · Vd · (Km + C)/Vmax rises with concentration, and so with dose. This is the precise sense in which t½ is dose-dependent in the table of Section 10.1.
 >
-> Read it carefully: that is 0.693 over the rate constant *at this instant*, not the time the drug takes to halve. For a first-order drug the two coincide; here the rate constant rises as C falls, so the drug halves sooner. Integrating Equation 10.1 from C₀ to C₀/2 gives the real halving time:
+> Read that expression carefully: it is 0.693 divided by the elimination rate constant *at this instant*, and it is not the time the concentration takes to halve. A first-order drug is the special case where the two coincide, because its rate constant does not change as the concentration falls. Under Michaelis–Menten elimination the rate constant *rises* all the way down, so the drug halves sooner than the instantaneous figure suggests. Integrating Equation 10.1 from C₀ to C₀/2 gives the real halving time:
 >
 > t½ = (Vd / Vmax) · [Km · ln 2 + C₀/2]
+>
+> Use the instantaneous form to see *that* the half-life grows with dose. Use the integrated form whenever you need a number.
 
 ## 10.4 Steady State When Elimination Saturates
 
@@ -3318,23 +3320,23 @@ The denominator is the whole story. As R approaches Vmax, Vmax − R approaches 
 >
 > *Step 4 — the proportions.* The dose rose by 400/300 = 1.33, a third. The concentration rose by 16.0/6.0 = 2.67, which is 167% higher.
 >
-> *Step 5 — the instantaneous apparent half-life.* From the Deeper Dive, 0.693 · Vd · (Km + C) / Vmax — 0.693 over the rate constant at that concentration, not a halving time.
+> *Step 5 — the instantaneous apparent half-life at each level.* From the Deeper Dive, 0.693 · Vd · (Km + C) / Vmax, with Vmax in amount per time. This is 0.693 over the rate constant at that concentration, not a halving time.
 >
 > At 6.0 mg·L⁻¹: t½ = 0.693 × 45 L × 10.0 mg·L⁻¹ ÷ 500 mg·day⁻¹ = 0.624 day = 15.0 h
 >
 > At 16.0 mg·L⁻¹: t½ = 0.693 × 45 L × 20.0 mg·L⁻¹ ÷ 500 mg·day⁻¹ = 1.25 day = 29.9 h
 >
-> *Step 6 — the time each level really takes to halve.* With Vd/Vmax = 45 ÷ 500 = 0.0900 L·day·mg⁻¹ and Km·ln 2 = 2.77 mg·L⁻¹:
+> *Step 6 — the time each level really takes to halve.* Using the integrated form, t½ = (Vd/Vmax)·[Km·ln 2 + C₀/2], with Vd/Vmax = 45 L ÷ 500 mg·day⁻¹ = 0.0900 L·day·mg⁻¹ and Km·ln 2 = 4 × 0.693 = 2.77 mg·L⁻¹.
 >
-> From 6.0 mg·L⁻¹: 0.0900 × (2.77 + 3.00) = 0.519 day = 12.5 h
+> From 6.0 mg·L⁻¹: t½ = 0.0900 × (2.77 + 3.00) = 0.519 day = 12.5 h
 >
-> From 16.0 mg·L⁻¹: 0.0900 × (2.77 + 8.00) = 0.970 day = 23.3 h
+> From 16.0 mg·L⁻¹: t½ = 0.0900 × (2.77 + 8.00) = 0.970 day = 23.3 h
 >
 > *Answer.* Css is 6.0 mg·L⁻¹ at 300 mg·day⁻¹ and 16.0 mg·L⁻¹ at 400 mg·day⁻¹. A one-third increase in dose gives a 2.67-fold increase in concentration. The instantaneous apparent half-life rises from 15.0 to 29.9 h, and the time actually needed to halve rises from 12.5 to 23.3 h.
 >
-> *Why they differ.* The instantaneous figure fixes the rate constant at the starting concentration, but as C falls towards Km that constant climbs, so the real halving is faster — by 20% at 6 mg·L⁻¹ and 29% at 16. The gap widens as C₀ rises above Km.
+> *Why the two differ.* The instantaneous figure is read at the starting concentration and held fixed, but the drug does not hold it: as C falls towards Km the elimination rate constant climbs, so the real halving is faster — by 20% here at 6 mg·L⁻¹ and by 29% at 16 mg·L⁻¹. The gap widens as C₀ rises above Km. Quote the instantaneous number to compare doses; quote the integrated one to predict a time.
 >
-> *Check by substitution.* Put Css = 16.0 back into the rate law: 500 × 16.0 ÷ (4 + 16.0) = 400 mg·day⁻¹, the dosing rate. The same test at 6.0 gives 300 mg·day⁻¹.
+> *Check by substitution.* Put Css = 16.0 back into the rate law: 500 × 16.0 ÷ (4 + 16.0) = 500 × 0.80 = 400 mg·day⁻¹. That is the dosing rate, so the concentration is indeed a steady state. The same test at 6.0 gives 500 × 6/10 = 300 mg·day⁻¹.
 >
 > *What linear thinking would have predicted.* Scaling 6.0 mg·L⁻¹ by 1.33 gives 8.0 mg·L⁻¹, only half the true value.
 
@@ -3356,7 +3358,7 @@ Non-linear kinetics matter most at high doses, because saturation needs high con
 - The main cause is a saturable enzyme or carrier system.
 - Michaelis–Menten: V = Vmax·C/(Km + C); Km is the concentration at which V = Vmax/2.
 - When C ≪ Km, elimination is first order with rate constant Vmax/Km; when C ≫ Km, it is zero order at Vmax.
-- The instantaneous apparent half-life, 0.693·Vd·(Km + C)/Vmax, rises with concentration; the real halving time, (Vd/Vmax)·[Km·ln 2 + C₀/2], is shorter.
+- The instantaneous apparent half-life, 0.693·Vd·(Km + C)/Vmax, rises with concentration; the time really needed to halve is (Vd/Vmax)·[Km·ln 2 + C₀/2], which is shorter.
 - At steady state Css = Km·R/(Vmax − R); no steady state exists when R ≥ Vmax.
 - Non-linearity may appear only on multiple dosing, so single-dose data can mislead.
 - Saturable drugs such as phenytoin need small dose steps, monitoring, and in-vivo bioequivalence studies.
@@ -3443,7 +3445,7 @@ D) Vmax changes after the first dose
 
 **Q5. D** — Css = 4 × 250 ÷ (500 − 250) = 1000 ÷ 250 = 4 mg·L⁻¹. The dosing rate is half of Vmax, which places Css exactly at Km.
 
-**Q6. C** — The instantaneous apparent half-life is 0.693·Vd·(Km + C)/Vmax, which rises with concentration. Option B has the direction reversed. The integrated halving time is shorter but rises with concentration too.
+**Q6. C** — The instantaneous apparent half-life is 0.693·Vd·(Km + C)/Vmax, which rises with concentration. Option B has the direction reversed. That expression gives the rate constant at one instant; the integrated halving time of Section 10.3 is shorter, but it rises with concentration too.
 
 **Q7. D** — The body cannot eliminate faster than Vmax, so a larger input accumulates without limit. Equation 10.2 gives a negative Css, which has no physical meaning.
 
@@ -3509,7 +3511,9 @@ Cl(200 mg) = 200 mg ÷ 60 mg·h·L⁻¹ = 3.33 L·h⁻¹
 
 *Answer.* Clearance falls from 5.0 to 3.33 L·h⁻¹ as the dose doubles, so the kinetics are non-linear.
 
-*What it suggests.* A clearance that falls as the dose rises is the signature of saturable elimination, most likely a metabolising enzyme approaching its Vmax. If Vd is unchanged, the half-life at the higher dose is longer by the ratio 5.0/3.33 = 1.5.
+*What it suggests.* A clearance that falls as the dose rises is the signature of saturable elimination, most likely a metabolising enzyme approaching its Vmax.
+
+*What it does not give.* It is tempting to turn the clearance ratio 5.0/3.33 = 1.5 into a half-life ratio, and under first-order kinetics that step would be sound. Here it is not. Each figure is D₀/AUC, a clearance *averaged* over a whole falling curve, and Section 10.3 has already shown that a saturable drug has no single half-life to scale: its rate constant changes as the concentration does, so the instantaneous and the integrated half-lives differ from each other and both differ between the two doses. The right conclusion from these data is qualitative — elimination saturates between the two doses — and putting a number on the half-life needs Vmax, Km and Vd, which this exercise does not give.
 
 ## References
 1. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022.
@@ -3539,8 +3543,8 @@ The reactions fall into two groups [1].
 | | Phase I | Phase II |
 |---|---|---|
 | What it does | Adds or unmasks a polar group | Joins the drug to an endogenous compound |
-| Reactions | Oxidation, reduction | Conjugation, such as glucuronidation or acetylation |
-| Requirements | NADPH, molecular oxygen, microsomal enzymes | An activated endogenous donor molecule |
+| Reactions | Oxidation, reduction, hydrolysis | Conjugation, such as glucuronidation or acetylation |
+| Requirements | NADPH and molecular oxygen for the microsomal oxidations, which are the largest group; the hydrolyses need neither, and esterases work in plasma and cytosol as well | An activated endogenous donor molecule |
 | Product | A more polar metabolite, sometimes still active | A more polar conjugate, usually inactive |
 
 The terminal oxidising enzyme of Phase I is **cytochrome P450**. It takes its name from its carbon monoxide complex, which absorbs light at 450 nm. It is not one enzyme but a family of isoenzymes with different substrate specificities, encoded by more than 70 genes across species.
@@ -3649,11 +3653,11 @@ Integrating Equation 11.1 from zero to infinity gives the area under the metabol
 
 These hold whichever step is rate-limiting. The ratio form needs no dose: relative exposure depends only on fm and the two clearances.
 
-> **Watch the Units:** fm is a *molar* fraction: metabolism conserves moles, not milligrams. This chapter carries fm · D in milligrams, which is exact only when parent and metabolite share a molar mass. When they differ, multiply by MW_metabolite / MW_parent: a parent of 300 g·mol⁻¹ giving a glucuronide of 476 yields 59% more milligrams than the uncorrected arithmetic predicts, and every Cmax(m) and AUC(m) is wrong by that factor. Working in moles avoids it.
+> **Watch the Units:** fm is a *molar* fraction: metabolism conserves moles, not milligrams. Every calculation in this chapter carries fm · D in milligrams, which is exact only when parent and metabolite have the same molar mass. When they differ, convert: the amount of metabolite formed is fm · D · (MW_metabolite / MW_parent). A parent of 300 g·mol⁻¹ giving a glucuronide of 476 g·mol⁻¹ produces 59% more milligrams than the uncorrected arithmetic predicts, and every derived Cmax(m) and AUC(m) is wrong by that factor. The alternative is to work in moles throughout, which is why metabolite data are often reported in µmol·L⁻¹.
 
 > **Worked Example:** Example 11.1 — the metabolite of an IV dose
 >
-> The constants here are illustrative. A 500 mg IV bolus of a parent drug is given. The parent has K = 0.2 h⁻¹, and a fraction fm = 0.4 is converted to one metabolite. The metabolite has Kmet = 0.1 h⁻¹ and Vd(m) = 20 L. Parent and metabolite are taken to have the same molar mass.
+> The constants here are illustrative. A 500 mg IV bolus of a parent drug is given. The parent has K = 0.2 h⁻¹, and a fraction fm = 0.4 is converted to one metabolite. The metabolite has Kmet = 0.1 h⁻¹ and Vd(m) = 20 L. Parent and metabolite are taken to have the same molar mass, so that fm · D can be carried through in milligrams.
 >
 > Find tmax(m), Cmax(m), Cl(m) and AUC(m), and identify the rate-limiting step.
 >
@@ -3914,7 +3918,7 @@ Protein drugs show the first three at work. Pepsin in the stomach, and trypsin, 
 
 Slow gastric emptying delays the onset of action and reduces the rate, and perhaps the extent, of absorption. It prolongs the exposure of acid-labile drugs such as penicillin to gastric acid. It lengthens the contact of aspirin with the gastric mucosa, and so its irritation. It also delays the release of an enteric-coated tablet, which does not begin until the tablet leaves the stomach.
 
-*Food.* Food changes absorption in several ways. It raises gastric pH, which changes the dissolution of pH-sensitive drugs. Ketoconazole and itraconazole need an acid stomach to dissolve, and an acidic cola drink improves their absorption. Food delays emptying, which prolongs acid exposure and degrades acid-sensitive drugs such as erythromycin and penicillin. It increases mesenteric blood flow, so a drug such as propranolol reaches the liver faster, saturates more of its first-pass metabolism, and gives a higher bioavailability. Fatty meals increase bile flow, which emulsifies and solubilises lipophilic drugs such as griseofulvin. And food is taken with irritant drugs such as NSAIDs and iron salts to protect the stomach. That may slow absorption, but it leaves the extent unchanged.
+*Food.* Food changes absorption in several ways. It raises gastric pH, which changes the dissolution of pH-sensitive drugs. Ketoconazole and itraconazole need an acid stomach to dissolve, and an acidic cola drink improves their absorption. Food delays emptying, which prolongs acid exposure and degrades acid-sensitive drugs such as erythromycin and penicillin. It increases mesenteric blood flow, so a drug such as propranolol reaches the liver faster, saturates more of its first-pass metabolism, and gives a higher bioavailability. Fatty meals increase bile flow, which emulsifies and solubilises lipophilic drugs such as griseofulvin. And food is taken with irritant drugs such as NSAIDs and iron salts to protect the stomach. That is a tolerability decision, not a kinetic one, and the two can pull against each other: food usually slows absorption without changing the extent, but for iron salts it reduces the extent as well, because phytates, polyphenols, calcium and phosphates in the meal bind iron in the lumen. The trade is real — better tolerated, less absorbed — and it is the reason iron is taken on an empty stomach where the patient can bear it.
 
 *Transit.* Small-intestinal transit is fairly regular, averaging 3 ± 1 h. The effective time available for absorption is therefore about 3–8 h. That sets a limit on sustained-release design: a product releasing drug over 12 h will carry part of the dose past the small intestine before it is released. The colon has a smaller surface and a variable transit of 20–36 h. It is still the absorption site for drugs that need bacterial activation, such as sulfasalazine. Transit is measured by radiography, with a radio-opaque marker such as barium, or more safely by gamma scintigraphy, with a short-lived radionuclide such as technetium-99m.
 
@@ -4265,7 +4269,7 @@ By the end of this chapter you will be able to:
 
 ## 13.1 Terms That Recur
 
-Chapter 1 defined bioavailability as the rate and extent of absorption of a drug from its dosage form into the systemic circulation. For a product not meant to reach the blood, such as an antacid, bioavailability is judged instead by its effect at the site of action. The concept dates from 1945, when Oser and colleagues compared the absorption of vitamins from different products. It became a regulatory issue in the late 1960s, as prescribing by generic name spread and pharmacists began choosing between products. The question was simple: is a cheaper product containing the same dose as good as the original?
+Chapter 1 defined bioavailability as the rate and extent of absorption of a drug from its dosage form into the systemic circulation. For a product not meant to reach the blood, such as an antacid, bioavailability is judged instead by its effect at the site of action. The concept dates from 1945, when Oser and colleagues compared the absorption of vitamins from different products, in work the source notes name without citing. It became a regulatory issue in the late 1960s, as prescribing by generic name spread and pharmacists began choosing between products. The question was simple: is a cheaper product containing the same dose as good as the original?
 
 A drug substance is the active pharmaceutical ingredient. A drug product is the finished dosage form, containing the active ingredient with inactive ingredients. The generic, or non-proprietary, name is assigned to the compound during early development, such as acetaminophen. The proprietary name is the trade name given by the innovator company. A single-source product is available from one manufacturer, usually under patent. A multi-source product contains the same active ingredient in the same dosage form but is marketed by several manufacturers.
 
@@ -4316,7 +4320,7 @@ What F measures is easy to misread. It is not the fraction absorbed. A dose that
 >
 > fa is the fraction of the dose absorbed across the gut wall. Fg is the fraction escaping gut-wall metabolism, and Fh the fraction escaping the liver on its first pass.
 
-A drug can therefore be completely absorbed, with fa = 1, and still have F well below 1. The fraction lost on the first pass is 1 − F. The first-pass effect matters most for drugs with a high clearance, because the liver that clears them from the blood also clears them from the portal vein [2].
+A drug can therefore be completely absorbed, with fa = 1, and still have F well below 1. Take care with the complement: 1 − F is the fraction of the *administered* dose that never reaches the circulation, and it counts drug that was never absorbed at all alongside drug lost on the first pass. The first-pass loss alone is fa·(1 − Fg·Fh) as a fraction of the dose given, or 1 − Fg·Fh as a fraction of what was absorbed. The three coincide only when fa = 1. The first-pass effect matters most for drugs with a high clearance, because the liver that clears them from the blood also clears them from the portal vein [2].
 
 > **Worked Example:** Example 13.1 — a well-absorbed drug with low bioavailability
 >
@@ -4435,7 +4439,7 @@ The Egyptian guideline adds one narrow national pathway that ICH M9 does not hav
 3. its dissolution profile is similar to the reference at pH 1.2, 4.5 and 6.8; and
 4. its excipients, such as surfactants, have been critically evaluated in type and amount.
 
-Every BCS biowaiver, whatever the class, is excluded for narrow-therapeutic-index drugs, non-linear drugs, modified-release products, and products absorbed in the mouth. It is also excluded where a rapid onset, and so tmax, is critical to the product's use.
+The Egyptian guideline excludes every BCS biowaiver, whatever the class, for narrow-therapeutic-index drugs, non-linear drugs, modified-release products, and products absorbed in the mouth. Note that the non-linear exclusion is a national one: the ICH M9 questions and answers state that non-linear pharmacokinetics does not by itself bar a biowaiver where the Class 1 or Class 3 criteria are met. Where a national rule is stricter than the harmonised one, the national rule governs the application made in that country, and this is a case worth knowing as a difference rather than reading as one universal rule. It is also excluded where a rapid onset, and so tmax, is critical to the product's use.
 
 > **Why It Matters in Practice:** A weak acid is poorly soluble in the stomach but dissolves readily at the pH of the small intestine, where it is absorbed. That is why the Egyptian pathway tests solubility at pH 6.8. Outside that pathway, a Class 2 drug needs an in-vivo study, and a pharmacist asked whether a Class 2 generic was waived should expect that it was not.
 
@@ -4691,7 +4695,7 @@ The pharmacopoeia describes seven apparatus, but not all in one place. Apparatus
 
 *Apparatus 5 and 6, for transdermal products.* In the paddle-over-disk method the patch is held in a disk assembly at the bottom of the vessel, under the paddle. In the rotating-cylinder method, a modification of the basket, the patch is mounted on a stainless steel cylinder. Both run at 32 °C, and samples are drawn midway between the surface of the medium and the top of the paddle or cylinder.
 
-Calibrator tablets have been used to verify apparatus performance: disintegrating prednisone tablets for disintegrating products, and non-disintegrating salicylic acid tablets for non-disintegrating products. Buccal and sublingual tablets are tested by the procedure for uncoated tablets.
+Apparatus performance is verified against a reference standard. The scheme long taught pairs two calibrator tablets, disintegrating prednisone tablets for disintegrating products and non-disintegrating salicylic acid tablets for non-disintegrating products, and that is the scheme the first edition describes. It is no longer current: since 2023 the performance verification test for Apparatus 1 and 2 uses the USP Dissolution Performance Verification Standard, a prednisone tablet standard, and the salicylic acid calibrator has been withdrawn. Buccal and sublingual tablets are tested by the procedure for uncoated tablets.
 
 ## 14.4 Meeting the Requirements
 
@@ -4761,7 +4765,7 @@ The acid phase is staged like the dissolution test itself. At A1, each of 6 unit
 
 This is why the medium is degassed and the apparatus calibrated and aligned before use.
 
-*In-vitro–in-vivo correlation.* An **in-vitro–in-vivo correlation** (IVIVC) is a relationship between a physicochemical property of the product, such as its dissolution rate, and a biological property, such as the plasma concentration or the rate of absorption. For a correlation to exist, some aspect of release in vitro must relate to performance in vivo. A useful IVIVC must also stay predictive across a range of release rates and manufacturing changes. The in-vitro result depends on the drug substance, the formulation, the hydrodynamics of the apparatus and the medium. It is therefore a designed quantity, not a fixed property of the drug [3].
+*In-vitro–in-vivo correlation.* An **in-vitro–in-vivo correlation** (IVIVC) is a relationship between a physicochemical property of the product, such as its dissolution rate, and a biological property, such as the plasma concentration or the rate of absorption. For a correlation to exist, some aspect of release in vitro must relate to performance in vivo. A useful IVIVC must also stay predictive across a range of release rates and manufacturing changes. The in-vitro result depends on the drug substance, the formulation, the hydrodynamics of the apparatus and the medium. It is therefore a designed quantity, not a fixed property of the drug [4].
 
 > **Why It Matters in Practice:** An established IVIVC lets a manufacturer justify a change of site or process from dissolution data alone. Without one, the same change may need a new bioequivalence study. Chapter 13 described that study. A good dissolution method is the cheaper way to answer the same question.
 
@@ -4848,7 +4852,7 @@ D) A requirement for all immediate-release products
 
 ## Answers and Worked Solutions
 
-**Q1. D** — A appears in the numerator, so a larger area gives a faster rate. Option A, C and D all reduce the rate.
+**Q1. D** — A appears in the numerator, so a larger area gives a faster rate. Options A, B and C all reduce it: a thicker stagnant layer lengthens the diffusion path, and a lower solubility or a bulk concentration approaching Cs shrinks the gradient.
 
 **Q2. D** — The pharmacopoeia specifies 4, 8 and 16 mL·min⁻¹. Option B repeats a range given in the first edition, which is not the official one.
 
@@ -4921,9 +4925,8 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 ## References
 1. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022.
 2. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition.
-
 3. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition.
-3. Aulton ME, Taylor KMG, editors. *Aulton's Pharmaceutics: The Design and Manufacture of Medicines*. 6th ed. Edinburgh: Elsevier; 2021.
+4. Aulton ME, Taylor KMG, editors. *Aulton's Pharmaceutics: The Design and Manufacture of Medicines*. 6th ed. Edinburgh: Elsevier; 2021.
 
 
 ---
@@ -4938,7 +4941,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **accumulation half-life** — t½,acc. The time taken to reach half of the steady-state level on a multiple dose regimen, t½·[1 + 3.32·log(Ka/(Ka − K))] for Ka > K. For repeated intravenous doses it equals the elimination half-life.
 
-**accumulation index** — R. The ratio of the steady-state peak to the peak after the first dose, 1/(1 − e^(−Kτ)). It depends on K and the dosage interval, not on the dose; R = 1 means no accumulation.
+**accumulation index** — Rac. The ratio of the steady-state peak to the peak after the first dose, 1/(1 − e^(−Kτ)). It depends on K and the dosage interval, not on the dose; Rac = 1 means no accumulation. It is written Rac to keep it apart from R, the infusion or dosing rate of Chapters 5 and 10.
 
 **active metabolite** — A metabolite with pharmacological activity of its own that contributes to the response, such as norfluoxetine from fluoxetine or desipramine from imipramine.
 
@@ -5024,7 +5027,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **Glomerular filtration** — Passive movement of free drug from blood into the glomerular filtrate, with the concentration gradient. Protein-bound drug is not filtered, because the complex is too large to cross.
 
-**glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin or creatinine.
+**glomerular filtration rate** — GFR. The volume of plasma filtered at the glomerulus per unit time, normally 125–130 mL·min⁻¹. It is measured as the clearance of a substance that is filtered but neither secreted nor reabsorbed, such as inulin. Creatinine clearance is the practical substitute but reads above the true GFR, because creatinine is also secreted by the proximal tubule.
 
 **Henderson–Hasselbalch equation** — The relation between pH, pKa and the ratio of ionised to unionised drug: for a weak acid pKa − pH = log([U]/[I]), for a weak base pKa − pH = log([I]/[U]).
 
@@ -5082,7 +5085,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **non-renal elimination rate constant** — Knr. The part of the total elimination rate constant that does not represent renal excretion of intact drug, chiefly metabolism.
 
-**Noyes–Whitney equation** — dC/dt = (D·A/h)(Cs − C): the dissolution rate is proportional to the surface area and to the concentration gradient across the stagnant layer. Taken literally D·A(Cs − C)/h is a mass rate, and dividing by the medium volume gives dC/dt.
+**Noyes–Whitney equation** — dm/dt = (D·A/h)(Cs − C): the rate at which mass dissolves is proportional to the surface area and to the concentration gradient across the stagnant layer. The right-hand side is a mass per time, so the concentration form carries the volume of the medium: dC/dt = (D·A)/(h·V) · (Cs − C).
 
 **P-glycoprotein** — P-gp. An efflux transporter in the intestinal brush border that pumps many lipophilic and cytotoxic drugs back into the gut lumen, reducing their absorption. Inhibiting it increases their absorption.
 
@@ -5120,7 +5123,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **renal excretion rate constant** — Ke. The first-order rate constant for excretion of intact drug into the urine, so that dDu/dt = Ke·D_B. It equals fe × K, and is always less than or equal to K.
 
-**residual concentration** — The difference Cp − Cp′ between a measured concentration and the value extrapolated from the terminal line at the same time. Its logarithm falls linearly with time during the distribution phase.
+**residual concentration** — The difference between a measured concentration and the value extrapolated from the terminal line at the same time, taken in whichever order keeps it positive. After an IV bolus the early measured points lie *above* the extrapolated line, so the residual is Cp − Cp′ and its slope gives the distribution constant (Chapter 4). After an oral dose they lie *below* it, so the residual is Cp′ − Cp and its slope gives Ka (Chapter 7). Subtracting the wrong way round gives negative values, whose logarithm does not exist. Either way the logarithm of the residual falls linearly with time over the phase being resolved.
 
 **sink condition** — The state in which the bulk concentration of dissolved drug stays far below its solubility (C ≪ Cs), so the dissolution rate is set by Cs and not by how much has already dissolved.
 
@@ -5132,7 +5135,7 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 **Therapeutic equivalents** — Pharmaceutical equivalents that give the same clinical efficacy and safety when given to the same patients in the same regimen.
 
-**therapeutic index** — A dimensionless ratio expressing the margin between toxic and effective exposure, classically TD50/ED50, or on a concentration basis MTC/MEC. It is a number, not a band of concentrations.
+**therapeutic index** — TD50/ED50, the dimensionless ratio of the dose toxic to half a population to the dose effective in half of it. It is a number, not a band of concentrations, and it is not MTC/MEC: that ratio of two plasma concentrations is the therapeutic concentration ratio, and neither can be computed from the other.
 
 **therapeutic range** — The band of plasma concentrations between the MEC and the MTC, within which the drug is effective without being toxic. Also called the therapeutic window. It is not the therapeutic index.
 
@@ -5175,12 +5178,12 @@ C = 2.4 mg ÷ 40 mL = 0.060 mg·mL⁻¹, which is 12% of Cs
 
 Every work cited anywhere in this book, in one list. Each chapter also prints the short list it cites,
 numbered for that chapter alone, so a citation such as [2] means the second entry of that chapter's own
-list. The numbering here is independent of those lists; the chapters each entry is cited in are given
-at the end of the entry.
+list; the numbering here is independent of those lists. The chapters citing each work are named at the
+end of its entry.
 
 1. Amidon GL, Lennernäs H, Shah VP, Crison JR. A theoretical basis for a biopharmaceutic drug classification: the correlation of in vitro drug product dissolution and in vivo bioavailability. *Pharm Res*. 1995;12(3):413–420. DOI: 10.1023/A:1016212804288 (Chapter 13.)
 
-2. Aulton ME, Taylor KMG, editors. *Aulton's Pharmaceutics: The Design and Manufacture of Medicines*. 6th ed. Edinburgh: Elsevier; 2021. (Chapters 1, 14.)
+2. Aulton ME, Taylor KMG, editors. *Aulton's Pharmaceutics: The Design and Manufacture of Medicines*. 6th ed. Edinburgh: Elsevier; 2021. (Chapters 1 and 14.)
 
 3. Egyptian Drug Authority. *Egyptian Guideline for Conducting Bioequivalence Studies for Marketing Authorization of Generic Products* (EDREX: GL.CAPP.024), version 04/2026. Cairo: EDA; 2026. (Chapter 13.)
 
@@ -5188,8 +5191,10 @@ at the end of the entry.
 
 5. International Council for Harmonisation. *ICH Harmonised Guideline M9: Biopharmaceutics Classification System-Based Biowaivers*. Geneva: ICH; 2019. (Chapter 13.)
 
-6. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 12 chapters.)
+6. Rowland M, Tozer TN. *Clinical Pharmacokinetics and Pharmacodynamics: Concepts and Applications*. 5th ed. Philadelphia: Wolters Kluwer; 2019. (Chapters 2–13.)
 
-7. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 14 chapters.)
+7. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022. (Chapters 1–14.)
 
 8. United States Pharmacopeial Convention. General Chapter <711> Dissolution. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
+
+9. United States Pharmacopeial Convention. General Chapter <724> Drug Release. In: *United States Pharmacopeia and National Formulary (USP–NF)*. Rockville, MD: USP; current edition. (Chapter 14.)
