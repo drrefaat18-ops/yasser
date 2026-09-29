@@ -62,6 +62,13 @@ class TextChecks(unittest.TestCase):
         self.assertEqual(chemistry.plain_formulas("CO2, H2SO4, (NH4)2SO4, O2, NaCl, B12, LO1, Q3, CO~2~, COVID19, 21 CFR"),
                          ["CO2", "H2SO4", "(NH4)2SO4", "O2"])
 
+    def test_wiki_link(self):
+        r = self.run_on(self.text.replace("A force is a push", "See [[force]]. A force is a push", 1))
+        self.assertEqual(status(r, "TYPO-WIKILINK"), {"fail"})
+        r = self.run_on(self.text.replace("A force is a push", "Write `[[force]]` in code. A force is a push", 1))
+        self.assertEqual(status(r, "TYPO-WIKILINK"), {"pass"})
+        self.assertEqual(check_book.wikilinks("a [[x]] b [[x]] [y](#y) [[ ]]"), ["[[ ]]", "[[x]]"])
+
 
 if __name__ == "__main__":
     unittest.main()

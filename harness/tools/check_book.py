@@ -33,9 +33,10 @@ IDS = {  # emission order per function; every ID appears once per target
     "budget": ["BUDGET-CHAPTER"],
     "glossary": ["GLOSS-MISSING"],
     "assets": ["ASSET-MISSING", "ASSET-OUTSIDE-ROOT"],
-    "typography": ["TYPO-LATEX"],
+    "typography": ["TYPO-LATEX", "TYPO-WIKILINK"],
     "rhythm": ["RHYTHM-PROSE"],
-    "book": ["BOOK-CHAPTER-COUNT", "BOOK-FRONT-MISSING", "BUDGET-TOTAL", "BUDGET-FRONT", "ERRATA-OPEN", "GLOSS-MIN"],
+    "book": ["BOOK-CHAPTER-COUNT", "BOOK-FRONT-MISSING", "BUDGET-TOTAL", "BUDGET-FRONT", "ERRATA-OPEN", "GLOSS-MIN",
+             "BOOK-WIKILINK"],
 }
 
 
@@ -422,6 +423,13 @@ def check_assets(text, cfg, path):
 # display delimiters \[ \] \( \) (step9b fix S9b-04: a short allowlist missed most TeX)
 LATEX = re.compile(r"\$[^$\n]*[\\_^{][^$\n]*\$|(?<![\w\\])\\[A-Za-z]+|\\[\[\]()]")
 CODE_SPAN = re.compile(r"`[^`]*`")
+# `[[target]]` is wiki syntax: no writer resolves it, so it prints as literal brackets
+WIKILINK = re.compile(r"\[\[[^\[\]\n]+\]\]")
+
+
+def wikilinks(text):
+    """Literal `[[...]]` tokens outside code, which every writer would print as they stand."""
+    return sorted({m.group(0) for line in text.splitlines() for m in WIKILINK.finditer(CODE_SPAN.sub("", line))})
 VISUAL = ("![", "|", ">")   # a figure, a table or a box breaks a prose run (plan Task 9b.5)
 
 
@@ -451,7 +459,8 @@ def check_typography(text, cfg):
             s = mathml.DISPLAY_MATH.sub("", s.strip())
             s = "".join(frag for is_math, frag in mathml.split_inline(s) if not is_math)
         hits.update(m.group(0) for m in LATEX.finditer(s))
-    return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in sorted(hits)[:10]]}
+    return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in sorted(hits)[:10]],
+            "TYPO-WIKILINK": [f"wiki link prints literally: {w}" for w in wikilinks(no_refs(text, cfg))[:10]]}
 
 
 def check_rhythm(text, cfg):
@@ -600,6 +609,11 @@ def check_book_level(cfg, chapter_words):
         meas["GLOSS-MIN"] = {"glossary_terms": n}
         if n < g["minimum_terms"]:
             f["GLOSS-MIN"].append(f"book: glossary has {n} entries, need ≥ {g['minimum_terms']}")
+    for key in ("front_matter", "glossary", "references"):   # the back and front matter no chapter check reads
+        extra = cfg.book_file(key) if key in t["paths"] else None
+        if extra and extra.exists():
+            f["BOOK-WIKILINK"] += [f"{extra.name}: wiki link prints literally: {w}"
+                                   for w in wikilinks(extra.read_text(encoding="utf-8"))[:10]]
     rep = _entries("book", [("book", f)], meas)
     for c in rep["checks"]:
         if c["id"] in na:
