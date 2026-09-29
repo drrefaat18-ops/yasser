@@ -77,16 +77,20 @@ def output_path(cfg):
 
 
 def assemble(cfg):
-    """-> (book text, problems). Order: front matter with the contents list inserted, chapters, glossary."""
+    """-> (book text, problems). Order: front matter with the contents list inserted, chapters, then the
+    back matter the template configures: glossary, then the consolidated reference list."""
     out = output_path(cfg)
     probs = []
     t = cfg["template"]
     front_file = cfg.book_file("front_matter")
     files = [p for _, p in cfg.chapters()]
-    glossary = cfg.book_file("glossary") if t["glossary"]["enabled"] else None
+    # back matter, in printed order; each is optional and each is a whole file with its own `# ` heading
+    back = [cfg.book_file("glossary") if t["glossary"]["enabled"] else None,
+            cfg.book_file("references")]
     parts = [rewrite_links(p.read_text(encoding="utf-8"), p, out.parent, cfg, probs) for p in files]
-    if glossary is not None:
-        parts.append(rewrite_links(glossary.read_text(encoding="utf-8"), glossary, out.parent, cfg, probs))
+    for f in back:
+        if f is not None:
+            parts.append(rewrite_links(f.read_text(encoding="utf-8"), f, out.parent, cfg, probs))
     titles = [re.search(r"^# (.+)$", p, re.M).group(1) for p in parts]
     toc = f"## {cfg['theme']['labels']['contents']}\n\n" + "\n".join(f"- [{x}](#{anchor(x)})" for x in titles) + "\n"
     if front_file is None:

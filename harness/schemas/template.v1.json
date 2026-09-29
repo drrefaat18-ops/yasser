@@ -93,6 +93,13 @@
       "pattern": "\\S"
      },
      "minItems": 1
+    },
+    "references": {
+     "type": [
+      "string",
+      "null"
+     ],
+     "description": "back-matter file holding the consolidated reference list, or null for none"
     }
    },
    "additionalProperties": false
