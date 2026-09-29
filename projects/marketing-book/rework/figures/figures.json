@@ -1,0 +1,71 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "ch04-seven-ps",
+   "chapter_id": "ch04",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch04-seven-ps.svg",
+   "caption": "The seven Ps of services marketing around the patient. Product, price, place and promotion are the classic mix; people, process and physical evidence are added because a health service is performed with the patient present.",
+   "alt": "A circle labelled The patient at the centre, joined by lines to seven boxes arranged around it: Product, Price, Place and Promotion in blue, and People, Process and Physical evidence in coral. A key at the bottom marks the blue boxes as the classic four Ps and the coral boxes as those added for services.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch06-life-cycle",
+   "chapter_id": "ch06",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch06-life-cycle.svg",
+   "caption": "The product life cycle. Sales rise slowly at introduction, quickly in growth, level off in maturity and fall in decline. Profit is negative at launch, peaks around the end of growth and falls through maturity.",
+   "alt": "A graph with time on the horizontal axis and sales and profit on the vertical axis. A solid blue S-shaped sales curve rises slowly, then steeply, flattens and falls. A dashed coral profit curve starts below zero, rises to a peak near the boundary of growth and maturity, and falls. Dotted vertical lines divide the graph into Introduction, Growth, Maturity and Decline.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch08-channel-levels",
+   "chapter_id": "ch08",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch08-channel-levels.svg",
+   "caption": "Channel levels for medicines. Each level adds one intermediary between producer and patient; longer channels reach further but add cost and more points where quality can fail.",
+   "alt": "Four rows of boxes joined by arrows. Zero-level: producer to patient. One-level: producer, pharmacy, patient. Two-level: producer, wholesaler, pharmacy, patient. Three-level: producer, importer, regional wholesaler, pharmacy, patient. Producer and patient boxes are blue; intermediaries are coral.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch09-push-pull",
+   "chapter_id": "ch09",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch09-push-pull.svg",
+   "caption": "Push and pull strategies. In push, each channel member promotes the product to the next. In pull, the manufacturer promotes to the final customer, whose demand draws the product up the channel. Pull aimed at the public is not permitted for prescription medicines.",
+   "alt": "Two columns of four boxes: manufacturer, wholesaler, retailer and consumer. In the left column, headed Push strategy, blue arrows point downward from manufacturer to consumer. In the right column, headed Pull strategy, coral arrows point upward from consumer to manufacturer, and a dashed curve runs from the manufacturer directly to the consumer.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch10-balance",
+   "chapter_id": "ch10",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch10-balance.svg",
+   "caption": "The cost–outcome principle. The intervention sits at the centre; cost analysis measures the resources it uses and outcome study measures its consequences. An economic evaluation compares both sides for two or more options.",
+   "alt": "A central dark-blue box labelled Intervention, medicine, test or scan, with arrows to a coral box on the left labelled Costs, resources used, and a light-blue box on the right labelled Outcomes, consequences. Captions beneath read Cost analysis and Outcome study, and a line of text notes that a true evaluation compares both sides for two or more options.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch11-ce-plane",
+   "chapter_id": "ch11",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch11-ce-plane.svg",
+   "caption": "The cost-effectiveness plane. The horizontal axis is the difference in effect and the vertical axis the difference in cost of a new option against its comparator. Dominance is read from the quadrant, not from the sign of the ICER. The marked point is the metformin example of Chapter 12.",
+   "alt": "Two crossing axes divide the plane into four shaded quadrants. The right side is labelled more effective and the left less effective; the top is more costly and the bottom less costly. The lower-right quadrant reads Dominates, adopt. The upper-left reads Dominated, reject. The upper-right and lower-left read Trade-off. A blue point in the lower-right quadrant is labelled Example: difference in effect plus 10, difference in cost minus 9.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  }
+ ]
+}

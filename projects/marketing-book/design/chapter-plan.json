@@ -1,0 +1,120 @@
+{
+ "schema_version": 1,
+ "project_id": "marketing-book",
+ "parts": [
+  {
+   "id": "P1",
+   "label": "Part I",
+   "title": "Marketing and the Healthcare Market"
+  },
+  {
+   "id": "P2",
+   "label": "Part II",
+   "title": "The Marketing Mix for Health Services"
+  },
+  {
+   "id": "P3",
+   "label": "Part III",
+   "title": "Health Economics"
+  }
+ ],
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01.md",
+   "title": "Marketing in Health Care",
+   "word_budget": 2900,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch02",
+   "file": "ch02.md",
+   "title": "The Healthcare Market and Its Customers",
+   "word_budget": 3000,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch03",
+   "file": "ch03.md",
+   "title": "Digital Marketing in Health Care",
+   "word_budget": 2800,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch04",
+   "file": "ch04.md",
+   "title": "The Marketing Mix: From Four Ps to Seven",
+   "word_budget": 2900,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch05",
+   "file": "ch05.md",
+   "title": "Health Products and Services",
+   "word_budget": 3000,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch06",
+   "file": "ch06.md",
+   "title": "The Product Life Cycle",
+   "word_budget": 2900,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch07",
+   "file": "ch07.md",
+   "title": "Pricing Health Services",
+   "word_budget": 3200,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch08",
+   "file": "ch08.md",
+   "title": "Distribution and Access",
+   "word_budget": 3000,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch09",
+   "file": "ch09.md",
+   "title": "Marketing Communications and Promotion",
+   "word_budget": 3200,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch10",
+   "file": "ch10.md",
+   "title": "Health-Care Costs",
+   "word_budget": 3000,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch11",
+   "file": "ch11.md",
+   "title": "Outcomes and Methods of Economic Evaluation",
+   "word_budget": 3300,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch12",
+   "file": "ch12.md",
+   "title": "Applying Economic Evaluation",
+   "word_budget": 3000,
+   "part_id": "P3",
+   "source_refs": []
+  }
+ ],
+ "dropped": []
+}
