@@ -1,0 +1,560 @@
+{
+ "schema_version": 1,
+ "findings": [
+  {
+   "id": "F-001",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "definition"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 71,
+    "line_end": 71
+   },
+   "claim": "Price elasticity is confused with the law of demand, and consumers of health care are called 'generally price elastic'.",
+   "evidence": "\"Consumers are generally **price elastic**: the lower the price, the higher the demand; the higher the price, the lower the demand.\" The sentence describes the downward-sloping demand curve, which holds for inelastic goods too. Lecture 2 then says the opposite of the pharmaceutical market: \"Price sensitivity | Lower | Higher\".",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Separate the law of demand (quantity falls as price rises) from elasticity (how much it falls). State that demand for necessary health care is usually price-inelastic, more elastic for elective and OTC services, and reconcile the two lectures."
+  },
+  {
+   "id": "F-002",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "costs"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1135,
+    "line_end": 1135
+   },
+   "claim": "Incremental cost is defined correctly but illustrated with treatments, not with a cost difference.",
+   "evidence": "\"The extra cost required to purchase an additional unit of effect: - Plastic surgery - Behavioural therapy\". An incremental cost is the difference in cost between two alternatives; a procedure is not a category of cost.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Define incremental cost as the additional cost of one option over its comparator, show it as the numerator of the ICER, and illustrate it with a pair of alternatives (for example a new imaging protocol against the current one)."
+  },
+  {
+   "id": "F-003",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "costs",
+    "calculation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1150,
+    "line_end": 1150
+   },
+   "claim": "The total-cost formula adds incremental cost as if it were a separate category of resource use.",
+   "evidence": "\"**Total costs** = Direct costs + Indirect costs + Incremental costs + Intangible costs\". Incremental cost is a difference between the totals of two options, so adding it double-counts; intangible costs are defined two paragraphs earlier as \"not expressed in money\" and cannot be summed with money without a valuation method.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Total cost of one option = direct medical + direct non-medical + indirect (productivity) costs, with intangible costs reported separately or valued explicitly (for example by willingness to pay). Incremental cost is then the difference between the totals of two options."
+  },
+  {
+   "id": "F-004",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "costs"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1182,
+    "line_end": 1182
+   },
+   "claim": "The worked activity classifies the unchosen large hospital as an opportunity cost and the replacement worker as an indirect cost of the patient.",
+   "evidence": "Answer table: \"Opportunity | Large-hospital expenses\" and \"Indirect | ... Alternative worker\". Opportunity cost is the value of the best alternative use of the resources actually used, not the price of a service the patient did not use. The replacement worker is a cost to the employer (the frictional cost of the previous section), not to the worker.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Rework the activity: state whose perspective is taken, classify each item correctly (crutches and X-ray as direct medical; taxi and special food as direct non-medical; lost wages as indirect; pain and sadness as intangible), explain opportunity cost with the resources actually used, and move the replacement worker to the employer's frictional cost."
+  },
+  {
+   "id": "F-005",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "decision-rule",
+    "calculation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1428,
+    "line_end": 1428
+   },
+   "claim": "The printed incremental ratio of Example 2 is wrong, and a negative ICER is taught as meaning dominance in every case.",
+   "evidence": "\"The slide gives the result as −15.36; the arithmetic gives −9 / 10 = −0.9 LE per 1% reduction\" and \"a **negative** incremental CER means one treatment ... is both **more effective and less expensive**\". A negative ratio also arises when an option is cheaper but less effective; dominance has to be read from the signs of the cost and effect differences, not from the sign of the ratio.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Print (18 − 27) ÷ (25 − 15) = −0.9 LE per percentage point, then state dominance from the two differences: Cidophage costs 9 LE less and lowers glucose 10 points more, so it dominates. Add the cost-effectiveness plane with its four quadrants so a negative ratio is never read alone."
+  },
+  {
+   "id": "F-006",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "terminology",
+    "translation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 339,
+    "line_end": 339
+   },
+   "claim": "Non-standard translated terms are taught as the names of product classes.",
+   "evidence": "\"products of medical appointment (PMA)\", \"Previous choice\", \"Daily demand\", \"Passive demand\", and the price functions \"Registration (accounting)\", \"Stimulating\", \"Distributive\". These are literal translations from a non-English source; the standard English terms are medical devices and supplies, shopping goods, convenience goods, unsought goods. A student searching for them will find nothing.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Use the standard terms of the marketing literature (convenience, shopping, specialty and unsought goods; medical devices and consumables), mentioning the old term once where it helps recognition."
+  },
+  {
+   "id": "F-007",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "economics",
+    "examples"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 586,
+    "line_end": 586
+   },
+   "claim": "Several examples do not illustrate the category they are given for.",
+   "evidence": "Fixed prices: \"property taxes\" (a tax, not a price); free prices: \"paying a worker's salary in private companies\" (a wage); monopoly: \"copyrights and patents\" (sources of monopoly power, not examples of a market); oligopoly: \"pharmaceuticals\", while patented medicines are temporary monopolies and off-patent generics are often highly competitive.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Replace with examples that fit, drawn from health care where possible: a regulated medicine price as a controlled price, a fixed official fee schedule, a private laboratory's own price list as a free price, a patented product as a legal monopoly."
+  },
+  {
+   "id": "F-008",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "marketing",
+    "definition"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 93,
+    "line_end": 93
+   },
+   "claim": "Advertising is called 'the best tool for marketing' and said to increase sales 'drastically'.",
+   "evidence": "\"Advertising is the best tool for marketing ... It can increase sales drastically, and ultimately profits.\" No marketing text ranks one tool as best, and in health care advertising is the most restricted of the tools.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Present advertising as one element of the promotion mix, with its strengths and limits, and note the legal limits on advertising prescription medicines and on health-service claims."
+  },
+  {
+   "id": "F-009",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "marketing",
+    "clarity"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1001,
+    "line_end": 1001
+   },
+   "claim": "One of the three 'functions of advertising medicines' is not a function of advertising.",
+   "evidence": "\"**Provide the most current advertising market** — find the most up-to-date statistics and facts about the global advertising market.\" This describes market research on the advertising industry, not something an advertisement does.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Replace with the standard functions: inform, persuade, remind; and for medicines, inform about indications and correct use within the approved label."
+  },
+  {
+   "id": "F-010",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "economics",
+    "outcomes"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1369,
+    "line_end": 1369
+   },
+   "claim": "Two statements about evaluation methods are unsupported generalisations.",
+   "evidence": "Cost of illness: \"Often used for infectious diseases.\" Cost-utility: \"used less often than other methods because of disagreement on measuring utilities\" — CUA is the reference-case method of several health-technology-assessment agencies.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Say that cost-of-illness studies are used for any disease whose burden needs describing, and that CUA with QALYs is the preferred method of many HTA bodies despite the debate over utilities."
+  },
+  {
+   "id": "F-011",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "distribution",
+    "definition"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 875,
+    "line_end": 875
+   },
+   "claim": "The consignee and commissionaire are distinguished in terms that do not match standard usage.",
+   "evidence": "\"Consignee ... sells them in the owner's name but at their own expense.\" In consignment the consignor keeps ownership and bears the cost of unsold goods; the consignee sells on the consignor's behalf for a commission.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Define consignment from the standard trade meaning, and keep the distinction that matters to students: who owns the goods and who carries the risk."
+  },
+  {
+   "id": "F-012",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "economics",
+    "outcomes",
+    "calculation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1241,
+    "line_end": 1241
+   },
+   "claim": "The QALY example assumes, without saying so, that the patient's quality of life was perfect before the adverse effects.",
+   "evidence": "\"A treatment increases life expectancy by 2 years but causes adverse effects ... that reduce quality of life (utility) by 25%. ... = 2 × 0.75 = **1.5 QALY**\". The result holds only if utility without the effects is 1.0.",
+   "source": "statistician",
+   "fix_hint": "State the baseline utility, show QALY = years × utility, and add a second step where the baseline is below 1."
+  },
+  {
+   "id": "F-013",
+   "pillar_id": "G2",
+   "severity": "major",
+   "tags": [
+    "structure",
+    "prose"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1,
+    "line_end": 1457
+   },
+   "claim": "The source is lecture notes in point form: definitions and lists without explanation, examples or connecting argument.",
+   "evidence": "8,905 words over nine lectures, almost all bullet points and tables; no lecture has an introduction, a summary or a section explaining why a concept matters. Example: the marketing mix is given as \"Product, Price, Place, Promotion\" with a bullet list for each and no account of how they interact.",
+   "source": "instructional-designer",
+   "fix_hint": "Rewrite as explained prose: each concept defined, explained, illustrated with a health-service example, and linked to the next."
+  },
+  {
+   "id": "F-014",
+   "pillar_id": "G2",
+   "severity": "major",
+   "tags": [
+    "objectives"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1,
+    "line_end": 1457
+   },
+   "claim": "No lecture states learning objectives.",
+   "evidence": "No objectives, outcomes or aims appear in any of the nine lectures (searched for 'objective', 'outcome', 'aim'; the only hits are the objectives of digital marketing and the aim of pharmacoeconomics, both content, not learning objectives).",
+   "source": "instructional-designer",
+   "fix_hint": "Open every chapter with three to five measurable objectives and assess each one."
+  },
+  {
+   "id": "F-015",
+   "pillar_id": "G2",
+   "severity": "major",
+   "tags": [
+    "repetition",
+    "organisation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 287,
+    "line_end": 287
+   },
+   "claim": "The same material is repeated across lectures, while the lectures on the marketing mix never finish it.",
+   "evidence": "Lecture 3 opens with \"Marketing Mix (Review)\", lecture 8 with \"Principle of Pharmacoeconomics (Review)\", and digital marketing is defined in both lecture 1 and lecture 2. Meanwhile Place and Promotion receive four bullets each in lecture 1 and are then taken up in separate lectures without a bridge.",
+   "source": "instructional-designer",
+   "fix_hint": "Define each concept once, in the chapter that owns it, and use cross-references instead of repeated reviews."
+  },
+  {
+   "id": "F-016",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [
+    "figures"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 407,
+    "line_end": 407
+   },
+   "claim": "Diagrams are referred to but not present.",
+   "evidence": "\"Four stages ... (sales volume plotted against time)\", \"Factors feeding into price (from the slide diagram)\", \"Also shown: the seller–buyer relationship\", and the pharmacoeconomic equation drawn as text \"Costs ← Rx → Outcomes\".",
+   "source": "instructional-designer",
+   "fix_hint": "Draw the product life cycle, the marketing mix, the channel levels, push and pull, the cost–outcome balance and the cost-effectiveness plane as figures."
+  },
+  {
+   "id": "F-017",
+   "pillar_id": "G3",
+   "severity": "major",
+   "tags": [
+    "assessment"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1,
+    "line_end": 1457
+   },
+   "claim": "There is almost no assessment: one activity and a few worked examples, all in the economics lectures.",
+   "evidence": "The only question sets are the cost-classification \"Activity\" of lecture 7 and the three examples of lecture 9 plus one in lecture 8. Lectures 1–6, the whole marketing half, contain no question of any kind.",
+   "source": "instructional-designer",
+   "fix_hint": "Add ten MCQs with rationales and short essay questions with model answer points to every chapter, aligned to the objectives."
+  },
+  {
+   "id": "F-018",
+   "pillar_id": "G4",
+   "severity": "major",
+   "tags": [
+    "citations"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1,
+    "line_end": 1457
+   },
+   "claim": "No lecture cites a source.",
+   "evidence": "There is no reference list and no in-text citation in 1,457 lines. Quoted definitions appear in quotation marks with no attribution, for example \"Pharmacoeconomics research identifies, measures and compares the cost and consequences of health-care interventions such as drugs, devices, procedures, etc.\"",
+   "source": "research-synthesist",
+   "fix_hint": "Cite a standard marketing text, a services or health-care marketing text and a health-economics text for every definition, in APA, and trace every quotation to its source."
+  },
+  {
+   "id": "F-019",
+   "pillar_id": "G4",
+   "severity": "major",
+   "tags": [
+    "currency",
+    "definition"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 9,
+    "line_end": 9
+   },
+   "claim": "The definition of marketing is the American Marketing Association's 1985 definition, replaced in 2007 and reaffirmed in 2017.",
+   "evidence": "\"the process of planning and executing the conception, pricing, promotion, and distribution of goods, services, and ideas to create exchanges that satisfy individual and organizational objectives.\" The current AMA definition speaks of creating, communicating, delivering and exchanging offerings that have value for customers, clients, partners and society at large.",
+   "source": "research-synthesist",
+   "fix_hint": "Give the current AMA definition, cited, and note that the older one is still widely quoted."
+  },
+  {
+   "id": "F-020",
+   "pillar_id": "G4",
+   "severity": "major",
+   "tags": [
+    "data",
+    "citations"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1036,
+    "line_end": 1036
+   },
+   "claim": "An Egyptian health-spending figure is given without a unit, a source or a definition.",
+   "evidence": "\"health spending rose from 37.2 billion in 2014 to 128.1 billion in 2023 (as stated on the slide)\". No currency, no statement of whether this is government or total spending, nominal or real, and no source.",
+   "source": "research-synthesist",
+   "fix_hint": "Either replace with a sourced figure (for example the government health budget from the Ministry of Finance, or current health expenditure from WHO's Global Health Expenditure Database), stating currency and definition, or remove it."
+  },
+  {
+   "id": "F-021",
+   "pillar_id": "G4",
+   "severity": "minor",
+   "tags": [
+    "currency",
+    "digital"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 206,
+    "line_end": 206
+   },
+   "claim": "The digital-versus-traditional table states absolutes that current marketing texts do not support.",
+   "evidence": "\"Results cannot be measured\" for traditional marketing, \"Higher conversion rate\" for digital, \"Cost-effective\" against \"Expensive\". Traditional media are measured (reach, frequency, recall, response codes), and conversion depends on the offer and audience.",
+   "source": "research-synthesist",
+   "fix_hint": "Present the two as a comparison of tendencies, add privacy and data-protection limits on health data, and cite a current source."
+  },
+  {
+   "id": "F-022",
+   "pillar_id": "D1",
+   "severity": "blocker",
+   "tags": [
+    "scope",
+    "audience"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1,
+    "line_end": 1457
+   },
+   "claim": "The lectures are written for pharmaceutical marketing only; laboratory, imaging and other health services, which the book's readers will work in, are absent.",
+   "evidence": "Every example is a medicine, a pharmacy or a pharmaceutical company: \"Pharmaceutical product\", \"Consumer Triggers for Buying Medicines\", \"Pharmaceutical Sales Companies\", \"Classification of Distribution Channels for Pharmaceutical Products\". Laboratory tests and X-rays appear only as cost items in the economics lectures (\"Laboratory tests\", \"Laboratory values\", the X-ray of the cost activity); no marketing concept is ever applied to a laboratory or an imaging service, and imaging is never named. The goods-versus-services table exists, but services are never marketed anywhere in the text.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Rebuild every chapter around health services, with laboratory and imaging examples as the main thread and medicines as one case among several; give each chapter the two-lens box the brief requires."
+  },
+  {
+   "id": "F-023",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [
+    "services-marketing"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 108,
+    "line_end": 108
+   },
+   "claim": "Only the 4 Ps are taught, although health care is a service and service marketing uses the extended mix.",
+   "evidence": "\"Marketing mix principles — also known as the 4 Ps ... Product, Price, Place, Promotion.\" People, process and physical evidence, which decide how a patient experiences a laboratory or an imaging centre, do not appear.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Teach the 7 Ps of services marketing, with People, Process and Physical Evidence applied to a laboratory and an imaging centre."
+  },
+  {
+   "id": "F-024",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [
+    "ethics",
+    "promotion"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 964,
+    "line_end": 964
+   },
+   "claim": "Sales-promotion techniques are taught for pharmaceutical goods with no ethical or legal limits.",
+   "evidence": "\"Sales-promotion tools for buyers ...: Financial, Credit, ... free samples ..., Premium sales, coupons, Competitions and lotteries among buyers\" and the purpose \"Neutralize competing companies' advertising\". Industry codes (IFPMA Code of Practice) and national regulation restrict inducements, samples and consumer promotion of prescription medicines; none of this is mentioned anywhere in the lectures.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Add ethics and regulation to every promotion topic: what may and may not be offered to prescribers, patients and referrers; the prohibition of public advertising of prescription medicines; truthful claims for health services."
+  },
+  {
+   "id": "F-025",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [
+    "promotion",
+    "definition"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 916,
+    "line_end": 916
+   },
+   "claim": "Regulators and the WHO are listed as 'opinion leaders' used as a marketing channel.",
+   "evidence": "\"Opinion leaders (WHO, FDA, …).\" In marketing, opinion leaders are influential clinicians and peers; regulators and the WHO are independent public bodies, and presenting them as promotional channels misdescribes their role.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Define opinion leaders (key opinion leaders in health care), explain the ethical limits on paying them, and describe regulators separately as the bodies that constrain promotion."
+  },
+  {
+   "id": "F-026",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [
+    "market",
+    "egypt"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 247,
+    "line_end": 247
+   },
+   "claim": "The pharmaceutical-versus-consumer market table states that the health-care consumer does not pay directly.",
+   "evidence": "\"Does the consumer pay directly for the product? | ✗ No\". In Egypt a large share of health spending is paid out of pocket, and laboratory and imaging tests are very often paid directly by the patient; the table describes an insured Western market.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Present decision-maker and payer as variables that differ by service and country: patient, physician, insurer and government; describe the Egyptian mix of out-of-pocket payment, public provision and the Universal Health Insurance system, with a cited source."
+  },
+  {
+   "id": "F-027",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [
+    "market"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 246,
+    "line_end": 246
+   },
+   "claim": "The same table says the consumer is never the decision maker, which is untrue for OTC medicines, self-referred tests and elective services.",
+   "evidence": "\"Is the consumer the decision maker? | ✗ No | ✓ Yes\".",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Distinguish prescribed services (physician decides), self-referred services (patient decides) and shared decisions."
+  },
+  {
+   "id": "F-028",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [
+    "calculation",
+    "notation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1426,
+    "line_end": 1426
+   },
+   "claim": "The incremental ratio is written as 'CER' in the worked example, while the formula list defines CER as cost divided by effectiveness.",
+   "evidence": "Example 2: \"CER = Difference in costs (1 & 3) / Difference in benefits (1 & 3)\"; lecture 8: \"CER = Cost / Effectiveness\" and \"Incremental CER = (Cost of drug A − Cost of drug B) / ...\". The same symbol is used for two different ratios.",
+   "source": "statistician",
+   "fix_hint": "Use CER only for cost ÷ effect of one option and ICER for the ratio of differences, and use ICER in the worked example."
+  },
+  {
+   "id": "F-029",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [
+    "calculation",
+    "table"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1442,
+    "line_end": 1442
+   },
+   "claim": "The cost-benefit example prints its benefits as a row of the cost table and gives no source for them.",
+   "evidence": "The table headed \"Type of cost\" ends with \"**Total benefits** | **$30** | **$35**\". The answer then computes an incremental benefit-cost ratio 5 ÷ 22 = 0.23 without saying that it is incremental, while the decision rule is stated for the simple ratio of one programme.",
+   "source": "statistician",
+   "fix_hint": "Separate costs from benefits, compute each treatment's own B/C (0.50 and 0.43) and the incremental ratio (0.23), and state which decision each ratio supports."
+  },
+  {
+   "id": "F-030",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [
+    "calculation",
+    "decision-rule"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1455,
+    "line_end": 1455
+   },
+   "claim": "The decision rule classes a benefit-cost ratio of exactly 1 as 'not beneficial'.",
+   "evidence": "\"B/C ratio **> 1** → the intervention is beneficial. B/C ratio **≤ 1** → not beneficial.\" At 1 benefits equal costs: the intervention breaks even.",
+   "source": "statistician",
+   "fix_hint": "Give three cases: above 1 net benefit, equal to 1 break-even, below 1 net loss; add net benefit (B − C) alongside the ratio."
+  },
+  {
+   "id": "F-031",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [
+    "terminology",
+    "calculation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1387,
+    "line_end": 1387
+   },
+   "claim": "'Standardization cost value' is not a term of health economics.",
+   "evidence": "\"Example 1 — Standardization Cost Value ... What is the total standardization cost value?\" The calculation is a micro-costing of resource use: units × unit cost, summed. The arithmetic is correct: 80 + 7.35 + 350 = 437.35.",
+   "source": "statistician",
+   "fix_hint": "Call it the total cost from resource use (micro-costing), keep the arithmetic, and show the unit-cost conversion (per 2 visits, per 4 capsules) as its own step."
+  }
+ ]
+}

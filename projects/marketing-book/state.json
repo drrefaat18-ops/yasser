@@ -1,6 +1,13 @@
 {
  "aborts": [],
- "active_run": null,
+ "active_run": {
+  "author_model": "claude",
+  "nonce": "3e477969c6fe833b",
+  "pid": 26536,
+  "stage": "evaluate",
+  "started_at": "2026-09-29T22:10:29Z",
+  "unit": null
+ },
  "approvals": {
   "intake": {
    "approved_at": "2026-09-29T22:10:16Z",
