@@ -109,6 +109,9 @@ def feature_problems(template):
         need(g["term_syntax"] == "bold", "glossary.term_syntax must be `bold` (the only supported syntax)")
         need(isinstance(g["minimum_terms"], int), "glossary.minimum_terms is required when the glossary is enabled")
         need(t["paths"]["glossary"] is not None, "template.paths.glossary is required when the glossary is enabled")
+    m = t.get("math") or {}
+    if m.get("enabled") and not m.get("display_style", True):
+        probs.append("math.display_style, when given, must name a style")
     e = t["errata"]
     if e["enabled"]:
         need(bool(e["status_column"]) and bool(e["open_values"]), "errata.status_column and open_values are required")
@@ -152,4 +155,5 @@ def with_locale_defaults(template, profile):
     lo = t.get("learning_objectives") or {}
     if lo.get("enabled") and not lo.get("discouraged_verbs"):
         lo["discouraged_verbs"] = list(profile["discouraged_objective_verbs"])
+    t.setdefault("math", {"enabled": False})   # optional block: absent means `$` is an ordinary character
     return t

@@ -934,6 +934,23 @@
     }
    },
    "additionalProperties": false
+  },
+  "math": {
+   "type": "object",
+   "description": "TeX math between $...$ and $$...$$, converted to OMML for Word and MathML for the HTML engine. Absent means off, and a book that is off keeps $ as an ordinary character.",
+   "required": [
+    "enabled"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "enabled": {
+     "type": "boolean"
+    },
+    "display_style": {
+     "type": "string",
+     "description": "paragraph style for a display equation; the body style when absent"
+    }
+   }
   }
  },
  "additionalProperties": false

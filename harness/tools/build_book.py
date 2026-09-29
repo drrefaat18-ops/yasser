@@ -20,7 +20,7 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures  # noqa: E402
 from harness.figures import annotated  # noqa: E402
-from harness.tools import assemble, blocks, config  # noqa: E402
+from harness.tools import assemble, blocks, config, mathml  # noqa: E402
 
 # Preset constants of the ltr-textbook layout (sizes in pt, rules and grid colours): tested layout, not project config
 RULE, GRID, STRIPE, LINK, WHITE = "F0B429", "C9D1D9", "F4F6F8", "2B5D8A", "FFFFFF"
@@ -124,6 +124,13 @@ class Xml:
     def __init__(self, d):
         self.d = d
         self.el, self.qn = d["OxmlElement"], d["qn"]
+
+    def add_math(self, p, tex, display=False):
+        """Append one equation to a paragraph as OMML, the object Word's own equation editor produces."""
+        from lxml import etree
+        frag = etree.fromstring(mathml.omml_xml(tex, display))
+        p._p.append(frag)
+        return frag
 
     def shade(self, cell, fill):
         tcPr = cell._tc.get_or_add_tcPr()
@@ -410,12 +417,18 @@ class Renderer:
 
     # inline markdown
     def inline(self, p, text, bold=False, italic=False, colour=None, size=None, links=True):
-        for sp in blocks.inline(text, links):
-            b, i = bold or sp["bold"], italic or sp["italic"]
-            if sp["url"]:
-                self.x.add_hyperlink(p, sp["text"], sp["url"], b, i)
-            else:
-                self.f.make_run(p, sp["text"], bold=b, italic=i, colour=colour, size=size, sub=sp["sub"], sup=sp["sup"])
+        math_on = (self.bk.cfg["template"].get("math") or {}).get("enabled")
+        for is_math, frag in (mathml.split_inline(text) if math_on else [(False, text)]):
+            if is_math:
+                self.x.add_math(p, frag)
+                continue
+            for sp in blocks.inline(frag, links):
+                b, i = bold or sp["bold"], italic or sp["italic"]
+                if sp["url"]:
+                    self.x.add_hyperlink(p, sp["text"], sp["url"], b, i)
+                else:
+                    self.f.make_run(p, sp["text"], bold=b, italic=i, colour=colour, size=size,
+                                    sub=sp["sub"], sup=sp["sup"])
 
     def reference_runs(self, p, text):
         """References: DOIs become links; the rest is inline markdown."""
@@ -590,7 +603,13 @@ class Renderer:
                 style = "Answer" if role == "answers" else None
                 if container is not doc:
                     style = "Box Text"
-                self.inline(f.make_paragraph(container, style=style), b["text"])
+                tex = mathml.display(b["text"]) if (bk.cfg["template"].get("math") or {}).get("enabled") else None
+                if tex is not None:      # a paragraph that is only `$$...$$` is a display equation
+                    mp = f.make_paragraph(container, style=(bk.cfg["template"]["math"].get("display_style") or style))
+                    mp.alignment = self.d["WD_ALIGN_PARAGRAPH"].CENTER
+                    self.x.add_math(mp, tex, display=True)
+                else:
+                    self.inline(f.make_paragraph(container, style=style), b["text"])
             elif t == "section":
                 if container is not doc:
                     self.after_table(doc)

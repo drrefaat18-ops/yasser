@@ -17,7 +17,7 @@ if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import figures, preflight  # noqa: E402
 from harness.figures import annotated  # noqa: E402
-from harness.tools import blocks, build_book, config  # noqa: E402
+from harness.tools import blocks, build_book, config, mathml  # noqa: E402
 
 GRID, STRIPE, LINK = build_book.GRID, build_book.STRIPE, build_book.LINK
 BuildError = build_book.BuildError
@@ -54,6 +54,14 @@ class Writer:
         self.dropcap_pending = False
 
     def inline(self, text, links=True):
+        if (self.bk.cfg["template"].get("math") or {}).get("enabled"):
+            parts = mathml.split_inline(text)
+            if any(is_math for is_math, _ in parts):
+                return "".join(mathml.mathml(frag) if is_math else self._spans(frag, links)
+                               for is_math, frag in parts)
+        return self._spans(text, links)
+
+    def _spans(self, text, links=True):
         out = []
         for sp in blocks.inline(text, links):
             t = esc(sp["text"])
@@ -141,6 +149,10 @@ class Writer:
             if t != "bullet":
                 close_list()
             if t == "para":
+                tex = mathml.display(b["text"]) if (bk.cfg["template"].get("math") or {}).get("enabled") else None
+                if tex is not None:
+                    out.append(f'<p class="display-math">{mathml.mathml(tex, display=True)}</p>')
+                    continue
                 cls = "answer" if state["role"] == "answers" else ""
                 if not state["box"] and self.dropcap_pending and state["role"] not in ("opening", "objectives"):
                     cls, self.dropcap_pending = "dropcap", False
@@ -303,6 +315,8 @@ figcaption{{font-family:{ff('sans')};font-size:8.5pt;color:{mut}}}
 .options li{{font-size:10pt;padding-left:{th['lists']['indent']}cm;text-indent:-{th['lists']['hanging']}cm;margin-bottom:1pt}}
 .opt{{display:inline-block;width:{th['lists']['hanging']}cm;text-indent:0;font-weight:700;color:{pri}}}
 .answer{{font-size:9.8pt}}.answer strong{{color:{pri}}}
+p.display-math{{text-align:center;margin:8pt 0}}
+math{{font-size:1.02em}}
 .reference{{font-size:8.8pt;padding-left:0.8cm;text-indent:-0.8cm;margin-bottom:3pt;text-align:{head_align}}}
 .reference .num{{display:inline-block;width:0.8cm;text-indent:0;color:{mut}}}
 .objective,.numbered{{padding-left:1.1cm;text-indent:-1.1cm;text-align:left}}

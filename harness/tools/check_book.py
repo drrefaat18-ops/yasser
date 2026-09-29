@@ -10,7 +10,7 @@ REPO = pathlib.Path(__file__).resolve().parents[2]
 if str(REPO) not in sys.path:
     sys.path.insert(0, str(REPO))
 from harness import text as tx  # noqa: E402
-from harness.tools import assemble, config  # noqa: E402
+from harness.tools import assemble, config, mathml  # noqa: E402
 
 # Marker grammar: a harness constant, the same for every language (core §4.3 assessment.mcq; Arabic contract P1)
 Q_START = re.compile(r"^(?=\*\*Q\d+\.\*\*)", re.M)
@@ -425,9 +425,20 @@ def _prose_lines(text, cfg):
 
 
 def check_typography(text, cfg):
-    """TYPO-LATEX: TeX left in the text; the writers print none of it (formulas use ~sub~ and ^sup^)."""
-    hits = sorted({m.group(0) for s in _prose_lines(text, cfg) for m in LATEX.finditer(CODE_SPAN.sub("", s))})
-    return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in hits[:10]]}
+    """TYPO-LATEX: TeX left in the text; the writers print none of it (formulas use ~sub~ and ^sup^).
+
+    When `template.math.enabled`, TeX inside `$...$` and `$$...$$` is the book's own notation and the
+    writers convert it, so only TeX *outside* the delimiters is stray. A book with math off is unchanged:
+    every `$...$` is still reported."""
+    math_on = (cfg["template"].get("math") or {}).get("enabled")
+    hits = set()
+    for s in _prose_lines(text, cfg):
+        s = CODE_SPAN.sub("", s)
+        if math_on:
+            s = mathml.DISPLAY_MATH.sub("", s.strip())
+            s = "".join(frag for is_math, frag in mathml.split_inline(s) if not is_math)
+        hits.update(m.group(0) for m in LATEX.finditer(s))
+    return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in sorted(hits)[:10]]}
 
 
 def check_rhythm(text, cfg):
