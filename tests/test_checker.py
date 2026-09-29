@@ -102,8 +102,8 @@ class CheckerTest(unittest.TestCase):
         self.assertEqual(p["key"], {1: "B", 2: "A", 3: "C"})
         self.assertEqual(p["citations"], [1, 2])
 
-    def test_unsupported_citation_style_is_a_config_error(self):
-        cfg = cfg_of()
+    def test_author_year_without_named_groups_is_a_config_error(self):
+        cfg = cfg_of()   # a numeric pattern cannot serve author-year: it has no `author` and `year` groups
         cfg["template"]["citations"] = dict(cfg["template"]["citations"], style="author-year")
         with self.assertRaises(cb.ConfigError):
             report_for(CHAPTER, cfg)

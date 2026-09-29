@@ -124,7 +124,27 @@ def lo_ids(text, cfg):
     return LO_LINE.findall(section_body(text, cfg, "objectives"))
 
 
+def author_year(cfg):
+    return cfg["template"]["citations"]["style"] == "author-year"
+
+
+def lead_author(author):
+    """The words of an entry's first author: `Kotler, P., & Keller` -> {Kotler}; an organisation keeps every word."""
+    return set(re.findall(r"[^\W\d_][\w'’-]*", author.split(",")[0]))
+
+
+def cited_keys(text, cfg):
+    """author-year: {(author word, year)} for every in-text citation. `citations.pattern` matches one citation
+    with named groups `author` and `year`, so a parenthetical list is read item by item."""
+    rx = re.compile(cfg["template"]["citations"]["pattern"])
+    if not {"author", "year"} <= set(rx.groupindex):
+        raise ConfigError("citations.pattern needs named groups `author` and `year` for author-year citations")
+    return {(m.group("author"), m.group("year")) for m in rx.finditer(no_refs(text, cfg))}
+
+
 def cited_numbers(text, cfg):
+    if author_year(cfg):
+        return {f"{a} {y}" for a, y in cited_keys(text, cfg)}
     nums = set()
     for grp in re.findall(cfg["template"]["citations"]["pattern"], no_refs(text, cfg)):
         for part in re.split(r"\s*,\s*", grp):
@@ -137,12 +157,16 @@ def cited_numbers(text, cfg):
 
 
 def reference_entries(text, cfg):
-    """[(number, entry line)] from the references section."""
+    """[(number, entry line)] from the references section; author-year: [("<first author> (<year>)", line)]."""
     rx = re.compile(cfg["template"]["references"]["entry_pattern"])
+    if author_year(cfg) and not {"author", "year"} <= set(rx.groupindex):
+        raise ConfigError("references.entry_pattern needs named groups `author` and `year` for author-year citations")
     out = []
     for line in section_body(text, cfg, "references").splitlines():
         m = rx.search(line)
-        if m:
+        if m and author_year(cfg):
+            out.append((f"{m.group('author').split(',')[0].strip(' .')} ({m.group('year')})", line))
+        elif m:
             out.append(entry_parts(m, line))
     return out
 
@@ -343,9 +367,25 @@ def check_mcqs(text, cfg):
     return f
 
 
+def check_author_year(text, cfg):
+    """A citation resolves when its author word belongs to an entry's first author and the years agree;
+    two entries with one first author and one year need the a/b suffixes APA gives them."""
+    rx = re.compile(cfg["template"]["references"]["entry_pattern"])
+    entries = [(lead_author(m.group("author")), m.group("year"), key)
+               for key, line in reference_entries(text, cfg) for m in [rx.search(line)]]
+    cited = cited_keys(text, cfg)
+    hits = lambda a, y: [k for words, year, k in entries if a in words and y == year]
+    used = {k for a, y in cited for k in hits(a, y)}
+    keys = [k for _, _, k in entries]
+    return {"CIT-MISSING": [f"missing reference {a} ({y})" for a, y in sorted(cited) if not hits(a, y)],
+            "CIT-UNCITED": [f"uncited reference {k}" for k in keys if k not in used],
+            "CIT-DUPLICATE": [f"reference {k} is listed {keys.count(k)} times" for k in sorted(set(keys))
+                              if keys.count(k) > 1]}
+
+
 def check_citations(text, cfg):
-    if cfg["template"]["citations"]["style"] != "numeric-bracket":
-        raise ConfigError(f"citations.style {cfg['template']['citations']['style']!r} is not supported")
+    if author_year(cfg):
+        return check_author_year(text, cfg)
     cited = cited_numbers(text, cfg)
     numbers = [n for n, _ in reference_entries(text, cfg)]
     refs = set(numbers)

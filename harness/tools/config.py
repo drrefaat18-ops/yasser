@@ -117,7 +117,15 @@ def feature_problems(template):
         need(bool(e["status_column"]) and bool(e["open_values"]), "errata.status_column and open_values are required")
         need(t["paths"]["errata"] is not None, "template.paths.errata is required when errata are enabled")
     need(isinstance(t["budgets"]["tolerance"], (int, float)), "budgets.tolerance is required")
-    need(t["citations"]["style"] == "numeric-bracket", "citations.style must be `numeric-bracket` (the only supported style)")
+    if t["citations"]["style"] == "author-year":
+        for key, groups in (("citations.pattern", t["citations"]["pattern"]),
+                            ("references.entry_pattern", t["references"]["entry_pattern"])):
+            try:
+                names = set(re.compile(groups).groupindex)
+            except re.error as e:
+                names = set()
+                probs.append(f"{key} is not a valid regular expression: {e}")
+            need({"author", "year"} <= names, f"{key} needs named groups `author` and `year` for author-year citations")
     return probs
 
 
