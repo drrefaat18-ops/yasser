@@ -64,6 +64,8 @@
 
 **Ke** — The renal excretion rate constant: the first-order constant governing loss of intact drug into the urine. See [[renal-excretion-rate-constant]].
 
+**Km** — The Michaelis–Menten constant: the drug concentration at which a saturable process runs at half its maximum rate. It is a concentration, not a rate constant, and reflects the affinity of the drug for the enzyme.
+
 **Knr** — The non-renal elimination rate constant: the first-order constant covering every route of loss other than renal excretion of intact drug, chiefly metabolism. K = Ke + Knr.
 
 **K₁₂** — The first-order rate constant for transfer of drug from the central compartment to the peripheral (tissue) compartment.
@@ -71,6 +73,8 @@
 **K₂₁** — The first-order rate constant for transfer of drug from the peripheral (tissue) compartment back to the central compartment.
 
 **Lag time** — t₀. The delay between administration and the start of absorption, caused by slow gastric emptying, reduced motility or any other factor that stops absorption beginning at once. It is shorter than the onset of action.
+
+**linear pharmacokinetics** — Dose-independent kinetics: concentrations and AUC change in proportion to the dose, and K, Vd and t½ do not depend on the dose.
 
 **loading dose** — Dₗ. An intravenous bolus given at the start of an infusion, sized as Css · Vd (equivalently R/K) so that the target concentration is reached immediately instead of over about five half-lives.
 
@@ -84,6 +88,8 @@
 
 **method of residuals** — Also feathering or stripping. A graphical method that separates two exponential processes by fitting the slower one to the terminal data, extrapolating it back, and subtracting it from the earlier points. Used for distribution in Chapter 4 and for absorption in Chapter 7.
 
+**Michaelis–Menten equation** — V = Vmax·C/(Km + C). The rate law of a saturable enzyme or carrier process; first order when C ≪ Km and zero order when C ≫ Km.
+
 **midpoint time** — The time halfway through a urine collection interval. An excretion rate calculated as ΔDu/Δt is an average over the interval, so it is plotted against the midpoint rather than the end.
 
 **minimum effective concentration** — MEC. The plasma concentration below which the drug produces no therapeutic effect. The lower boundary of the therapeutic range.
@@ -91,6 +97,8 @@
 **minimum toxic concentration** — MTC. The plasma concentration above which the drug produces toxic effects. The upper boundary of the therapeutic range.
 
 **Non-compartmental analysis** — Estimation of pharmacokinetic parameters from the areas under the plasma curve (statistical moments) without fitting any compartmental model. It requires only linear kinetics.
+
+**non-linear pharmacokinetics** — Dose-dependent kinetics: concentrations change out of proportion to the dose, and parameters such as t½ and clearance vary with it. Usually caused by a saturable enzyme or carrier.
 
 **non-renal elimination rate constant** — Knr. The part of the total elimination rate constant that does not represent renal excretion of intact drug, chiefly metabolism.
 
@@ -127,6 +135,8 @@
 **Tubular reabsorption** — Return of drug from the tubular fluid to the blood. It favours the more lipid-soluble, unionised form, so for weak acids and weak bases its extent depends on urinary pH and on the pKa of the drug.
 
 **two-compartment open model** — A model in which drug distributes rapidly into a central compartment and more slowly into a peripheral compartment, with first-order transfer between them (K₁₂ and K₂₁) and elimination from the central compartment only.
+
+**Vmax** — The maximum rate of a saturable process, reached when the enzyme or carrier is fully occupied. Expressed as concentration per time, or as amount per time when multiplied by Vd.
 
 **volume of distribution at steady state** — Vss. The volume relating amount in the body to plasma concentration when distribution is at equilibrium, Cl·MRT = D₀·AUMC/AUC² after an IV bolus. It needs no model.
 

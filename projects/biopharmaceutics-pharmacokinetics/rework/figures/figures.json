@@ -121,6 +121,17 @@
    "credit": "Original diagram, drawn from the first edition data on page 45",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch10-saturation",
+   "chapter_id": "ch10",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch10-saturation.svg",
+   "caption": "Saturable elimination. Left: the Michaelis–Menten rate follows its first order limit at low concentration and approaches Vmax at high concentration, passing Vmax/2 at C = Km. Right: for the drug of Example 10.1 the steady-state level rises far above the linear prediction as the dosing rate approaches Vmax.",
+   "alt": "Two plots. Left: reaction rate as a fraction of Vmax against concentration from 0 to 20 milligrams per litre. The curve rises steeply, then flattens towards a dashed horizontal line at 1 labelled zero order limit. A dotted straight line from the origin, labelled first order limit, follows the curve only at low concentration. Dotted guides mark the point where concentration equals Km and the rate is one half of Vmax. Right: steady-state concentration against dosing rate from 0 to 500 milligrams per day. The curve starts low, passes points labelled 300 to 6 and 400 to 16, and turns almost vertical near a dashed vertical line labelled Vmax at 500. A dotted straight line labelled linear prediction runs through the 300 milligram point and reaches only 10 at 500.",
+   "credit": "Original diagram, redrawn from the first edition page 48",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
