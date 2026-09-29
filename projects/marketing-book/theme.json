@@ -1,0 +1,148 @@
+{
+ "schema_version": 1,
+ "project_id": "marketing-book",
+ "preset": "ltr-textbook",
+ "direction": "ltr",
+ "lang_tag": "en-GB",
+ "page": {
+  "size": "A4",
+  "margins": {
+   "top": 2.6,
+   "bottom": 2.4,
+   "left": 3.5,
+   "right": 3.5
+  },
+  "header_distance": 1.3,
+  "footer_distance": 1.2
+ },
+ "fonts": {
+  "serif": "Cambria",
+  "serif_heading": "Cambria",
+  "sans": "Segoe UI",
+  "complex_script": null,
+  "complex_script_heading": null
+ },
+ "palette": {
+  "ink": "1E2430",
+  "primary": "1F4E79",
+  "accent": "C8553D",
+  "muted": "5E6B78"
+ },
+ "layout": {
+  "text_width": 14
+ },
+ "alignment": {
+  "body": "justify",
+  "headings": "left"
+ },
+ "lists": {
+  "indent": 1.2,
+  "hanging": 0.6
+ },
+ "callouts": {
+  "lenses": {
+   "fill": "EEF3F9",
+   "label_colour": "1F4E79",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "C3D3E6"
+   }
+  },
+  "practice": {
+   "fill": "EAF4EE",
+   "label_colour": "2E6B45",
+   "layout": "box"
+  },
+  "ethics": {
+   "fill": "FBEDE9",
+   "label_colour": "A2402C",
+   "layout": "box"
+  },
+  "formula": {
+   "fill": "F1F4F8",
+   "label_colour": "1F4E79",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "C3D3E6"
+   }
+  },
+  "worked": {
+   "fill": "F4F5F7",
+   "label_colour": "33415C",
+   "layout": "box"
+  },
+  "pitfall": {
+   "fill": "FDF3E3",
+   "label_colour": "8A5A00",
+   "layout": "box"
+  },
+  "local": {
+   "fill": "F3F0EA",
+   "label_colour": "6B5530",
+   "layout": "box"
+  },
+  "objectives": {
+   "fill": "FFFFFF",
+   "label_colour": "1F4E79",
+   "layout": "box",
+   "border": {
+    "size_eighths_pt": 6,
+    "colour": "C9D1D9"
+   }
+  }
+ },
+ "boxed_section_ids": [
+  "objectives"
+ ],
+ "toc_excluded_section_ids": [
+  "takeaways",
+  "answers"
+ ],
+ "toc": {
+  "levels": 2
+ },
+ "cover": {
+  "asset": null,
+  "design": {
+   "eyebrow": "Applied Health Sciences",
+   "institution": "Faculty of Applied Health Sciences, East Portsaid National University",
+   "logos": []
+  }
+ },
+ "title_page": {
+  "notices": [
+   "This book is for teaching. Prices, regulations and reimbursement rules change; check the current official sources before applying any figure in practice."
+  ]
+ },
+ "labels": {
+  "contents": "Contents",
+  "update_toc_instruction": "Right-click and choose Update Field to build the contents.",
+  "chapter": "Chapter",
+  "part": "Part",
+  "glossary": "Glossary",
+  "figure": "Figure",
+  "table": "Table",
+  "question_prefix": "Q",
+  "objective_prefix": "LO",
+  "chapters": "Chapters"
+ },
+ "output": {
+  "basename": "Healthcare_Marketing"
+ },
+ "build": {
+  "backend": "word_com",
+  "word_com": {
+   "toc_styles": [
+    "TOC 1",
+    "TOC 2"
+   ]
+  },
+  "pdf": {
+   "bookmarks": "headings",
+   "embed_fonts": true,
+   "engine": "html"
+  }
+ }
+}

@@ -1,0 +1,282 @@
+{
+ "schema_version": 1,
+ "project_id": "marketing-book",
+ "paths": {
+  "chapters": "rework",
+  "chapter_glob": "ch*.md",
+  "front_matter": "00-front-matter.md",
+  "glossary": "glossary.md",
+  "references": "references.md",
+  "errata": "errata-ledger.md",
+  "figures": "rework/figures",
+  "normalized_source": "ingest/normalized.md",
+  "assets": "images",
+  "asset_link_prefix": "images/",
+  "allowed_asset_roots": [
+   "images",
+   "rework/figures"
+  ]
+ },
+ "ingest": {
+  "heading_rules": [
+   {
+    "pattern": "^#\\s",
+    "level": 1
+   },
+   {
+    "pattern": "^##\\s",
+    "level": 2
+   },
+   {
+    "pattern": "^###\\s",
+    "level": 3
+   }
+  ],
+  "toc_start_pattern": null,
+  "toc_entry_pattern": null,
+  "toc_end_pattern": null,
+  "drop_source_toc": false
+ },
+ "chapter_heading_pattern": "^# Chapter (?P<num>\\d+): (?P<title>.+)$",
+ "sections": [
+  {
+   "id": "objectives",
+   "label": "Learning Objectives",
+   "role": "objectives",
+   "required": true,
+   "boxed": true
+  },
+  {
+   "id": "takeaways",
+   "label": "Key Takeaways",
+   "role": "takeaways",
+   "required": true,
+   "boxed": false
+  },
+  {
+   "id": "assessment",
+   "label": "Check Your Understanding",
+   "role": "assessment",
+   "required": true,
+   "boxed": false
+  },
+  {
+   "id": "answers",
+   "label": "Answers and Worked Solutions",
+   "role": "answers",
+   "required": true,
+   "boxed": false
+  },
+  {
+   "id": "references",
+   "label": "References",
+   "role": "references",
+   "required": false,
+   "boxed": false
+  },
+  {
+   "id": "how-to-use",
+   "label": "How to Use This Book",
+   "role": "how_to_use",
+   "required": false,
+   "boxed": false
+  }
+ ],
+ "callouts": [
+  {
+   "id": "lenses",
+   "label": "Through Two Lenses",
+   "syntax": "> **Through Two Lenses**",
+   "required": true,
+   "min": 1,
+   "max": null,
+   "parts": [
+    "Medical Laboratory",
+    "Radiology and Medical Imaging"
+   ]
+  },
+  {
+   "id": "practice",
+   "label": "In Practice",
+   "syntax": "> **In Practice:**",
+   "required": true,
+   "min": 1,
+   "max": null,
+   "parts": []
+  },
+  {
+   "id": "ethics",
+   "label": "Ethics Check",
+   "syntax": "> **Ethics Check:**",
+   "required": true,
+   "min": 1,
+   "max": null,
+   "parts": []
+  },
+  {
+   "id": "formula",
+   "label": "Key Formula",
+   "syntax": "> **Key Formula:**",
+   "required": false,
+   "min": null,
+   "max": null,
+   "parts": []
+  },
+  {
+   "id": "worked",
+   "label": "Worked Example",
+   "syntax": "> **Worked Example:**",
+   "required": false,
+   "min": null,
+   "max": null,
+   "parts": []
+  },
+  {
+   "id": "pitfall",
+   "label": "Common Mistake",
+   "syntax": "> **Common Mistake:**",
+   "required": false,
+   "min": null,
+   "max": null,
+   "parts": []
+  },
+  {
+   "id": "local",
+   "label": "Egyptian Context",
+   "syntax": "> **Egyptian Context:**",
+   "required": false,
+   "min": null,
+   "max": null,
+   "parts": []
+  }
+ ],
+ "perspectives": {
+  "enabled": true,
+  "callout_id": "lenses",
+  "items": [
+   {
+    "id": "laboratory",
+    "label": "Medical Laboratory"
+   },
+   {
+    "id": "imaging",
+    "label": "Radiology and Medical Imaging"
+   }
+  ],
+  "balance_tolerance": 0.2
+ },
+ "learning_objectives": {
+  "enabled": true,
+  "id_pattern": "^LO\\d+$",
+  "min": 3,
+  "max": 5,
+  "discouraged_verbs": [
+   "understand"
+  ]
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "count": 10,
+   "option_labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "option_display_labels": [
+    "A",
+    "B",
+    "C",
+    "D"
+   ],
+   "allow_other_labels": false,
+   "key_balance": {
+    "min": 2,
+    "max": 3
+   },
+   "max_run": 2,
+   "rationale_required": true,
+   "answers_section_role": "answers"
+  },
+  "case_question": {
+   "required": false,
+   "label": null
+  }
+ },
+ "citations": {
+  "style": "author-year",
+  "pattern": "(?P<author>[A-Z][\\w'’-]+)(?:\\s+et al\\.|\\s+(?:&|and)\\s+[A-Z][\\w'’-]+)?(?:,\\s*|\\s+\\()(?P<year>\\d{4}[a-z]?)"
+ },
+ "references": {
+  "section_role": "references",
+  "entry_pattern": "^(?:[-*]\\s+)?(?P<author>[^()\\n]+?)\\s*\\((?P<year>\\d{4}[a-z]?|n\\.d\\.)\\)",
+  "identifier_patterns": [
+   "DOI:\\s*(10\\.\\S+?)\\.?\\s*$",
+   "doi\\.org/(10\\.\\S+?)\\.?\\s*$"
+  ],
+  "no_doi_policy": {
+   "allowed_types": [
+    "book",
+    "guidance",
+    "regulation",
+    "report"
+   ],
+   "requires_url": false
+  },
+  "title_match": {
+   "mode": "heuristic",
+   "words": 6,
+   "threshold": 0.6
+  },
+  "original_title_marker": null,
+  "providers": {},
+  "type_patterns": {
+   "book": "(?i)\\b(\\d+(st|nd|rd|th) ed\\.?|edition|Press|Pearson|Wiley|Elsevier|McGraw)\\b",
+   "guidance": "(?i)\\b(guidance|guideline|guidelines|recommendations|guide)\\b",
+   "regulation": "(?i)\\b(law|decree|regulation|directive)\\b",
+   "report": "(?i)\\b(report|World Health Organization|Authority|Ministry)\\b"
+  }
+ },
+ "locale_overrides": {},
+ "glossary": {
+  "enabled": true,
+  "term_syntax": "bold",
+  "excluded_callout_ids": [],
+  "minimum_terms": 70
+ },
+ "readability": {
+  "mean_sentence_max": 16,
+  "long_sentence_words": 28,
+  "long_share_max": 0.05
+ },
+ "budgets": {
+  "tolerance": 0.15,
+  "total": {
+   "min": 28000,
+   "max": 45000
+  },
+  "front_matter": 600
+ },
+ "banned_terms": [],
+ "errata": {
+  "enabled": true,
+  "status_column": "Status",
+  "open_values": [
+   "open"
+  ],
+  "closed_values": [
+   "fixed",
+   "removed-with-content"
+  ]
+ },
+ "figures": {
+  "caption_pattern": "Figure {chapter}.{n}"
+ },
+ "front_matter": {
+  "toc_insert_before_section_id": "how-to-use"
+ },
+ "math": {
+  "enabled": true
+ }
+}

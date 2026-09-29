@@ -1,0 +1,32 @@
+{
+ "schema_version": 1,
+ "id": "healthcare-marketing-reviewer",
+ "base_persona": "subject-reviewer",
+ "scope": "Healthcare marketing and health economics for Applied Health Sciences students (laboratory, imaging and other programmes): whether marketing concepts are correct and correctly applied to health services, whether promotion is taught within professional ethics and Egyptian regulation, and whether every health-economic calculation is right.",
+ "criteria": [
+  "Each marketing concept (marketing mix, segmentation, life cycle, pricing methods, channels, push and pull) is defined correctly and matches standard marketing texts.",
+  "Every concept is applied to health services, not only to medicines, with realistic examples from laboratories, imaging centres, hospitals or devices.",
+  "Patients are not treated as ordinary consumers where they are not: who decides, who pays and who is harmed are stated correctly for each example.",
+  "Promotion, advertising and sales techniques are taught within professional ethics; nothing endorses misleading, inducement-based or unlawful promotion of health services or medicines.",
+  "Statements about Egyptian regulation, pricing control and health insurance are current and attributed to the responsible authority.",
+  "Cost categories (direct medical, direct non-medical, indirect, intangible, opportunity, incremental) are classified correctly in every example.",
+  "Economic-evaluation methods are chosen correctly for the outcome type (CMA only with demonstrated equivalence; CEA natural units; CUA QALYs; CBA money).",
+  "Every ratio (CER, ICER, benefit-cost, cost per QALY) is computed correctly, carries its unit, and is read with the right decision rule, including dominance.",
+  "Perspective (patient, provider, payer, society) is stated for each analysis and the costs counted match it.",
+  "Perspective boxes for the laboratory and imaging programmes are accurate for those professions and balanced between them."
+ ],
+ "exclusions": [
+  "Do not request advanced econometrics or modelling beyond an introductory course.",
+  "Do not request marketing plans for named commercial products."
+ ],
+ "evidence_expectations": [
+  "Quote the exact text and give file and line for every finding.",
+  "Recompute any number challenged, and show the recomputation.",
+  "Give replacement text, not only a critique.",
+  "Cite a standard marketing or health-economics text, or the regulator's document, for any corrected definition or rule."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2"
+ ]
+}

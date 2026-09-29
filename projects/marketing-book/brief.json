@@ -1,0 +1,229 @@
+{
+ "schema_version": 1,
+ "project_id": "marketing-book",
+ "identity": {
+  "title": "Healthcare Marketing",
+  "subtitle": "Marketing and Health Economics for Applied Health Sciences",
+  "edition": "2026-2027",
+  "authors": [
+   {
+    "name": "Assoc. Prof. Mohamed Yasser Hamdy",
+    "credit_line": "Assoc. Prof. Mohamed Yasser Hamdy",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "The book is credited to Assoc. Prof. Mohamed Yasser Hamdy alone, as the user chose at intake. The source lecture notes are not credited in the book, also the user's choice; the rework writes new text on the lectures' topics rather than reproducing their wording.",
+  "rework_authorised": "unknown",
+  "rework_authorised_note": "The user commissioned this book from a set of nine pharmaceutical-marketing lecture notes; no written authorisation from their author is on file."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "intake/Healthcare_Marketing_Lectures.md",
+    "format": "md",
+    "sha256": "00026c9da4489754671df9bc9708b49328863710e195eaefdeb38e7ea0f5d3e7"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Healthcare marketing and health economics",
+  "subfields": [
+   "the marketing concept and the marketing mix in healthcare",
+   "the healthcare market and patient decision-making",
+   "digital marketing of health services",
+   "health products and services and their life cycle",
+   "pricing of health services",
+   "distribution and access to health services",
+   "marketing communications and promotion under professional ethics",
+   "health-care costs",
+   "health outcomes and the ECHO model",
+   "economic evaluation: CMA, CEA, CBA, CUA and cost of illness"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Diagrams (marketing mix, life cycle, channels, push and pull, the cost-outcome equation) and charts are drawn as SVG sources in rework/figures."
+ },
+ "audience": {
+  "year_of_study": "Year 3",
+  "programmes": [
+   "Medical Laboratory Technology",
+   "Radiology and Medical Imaging Technology",
+   "other Applied Health Sciences programmes"
+  ],
+  "prior_knowledge": "No prior marketing or economics; basic arithmetic and percentages. Students know their own clinical service (laboratory or imaging) from the practitioner's side.",
+  "display_line": "For third-year students of the Faculty of Applied Health Sciences"
+ },
+ "perspectives": {
+  "enabled": true,
+  "items": [
+   {
+    "id": "laboratory",
+    "label": "Medical Laboratory"
+   },
+   {
+    "id": "imaging",
+    "label": "Radiology and Medical Imaging"
+   }
+  ]
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "broaden",
+   "simplify",
+   "restructure"
+  ],
+  "notes": "Broaden the pharmaceutical-marketing lectures to healthcare as a whole: every concept is explained for health services, with examples from laboratories, imaging centres, hospitals and devices as well as medicines. Pharmacoeconomics is broadened to health economics. Point-form notes become explained textbook prose; the worked examples are kept, checked and extended."
+ },
+ "language": {
+  "source": "en",
+  "output": "en",
+  "translation_required": false,
+  "terminology": "Standard marketing terms (4 Ps, product life cycle, push and pull) and health-economics terms and abbreviations (CMA, CEA, CBA, CUA, COI, ICER, QALY, WTP), each defined on first use."
+ },
+ "size": {
+  "target_words_total": 35000,
+  "chapter_count_target": 12,
+  "restructuring": "merge_split_allowed",
+  "restructuring_note": "About 12 chapters: the six marketing lectures and three economics lectures are reorganised and split where a topic needs its own chapter; the order of the source syllabus is kept."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 10,
+   "options": 4,
+   "format": "Ten four-option MCQs per chapter tagged to a learning objective, with rationales at the end of the chapter, followed by short essay questions with model answer points."
+  },
+  "cases": {
+   "enabled": false
+  },
+  "exercises": {
+   "enabled": true
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [
+   "NARS (National Academic Reference Standards) for Applied Health Sciences, NAQAAE. The user chose to start without a copy: the book claims no NARS alignment until the copy is supplied and the objectives are mapped to it"
+  ],
+  "frameworks": [
+   "Egyptian Drug Authority",
+   "Universal Health Insurance Authority (Egypt)",
+   "WHO"
+  ]
+ },
+ "references": {
+  "style": "apa",
+  "style_note": "APA 7 author-date citations in the text; each chapter lists what it cites, and one consolidated reference list closes the book. At least 60% of sources date from 2016 or later; classic sources are kept where they are the origin of a concept.",
+  "recency": {
+   "min_share_since": {
+    "year": 2016,
+    "share": 0.6
+   }
+  },
+  "evidence_cutoff": null
+ },
+ "constraints": {
+  "must_keep": [
+   "Every topic of the nine source lectures, in the source order",
+   "Every worked example in the source, corrected where its arithmetic is wrong"
+  ],
+  "must_not_change": [
+   "No invented ISBN, publisher or copyright registration",
+   "No promotional claims for named commercial products"
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "docx",
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Fonts installed on stock Windows",
+  "branding": {
+   "logo": null,
+   "colours": []
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Healthcare applicability and ethics",
+   "weight": 20,
+   "reviewer_ids": [
+    "healthcare-marketing-reviewer",
+    "subject-reviewer"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Health-economic calculation accuracy",
+   "weight": 20,
+   "reviewer_ids": [
+    "statistician",
+    "healthcare-marketing-reviewer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": "Title proposed by Claude from the user's aim (marketing from the healthcare point of view); author credit Assoc. Prof. Mohamed Yasser Hamdy; the user chose not to credit the source lecturer."
+  },
+  "B": {
+   "provenance": "user",
+   "note": "The user chose to keep and broaden the health-economics part; charts pack."
+  },
+  "C": {
+   "provenance": "user",
+   "note": "Third-year students of the Faculty of Applied Health Sciences, East Portsaid National University, all programmes."
+  },
+  "D": {
+   "provenance": "user",
+   "note": "The user chose perspective boxes for Medical Laboratory and Radiology and Medical Imaging."
+  },
+  "E": {
+   "provenance": "user",
+   "note": "Broaden from pharmaceutical to healthcare marketing, and from pharmacoeconomics to health economics."
+  },
+  "F": {
+   "provenance": "user",
+   "note": "English, as the source."
+  },
+  "G": {
+   "provenance": "user",
+   "note": "Medium size, about 35,000 words in about 12 chapters."
+  },
+  "H": {
+   "provenance": "user",
+   "note": "MCQs plus short essay questions per chapter."
+  },
+  "I": {
+   "provenance": "user",
+   "note": "Egypt; the user chose NARS as the curriculum standard and to start before supplying a copy."
+  },
+  "J": {
+   "provenance": "user",
+   "note": "APA."
+  },
+  "K": {
+   "provenance": "default-confirmed",
+   "note": "No ISBN, publisher or deadline given."
+  },
+  "L": {
+   "provenance": "user",
+   "note": "Word plus a designed colour PDF, A4."
+  },
+  "M": {
+   "provenance": "default-confirmed",
+   "note": "Claude proposes healthcare applicability and ethics, and health-economic calculation accuracy, 20 each."
+  }
+ },
+ "unresolved": []
+}

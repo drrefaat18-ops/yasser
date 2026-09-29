@@ -1,0 +1,501 @@
+{
+ "schema_version": 1,
+ "units": [
+  {
+   "heading": "Pharmaceutical Marketing — Lecture 1: The Marketing Concept",
+   "id": "src-ch01",
+   "level": 1,
+   "line_end": 161,
+   "line_start": 1,
+   "sha256": "e2ef9406f69cb0b0855032b4f28453a868e345697b99d6725cfa655007f3538e"
+  },
+  {
+   "heading": "The Marketing Concept",
+   "id": "src-ch01-s01",
+   "level": 2,
+   "line_end": 21,
+   "line_start": 7,
+   "sha256": "de595d4b44754b3dfe69339f66eb864928204e285d769627d7912006f88e73b7"
+  },
+  {
+   "heading": "Components of the Marketing Process",
+   "id": "src-ch01-s02",
+   "level": 2,
+   "line_end": 31,
+   "line_start": 23,
+   "sha256": "5a4c8599ecb4b02ae7b322943ed58455de1f7f27e708782f0581f76f8181b6c8"
+  },
+  {
+   "heading": "The Scope of Marketing",
+   "id": "src-ch01-s03",
+   "level": 2,
+   "line_end": 102,
+   "line_start": 33,
+   "sha256": "45a5f8db752b0f6301cb7c9b09fa0508eda74dd673f15a8e10a0bfe29b9e5178"
+  },
+  {
+   "heading": "Marketing Mix (4 Ps)",
+   "id": "src-ch01-s04",
+   "level": 2,
+   "line_end": 161,
+   "line_start": 104,
+   "sha256": "9226ba6107ddc7b36894264bc15505359cfa87f64ffc35a6315678c7cc3df3fb"
+  },
+  {
+   "heading": "Pharmaceutical Marketing — Lecture 2: Digital Marketing & the Pharmaceutical Market",
+   "id": "src-ch02",
+   "level": 1,
+   "line_end": 279,
+   "line_start": 163,
+   "sha256": "fe78d529854231432df60f8aea7c5c4f1f94abf2e95136698d203e10d8f6dd3c"
+  },
+  {
+   "heading": "Digital Marketing",
+   "id": "src-ch02-s01",
+   "level": 2,
+   "line_end": 209,
+   "line_start": 169,
+   "sha256": "1675072b23b61be2c247cf34f658b0eff3f1269e544cb80fcf9d6f341c92fc81"
+  },
+  {
+   "heading": "Characteristics, Structure and Organization of the Pharmaceutical Market",
+   "id": "src-ch02-s02",
+   "level": 2,
+   "line_end": 217,
+   "line_start": 211,
+   "sha256": "b448c5dfe7c902da4013f170e6913e0662abb39caf7dcb75775c88788a791e0e"
+  },
+  {
+   "heading": "Consumer Triggers for Buying Medicines",
+   "id": "src-ch02-s03",
+   "level": 2,
+   "line_end": 240,
+   "line_start": 219,
+   "sha256": "ebb49a4c36ea4eb1f93409d0e9ff7cd660bbed473955cccbf3b14309ed0e2e08"
+  },
+  {
+   "heading": "Comparison Between Pharmaceutical and Consumer Markets",
+   "id": "src-ch02-s04",
+   "level": 2,
+   "line_end": 258,
+   "line_start": 242,
+   "sha256": "ab29ba31e31c37ce00c694943fc413688882a07f804c62d54adcea573f3061d8"
+  },
+  {
+   "heading": "Principles of Marketing Management of the Pharmaceutical Enterprise",
+   "id": "src-ch02-s05",
+   "level": 2,
+   "line_end": 269,
+   "line_start": 260,
+   "sha256": "3644b131574a687c9d0203ad8f8929d48541fe56c66a94f28148775d4a3726a3"
+  },
+  {
+   "heading": "Problems of Pharmaceutical Marketing",
+   "id": "src-ch02-s06",
+   "level": 2,
+   "line_end": 279,
+   "line_start": 271,
+   "sha256": "d9bd89c2d2f3f4c56d0414de745b8ee406ae2c5cffbbc5cc82a152f29591074d"
+  },
+  {
+   "heading": "Pharmaceutical Marketing — Lecture 3: The Product in Marketing Activity",
+   "id": "src-ch03",
+   "level": 1,
+   "line_end": 543,
+   "line_start": 281,
+   "sha256": "257dec0582f5b7ffd1c90ba849b189dc07609f03d9cca9307f7e7611a4ed31a2"
+  },
+  {
+   "heading": "Marketing Mix (Review)",
+   "id": "src-ch03-s01",
+   "level": 2,
+   "line_end": 292,
+   "line_start": 287,
+   "sha256": "01aa95412bf080dbc05488db35173662c4e0aad6e9b82e4106997e850727faa3"
+  },
+  {
+   "heading": "The Product in Marketing Activity",
+   "id": "src-ch03-s02",
+   "level": 2,
+   "line_end": 311,
+   "line_start": 294,
+   "sha256": "15372e84cb8ececde0c0897a4a5a8be31341c40b9d914b4424bee67fb69889aa"
+  },
+  {
+   "heading": "Classifications of Consumer Goods",
+   "id": "src-ch03-s03",
+   "level": 2,
+   "line_end": 335,
+   "line_start": 313,
+   "sha256": "b5b8dcb067ca32ee5467043c8aa1dc6ec82c044d87800a11299ca439580ae04d"
+  },
+  {
+   "heading": "Pharmaceutical Goods",
+   "id": "src-ch03-s04",
+   "level": 2,
+   "line_end": 369,
+   "line_start": 337,
+   "sha256": "1cb9843e4911356165b7edd63d09e8fd6a00b2b79d4231063f6ff231763330c1"
+  },
+  {
+   "heading": "Consumer Value",
+   "id": "src-ch03-s05",
+   "level": 2,
+   "line_end": 401,
+   "line_start": 371,
+   "sha256": "713bc406091751d60bfc675baabca5a439a63bcb12c3fb7179df11be8099ecc9"
+  },
+  {
+   "heading": "The Product Life Cycle (PLC)",
+   "id": "src-ch03-s06",
+   "level": 2,
+   "line_end": 479,
+   "line_start": 403,
+   "sha256": "1a4e1fd3c34c6e16a3f82418f637f64cda10807eac8b9121446d452ca91a432d"
+  },
+  {
+   "heading": "PLC Summary Tables",
+   "id": "src-ch03-s07",
+   "level": 2,
+   "line_end": 543,
+   "line_start": 481,
+   "sha256": "d6f76afac5a7c9cf3b2f5590a251c215e7d584d0c3632a2f04c9b86fe5def5b6"
+  },
+  {
+   "heading": "Pharmaceutical Marketing — Lecture 4: The Price Policy of Pharmaceutical Enterprises",
+   "id": "src-ch04",
+   "level": 1,
+   "line_end": 741,
+   "line_start": 545,
+   "sha256": "464a114a62813a2203704d7e0ad09e50ece855ac24aa6cf6cddbd3d321bcfe54"
+  },
+  {
+   "heading": "The Price",
+   "id": "src-ch04-s01",
+   "level": 2,
+   "line_end": 556,
+   "line_start": 551,
+   "sha256": "de5ac4f60980025d76740a4fec30448ba020efe90099abf0d5378700026caa69"
+  },
+  {
+   "heading": "Functions of Price",
+   "id": "src-ch04-s02",
+   "level": 2,
+   "line_end": 565,
+   "line_start": 558,
+   "sha256": "9c3546933e7b7832040ca09739f22fefe3adba8a96370642dcbf1d014e0a0b99"
+  },
+  {
+   "heading": "Classification of Prices",
+   "id": "src-ch04-s03",
+   "level": 2,
+   "line_end": 603,
+   "line_start": 567,
+   "sha256": "4874b85b7653eb82bd8171a826b64856851aa99856b8ca9cd3bd818783016705"
+  },
+  {
+   "heading": "Pricing Methods",
+   "id": "src-ch04-s04",
+   "level": 2,
+   "line_end": 635,
+   "line_start": 605,
+   "sha256": "380b4a82eb0574f3544293f445d062eb42512bac0f321c37592d4e3b313e7ddf"
+  },
+  {
+   "heading": "Pricing Factors",
+   "id": "src-ch04-s05",
+   "level": 2,
+   "line_end": 703,
+   "line_start": 637,
+   "sha256": "bfb029798c0b9c234e59b9cbf2768a46829638e1d2dd08142c2406f09bd2be90"
+  },
+  {
+   "heading": "Stages of Setting the Price for Goods",
+   "id": "src-ch04-s06",
+   "level": 2,
+   "line_end": 715,
+   "line_start": 705,
+   "sha256": "389ae85a0daea85cce1b7d3d600fc1062e64e64cfbb902be827436ec3507c22f"
+  },
+  {
+   "heading": "The Price Policy",
+   "id": "src-ch04-s07",
+   "level": 2,
+   "line_end": 741,
+   "line_start": 717,
+   "sha256": "16dfd15f9b17bd0a1ee3c674bcc1a3eadb0a3d5d7bdb9d7231b15b45f9640443"
+  },
+  {
+   "heading": "Pharmaceutical Marketing — Lecture 5: Distribution & Pharmaceutical Sales Companies",
+   "id": "src-ch05",
+   "level": 1,
+   "line_end": 885,
+   "line_start": 743,
+   "sha256": "0bba282da550319bcb4475a5bed84c7ae86ab07444f0a082749506eaccaa91f5"
+  },
+  {
+   "heading": "Pharmaceutical Sales Companies",
+   "id": "src-ch05-s01",
+   "level": 2,
+   "line_end": 764,
+   "line_start": 749,
+   "sha256": "c15fa6bfbcff337af0ca1ca7756d20864974c3245d02c394fe0d318bf0a84dd5"
+  },
+  {
+   "heading": "Retail Trade",
+   "id": "src-ch05-s02",
+   "level": 2,
+   "line_end": 788,
+   "line_start": 766,
+   "sha256": "d135265f53ed8a75fb45e4cacd74de6b13bf445d4bf7c58be05d32674c1801de"
+  },
+  {
+   "heading": "Distribution",
+   "id": "src-ch05-s03",
+   "level": 2,
+   "line_end": 819,
+   "line_start": 790,
+   "sha256": "587a4e004ad1f43fed0c98a5bc3c69b16d1274c349714383708a3ed70b68672a"
+  },
+  {
+   "heading": "Classification of Distribution Channels for Pharmaceutical Products",
+   "id": "src-ch05-s04",
+   "level": 2,
+   "line_end": 830,
+   "line_start": 821,
+   "sha256": "c6bcb074cba66ac8df7bdab36f1e8dacf2fa98130452f017efe539af652de325"
+  },
+  {
+   "heading": "Types of Intermediaries in the Pharmaceutical Market",
+   "id": "src-ch05-s05",
+   "level": 2,
+   "line_end": 885,
+   "line_start": 832,
+   "sha256": "11fe8b9d726bb5a6cd8c5785c0f1fad414ad453c358e796e026267c9111879e6"
+  },
+  {
+   "heading": "Pharmaceutical Marketing — Lecture 6: Marketing & Communications",
+   "id": "src-ch06",
+   "level": 1,
+   "line_end": 1020,
+   "line_start": 887,
+   "sha256": "6df7a4239c6ad3ed0ec5c64c0ad950c029f0543651dc78e2a78a243bc21ccb9b"
+  },
+  {
+   "heading": "Elements of Marketing Communications",
+   "id": "src-ch06-s01",
+   "level": 2,
+   "line_end": 902,
+   "line_start": 893,
+   "sha256": "62e138caef313774a5308690d68b8ad51dd5b00f005daae58526f4ef4648a4de"
+  },
+  {
+   "heading": "Purposes of Marketing Communications in Pharmaceutical Companies",
+   "id": "src-ch06-s02",
+   "level": 2,
+   "line_end": 910,
+   "line_start": 904,
+   "sha256": "289f3aa4ce25fa66cee934706af15005ab124ba7b2bacc3682f404c74db29a5d"
+  },
+  {
+   "heading": "Means of Communication in Pharmaceutical Companies",
+   "id": "src-ch06-s03",
+   "level": 2,
+   "line_end": 917,
+   "line_start": 912,
+   "sha256": "ec4e0a91bca6f6949e466bf3501c2bc382b933172a493f40a336323c83f8d30c"
+  },
+  {
+   "heading": "Factors Affecting the Use of Marketing Communications",
+   "id": "src-ch06-s04",
+   "level": 2,
+   "line_end": 925,
+   "line_start": 919,
+   "sha256": "3f43e6d26aa07df7b7b9c47cb0ebade30f87478ce919a1632ccea4aac74c2d91"
+  },
+  {
+   "heading": "Promotion",
+   "id": "src-ch06-s05",
+   "level": 2,
+   "line_end": 952,
+   "line_start": 927,
+   "sha256": "6b32f2d9012124384c7a7232384f38beb83e049382ef038c678e124ed28037a9"
+  },
+  {
+   "heading": "Sales Promotion of Pharmaceutical Goods",
+   "id": "src-ch06-s06",
+   "level": 2,
+   "line_end": 969,
+   "line_start": 954,
+   "sha256": "806320b8116a19186ef3d1aab5ade5a7eb0a02efc29f789fff380280001ace73"
+  },
+  {
+   "heading": "Advertising",
+   "id": "src-ch06-s07",
+   "level": 2,
+   "line_end": 1005,
+   "line_start": 971,
+   "sha256": "e6d8a2d7b4bf833af1f849260cf54cb5030060976afb8a08ee7d09a0e009c1eb"
+  },
+  {
+   "heading": "Advertising vs. Sales Promotion (Traditional Marketing)",
+   "id": "src-ch06-s08",
+   "level": 2,
+   "line_end": 1020,
+   "line_start": 1007,
+   "sha256": "dc97f3b73b263e19fc3a607a02c69be1964b2b6f2c5f1b23c34f304e3560ca9b"
+  },
+  {
+   "heading": "Pharmacoeconomics — Lecture 7: Introduction & Costs",
+   "id": "src-ch07",
+   "level": 1,
+   "line_end": 1187,
+   "line_start": 1022,
+   "sha256": "9b2af330b4775feb60c2ac5bcc7c4f5b32ab4146506446e480c5896fe3a2cad1"
+  },
+  {
+   "heading": "Pharmacoeconomics",
+   "id": "src-ch07-s01",
+   "level": 2,
+   "line_end": 1049,
+   "line_start": 1028,
+   "sha256": "9969f8500c2acf32ba12668dedbf6cde6b6beae4c918853cae1e52c810b4bbca"
+  },
+  {
+   "heading": "Inputs and Outcomes",
+   "id": "src-ch07-s02",
+   "level": 2,
+   "line_end": 1070,
+   "line_start": 1051,
+   "sha256": "9fd7ae7425ffa55312ba4cec92823df61d2a4d72a5433b5fad3d1fdc1c7a4954"
+  },
+  {
+   "heading": "Principle of Pharmacoeconomics",
+   "id": "src-ch07-s03",
+   "level": 2,
+   "line_end": 1083,
+   "line_start": 1072,
+   "sha256": "ae11d432edd6228f271b39487bfbb395c4d51d5c10ebe49c3bb0a77b0989f2e9"
+  },
+  {
+   "heading": "1. Cost",
+   "id": "src-ch07-s04",
+   "level": 2,
+   "line_end": 1152,
+   "line_start": 1085,
+   "sha256": "776da0f721d1968658afc7cd8e03d5b5eec9f7d6283dc966ed5228316a218140"
+  },
+  {
+   "heading": "Three Methods for Valuing Indirect Costs",
+   "id": "src-ch07-s05",
+   "level": 2,
+   "line_end": 1170,
+   "line_start": 1154,
+   "sha256": "ff6e01a60851ff4541aec88e4a7774cfb609cd97ce8df2106c40bcf84414bb98"
+  },
+  {
+   "heading": "Activity",
+   "id": "src-ch07-s06",
+   "level": 2,
+   "line_end": 1187,
+   "line_start": 1172,
+   "sha256": "2e32b8774df222ce9e0d48fb3cfe2d510d069aadd84c04325a61c03699a4a39f"
+  },
+  {
+   "heading": "Pharmacoeconomics — Lecture 8: Outcomes, Perspectives & Evaluation Methods",
+   "id": "src-ch08",
+   "level": 1,
+   "line_end": 1371,
+   "line_start": 1189,
+   "sha256": "9fdd4418474ab400afb6260cc744d326190cccacdbde48c97bd7feb11a426482"
+  },
+  {
+   "heading": "Principle of Pharmacoeconomics (Review)",
+   "id": "src-ch08-s01",
+   "level": 2,
+   "line_end": 1209,
+   "line_start": 1195,
+   "sha256": "742c8d3800a07fbc97c0499bfc845a0d8935c71607216e753af346ff209bcfd8"
+  },
+  {
+   "heading": "2. Consequences (Outcomes) — the ECHO Model",
+   "id": "src-ch08-s02",
+   "level": 2,
+   "line_end": 1243,
+   "line_start": 1211,
+   "sha256": "9016b0717163881c8a9d19ef00dd4b841413b926c0118aa2e0c9322b878168e5"
+  },
+  {
+   "heading": "3. Perspectives",
+   "id": "src-ch08-s03",
+   "level": 2,
+   "line_end": 1252,
+   "line_start": 1245,
+   "sha256": "d9c68a0f3172cc13ed825e285d98e986b96f96d5ff4b83a1d96c92a0b82fab7f"
+  },
+  {
+   "heading": "Steps for Conducting a Pharmacoeconomic (PE) Analysis",
+   "id": "src-ch08-s04",
+   "level": 2,
+   "line_end": 1276,
+   "line_start": 1254,
+   "sha256": "00cc7969ee0b0edeab02bf5fbf6f88fdec92c72236ab6c7cf5ad43cbca38d791"
+  },
+  {
+   "heading": "Sensitivity Analysis (SA)",
+   "id": "src-ch08-s05",
+   "level": 2,
+   "line_end": 1288,
+   "line_start": 1278,
+   "sha256": "71198024b137babcc4e24d9200e9de9f97b894df836c033eb0a9f13c9daad6c7"
+  },
+  {
+   "heading": "Pharmacoeconomic Evaluations",
+   "id": "src-ch08-s06",
+   "level": 2,
+   "line_end": 1371,
+   "line_start": 1290,
+   "sha256": "55124fef41450ab89a4740220fa7e88189b83c380d3068e3dd636388f06f5a27"
+  },
+  {
+   "heading": "Pharmacoeconomics — Lecture 9: Applications & Worked Examples",
+   "id": "src-ch09",
+   "level": 1,
+   "line_end": 1457,
+   "line_start": 1373,
+   "sha256": "28e764bc0b21ff364a746a3f895cace789f4f2f52964f7be10e5dcbf9d086836"
+  },
+  {
+   "heading": "Applications",
+   "id": "src-ch09-s01",
+   "level": 2,
+   "line_end": 1385,
+   "line_start": 1379,
+   "sha256": "dbf1cf1affde9bc25d4603e0bca29e400b75f0d779b54e262ec433952eaad595"
+  },
+  {
+   "heading": "Example 1 — Standardization Cost Value",
+   "id": "src-ch09-s02",
+   "level": 2,
+   "line_end": 1405,
+   "line_start": 1387,
+   "sha256": "e7d3913647755b433a1f9b3113a29f35171a89dff9b275a54eb77f43bfc81ccf"
+  },
+  {
+   "heading": "Example 2 — Choosing CMA vs. CEA",
+   "id": "src-ch09-s03",
+   "level": 2,
+   "line_end": 1432,
+   "line_start": 1407,
+   "sha256": "f6941857b80368349c1d2e39544f131286529d5952c6df7ea9905141a5b016e2"
+  },
+  {
+   "heading": "Example 3 — Cost-Benefit Analysis",
+   "id": "src-ch09-s04",
+   "level": 2,
+   "line_end": 1457,
+   "line_start": 1434,
+   "sha256": "0c1214e4cf74363353215a20095abfee5eb4a2201c08cfd3dece1a2e5ba033ff"
+  }
+ ]
+}

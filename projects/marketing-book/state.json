@@ -1,0 +1,101 @@
+{
+ "aborts": [],
+ "active_run": null,
+ "approvals": {
+  "intake": {
+   "approved_at": "2026-09-29T22:10:16Z",
+   "approved_by": "user",
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "4b264d58454a8d52fb699fd0880a2ad7e9a8afea1b224c33772abcde79cc511f",
+   "files": {
+    "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
+    "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
+    "rubric.json": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0",
+    "template.json": "1db000a65647bc7c957a81a96a91f609a689a7768d84c152fb1ae9031c6ab505",
+    "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "marketing-book",
+ "receipts": {
+  "ingest": {
+   "args": {},
+   "converter": "markitdown",
+   "inputs": {
+    "intake/Healthcare_Marketing_Lectures.md": "00026c9da4489754671df9bc9708b49328863710e195eaefdeb38e7ea0f5d3e7",
+    "template.json": "1db000a65647bc7c957a81a96a91f609a689a7768d84c152fb1ae9031c6ab505"
+   },
+   "outputs": {
+    "ingest/conversion-report.json": "1ce4601fb6daf4dcdac5db1c8cd328027701c65ccd3a0360abfcfe4b5d75a787",
+    "ingest/normalized.md": "ad035896a60666373f09fee92caa4556286b8ff6576ed351429d02fa78012e9a",
+    "ingest/units.json": "faaf8b4d1dc845d14b9c3112d2137e428ba6756fa0592aa6721ddc3b3cc29e84",
+    "source-manifest.json": "2ebe99159b47643c6bc659e2d45062b86f4e52c562ff6fde2204f5c8aae94191",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/Healthcare_Marketing_Lectures.md": "00026c9da4489754671df9bc9708b49328863710e195eaefdeb38e7ea0f5d3e7"
+   },
+   "source_formats": [
+    "md"
+   ],
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-09-29T22:10:20Z",
+   "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b"
+  },
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook.json": "075302844e57524ac3ca57b29030dcb6377b36c85ba54c0b16ead2d75148aa7e",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
+    "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
+    "rubric.json": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0",
+    "template.json": "1db000a65647bc7c957a81a96a91f609a689a7768d84c152fb1ae9031c6ab505",
+    "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-09-29T22:07:31Z",
+   "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b"
+  },
+  "new": {
+   "args": {
+    "slug": "marketing-book"
+   },
+   "inputs": {},
+   "outputs": {
+    "agents/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "design/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-09-29T21:48:29Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  }
+ },
+ "schema_version": 1
+}
