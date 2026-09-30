@@ -409,7 +409,7 @@ The last sentence of the example is the health-care point. A price that does not
 
 ![Two price–quantity graphs. The left graph has a steep blue demand line through the points 400 EGP with 300 tests and 500 EGP with 270 tests. The right graph has a flatter coral line on which a small rise in price moves the quantity a long way to the left.](../rework/figures/out/ch02-demand-elasticity.png)
 
-*Figure 2.2 — Inelastic and elastic demand. On the left, the vitamin D test of the worked example: a 25% rise in price cuts quantity by only 10%. On the right, an illustrative elective panel, where a small price rise causes a large fall in quantity.*  
+*Figure 2.2 — Inelastic and elastic demand. On the left, the vitamin D test of the worked example: a 25% rise in price cuts quantity by only 10%. On the right, an illustrative elective panel, where a small price rise causes a large fall in quantity. Elasticity is a ratio of percentage changes, so how steep a line looks also depends on the scales of the axes; the two panels only illustrate the contrast.*  
 Original diagram (original)
 
 ## 2.6 Principles of Marketing Management in Health Care
@@ -899,10 +899,10 @@ A process can be drawn as a sequence of steps. Each step is a chance to delight 
 
 Physical evidence reassures patients about what they cannot see. A patient who sees the phlebotomist open a sterile needle from an intact sealed wrapper trusts the laboratory's hygiene. A report with clear reference ranges and the laboratory's accreditation mark signals care. Figure 4.2 shows the physical evidence of an imaging room.
 
-![A photograph of a CT scanner room: a large ring-shaped scanner with a patient table covered by a clean sheet, radiation safety signs on the wall beside it and a drip stand to the right.](../rework/figures/out/ch04-ct-room.jpg)
+![A photograph of a CT scanning room lit in soft blue, with a patient table covered by a blue sheet leading into a white ring-shaped scanner, a monitor showing a scan image on the left, and a backlit ceiling panel showing fish swimming over a coral reef.](../rework/figures/out/ch04-ct-room.jpg)
 
-*Figure 4.2 — Physical evidence in an imaging centre. The patient cannot judge the scanner's technical performance, but sees the room: its cleanliness, clean linen, clear safety signs and working equipment.*  
-Photograph: Romainbehar, via Wikimedia Commons (CC0)
+*Figure 4.2 — Physical evidence in an imaging room. The patient cannot judge the scanner's technical performance, but sees the room: its cleanliness, the clean table, the soft lighting and a ceiling display of the kind some centres use to put patients at ease.*  
+Photograph: U.S. Army, via Wikimedia Commons (CC0)
 
 > **In Practice:** A laboratory branch receives complaints about long waits in the morning. The team maps the process and finds that registration and payment happen at one desk. They add a second desk for patients who booked online and move payment to the end. The morning wait falls sharply. No price, product or promotion changed. A process change improved the service, and satisfaction rose.
 
@@ -946,9 +946,9 @@ Drawing the blueprint reveals **fail points**, the steps where the service most 
 
 The blueprint also shows where physical evidence matters. The patient cannot see the analyser or the reporting workstation, so the reception, the collection room and the printed report must carry the signals of quality. Figure 4.3 shows a blueprint of a laboratory blood test.
 
-![A grid with four labelled rows: Patient actions (books, arrives, registers, waits, gives sample, gets result); Front-stage staff (booking staff, receptionist, identity check, calling the patient, phlebotomist, result sent); Back-stage actions below a dashed line of visibility (labels tube, transports, analyses, validates and reports); and Support processes (information system, reagent supply, equipment maintenance). Coral circles marked F sit on labelling, transport and result delivery.](../rework/figures/out/ch04-blueprint.png)
+![A grid with seven time columns and four labelled rows. Patient actions: books, arrives, registers, waits, gives sample, goes home, gets result. Front-stage staff: booking staff, reception, identity check, calling the patient, drawing and labelling the tube, result sent. Below a dashed line of visibility, back-stage actions: transports and analyses, then validates and reports. Support processes: information system, reagent supply, equipment maintenance. Coral circles marked F sit on labelling at sampling, transport and result delivery.](../rework/figures/out/ch04-blueprint.png)
 
-*Figure 4.3 — A service blueprint of a laboratory blood test. The line of visibility separates what the patient sees from the back-stage work; F marks the usual fail points.*  
+*Figure 4.3 — A service blueprint of a laboratory blood test, with time running from left to right. The line of visibility separates what the patient sees from the back-stage work; F marks the usual fail points. The tube is labelled at the moment of sampling, in front of the patient.*  
 Original diagram (original)
 
 > **In Practice:** An imaging centre draws the blueprint of an MRI appointment. It finds that patients are asked about metal implants twice, once by phone and once at the scanner, but never in writing. The team adds a short written checklist at registration, signed by the patient and checked by the radiographer. Safety improves and the scanner loses fewer slots to last-minute exclusions.
@@ -1507,12 +1507,12 @@ Health technologies follow life cycles with features of their own.
 
 **Diagnostic tests and evidence.** A laboratory test's life depends on evidence and guidelines. A test enters growth when a guideline recommends it, and it enters decline when a better test replaces it or when evidence shows it adds little. A laboratory that reviews its menu every year keeps tests that help and retires tests that no longer do.
 
-**Imaging equipment and upgrades.** An imaging centre faces two life cycles at once: the cycle of each type of examination, and the cycle of each machine. Scanners age, and their maintenance costs rise while newer models offer faster scans and lower doses. The decision to replace a scanner weighs these against the cost of the new one. Chapters 10 to 12 give the tools for that decision. Figure 6.2 shows a newer hybrid technology at an early stage of its life cycle.
+**Imaging equipment and upgrades.** An imaging centre faces two life cycles at once: the cycle of each type of examination, and the cycle of each machine. Scanners age, and their maintenance costs rise while newer models offer faster scans and lower doses. The decision to replace a scanner weighs these against the cost of the new one. Chapters 10 to 12 give the tools for that decision. Figure 6.2 shows a new scanner being installed.
 
-![A photograph of a man lying on the table of a large white combined PET-MRI scanner while a clinician in a white coat stands beside him.](../rework/figures/out/ch06-pet-mri.jpg)
+![A photograph of a large MRI magnet, still wrapped in clear plastic, standing on blue moving rails in an empty, newly built room, while a worker in a face mask watches from the side.](../rework/figures/out/ch06-mri-install.jpg)
 
-*Figure 6.2 — A new imaging technology. A combined PET-MRI scanner at its introduction is costly and available in few centres; its use grows as evidence and payers' coverage follow.*  
-Photograph: NIH Image Gallery, National Institutes of Health, via Wikimedia Commons (public-domain)
+*Figure 6.2 — Installing a new MRI scanner. Replacing imaging equipment is a large, long-term decision in the life cycle of an imaging service, taken when an ageing machine's costs rise and newer models offer more.*  
+Photograph: Christina Clarke, U.S. Navy, via Wikimedia Commons (public-domain)
 
 **Payment rules.** In health care, a decision by a payer to cover a service can move it from introduction to growth almost overnight. Withdrawal of coverage can push it into decline just as fast. Marketing plans must therefore follow coverage decisions as closely as they follow competitors.
 
@@ -2071,11 +2071,11 @@ A **pharmaceutical warehouse** is a licensed establishment that stores medicines
 
 International guidance on good distribution practice sets standards for storage, transport, records and recalls (World Health Organization, 2010). Its purpose is that a medicine reaches the patient with the quality it had when it left the factory.
 
-Laboratories and imaging departments depend on the same kind of distribution. Reagents, calibrators and quality-control materials are supplied by specialised distributors of in-vitro diagnostic products, and many must be kept cold from the manufacturer to the laboratory refrigerator. A break in this cold chain can change a reagent's performance and so the patient's result. Iodinated and gadolinium contrast media for imaging are stored within the temperature range on their labels and are tracked by batch so that a recall can reach every department that holds them. When a laboratory chooses a supplier, storage and delivery conditions are part of the quality it is buying, not only the price. Figure 8.2 shows the links of this cold chain.
+Laboratories and imaging departments depend on the same kind of distribution. Reagents, calibrators and quality-control materials are supplied by specialised distributors of in-vitro diagnostic products, and many must be kept cold, often between 2 and 8 °C, from the manufacturer to the laboratory refrigerator. A break in this cold chain can change a reagent's performance and so the patient's result. Iodinated and gadolinium contrast media for imaging are stored within the temperature range on their labels and are tracked by batch so that a recall can reach every department that holds them. When a laboratory chooses a supplier, storage and delivery conditions are part of the quality it is buying, not only the price. Figure 8.2 shows the links of this cold chain.
 
-![An illustration of four stages joined by arrows: a factory labelled Manufacturer, a refrigerated truck labelled Distributor's vehicle, a shelved cold room labelled Distributor's cold room and a refrigerator full of reagent boxes labelled Laboratory refrigerator. A thermometer marked 2–8 °C sits above each of the last three.](../rework/figures/out/ch08-cold-chain.png)
+![An illustration of four stages joined by arrows: a factory labelled Manufacturer, a refrigerated truck labelled Distributor's vehicle, a shelved cold room labelled Distributor's cold room and a refrigerator full of reagent boxes labelled Laboratory refrigerator. A thermometer marked e.g. 2–8 °C sits above each of the last three.](../rework/figures/out/ch08-cold-chain.png)
 
-*Figure 8.2 — The cold chain for laboratory reagents. Many reagents must stay within a labelled temperature range, often 2–8 °C, from the manufacturer through the distributor to the laboratory refrigerator.*  
+*Figure 8.2 — The cold chain for laboratory reagents. Many reagents must stay within the temperature range on their labels, often 2–8 °C, from the manufacturer through the distributor to the laboratory refrigerator; some are kept frozen and some at room temperature.*  
 Original illustration (original)
 
 ## 8.8 Retail Trade and the Pharmacy
@@ -2094,7 +2094,7 @@ A retailer makes several marketing decisions: choosing its target market, develo
 
 ![A photograph of a woman at a pharmacy counter reading a leaflet, beside a display card about stopping smoking; a pharmacist in a white coat works at shelves of medicines behind her.](../rework/figures/out/ch08-pharmacy-counter.jpg)
 
-*Figure 8.3 — The pharmacy as a retail outlet. The counter, the shelves and the information on display are part of the service, and the pharmacist's counselling is its most valuable part.*  
+*Figure 8.3 — The pharmacy as a retail outlet, in a United States example. The counter, the shelves and the health information on display are part of the service, and the pharmacist's counselling is its most valuable part.*  
 Photograph: Bill Branson, National Cancer Institute, via Wikimedia Commons (public-domain)
 
 The same retail decisions face a laboratory or imaging centre that serves patients directly. It chooses whom it serves, which tests or scans it offers, what services surround them, such as home sample collection, online results or evening hours, and its prices within regulation. Like a pharmacy, its most valuable service is professional: preparing patients correctly and explaining what a test or scan involves.

@@ -79,7 +79,7 @@
     "rework/glossary.md": "d23da590b28b3feaec1701d971f8876eb9772d9f765f38159a1af5a16e7e7121",
     "rubric.json": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0"
    },
-   "invalidated_by": "build@2026-09-30T12:25:58Z",
+   "invalidated_by": "build@2026-09-30T12:35:24Z",
    "outputs": {
     "audit/codex-audit.md": "0696c026bedb8d2f9a27050b8eb4ac091dba9620339f1bb7eeb7b2bb372cf333",
     "audit/findings.json": "359b4fdb0004de74793fffd8f51211f0bf6330efde5b2c13f39ec9388efc2060",
@@ -108,30 +108,31 @@
     "rework/ch03.md": "529fc15248365a49fbe033524a8add37fff1f9310ed670328d2f7261d4a3c078",
     "rework/ch04.md": "52f052c93ca375d0f7ed0d90f2b5ab0090da56d07315317e67148233efbf81cd",
     "rework/ch05.md": "44384acf5520886e3567399c5bc39fe0e032698ce9fece5f4b1291ddca5a8d12",
-    "rework/ch06.md": "44bbe128e4a5338cf1f8685dd758f22ea31087fd187bba26f0c70c3f6e962fbe",
+    "rework/ch06.md": "22a0fe894326fb2783d1f890ff3a6205605b456b4d47853bd9418581a4a6f683",
     "rework/ch07.md": "e303066c50f5b4ccd138f65716c15108162d011a0829f2f95f1cf86261c65cf0",
-    "rework/ch08.md": "22227011623b1ee9e69e69adefd936ab84dd14af46402849b444b41ee3bb0274",
+    "rework/ch08.md": "4d2e23b323fb958a22537cdbaf14b1737d5015d13d3ed863371d85debce53b0b",
     "rework/ch09.md": "cfbe2e05451bed2e57673a96149dfcc2aac2072f05cd6a09b6aabcfcbedf11b7",
     "rework/ch10.md": "73b33585fcdbd120b38dddc22dd6835bb359b5656f6d5b20a68502c1ccc2edca",
     "rework/ch11.md": "af2e08158e151c5e773ca6f42ab15457c7426f6a8041432aea9dee52bbb9d26a",
     "rework/ch12.md": "2d4d1cc4ebca892c7fa583ea844ac5638a622cfd1e31a21589aa4da8bb072fce",
     "rework/errata-ledger.md": "bf19b30b3be7d84ababe852df91995592d1229fa8cfed1d3c9c7ad093555c6a7",
-    "rework/figures/figures.json": "b2d2d5712cbca5afed4dd890264671aca6052447d699f3725e36ca010344c7c3",
+    "rework/figures/figures.json": "1cf75b7d926e14ae66ceccfb91406cbbed7f89bfa64806ba77d2f4fc8ec24c95",
+    "rework/figures/photo-sources.md": "f5548d8e4555724bed2091cd529ae1f0b5fc0748c615787286e74d54eaea1fc4",
     "rework/figures/src/ch01-marketing-process.svg": "3cec32983fb53aa0a7f52a8af2a092a44c1c10740f36f2d8dad2831b62aac7c1",
     "rework/figures/src/ch02-customer-roles.svg": "79f2474f6e82226a6f4555b027b27544949fbf8001b92eab06c7a449cd239c17",
     "rework/figures/src/ch02-demand-elasticity.svg": "3d079c6c8b42feda8093eabd67e3c38be6aa3575098dbc7774b4a35e2ea5004f",
     "rework/figures/src/ch03-campaign-steps.svg": "372dd2cbf4a69961b38d1b678f2aa5709efd52285cba1ce656768c4bc1c2b9e1",
     "rework/figures/src/ch03-online-booking.svg": "5b6171e9f41291be5f2f08f759eb19be022d5e95fd12a5521b0b7b867603d544",
-    "rework/figures/src/ch04-blueprint.svg": "d5cd58fe570c9f6e6e901c7f7c0bc9319a678104a4c37fbc34d8e89e4ec9e4c2",
-    "rework/figures/src/ch04-ct-room.jpg": "163f7d30507fa24b2452e72d96baf3dcf25e21c15afcb6fccc81a45a1a3d00f9",
+    "rework/figures/src/ch04-blueprint.svg": "cc3846b25ddd827251824891b08afe8c0f496fd0a591684eae6c016d412af83f",
+    "rework/figures/src/ch04-ct-room.jpg": "dd60694e06f8edd67ada7a4eb01f0855a13671a5f40993a5c443c619ce715ecf",
     "rework/figures/src/ch04-seven-ps.svg": "0bf3367c72f698aeabef6dd93d20311d77f0a76994ec5d005ca5d1b8ca6374bb",
     "rework/figures/src/ch05-customer-value.svg": "d3fbc31787fa95ec211374ed277a7b7a72b21f1a7bda6828d604229eae8f9c73",
     "rework/figures/src/ch05-lab-culture.jpg": "9326bfd0e21e0cd1101956e1d58a1a115f176569e7c21ec501b0a17ef110e1ed",
     "rework/figures/src/ch06-life-cycle.svg": "85cde3c40eb23941bed7138b6850b02b4a34d9341350f68d1fc40de3a7ab07d1",
-    "rework/figures/src/ch06-pet-mri.jpg": "1133006efdd9aef73785728ac5564979c8faffce05336191490f74258c9114ae",
-    "rework/figures/src/ch07-break-even.svg": "19e0a55c8ee7e0f45f05ba22fced10cf58274eed1367ff4b809090aeda133aa3",
+    "rework/figures/src/ch06-mri-install.jpg": "4fd20afb0210a8ff52516c095155e8c4ab14aa8b89cd02fd3145f71ceb189b30",
+    "rework/figures/src/ch07-break-even.svg": "8ec960c793aae3305dabb6532decf925e060cb1a28e875b8c2244450bc9c51cd",
     "rework/figures/src/ch08-channel-levels.svg": "a594d52cbab46c60d164a38bebd043473f8772b073c28abea1393408035d6e53",
-    "rework/figures/src/ch08-cold-chain.svg": "94167c8b0ca2d5315fb3c89659df886da3643965d5ab0357e1399fab1283e4f2",
+    "rework/figures/src/ch08-cold-chain.svg": "98e009dd3069bb5f65797b857c8b7261aead10b4a8e0ec8b35f7a54d8a9ad36b",
     "rework/figures/src/ch08-pharmacy-counter.jpg": "038222b5ca1395b8ad549235c977870200bbe36a4d36eb24d81ad98e3ee74747",
     "rework/figures/src/ch09-awareness-day.svg": "e0ca97db52c9ecdff1109c980e5d725d83296eed7a06708ebaab93dc3840532d",
     "rework/figures/src/ch09-push-pull.svg": "88639330439013de1058673d64353f25c1fb56b1dc4d12e4549fdff00afb2ef8",
@@ -144,10 +145,10 @@
     "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
    },
    "outputs": {
-    "build/Healthcare_Marketing.docx": "f90a0fefce94ce2adffe50d90c3c907d80bc68917e64647e5b27db82a1dc944d",
-    "build/Healthcare_Marketing.md": "edda957091804e815988bb7ec6e29afcc2ea292f275fa192ca5807299fe4079e",
-    "build/Healthcare_Marketing.pdf": "3d6afe532cb2750b3ce64806593e1c7342a324a2795c6aaddac0c4a43d8e6304",
-    "build/build-report.json": "c09fabcd875b32ce2cf1535d5691f1dc65a6aae5fe92ed1d2b2f528c104a3408",
+    "build/Healthcare_Marketing.docx": "ee17bd15eaf6bdaead99ed8db87487b9708b6a753fa14926e7ad68eb95798758",
+    "build/Healthcare_Marketing.md": "59dc2d2cd8f9dfdf3d7fe608f79297fb5950c03cb0e756a0ab5797621e662642",
+    "build/Healthcare_Marketing.pdf": "039cc75cf1758bdfd991360405aff567be2d130fe3a96c2d003901ae6795975a",
+    "build/build-report.json": "a89fb756b7fd54621c4882aa67047380dbc2ff4438f38567c35cbf67e9185a19",
     "build/checkpoints/cover.png": "53bcffc65e4f58e31dd8736f04d68a6303b50062101532508edeee94989dd8bf",
     "build/checkpoints/first-chapter.png": "df875dcd01252eca3cc74713f7ebaaeb29852d4337cb89377d6a37082d2dbce7",
     "build/checkpoints/first-figure.png": "eea30fe7e5c0ec1df8799dfdd97b9511353d937cbd7701c50e2b0c0d7974c2c1",
@@ -162,9 +163,9 @@
     "rework/figures/out/ch03-campaign-steps.svg": "372dd2cbf4a69961b38d1b678f2aa5709efd52285cba1ce656768c4bc1c2b9e1",
     "rework/figures/out/ch03-online-booking.png": "fed35812717bf6f0239674b78cedc2130b4a5e49d64d3634ec5aae7bb6c95ca7",
     "rework/figures/out/ch03-online-booking.svg": "5b6171e9f41291be5f2f08f759eb19be022d5e95fd12a5521b0b7b867603d544",
-    "rework/figures/out/ch04-blueprint.png": "682935525879b54d8e8bc4cad96775d61d5809e213bfc0bc9057d768da9d0c2e",
-    "rework/figures/out/ch04-blueprint.svg": "d5cd58fe570c9f6e6e901c7f7c0bc9319a678104a4c37fbc34d8e89e4ec9e4c2",
-    "rework/figures/out/ch04-ct-room.jpg": "163f7d30507fa24b2452e72d96baf3dcf25e21c15afcb6fccc81a45a1a3d00f9",
+    "rework/figures/out/ch04-blueprint.png": "8aa381ab95e2040f952b1d58988b414e9fbd24c615460c56d4da57d1d3ef7313",
+    "rework/figures/out/ch04-blueprint.svg": "cc3846b25ddd827251824891b08afe8c0f496fd0a591684eae6c016d412af83f",
+    "rework/figures/out/ch04-ct-room.jpg": "dd60694e06f8edd67ada7a4eb01f0855a13671a5f40993a5c443c619ce715ecf",
     "rework/figures/out/ch04-seven-ps.png": "ddc0150e2ee6b2448cdf989ea876943806f80c7789399c59127b22871ed2cbaf",
     "rework/figures/out/ch04-seven-ps.svg": "0bf3367c72f698aeabef6dd93d20311d77f0a76994ec5d005ca5d1b8ca6374bb",
     "rework/figures/out/ch05-customer-value.png": "dc52eefe0226d03361d554857bbe94740d8c0a1a4081d8dd6058d8bdd461acdb",
@@ -172,13 +173,13 @@
     "rework/figures/out/ch05-lab-culture.jpg": "9326bfd0e21e0cd1101956e1d58a1a115f176569e7c21ec501b0a17ef110e1ed",
     "rework/figures/out/ch06-life-cycle.png": "bd8476a93d8e6ae8c2812ed3bdf531bb0b25d9e89c670c408ab54602ed1480be",
     "rework/figures/out/ch06-life-cycle.svg": "85cde3c40eb23941bed7138b6850b02b4a34d9341350f68d1fc40de3a7ab07d1",
-    "rework/figures/out/ch06-pet-mri.jpg": "1133006efdd9aef73785728ac5564979c8faffce05336191490f74258c9114ae",
-    "rework/figures/out/ch07-break-even.png": "1ca708d800c81d727dbfcdc5f99d6e0f836d1829a1da269c74df95690d3414b5",
-    "rework/figures/out/ch07-break-even.svg": "19e0a55c8ee7e0f45f05ba22fced10cf58274eed1367ff4b809090aeda133aa3",
+    "rework/figures/out/ch06-mri-install.jpg": "4fd20afb0210a8ff52516c095155e8c4ab14aa8b89cd02fd3145f71ceb189b30",
+    "rework/figures/out/ch07-break-even.png": "c8b78e8523cd78be2be747230d9a656a8132263fa8f04c0bb8a98618f2cb4bfe",
+    "rework/figures/out/ch07-break-even.svg": "8ec960c793aae3305dabb6532decf925e060cb1a28e875b8c2244450bc9c51cd",
     "rework/figures/out/ch08-channel-levels.png": "b52dff502d77d8f7b8b55edcb86e146d0858b6c4cb1ab1ab641878aedcb88339",
     "rework/figures/out/ch08-channel-levels.svg": "a594d52cbab46c60d164a38bebd043473f8772b073c28abea1393408035d6e53",
-    "rework/figures/out/ch08-cold-chain.png": "767d1511b23f958e365e11a4f5c222ba1c54adb69779e48b4cb5c1808592b94d",
-    "rework/figures/out/ch08-cold-chain.svg": "94167c8b0ca2d5315fb3c89659df886da3643965d5ab0357e1399fab1283e4f2",
+    "rework/figures/out/ch08-cold-chain.png": "6c00ce560afb364b65b791f6030902986f371534d9756982231acbac6d494f82",
+    "rework/figures/out/ch08-cold-chain.svg": "98e009dd3069bb5f65797b857c8b7261aead10b4a8e0ec8b35f7a54d8a9ad36b",
     "rework/figures/out/ch08-pharmacy-counter.jpg": "038222b5ca1395b8ad549235c977870200bbe36a4d36eb24d81ad98e3ee74747",
     "rework/figures/out/ch09-awareness-day.png": "337ab545bd9d78d8aac40265368d1db61022de9d834f359ad5e34153967af3cd",
     "rework/figures/out/ch09-awareness-day.svg": "e0ca97db52c9ecdff1109c980e5d725d83296eed7a06708ebaab93dc3840532d",
@@ -197,7 +198,7 @@
    "pdf_engine": "html",
    "stage": "build",
    "status": "ok",
-   "time": "2026-09-30T12:27:52Z",
+   "time": "2026-09-30T12:37:14Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948"
   },
   "design": {
@@ -336,7 +337,7 @@
   },
   "rework": {
    "args": {},
-   "checker_report_sha256": "34b3b17a1ccb58c0a0cfb15cf9b33ee311c0ee5ffc5659b3520bd0bf622b00f5",
+   "checker_report_sha256": "38c7d98a0135d28ec0b732e18f7ae0f849370d6baf0562f4af5b073e16eeaa4d",
    "inputs": {
     "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
     "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -355,30 +356,30 @@
     "rework/ch03.md": "529fc15248365a49fbe033524a8add37fff1f9310ed670328d2f7261d4a3c078",
     "rework/ch04.md": "52f052c93ca375d0f7ed0d90f2b5ab0090da56d07315317e67148233efbf81cd",
     "rework/ch05.md": "44384acf5520886e3567399c5bc39fe0e032698ce9fece5f4b1291ddca5a8d12",
-    "rework/ch06.md": "44bbe128e4a5338cf1f8685dd758f22ea31087fd187bba26f0c70c3f6e962fbe",
+    "rework/ch06.md": "22a0fe894326fb2783d1f890ff3a6205605b456b4d47853bd9418581a4a6f683",
     "rework/ch07.md": "e303066c50f5b4ccd138f65716c15108162d011a0829f2f95f1cf86261c65cf0",
-    "rework/ch08.md": "22227011623b1ee9e69e69adefd936ab84dd14af46402849b444b41ee3bb0274",
+    "rework/ch08.md": "4d2e23b323fb958a22537cdbaf14b1737d5015d13d3ed863371d85debce53b0b",
     "rework/ch09.md": "cfbe2e05451bed2e57673a96149dfcc2aac2072f05cd6a09b6aabcfcbedf11b7",
     "rework/ch10.md": "73b33585fcdbd120b38dddc22dd6835bb359b5656f6d5b20a68502c1ccc2edca",
     "rework/ch11.md": "af2e08158e151c5e773ca6f42ab15457c7426f6a8041432aea9dee52bbb9d26a",
     "rework/ch12.md": "2d4d1cc4ebca892c7fa583ea844ac5638a622cfd1e31a21589aa4da8bb072fce",
     "rework/errata-ledger.md": "bf19b30b3be7d84ababe852df91995592d1229fa8cfed1d3c9c7ad093555c6a7",
-    "rework/figures/figures.json": "b2d2d5712cbca5afed4dd890264671aca6052447d699f3725e36ca010344c7c3",
+    "rework/figures/figures.json": "1cf75b7d926e14ae66ceccfb91406cbbed7f89bfa64806ba77d2f4fc8ec24c95",
     "rework/figures/src/ch01-marketing-process.svg": "3cec32983fb53aa0a7f52a8af2a092a44c1c10740f36f2d8dad2831b62aac7c1",
     "rework/figures/src/ch02-customer-roles.svg": "79f2474f6e82226a6f4555b027b27544949fbf8001b92eab06c7a449cd239c17",
     "rework/figures/src/ch02-demand-elasticity.svg": "3d079c6c8b42feda8093eabd67e3c38be6aa3575098dbc7774b4a35e2ea5004f",
     "rework/figures/src/ch03-campaign-steps.svg": "372dd2cbf4a69961b38d1b678f2aa5709efd52285cba1ce656768c4bc1c2b9e1",
     "rework/figures/src/ch03-online-booking.svg": "5b6171e9f41291be5f2f08f759eb19be022d5e95fd12a5521b0b7b867603d544",
-    "rework/figures/src/ch04-blueprint.svg": "d5cd58fe570c9f6e6e901c7f7c0bc9319a678104a4c37fbc34d8e89e4ec9e4c2",
-    "rework/figures/src/ch04-ct-room.jpg": "163f7d30507fa24b2452e72d96baf3dcf25e21c15afcb6fccc81a45a1a3d00f9",
+    "rework/figures/src/ch04-blueprint.svg": "cc3846b25ddd827251824891b08afe8c0f496fd0a591684eae6c016d412af83f",
+    "rework/figures/src/ch04-ct-room.jpg": "dd60694e06f8edd67ada7a4eb01f0855a13671a5f40993a5c443c619ce715ecf",
     "rework/figures/src/ch04-seven-ps.svg": "0bf3367c72f698aeabef6dd93d20311d77f0a76994ec5d005ca5d1b8ca6374bb",
     "rework/figures/src/ch05-customer-value.svg": "d3fbc31787fa95ec211374ed277a7b7a72b21f1a7bda6828d604229eae8f9c73",
     "rework/figures/src/ch05-lab-culture.jpg": "9326bfd0e21e0cd1101956e1d58a1a115f176569e7c21ec501b0a17ef110e1ed",
     "rework/figures/src/ch06-life-cycle.svg": "85cde3c40eb23941bed7138b6850b02b4a34d9341350f68d1fc40de3a7ab07d1",
-    "rework/figures/src/ch06-pet-mri.jpg": "1133006efdd9aef73785728ac5564979c8faffce05336191490f74258c9114ae",
-    "rework/figures/src/ch07-break-even.svg": "19e0a55c8ee7e0f45f05ba22fced10cf58274eed1367ff4b809090aeda133aa3",
+    "rework/figures/src/ch06-mri-install.jpg": "4fd20afb0210a8ff52516c095155e8c4ab14aa8b89cd02fd3145f71ceb189b30",
+    "rework/figures/src/ch07-break-even.svg": "8ec960c793aae3305dabb6532decf925e060cb1a28e875b8c2244450bc9c51cd",
     "rework/figures/src/ch08-channel-levels.svg": "a594d52cbab46c60d164a38bebd043473f8772b073c28abea1393408035d6e53",
-    "rework/figures/src/ch08-cold-chain.svg": "94167c8b0ca2d5315fb3c89659df886da3643965d5ab0357e1399fab1283e4f2",
+    "rework/figures/src/ch08-cold-chain.svg": "98e009dd3069bb5f65797b857c8b7261aead10b4a8e0ec8b35f7a54d8a9ad36b",
     "rework/figures/src/ch08-pharmacy-counter.jpg": "038222b5ca1395b8ad549235c977870200bbe36a4d36eb24d81ad98e3ee74747",
     "rework/figures/src/ch09-awareness-day.svg": "e0ca97db52c9ecdff1109c980e5d725d83296eed7a06708ebaab93dc3840532d",
     "rework/figures/src/ch09-push-pull.svg": "88639330439013de1058673d64353f25c1fb56b1dc4d12e4549fdff00afb2ef8",
@@ -390,9 +391,9 @@
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-30T12:25:42Z",
+   "time": "2026-09-30T12:35:07Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
-   "total_words": 34876,
+   "total_words": 34875,
    "units": {
     "ch01": {
      "args": {
@@ -415,7 +416,7 @@
       "rework/ch01.md": "d2b763173ba006dcf33a0885a0fcf9b9404c45d683833c062941d5c053fe5107"
      },
      "status": "ok",
-     "time": "2026-09-30T12:24:54Z",
+     "time": "2026-09-30T12:34:20Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -444,7 +445,7 @@
       "rework/ch02.md": "e6c1140f6bf3daba811b1d4102d736590de42e796c3640f8ac819dcf66d078e0"
      },
      "status": "ok",
-     "time": "2026-09-30T12:24:58Z",
+     "time": "2026-09-30T12:34:24Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -473,7 +474,7 @@
       "rework/ch03.md": "529fc15248365a49fbe033524a8add37fff1f9310ed670328d2f7261d4a3c078"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:01Z",
+     "time": "2026-09-30T12:34:28Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -502,7 +503,7 @@
       "rework/ch04.md": "52f052c93ca375d0f7ed0d90f2b5ab0090da56d07315317e67148233efbf81cd"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:05Z",
+     "time": "2026-09-30T12:34:31Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -531,7 +532,7 @@
       "rework/ch05.md": "44384acf5520886e3567399c5bc39fe0e032698ce9fece5f4b1291ddca5a8d12"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:08Z",
+     "time": "2026-09-30T12:34:34Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -543,7 +544,7 @@
      "args": {
       "unit": "ch06"
      },
-     "checker_report_sha256": "04027ee068b8622ff89d7128f63ab3d0c093d415e9e03bc9087d2cbb2fb4bf41",
+     "checker_report_sha256": "1c1462509a4df69a639b7bd981d218b6dc6bcd631b6a2511b1ce49bbe383b9b6",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -557,10 +558,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch06.md": "44bbe128e4a5338cf1f8685dd758f22ea31087fd187bba26f0c70c3f6e962fbe"
+      "rework/ch06.md": "22a0fe894326fb2783d1f890ff3a6205605b456b4d47853bd9418581a4a6f683"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:13Z",
+     "time": "2026-09-30T12:34:39Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -589,7 +590,7 @@
       "rework/ch07.md": "e303066c50f5b4ccd138f65716c15108162d011a0829f2f95f1cf86261c65cf0"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:16Z",
+     "time": "2026-09-30T12:34:42Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -601,7 +602,7 @@
      "args": {
       "unit": "ch08"
      },
-     "checker_report_sha256": "7bbeaf06e0eb773c6643b94de5c157d2e9ebbe82f8bf37ae6d077200d7f1637d",
+     "checker_report_sha256": "e2fdc784dc90aa1d41e01aef2ba82bab8badaafa917faa1c6874c9fac1367570",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -615,10 +616,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch08.md": "22227011623b1ee9e69e69adefd936ab84dd14af46402849b444b41ee3bb0274"
+      "rework/ch08.md": "4d2e23b323fb958a22537cdbaf14b1737d5015d13d3ed863371d85debce53b0b"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:19Z",
+     "time": "2026-09-30T12:34:45Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -647,7 +648,7 @@
       "rework/ch09.md": "cfbe2e05451bed2e57673a96149dfcc2aac2072f05cd6a09b6aabcfcbedf11b7"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:24Z",
+     "time": "2026-09-30T12:34:50Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -676,7 +677,7 @@
       "rework/ch10.md": "73b33585fcdbd120b38dddc22dd6835bb359b5656f6d5b20a68502c1ccc2edca"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:28Z",
+     "time": "2026-09-30T12:34:54Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -705,7 +706,7 @@
       "rework/ch11.md": "af2e08158e151c5e773ca6f42ab15457c7426f6a8041432aea9dee52bbb9d26a"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:34Z",
+     "time": "2026-09-30T12:35:00Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 3,
@@ -734,7 +735,7 @@
       "rework/ch12.md": "2d4d1cc4ebca892c7fa583ea844ac5638a622cfd1e31a21589aa4da8bb072fce"
      },
      "status": "ok",
-     "time": "2026-09-30T12:25:38Z",
+     "time": "2026-09-30T12:35:04Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,

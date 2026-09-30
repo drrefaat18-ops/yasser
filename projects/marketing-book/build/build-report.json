@@ -342,8 +342,8 @@
    "svg": "rework/figures/out/ch05-customer-value.svg"
   },
   {
-   "id": "ch06-pet-mri",
-   "png": "rework/figures/out/ch06-pet-mri.jpg",
+   "id": "ch06-mri-install",
+   "png": "rework/figures/out/ch06-mri-install.jpg",
    "status": "copied",
    "svg": null
   },
