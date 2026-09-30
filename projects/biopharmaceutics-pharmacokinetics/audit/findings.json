@@ -35,6 +35,24 @@
    "evidence": "which reproduces the estimate of Step 3",
    "source": "claude-sonnet-5-5",
    "fix_hint": "Optionally: confirms that the ARE line is consistent with Du-infinity = 1000 mg."
+  },
+  {
+   "id": "F-003",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [
+    "layout",
+    "running-head"
+   ],
+   "location": {
+    "file": "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf",
+    "line_start": 10,
+    "line_end": 52
+   },
+   "claim": "The Chapter 1 running head is truncated with an ellipsis after the merged tooling split it into two cells.",
+   "evidence": "Biopharmaceutics and… / Chapter 1 · Introduction to Biopharmaceutics and…",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Optionally shorten the Chapter 1 head text or let the head wrap."
   }
  ]
 }

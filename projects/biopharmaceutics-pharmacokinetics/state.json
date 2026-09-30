@@ -66,18 +66,18 @@
    "args": {},
    "author_model": "claude-opus-5-5",
    "codex_audited_inputs": {
-    "review_sha256": "b55641ef1abe39c13058c6ce541341a03873163e09ef49db2f602a94e4bff3a6",
-    "reviewed_commit": "9cf8529"
+    "review_sha256": "4b7b2f700a351c5680653113a8a7b78bb9b209aed8c6635702c0ba23c803ff20",
+    "reviewed_commit": "0e07287"
    },
    "inputs": {
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "4175d22f2fcf9a6950ebd9bd0c75aa898b2f21a6df925d32cd0c8109e3a504a0",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "065ea556137a08978e6a6589f5630a3c6aff9715feb35fc0aff03be985b8b1f6",
     "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "1b98d69b0fa089b6adf2d104d0ab113c8060e3ec145fe86a7d99dc52f7a9c9b1",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "68311a25c2e8051353e0bc6d98066396f34a09cab810247403670ec14bf6f200",
-    "build/build-report.json": "b6a2715197482aede055445eae147ce372f1e7592c5807b55d878d032f383435",
-    "build/checkpoints/cover.png": "ace3380e6e2beeb592e52709b42c6ceb0a1f6760304501186acbe841c0c7c0ef",
-    "build/checkpoints/first-chapter.png": "dac8054d1720dfadd24be8bc786fb33e5123dbbabd094c1cd8c1de7aa48d8723",
-    "build/checkpoints/first-figure.png": "6d508ea61671a1dc64760762a0f8d1ea691fa529502941620a44970dc271262f",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "93d4580b42b3381fa0c035ecaa9032b5b71a6ff0b27e9ece099ae802132f08f0",
+    "build/build-report.json": "984915ddc78adc111f7683a10a638aac25bbe14a05c88a36419f4037036a97b3",
+    "build/checkpoints/cover.png": "2329f2ee260b8a2d5354fbc7d72c5dc015af18d1d70e07ab5b9c3c5508c5856e",
+    "build/checkpoints/first-chapter.png": "9313457cf36c51ace9621e0bf14aaf63de80fc8a49924730abc04ecc3a63df40",
+    "build/checkpoints/first-figure.png": "645f14a803321e4e637a00c9fa0e972416c82b2e7992ee45b3e55ff101641af8",
     "build/checkpoints/last.png": "418082abb81f5677ba5878966c447f0c03c1661177558b19bbc272b6d9dd52ba",
     "evaluation/scorecard.json": "4cdb05c322b4922f6eb0d4a364e39ec597faa0f6b559d6cd6423e356ff7e67eb",
     "ingest/normalized.md": "b41ec8fbc2ec9dbb6f125960f076ba9a7d4f44202c778b35d0d803c39bc4e17d",
@@ -132,19 +132,18 @@
     "rework/glossary.md": "90ea8efd24bf0f197e3ed5f9e22f83190ce290d4c6ee230ebee7e4d51bdef3a6",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497"
    },
-   "invalidated_by": "build@2026-09-30T21:38:27Z",
    "outputs": {
-    "audit/codex-audit.md": "b55641ef1abe39c13058c6ce541341a03873163e09ef49db2f602a94e4bff3a6",
-    "audit/findings.json": "59e0a83b31058dc08cb7c85efc7385a23de04ea5a819ca1a29aa272264a41d7e",
-    "audit/fixes.md": "48e59b0058f9c8658137ac2ffde035684865a7d672eaa2619916f373f1163f01",
-    "audit/scorecard.json": "63cebc75ad46c5585c8377214ae26ec9b5d662ba1bbc93cf81004352554cbc99"
+    "audit/codex-audit.md": "4b7b2f700a351c5680653113a8a7b78bb9b209aed8c6635702c0ba23c803ff20",
+    "audit/findings.json": "96b09d28e88b97250602e62dc1ec6066a86abccc327d8f6566ac744310b1f879",
+    "audit/fixes.md": "0cc006f54c881f3a968f47d762ff496cc71470e78850684094de94b7aba73441",
+    "audit/scorecard.json": "04414ad8100f773674e81da69d068322ff4caed89e937a8645fcf813a7795b79"
    },
    "reviewer_model": "claude-sonnet-5-5",
    "rubric_digest": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
    "rulings": {},
    "stage": "audit",
    "status": "ok",
-   "time": "2026-09-30T18:29:35Z",
+   "time": "2026-09-30T21:44:29Z",
    "tool_sha": "9f15d2b5ec166cbf58dcfe655fb0addc0f9daa39"
   },
   "build": {

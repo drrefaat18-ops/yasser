@@ -195,3 +195,7 @@ Codex reached its usage limit partway through its own fifth review. The one find
 | R-002 (918fc28) | fixed + verified | real | LO3's intercept check had no step in the example | Step 5 extends the line to t = 0: 840 × e^(0.695 × 0.25) ≈ 999 mg |
 
 The final confirmation (`audit/codex-audit.md`, 9cf8529) passed. It found one optional minor point, R-003, recorded as audit finding F-002 and left open. The independent rescore is G1 8.5, G2 8.5, G3 8.5, G4 9, D1 9, D2 8.5, a total of 86.5 against the first edition's 44.0.
+
+## Carried forward after the merge (claude-sonnet-5-5 per DEC-010, commit 0e07287)
+
+The merged shared tooling (c96c149) made the stages stale. Intake was re-recorded with --amend, then rework and build; the book's text is unchanged and the build passes all 10 PDF gates, including the three new ones. The confirmation in `audit/codex-audit.md` found no content change. Its one optional minor point, the truncated Chapter 1 running head, is recorded as audit finding F-003 and left open. The scores are unchanged at 86.5.

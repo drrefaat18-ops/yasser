@@ -15,7 +15,9 @@
    "id": "G2",
    "score": 8.5,
    "applicable": true,
-   "evidence_finding_ids": []
+   "evidence_finding_ids": [
+    "F-003"
+   ]
   },
   {
    "id": "G3",
