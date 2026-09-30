@@ -73,7 +73,7 @@ drafted chapters, about 5% above each chapter's length, so that every chapter si
 | ch08 | Distribution and Access | 2750 | L5 | Distribution and channels; channel levels for medicines and for diagnostic services; intermediaries; retail trade and pharmacies |
 | ch09 | Marketing Communications and Promotion | 2950 | L6 | The communication mix; push and pull; advertising and sales promotion; opinion leaders; the ethical and legal limits of promotion |
 | ch10 | Health-Care Costs | 3050 | L7 | Health economics and pharmacoeconomics; inputs and outcomes; perspectives; cost categories; valuing indirect costs; the cost-classification activity, corrected |
-| ch11 | Outcomes and Methods of Economic Evaluation | 3250 | L8 | ECHO outcomes; QALYs; the five methods; ICER and the cost-effectiveness plane; sensitivity analysis; steps of an evaluation |
+| ch11 | Outcomes and Methods of Economic Evaluation | 3250 | L8 | ECHO outcomes; QALYs; the four comparative methods, with cost-of-illness as a descriptive study; ICER and the cost-effectiveness plane; sensitivity analysis; steps of an evaluation |
 | ch12 | Applying Economic Evaluation | 2750 | L9 | Micro-costing, CMA against CEA with the corrected ICER, CBA with simple and incremental ratios; laboratory and imaging applications |
 
 ## 5. What the evaluation findings require, and where
@@ -144,15 +144,26 @@ statement it supports has been checked against it.
 
 ## 7. Figures
 
-Drawn as SVG sources in `rework/figures/src`, listed in `rework/figures/figures.json`:
-the 7 Ps around the patient (ch04), the product life cycle (ch06), channel levels (ch08), push and pull (ch09),
-the cost-outcome balance (ch10), and the cost-effectiveness plane (ch11).
+Twenty-two figures, at least one in every chapter, listed in `rework/figures/figures.json` and numbered per chapter
+in order of placement. Each is cited in the text, and each has a caption, alt text, a credit and a licence.
+
+- **Diagrams (15), drawn as SVG in the theme palette from the chapter's own content and numbers:** the marketing
+  process (ch01); the customer roles and inelastic against elastic demand (ch02); the digital campaign steps (ch03);
+  the 7 Ps around the patient and a service blueprint of a blood test (ch04); customer value (ch05); the product
+  life cycle (ch06); the break-even chart (ch07); channel levels (ch08); push and pull (ch09); the cost-outcome
+  balance (ch10); the ECHO model and the cost-effectiveness plane (ch11); choosing a method (ch12).
+- **Illustrations (3), original SVG scenes:** online booking (ch03), the reagent cold chain (ch08) and a health
+  awareness day stand (ch09).
+- **Photographs (4):** public-domain works from Wikimedia Commons, credited under each photograph, with their
+  sources in `rework/figures/photo-sources.md`: an imaging room (ch04), a microbiology laboratory (ch05), a new MRI
+  scanner being installed (ch06) and a pharmacy counter (ch08). A photograph shows no unsafe practice and no
+  identifiable patient in a clinical situation.
 
 ## 8. Risks
 
 - **Egyptian facts.** Regulation, pricing and insurance rules change, and few are easy to cite from here. The book
   states only what it can attribute, names the responsible authority, and keeps the title-page notice.
-- **NARS.** The user chose to start without the NARS document. The book makes no claim of NARS alignment; when the
-  document is supplied, the objectives are mapped to it in a later pass.
+- **NARS.** The user chose to finish the book without the NARS document. The book makes no claim of NARS alignment.
+  If the document is supplied later, the objectives can be mapped to it in a new pass.
 - **Credit.** The user chose to credit the author alone and not the source lectures (DEC-001). The book therefore
   writes new text rather than reproducing the lectures' wording.
