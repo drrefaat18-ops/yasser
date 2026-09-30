@@ -14,7 +14,7 @@ Review: `codex-review.md` (GPT-5 Codex, read-only, reviewed commit ad970bf). Eac
 | E-08 | minor | fixed + verified | Eligibility slide missed | Added F-041 (G1 minor, lines 410-418) | none |
 | E-09 | minor | fixed + verified | Replaced one universal limit with another | F-013 reworded: limit is journal-specific | none |
 | E-10 | minor | fixed + verified | CONSORT 2010 cited from memory; superseded by CONSORT 2025 | All CONSORT sources in findings now cite CONSORT 2025 (BMJ 2025;389:e081123) | brief style note lists CONSORT without a year; the rework cites 2025 and SPIRIT 2025 |
-| E-11 | minor | fixed + verified | Severity over-graded | F-036 (Type D) downgraded to minor | none |
+| E-11 | minor | fixed + verified | Severity over-graded | F-037 (Type D) downgraded to minor | none |
 | E-12 | minor | fixed + verified | Rule of three misstated | F-015 claim and fix hint corrected (zero-event upper bound, Hanley 1983) | none |
 | E-13 | minor | fixed + verified | Search order taken as a rule | Added F-043 (D1 minor, lines 120-124) | none |
 | E-14 | minor | fixed + verified | Report praised ADR steps before E-04/E-05 were found | Report strengths line changed; main problems now lead with the ADR safety defects | none |
