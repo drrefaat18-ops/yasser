@@ -2,92 +2,39 @@
  "schema_version": 1,
  "findings": [
   {
-   "id": "A-001",
-   "pillar_id": "G2",
-   "severity": "minor",
-   "tags": [
-    "completeness",
-    "back-matter"
-   ],
-   "location": {
-    "file": "rework/00-front-matter.md",
-    "line_start": 32,
-    "line_end": 39
-   },
-   "claim": "The errata ledger is not printed in the book. A reader holding only the PDF sees each correction in place but has no single table of what changed from the first edition, which is the document a teacher comparing the two editions needs.",
-   "evidence": "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md contains no 'Errata Ledger' heading; harness/tools/assemble.py emits front matter, chapters and the configured back matter only, and the spec's INV-41 lists front_matter, chapter_glob and glossary. The front matter no longer promises it at the back, so the book is self-consistent, but the ledger reaches the reader only with the course materials.",
-   "source": "rework/errata-ledger.md (34 rows, all closed)",
-   "fix_hint": "Add an opt-in template flag for printing the errata file as back matter, defaulting off so no existing book changes, then set it for this project."
-  },
-  {
-   "id": "A-002",
+   "id": "F-001",
    "pillar_id": "G1",
    "severity": "minor",
    "tags": [
-    "assurance"
+    "nuance"
    ],
    "location": {
-    "file": "audit/codex-audit.md",
-    "line_start": 1,
-    "line_end": 20
+    "file": "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md",
+    "line_start": 4000,
+    "line_end": 4000
    },
-   "claim": "The corrected text has not been read by an independent reviewer. The one Codex review permitted per artifact under Rule 11 was spent on the pre-fix build, and the twenty fixes it prompted were written and verified by the same agent that wrote the chapters.",
-   "evidence": "audit/codex-audit.md records reviewed_commit b6a32b5; the fixes land in 1472d00. Every fix was confirmed against the text and, where numeric, recomputed independently before being applied, but no second party has read the result.",
-   "source": "CLAUDE.md Rule 11",
-   "fix_hint": "If a second review is wanted, run it against the current build as a separate artifact and record it beside this one."
+   "claim": "The weak-acid row says ionised in the intestine; a barbiturate there is only partly ionised, which the added sentence already states.",
+   "evidence": "they are almost wholly unionised in the stomach and partly ionised in the intestine",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "None required; optionally say partly ionised in the row."
   },
   {
-   "id": "A-003",
+   "id": "F-002",
    "pillar_id": "D2",
    "severity": "minor",
    "tags": [
-    "worked-examples",
-    "provenance"
+    "derivation",
+    "wording"
    ],
    "location": {
-    "file": "rework/ch11.md",
-    "line_start": 128,
-    "line_end": 134
+    "file": "rework/ch03.md",
+    "line_start": 144,
+    "line_end": 144
    },
-   "claim": "Four worked examples use illustrative constants rather than data from the source notes, so a student cannot trace them back to the lectures.",
-   "evidence": "ch11 Example 11.1, ch13 Example 13.1 and ch14 Example 14.1 each open by saying the constants are illustrative. The source's own datasets were exhausted by the other eleven examples; these three topics carried no numeric example in the first edition.",
-   "source": "ingest/normalized.md",
-   "fix_hint": "Leave as is, or replace with figures from a named published study so the provenance is citable."
-  },
-  {
-   "id": "A-004",
-   "pillar_id": "G4",
-   "severity": "minor",
-   "tags": [
-    "references"
-   ],
-   "location": {
-    "file": "rework/references.md",
-    "line_start": 1,
-    "line_end": 8
-   },
-   "claim": "Citation numbers are chapter-local, so [2] means different works in different chapters, and the consolidated list at the back carries a third numbering of its own.",
-   "evidence": "check_book.check_citations resolves every [n] against the reference list in the same file, so per-chapter lists cannot be removed. references.md therefore repeats the eight works under its own numbering, with the citing chapters named in each entry.",
-   "source": "harness/tools/check_book.py check_citations",
-   "fix_hint": "Number the consolidated list once and have chapters cite those numbers, which needs the citation checker to resolve against a book-level list."
-  },
-  {
-   "id": "A-005",
-   "pillar_id": "G4",
-   "severity": "minor",
-   "tags": [
-    "references",
-    "breadth"
-   ],
-   "location": {
-    "file": "rework/references.md",
-    "line_start": 1,
-    "line_end": 22
-   },
-   "claim": "Eight works support fourteen chapters, and two textbooks carry most of it: Shargel is cited in all fourteen chapters and Rowland in twelve.",
-   "evidence": "Counted from the per-chapter reference lists. The regulatory and compendial chapters are better sourced: ICH M9, ICH M13A, the EDA guideline v4/2026, USP <711>, USP <724> and Amidon 1995 are each cited where they apply.",
-   "source": "rework/references.md",
-   "fix_hint": "Add primary sources for the physiological and metabolic chapters, which currently rest on the two textbooks alone."
+   "claim": "The sigma-minus intercept check in Example 3.1 is a self-consistency check rather than an independent second estimate of Du-infinity.",
+   "evidence": "which reproduces the estimate of Step 3",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Optionally: confirms that the ARE line is consistent with Du-infinity = 1000 mg."
   }
  ]
 }

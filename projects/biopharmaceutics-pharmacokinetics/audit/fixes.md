@@ -182,3 +182,16 @@ Codex reached its usage limit partway through its own fifth review. The one find
 | C-014 | fixed + verified | real | Date conflated (web check: ECA Academy) | Salicylic acid calibrators were no longer required from December 2009; since May 2023 the prednisone DPVS is the only standard for Apparatus 1 and 2 |
 | C-015 | fixed + verified | real | Resequencing made the full sequences distinct, but not their first four keys | Options swapped, with rationale letters updated, in ch09 Q1–4 (now CADB), ch10 Q1–4 (DCBA) and ch12 Q1–3 (ABD). Only ch03 now starts BDAC. The checker's key balance passes. |
 | C-016 | fixed + verified | real | Wrong section pointer | E-027 points to Section 13.4 |
+
+## Confirmations of round 5 (claude-sonnet-5-5 per DEC-010)
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| F-001 (2dbaa01) | fixed + verified | real | The C-015 swap gave ch09 the same first four keys as ch04 | ch09 Q1–4 swapped again to D B C A, unique across the 14 chapters |
+| F-002 (2dbaa01) | fixed + verified | real | LO3 was not updated with §3.4 | LO3: determine K and t½ given Du∞, and check Du∞ against the intercept |
+| F-003 (2dbaa01) | fixed + verified | real | Example 3.1 took Du∞ = dose by assumption | See R-001 |
+| F-004 (2dbaa01) | rejected | rejected | Nuance already covered by the added sentence | No change |
+| R-001 (918fc28) | fixed + verified | real | fe = 1 was still assumed and then reported as a result | K is taken from the rate method, which needs no Du∞; Du∞ = 984 ÷ (1 − e^(−0.682 × 6)) ≈ 1000 mg; fe = 1.00 is now a result. The last check says both routes give K whatever fe is. Three math checks were added. |
+| R-002 (918fc28) | fixed + verified | real | LO3's intercept check had no step in the example | Step 5 extends the line to t = 0: 840 × e^(0.695 × 0.25) ≈ 999 mg |
+
+The final confirmation (`audit/codex-audit.md`, 9cf8529) passed. It found one optional minor point, R-003, recorded as audit finding F-002 and left open. The independent rescore is G1 8.5, G2 8.5, G3 8.5, G4 9, D1 9, D2 8.5, a total of 86.5 against the first edition's 44.0.

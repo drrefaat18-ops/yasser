@@ -1,54 +1,49 @@
 {
  "schema_version": 1,
  "rubric_digest": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497",
+ "review_kind": "independent",
  "pillars": [
   {
    "id": "G1",
-   "score": 8,
+   "score": 8.5,
    "applicable": true,
    "evidence_finding_ids": [
-    "A-002"
+    "F-001"
    ]
   },
   {
    "id": "G2",
-   "score": 8,
+   "score": 8.5,
    "applicable": true,
-   "evidence_finding_ids": [
-    "A-001"
-   ]
+   "evidence_finding_ids": []
   },
   {
    "id": "G3",
-   "score": 8,
+   "score": 8.5,
    "applicable": true,
    "evidence_finding_ids": []
   },
   {
    "id": "G4",
-   "score": 8,
+   "score": 9,
    "applicable": true,
-   "evidence_finding_ids": [
-    "A-004",
-    "A-005"
-   ]
+   "evidence_finding_ids": []
   },
   {
    "id": "D1",
-   "score": 8,
+   "score": 9,
    "applicable": true,
    "evidence_finding_ids": []
   },
   {
    "id": "D2",
-   "score": 9,
+   "score": 8.5,
    "applicable": true,
    "evidence_finding_ids": [
-    "A-003"
+    "F-002"
    ]
   }
  ],
  "caps_applied": [],
- "total": 82.0,
- "review_kind": "self"
+ "total": 86.5
 }

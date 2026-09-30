@@ -1,48 +1,54 @@
-# Codex review of the finished book — biopharmaceutics-pharmacokinetics
+# Audit review of the finished book — biopharmaceutics-pharmacokinetics
 
-Read-only review (`codex exec --sandbox read-only`) of `build/Biopharmaceutics_and_Pharmacokinetics_PT312.md`
-against `rubric.json`, `brief.json`, `rework/errata-ledger.md`, `rework/glossary.md`,
-`evaluation/findings.json` and `ingest/normalized.md`. Saved verbatim. The request is in
-`audit/codex-prompt.md`.
+reviewed_commit: 9cf8529
 
-Run note (Claude, not the reviewer): the first two invocations produced no findings. The Windows
-sandbox helper `codex-windows-sandbox-setup.exe` was not on PATH, so every shell call failed with
-`CreateProcessWithLogonW failed: 2` and the reviewer correctly refused to report on files it had not
-read. The helper was put on PATH and the review re-run; the report below is that third, complete run.
-It is the one Codex review of this artifact (Rule 11); the two aborted runs produced no findings about
-the book and are not counted.
+This is the final read-only review by claude-sonnet-5-5 as a fresh-context subagent, recorded under DEC-010 (a Claude reviewer in place of Codex, which is at its usage limit until 2026-10-05). The book was written by claude-opus-5-5.
 
-reviewed_commit: 8a05090
+The review chain:
+- Round 5 (`audit/review-r5.md`) was a full-book review of 10215fb: 16 findings, 3 of them major, all fixed in 2dbaa01.
+- The confirmation of 2dbaa01, with the rescore (`audit/review-r5-confirm.md`), passed with 4 minor findings; 3 were fixed in 918fc28.
+- The confirmation of 918fc28 (`audit/review-r5-confirm2.md`) passed with 2 minor findings, fixed in 9cf8529.
+- This review confirms 9cf8529. For all text not changed since each earlier review, that review's verdict stands.
 
-verdict: fail  
-open_blocker_major: 19  
-reviewer_model: GPT-5 (Codex)
+Saved verbatim from the verdict line on.
+
+verdict: pass
+open_blocker_major: 0
+reviewer_model: claude-sonnet-5-5
 
 | ID | severity | location | finding | why it matters | suggested fix |
 |---|---|---|---|---|---|
-| C-001 | major | Chapter 4, E4.1 solution, “In the lighter volunteer only Vp, the intercepts and the AUC change.” | This conclusion does not follow from the exercise inputs. Equal Vp per kilogram determines the new Vp, but it does not establish that K, K₁₂ or K₂₁ are unchanged between volunteers. Consequently the claimed intercept and AUC changes cannot be reproduced without an additional assumption. | The solution teaches students to infer disposition constants from body size alone. | State explicitly that all micro-rate constants are assumed unchanged, or ask only for the new Vp. |
-| C-002 | major | Chapter 6 §6.2, “Inulin and creatinine are filtered and then neither secreted nor reabsorbed” | Creatinine undergoes tubular secretion and therefore creatinine clearance generally overestimates measured GFR. Inulin is the filtration-only marker. | This supplies a false physiological basis for the clearance-ratio method. | Separate the markers: inulin clearance measures GFR; creatinine clearance is a practical approximation affected by secretion. |
-| C-003 | major | Chapter 6 §6.6 and Example 6.1, “The clearance ratio of 0.54 is below 1, so the drug is filtered and then partially reabsorbed.” | Comparing renal clearance directly with creatinine/inulin clearance ignores the plasma unbound fraction. A ratio below 1 can result from protein binding with no tubular reabsorption. No unbound fraction is supplied in Example 6.1, so its mechanism cannot be identified. | The worked example converts an underdetermined result into a definite renal-mechanism diagnosis. | Compare Clᵣ with fu,blood × GFR and describe the result as net handling; otherwise report that the mechanism is indeterminate. |
-| C-004 | major | Chapter 6, Equation 6.3, “Cl_T = Cl_r + Cl_h” | This is not a general total-clearance identity. Non-renal clearance can include intestinal, biliary, pulmonary and other routes in addition to hepatic clearance. The chapter itself later uses Cl_nr, exposing the inconsistency. | Students may silently assign every non-renal loss to the liver. | Write Cl_T = Cl_r + Cl_nr, then define Cl_nr as the sum of hepatic and any other non-renal clearances. |
-| C-005 | major | Chapter 6 §6.4, “Cl_h = Mu / AUC” | Metabolite recovered in urine divided by parent AUC estimates a metabolite-formation clearance only under restrictive assumptions about stoichiometry, complete recovery and absence of competing pathways. It is not generally hepatic clearance. | The equation attributes a measured metabolite to an organ and pathway that the data do not identify. | Relabel it as formation clearance and state the recovery, stoichiometric and pathway assumptions; do not call it Cl_h without independent evidence. |
-| C-006 | major | Chapter 3, Equation 3.1 (`fe`); Chapter 6, Equation 6.3 and E6.3 (`fu`) | The same quantity—fraction excreted unchanged—is renamed from `fe` to `fu`. In standard pharmacokinetic notation `fu` normally means fraction unbound. Neither usage is reconciled in the glossary. | This is exactly the kind of symbol collision the rework claims to have removed and can corrupt renal-clearance calculations. | Use `fe` consistently for fraction excreted unchanged and reserve `fu` for fraction unbound. Add both to the glossary or symbol table. |
-| C-007 | major | Chapter 7 §7.4, “If the residual line is not straight, absorption is not first order.” | Example 7.1 immediately provides a counterexample: its residual line curves because absorption and elimination were not separated by the chosen terminal window, yet the final simultaneous fit uses first-order absorption with Ka = 0.200 h⁻¹. | The stated diagnostic would make students reject the correct absorption model for the chapter’s own dataset. | Say that curvature can indicate non-first-order absorption, an incorrect terminal phase, flip-flop, multicompartment disposition or inadequate separation; investigate before deciding. |
-| C-008 | major | Chapter 8 §§8.4–8.5; Q10 rationale, “The time to steady state depends only on the half-life.” | The chapter’s own Equation 8.2 makes oral accumulation time depend on Ka as well as K and states that it exceeds the elimination half-life. The unqualified Q10 rationale and Key Takeaway therefore contradict the derivation. | Students receive mutually incompatible rules about oral multiple dosing. | Restrict the half-life-only statement to IV bolus/infusion or sufficiently rapid absorption, and distinguish elimination half-life from the defined oral accumulation metric. |
-| C-009 | major | Chapter 10 §10.3 and Example 10.1, “apparent half-life, 0.693·(Km + C)/Vmax” | This is 0.693 divided by the instantaneous pseudo-first-order rate constant; it is not the time required for concentration to halve under Michaelis–Menten elimination. The actual halving time is `Vd/Vmax × [C₀/2 + Km·ln 2]` when Vmax is an amount/time. For the printed inputs it is approximately 12.5 h at 6 mg/L and 23.3 h at 16 mg/L, not 15.0 and 29.9 h. | A central worked example prints two quantitatively wrong half-lives. | Call the existing expression a local instantaneous approximation, derive the integrated equation, and replace the worked answers. |
-| C-010 | major | Chapter 10 §10.1, “Even Chapter 9’s non-compartmental analysis fails” | Non-compartmental analysis can still calculate AUC and dose-specific apparent clearance for nonlinear data. What fails is dose proportionality, superposition and treating the resulting parameters as dose-independent. | The statement wrongly tells students that a standard analysis cannot be used at all. | State that NCA remains usable at each dose, while cross-dose scaling and linear interpretations are invalid. |
-| C-011 | major | Chapter 11, Equations 11.1–11.2 and Examples 11.1–11.3 | Parent dose in milligrams is converted directly into metabolite amount and concentration via `fm·D`, with no parent-to-metabolite molecular-weight conversion and no assumption that calculations use molar units or a mass-recovery fraction. | Chemical conversion conserves moles, not milligrams; the metabolite concentrations and AUCs are not physically reproducible as written unless molecular weights happen to match. | Use molar dose/concentrations or multiply by MW_metabolite/MW_parent; alternatively define fm explicitly as a mass-recovery fraction. |
-| C-012 | major | Chapter 12, Equation 12.1, “P = D·A·K/h, the permeability coefficient” | With surface area A included, DAK/h has units of volume/time and is a permeability–surface-area product, not a permeability coefficient. The permeability coefficient is DK/h, with units of length/time. | The definition and units of a key transport parameter are wrong. | Define `p = DK/h` and write `dQ/dt = pA(C_GI − Cp)`, or retain `P = pA` and name it the permeability–surface-area product. |
-| C-013 | major | Chapter 13, E13.1 solution, “That holds only if the oral route adds no first-pass metabolite” | First-pass metabolism does not invalidate estimation of absolute F from unchanged parent recovered in urine; first-pass loss is part of F. The necessary condition is that the fraction of systemically available parent excreted unchanged remains route-independent under linear disposition. | The rationale contradicts Equation 13.2 and incorrectly excludes precisely the low-F drugs for which absolute bioavailability is useful. | Remove the first-pass-metabolite restriction and state the correct assumptions: linear, route-independent systemic disposition and complete urine collection. |
-| C-014 | major | Chapter 13 §13.6, “A study is also waived for topical products, and for products acting locally in the gut” | This is far broader than the current EDA guideline. Locally applied products qualify only in specified cases such as comparable solutions; other products require product-specific evidence. Locally acting GI products may require dissolution, binding, PK, PD or clinical comparisons. [EDA v4/2026 §§3.13–3.14](https://edaegypt.gov.eg/media/cw1hkuea/egyptian-guideline-for-conducting-bioequivale_vr-4-2026.pdf) does not grant a blanket waiver. | The text could cause a reader to conclude incorrectly that no equivalence evidence is required. | Replace the blanket statement with the EDA’s dosage-form-specific conditions and distinguish waiver of systemic PK studies from waiver of all equivalence evidence. |
-| C-015 | major | Chapter 13 §13.5, “For narrow-therapeutic-index drugs the range is narrowed … 90.00–111.11%.” | The EDA range is automatically tightened for AUC; it applies to Cmax only when Cmax is particularly important for safety, efficacy or monitoring. The surrounding text presents the range as applying equally to both endpoints. | This misstates a current regulatory decision rule. | State the endpoint-specific rule and revise any summary implying that every NTI Cmax must use 90.00–111.11%. |
-| C-016 | major | Chapter 14, Equations 14.1 and the sink simplification; errata E-012 marked “fixed” | The displayed equation labels `D·A(Cs−C)/h` as `dC/dt`, although the text itself verifies that the right side has units of mass/time. Merely acknowledging the dimensional error in a callout does not make the key equation correct. | The errata ledger claims the defect is fixed while the chapter and glossary retain a dimensionally invalid equation. | Write `dm/dt = DA(Cs−C)/h`; for concentration use `dC/dt = DA(Cs−C)/(hV)`. Correct the glossary and sink form too. |
-| C-017 | major | Chapter 14 §14.3, “The pharmacopoeia describes seven apparatus” cited to USP `<711>` | USP `<711>` covers Dissolution Apparatus 1–4. Apparatus 5–7 for transdermal and other drug-release testing belong to USP `<724>`, which is not cited. [USP `<724>`](https://doi.usp.org/USPNF/USPNF_M99490_05_01.html) confirms the separate scope. | The cited source does not support the table as presented, and students are directed to the wrong compendial chapter. | Separate Apparatus 1–4 under `<711>` from Apparatus 5–7 under `<724>` and cite both chapters. |
-| C-018 | major | Chapter 14 §14.4 and Q8/A, “less than 10% for any unit” | That is only the first acid-stage level. USP delayed-release testing is staged: at later levels the average may be no more than 10% while an individual unit may be as high as 25%. The keyed MCQ makes the first-level condition appear universal. | The chapter claims to teach staged acceptance but prints an incomplete regulatory rule and reinforces it through assessment. | Add the A1/A2/A3 acid-stage criteria and identify Q8 explicitly as the A1 criterion, or revise its options and key. |
-| C-019 | major | Chapter 1, E1.1, “concentration-based therapeutic index is 3” | The chapter defines therapeutic index as TD50/ED50, then renames MTC/MEC as a “concentration-based therapeutic index.” That ratio is better described as a therapeutic ratio and cannot be inferred to carry the population meaning of TD50/ED50. | The exercise reintroduces the terminology confusion that finding F-011 and the errata ledger claim to have fixed. | Ask for MTC/MEC as a therapeutic concentration ratio, or provide TD50 and ED50 if a therapeutic index is required. |
-| C-020 | minor | References following every chapter; brief §references | The commissioned brief requires “a single consolidated reference list at the end of the book,” but the book resets and repeats a separate reference list in every chapter. | This is a verified deliverable mismatch and makes numbered citations ambiguous outside their chapter context. | Consolidate and renumber the references once at the end, or amend the brief explicitly if chapter-level lists are now intended. |
+| R-003 | minor (optional) | rework/ch03.md line 144, Example 3.1 (mirrored in the build .md) | The intercept check is only weakly independent. The ARE column was built by subtracting from 1000 mg (840 = 1000 − 160), so extrapolating that line back to t = 0 returns about 1000 mg almost by construction. The text says it "reproduces the estimate of Step 3", which is slightly stronger than the evidence. | It is a self-consistency check, not a second estimate of Du∞. The arithmetic is correct and LO3 is now met, so a careful reader would find it only mildly generous. | Optional wording change, such as "confirms that the ARE line is consistent with Du∞ = 1000 mg". No fix is required. |
 
-## Notes
+Notes:
 
-- All 14 worked examples and 42 end-of-chapter exercise solutions were independently checked. Apart from the defects above, their printed arithmetic was reproducible within stated rounding.
-- The 39 first-edition findings were spot-checked against the new text. Most claimed corrections are present, but the Noyes–Whitney correction is only acknowledged, not actually made, and the therapeutic-index correction is undermined by E1.1.
-- Regulatory checks used the final [ICH M13A guideline](https://database.ich.org/sites/default/files/ICH_M13A_Step4_Final_Guideline_2024_0723.pdf), [ICH M9](https://database.ich.org/sites/default/files/M9_Guideline_Step4_2019_1116.pdf), [EDA guideline v4/2026](https://edaegypt.gov.eg/media/cw1hkuea/egyptian-guideline-for-conducting-bioequivale_vr-4-2026.pdf), and current USP `<711>`/`<724>` materials.
+1. **Diff scope (items 1 and 6).**
+   - `rework/ch03.md` and the build .md carry the same 8-line text change.
+   - `rework/math-checks.md` gains 21 lines.
+   - `build-report.json`, the .docx, the .pdf and `state.json` are regenerated build and state outputs.
+   - No other rework chapter changed.
+
+2. **Circularity (item 2): resolved.**
+   - Step 3 now states that 984 mg is not Du∞, because collection stopped at 6 h.
+   - K = 0.682 h⁻¹ comes from the rate method of Step 4, which needs no Du∞. Recomputed: ln 640 − ln 23 over 4.875 h = 0.6823.
+   - The fraction collected by 6 h is 0.983, so Du∞ = 984 ÷ 0.983 ≈ 1000 mg. The text labels this an estimate, not an assumption.
+   - fe = Du∞/dose = 1.00 is then a result, and Step 7 says so.
+   - Step 3 cites Step 4's K before Step 4 appears, but says so explicitly, which is acceptable.
+
+3. **Numbers (item 3).** All were recomputed in python and all match the text.
+
+   | Quantity | Recomputed | Text |
+   |---|---|---|
+   | 1 − e^(−0.682×6) | 0.98329 | 0.983 |
+   | 984 ÷ 0.98329 | 1000.72 | ≈ 1000 mg, "to the nearest 10 mg" |
+   | 840·e^(0.695×0.25) | 999.40 | ≈ 999 mg |
+   | K, Step 4 (rate method) | 0.68225 | 0.682 |
+   | K, Step 5 (sigma-minus) | 0.69500 | 0.695 |
+
+   The Step 5 logs (ln 840 = 6.7334, ln 62 = 4.1271) also match.
+
+4. **Final sentence (item 4).** "Both give the overall elimination rate constant K, whatever the value of fe" is correct pharmacokinetics. Both the excretion-rate and sigma-minus plots have slope −K/2.303, and fe affects only the intercepts, through Ke·D and Du∞. The earlier wording, "as they must when fe = 1", was misleading, and this change corrects it.
+
+5. **Math-check blocks (item 5).** The three new blocks match the text. The values (0.983 ± 0.001, 1000 ± 5, 999 ± 1) agree with the recomputation, the inputs match the text (K = 0.682, t = 6, Du6 = 984, ARE = 840, K = 0.695, t = 0.25), and the tolerances pass.
+
+6. **Consistency with the surrounding text.** LO3 ("check Du∞ against the intercept") is now served by Example 3.1. The Common Mistake paragraph's "about 98% at six half-lives" agrees with the 0.983 fraction.
