@@ -10,16 +10,14 @@ equation editor: selectable, searchable, and restyled with the document's fonts 
 a picture. `omml_available()` says whether the stylesheet was found, so a caller can fail with one
 clear message instead of a stack trace per equation.
 """
-import functools, pathlib, re
+import functools, os, pathlib, re
 
 # Word ships the stylesheet with every installation; the path differs by Office generation, not by locale.
-XSL_CANDIDATES = [
-    r"C:\Program Files\Microsoft Office\root\Office16\MML2OMML.XSL",
-    r"C:\Program Files (x86)\Microsoft Office\root\Office16\MML2OMML.XSL",
-    r"C:\Program Files\Microsoft Office\Office16\MML2OMML.XSL",
-    r"C:\Program Files (x86)\Microsoft Office\Office16\MML2OMML.XSL",
-    r"C:\Program Files\Microsoft Office\Office15\MML2OMML.XSL",
-]
+# The install roots come from the environment, so shared code holds no absolute path (Rule 8).
+_OFFICE_SUBDIRS = [("root", "Office16"), ("Office16",), ("Office15",)]
+XSL_CANDIDATES = [str(pathlib.Path(root, "Microsoft Office", *sub, "MML2OMML.XSL"))
+                  for sub in _OFFICE_SUBDIRS
+                  for root in (os.environ.get("ProgramFiles"), os.environ.get("ProgramFiles(x86)")) if root]
 INLINE_MATH = re.compile(r"(?<!\\)\$(?!\s)((?:[^$\\]|\\.)+?)(?<!\s)(?<!\\)\$")
 DISPLAY_MATH = re.compile(r"^\$\$\s*(.+?)\s*\$\$$", re.S)
 
