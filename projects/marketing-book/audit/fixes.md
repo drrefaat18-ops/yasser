@@ -53,3 +53,25 @@ quadrants and B/C results reproduced; every finding is about interpretation or d
 | C-006 | fixed + verified | real | "Opened needles in sealed wrappers" | — | A sterile needle opened from an intact wrapper | → ok |
 | C-007 | fixed + verified | real | The 2017 date rested on a 2016 secondary source | — | Date removed; the definition's wording is supported by the cited source | → ok |
 | C-008 | fixed + verified | real | CMA example inferred equivalence from equal percentages | — | Equivalence shown within a prespecified margin in a trial designed for it | → ok |
+
+## Claude review — commit b74f87e
+
+A fresh-context Claude review at the user's request (`audit/claude-review.md`): 14 findings, 2 major, 12 minor. It
+recomputed every worked example, numeric MCQ and numeric essay answer and found no arithmetic or key error.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| R-001 | fixed + verified | real | ch05 takeaway kept the absolute service wording (missed sibling of round-1 C-004) | Takeaway qualified |
+| R-002 | fixed + verified | real | Figure 9.1 caption and ch09 takeaway stated a worldwide ban | "in Egypt and most other countries" added to both |
+| R-003 | fixed + verified | real | Two sentences in ch11 still called productivity and savings benefits (missed siblings of round-3 C-002) | Reworded as smaller costs |
+| R-004 | fixed + verified | real | "Six categories" then withdrew two | Four categories plus two concepts; LO3 aligned |
+| R-005 | fixed + verified | real | Laboratory reagent example did not fit the consignee definition | Consignment stock for end users, consignee pharmacy kept; E2 and glossary aligned |
+| R-006 | fixed + verified | real | Budget shift justified by average cost per booking | Marginal test before shifting budget |
+| R-007 | fixed + verified | real | Cost activity valued only the worker's share of wages and named no method | Human capital approach, full lost production including sick pay |
+| R-008 | fixed + verified | real | Four value types attributed to Kotler & Keller | Presented as the book's grouping; citation kept for the value concept only (a new source could not be DOI-verified while Crossref was unreachable) |
+| R-009 | fixed + verified | real | "New uses" and guarantees without health-care limits | Approved indication for medicines, guideline support for tests; outcome guarantees ruled out |
+| R-010 | fixed + verified | real | Price said to represent worth, against the same paragraph | Money price linked to the broader customer cost of ch01 and ch04 |
+| R-011 | fixed + verified | real | Pharmacoeconomics stretched to devices and tests | That sentence now describes economic evaluation |
+| R-012 | fixed + verified | real | Channel functions attributed to Kotler & Keller as listed, without risk | "Adapted from"; risk taking added as the eighth function |
+| R-013 | fixed + verified | real | Sanders et al. cited for what HTA bodies do | Attributed to the Second Panel's reference case |
+| R-014 | fixed + verified | real | Uncited statements of Egyptian pricing and pre-launch rules | Hedged to name the EDA as the authority; the promotion guideline cited in ch06 |

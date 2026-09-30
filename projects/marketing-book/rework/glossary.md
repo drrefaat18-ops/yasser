@@ -36,6 +36,8 @@
 
 **consignment** — An arrangement in which the owner (consignor) keeps ownership and risk of goods held and sold by another (consignee) for a commission.
 
+**consignment stock** — Supplier-owned stock held by an end user, such as reagents in a laboratory, paid for only as it is used.
+
 **Controlled prices** — Prices with a ceiling set by the state, as for registered medicines.
 
 **Convenience products** — Products bought often and quickly with little comparison, such as simple painkillers.

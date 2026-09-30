@@ -39,7 +39,7 @@
    "chapter_id": "ch09",
    "kind": "diagram.svg",
    "source": "rework/figures/src/ch09-push-pull.svg",
-   "caption": "Push and pull strategies. In push, each channel member promotes the product to the next. In pull, the manufacturer promotes to the final customer, whose demand draws the product up the channel. Pull aimed at the public is not permitted for prescription medicines.",
+   "caption": "Push and pull strategies. In push, each channel member promotes the product to the next. In pull, the manufacturer promotes to the final customer, whose demand draws the product up the channel. Pull aimed at the public is not permitted for prescription medicines in Egypt and most other countries.",
    "alt": "Two columns of four boxes: manufacturer, wholesaler, retailer and consumer. In the left column, headed Push strategy, blue arrows point downward from manufacturer to consumer. In the right column, headed Pull strategy, coral arrows point upward from consumer to manufacturer, and a dashed curve runs from the manufacturer directly to the consumer.",
    "credit": "Original diagram",
    "licence": "original",

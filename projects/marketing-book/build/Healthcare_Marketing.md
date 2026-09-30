@@ -656,7 +656,7 @@ The indicators should measure what the service values. Useful ones are appropria
 >
 > *Step 2 — social media.* Cost per booking = 4,000 ÷ 50 = 80 EGP.
 >
-> *Interpretation.* Search costs half as much per booking, because it reaches people already looking for a test. Social media may still build awareness that later shows up as search. A laboratory should move part of its budget toward search, but keep a smaller awareness effort and review both next month.
+> *Interpretation.* Search costs half as much per booking, because it reaches people already looking for a test. Social media may still build awareness that later shows up as search. Averages show where money worked this month. Before shifting budget, the laboratory should test whether extra search spending still brings bookings at a similar cost, because the cost of each additional booking usually rises as spending grows. It should keep a smaller awareness effort and review both next month.
 
 ## 3.8 Privacy and Ethics Online
 
@@ -1162,7 +1162,7 @@ Chapter 1 introduced customer value. This section defines it precisely.
 >
 > Total customer cost includes money, time, effort and psychological cost such as anxiety. When perceived benefit exceeds total cost, customers are more likely to be satisfied, return and recommend the service. Satisfaction itself still depends on how the service performs against what the customer expected (Chapter 1).
 
-Customers must believe the product is worth more than its price. They judge worth in four ways (Kotler & Keller, 2016; Wirtz & Lovelock, 2021):
+Customers must believe the product is worth more than its price (Kotler & Keller, 2016). This book groups the kinds of worth customers look for into four types, a grouping common in consumer research:
 
 - **Functional value** — what the offering does: the solution it provides. An accurate diagnosis is functional value.
 - **Monetary value** — the price paid relative to the perceived worth. A fair price for a reliable test offers monetary value.
@@ -1197,7 +1197,7 @@ For a diagnostic service the same four apply. Effectiveness is analytical and di
 > **Egyptian Context:** In Egypt, medicines and medical devices are regulated by the Egyptian Drug Authority, which registers products before sale. Laboratories and imaging centres must also be licensed. Marketers of any health product should confirm its registration status before promoting it.
 
 ## Key Takeaways
-- Goods are tangible and storable; services are intangible, perishable and produced with the customer present.
+- Goods tend to be tangible and storable; services tend to be intangible, their unused capacity perishes, and their patient-facing part happens with the customer present.
 - Consumer products are convenience, shopping, specialty or unsought; screening tests are often unsought.
 - Durable goods last three years or more; reagents and most medicines are non-durable.
 - Medicines are classified by site, use, action, structure, control, supply, route, storage, form and origin.
@@ -1466,11 +1466,11 @@ Health technologies follow life cycles with features of their own.
 
 Each stage carries its own temptation in health care.
 
-At introduction, a firm may overstate the benefits of a new product before evidence is complete. At growth and maturity, it may push a product into uses the evidence does not support. In decline, it may promote "more frequent use" of a test that patients do not need more often.
+At introduction, a firm may overstate the benefits of a new product before evidence is complete. At growth and maturity, it may push a product into uses the evidence does not support. "Finding new uses" is legitimate for a medicine only after the new indication is approved, and for a test only where guidelines support it. Guarantees of health outcomes are misleading in health care and should not be offered. In decline, it may promote "more frequent use" of a test that patients do not need more often.
 
 > **Ethics Check:** A laboratory's vitamin D test is in maturity, and revenue has flattened. The marketing team proposes promoting "a vitamin D test every three months for everyone". Guidelines do not support routine repeated testing in healthy people. The proposal uses a strategy for delaying decline, promoting more frequent use, in a way that serves revenue, not patients. The acceptable version targets the groups for whom testing is recommended, and states the interval the evidence supports.
 
-> **Egyptian Context:** New medicines, devices and in-vitro diagnostic products must be registered with the Egyptian Drug Authority before launch in Egypt. The introduction stage in Egypt therefore begins only after registration, and promotion before approval is not permitted. Planning a launch includes planning the regulatory timeline.
+> **Egyptian Context:** New medicines, devices and in-vitro diagnostic products must be registered with the Egyptian Drug Authority before launch in Egypt. The introduction stage in Egypt therefore begins only after registration, and the Egyptian Drug Authority's promotion guidelines apply to registered products (Egyptian Drug Authority, 2020); check its current rules before planning any pre-launch activity. Planning a launch includes planning the regulatory timeline.
 
 ## Key Takeaways
 - The product life cycle traces sales and profit through introduction, growth, maturity and decline.
@@ -1567,7 +1567,7 @@ D) Only foreign products need registration
 
 **Q7. D** — Harvesting keeps the product while cutting support to take the remaining profit.
 
-**Q8. A** — New uses extend a product's life. Removing it is deletion; the other options accelerate decline.
+**Q8. A** — New uses extend a product's life: for a medicine once the new indication is approved, for a test where guidelines support it. Removing the product is deletion; the other options accelerate decline.
 
 **Q9. B** — Promoting more frequent use is a legitimate strategy only where the evidence supports it. Here it serves revenue, not patients.
 
@@ -1582,6 +1582,7 @@ D) Only foreign products need registration
 ## References
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
 Rogers, E. M. (2003). *Diffusion of innovations* (5th ed.). Free Press.
+Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
 
 
 ---
@@ -1598,7 +1599,7 @@ By the end of this chapter you will be able to:
 
 ## 7.1 What a Price Is
 
-A **price** is the value of a good or service expressed in money. It represents what the product is worth to both the buyer and the seller. Price is not the same as cost. **Cost** here means the resources used to produce the service; price is what is charged for it; value is what the customer believes it is worth. For the seller the price must cover costs and, for a private firm, provide a return. For the buyer it must be worth paying, compared with the benefit.
+A **price** is the value of a good or service expressed in money: the amount charged for it. Chapters 1 and 4 use a broader idea, the total the customer gives up, which adds time, travel and effort to the money price. Price is not the same as cost. **Cost** here means the resources used to produce the service; price is what is charged for it; value is what the customer believes it is worth. For the seller the price must cover costs and, for a private firm, provide a return. For the buyer it must be worth paying, compared with the benefit.
 
 In health care, price has a special weight. A price that is too high can keep a patient away from a test they need. A price that is too low can bankrupt a service or force it to cut quality.
 
@@ -1619,7 +1620,7 @@ Older translated texts call the first of these the "registration" function. The 
 
 **Free prices** are set by agreement between seller and buyer, through supply and demand, without state intervention. The state may still monitor them. A private laboratory's own price list for self-paid tests is largely a free price.
 
-**Controlled prices** have a ceiling set by the state, which prices may not exceed. They apply to vital goods: medicines, strategic raw materials, energy, public transport and basic consumer goods. In Egypt, medicine prices are set through the Egyptian Drug Authority's pricing system.
+**Controlled prices** have a ceiling set by the state, which prices may not exceed. They apply to vital goods: medicines, strategic raw materials, energy, public transport and basic consumer goods. In Egypt, medicine prices are regulated, and the Egyptian Drug Authority is the body to consult for the current pricing rules.
 
 **Fixed prices** are set by a state body and cannot be changed by the seller. Examples are official fees for public services and regulated utility tariffs. A tariff agreed by a national insurer for a listed service works in a similar way for contracted providers.
 
@@ -1766,7 +1767,7 @@ Its possible purposes are grouped around three core aims: survival, keeping mark
 
 > **Ethics Check:** Pricing in health care must respect four limits. Prices must be transparent, so patients know the cost before the test. Patients must not be charged for services they did not receive or need. Emergency need must not be exploited with surge prices. And discounts must never be used to reward doctors for referrals, which turns price into an inducement. A laboratory that displays its prices, explains what each test includes and refuses referral kickbacks meets these limits.
 
-> **Egyptian Context:** Medicine prices in Egypt are regulated through the Egyptian Drug Authority, so a pharmacy cannot freely set the retail price of a registered medicine. Private laboratories and imaging centres set their own prices for self-paying patients. They accept the insurer's tariff for patients covered by contracts, including those of the universal health insurance system (Arab Republic of Egypt, 2018).
+> **Egyptian Context:** Medicine prices in Egypt are regulated, so a pharmacy does not freely set the retail price of a registered medicine; the Egyptian Drug Authority is the body to consult for the current rules. Private laboratories and imaging centres set their own prices for self-paying patients. They accept the insurer's tariff for patients covered by contracts, including those of the universal health insurance system (Arab Republic of Egypt, 2018).
 
 ## Key Takeaways
 - Price is the money value of a product and must be worth paying for the buyer and sustainable for the seller.
@@ -1916,7 +1917,7 @@ Distribution policy has strategic and tactical tasks, shown in Table 8.1.
 
 ## 8.3 Functions of Marketing Channels
 
-Channels do more than move boxes. They perform seven functions (Kotler & Keller, 2016):
+Channels do more than move boxes. Adapted from the channel flows described by Kotler and Keller (2016), they perform eight functions:
 
 1. **Information.** Gathering and processing market information for planning.
 2. **Promotion.** Spreading information about products to attract buyers.
@@ -1925,6 +1926,7 @@ Channels do more than move boxes. They perform seven functions (Kotler & Keller,
 5. **Adapting the product.** Sorting, packing, assembling and after-sales service.
 6. **Physical distribution.** Transport and storage.
 7. **Financing.** Finding and allocating funds to cover the channel's costs, including credit to buyers.
+8. **Risk taking.** Carrying the risk of stock that does not sell, expires or is damaged, which falls on whoever owns the goods (Section 8.6).
 
 The choice of channel depends on costs and benefits. With external channels, both are shared among the channel members. A manufacturer that uses a distributor gives up part of its margin but gains reach, storage and financing.
 
@@ -1988,7 +1990,7 @@ Intermediaries differ in one key respect: whether they own the goods they sell. 
 
 **Commission agent.** Sells goods in its own name but on behalf of, and at the expense of, the owner. It is paid a percentage of each sale.
 
-**Consignee.** Holds goods sent on **consignment**. The owner, called the consignor, keeps ownership and carries the risk of unsold goods. The consignee sells them on the consignor's behalf and is paid a commission on what it sells. Unsold goods return to the consignor. Laboratories sometimes hold reagents on consignment: they pay only for what they use.
+**Consignee.** Holds goods sent on **consignment**. The owner, called the consignor, keeps ownership and carries the risk of unsold goods. The consignee sells them on the consignor's behalf and is paid a commission on what it sells. Unsold goods return to the consignor. A pharmacy may hold a supplier's stock on these terms. A related arrangement, **consignment stock**, is used with end users: a laboratory keeps a supplier's reagents on its shelves and pays only for what it uses. The laboratory sells nothing and earns no commission, so it is a buyer, not an intermediary.
 
 **Agent.** Works for a manufacturer under a specific agreement, sometimes with exclusive rights in a region. Paid a commission set by the manufacturer, usually a percentage of each deal.
 
@@ -2145,7 +2147,7 @@ D) Restricts patients' access to affordable medicines
 
 **E1 — model answer points.** Medicine channels: zero to three levels, with risks of temperature damage, delay and diversion at each transfer. Laboratory channels: direct access, collection points, referral, home visits, with risks of sample instability, labelling errors and delay. Longer channels reach more patients but add points of failure.
 
-**E2 — model answer points.** Independent intermediaries own the goods and carry the risk; dependent ones sell without owning. Under consignment, the supplier (consignor) keeps ownership of reagents held at the laboratory (consignee); the laboratory pays for what it uses; expired stock is the supplier's loss.
+**E2 — model answer points.** Independent intermediaries own the goods and carry the risk; dependent ones sell without owning. Under consignment, a supplier (consignor) keeps ownership of goods that a pharmacy (consignee) sells for a commission; unsold stock returns to the supplier. The laboratory case is consignment stock: the supplier keeps ownership of reagents on the laboratory's shelves, the laboratory pays for what it uses as the end user, and expired stock is the supplier's loss.
 
 **E3 — model answer points.** Hub-and-spoke design with collection points in towns; scheduled courier runs in temperature-controlled boxes; tracking of arrival times and rejection rates; home visits or mobile units for remote areas; electronic results. These widen access while keeping samples within stability limits.
 
@@ -2215,7 +2217,7 @@ Two strategies describe how promotion moves a product through its channel, as Fi
 
 ![Two columns of four boxes: manufacturer, wholesaler, retailer and consumer. In the left column, headed Push strategy, blue arrows point downward from manufacturer to consumer. In the right column, headed Pull strategy, coral arrows point upward from consumer to manufacturer, and a dashed curve runs from the manufacturer directly to the consumer.](../rework/figures/out/ch09-push-pull.png)
 
-*Figure 9.1 — Push and pull strategies. In push, each channel member promotes the product to the next. In pull, the manufacturer promotes to the final customer, whose demand draws the product up the channel. Pull aimed at the public is not permitted for prescription medicines.*  
+*Figure 9.1 — Push and pull strategies. In push, each channel member promotes the product to the next. In pull, the manufacturer promotes to the final customer, whose demand draws the product up the channel. Pull aimed at the public is not permitted for prescription medicines in Egypt and most other countries.*  
 Original diagram (original)
 
 A **push strategy** directs promotion at the channel. The manufacturer promotes to wholesalers, wholesalers to retailers, and retailers to consumers. Each member pushes the product to the next.
@@ -2316,7 +2318,7 @@ The World Health Organization (1988) set out ethical criteria for promoting medi
 ## Key Takeaways
 - Marketing communications inform, persuade and remind; in health care they must above all be true.
 - The main elements are advertising, personal selling, public relations and sales promotion.
-- Push promotes through the channel; pull promotes to final customers and is prohibited for prescription medicines to the public.
+- Push promotes through the channel; pull promotes to final customers, and pull aimed at the public is prohibited for prescription medicines in Egypt and most other countries.
 - Advertisements can be classified by reach, audience, medium and function.
 - Sales promotion acts fast but many of its tools are restricted in health care.
 - Key opinion leaders are clinicians; regulators are independent bodies, not promotional channels.
@@ -2436,7 +2438,7 @@ Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (V
 By the end of this chapter you will be able to:
 1. [LO1] Define health economics and pharmacoeconomics and explain why health systems use them.
 2. [LO2] Explain the cost–outcome principle and the four perspectives of an economic analysis.
-3. [LO3] Classify costs as direct medical, direct non-medical, indirect, intangible, opportunity or incremental.
+3. [LO3] Classify costs as direct medical, direct non-medical, indirect or intangible, and apply the concepts of opportunity and incremental cost.
 4. [LO4] Calculate the total cost of one option and the incremental cost between two options.
 5. [LO5] Compare the human capital, friction cost and willingness-to-pay approaches to valuing lost productivity.
 
@@ -2444,7 +2446,7 @@ By the end of this chapter you will be able to:
 
 Every health system has limited money, staff and equipment. Demand for care is almost unlimited. Choices are unavoidable. Should a hospital buy a second CT scanner or a new laboratory analyser? Should an insurer pay for a costly new test? Economics gives a structured way to answer such questions.
 
-**Health economics** is the study of how scarce resources are allocated to produce health and health care (Rice & Unruh, 2016). **Pharmacoeconomics** is the branch of health economics that describes and analyses the costs of medicines and drug therapy to the health system and society. It identifies, measures and compares the costs and consequences of health-care interventions: medicines, devices, tests and procedures (Drummond et al., 2015).
+**Health economics** is the study of how scarce resources are allocated to produce health and health care (Rice & Unruh, 2016). **Pharmacoeconomics** is the branch of health economics that describes and analyses the costs of medicines and drug therapy to the health system and society. Economic evaluation, of which pharmacoeconomics is one application, identifies, measures and compares the costs and consequences of health-care interventions: medicines, devices, tests and procedures (Drummond et al., 2015).
 
 This book uses both terms. Pharmacoeconomics compares one drug with another, or drug therapy with other treatment. The same methods compare one test, scan or service with another, which is why they matter to laboratory and imaging professionals.
 
@@ -2504,7 +2506,7 @@ A study must state its perspective, and count only the costs that belong to it.
 
 ## 10.4 Categories of Cost
 
-Health-care costs fall into six categories.
+Health-care costs fall into four categories: direct medical, direct non-medical, indirect and intangible. Two further concepts are used with them: opportunity cost, a way of valuing the resources in any category, and incremental cost, a difference between the totals of two options. Neither is a category to add.
 
 ### Direct medical costs
 
@@ -2572,7 +2574,7 @@ Two methods value lost productivity, the indirect costs of this chapter. A third
 
 > **Worked Example:** The injured worker
 >
-> A worker falls at work and injures his left foot. He takes a taxi to the nearby primary-care unit, though he could have gone to a large hospital in the city centre. He pays the registration fee, and the doctor orders an X-ray, which shows a fracture. The fracture is set, and he is told to rest at home for a month, take prescribed medicines and eat foods that help healing. He buys crutches. He loses part of his wages. He feels sad and anxious, because he has no one to care for him. His employer brings in a replacement worker for the month.
+> A worker falls at work and injures his left foot. He takes a taxi to the nearby primary-care unit, though he could have gone to a large hospital in the city centre. He pays the registration fee, and the doctor orders an X-ray, which shows a fracture. The fracture is set, and he is told to rest at home for a month, take prescribed medicines and eat foods that help healing. He buys crutches. He is off work for a month; his employer pays part of his wages as sick pay, and he loses the rest. He feels sad and anxious, because he has no one to care for him. His employer brings in a replacement worker for the month.
 >
 > *Perspective.* Society, so that the costs of the patient, the health service and the employer are all counted.
 >
@@ -2584,7 +2586,7 @@ Two methods value lost productivity, the indirect costs of this chapter. A third
 |---|---|
 | Direct medical | Registration fee, doctor's examination, X-ray, fracture treatment, medicines, crutches |
 | Direct non-medical | Taxi fare, special foods |
-| Indirect | His lost wages (morbidity cost) |
+| Indirect | One month of lost production, valued by the human capital approach at his full wage, whether paid by him or by his employer as sick pay (morbidity cost) |
 | Intangible | Pain, sadness, anxiety |
 | Replacement cost to the employer | Recruiting and training the replacement worker |
 | Incremental | None, because only one option is being costed |
@@ -2772,7 +2774,7 @@ The **quality-adjusted life year (QALY)** combines length and quality of life in
 
 ## 11.3 Perspectives Again
 
-Chapter 10 introduced the patient, provider, payer and societal perspectives. They apply to outcomes too. A return to work is a benefit to the patient and to society, but not to a hospital's budget. A study must use the same perspective on both sides of the balance.
+Chapter 10 introduced the patient, provider, payer and societal perspectives. They apply to outcomes too. A return to work lowers indirect costs for the patient and for society, but it does not change a hospital's budget. A study must use the same perspective on both sides of the balance.
 
 ## 11.4 Methods of Economic Evaluation
 
@@ -2832,7 +2834,7 @@ Dominance is read from the signs of the two differences, not from the sign of th
 
 ### Cost-utility analysis (CUA)
 
-**Cost-utility analysis** measures outcomes in QALYs, so it compares options across different diseases. The average cost per QALY of one option, the **cost-utility ratio**, describes it but does not decide between options: ranking options by their average ratios can pick the wrong one. The decision uses the incremental cost per QALY gained, read on the cost-effectiveness plane and compared with a threshold (Section 11.7). Many health-technology-assessment bodies use cost per QALY as their reference method (Sanders et al., 2016). Its main difficulties are measuring utilities and comparing QALYs between different patients and populations.
+**Cost-utility analysis** measures outcomes in QALYs, so it compares options across different diseases. The average cost per QALY of one option, the **cost-utility ratio**, describes it but does not decide between options: ranking options by their average ratios can pick the wrong one. The decision uses the incremental cost per QALY gained, read on the cost-effectiveness plane and compared with a threshold (Section 11.7). The US Second Panel on Cost-Effectiveness in Health and Medicine recommends cost per QALY for its reference case (Sanders et al., 2016), and many health-technology-assessment bodies take a similar approach. Its main difficulties are measuring utilities and comparing QALYs between different patients and populations.
 
 ### Cost-benefit analysis (CBA)
 
@@ -2889,7 +2891,7 @@ Guidelines usually discount both costs and health outcomes, at a rate set by the
 >
 > *Step 2 — present value.* 10,000 ÷ 1.1593 = 8,626 EGP. (Dividing by the rounded 1.159 gives 8,628 EGP; carry the unrounded factor.)
 >
-> *Interpretation.* A saving of 10,000 EGP in five years is worth about 8,626 EGP today. Counting it at face value would overstate the programme's benefit by about 16%.
+> *Interpretation.* A saving of 10,000 EGP in five years is worth about 8,626 EGP today. Counting it at face value would overstate the saving by about 16%, and so understate the programme's net cost.
 
 ### Thresholds and willingness to pay
 
@@ -3336,6 +3338,8 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **consignment** — An arrangement in which the owner (consignor) keeps ownership and risk of goods held and sold by another (consignee) for a commission.
 
+**consignment stock** — Supplier-owned stock held by an end user, such as reagents in a laboratory, paid for only as it is used.
+
 **Controlled prices** — Prices with a ceiling set by the state, as for registered medicines.
 
 **Convenience products** — Products bought often and quickly with little comparison, such as simple painkillers.
@@ -3655,7 +3659,7 @@ Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson
 
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press. (Chapters 10, 11 and 12.)
 
-Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapter 9.)
+Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapters 6 and 9.)
 
 Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physicians and the pharmaceutical industry generally and sales representatives specifically and their association with physicians' attitudes and prescribing habits: A systematic review. *BMJ Open, 7*(9), e016408. https://doi.org/10.1136/bmjopen-2017-016408 (Chapter 9.)
 
