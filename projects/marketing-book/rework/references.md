@@ -16,6 +16,8 @@ Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson
 
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press. (Chapters 10, 11 and 12.)
 
+Egyptian Drug Authority. (2021). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapter 9.)
+
 Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physicians and the pharmaceutical industry generally and sales representatives specifically and their association with physicians' attitudes and prescribing habits: A systematic review. *BMJ Open, 7*(9), e016408. https://doi.org/10.1136/bmjopen-2017-016408 (Chapter 9.)
 
 Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., Carswell, C., Caulley, L., Chaiyakunapruk, N., Greenberg, D., Loder, E., Mauskopf, J., Mullins, C. D., Petrou, S., Pwu, R.-F., & Staniszewska, S. (2022). Consolidated Health Economic Evaluation Reporting Standards 2022 (CHEERS 2022) statement: Updated reporting guidance for health economic evaluations. *BMJ, 376*, e067975. https://doi.org/10.1136/bmj-2021-067975 (Chapters 11 and 12.)

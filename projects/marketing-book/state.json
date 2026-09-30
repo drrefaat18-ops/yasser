@@ -1,13 +1,6 @@
 {
  "aborts": [],
- "active_run": {
-  "author_model": "claude",
-  "nonce": "3e477969c6fe833b",
-  "pid": 26536,
-  "stage": "evaluate",
-  "started_at": "2026-09-29T22:10:29Z",
-  "unit": null
- },
+ "active_run": null,
  "approvals": {
   "intake": {
    "approved_at": "2026-09-29T22:10:16Z",
@@ -26,6 +19,39 @@
  },
  "project_id": "marketing-book",
  "receipts": {
+  "evaluate": {
+   "args": {},
+   "author_model": "claude",
+   "inputs": {
+    "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
+    "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
+    "ingest/conversion-report.json": "1ce4601fb6daf4dcdac5db1c8cd328027701c65ccd3a0360abfcfe4b5d75a787",
+    "ingest/normalized.md": "ad035896a60666373f09fee92caa4556286b8ff6576ed351429d02fa78012e9a",
+    "rubric.json": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0"
+   },
+   "outputs": {
+    "evaluation/codex-review.md": "d88ac037b5f249102007b32843220bec0165e11950654008cf966867810c8215",
+    "evaluation/findings.json": "e380d6f1c230bd7ea283eeb1c288ba912ea9a01b6ab2e4a29cf47fd1bd226dc0",
+    "evaluation/fixes.md": "62ccccaaa73ed3fc8ece7de28ab43bf09c7628ed554da51efc58a4b7bccff95c",
+    "evaluation/report.md": "0c2912183d0ecceade5fff0ed37bdb32b9e12fb5bfdc7eed12a4c69e50dac306",
+    "evaluation/scorecard.json": "a8947d3e89d9cb35f01c7399198b881fa903d5c86562d1f80c0002d451848e47"
+   },
+   "personas": [
+    "healthcare-marketing-reviewer",
+    "instructional-designer",
+    "psychologist",
+    "research-synthesist",
+    "statistician",
+    "subject-reviewer"
+   ],
+   "reviewer_model": "GPT-5 Codex",
+   "rubric_digest": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0",
+   "rulings": {},
+   "stage": "evaluate",
+   "status": "ok",
+   "time": "2026-09-30T00:55:47Z",
+   "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
+  },
   "ingest": {
    "args": {},
    "converter": "markitdown",

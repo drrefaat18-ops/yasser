@@ -15,7 +15,7 @@
     "line_end": 71
    },
    "claim": "Price elasticity is confused with the law of demand, and consumers of health care are called 'generally price elastic'.",
-   "evidence": "\"Consumers are generally **price elastic**: the lower the price, the higher the demand; the higher the price, the lower the demand.\" The sentence describes the downward-sloping demand curve, which holds for inelastic goods too. Lecture 2 then says the opposite of the pharmaceutical market: \"Price sensitivity | Lower | Higher\".",
+   "evidence": "\"Consumers are generally **price elastic**: the lower the price, the higher the demand; the higher the price, the lower the demand.\" The sentence describes the downward-sloping demand curve, which holds for inelastic goods too. Lecture 2 then says the opposite of the pharmaceutical market (line 252): \"Price sensitivity | Lower | Higher\".",
    "source": "healthcare-marketing-reviewer",
    "fix_hint": "Separate the law of demand (quantity falls as price rises) from elasticity (how much it falls). State that demand for necessary health care is usually price-inelastic, more elastic for elective and OTC services, and reconcile the two lectures."
   },
@@ -29,11 +29,11 @@
    ],
    "location": {
     "file": "ingest/normalized.md",
-    "line_start": 1135,
-    "line_end": 1135
+    "line_start": 1131,
+    "line_end": 1136
    },
-   "claim": "Incremental cost is defined correctly but illustrated with treatments, not with a cost difference.",
-   "evidence": "\"The extra cost required to purchase an additional unit of effect: - Plastic surgery - Behavioural therapy\". An incremental cost is the difference in cost between two alternatives; a procedure is not a category of cost.",
+   "claim": "Incremental cost is defined as a cost per additional unit of effect, which is a cost-effectiveness ratio, and is illustrated with treatments rather than a cost difference.",
+   "evidence": "\"The extra cost required to purchase an additional unit of effect: - Plastic surgery - Behavioural therapy\". An incremental cost is the monetary difference in cost between two alternatives, ΔC; the extra cost per additional unit of effect is ΔC ÷ ΔE, the ICER. A procedure is not a category of cost.",
    "source": "healthcare-marketing-reviewer",
    "fix_hint": "Define incremental cost as the additional cost of one option over its comparator, show it as the numerator of the ICER, and illustrate it with a pair of alternatives (for example a new imaging protocol against the current one)."
   },
@@ -66,17 +66,17 @@
    ],
    "location": {
     "file": "ingest/normalized.md",
-    "line_start": 1182,
-    "line_end": 1182
+    "line_start": 1178,
+    "line_end": 1186
    },
    "claim": "The worked activity classifies the unchosen large hospital as an opportunity cost and the replacement worker as an indirect cost of the patient.",
    "evidence": "Answer table: \"Opportunity | Large-hospital expenses\" and \"Indirect | ... Alternative worker\". Opportunity cost is the value of the best alternative use of the resources actually used, not the price of a service the patient did not use. The replacement worker is a cost to the employer (the frictional cost of the previous section), not to the worker.",
    "source": "healthcare-marketing-reviewer",
-   "fix_hint": "Rework the activity: state whose perspective is taken, classify each item correctly (crutches and X-ray as direct medical; taxi and special food as direct non-medical; lost wages as indirect; pain and sadness as intangible), explain opportunity cost with the resources actually used, and move the replacement worker to the employer's frictional cost."
+   "fix_hint": "Rework the activity: state whose perspective is taken, classify each item correctly (crutches and X-ray as direct medical; taxi and special food as direct non-medical; lost wages as indirect; pain and sadness as intangible), explain opportunity cost with the resources actually used, and record the replacement worker as a replacement cost under the employer's perspective, keeping friction-cost valuation (productivity lost over the friction period) as a separate concept."
   },
   {
    "id": "F-005",
-   "pillar_id": "G1",
+   "pillar_id": "D2",
    "severity": "major",
    "tags": [
     "economics",
@@ -85,10 +85,10 @@
    ],
    "location": {
     "file": "ingest/normalized.md",
-    "line_start": 1428,
-    "line_end": 1428
+    "line_start": 1426,
+    "line_end": 1432
    },
-   "claim": "The printed incremental ratio of Example 2 is wrong, and a negative ICER is taught as meaning dominance in every case.",
+   "claim": "A negative ICER is taught as meaning dominance in every case; the slide's printed ratio (−15.36) is wrong, and the notes correct it to −0.9 without fixing the rule.",
    "evidence": "\"The slide gives the result as −15.36; the arithmetic gives −9 / 10 = −0.9 LE per 1% reduction\" and \"a **negative** incremental CER means one treatment ... is both **more effective and less expensive**\". A negative ratio also arises when an option is cheaper but less effective; dominance has to be read from the signs of the cost and effect differences, not from the sign of the ratio.",
    "source": "healthcare-marketing-reviewer",
    "fix_hint": "Print (18 − 27) ÷ (25 − 15) = −0.9 LE per percentage point, then state dominance from the two differences: Cidophage costs 9 LE less and lowers glucose 10 points more, so it dominates. Add the cost-effectiveness plane with its four quadrants so a negative ratio is never read alone."
@@ -258,7 +258,7 @@
   {
    "id": "F-015",
    "pillar_id": "G2",
-   "severity": "major",
+   "severity": "minor",
    "tags": [
     "repetition",
     "organisation"
@@ -268,8 +268,8 @@
     "line_start": 287,
     "line_end": 287
    },
-   "claim": "The same material is repeated across lectures, while the lectures on the marketing mix never finish it.",
-   "evidence": "Lecture 3 opens with \"Marketing Mix (Review)\", lecture 8 with \"Principle of Pharmacoeconomics (Review)\", and digital marketing is defined in both lecture 1 and lecture 2. Meanwhile Place and Promotion receive four bullets each in lecture 1 and are then taken up in separate lectures without a bridge.",
+   "claim": "Definitions are repeated across lectures and the overview of the mix is not signposted to the four lectures that develop it.",
+   "evidence": "Lecture 3 opens with \"Marketing Mix (Review)\", lecture 8 with \"Principle of Pharmacoeconomics (Review)\", and digital marketing is defined in both lecture 1 and lecture 2. Product, price, place and promotion are developed in lectures 3 to 6, but the overview in lecture 1 does not point to them.",
    "source": "instructional-designer",
    "fix_hint": "Define each concept once, in the chapter that owns it, and use cross-references instead of repeated reviews."
   },
@@ -423,7 +423,7 @@
    ],
    "location": {
     "file": "ingest/normalized.md",
-    "line_start": 964,
+    "line_start": 909,
     "line_end": 964
    },
    "claim": "Sales-promotion techniques are taught for pharmaceutical goods with no ethical or legal limits.",
@@ -505,17 +505,17 @@
   {
    "id": "F-029",
    "pillar_id": "D2",
-   "severity": "major",
+   "severity": "minor",
    "tags": [
     "calculation",
     "table"
    ],
    "location": {
     "file": "ingest/normalized.md",
-    "line_start": 1442,
-    "line_end": 1442
+    "line_start": 1436,
+    "line_end": 1452
    },
-   "claim": "The cost-benefit example prints its benefits as a row of the cost table and gives no source for them.",
+   "claim": "The cost-benefit example prints its benefits as a row of the cost table and does not name the ratio it computes as incremental; its arithmetic (60, 82, 5 ÷ 22 = 0.227) is correct.",
    "evidence": "The table headed \"Type of cost\" ends with \"**Total benefits** | **$30** | **$35**\". The answer then computes an incremental benefit-cost ratio 5 ÷ 22 = 0.23 without saying that it is incremental, while the decision rule is stated for the simple ratio of one programme.",
    "source": "statistician",
    "fix_hint": "Separate costs from benefits, compute each treatment's own B/C (0.50 and 0.43) and the incremental ratio (0.23), and state which decision each ratio supports."
@@ -540,11 +540,10 @@
   },
   {
    "id": "F-031",
-   "pillar_id": "D2",
+   "pillar_id": "G1",
    "severity": "minor",
    "tags": [
-    "terminology",
-    "calculation"
+    "terminology"
    ],
    "location": {
     "file": "ingest/normalized.md",
@@ -555,6 +554,187 @@
    "evidence": "\"Example 1 — Standardization Cost Value ... What is the total standardization cost value?\" The calculation is a micro-costing of resource use: units × unit cost, summed. The arithmetic is correct: 80 + 7.35 + 350 = 437.35.",
    "source": "statistician",
    "fix_hint": "Call it the total cost from resource use (micro-costing), keep the arithmetic, and show the unit-cost conversion (per 2 visits, per 4 capsules) as its own step."
+  },
+  {
+   "id": "F-032",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "decision-rule"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1045,
+    "line_end": 1045
+   },
+   "claim": "Formulary choice is described as choosing 'the most effective treatment at the lowest price'.",
+   "evidence": "\"Determines which drug should be included in the **formulary**, by choosing the most effective treatment at the lowest price.\" One option is rarely both; where neither dominates, the choice rests on the incremental cost per unit of extra effect against what the payer will pay.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Teach dominance first, then incremental comparison of costs and outcomes under a stated perspective."
+  },
+  {
+   "id": "F-033",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "valuation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1154,
+    "line_end": 1170
+   },
+   "claim": "Willingness to pay is presented as a method of valuing indirect costs, and the friction-cost approach is reduced to 'the cost of replacing the worker'.",
+   "evidence": "\"Three Methods for Valuing Indirect Costs ... 2. Frictional Cost - The cost of replacing the worker. 3. Willingness to Pay (WTP)\". WTP values benefits and welfare changes, including non-market health effects; it is not a productivity-cost method. The friction-cost approach values production lost during the friction period, until output is restored.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Separate productivity valuation (human capital, friction cost) from WTP, and define the friction-cost approach by the friction period."
+  },
+  {
+   "id": "F-034",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "perspective"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1247,
+    "line_end": 1247
+   },
+   "claim": "The patient perspective is defined only as 'the portion of cost not covered by insurance'.",
+   "evidence": "\"Patient perspective: the portion of cost not covered by insurance.\" A patient-perspective analysis also counts travel, waiting and treatment time, copayments, lost income and caregiver burden. In Egypt, where many patients pay and travel directly, these are large.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Define each perspective by whose resources and outcomes count, and list the patient's and caregiver's costs."
+  },
+  {
+   "id": "F-035",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "formula",
+    "calculation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1324,
+    "line_end": 1324
+   },
+   "claim": "The ACER is defined as 'net cost / net health benefit', which is an incremental comparison with a baseline.",
+   "evidence": "\"Average cost-effectiveness ratio (ACER) = Net cost / Net health benefit\". The average ratio of one option is its total cost divided by its total effect; a ratio of net differences is incremental.",
+   "source": "statistician",
+   "fix_hint": "ACER = total cost ÷ total effect of one option; ICER = ΔC ÷ ΔE between options; decisions between options use the ICER."
+  },
+  {
+   "id": "F-036",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "decision-rule"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1360,
+    "line_end": 1360
+   },
+   "claim": "The cost-utility rule 'CUR = Cost/QALY (the lower, the more preferred)' ranks options by average ratios.",
+   "evidence": "\"CUR = Cost / QALY (the lower, the more preferred)\". Ranking by average cost per QALY can pick the wrong option; the decision needs dominance checks and the incremental cost per QALY against a threshold.",
+   "source": "statistician",
+   "fix_hint": "Present average cost per QALY as descriptive only; teach the incremental cost per QALY, dominance and the decision threshold."
+  },
+  {
+   "id": "F-037",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [
+    "economics",
+    "method-choice"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1336,
+    "line_end": 1339
+   },
+   "claim": "Brand against generic and different routes are given as CMA examples without the condition of demonstrated equivalence, and Example 2 treats one equal glucose end point as proof of equivalence.",
+   "evidence": "\"Examples of CMA: - Brand vs. generic products - Different routes of administration of the same drug\"; Example 2 answer: \"CMA — the two medications are equivalent (same outcome)\". CMA is valid only when equivalence in all relevant outcomes, including safety, has been shown.",
+   "source": "statistician",
+   "fix_hint": "Present these as CMA candidates once equivalence is established; in Example 2 state that equivalence in efficacy and safety is assumed."
+  },
+  {
+   "id": "F-038",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [
+    "calculation",
+    "units"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1413,
+    "line_end": 1414
+   },
+   "claim": "Example 2 gives prices without a pack size or treatment period and effects without a time horizon.",
+   "evidence": "\"Cost (LE) | 18 | 35 | 27\" and \"Lowers fasting blood glucose by an average of 25%\". Costs and effects must refer to the same patients and period for the ICER to mean anything; the arithmetic −9 ÷ 10 = −0.9 reproduces, but its basis is undefined.",
+   "source": "statistician",
+   "fix_hint": "State the cost per patient for a defined treatment period and the time at which the effect is measured before computing ΔC ÷ ΔE."
+  },
+  {
+   "id": "F-039",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [
+    "ethics",
+    "regulation"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1002,
+    "line_end": 1002
+   },
+   "claim": "Advertising is said to 'expand the scope of a particular drug — new indications or new formulations'.",
+   "evidence": "\"Expand the scope of a particular drug — new indications or new formulations.\" Advertising cannot establish an indication; promotion outside the approved indication is not permitted. Egyptian guidance requires pre-clearance of promotional material for prescription medicines, directed to health professionals only.",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Replace with communicating approved indications and formulations after authorisation, and state the prohibition of promotion for unapproved uses, citing the Egyptian Drug Authority's prescription medicine promotion guidelines."
+  },
+  {
+   "id": "F-040",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "definition",
+    "pricing"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 553,
+    "line_end": 553
+   },
+   "claim": "Price is defined as 'an exchange equivalent of the cost of goods or services in money terms'.",
+   "evidence": "\"The price is an exchange equivalent of the cost of goods or services in money terms\" conflates the seller's cost with the price, and contradicts the definition in lecture 1 (\"the amount of money charged for a product\").",
+   "source": "healthcare-marketing-reviewer",
+   "fix_hint": "Define price as the amount charged or exchanged; define cost as the resources used to produce it; distinguish both from perceived value."
+  },
+  {
+   "id": "F-041",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [
+    "definition",
+    "outcomes"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 1362,
+    "line_end": 1362
+   },
+   "claim": "The QALY is defined as 'an assessment of the functional effects of illness and its therapy as perceived by the patient'.",
+   "evidence": "\"QALY: an assessment of the functional effects of illness and its therapy as perceived by the patient ... often gathered by questionnaires.\" A QALY is time weighted by a preference-based utility; utilities need not come from the patient concerned, and a QALY is not a functional-status measure.",
+   "source": "statistician",
+   "fix_hint": "Define QALY = years × utility, name the utility scale and its source, and distinguish QALYs from HRQOL questionnaires."
   }
  ]
 }

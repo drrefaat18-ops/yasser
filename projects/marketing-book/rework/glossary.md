@@ -16,6 +16,8 @@
 
 **audience** — The target group of an advertisement: the people most likely to need the product.
 
+**average cost-effectiveness ratio (ACER)** — The total cost of one option divided by its total effect; the same as the CER.
+
 **benefit–cost ratio** — Total benefits divided by total costs, both in money. Above 1 is a net gain, 1 is break-even, below 1 is a net loss.
 
 **Break-even pricing** — Pricing that uses the volume at which revenue equals total cost; below it the service loses money.
@@ -109,6 +111,8 @@
 **foregone earnings approach** — Another name for the human capital approach to valuing lost productivity.
 
 **Free prices** — Prices set by agreement between buyer and seller through supply and demand, without state intervention.
+
+**friction period** — The time until a sick worker is replaced or output is otherwise restored; the friction cost approach values lost production only over this period.
 
 **Functional value** — What an offering does for the customer: the solution it provides.
 
