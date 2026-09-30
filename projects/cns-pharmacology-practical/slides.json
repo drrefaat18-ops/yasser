@@ -1,7 +1,15 @@
 {
  "out_dir": "slides",
  "unit_label": "Section",
- "minutes": 45,
+ "minutes": {
+  "default": 120,
+  "1": 60,
+  "2": 60,
+  "3": 60,
+  "4": 60,
+  "8": 60,
+  "9": 60
+ },
  "feature_callout": "pearl",
  "feature_glyph": "℞",
  "case_glyph": "?",
@@ -10,5 +18,8 @@
  "speaker_notes": true,
  "agenda": true,
  "preset": null,
- "fonts": {"head": "Cambria", "body": "Calibri"}
+ "fonts": {
+  "head": "Cambria",
+  "body": "Calibri"
+ }
 }

@@ -7,7 +7,7 @@ Everything book-specific comes from the project (Rule 8): palette, callout colou
 (theme.json); chapter heading, section labels, callout syntax, MCQ letters and case label (template.json); title
 (brief.json); and the optional slides.json:
 
-    {"out_dir": "slides", "unit_label": "Section", "minutes": 45,
+    {"out_dir": "slides", "unit_label": "Section", "minutes": 45 | {"<chapter num>": 60, "default": 120},
      "mcq_slides": true, "explain_on_slide": true, "speaker_notes": true,
      "feature_callout": "<callout id shown on a half-bleed panel>", "feature_glyph": "<one character>",
      "case_glyph": "?", "fonts": {"head": "Cambria", "body": "Calibri"},
@@ -418,8 +418,11 @@ class Deck:
 
     def facts(self):
         out = []
-        if self.b.cfg.get("minutes"):
-            out.append((str(self.b.cfg["minutes"]), "minutes"))
+        m = self.b.cfg.get("minutes")                  # a number, or {"<chapter num>": n, "default": n}
+        if isinstance(m, dict):
+            m = m.get(str(self.ch["num"]).lstrip("0"), m.get("default"))
+        if m:
+            out.append((str(m), "minutes"))
         if self.ch["mcq"]:
             out.append((str(len(self.ch["mcq"])), "questions"))
         if self.ch["case"]:
