@@ -5,5 +5,9 @@
  "feature_callout": "pharmacy",
  "feature_glyph": "℞",
  "case_glyph": "?",
- "fonts": {"head": "Cambria", "body": "Calibri"}
+ "fonts": {
+  "head": "Cambria",
+  "body": "Calibri"
+ },
+ "background": "F5EDE3"
 }

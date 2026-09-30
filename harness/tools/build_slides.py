@@ -11,7 +11,8 @@ Everything book-specific comes from the project (Rule 8): palette, callout colou
      "mcq_slides": true, "explain_on_slide": true, "speaker_notes": true,
      "feature_callout": "<callout id shown on a half-bleed panel>", "feature_glyph": "<one character>",
      "case_glyph": "?", "fonts": {"head": "Cambria", "body": "Calibri"},
-     "preset": null | one of PRESETS (overrides the book palette), "agenda": true}
+     "preset": null | one of PRESETS (overrides the book palette), "agenda": true,
+     "background": "<hex for content slides; default theme.palette.paper>"}
 
 Deck: title; objectives with a stat card; per core section, each figure/table/list with the explanation that
 precedes it in the chapter (above the visual when short, beside it, or on its own slide first when long); callout
@@ -104,6 +105,8 @@ class Style:
         self.acc_l = mix(self.acc, WHITE_HEX, 0.88)
         self.faded = mix(self.mut, WHITE_HEX, 0.93)
         self.faded_disc = mix(self.mut, WHITE_HEX, 0.80)
+        # content-slide background: slides.json "background", else the book's paper colour, else white
+        self.bg = (slides_cfg.get("background") or pal.get("paper") or WHITE_HEX).lstrip("#").upper()
         fonts = slides_cfg.get("fonts") or {}
         self.head = fonts.get("head") or (preset[4] if preset else "Cambria")      # fonts that ship with Office
         self.body = fonts.get("body") or (preset[5] if preset else "Calibri")
@@ -273,7 +276,7 @@ class Deck:
 
     def slide(self, notes="", dark=False):
         s = self.prs.slides.add_slide(self.blank)
-        bg = s.background.fill; bg.solid(); bg.fore_color.rgb = rgb(self.st.pri if dark else WHITE_HEX)
+        bg = s.background.fill; bg.solid(); bg.fore_color.rgb = rgb(self.st.pri if dark else self.st.bg)
         self.titles.append(""); self.kinds.append("anchor" if dark else "content")
         if notes and self.b.cfg.get("speaker_notes", True):
             s.notes_slide.notes_text_frame.text = clean(notes).replace("**", "")
