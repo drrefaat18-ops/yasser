@@ -172,7 +172,7 @@ A **product orientation** assumes customers want the highest quality. The focus 
 
 A **selling orientation** assumes customers will not buy enough unless pushed. In health care this leads directly to the ethical problems of the last section.
 
-A **marketing orientation** starts from the customer's needs and builds the service around them. A **societal marketing orientation** adds the long-term interest of society. For health services, only the last is acceptable. A service must meet patients' needs, cover its costs and protect public health together.
+A **marketing orientation** starts from the customer's needs and builds the service around them. A **societal marketing orientation** adds the long-term interest of society. For health services, the last is the most appropriate. A service must meet patients' needs, cover its costs and protect public health together.
 
 > **Egyptian Context:** Egypt's health system combines public hospitals, university hospitals, a large private sector and a new universal health insurance system introduced by law (Arab Republic of Egypt, 2018). Private laboratories and imaging centres compete for patients and referrals in most cities. More than half of all current health spending is paid out of pocket by households (World Health Organization, 2025). Marketing decisions here affect access to care as well as revenue.
 
@@ -187,7 +187,7 @@ This chapter introduced the vocabulary. Chapter 2 examines the health-care marke
 - Patients judge the functional quality they can see because they rarely can judge technical quality.
 - Marketing's scope runs from research and product planning to feedback, not only advertising.
 - Information asymmetry, split decision-making and supplier-induced demand make health-care marketing different.
-- The societal marketing orientation is the only acceptable orientation for a health service.
+- The societal marketing orientation is the most appropriate orientation for a health service.
 
 ## Check Your Understanding
 
@@ -239,7 +239,7 @@ B) Relationship marketing
 C) Functional quality
 D) A production orientation
 
-**Q9.** [LO5] Which orientation is the only acceptable one for a health service?
+**Q9.** [LO5] Which orientation is the most appropriate for a health service?
 A) Selling orientation
 B) Production orientation
 C) Societal marketing orientation
@@ -277,7 +277,7 @@ D) Ignoring costs because the state pays
 
 **Q8. A** — Supplier-induced demand arises when the same party advises and sells. It is a central reason for regulating health-care marketing.
 
-**Q9. C** — Only the societal marketing orientation joins patients' needs, financial sustainability and the long-term interest of public health.
+**Q9. C** — The societal marketing orientation best fits a health service, because it joins patients' needs, financial sustainability and the long-term interest of public health.
 
 **Q10. B** — A public hospital does not seek a surplus, but it must still cover its costs to keep serving patients. "Profitably" becomes "sustainably".
 
@@ -381,7 +381,7 @@ The **law of demand** states that, other things equal, the quantity demanded fal
 
 Elasticity is what the old phrase "price sensitivity" means. A demand can obey the law of demand and still be inelastic. Quantity falls when price rises, but only a little.
 
-Demand for necessary care is usually inelastic. A patient with suspected appendicitis will still seek an ultrasound when the price rises, because the need is urgent. Inelastic does not mean unlimited: a patient who cannot afford the scan still goes without, or looks for a public hospital. Demand for elective or cosmetic services and for many self-paid tests is more elastic. A general "wellness" panel loses many buyers when its price rises (Rice & Unruh, 2016).
+Demand for necessary care is usually inelastic. A patient with suspected appendicitis will still seek an ultrasound when the price rises, because the need is urgent. Inelastic does not mean unlimited: a patient who cannot afford the scan still goes without, or looks for a public hospital. Demand for elective or cosmetic services and for many self-paid tests is more elastic (Rice & Unruh, 2016). For example, a general "wellness" panel can be expected to lose many buyers when its price rises.
 
 > **Worked Example:** Elasticity of demand for a self-paid test
 >
@@ -2584,7 +2584,7 @@ Two methods value lost productivity, the indirect costs of this chapter. A third
 >
 > *Classification.* Table 10.2, after this box, sets out every cost by category.
 >
-> *Two corrections to a common answer.* The large hospital he did not use is not his opportunity cost. He did not use its resources, so it costs nothing in this analysis; it would matter only if we compared the two places of care as options. The replacement worker is not the patient's cost. It falls on the employer, and it is counted because the perspective is society's. Under the friction cost method, recruiting and training the replacement would be part of the friction costs, together with the production lost until the replacement is working. Here lost production is valued by the human capital approach, so the replacement cost is listed as a separate cost to the employer.
+> *Two corrections to a common answer.* The large hospital he did not use is not his opportunity cost. He did not use its resources, so it costs nothing in this analysis; it would matter only if we compared the two places of care as options. The replacement worker is not the patient's cost. It falls on the employer, and it is counted because the perspective is society's. Under the friction cost method, recruiting and training the replacement would be part of the friction costs, together with the production lost until the replacement is working. Here lost production is valued by the human capital approach, so the replacement cost is listed as a separate cost to the employer. The two rows are not simply added: if the replacement restores output, the month is not fully lost, and adding a full month of lost production to the replacement cost counts the same absence twice. Add them only when no output is restored during the month.
 
 | Category | Items |
 |---|---|

@@ -119,3 +119,15 @@ Recorded verbatim in `audit/review-r6.md`: verdict pass, 0 blocker or major, 9 m
 | C-007 | fixed + verified | real | Health-care brand loyalty stated as settled | Table row says "often reported as high"; Q5 rationale no longer rests on loyalty |
 | C-008 | fixed + verified | real | Profit peak placed in both growth and maturity | Maturity: "at or just past their peak" |
 | C-009 | fixed + verified | real | "Most countries" without the exceptions | 9.3 names the United States and New Zealand |
+
+## Round 7 (claude-sonnet-5-5, commit 83cd49a)
+
+Recorded verbatim in `audit/review-r7.md`: verdict pass, 0 blocker or major, 5 minor. All arithmetic reproduced. Reviewer per DEC-003.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | rejected | rejected | Publisher and retailer listings give the 4th edition as 2016 (Barnes & Noble, Health Administration Press, ISBN 978-1-56793-723-7; checked 2026-09-30); APA uses the copyright year | No change |
+| C-002 | rejected | rejected | Wirtz and Lovelock's *Services Marketing* teaches the 7 Ps of services marketing (product, price, place, promotion, people, process, physical evidence); the citation supports the claim | No change |
+| C-003 | fixed + verified | real | The worked example listed a full month of lost production and the replacement cost without saying they cannot simply be added | One sentence added: add them only when no output is restored |
+| C-004 | fixed + verified | real | "Only acceptable" orientation stated as an absolute | Text, takeaway, Q9 stem and rationale say "most appropriate" or "best fits"; key unchanged |
+| C-005 | fixed + verified | real | Rice & Unruh cited for a specific wellness-panel claim | Citation moved to the general elasticity statement; the panel given as an illustration |
