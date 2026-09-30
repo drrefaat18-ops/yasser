@@ -73,13 +73,13 @@
     "rework/00-front-matter.md": "02b0af9a2ca7e4f12e47e87fb816c1e154abfec4ddf62dd33a61515c8092660d",
     "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438",
     "rework/ch02.md": "020b52de0a9ec9182e45eb16e89a2cff289caf19ff448429a51abc454725231a",
-    "rework/ch03.md": "82d18b358b3ff1a2183a009eb6026a56de38a6d702dd308d6119df5af6f744dc",
+    "rework/ch03.md": "1cc478452543bcae8aacdf32d4ba1b9ef82c71fa8907cded9d34ab2af51adfb7",
     "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc",
     "rework/ch05.md": "f93dc5f36aedc3a8b365a250f3a9edd0cfdda2c796958d85729222af45eb1322",
     "rework/ch06.md": "1d749d0eaba720c495bfeb73e7536482fe848c04fd46f0d274c440a2e207e70b",
     "rework/ch07.md": "5123314cb2dd2f9875e922f3310955da509a1cdab709a89d3021f7ef52bbcb6e",
     "rework/ch08.md": "1cacd67880774abb8993c9ace61ce42d816caa66954ca9f3a3a147764f39ccb0",
-    "rework/ch09.md": "dc10cfda46584b8f3c8cfd4e46ca1bd44f8de3c1b7353f4a64172e4a68805488",
+    "rework/ch09.md": "73757fda59889b830ea0fb6177b67e6ca3105d6f204304edf08519f686e8c3b2",
     "rework/ch10.md": "6f7267748b97a5581fbfea6163502cabe4ce77158a036aee54106128d06ed151",
     "rework/ch11.md": "e3bce2b06a49c0f51e535d75cc580be08fa80684eddd7cc9ee6d56b003c02642",
     "rework/ch12.md": "3c9414bd472ca1e22f83c97e33ff8ddbdb70e0ea87b56541a0b1022dcf44205f",
@@ -108,9 +108,9 @@
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "33fb0ae84b7538d6a22f17f0a1c18f599f8ef063979273362922b10ada0df27c",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "5f702b3a5461b3bd5e71be8fc76f5ccad68e3e62e0fee7645bd61c3c5c7d5659",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "6d9b1a59c618879418975cd41a185f98af52b680ad53b444d3ad71ea7b9bc457",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "5dbcecbafe810cb904983dccb19670baa3b30807ccad0c4127b33144e47524ec",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "9fa83ab4c5c44add4f5eafb6acf97538dab3c2321f4e9742e52d5e3d43f4dd83",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "2e1135cb24c1a354ad082fc858c6eb29257c72f209670743d7750bea734b074e",
     "build/build-report.json": "f516061df4ea8017b170ea4d44a64b2b20c4eff744711873391a1126082c6320",
     "build/checkpoints/cover.png": "ace3380e6e2beeb592e52709b42c6ceb0a1f6760304501186acbe841c0c7c0ef",
     "build/checkpoints/first-chapter.png": "dac8054d1720dfadd24be8bc786fb33e5123dbbabd094c1cd8c1de7aa48d8723",
@@ -153,7 +153,7 @@
    "pdf_engine": "html",
    "stage": "build",
    "status": "ok",
-   "time": "2026-09-30T18:13:06Z",
+   "time": "2026-09-30T18:20:51Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948"
   },
   "design": {
@@ -292,7 +292,7 @@
   },
   "rework": {
    "args": {},
-   "checker_report_sha256": "e11f0dea633588630429fec4d5833bbcc25c7b7c8c572170f628901afdeb845b",
+   "checker_report_sha256": "19e6b54a5cf324166a96a8bee5c677296e22ec775e781e8b855cd0f45e004644",
    "inputs": {
     "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
     "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -308,13 +308,13 @@
     "rework/00-front-matter.md": "02b0af9a2ca7e4f12e47e87fb816c1e154abfec4ddf62dd33a61515c8092660d",
     "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438",
     "rework/ch02.md": "020b52de0a9ec9182e45eb16e89a2cff289caf19ff448429a51abc454725231a",
-    "rework/ch03.md": "82d18b358b3ff1a2183a009eb6026a56de38a6d702dd308d6119df5af6f744dc",
+    "rework/ch03.md": "1cc478452543bcae8aacdf32d4ba1b9ef82c71fa8907cded9d34ab2af51adfb7",
     "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc",
     "rework/ch05.md": "f93dc5f36aedc3a8b365a250f3a9edd0cfdda2c796958d85729222af45eb1322",
     "rework/ch06.md": "1d749d0eaba720c495bfeb73e7536482fe848c04fd46f0d274c440a2e207e70b",
     "rework/ch07.md": "5123314cb2dd2f9875e922f3310955da509a1cdab709a89d3021f7ef52bbcb6e",
     "rework/ch08.md": "1cacd67880774abb8993c9ace61ce42d816caa66954ca9f3a3a147764f39ccb0",
-    "rework/ch09.md": "dc10cfda46584b8f3c8cfd4e46ca1bd44f8de3c1b7353f4a64172e4a68805488",
+    "rework/ch09.md": "73757fda59889b830ea0fb6177b67e6ca3105d6f204304edf08519f686e8c3b2",
     "rework/ch10.md": "6f7267748b97a5581fbfea6163502cabe4ce77158a036aee54106128d06ed151",
     "rework/ch11.md": "e3bce2b06a49c0f51e535d75cc580be08fa80684eddd7cc9ee6d56b003c02642",
     "rework/ch12.md": "3c9414bd472ca1e22f83c97e33ff8ddbdb70e0ea87b56541a0b1022dcf44205f",
@@ -342,9 +342,9 @@
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-30T18:10:25Z",
+   "time": "2026-09-30T18:18:22Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
-   "total_words": 53130,
+   "total_words": 53169,
    "units": {
     "ch01": {
      "args": {
@@ -367,7 +367,7 @@
       "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:34Z",
+     "time": "2026-09-30T18:17:32Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -396,7 +396,7 @@
       "rework/ch02.md": "020b52de0a9ec9182e45eb16e89a2cff289caf19ff448429a51abc454725231a"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:37Z",
+     "time": "2026-09-30T18:17:35Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -408,7 +408,7 @@
      "args": {
       "unit": "ch03"
      },
-     "checker_report_sha256": "cd3497dd546b87956b859ede09ac470d4b2f9913ecea06daf93ae91e18d9c19a",
+     "checker_report_sha256": "fbb721229c3fad40a5b8c7a64de2189fb83396a19b6e2d5a00c39798ae35db2b",
      "inputs": {
       "agents/pharmacokinetics-reviewer.json": "f4d650ddd031044eb49e76e44dcc1e91d914ac0f902d931db8e7bfa89ecdf1c6",
       "brief.json": "0ebf4c7391c2c8932bdf0e8b6da8977748599515f817746797e3923d4773ac9a",
@@ -422,10 +422,10 @@
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch03.md": "82d18b358b3ff1a2183a009eb6026a56de38a6d702dd308d6119df5af6f744dc"
+      "rework/ch03.md": "1cc478452543bcae8aacdf32d4ba1b9ef82c71fa8907cded9d34ab2af51adfb7"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:41Z",
+     "time": "2026-09-30T18:17:39Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -454,7 +454,7 @@
       "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:44Z",
+     "time": "2026-09-30T18:17:42Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -483,7 +483,7 @@
       "rework/ch05.md": "f93dc5f36aedc3a8b365a250f3a9edd0cfdda2c796958d85729222af45eb1322"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:47Z",
+     "time": "2026-09-30T18:17:45Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -512,7 +512,7 @@
       "rework/ch06.md": "1d749d0eaba720c495bfeb73e7536482fe848c04fd46f0d274c440a2e207e70b"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:50Z",
+     "time": "2026-09-30T18:17:48Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -541,7 +541,7 @@
       "rework/ch07.md": "5123314cb2dd2f9875e922f3310955da509a1cdab709a89d3021f7ef52bbcb6e"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:54Z",
+     "time": "2026-09-30T18:17:52Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -570,7 +570,7 @@
       "rework/ch08.md": "1cacd67880774abb8993c9ace61ce42d816caa66954ca9f3a3a147764f39ccb0"
      },
      "status": "ok",
-     "time": "2026-09-30T18:09:59Z",
+     "time": "2026-09-30T18:17:57Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 2,
@@ -596,10 +596,10 @@
       "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
      },
      "outputs": {
-      "rework/ch09.md": "dc10cfda46584b8f3c8cfd4e46ca1bd44f8de3c1b7353f4a64172e4a68805488"
+      "rework/ch09.md": "73757fda59889b830ea0fb6177b67e6ca3105d6f204304edf08519f686e8c3b2"
      },
      "status": "ok",
-     "time": "2026-09-30T18:10:02Z",
+     "time": "2026-09-30T18:18:00Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -628,7 +628,7 @@
       "rework/ch10.md": "6f7267748b97a5581fbfea6163502cabe4ce77158a036aee54106128d06ed151"
      },
      "status": "ok",
-     "time": "2026-09-30T18:10:06Z",
+     "time": "2026-09-30T18:18:03Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -657,7 +657,7 @@
       "rework/ch11.md": "e3bce2b06a49c0f51e535d75cc580be08fa80684eddd7cc9ee6d56b003c02642"
      },
      "status": "ok",
-     "time": "2026-09-30T18:10:09Z",
+     "time": "2026-09-30T18:18:07Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -686,7 +686,7 @@
       "rework/ch12.md": "3c9414bd472ca1e22f83c97e33ff8ddbdb70e0ea87b56541a0b1022dcf44205f"
      },
      "status": "ok",
-     "time": "2026-09-30T18:10:12Z",
+     "time": "2026-09-30T18:18:10Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -715,7 +715,7 @@
       "rework/ch13.md": "6e867fe525dcb0ef8ed1552ded79ee6619e459e5aa0e371acff4434ea2f1b358"
      },
      "status": "ok",
-     "time": "2026-09-30T18:10:18Z",
+     "time": "2026-09-30T18:18:15Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 2,
@@ -744,7 +744,7 @@
       "rework/ch14.md": "563867fb3816f6645a19b90f2d754772c281cf2604558ebe0b90c8efa98db793"
      },
      "status": "ok",
-     "time": "2026-09-30T18:10:21Z",
+     "time": "2026-09-30T18:18:19Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,

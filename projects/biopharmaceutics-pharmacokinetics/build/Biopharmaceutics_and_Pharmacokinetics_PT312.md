@@ -698,7 +698,7 @@ Cp = 75 mg ÷ 24.8 L = 3.02 mg·L⁻¹
 By the end of this chapter you will be able to:
 1. [LO1] Explain why urine data can substitute for plasma data, and state the condition that must hold.
 2. [LO2] Determine K and t½ by the urinary excretion rate method, and say why midpoint time is used.
-3. [LO3] Determine K, t½ and Du∞ by the sigma-minus method.
+3. [LO3] Determine K and t½ by the sigma-minus method, given Du∞, and check Du∞ against the intercept.
 4. [LO4] Choose between the two methods for a given study, giving the reason.
 5. [LO5] List the conditions under which a urine collection yields valid kinetic data.
 
@@ -828,7 +828,7 @@ Condition 4 deserves emphasis, because it is the one the subject controls rather
 > | 2.0–4.0 | 2.0 | 3.0 | 188 | 94 | 938 | 62 |
 > | 4.0–6.0 | 2.0 | 5.0 | 46 | 23 | 984 | 16 |
 >
-> *Step 3 — where 1000 mg came from.* The collections total 984 mg, which is 98.4% of the dose. That is exactly what a first-order process leaves after six half-lives, so the drug is excreted entirely unchanged and Du∞ is the dose itself, 1000 mg. Using 984 mg as Du∞ would force the last ARE to zero and ruin the plot.
+> *Step 3 — where 1000 mg came from.* The collections total 984 mg, which is 98.4% of the dose. That is what a first-order process leaves after six half-lives, which is consistent with complete excretion of unchanged drug. The example therefore takes fe = 1 as known, so Du∞ is the dose itself, 1000 mg. This is a third route to Du∞, beside the plateau and a fit, and it holds only when fe = 1 is established independently. Using 984 mg as Du∞ would force the last ARE to zero and ruin the plot.
 >
 > *Step 4 — excretion rate method.* Take two widely separated midpoints.
 >
@@ -3040,24 +3040,24 @@ The number of compartments is a property of the data and the sampling design, no
 **Q1.** [LO1] Non-compartmental analysis computes AUC and AUMC without any compartmental model. Before the clearance it gives can be applied to a different dose, the further assumption needed is that:
 A) The drug follows a one-compartment model
 B) The drug is given intravenously
-C) The kinetics are linear
-D) Elimination is entirely renal
+C) Elimination is entirely renal
+D) The kinetics are linear
 
 **Q2.** [LO2] AUMC is the area under a plot of:
-A) Cp·t against t
-B) log Cp against t
+A) log Cp against t
+B) Cp·t against t
 C) Cp against t
 D) Cp against log t
 
 **Q3.** [LO3] The mean residence time is calculated as:
 A) D₀ / AUMC
 B) AUC / AUMC
-C) AUC × AUMC
-D) AUMC / AUC
+C) AUMC / AUC
+D) AUC × AUMC
 
 **Q4.** [LO4] For a drug following one-compartment kinetics after an IV bolus, MRT equals:
-A) 0.693 / K
-B) 1 / K
+A) 1 / K
+B) 0.693 / K
 C) K / 0.693
 D) Vd / Cl²
 
@@ -3107,13 +3107,13 @@ D) 5 h
 
 ## Answers and Worked Solutions
 
-**Q1. C** — Linearity means every dose gives a curve of the same shape, so areas scale with dose and a clearance found at one dose holds at another. The areas could be computed without it, but they would describe only the dose studied. No particular model is assumed, which rules out option A.
+**Q1. D** — Linearity means every dose gives a curve of the same shape, so areas scale with dose and a clearance found at one dose holds at another. The areas could be computed without it, but they would describe only the dose studied. No particular model is assumed, which rules out option A.
 
-**Q2. A** — The first moment curve is concentration multiplied by time. Option C is the ordinary plasma curve, whose area is AUC.
+**Q2. B** — The first moment curve is concentration multiplied by time. Option C is the ordinary plasma curve, whose area is AUC.
 
-**Q3. D** — MRT is the first moment divided by the zero moment, which is the mean of the residence-time distribution.
+**Q3. C** — MRT is the first moment divided by the zero moment, which is the mean of the residence-time distribution.
 
-**Q4. B** — For a single exponential, AUMC/AUC = (C⁰/K²)/(C⁰/K) = 1/K. Option A is the half-life, which is 0.693·MRT.
+**Q4. A** — For a single exponential, AUMC/AUC = (C⁰/K²)/(C⁰/K) = 1/K. Option B is the half-life, which is 0.693·MRT.
 
 **Q5. D** — The tail is Cn/λz = 2 ÷ 0.25 = 8 mg·h·L⁻¹. Option A multiplies instead of dividing.
 
