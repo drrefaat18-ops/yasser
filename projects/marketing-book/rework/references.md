@@ -14,7 +14,7 @@ Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson
 
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press. (Chapters 10, 11 and 12.)
 
-Egyptian Drug Authority. (2021). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapter 9.)
+Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapter 9.)
 
 Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physicians and the pharmaceutical industry generally and sales representatives specifically and their association with physicians' attitudes and prescribing habits: A systematic review. *BMJ Open, 7*(9), e016408. https://doi.org/10.1136/bmjopen-2017-016408 (Chapter 9.)
 
@@ -45,3 +45,5 @@ Wirtz, J., & Lovelock, C. (2021). *Services marketing: People, technology, strat
 World Health Organization. (1988). *Ethical criteria for medicinal drug promotion*. World Health Organization. (Chapter 9.)
 
 World Health Organization. (2010). *Good distribution practices for pharmaceutical products* (WHO Technical Report Series, No. 957, Annex 5). World Health Organization. (Chapter 8.)
+
+World Health Organization. (2025). *Country cooperation strategy for WHO and Egypt 2024–2028*. World Health Organization Regional Office for the Eastern Mediterranean. https://applications.emro.who.int/docs/9789292746926-eng.pdf (Chapters 1, 2 and 10.)

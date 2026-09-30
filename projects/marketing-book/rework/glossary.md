@@ -324,7 +324,7 @@
 
 **user** — The person who receives or uses a product or service; in health care, the patient.
 
-**utility** — A number valuing a health state, where 1 is full health and 0 is death.
+**utility** — A number valuing a health state, where 1 is full health and 0 is death; some instruments allow values below 0 for states judged worse than death.
 
 **Value-based pricing** — Setting a price from the value a product creates for the customer.
 

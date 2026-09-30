@@ -72,7 +72,7 @@ You will spend your career inside such services. You may run a laboratory sectio
 
 ## 1.2 What Marketing Is
 
-The American Marketing Association (AMA) is the professional body most often quoted for a definition. Its current definition, approved in 2007 and reaffirmed since, is:
+The American Marketing Association (AMA) is the professional body most often quoted for a definition. Its current definition, which the association dates to 2017 and whose wording it first adopted in 2007, is:
 
 > **In Practice:** "Marketing is the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large" (American Marketing Association, as cited in Kotler & Keller, 2016).
 >
@@ -174,7 +174,7 @@ A **selling orientation** assumes customers will not buy enough unless pushed. I
 
 A **marketing orientation** starts from the customer's needs and builds the service around them. A **societal marketing orientation** adds the long-term interest of society. For health services, only the last is acceptable. A service must meet patients' needs, cover its costs and protect public health together.
 
-> **Egyptian Context:** Egypt's health system combines public hospitals, university hospitals, a large private sector and a new universal health insurance system introduced by law (Arab Republic of Egypt, 2018). Private laboratories and imaging centres compete for patients and referrals in most cities. Many patients still pay for tests from their own pockets. Marketing decisions here affect access to care as well as revenue.
+> **Egyptian Context:** Egypt's health system combines public hospitals, university hospitals, a large private sector and a new universal health insurance system introduced by law (Arab Republic of Egypt, 2018). Private laboratories and imaging centres compete for patients and referrals in most cities. More than half of all current health spending is paid out of pocket by households (World Health Organization, 2025). Marketing decisions here affect access to care as well as revenue.
 
 ## 1.7 Marketing and the Rest of the Book
 
@@ -292,6 +292,7 @@ Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal He
 Berkowitz, E. N. (2017). *Essentials of health care marketing* (4th ed.). Jones & Bartlett Learning.
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
 Wirtz, J., & Lovelock, C. (2021). *Services marketing: People, technology, strategy* (9th ed.). World Scientific.
+World Health Organization. (2025). *Country cooperation strategy for WHO and Egypt 2024–2028*. World Health Organization Regional Office for the Eastern Mediterranean. https://applications.emro.who.int/docs/9789292746926-eng.pdf
 
 
 ---
@@ -325,7 +326,7 @@ The split changes the whole marketing task. A laboratory that serves only patien
 The roles also shift from service to service. A patient who buys a pregnancy test at a pharmacy decides, pays and uses alone. A patient admitted to a public hospital under insurance decides almost nothing about the tests performed. Most laboratory and imaging services lie between these two extremes.
 
 > **Through Two Lenses**
-> - **Medical Laboratory:** For a routine blood test the doctor usually decides, but the patient often picks the laboratory. In Egypt the patient often pays directly. The laboratory must therefore satisfy two customers: the doctor's need for reliable results and the patient's need for convenience and a fair price.
+> - **Medical Laboratory:** For a routine blood test the doctor usually decides, but the patient often picks the laboratory. In the private sector the patient often pays the laboratory's fee. The laboratory must therefore satisfy two customers: the doctor's need for reliable results and the patient's need for convenience and a fair price.
 > - **Radiology and Medical Imaging:** For an MRI the doctor decides that a scan is needed, and often suggests where. The patient or insurer pays, and the patient must lie still in the machine. The centre must satisfy the doctor with image quality and reports, and the patient with safety, comfort and clear instructions.
 
 ## 2.3 What Triggers a Choice
@@ -358,7 +359,7 @@ Table 2.1 compares the two kinds of market. Each row is a tendency, not a rule. 
 
 *Table 2.1. The healthcare market compared with ordinary consumer markets.*
 
-Two rows deserve care in Egypt. First, "who pays" varies more than many textbooks suggest. A large share of health spending in Egypt is paid out of pocket, and laboratory and imaging tests very often are. The universal health insurance system is extending coverage governorate by governorate (Arab Republic of Egypt, 2018). A textbook table that says the patient "does not pay" describes an insured Western market, not most Egyptian laboratories.
+Two rows deserve care in Egypt. First, "who pays" varies more than many textbooks suggest. More than half of all current health spending in Egypt is paid out of pocket by households: an estimated 54.9% in 2022, down from 62.7% in 2018–2019 (World Health Organization, 2025). Self-paid tests at private laboratories and imaging centres are part of that spending, although no published figure isolates their share. The universal health insurance system is extending coverage governorate by governorate (Arab Republic of Egypt, 2018). A textbook table that says the patient "does not pay" describes an insured Western market, not Egypt's.
 
 Second, "who decides" depends on the service. For prescription medicines the doctor decides. For over-the-counter medicines and self-referred tests the patient decides. Many choices are shared.
 
@@ -380,7 +381,7 @@ The **law of demand** states that, other things equal, the quantity demanded fal
 
 Elasticity is what the old phrase "price sensitivity" means. A demand can obey the law of demand and still be inelastic. Quantity falls when price rises, but only a little.
 
-Demand for necessary care is usually inelastic. A patient with suspected appendicitis will pay for an ultrasound whatever it costs, if possible. Demand for elective or cosmetic services and for many self-paid tests is more elastic. A general "wellness" panel loses many buyers when its price rises (Rice & Unruh, 2016).
+Demand for necessary care is usually inelastic. A patient with suspected appendicitis will still seek an ultrasound when the price rises, because the need is urgent. Inelastic does not mean unlimited: a patient who cannot afford the scan still goes without, or looks for a public hospital. Demand for elective or cosmetic services and for many self-paid tests is more elastic. A general "wellness" panel loses many buyers when its price rises (Rice & Unruh, 2016).
 
 > **Worked Example:** Elasticity of demand for a self-paid test
 >
@@ -427,7 +428,7 @@ Each later chapter addresses one or more of these problems.
 - Health care often splits the roles of decider, payer, user and influencer among different people.
 - Medical advice, heuristics, symptoms and information are the four main triggers of choice.
 - The healthcare market differs from consumer markets in who decides and pays, loyalty, ethics, regulation, research costs and price sensitivity.
-- In Egypt many patients pay out of pocket, especially for laboratory and imaging tests.
+- More than half of Egypt's current health spending is paid out of pocket by households.
 - The law of demand says quantity falls as price rises; elasticity says by how much.
 - Demand for necessary care is usually inelastic; demand for elective and self-paid services is more elastic.
 - A price change that leaves revenue unchanged can still reduce access to care.
@@ -464,11 +465,11 @@ B) Lower brand loyalty
 C) Less importance of ethics
 D) Cheaper research and development
 
-**Q6.** [LO3] Which statement about who pays for laboratory tests in Egypt is most accurate?
-A) The state pays for all tests
-B) Insurers pay for all tests
-C) Many tests are paid out of pocket by patients
-D) Patients never pay directly
+**Q6.** [LO3] Which statement about how health care in Egypt is paid for is most accurate?
+A) The state pays for all health care
+B) Insurers pay for all health care
+C) More than half of current health spending is paid out of pocket by households
+D) Households pay nothing directly
 
 **Q7.** [LO4] The statement "quantity demanded falls as price rises" describes:
 A) Elastic demand only
@@ -514,13 +515,13 @@ D) Develop services that meet real needs
 
 **Q5. A** — Health care is heavily regulated. Loyalty and ethics are higher, and research is costlier, so the other options reverse the pattern.
 
-**Q6. C** — A large share of Egyptian health spending is out of pocket, and laboratory tests often are. Options A, B and D describe systems Egypt does not have for most tests.
+**Q6. C** — WHO estimates that 54.9% of Egypt's current health expenditure in 2022 was paid out of pocket. Options A, B and D describe systems Egypt does not have.
 
 **Q7. B** — This is the law of demand. It holds for elastic and inelastic goods alike; elasticity measures how strongly quantity responds.
 
 **Q8. D** — 5% ÷ 10% = 0.5. Below 1, so demand is inelastic.
 
-**Q9. A** — A patient with suspected appendicitis needs the scan urgently and will buy it at almost any price. The other services are optional.
+**Q9. A** — Urgent need makes demand for the scan much less responsive to price, though affordability still limits it. The other services are optional.
 
 **Q10. D** — A test added because it sells, not because it helps, breaks the principle of developing services that meet real needs.
 
@@ -528,12 +529,13 @@ D) Develop services that meet real needs
 
 **E2 — model answer points.** The law of demand is the direction of the relationship; elasticity is its strength. With inelastic demand, a price rise may leave revenue unchanged or higher. Some patients still stop using the service, so access falls. A health service must weigh access as well as revenue.
 
-**E3 — model answer points.** Differences in who decides and pays, loyalty, ethics, regulation, research costs and price sensitivity. In Egypt, a large share of spending is out of pocket and the universal insurance system is still expanding. The row "patient does not pay" must therefore be qualified for most laboratory and imaging services.
+**E3 — model answer points.** Differences in who decides and pays, loyalty, ethics, regulation, research costs and price sensitivity. In Egypt, more than half of current health spending is out of pocket (54.9% in 2022) and the universal insurance system is still expanding. The row "patient does not pay" must therefore be qualified for Egypt, and in particular for self-paid private services.
 
 ## References
 Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal Health Insurance System law*. Official Gazette.
 Rice, T., & Unruh, L. (2016). *The economics of health reconsidered* (4th ed.). Health Administration Press.
 Stapel, S. O., Asero, R., Ballmer-Weber, B. K., Knol, E. F., Strobel, S., Vieths, S., & Kleine-Tebbe, J. (2008). Testing for IgG4 against foods is not recommended as a diagnostic tool: EAACI Task Force report. *Allergy, 63*(7), 793–796. https://doi.org/10.1111/j.1398-9995.2008.01705.x
+World Health Organization. (2025). *Country cooperation strategy for WHO and Egypt 2024–2028*. World Health Organization Regional Office for the Eastern Mediterranean. https://applications.emro.who.int/docs/9789292746926-eng.pdf
 
 
 ---
@@ -925,7 +927,7 @@ Every element of the mix can be misused. Product decisions can add tests with no
 ## Key Takeaways
 - The marketing mix is the set of controllable tools an organisation uses to reach its market.
 - The four Ps are product, price, place and promotion.
-- Services are intangible, produced and consumed together, and cannot be stored.
+- Services tend to be intangible, their production and consumption often overlap, and their unused capacity cannot be stored.
 - The seven Ps add people, process and physical evidence for services.
 - Patients judge health services largely by people, process and physical evidence.
 - A medicine or a test comes wrapped in service elements that create much of its value.
@@ -2223,7 +2225,7 @@ A **pull strategy** directs promotion at the final customer. Customers then ask 
 In health care the choice is constrained. For prescription medicines, the "customer" whom promotion may address is mainly the prescriber. Pull strategies aimed at the public are prohibited in most countries, because patients cannot judge prescription medicines alone. For over-the-counter products and self-paid services, lawful pull strategies are possible.
 
 > **Through Two Lenses**
-> - **Medical Laboratory:** A laboratory mostly uses push toward doctors: visits, test menus and scientific evenings explaining new tests. It may use careful pull toward the public for services patients can choose themselves, such as check-up packages. Every message must be accurate and must advise medical consultation where appropriate.
+> - **Medical Laboratory:** A laboratory mostly uses push toward doctors: visits, test menus and scientific evenings. It may use careful pull toward the public only for tests with a clear indication for a defined group, such as recommended screening. Messages must be accurate, state who should be tested, and advise medical consultation.
 > - **Radiology and Medical Imaging:** An imaging centre mostly uses push toward referring doctors: visits, sample images and fast reporting. It may use careful pull toward the public for booking information and screening awareness campaigns. Every message must state safety facts accurately, such as radiation and contrast risks.
 
 ## 9.4 Advertising
@@ -2309,7 +2311,7 @@ The World Health Organization (1988) set out ethical criteria for promoting medi
 
 > **Common Mistake:** Thinking that small gifts are always harmless. A systematic review of contacts between doctors and the pharmaceutical industry found that such contacts, including small gifts and meals, were associated with changes in prescribing (Fickweiler et al., 2017). Industry codes therefore limit gifts to items of modest value related to practice or education, or ban them entirely, depending on the code.
 
-> **Egyptian Context:** In Egypt, the Egyptian Drug Authority's prescription medicine promotion guidelines require promotional material for registered prescription medicines to be pre-cleared and directed to health professionals only, with claims tied to the approved indication (Egyptian Drug Authority, 2021). Laboratories and imaging centres are bound by professional ethics and by the rules of their licensing bodies. Before running any campaign, check the current rules with the regulator.
+> **Egyptian Context:** In Egypt, the Egyptian Drug Authority's prescription medicine promotion guidelines require promotional material for registered prescription medicines to be pre-cleared and directed to health professionals only, with claims tied to the approved indication (Egyptian Drug Authority, 2020). Laboratories and imaging centres are bound by professional ethics and by the rules of their licensing bodies. Before running any campaign, check the current rules with the regulator.
 
 ## Key Takeaways
 - Marketing communications inform, persuade and remind; in health care they must above all be true.
@@ -2384,7 +2386,7 @@ D) Push strategy
 
 ### Essay Questions
 
-**E1.** [LO2] Compare push and pull strategies. Explain which a laboratory should use for a new specialised test and which it may use for a self-paid check-up package.
+**E1.** [LO2] Compare push and pull strategies. Explain which a laboratory should use for a new specialised test and which it may use for an evidence-based screening test offered to a defined group of the public.
 
 **E2.** [LO3] Compare advertising and sales promotion on six criteria, and explain which sales-promotion tools are restricted in health care and why.
 
@@ -2412,7 +2414,7 @@ D) Push strategy
 
 **Q10. A** — Completeness requires balance: benefits with risks and limitations.
 
-**E1 — model answer points.** Push: promotion through the channel, toward doctors, by visits and scientific evenings; suits a specialised test requiring medical judgement. Pull: promotion to the public; may be used carefully for a self-paid package, with accurate claims and advice to consult a doctor.
+**E1 — model answer points.** Push: promotion through the channel, toward doctors, by visits and scientific evenings; suits a specialised test requiring medical judgement. Pull: promotion to the public; may be used only where testing is clinically appropriate for the people addressed, such as screening recommended for a defined age or risk group. The message must state the eligibility criteria, make accurate claims and advise medical consultation. Truthful wording alone does not make promotion ethical if the tests are not indicated (Chapter 1).
 
 **E2 — model answer points.** Time horizon, nature, cost, link to sales, speed, aim. Restricted tools: samples of prescription medicines (prescribers only, limited), contests and lotteries (inappropriate for medicines), coupons that pressure patients into unneeded tests. Restrictions protect patients from inducement and overuse.
 
@@ -2423,7 +2425,7 @@ Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physic
 International Federation of Pharmaceutical Manufacturers & Associations. (2019). *IFPMA code of practice 2019* [Industry guidance]. IFPMA.
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
 World Health Organization. (1988). *Ethical criteria for medicinal drug promotion*. World Health Organization.
-Egyptian Drug Authority. (2021). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
+Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
 
 
 ---
@@ -2518,7 +2520,7 @@ Health-care costs fall into six categories.
 
 ### Intangible costs
 
-**Intangible costs** are the non-financial burdens of disease and care: pain, suffering, grief and anxiety. They are real but have no market price. They are usually reported separately, or valued by methods such as willingness to pay (Section 10.6), rather than added to money costs directly.
+**Intangible costs** are the non-financial burdens of disease and care: pain, suffering, grief and anxiety. They are real but have no market price. They are usually reported separately rather than added to money costs. Where they are given a money value, this book follows one convention: the value of avoiding pain or anxiety, measured by willingness to pay (Section 10.6), is counted as a benefit of the intervention, never also as a cost, so it is not counted twice.
 
 ### Opportunity cost
 
@@ -2593,7 +2595,7 @@ Two methods value lost productivity, the indirect costs of this chapter. A third
 
 > **Ethics Check:** Cost analysis can be misused. A service might choose the perspective that makes its product look best, for example the provider's view to hide costs to patients. It might omit intangible costs because they are hard to measure. Honest analysis states its perspective at the outset, counts every cost that belongs to it, reports intangible costs, and tests its conclusions against other assumptions. Chapter 11 shows how.
 
-> **Egyptian Context:** In Egypt, many patients pay directly for tests and medicines, so costs from the patient's perspective are large and visible. As the universal health insurance system expands (Arab Republic of Egypt, 2018), payer-perspective analysis becomes more important for deciding which services are covered.
+> **Egyptian Context:** In Egypt, more than half of current health spending is paid out of pocket by households (World Health Organization, 2025), so costs from the patient's perspective are large and visible. As the universal health insurance system expands (Arab Republic of Egypt, 2018), payer-perspective analysis becomes more important for deciding which services are covered.
 
 ## Key Takeaways
 - Health economics studies how scarce resources are allocated to health; pharmacoeconomics applies it to medicines.
@@ -2707,6 +2709,7 @@ Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal He
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press.
 Koopmanschap, M. A., Rutten, F. F. H., van Ineveld, B. M., & van Roijen, L. (1995). The friction cost method for measuring indirect costs of disease. *Journal of Health Economics, 14*(2), 171–189. https://doi.org/10.1016/0167-6296(94)00044-5
 Rice, T., & Unruh, L. (2016). *The economics of health reconsidered* (4th ed.). Health Administration Press.
+World Health Organization. (2025). *Country cooperation strategy for WHO and Egypt 2024–2028*. World Health Organization Regional Office for the Eastern Mediterranean. https://applications.emro.who.int/docs/9789292746926-eng.pdf
 
 
 ---
@@ -2745,7 +2748,7 @@ The **ECHO model** groups outcomes into three kinds: economic, clinical and huma
 
 ### Utilities and QALYs
 
-A **utility** is a number that represents the value of a health state on a scale where 1.0 is full health and 0 is death. Utilities are usually measured with questionnaires completed by patients or the public (Drummond et al., 2015).
+A **utility** is a number that represents the value of a health state on a scale where 1.0 is full health and 0 is death. Some instruments allow values below 0 for states people judge worse than death. Utilities are usually measured with questionnaires completed by patients or the public (Drummond et al., 2015).
 
 The **quality-adjusted life year (QALY)** combines length and quality of life in one measure.
 
@@ -3068,11 +3071,11 @@ The method follows the outcome. Chapter 11 set the rule: CMA only when equivalen
 | 2. Metformin, originator brand | 1 g | 35 | 25% |
 | 3. Glimepiride | 1 mg | 27 | 15% |
 
-*Table 12.2. Three medicines for type 2 diabetes: cost per patient for a 30-day supply, and effect at three months.*
+*Table 12.2. Three medicines for type 2 diabetes: cost per patient for one month, and effect at the end of that month.*
 
 > **Worked Example:** Three medicines for type 2 diabetes
 >
-> Three tablets, listed in Table 12.2, are compared for lowering fasting blood glucose. The costs and effects are illustrative, as in the source example, with the product names replaced by their generic descriptions. Costs are per patient for a 30-day supply; effects are the average fall in fasting glucose after three months of treatment. Without such a stated basis, an ICER cannot be interpreted.
+> Three tablets, listed in Table 12.2, are compared for lowering fasting blood glucose. The costs and effects are illustrative, as in the source example, with the product names replaced by their generic descriptions. Costs are per patient for one month of treatment; effects are the average fall in fasting glucose measured at the end of that month. Costs and effects cover the same patients over the same period. Without such a stated basis, an ICER cannot be interpreted.
 >
 > *Question (a): medicines 1 and 2.* Same active ingredient, same strength, same effect. If their equivalence has been shown in every relevant outcome, including safety, the right method is CMA, and only cost matters. One equal glucose end point is not proof of equivalence by itself. Medicine 1 is preferred and saves 35 − 18 = 17 EGP.
 >
@@ -3619,7 +3622,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **user** — The person who receives or uses a product or service; in health care, the patient.
 
-**utility** — A number valuing a health state, where 1 is full health and 0 is death.
+**utility** — A number valuing a health state, where 1 is full health and 0 is death; some instruments allow values below 0 for states judged worse than death.
 
 **Value-based pricing** — Setting a price from the value a product creates for the customer.
 
@@ -3650,7 +3653,7 @@ Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson
 
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press. (Chapters 10, 11 and 12.)
 
-Egyptian Drug Authority. (2021). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapter 9.)
+Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf (Chapter 9.)
 
 Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physicians and the pharmaceutical industry generally and sales representatives specifically and their association with physicians' attitudes and prescribing habits: A systematic review. *BMJ Open, 7*(9), e016408. https://doi.org/10.1136/bmjopen-2017-016408 (Chapter 9.)
 
@@ -3681,3 +3684,5 @@ Wirtz, J., & Lovelock, C. (2021). *Services marketing: People, technology, strat
 World Health Organization. (1988). *Ethical criteria for medicinal drug promotion*. World Health Organization. (Chapter 9.)
 
 World Health Organization. (2010). *Good distribution practices for pharmaceutical products* (WHO Technical Report Series, No. 957, Annex 5). World Health Organization. (Chapter 8.)
+
+World Health Organization. (2025). *Country cooperation strategy for WHO and Egypt 2024–2028*. World Health Organization Regional Office for the Eastern Mediterranean. https://applications.emro.who.int/docs/9789292746926-eng.pdf (Chapters 1, 2 and 10.)

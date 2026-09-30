@@ -20,3 +20,20 @@ examples and every numeric MCQ; apart from C-001 and C-006 the arithmetic reprod
 | C-009 | fixed + verified | real | Incremental B/C rule without the ordering condition | — | Order by cost, remove dominated options, prefer net benefit when signs are awkward | → ok |
 | C-010 | fixed + verified | real | Final user changed between zero- and one-level examples | — | Levels counted to the final user, with both hospital cases explained | → ok |
 | C-011 | fixed + verified | real | Positive customer value stated as guaranteeing satisfaction | — | "More likely to be", with expectations as the basis of satisfaction | → ok |
+
+## Round 2 — review of commit b94371e
+
+Recorded verbatim in `audit/codex-audit-r2.md`: 9 findings, 3 major and 6 minor, down from 5 major. Codex reproduced
+every other calculation and found no further wrong MCQ key.
+
+| ID | status | real/rejected | root cause | siblings found | fix | verification → result |
+|---|---|---|---|---|---|---|
+| C-001 | fixed + verified | real | My round-0 fix gave costs for 30 days and effects at three months | Table 12.2 caption; ledger E-005 | Costs and effects both for one month of treatment; the source numbers then reproduce | ICER −0.9 unchanged, math checks pass → ok |
+| C-002 | fixed + verified | real | Out-of-pocket claims cited to the insurance law, which gives no spending data; a laboratory-specific share was asserted | ch01 §1.6, ch02 §2.2 lens, §2.4, Q6, E3, takeaway; ch10 Egyptian Context; ledger E-016 | WHO Country Cooperation Strategy 2024–2028 cited (fetched and read: 54.9% of CHE in 2022); the laboratory-specific share removed; Q6 rewritten to the national figure | reference added in ch01, ch02, ch10 → ok |
+| C-003 | fixed + verified | real | Public pull for check-up packages allowed on accuracy alone, against ch01's clinical-need rule | ch09 lens | Pull only for clinically indicated tests to a defined group, with eligibility stated | lens balance re-checked → ok |
+| C-004 | fixed + verified | real | Definition dated 2007 | ledger E-013 | Dated 2017 by the association, wording first adopted 2007; cited through Kotler and Keller because the template's reference policy does not accept a web page without DOI | → ok |
+| C-005 | fixed + verified | real | Year taken from the PDF's creation date | — | 2020, per the EDA regulatory index (fetched and read) | → ok |
+| C-006 | fixed + verified | real | "Whatever it costs" equates inelastic with perfectly inelastic | Q9 rationale | Less price-responsive; affordability still limits | → ok |
+| C-007 | fixed + verified | real | WTP described on both sides of the balance | — | One convention: valued intangible effects are benefits, never also costs | → ok |
+| C-008 | fixed + verified | real | Utility scale described without negative values | glossary | Values below 0 noted | → ok |
+| C-009 | fixed + verified | real | Takeaway kept the absolute wording round 1 removed from the body | — | Takeaway qualified | → ok |
