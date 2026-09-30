@@ -1,0 +1,108 @@
+{
+ "aborts": [],
+ "active_run": {
+  "author_model": "claude",
+  "nonce": "b23745aa2b61ce78",
+  "pid": 14996,
+  "stage": "evaluate",
+  "started_at": "2026-09-30T16:34:48Z",
+  "unit": null
+ },
+ "approvals": {
+  "intake": {
+   "approved_at": "2026-09-30T16:33:43Z",
+   "approved_by": "user",
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "f2ca582b3f0ff09ef2a5e198791256f9959fcafabdee82f6122f0d1aa7676238",
+   "files": {
+    "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+    "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+    "rubric.json": "341163378ac10719dbc85e918777f53bce7353a4bd5344f7ab1a369713027fc0",
+    "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+    "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "drug-information-practical",
+ "receipts": {
+  "ingest": {
+   "args": {},
+   "converter": "markitdown",
+   "inputs": {
+    "original/drug-info-sections-combined.pdf": "53bba62b4a9d1dbcd5cccd418a7ced878061b6e134db5057080b28fbe482602b",
+    "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e"
+   },
+   "outputs": {
+    "ingest/conversion-report.json": "a0d3c795a1a5871aea651e9c0fff808bc2ba0b5e891666468053e555dbff0b57",
+    "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+    "ingest/units.json": "8665278f5eac761139d4e734dab6defbaa5ac1f507d595d43c338b755ae9e3c3",
+    "source-manifest.json": "abaf30a41bad43b061f30c27968ee243a57c84287765ec0ebc22777170f0555d",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/drug-info-sections-combined.pdf": "53bba62b4a9d1dbcd5cccd418a7ced878061b6e134db5057080b28fbe482602b"
+   },
+   "source_formats": [
+    "pdf"
+   ],
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-09-30T16:34:36Z",
+   "tool_sha": "2889f760f71017d4e2d0a30c76e975ec4f606bfa"
+  },
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook-alexandria.json": "2428dca0de71742cc70c9bb4c0ecd3da7d19b8435fcb009d996d55bd1a71cc17",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+    "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+    "rubric.json": "341163378ac10719dbc85e918777f53bce7353a4bd5344f7ab1a369713027fc0",
+    "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+    "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-09-30T16:32:28Z",
+   "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f"
+  },
+  "new": {
+   "args": {
+    "slug": "drug-information-practical"
+   },
+   "inputs": {},
+   "outputs": {
+    "agents/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "design/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-09-30T16:20:51Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  }
+ },
+ "schema_version": 1
+}

@@ -1,0 +1,30 @@
+{
+ "schema_version": 1,
+ "id": "drug-information-reviewer",
+ "base_persona": "subject-reviewer",
+ "scope": "Drug information and pharmacovigilance practical sections for pharmacy students in Egypt: kept simple, 45 minutes per section.",
+ "criteria": [
+  "Definitions (drug information, DIC, ADR, side effect, randomisation, hypothesis, power) match standard texts.",
+  "The systematic approach to a drug information query is complete and in the right order.",
+  "Tertiary, secondary and primary sources are classified correctly with real examples and their pros and cons.",
+  "Study designs and the evidence hierarchy are stated correctly and simply.",
+  "ADR classification (A-F) and causality methods (WHO-UMC, Naranjo) are correct, with scoring given accurately.",
+  "Each chapter can be taught in 45 minutes: no padding, tables over prose.",
+  "Added content (Sections 2 and 3) is marked and sourced.",
+  "MCQ distractors are plausible; rationales are one clear line."
+ ],
+ "exclusions": [
+  "Advanced statistics beyond hypothesis, p-value, power and sample-size ideas.",
+  "Drug-by-drug pharmacology."
+ ],
+ "evidence_expectations": [
+  "Quote the exact text and give file and line for every finding.",
+  "Give replacement text, not only a critique.",
+  "Cite a standard textbook edition or a current guideline for any correction."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2",
+  "D3"
+ ]
+}
