@@ -89,3 +89,17 @@ out-of-pocket claims supportable.
 | C-003 | fixed + verified | real | Elasticity base not stated | Initial-value method named; midpoint result (about −0.47) given; math check added |
 | C-004 | fixed + verified | real | ch08 takeaway omitted risk taking | Added |
 | C-005 | fixed + verified | real | Q10 gave the life-cycle label as the legal reason | Option and rationale state the registration rule |
+
+## Round 5 — review of commit 600d239
+
+Recorded verbatim in `audit/codex-audit-r5.md`: 6 findings, 2 major and 4 minor. All arithmetic reproduced; no
+endorsed misleading or inducement-based promotion found.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | fixed + verified | real | Egyptian medicine prices classed as ceiling prices; Egypt sets an official public price per product | Registered medicines moved to fixed prices; controlled prices defined as ceilings; Q1, takeaway, Egyptian Context and both glossary entries aligned |
+| C-002 | fixed + verified | real | The prescription-medicine promotion guideline extended to devices and IVDs | Passage and Q10 narrowed to prescription medicines; devices pointed to the authority's separate rules |
+| C-003 | fixed + verified | real | Price defined as money plus time in ch01, ch04 and the glossary, money only in ch07 | Price is the money charge everywhere; time, travel and effort are non-money parts of total customer cost |
+| C-004 | fixed + verified | real | E3 answer said CEA cannot compare across diseases | Limited comparison unless a shared natural outcome is used |
+| C-005 | fixed + verified | real | Q6 asked for the "most important" classification | Stem asks which classification decides the audience of promotion |
+| C-006 | fixed + verified | real | Average ratios linked to willingness to pay | The average comparison named as invalid; decision rests on the ICER or net benefit |

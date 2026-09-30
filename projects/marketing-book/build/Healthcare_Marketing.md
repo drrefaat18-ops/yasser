@@ -132,7 +132,7 @@ Marketing covers far more than promotion. Ten activities make up its scope. Each
 
 **4. After-sales service.** In health care this means everything after the result is issued. Examples include explaining a report, correcting an error quickly, sending reminders for repeat tests and handling complaints.
 
-**5. Pricing.** **Price** is the amount charged for a product, or the total of what customers give up to obtain it. Chapter 7 covers how health services set prices.
+**5. Pricing.** **Price** is the amount of money charged for a product. It is only part of what customers give up: time, travel and effort are costs too, and Chapter 5 adds them into the total customer cost. Chapter 7 covers how health services set prices.
 
 **6. Distribution.** This is how the service reaches people: branches, collection points, home visits, mobile units. Chapter 8 covers it.
 
@@ -805,7 +805,7 @@ The **marketing mix** is the set of controllable tools an organisation uses to r
 The classic mix has four elements, known as the **4 Ps**:
 
 - **Product** — what is offered: its features, quality, design, brand and packaging.
-- **Price** — what customers give up to obtain it: money, and also time and effort.
+- **Price** — the money charged for it. Time and effort are further, non-money costs to the customer.
 - **Place** — how it reaches customers: locations, channels and access.
 - **Promotion** — how the organisation communicates: advertising, public relations, personal selling and sales promotion.
 
@@ -825,7 +825,7 @@ Products also include packaging, quality, warranties, after-sales service and br
 
 Price in health care depends on customer demand, competitors' prices, the organisation's strategy, operating costs and the costs of marketing and selling. It often also depends on regulation and on contracts with insurers. Chapter 7 covers pricing in full.
 
-Price is more than money. A patient also pays with travel time, waiting time and time off work. A laboratory that opens at seven in the morning lowers the "price" for workers who must fast before a test.
+The money price is not the whole of what a patient gives up. A patient also bears non-money costs: travel time, waiting time and time off work. Together with the price they make up the total customer cost of Chapter 5. A laboratory that opens at seven in the morning lowers that total cost for workers who must fast before a test, without changing its price.
 
 ### Place
 
@@ -1237,7 +1237,7 @@ B) An ultrasound machine
 C) A bottle of reagent
 D) A syringe
 
-**Q6.** [LO3] For marketing purposes, the most important classification of medicines is usually by:
+**Q6.** [LO3] Which classification of medicines decides whether promotion is directed mainly to prescribers or may, within regulation, address the public?
 A) Chemical structure
 B) Dosage form
 C) Supply: prescription or over-the-counter
@@ -1470,7 +1470,7 @@ At introduction, a firm may overstate the benefits of a new product before evide
 
 > **Ethics Check:** A laboratory's vitamin D test is in maturity, and revenue has flattened. The marketing team proposes promoting "a vitamin D test every three months for everyone". Guidelines do not support routine repeated testing in healthy people. The proposal uses a strategy for delaying decline, promoting more frequent use, in a way that serves revenue, not patients. The acceptable version targets the groups for whom testing is recommended, and states the interval the evidence supports.
 
-> **Egyptian Context:** New medicines, devices and in-vitro diagnostic products must be registered with the Egyptian Drug Authority before launch in Egypt. The introduction stage in Egypt therefore begins only after registration, and the Egyptian Drug Authority's promotion guidelines apply to registered products (Egyptian Drug Authority, 2020); check its current rules before planning any pre-launch activity. Planning a launch includes planning the regulatory timeline.
+> **Egyptian Context:** Medicines are registered with the Egyptian Drug Authority before they can be sold in Egypt, and the authority also regulates medical devices. For prescription medicines, the authority's promotion guidelines cover registered products and require promotional material to be pre-cleared and directed to health professionals (Egyptian Drug Authority, 2020). Devices and in-vitro diagnostics fall under the authority's separate device rules, which should be checked before any launch activity. Planning a launch includes planning the regulatory timeline.
 
 ## Key Takeaways
 - The product life cycle traces sales and profit through introduction, growth, maturity and decline.
@@ -1537,10 +1537,10 @@ B) Promoting more frequent use
 C) Penetration pricing
 D) Harvesting
 
-**Q10.** [LO5] Why may a new product not be promoted in Egypt before registration?
+**Q10.** [LO5] Why may a new prescription medicine not be promoted in Egypt before registration?
 A) Promotion is never allowed in health care
 B) Registration only affects the price
-C) An unregistered product may not lawfully be marketed or promoted
+C) An unregistered medicine may not lawfully be marketed or promoted
 D) Only foreign products need registration
 
 ### Essay Questions
@@ -1571,7 +1571,7 @@ D) Only foreign products need registration
 
 **Q9. B** — Promoting more frequent use is a legitimate strategy only where the evidence supports it. Here it serves revenue, not patients.
 
-**Q10. C** — The legal rule is the reason: a medicine or device must be registered with the Egyptian Drug Authority before it may be marketed, and the authority's promotion guidelines cover registered products only. That the introduction stage starts after registration is a consequence of the rule, not its cause.
+**Q10. C** — The legal rule is the reason: a medicine must be registered with the Egyptian Drug Authority before it may be marketed, and the authority's prescription medicine promotion guidelines cover registered products only. That the introduction stage starts after registration is a consequence of the rule, not its cause.
 
 **E1 — model answer points.** Introduction: slow sales, losses, few competitors (a new cardiac marker). Growth: rapid sales, rising profit, new competitors (home collection services). Maturity: flat sales, peak competition (routine blood tests). Decline: falling sales, competitors leave (an old test replaced by a more accurate one).
 
@@ -1599,7 +1599,7 @@ By the end of this chapter you will be able to:
 
 ## 7.1 What a Price Is
 
-A **price** is the value of a good or service expressed in money: the amount charged for it. Chapters 1 and 4 use a broader idea, the total the customer gives up, which adds time, travel and effort to the money price. Price is not the same as cost. **Cost** here means the resources used to produce the service; price is what is charged for it; value is what the customer believes it is worth. For the seller the price must cover costs and, for a private firm, provide a return. For the buyer it must be worth paying, compared with the benefit.
+A **price** is the value of a good or service expressed in money: the amount charged for it. Chapters 1, 4 and 5 treat time, travel and effort separately, as non-money parts of the total customer cost. Price is not the same as cost. **Cost** here means the resources used to produce the service; price is what is charged for it; value is what the customer believes it is worth. For the seller the price must cover costs and, for a private firm, provide a return. For the buyer it must be worth paying, compared with the benefit.
 
 In health care, price has a special weight. A price that is too high can keep a patient away from a test they need. A price that is too low can bankrupt a service or force it to cut quality.
 
@@ -1620,9 +1620,9 @@ Older translated texts call the first of these the "registration" function. The 
 
 **Free prices** are set by agreement between seller and buyer, through supply and demand, without state intervention. The state may still monitor them. A private laboratory's own price list for self-paid tests is largely a free price.
 
-**Controlled prices** have a ceiling set by the state, which prices may not exceed. They apply to vital goods: medicines, strategic raw materials, energy, public transport and basic consumer goods. In Egypt, medicine prices are regulated, and the Egyptian Drug Authority is the body to consult for the current pricing rules.
+**Controlled prices** have a ceiling set by the state, which prices may not exceed; sellers may charge less. They are used for vital goods such as strategic raw materials, energy, public transport and basic consumer goods, and in many countries for medicines.
 
-**Fixed prices** are set by a state body and cannot be changed by the seller. Examples are official fees for public services and regulated utility tariffs. A tariff agreed by a national insurer for a listed service works in a similar way for contracted providers.
+**Fixed prices** are set by a state body and cannot be changed by the seller. Examples are official fees for public services and regulated utility tariffs. Registered medicines in Egypt are an example: the Egyptian Drug Authority approves the public price of each product, and pharmacies sell at that price rather than setting their own. A tariff agreed by a national insurer for a listed service works in a similar way for contracted providers.
 
 ### By sphere of trade
 
@@ -1767,12 +1767,12 @@ Its possible purposes are grouped around three core aims: survival, keeping mark
 
 > **Ethics Check:** Pricing in health care must respect four limits. Prices must be transparent, so patients know the cost before the test. Patients must not be charged for services they did not receive or need. Emergency need must not be exploited with surge prices. And discounts must never be used to reward doctors for referrals, which turns price into an inducement. A laboratory that displays its prices, explains what each test includes and refuses referral kickbacks meets these limits.
 
-> **Egyptian Context:** Medicine prices in Egypt are regulated, so a pharmacy does not freely set the retail price of a registered medicine; the Egyptian Drug Authority is the body to consult for the current rules. Private laboratories and imaging centres set their own prices for self-paying patients. They accept the insurer's tariff for patients covered by contracts, including those of the universal health insurance system (Arab Republic of Egypt, 2018).
+> **Egyptian Context:** Each registered medicine in Egypt has an officially approved public price, so a pharmacy does not set its own retail price; the Egyptian Drug Authority is the body to consult for the current pricing rules. Private laboratories and imaging centres set their own prices for self-paying patients. They accept the insurer's tariff for patients covered by contracts, including those of the universal health insurance system (Arab Republic of Egypt, 2018).
 
 ## Key Takeaways
 - Price is the money value of a product and must be worth paying for the buyer and sustainable for the seller.
 - Prices inform, give incentives, distribute income and balance supply and demand.
-- Prices may be free, controlled or fixed; medicine prices in Egypt are controlled.
+- Prices may be free, controlled (a ceiling) or fixed (an official price); registered medicines in Egypt have fixed official prices.
 - Cost-plus price = full cost × (1 + markup); a markup is a share of cost, a margin a share of price; break-even volume = fixed cost ÷ (price − variable cost).
 - Skimming suits novel products with eager early buyers; penetration suits price-sensitive markets.
 - Private laboratories in a city form a monopolistically competitive market; patents create temporary monopolies.
@@ -1780,7 +1780,7 @@ Its possible purposes are grouped around three core aims: survival, keeping mark
 
 ## Check Your Understanding
 
-**Q1.** [LO1] A ceiling set by the state that the price of a medicine may not exceed is a:
+**Q1.** [LO1] A ceiling set by the state, below which sellers may charge any price, is a:
 A) Free price
 B) Controlled price
 C) Auction price
@@ -1850,7 +1850,7 @@ D) Recovering costs in a public service
 
 ## Answers and Worked Solutions
 
-**Q1. B** — A state-imposed ceiling makes it a controlled price, as for registered medicines in Egypt.
+**Q1. B** — A state-imposed ceiling makes it a controlled price. An official price the seller cannot change, as for registered medicines in Egypt, is a fixed price instead.
 
 **Q2. C** — A tariff is a price for services, such as a fee schedule.
 
@@ -3012,7 +3012,7 @@ D) Disclosing funding
 
 **E2 — model answer points.** Axes: difference in effect (horizontal) and difference in cost (vertical). South-east dominates; north-west is dominated; north-east and south-west are trade-offs judged against willingness to pay. A negative ICER arises in both south-east and north-west, so the quadrant, not the sign, decides.
 
-**E3 — model answer points.** CMA: no outcome compared (equivalence shown); two equivalent analysers; needs proof of equivalence. CEA: natural units; cost per case detected; cannot compare across diseases. CUA: QALYs; screening programmes; utilities are hard to measure. CBA: money; a screening programme against other public spending; valuing health in money is contested. COI: burden only; cost of anaemia to society; compares no interventions.
+**E3 — model answer points.** CMA: no outcome compared (equivalence shown); two equivalent analysers; needs proof of equivalence. CEA: natural units; cost per case detected; limited comparison across diseases unless they share a meaningful natural outcome such as life-years gained. CUA: QALYs; screening programmes; utilities are hard to measure. CBA: money; a screening programme against other public spending; valuing health in money is contested. COI: burden only; cost of anaemia to society; compares no interventions.
 
 ## References
 Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal Health Insurance System law*. Official Gazette.
@@ -3175,7 +3175,7 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 >
 > *Step 2 — incremental cost per QALY.* 6,000 ÷ 0.20 = 30,000 EGP per QALY gained.
 >
-> *Step 3 — interpret.* B is more costly and more effective: the north-east quadrant. It is cost-effective only if the decision-maker is willing to pay at least 30,000 EGP for one QALY. The average ratios, 2,500 and about 3,171 EGP per QALY, would favour A whatever the decision-maker is willing to pay, which is why average cost per QALY does not rank options.
+> *Step 3 — interpret.* B is more costly and more effective: the north-east quadrant. It is cost-effective only if the decision-maker is willing to pay at least 30,000 EGP for one QALY. Choosing the lower average ratio, 2,500 against about 3,171 EGP per QALY, would pick A, but that comparison is invalid: the choice between A and B rests on the ICER of 30,000 EGP per QALY, or on the net benefit at the decision-maker's threshold.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** The screening example shows why laboratories should know cost per case detected, not only cost per test. A cheaper test that misses cases can be the more expensive choice once missed cases are counted. Laboratory staff supply the accuracy data such analyses depend on.
@@ -3344,7 +3344,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **consignment stock** — Supplier-owned stock held by an end user, such as reagents in a laboratory, paid for only as it is used.
 
-**Controlled prices** — Prices with a ceiling set by the state, as for registered medicines.
+**Controlled prices** — Prices with a ceiling set by the state; sellers may charge less but not more.
 
 **Convenience products** — Products bought often and quickly with little comparison, such as simple painkillers.
 
@@ -3414,7 +3414,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **Fixed costs** — Costs that do not change with volume in the short run, such as rent and equipment leases.
 
-**Fixed prices** — Prices set by a state body that the seller cannot change.
+**Fixed prices** — Prices set by a state body that the seller cannot change, such as the official public prices of registered medicines in Egypt.
 
 **foregone earnings approach** — Another name for the human capital approach to valuing lost productivity.
 
@@ -3550,7 +3550,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **present value** — The value today of a future cost or outcome: F ÷ (1 + r) to the power t.
 
-**Price** — The amount charged for a product, or the total of what customers give up to obtain it.
+**Price** — The amount of money charged for a product; time, travel and effort are separate, non-money parts of the total customer cost.
 
 **Price elasticity of demand** — The percentage change in quantity demanded divided by the percentage change in price.
 

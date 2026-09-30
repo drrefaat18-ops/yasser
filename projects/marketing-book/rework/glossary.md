@@ -38,7 +38,7 @@
 
 **consignment stock** — Supplier-owned stock held by an end user, such as reagents in a laboratory, paid for only as it is used.
 
-**Controlled prices** — Prices with a ceiling set by the state, as for registered medicines.
+**Controlled prices** — Prices with a ceiling set by the state; sellers may charge less but not more.
 
 **Convenience products** — Products bought often and quickly with little comparison, such as simple painkillers.
 
@@ -108,7 +108,7 @@
 
 **Fixed costs** — Costs that do not change with volume in the short run, such as rent and equipment leases.
 
-**Fixed prices** — Prices set by a state body that the seller cannot change.
+**Fixed prices** — Prices set by a state body that the seller cannot change, such as the official public prices of registered medicines in Egypt.
 
 **foregone earnings approach** — Another name for the human capital approach to valuing lost productivity.
 
@@ -244,7 +244,7 @@
 
 **present value** — The value today of a future cost or outcome: F ÷ (1 + r) to the power t.
 
-**Price** — The amount charged for a product, or the total of what customers give up to obtain it.
+**Price** — The amount of money charged for a product; time, travel and effort are separate, non-money parts of the total customer cost.
 
 **Price elasticity of demand** — The percentage change in quantity demanded divided by the percentage change in price.
 
