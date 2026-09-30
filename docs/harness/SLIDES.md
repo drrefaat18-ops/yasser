@@ -47,3 +47,27 @@ Tool: `harness/tools/build_slides.py` (gate: build). Skill: `.claude/skills/book
 
 PowerPoint COM export to PNG (LibreOffice is not installed here), then a contact sheet of 9-12 slides from two
 decks. One batched fix round, one confirm round, stop.
+
+## Rules taken from open-source slide skills (2026-09-30)
+
+Surveyed: knowledge-cat-ppt-skill, slide-skill, slide-maestro, AgentBuff, powerpoint-fancy-design, html2pptx,
+image-to-editable-ppt-skill, guizang-ppt-skill, starrykit, frontend-slides, slide-writer, slide-creator, openclaw
+pptx-creator (list from kimi.ai/resources/ppt-skills-for-agents). Their code is kept for reference only in
+`vendor/ppt-skills-ref/` (git-ignored, outside `.claude/skills` so none of it loads or runs). What was built into
+`build_slides.py`:
+
+| Rule | Source skills |
+|---|---|
+| 10 palette presets (`slides.json` `preset`), each with Office-safe fonts | slide-skill themes, guizang, slide-creator, openclaw |
+| WCAG contrast guard: colours darkened until white text reaches 4.5:1 | slide-skill svg_qa, slide-creator |
+| Density caps: 6 points / 8 table rows per slide, split into "(1/2)" slides; font floors (rows 16 pt, tables 12 pt, chrome 12 pt); split rather than shrink | fancy-design, slide-writer, maestro |
+| Explanation moves to its own slide when a slide would pass ~850 characters | fancy-design presentation_quality |
+| Roadmap (agenda) slide after the objectives | slide-writer, slide-skill academic |
+| Page numbers "05 / 24" | guizang, slide-skill academic |
+| Notes end with a timing estimate (140 words/min) and the next slide's title | slide-skill rehearse, guizang notes |
+| Alt text on every picture | maestro, knowledge-cat |
+| Lint pass to `qa-report.json`: overflow >15%, font <12 pt, contrast, placeholders, density >900 characters, 3 dense slides in a row | slide-skill, fancy-design, knowledge-cat, slide-creator |
+
+Not taken: HTML/WebGL decks, CDN scripts, auto-updates (`git pull`), public deploys (Vercel), remote OCR or MCP
+uploads, reuse of stored login tokens. image-to-editable-ppt-skill's SKILL.md tells agents to pre-justify permission
+prompts (prompt injection); slide-writer ships settings that pre-allow `git push`. Both stay disabled.
