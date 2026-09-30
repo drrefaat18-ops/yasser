@@ -30,6 +30,21 @@ class BlocksTest(unittest.TestCase):
     def test_tilde_with_spaces_is_text(self):
         self.assertEqual([s["text"] for s in blocks.inline("about ~5 % and ~10 %")], ["about ~5 % and ~10 %"])
 
+    def test_table_inside_a_box_stays_a_table(self):
+        text = ("# Chapter 1: T\n\n## 1.1 A\n\n> **Deeper Dive:** Before the table.\n>\n> | Item | Cost |\n"
+                "> |---|---|\n> | Visit | 20 |\n>\n> After the table.\n")
+        box = [b for b in blocks.parse(text, self.cfg, "chapter") if b["t"] == "callout"][0]
+        self.assertEqual(box["paras"], ["Before the table.", {"rows": [["Item", "Cost"], ["Visit", "20"]]}, "After the table."])
+        self.assertEqual(box["text"], "Before the table. After the table.")
+        d = build_book._docx()
+        doc = d["Document"]()
+        bk = build_book.Book(self.cfg)
+        build_book.setup_styles(d, doc, bk)
+        R = build_book.Renderer(d, doc, bk)
+        R.callout(doc, box["key"], box["text"], box["paras"])
+        inner = doc.tables[0].cell(0, 0).tables
+        self.assertEqual([[c.text for c in r.cells] for r in inner[0].rows], [["Item", "Cost"], ["Visit", "20"]])
+
     def test_docx_subscript_run(self):
         d = build_book._docx()
         doc = d["Document"]()

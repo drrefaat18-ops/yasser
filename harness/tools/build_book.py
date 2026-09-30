@@ -505,6 +505,9 @@ class Renderer:
                 chunks = list(zip(parts, m.groups()))
         math_on = (self.bk.cfg["template"].get("math") or {}).get("enabled")
         for ch in chunks:
+            if isinstance(ch, dict):   # a table the author put inside the box
+                self.md_table(c, ch["rows"])
+                continue
             p = self.f.make_paragraph(c, style="Box Text")
             if isinstance(ch, tuple):
                 self.f.make_run(p, ch[0] + "  ", bold=True, colour=colour)

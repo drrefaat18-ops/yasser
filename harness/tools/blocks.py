@@ -7,7 +7,8 @@ Blocks (dicts, key "t"):
   section   id, role, label, boxed, unlisted   (a `## ` heading; ids and roles from check_book.parse)
   h3        text
   para      text                               (consecutive plain lines joined by one space)
-  callout   key, text                          (key None: a quote block that is no configured callout)
+  callout   key, text, paras                   (key None: a quote block that is no configured callout; a paras
+                                               item is a string, or {"rows": ...} for a table inside the box)
   grid      key, label, items [(name, text)]
   table     rows [[cell, ...], ...]            (the delimiter row removed)
   image     link, alt, caption                 (caption: the legacy `*Figure n.m ...*` line, "" if none)
@@ -84,6 +85,12 @@ def plain(text):
     return "".join(s["text"] for s in inline(text, links=False))
 
 
+def table_rows(lines):
+    """Markdown table lines -> rows of cell text, the delimiter row removed."""
+    cells = [[x.strip() for x in r.strip().strip("|").split("|")] for r in lines]
+    return [r for r in cells if not all(re.fullmatch(r":?-+:?", x) for x in r)]
+
+
 def parse(text, cfg, kind, is_cover=None):
     """-> [block]. `kind`: 'chapter' or 'glossary'. `is_cover(link)`: True for the cover image, which is dropped
     (it is placed by the writer's title pages)."""
@@ -141,16 +148,30 @@ def parse(text, cfg, kind, is_cover=None):
                 body = block[0][len(callout_by_id[key]["syntax"].lstrip("> ")):].strip() if key else block[0]
                 # a blank `>` line is a paragraph break inside the box: an author who put an equation on
                 # its own line meant it to stay there, not to run into the sentence before it
-                paras, cur = [], [body] if body else []
+                # a run of `|` lines inside the box is a table, kept as {"rows": ...}: joined into the
+                # paragraph it printed as raw pipes and dashes
+                paras, cur, rows = [], [body] if body else [], []
                 for line in block[1:]:
+                    if line.startswith("|"):
+                        if cur:
+                            paras.append(" ".join(cur))
+                            cur = []
+                        rows.append(line)
+                        continue
+                    if rows:
+                        paras.append({"rows": table_rows(rows)})
+                        rows = []
                     if line:
                         cur.append(line)
                     elif cur:
                         paras.append(" ".join(cur))
                         cur = []
+                if rows:
+                    paras.append({"rows": table_rows(rows)})
                 if cur:
                     paras.append(" ".join(cur))
-                out.append({"t": "callout", "key": key, "text": " ".join(paras), "paras": paras})
+                text_paras = [x for x in paras if isinstance(x, str)]
+                out.append({"t": "callout", "key": key, "text": " ".join(text_paras), "paras": paras})
             continue
         if s.startswith("|"):
             flush()
@@ -158,8 +179,7 @@ def parse(text, cfg, kind, is_cover=None):
             while i < len(lines) and lines[i].strip().startswith("|"):
                 rows.append(lines[i])
                 i += 1
-            cells = [[x.strip() for x in r.strip().strip("|").split("|")] for r in rows]
-            out.append({"t": "table", "rows": [r for r in cells if not all(re.fullmatch(r":?-+:?", x) for x in r)]})
+            out.append({"t": "table", "rows": table_rows(rows)})
             continue
         m = re.match(r"!\[(.*?)\]\((.+?)\)", s)
         if m:

@@ -120,8 +120,18 @@ class Writer:
         head = f'<div class="label">{esc(label)}</div>' if label is not None else ""
         return f'<div class="box {self._cls(key)}">{head}{body}</div>'
 
+    def _table(self, rows):
+        n = len(rows[0])
+        pad = lambda r: r + [""] * (n - len(r))
+        head = "".join(f"<th>{self.inline(c)}</th>" for c in pad(rows[0]))
+        body = "".join("<tr>" + "".join(f"<td>{self.inline(c)}</td>" for c in pad(r)[:n]) + "</tr>" for r in rows[1:])
+        return f"<table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>"
+
     def _box_para(self, text):
-        """One paragraph inside a box; a paragraph that is only `$$...$$` is centred as a display equation."""
+        """One paragraph inside a box; a paragraph that is only `$$...$$` is centred as a display equation, and a
+        {"rows": ...} item is a table the author put inside the box."""
+        if isinstance(text, dict):
+            return self._table(text["rows"])
         tex = mathml.display(text) if (self.bk.cfg["template"].get("math") or {}).get("enabled") else None
         if tex is not None:
             return f'<p class="display-math">{mathml.mathml(tex, display=True)}</p>'
@@ -187,12 +197,7 @@ class Writer:
             elif t == "callout":
                 out.append(self.callout(b["key"], b["text"], b.get("paras")))
             elif t == "table":
-                rows = b["rows"]
-                n = len(rows[0])
-                pad = lambda r: r + [""] * (n - len(r))
-                head = "".join(f"<th>{self.inline(c)}</th>" for c in pad(rows[0]))
-                body = "".join("<tr>" + "".join(f"<td>{self.inline(c)}</td>" for c in pad(r)[:n]) + "</tr>" for r in rows[1:])
-                out.append(f"<table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table>")
+                out.append(self._table(b["rows"]))
             elif t == "image":
                 fig = bk.manifest[b["link"][4:]] if b["link"].startswith("fig:") else None
                 out.append(self.image(resolved[b["link"]], fig, None if fig else (b["caption"] or b["alt"])))
