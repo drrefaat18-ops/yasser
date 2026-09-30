@@ -79,7 +79,7 @@
     "rework/glossary.md": "d23da590b28b3feaec1701d971f8876eb9772d9f765f38159a1af5a16e7e7121",
     "rubric.json": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0"
    },
-   "invalidated_by": "build@2026-09-30T12:35:24Z",
+   "invalidated_by": "build@2026-09-30T12:39:58Z",
    "outputs": {
     "audit/codex-audit.md": "0696c026bedb8d2f9a27050b8eb4ac091dba9620339f1bb7eeb7b2bb372cf333",
     "audit/findings.json": "359b4fdb0004de74793fffd8f51211f0bf6330efde5b2c13f39ec9388efc2060",
@@ -116,7 +116,7 @@
     "rework/ch11.md": "af2e08158e151c5e773ca6f42ab15457c7426f6a8041432aea9dee52bbb9d26a",
     "rework/ch12.md": "2d4d1cc4ebca892c7fa583ea844ac5638a622cfd1e31a21589aa4da8bb072fce",
     "rework/errata-ledger.md": "bf19b30b3be7d84ababe852df91995592d1229fa8cfed1d3c9c7ad093555c6a7",
-    "rework/figures/figures.json": "1cf75b7d926e14ae66ceccfb91406cbbed7f89bfa64806ba77d2f4fc8ec24c95",
+    "rework/figures/figures.json": "5151a53c26d245588ac8af0eddaf913339a99606f501e940e40b6c546937dd4e",
     "rework/figures/photo-sources.md": "f5548d8e4555724bed2091cd529ae1f0b5fc0748c615787286e74d54eaea1fc4",
     "rework/figures/src/ch01-marketing-process.svg": "3cec32983fb53aa0a7f52a8af2a092a44c1c10740f36f2d8dad2831b62aac7c1",
     "rework/figures/src/ch02-customer-roles.svg": "79f2474f6e82226a6f4555b027b27544949fbf8001b92eab06c7a449cd239c17",
@@ -145,9 +145,9 @@
     "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
    },
    "outputs": {
-    "build/Healthcare_Marketing.docx": "ee17bd15eaf6bdaead99ed8db87487b9708b6a753fa14926e7ad68eb95798758",
-    "build/Healthcare_Marketing.md": "59dc2d2cd8f9dfdf3d7fe608f79297fb5950c03cb0e756a0ab5797621e662642",
-    "build/Healthcare_Marketing.pdf": "039cc75cf1758bdfd991360405aff567be2d130fe3a96c2d003901ae6795975a",
+    "build/Healthcare_Marketing.docx": "019d793b8c9883e0548d68c025496dad11f0474bb40cf7f643a1d8e916abf9fc",
+    "build/Healthcare_Marketing.md": "64dd3804c828a22a32c908b00925a73e64a13ed9fd526ce03ceb635cf1b11c12",
+    "build/Healthcare_Marketing.pdf": "5935b71a2abfc75ac6b91ba47f5d8938b8f62f3363eecb898de282d34c47a17f",
     "build/build-report.json": "a89fb756b7fd54621c4882aa67047380dbc2ff4438f38567c35cbf67e9185a19",
     "build/checkpoints/cover.png": "53bcffc65e4f58e31dd8736f04d68a6303b50062101532508edeee94989dd8bf",
     "build/checkpoints/first-chapter.png": "df875dcd01252eca3cc74713f7ebaaeb29852d4337cb89377d6a37082d2dbce7",
@@ -198,7 +198,7 @@
    "pdf_engine": "html",
    "stage": "build",
    "status": "ok",
-   "time": "2026-09-30T12:37:14Z",
+   "time": "2026-09-30T12:41:51Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948"
   },
   "design": {
@@ -364,7 +364,7 @@
     "rework/ch11.md": "af2e08158e151c5e773ca6f42ab15457c7426f6a8041432aea9dee52bbb9d26a",
     "rework/ch12.md": "2d4d1cc4ebca892c7fa583ea844ac5638a622cfd1e31a21589aa4da8bb072fce",
     "rework/errata-ledger.md": "bf19b30b3be7d84ababe852df91995592d1229fa8cfed1d3c9c7ad093555c6a7",
-    "rework/figures/figures.json": "1cf75b7d926e14ae66ceccfb91406cbbed7f89bfa64806ba77d2f4fc8ec24c95",
+    "rework/figures/figures.json": "5151a53c26d245588ac8af0eddaf913339a99606f501e940e40b6c546937dd4e",
     "rework/figures/src/ch01-marketing-process.svg": "3cec32983fb53aa0a7f52a8af2a092a44c1c10740f36f2d8dad2831b62aac7c1",
     "rework/figures/src/ch02-customer-roles.svg": "79f2474f6e82226a6f4555b027b27544949fbf8001b92eab06c7a449cd239c17",
     "rework/figures/src/ch02-demand-elasticity.svg": "3d079c6c8b42feda8093eabd67e3c38be6aa3575098dbc7774b4a35e2ea5004f",
@@ -391,7 +391,7 @@
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-30T12:35:07Z",
+   "time": "2026-09-30T12:39:41Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
    "total_words": 34875,
    "units": {
@@ -416,7 +416,7 @@
       "rework/ch01.md": "d2b763173ba006dcf33a0885a0fcf9b9404c45d683833c062941d5c053fe5107"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:20Z",
+     "time": "2026-09-30T12:38:53Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -445,7 +445,7 @@
       "rework/ch02.md": "e6c1140f6bf3daba811b1d4102d736590de42e796c3640f8ac819dcf66d078e0"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:24Z",
+     "time": "2026-09-30T12:38:58Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -474,7 +474,7 @@
       "rework/ch03.md": "529fc15248365a49fbe033524a8add37fff1f9310ed670328d2f7261d4a3c078"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:28Z",
+     "time": "2026-09-30T12:39:01Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -503,7 +503,7 @@
       "rework/ch04.md": "52f052c93ca375d0f7ed0d90f2b5ab0090da56d07315317e67148233efbf81cd"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:31Z",
+     "time": "2026-09-30T12:39:04Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -532,7 +532,7 @@
       "rework/ch05.md": "44384acf5520886e3567399c5bc39fe0e032698ce9fece5f4b1291ddca5a8d12"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:34Z",
+     "time": "2026-09-30T12:39:08Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -561,7 +561,7 @@
       "rework/ch06.md": "22a0fe894326fb2783d1f890ff3a6205605b456b4d47853bd9418581a4a6f683"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:39Z",
+     "time": "2026-09-30T12:39:12Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -590,7 +590,7 @@
       "rework/ch07.md": "e303066c50f5b4ccd138f65716c15108162d011a0829f2f95f1cf86261c65cf0"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:42Z",
+     "time": "2026-09-30T12:39:15Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -619,7 +619,7 @@
       "rework/ch08.md": "4d2e23b323fb958a22537cdbaf14b1737d5015d13d3ed863371d85debce53b0b"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:45Z",
+     "time": "2026-09-30T12:39:19Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -648,7 +648,7 @@
       "rework/ch09.md": "cfbe2e05451bed2e57673a96149dfcc2aac2072f05cd6a09b6aabcfcbedf11b7"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:50Z",
+     "time": "2026-09-30T12:39:23Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -677,7 +677,7 @@
       "rework/ch10.md": "73b33585fcdbd120b38dddc22dd6835bb359b5656f6d5b20a68502c1ccc2edca"
      },
      "status": "ok",
-     "time": "2026-09-30T12:34:54Z",
+     "time": "2026-09-30T12:39:28Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -706,7 +706,7 @@
       "rework/ch11.md": "af2e08158e151c5e773ca6f42ab15457c7426f6a8041432aea9dee52bbb9d26a"
      },
      "status": "ok",
-     "time": "2026-09-30T12:35:00Z",
+     "time": "2026-09-30T12:39:34Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 3,
@@ -735,7 +735,7 @@
       "rework/ch12.md": "2d4d1cc4ebca892c7fa583ea844ac5638a622cfd1e31a21589aa4da8bb072fce"
      },
      "status": "ok",
-     "time": "2026-09-30T12:35:04Z",
+     "time": "2026-09-30T12:39:38Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,

@@ -902,7 +902,7 @@ Physical evidence reassures patients about what they cannot see. A patient who s
 ![A photograph of a CT scanning room lit in soft blue, with a patient table covered by a blue sheet leading into a white ring-shaped scanner, a monitor showing a scan image on the left, and a backlit ceiling panel showing fish swimming over a coral reef.](../rework/figures/out/ch04-ct-room.jpg)
 
 *Figure 4.2 — Physical evidence in an imaging room. The patient cannot judge the scanner's technical performance, but sees the room: its cleanliness, the clean table, the soft lighting and a ceiling display of the kind some centres use to put patients at ease.*  
-Photograph: U.S. Army, via Wikimedia Commons (CC0)
+Photograph: U.S. Army, via Wikimedia Commons (public-domain)
 
 > **In Practice:** A laboratory branch receives complaints about long waits in the morning. The team maps the process and finds that registration and payment happen at one desk. They add a second desk for patients who booked online and move payment to the end. The morning wait falls sharply. No price, product or promotion changed. A process change improved the service, and satisfaction rose.
 
