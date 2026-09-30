@@ -69,6 +69,11 @@ class TextChecks(unittest.TestCase):
         self.assertEqual(status(r, "TYPO-WIKILINK"), {"pass"})
         self.assertEqual(check_book.wikilinks("a [[x]] b [[x]] [y](#y) [[ ]]"), ["[[ ]]", "[[x]]"])
 
+    def test_control_character(self):
+        r = self.run_on(self.text.replace("A force is a push", "$$x = \x0crac{a}{b}$$ A force is a push", 1))
+        self.assertEqual(status(r, "TYPO-CONTROL"), {"fail"})
+        self.assertEqual(status(self.run_on(self.text), "TYPO-CONTROL"), {"pass"})
+
 
 if __name__ == "__main__":
     unittest.main()

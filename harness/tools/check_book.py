@@ -33,7 +33,7 @@ IDS = {  # emission order per function; every ID appears once per target
     "budget": ["BUDGET-CHAPTER"],
     "glossary": ["GLOSS-MISSING"],
     "assets": ["ASSET-MISSING", "ASSET-OUTSIDE-ROOT"],
-    "typography": ["TYPO-LATEX", "TYPO-WIKILINK"],
+    "typography": ["TYPO-LATEX", "TYPO-WIKILINK", "TYPO-CONTROL"],
     "rhythm": ["RHYTHM-PROSE"],
     "book": ["BOOK-CHAPTER-COUNT", "BOOK-FRONT-MISSING", "BUDGET-TOTAL", "BUDGET-FRONT", "ERRATA-OPEN", "GLOSS-MIN",
              "BOOK-WIKILINK"],
@@ -463,6 +463,8 @@ def check_assets(text, cfg, path):
 # display delimiters \[ \] \( \) (step9b fix S9b-04: a short allowlist missed most TeX)
 LATEX = re.compile(r"\$[^$\n]*[\\_^{][^$\n]*\$|(?<![\w\\])\\[A-Za-z]+|\\[\[\]()]")
 CODE_SPAN = re.compile(r"`[^`]*`")
+# an unprintable control character in a chapter is almost always a TeX backslash eaten by a string escape
+CONTROL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
 # `[[target]]` is wiki syntax: no writer resolves it, so it prints as literal brackets
 WIKILINK = re.compile(r"\[\[[^\[\]\n]+\]\]")
 
@@ -500,7 +502,9 @@ def check_typography(text, cfg):
             s = "".join(frag for is_math, frag in mathml.split_inline(s) if not is_math)
         hits.update(m.group(0) for m in LATEX.finditer(s))
     return {"TYPO-LATEX": [f"raw TeX in text: {h}" for h in sorted(hits)[:10]],
-            "TYPO-WIKILINK": [f"wiki link prints literally: {w}" for w in wikilinks(no_refs(text, cfg))[:10]]}
+            "TYPO-WIKILINK": [f"wiki link prints literally: {w}" for w in wikilinks(no_refs(text, cfg))[:10]],
+            "TYPO-CONTROL": [f"control character {m.group(0)!r} at offset {m.start()}: often a backslash lost in a script, "
+                             "as a TeX command such as \\frac" for m in list(CONTROL.finditer(text))[:10]]}
 
 
 def check_rhythm(text, cfg):
