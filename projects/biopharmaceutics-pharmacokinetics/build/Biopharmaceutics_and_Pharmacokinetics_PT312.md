@@ -2759,7 +2759,7 @@ D) The accumulation index is doubled
 
 ### Exercises
 
-**E8.1** [LO5] For clindamycin, DeHaan and co-workers reported pharmacokinetic studies of clindamycin phosphate [3], and the source notes quote from that work K = 0.247 h⁻¹, t½ = 2.81 h and Vd = 43.9 L per 1.73 m². The values are taken as the source notes give them; check them against the paper before using them clinically. A patient of 1.73 m² takes 150 mg orally every 6 hours for a week, and the drug is completely absorbed. Calculate the average steady-state concentration, and state why a week of dosing is enough to call it steady state.
+**E8.1** [LO5] For clindamycin, DeHaan and co-workers reported pharmacokinetic studies of clindamycin phosphate [3], and the source notes quote from that work K = 0.247 h⁻¹, t½ = 2.81 h and Vd = 43.9 L per 1.73 m². The values are taken as the source notes give them; check them against the paper before using them clinically. A patient of 1.73 m² takes 150 mg orally every 6 hours for a week. Take the oral bioavailability as complete, F = 1: the drug is fully absorbed and none of it is lost on the first pass. Calculate the average steady-state concentration, and state why a week of dosing is enough to call it steady state.
 
 **E8.2** [LO5] For tobramycin, Regamey and associates compared the pharmacokinetics of tobramycin and gentamicin in healthy volunteers [4], and the source notes quote from that work an elimination half-life of 2.15 h and a volume of distribution of 33.5% of body weight; again, the values are taken as the source notes give them. (a) Calculate the IV dose every 8 hours that gives an average steady-state level of 2.5 µg·mL⁻¹ in an 80 kg patient. (b) The manufacturer recommends 1 mg·kg⁻¹ every 8 hours. Calculate the average steady-state level this regimen gives, and explain why the answer is the same for any body weight.
 
@@ -2795,7 +2795,7 @@ D) The accumulation index is doubled
 
 Cl = K × Vd = 0.247 h⁻¹ × 43.9 L = 10.84 L·h⁻¹
 
-*Step 2 — the average steady-state concentration.* F = 1.
+*Step 2 — the average steady-state concentration.* F = 1, as the question states. Complete absorption alone would not be enough to say so: F = fa × Fg × Fh, and first-pass loss lowers F even when fa = 1 (Chapter 13).
 
 Css,av = 150 mg ÷ (10.84 L·h⁻¹ × 6 h) = 150 mg ÷ 65.1 L = 2.31 mg·L⁻¹
 
