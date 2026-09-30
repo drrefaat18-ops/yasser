@@ -239,3 +239,24 @@ given: rate=7.2, V=0.900
 expr: rate/V
 expect: 8.0 +- 0.01
 ```
+
+```math-check
+label: ch03 Example 3.1 - fraction of Du-infinity collected by 6 h, with K from the rate method
+given: K=0.682, t=6
+expr: 1 - exp(-K*t)
+expect: 0.983 +- 0.001
+```
+
+```math-check
+label: ch03 Example 3.1 - Du-infinity estimated from the 984 mg collected by 6 h
+given: Du6=984, K=0.682, t=6
+expr: Du6/(1 - exp(-K*t))
+expect: 1000 +- 5
+```
+
+```math-check
+label: ch03 Example 3.1 - sigma-minus line extended to time zero reproduces Du-infinity
+given: ARE=840, K=0.695, t=0.25
+expr: ARE*exp(K*t)
+expect: 999 +- 1
+```
