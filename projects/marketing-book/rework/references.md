@@ -2,6 +2,8 @@
 
 Every work cited in this book, in one list, in APA style. Each chapter also lists the works it cites. The chapters citing each work are named at the end of its entry.
 
+Arab Republic of Egypt. (2017). *Law No. 206 of 2017 regulating the advertisement of health-related products and services*. Official Gazette. (Chapter 9.)
+
 Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal Health Insurance System law*. Official Gazette. (Chapters 1, 2, 4, 7, 10, 11 and 12.)
 
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 on the protection of personal data*. Official Gazette. (Chapter 3.)
@@ -11,6 +13,8 @@ Berkowitz, E. N. (2017). *Essentials of health care marketing* (4th ed.). Jones 
 Black, W. C. (1990). The CE plane: A graphic representation of cost-effectiveness. *Medical Decision Making, 10*(3), 212–214. https://doi.org/10.1177/0272989X9001000308 (Chapter 11.)
 
 Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson. (Chapter 3.)
+
+Demay, M. B., Pittas, A. G., Bikle, D. D., Diab, D. L., Kiely, M. E., Lazaretti-Castro, M., Lips, P., Mitchell, D. M., Murad, M. H., Powers, S., Rao, S. D., Scragg, R., Tayek, J. A., Valent, A. M., Walsh, J. M. E., & McCartney, C. R. (2024). Vitamin D for the prevention of disease: An Endocrine Society clinical practice guideline. *The Journal of Clinical Endocrinology & Metabolism, 109*(8), 1907–1947. https://doi.org/10.1210/clinem/dgae290 (Chapter 6.)
 
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press. (Chapters 10, 11 and 12.)
 

@@ -78,7 +78,7 @@ The American Marketing Association (AMA) is the professional body most often quo
 >
 > Read the definition slowly. It names four verbs: creating, communicating, delivering and exchanging. A laboratory creates a test menu, communicates it to doctors and patients, delivers results, and exchanges them for a fee. The definition ends with society at large. That phrase matters in health care, where a service can affect people who never pay for it.
 
-**Marketing**, in short, is the work of creating and delivering offerings that have value for the people who use them and for society. Older textbooks still quote the AMA's 1985 definition. It spoke of "planning and executing the conception, pricing, promotion, and distribution of ideas, goods, and services". The newer wording keeps those tasks but moves the focus from the seller's activities to the value received.
+**Marketing**, in short, is the work of creating and delivering offerings that have value for the people who use them and for society. Older textbooks still quote the AMA's 1985 definition. It described marketing as the process of planning and carrying out the conception, pricing, promotion and distribution of ideas, goods and services. The newer wording keeps those tasks but moves the focus from the seller's activities to the value received.
 
 Kotler and Keller (2016) put the same idea more simply. Marketing is meeting needs profitably. For a public hospital, "profitably" becomes "sustainably". The hospital must still cover its costs, even when it does not seek a profit.
 
@@ -1468,7 +1468,7 @@ Each stage carries its own temptation in health care.
 
 At introduction, a firm may overstate the benefits of a new product before evidence is complete. At growth and maturity, it may push a product into uses the evidence does not support. "Finding new uses" is legitimate for a medicine only after the new indication is approved, and for a test only where guidelines support it. Guarantees of health outcomes are misleading in health care and should not be offered. In decline, it may promote "more frequent use" of a test that patients do not need more often.
 
-> **Ethics Check:** A laboratory's vitamin D test is in maturity, and revenue has flattened. The marketing team proposes promoting "a vitamin D test every three months for everyone". Guidelines do not support routine repeated testing in healthy people. The proposal uses a strategy for delaying decline, promoting more frequent use, in a way that serves revenue, not patients. The acceptable version targets the groups for whom testing is recommended, and states the interval the evidence supports.
+> **Ethics Check:** A laboratory's vitamin D test is in maturity, and revenue has flattened. The marketing team proposes promoting "a vitamin D test every three months for everyone". The Endocrine Society's clinical practice guideline advises against routine vitamin D testing in healthy people without a specific indication (Demay et al., 2024), and repeated testing every three months has even less support. The proposal uses a strategy for delaying decline, promoting more frequent use, in a way that serves revenue, not patients. The acceptable version targets the groups for whom testing is recommended, and states the interval the evidence supports.
 
 > **Egyptian Context:** Medicines are registered with the Egyptian Drug Authority before they can be sold in Egypt, and the authority also regulates medical devices. For prescription medicines, the authority's promotion guidelines cover registered products and require promotional material to be pre-cleared and directed to health professionals (Egyptian Drug Authority, 2020). Devices and in-vitro diagnostics fall under the authority's separate device rules, which should be checked before any launch activity. Planning a launch includes planning the regulatory timeline.
 
@@ -1581,6 +1581,7 @@ D) Only foreign products need registration
 
 ## References
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
+Demay, M. B., Pittas, A. G., Bikle, D. D., Diab, D. L., Kiely, M. E., Lazaretti-Castro, M., Lips, P., Mitchell, D. M., Murad, M. H., Powers, S., Rao, S. D., Scragg, R., Tayek, J. A., Valent, A. M., Walsh, J. M. E., & McCartney, C. R. (2024). Vitamin D for the prevention of disease: An Endocrine Society clinical practice guideline. *The Journal of Clinical Endocrinology & Metabolism, 109*(8), 1907–1947. https://doi.org/10.1210/clinem/dgae290
 Rogers, E. M. (2003). *Diffusion of innovations* (5th ed.). Free Press.
 Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
 
@@ -2009,6 +2010,8 @@ A **pharmaceutical warehouse** is a licensed establishment that stores medicines
 
 International guidance on good distribution practice sets standards for storage, transport, records and recalls (World Health Organization, 2010). Its purpose is that a medicine reaches the patient with the quality it had when it left the factory.
 
+Laboratories and imaging departments depend on the same kind of distribution. Reagents, calibrators and quality-control materials are supplied by specialised distributors of in-vitro diagnostic products, and many must be kept cold from the manufacturer to the laboratory refrigerator. A break in this cold chain can change a reagent's performance and so the patient's result. Iodinated and gadolinium contrast media for imaging are stored within the temperature range on their labels and are tracked by batch so that a recall can reach every department that holds them. When a laboratory chooses a supplier, storage and delivery conditions are part of the quality it is buying, not only the price.
+
 ## 8.8 Retail Trade and the Pharmacy
 
 **Retail trade** is any business activity that sells goods and services to final consumers for personal, non-commercial use. Pharmacies are the retail outlets for medicines.
@@ -2022,6 +2025,8 @@ Retail trade performs these functions:
 - receiving, storing, labelling and pricing products.
 
 A retailer makes several marketing decisions: choosing its target market, developing its product range, offering services and a pleasant setting, setting retail prices within regulation, and informing customers. For a pharmacy, the most valuable service is professional: counselling patients on their medicines.
+
+The same retail decisions face a laboratory or imaging centre that serves patients directly. It chooses whom it serves, which tests or scans it offers, what services surround them, such as home sample collection, online results or evening hours, and its prices within regulation. Like a pharmacy, its most valuable service is professional: preparing patients correctly and explaining what a test or scan involves.
 
 ## 8.9 Choosing a Location
 
@@ -2317,7 +2322,7 @@ The World Health Organization (1988) set out ethical criteria for promoting medi
 
 > **Common Mistake:** Thinking that small gifts are always harmless. A systematic review of contacts between doctors and the pharmaceutical industry found that such contacts, including small gifts and meals, were associated with changes in prescribing (Fickweiler et al., 2017). Industry codes therefore limit gifts to items of modest value related to practice or education, or ban them entirely, depending on the code.
 
-> **Egyptian Context:** In Egypt, the Egyptian Drug Authority's prescription medicine promotion guidelines require promotional material for registered prescription medicines to be pre-cleared and directed to health professionals only, with claims tied to the approved indication (Egyptian Drug Authority, 2020). Laboratories and imaging centres are bound by professional ethics and by the rules of their licensing bodies. Before running any campaign, check the current rules with the regulator.
+> **Egyptian Context:** In Egypt, the Egyptian Drug Authority's prescription medicine promotion guidelines require promotional material for registered prescription medicines to be pre-cleared and directed to health professionals only, with claims tied to the approved indication (Egyptian Drug Authority, 2020). Advertisements for health products and health services in Egypt, which include the services of laboratories and imaging centres, need a licence from a higher committee chaired by the Minister of Health under Law No. 206 of 2017 (Arab Republic of Egypt, 2017). The committee checks that an advertisement complies with the law, and advertising without a licence is a criminal offence. Laboratories and imaging centres are also bound by professional ethics and by the rules of their licensing bodies. Before running any campaign, check the current rules with the regulator.
 
 ## Key Takeaways
 - Marketing communications inform, persuade and remind; in health care they must above all be true.
@@ -2431,6 +2436,7 @@ Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physic
 International Federation of Pharmaceutical Manufacturers & Associations. (2019). *IFPMA code of practice 2019* [Industry guidance]. IFPMA.
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
 World Health Organization. (1988). *Ethical criteria for medicinal drug promotion*. World Health Organization.
+Arab Republic of Egypt. (2017). *Law No. 206 of 2017 regulating the advertisement of health-related products and services*. Official Gazette.
 Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
 
 
@@ -3145,7 +3151,7 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 >
 > *Step 3 — the incremental ratio of B over A.* (35 − 30) ÷ (82 − 60) = 5 ÷ 22 = 0.23.
 >
-> *Interpretation.* The incremental ratio, 0.23, is below 1: moving from A to B costs USD 22 more to gain USD 5 more. The extra cost of B is not justified. The source example stopped there. Step 2 adds a second finding, which rests on the stated baseline of no treatment: against that baseline, neither treatment returns its own cost in money, since both ratios are below 1. If the relevant comparator were current care rather than no treatment, the costs and benefits would have to be measured against it instead. The result may also simply mean the study counted only some benefits. Health gains that were not valued in money are missing, which is common when only direct benefits are measured.
+> *Interpretation.* The incremental ratio, 0.23, is below 1: moving from A to B costs USD 22 more to gain USD 5 more. The extra cost of B is not justified. Many worked answers stop there, but Step 2 adds a second finding, which rests on the stated baseline of no treatment: against that baseline, neither treatment returns its own cost in money, since both ratios are below 1. If the relevant comparator were current care rather than no treatment, the costs and benefits would have to be measured against it instead. The result may also simply mean the study counted only some benefits. Health gains that were not valued in money are missing, which is common when only direct benefits are measured.
 
 > **Common Mistake:** Reporting only the incremental ratio and calling a treatment "beneficial" or not. The incremental ratio compares two options; each option's own ratio compares it with the baseline its costs and benefits were measured against, usually no treatment, and means nothing unless that baseline is stated. Report both, and say which question each answers.
 
@@ -3653,6 +3659,8 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 Every work cited in this book, in one list, in APA style. Each chapter also lists the works it cites. The chapters citing each work are named at the end of its entry.
 
+Arab Republic of Egypt. (2017). *Law No. 206 of 2017 regulating the advertisement of health-related products and services*. Official Gazette. (Chapter 9.)
+
 Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal Health Insurance System law*. Official Gazette. (Chapters 1, 2, 4, 7, 10, 11 and 12.)
 
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 on the protection of personal data*. Official Gazette. (Chapter 3.)
@@ -3662,6 +3670,8 @@ Berkowitz, E. N. (2017). *Essentials of health care marketing* (4th ed.). Jones 
 Black, W. C. (1990). The CE plane: A graphic representation of cost-effectiveness. *Medical Decision Making, 10*(3), 212–214. https://doi.org/10.1177/0272989X9001000308 (Chapter 11.)
 
 Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson. (Chapter 3.)
+
+Demay, M. B., Pittas, A. G., Bikle, D. D., Diab, D. L., Kiely, M. E., Lazaretti-Castro, M., Lips, P., Mitchell, D. M., Murad, M. H., Powers, S., Rao, S. D., Scragg, R., Tayek, J. A., Valent, A. M., Walsh, J. M. E., & McCartney, C. R. (2024). Vitamin D for the prevention of disease: An Endocrine Society clinical practice guideline. *The Journal of Clinical Endocrinology & Metabolism, 109*(8), 1907–1947. https://doi.org/10.1210/clinem/dgae290 (Chapter 6.)
 
 Drummond, M. F., Sculpher, M. J., Claxton, K., Stoddart, G. L., & Torrance, G. W. (2015). *Methods for the economic evaluation of health care programmes* (4th ed.). Oxford University Press. (Chapters 10, 11 and 12.)
 

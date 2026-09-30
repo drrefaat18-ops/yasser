@@ -147,12 +147,12 @@ The confirmation review of the diff from 173e24d is saved as `audit/codex-audit.
 
 The independent rescore against the same rubric gives 87.5, against a baseline of 33.0 for the source lectures. The pillar scores are G1 9, G2 8.5, G3 8, G4 8.5, D1 8.5 and D2 9.5; they are recorded in `audit/scorecard.json`.
 
-The rescore lists 5 minor findings that remain open in the audited text; they are recorded in `audit/findings.json`. None is a blocker or major. They were left open so that the audit closes on the text the reviewer confirmed, and fixing them would re-open the audit.
+The rescore lists 5 minor findings that remain open in the audited text; they are recorded in `audit/findings.json`. None is a blocker or major. They were left open when the audit first closed (7828cc7). On the user's instruction to continue ("كمل من غير NARS"), they were then fixed and the audit re-run on the new commit.
 
 | ID | status | real/rejected | root cause | fix |
 |---|---|---|---|---|
-| F-001 | open (minor) | real | Sibling of round 6 C-002 missed: one "source example" left in ch12 | Rephrase without naming a source |
-| F-002 | open (minor) | real | The vitamin D testing guideline position has no citation | Cite a guideline, or soften the claim |
-| F-003 | open (minor) | real | The AMA 1985 definition is quoted without a citation | Add a secondary citation, or paraphrase |
-| F-004 | open (minor) | real | ch08 §8.7–8.8 have no laboratory or imaging application | Add the reagent and contrast supply link |
-| F-005 | open (minor) | real | The Egyptian rules for laboratory and imaging promotion are generic | Name the instrument, or state the limit of coverage |
+| F-001 | fixed + verified | real | Sibling of round 6 C-002 missed: one "source example" left in ch12 | Rephrased as "Many worked answers stop there"; no mention of a source remains |
+| F-002 | fixed + verified | real | Vitamin D testing guideline position uncited | Cites the Endocrine Society guideline (Demay et al., 2024; DOI checked on Crossref), added to ch06 and consolidated references |
+| F-003 | fixed + verified | real | AMA 1985 definition quoted without citation | Given as a paraphrase, not a quotation |
+| F-004 | fixed + verified | real | ch08 §8.7–8.8 had no laboratory or imaging application | Paragraphs added on the reagent cold chain, contrast media storage and recall, and the retail decisions of a patient-facing laboratory or imaging centre |
+| F-005 | fixed + verified | real | Egyptian rule for laboratory and imaging promotion was generic | Names Law No. 206 of 2017 (licence from a higher committee chaired by the Minister of Health; Riad & Riad legal update, checked 2026-09-30), added to ch09 and consolidated references |

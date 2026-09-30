@@ -1,4 +1,4 @@
-# Audit review of the finished book — marketing-book
+# Confirmation review of commit 2ad98f1 — marketing-book
 
 reviewed_commit: 2ad98f1
 
@@ -10,7 +10,7 @@ This review completes a two-part process:
 - This review read that diff against round 8, checked the changed passages in context, and searched the whole build for other instances of the same two problems.
 - For every text that was not changed, the round 8 full-book verdict stands.
 
-Saved verbatim from the verdict line on.
+Saved verbatim from the verdict line on. Kept as a record: the audit closed on it once (7828cc7), then the five rescore minors were fixed and the audit re-run.
 
 verdict: pass
 open_blocker_major: 0
