@@ -185,7 +185,7 @@ def _keyset_problems(label, r, ins, outs):
     return probs
 
 
-def receipt_problems(project, stage_id, st, repo=None):
+def receipt_problems(project, stage_id, st, repo=None, content_only=False):
     r = st["receipts"].get(stage_id)
     if r is None:
         return [f"{stage_id}: no receipt"]
@@ -206,7 +206,7 @@ def receipt_problems(project, stage_id, st, repo=None):
                 probs.append(f"{stage_id}: unit receipts {sorted(got)} != units {sorted(want)}")
             for u in want:
                 if u in got:
-                    probs += _unit_problems(project, stage_id, u, got[u], repo)
+                    probs += _unit_problems(project, stage_id, u, got[u], repo, content_only)
     if r["status"] != "ok":
         probs.append(f"{stage_id}: status {r['status']}")
     if r.get("invalidated_by"):
@@ -231,6 +231,8 @@ def receipt_problems(project, stage_id, st, repo=None):
         except GateError as e:
             probs.append(f"{stage_id}: {e}")
         return probs  # plan N2: imported artifacts are bound by content, not by a harness tool SHA
+    if content_only:
+        return probs
     try:
         if tool_sha(BY_ID[stage_id]["tool_paths"], repo) != r["tool_sha"]:
             probs.append(f"{stage_id}: tool changed since receipt")
@@ -264,7 +266,9 @@ def upstream(stage_id, brief):
     return [s for s in ORDER[: ORDER.index(stage_id)] if s in mand]
 
 
-def require_gates(project, stage_id, repo=None):
+def require_gates(project, stage_id, repo=None, content_only=False):
+    """content_only: for read-only tools that derive a side product from a finished book (DEC-H01). Approvals,
+    receipt status and every input/output hash are still checked; only the harness tool SHA is not."""
     st = load(project)
     for kind in required_approvals(stage_id):
         probs = approval_problems(project, kind, st)
@@ -274,7 +278,7 @@ def require_gates(project, stage_id, repo=None):
     for up in upstream(stage_id, brief):
         if up not in st["receipts"]:
             raise GateError("UPSTREAM-MISSING", f"{stage_id} needs a valid {up} receipt; none exists")
-        probs = receipt_problems(project, up, st, repo)
+        probs = receipt_problems(project, up, st, repo, content_only)
         if probs:
             raise GateError("UPSTREAM-STALE", "; ".join(probs))
     return st
@@ -320,7 +324,7 @@ def _hashed(project, rels):
     return hash_map(project, rels)
 
 
-def _unit_problems(project, stage_id, name, r, repo):
+def _unit_problems(project, stage_id, name, r, repo, content_only=False):
     probs = []
     if r.get("status") != "ok":
         probs.append(f"{stage_id}/{name}: status {r.get('status')}")
@@ -335,7 +339,7 @@ def _unit_problems(project, stage_id, name, r, repo):
             f = project / rel
             if not f.exists() or hashing.hash_file(f) != h:
                 probs.append(f"{stage_id}/{name}: {kind[:-1]} changed or missing {rel}")
-    if not r.get("imported"):
+    if not r.get("imported") and not content_only:
         try:
             if tool_sha(BY_ID[stage_id]["tool_paths"], repo) != r["tool_sha"]:
                 probs.append(f"{stage_id}/{name}: tool changed since receipt")

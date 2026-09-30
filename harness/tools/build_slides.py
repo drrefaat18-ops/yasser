@@ -334,6 +334,11 @@ class Deck:
             self.runs(p, para, size)
 
     def card(self, s, label, body, x, y, w, h, fill, tone, size=17):
+        need = lambda sz: self.height([body], w - 0.6, sz) + 0.95   # long callouts: shrink to 18 pt, then grow the card
+        while size > 18 and need(size) > h:
+            size -= 1
+        if need(size) > h:
+            h = min(need(size), BOTTOM - TOP); y = min(y, BOTTOM - h)
         self.rect(s, x, y, w, h, fill, MSO_SHAPE.ROUNDED_RECTANGLE, 0.06)
         pill = self.rect(s, x + 0.3, y + 0.25, 0.3 + 0.125 * len(label), 0.38, tone, MSO_SHAPE.ROUNDED_RECTANGLE, 0.5)
         self.centred(pill, label.upper(), 12, WHITE_HEX)
@@ -706,5 +711,5 @@ if __name__ == "__main__":
     sys.stdout.reconfigure(encoding="utf-8")
     sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
     from harness.gate import enforce
-    PROJECT = enforce("build", sys.argv)
+    PROJECT = enforce("build", sys.argv, content_only=True)   # read-only side product (DEC-H01)
     sys.exit(main(PROJECT))

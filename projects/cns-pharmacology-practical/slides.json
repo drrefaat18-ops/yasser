@@ -1,0 +1,14 @@
+{
+ "out_dir": "slides",
+ "unit_label": "Section",
+ "minutes": 45,
+ "feature_callout": "pearl",
+ "feature_glyph": "℞",
+ "case_glyph": "?",
+ "mcq_slides": true,
+ "explain_on_slide": true,
+ "speaker_notes": true,
+ "agenda": true,
+ "preset": null,
+ "fonts": {"head": "Cambria", "body": "Calibri"}
+}
