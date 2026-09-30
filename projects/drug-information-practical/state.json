@@ -9,6 +9,18 @@
  ],
  "active_run": null,
  "approvals": {
+  "design": {
+   "approved_at": "2026-09-30T16:55:11Z",
+   "approved_by": "user",
+   "dec_id": "DEC-003",
+   "dec_row_sha256": "205f6df1f4732f3d5549a1ca9c8604244d2a09dd889a3b3374bebfc51a13c028",
+   "files": {
+    "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+    "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+    "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae"
+   },
+   "kind": "design"
+  },
   "intake": {
    "approved_at": "2026-09-30T16:48:55Z",
    "approved_by": "user",
@@ -26,6 +38,30 @@
  },
  "project_id": "drug-information-practical",
  "receipts": {
+  "design": {
+   "args": {},
+   "chapter_count": 10,
+   "inputs": {
+    "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+    "evaluation/codex-review.md": "3ca946c6ac852422e73054e6ef8b8984fe7e9391a0f708ca7979365f944f36f2",
+    "evaluation/findings.json": "fb1553609fc3c6eb865e8455baa429176e4da95f8f98667e8131fcb36d96af7c",
+    "evaluation/fixes.md": "cd514d917bc5f476b82150372e9d3a3a8fe4598e61bc5372c9f0d82fc8e63d03",
+    "evaluation/report.md": "ea22d054a5aeb0d58a63a1e540b35166c767052790d52f24c4f9b03b52a70d71",
+    "evaluation/scorecard.json": "d9f9f0b862900e0e37291f5968f5b583b8a3c552b19b1d2bdf5656eec3aee000",
+    "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+    "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+   },
+   "outputs": {
+    "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+    "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+    "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae"
+   },
+   "stage": "design",
+   "status": "ok",
+   "time": "2026-09-30T16:52:06Z",
+   "tool_sha": "3a2a13e8758d161956b734c68a802a35fa38a8c3",
+   "total_budget": 14000
+  },
   "evaluate": {
    "args": {},
    "author_model": "claude",
