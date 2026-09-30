@@ -11,9 +11,12 @@
   },
   {
    "id": "G2",
-   "score": 8.5,
+   "score": 9,
    "applicable": true,
-   "evidence_finding_ids": []
+   "evidence_finding_ids": [
+    "F-001",
+    "F-002"
+   ]
   },
   {
    "id": "G3",
@@ -41,5 +44,5 @@
   }
  ],
  "caps_applied": [],
- "total": 88.5
+ "total": 89.5
 }

@@ -1,4 +1,41 @@
 {
  "schema_version": 1,
- "findings": []
+ "findings": [
+  {
+   "id": "F-001",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [
+    "figure",
+    "cosmetic"
+   ],
+   "location": {
+    "file": "rework/figures/src/ch11-ce-plane.svg",
+    "line_start": 1,
+    "line_end": 1
+   },
+   "claim": "The example label on the cost-effectiveness plane runs past the right edge of its quadrant into the margin.",
+   "evidence": "Label \"Example: ΔE = +10, ΔC = −9\" extends beyond the quadrant edge.",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Shift the point and label left, or shorten the label."
+  },
+  {
+   "id": "F-002",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [
+    "figure",
+    "cosmetic"
+   ],
+   "location": {
+    "file": "rework/figures/src/ch02-demand-elasticity.svg",
+    "line_start": 1,
+    "line_end": 1
+   },
+   "claim": "The elastic panel of Figure 2.2 has no values on its axes.",
+   "evidence": "The right panel is labelled illustrative, with no price or quantity values.",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Optional; leave as is or add illustrative tick values."
+  }
+ ]
 }

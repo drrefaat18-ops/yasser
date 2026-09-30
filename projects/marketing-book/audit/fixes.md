@@ -168,3 +168,21 @@ Recorded in `audit/review-r9.md`: verdict pass, 0 blocker or major, 1 minor. The
 ## Final confirmation (claude-sonnet-5-5, commit dc10263)
 
 The review is saved as `audit/codex-audit.md`: verdict pass, no findings. The scores are round 9's independent rescore: G1 9, G2 8.5, G3 8, G4 8.5, D1 9 and D2 9.5, a total of 88.5 against the baseline of 33.0. G4 was kept at 8.5 after the list sort rather than raised without a reviewer's rescore. `audit/findings.json` is empty: no finding remains open.
+
+## Round 10: figures (claude-sonnet-5-5, commits f864a2f, 617931f, 2ba249a)
+
+At the user's request ("عايز اضيف صور للماركتينج زيادة تعبر عن المحتوى"), 16 figures were added: 9 diagrams, 3 illustrations and 4 photographs. The user chose all three kinds and about 15 figures. The figure review is recorded in `audit/review-r10-figures.md`.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | fixed + verified | real | The blueprint was drawn by layer, not as a timeline, so back-stage steps sat under earlier patient steps | Redrawn in seven time columns: the tube is drawn and labelled at sampling in front of the patient; transport and analysis follow |
+| C-002 | fixed + verified | real | The caption added claims about PET-MRI | The photograph was replaced; the new caption keeps to the chapter's point about replacing equipment |
+| C-003 | fixed + verified | real | The photograph showed a clothed patient with metal and boots in an MRI | Replaced with a public-domain photograph of a new MRI magnet being installed, with no patient |
+| C-004 | fixed + verified | real | The 2–8 °C label was unhedged and not in the text | The label now reads "e.g. 2–8 °C"; the text says "often between 2 and 8 °C"; the caption notes frozen and room-temperature reagents |
+| C-005 | fixed + verified | real | A label was struck through by its line | Label moved |
+| C-006 | fixed + verified | real | The caption described more than the photograph shows, and source pages were not recorded | The CT room photograph was replaced with a clearer public-domain one and its caption describes only what is visible; `rework/figures/photo-sources.md` records each source page and licence |
+| C-007 | fixed + verified | real | Steepness could be read as elasticity | The caption notes that elasticity is a percentage ratio and that the axis scales affect steepness |
+| C-008 | fixed + verified | real | A United States example was not identified as one | The caption says so |
+| R-001 | fixed + verified | real | The licence of the replaced CT photograph was left as CC0 | Corrected to public-domain |
+
+The final confirmation, `audit/codex-audit.md` at 2ba249a, passed with two optional cosmetic notes, F-001 and F-002, both left open. G2 was rescored from 8.5 to 9, giving a total of 89.5 against the baseline of 33.0.
