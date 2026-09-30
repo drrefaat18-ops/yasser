@@ -1,0 +1,9 @@
+# Design items: Fix Protocol
+
+One Codex review (`design-items-review.md`). The user said no second review ("كفاية مراجعة كودكس الي تعملت دي متبعتوش تاني").
+
+| ID | Confirmed? | Root cause | Siblings hunted | Fix | Verified by |
+|---|---|---|---|---|---|
+| D-01 | Partly | The "byte-identical" rule in NEXT_DESIGN_ITEMS.md applies to Item 1 (the preset merge), not to the 2026-09-28 options, which changed the default output on purpose (NBSP before a spaced dash; new CSS classes that are inert without their markup). `design()` returns the theme value, then the preset's, then the old default. This matches the old `th.get(..., default)` calls exactly, because the theme schema allows no nulls. | Every design read now goes through `design()`: running style, page number, title page, toc style and chapter opener. `grep` finds no other `th.get` for these keys. | Test only: `test_preset_without_design_keeps_the_old_look` checks that a preset `design` holding the built-in values gives the same stylesheet, title page and contents as a preset with no `design`. | WriterTest |
+| D-02 | Yes | PDF-BLEED decided whether a page is full-bleed from its top-left pixel, the same pixel it was meant to check, so a leak at that corner was never tested. | PDF-HEAD and PDF-DASH use the same classification. | All eight edge samples are read first. A page is full-bleed if any sample is off the paper colour, and every paper-coloured sample is then reported. | `test_layout_ids`: case "PDF-BLEED (top-left)" |
+| D-03 | Yes | The `continue` after the bleed branch skipped the line scan, so PDF-DASH never ran on full-bleed pages. | The page-margin band of PDF-HEAD does not apply to full-bleed pages, and it still does not. | Bleed pages are now scanned too. Only the margin-band test (PDF-HEAD) is skipped on them. Every line on every page is checked for a leading dash. | `test_layout_ids`: case "PDF-DASH (bleed page)" |

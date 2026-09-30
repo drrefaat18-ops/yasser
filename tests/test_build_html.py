@@ -70,6 +70,114 @@ class WriterTest(unittest.TestCase):
         with self.assertRaises(build_html.BuildError):
             build_html._match(heads, [(1, "How to Use This Book", 0), (1, "The boxes", 0), (1, "Next", 0)], "front")
 
+    def test_clip_and_fit_heads(self):
+        self.assertEqual(build_html.clip("Short", 10), "Short")
+        self.assertEqual(build_html.clip("Practical Pharmacology of the Central", 24), "Practical Pharmacology…")
+        left, right = build_html.fit_heads("A very long book title that goes on", "Chapter 2 · A long chapter title", 40)
+        self.assertLessEqual(len(left) + len(right) + 4, 40)
+        self.assertTrue(right.startswith("Chapter 2"))
+        self.assertEqual(build_html.fit_heads("Book", "Chapter 1", 40), ("Book", "Chapter 1"))
+
+    def test_running_heads_fit_their_budget(self):
+        th = self.cfg["theme"]
+        th["running"] = {"style": "caps", "footer_left": "An author", "footer_center": "Course 101", "page_number": "right"}
+        css = build_html.stylesheet(self.w.bk, [(1, "A chapter title long enough to need cutting " * 3)])
+        page = css.split("@page ch1{", 1)[1]
+        left, right = re.findall(r'@top-(?:left|right)\{content:"([^"]*)"', page)[:2]
+        m, pg = th["page"]["margins"], self.w.bk.preset["page"]
+        budget = int((pg["width_cm"] - m["left"] - m["right"]) * 72 / 2.54 / (build_html.HEAD_PT["caps"] * build_html.HEAD_EM["caps"]))
+        self.assertLessEqual(len(left) + len(right), budget)
+        self.assertIn("text-transform:uppercase", page.split("}", 1)[0])
+        self.assertIn('@bottom-right{content:counter(page)', css)
+        self.assertIn('@bottom-center{content:"Course 101"', css)
+        th["running"] = {"footer_center": "Course 101"}   # the centre already holds the page number
+        with self.assertRaises(build_html.BuildError):
+            build_html.stylesheet(self.w.bk, [(1, "A")])
+
+    def test_spaced_dash_is_bound_to_the_word_before(self):
+        self.assertEqual(self.w.inline("Term — definition, 20–80"), "Term — definition, 20–80")
+
+    def test_section_eyebrow(self):
+        sec = next(s for s in self.cfg["template"]["sections"] if s["id"] not in self.cfg["theme"]["boxed_section_ids"])
+        self.cfg["theme"]["section_eyebrows"] = {sec["id"]: "Kicker"}
+        html_text, _ = self.w.render(f"## {sec['label']}\n\nText.\n", "chapter", FIX / "chapters" / "x.md")
+        self.assertIn(f'<div class="eyebrow">Kicker</div><h2>{sec["label"]}</h2>', html_text)
+
+    def test_toc_chapters_style(self):
+        self.cfg["theme"]["toc"]["style"] = "chapters"
+        heads = [(1, "Part I Basics"), (1, "1 First"), (2, "1.1 Alpha"), (3, "Deep"), (2, "1.2 Beta"), (1, "Glossary")]
+        kinds = [("part", "Part I", "Basics"), ("chapter", 1, "First"), ("other",), ("other",), ("other",), ("other",)]
+        toc = build_html.toc_html(self.w.bk, heads, kinds, ["1", "3", "3", "4", "5", "40"])
+        self.assertIn('<div class="tc-part">Part I · Basics</div>', toc)
+        self.assertIn(f'<div class="tc-k">{self.cfg["theme"]["labels"]["chapter"]} 01</div>', toc)
+        self.assertIn('<div class="tc-sub">1.1 Alpha · 1.2 Beta</div>', toc)   # level 3 left out
+        self.assertIn('<div class="tc-pg">3</div>', toc)
+        self.assertEqual(toc.count('class="tc-row"'), 2)   # chapter and glossary
+
+    def test_chapter_opener_page(self):
+        part = {"label": "Part I", "title": "Basics"}
+        html_text = build_html.opener_html(self.w.bk, 3, "Title", part, ["3.1 Alpha", "3.2 Beta"])
+        self.assertIn('<h1><span class="num">3</span> Title</h1>', html_text)   # the outline's h1 is on the opener
+        self.assertIn('<div class="partline">Part I · Basics</div>', html_text)
+        self.assertNotIn("inchap", html_text)   # no theme.labels.in_this_chapter: no list
+        self.cfg["theme"]["labels"]["in_this_chapter"] = "In this chapter"
+        html_text = build_html.opener_html(self.w.bk, 3, "Title", None, ["3.1 Alpha", "3.2 Beta"])
+        self.assertIn('<div class="lbl">In this chapter</div><ol><li>3.1 Alpha</li><li>3.2 Beta</li></ol>', html_text)
+
+    def test_centered_title_page_holds_the_notices(self):
+        self.cfg["theme"]["title_page"] = {"layout": "centered", "notices": ["For teaching only."]}
+        tp = build_html.title_page_html(self.w.bk)
+        self.assertIn('<section class="titlepage centered">', tp)
+        self.assertIn('<div class="tp-notices"><p>For teaching only.</p></div>', tp)
+        self.assertNotIn('class="notices"', tp)
+        for a in self.cfg["brief"]["identity"]["authors"]:
+            self.assertIn(f'<div class="tp-author">{a["credit_line"]}</div>', tp)
+
+    def test_ending_page(self):
+        self.assertIsNone(build_html.ending_html(self.w.bk))
+        self.cfg["theme"]["ending"] = {"quote": "Learn well.", "attribution": "The authors"}
+        end = build_html.ending_html(self.w.bk)
+        self.assertIn('<div class="quote">Learn well.</div><div class="who">The authors</div>', end)
+        self.assertIn('class="cover bleed ending"', end)   # page:cover, full bleed
+
+    def test_design_merge_order(self):
+        bk, th = self.w.bk, self.cfg["theme"]
+        self.assertNotIn("design", bk.preset)
+        self.assertEqual(build_html.design(bk, "toc_style"), "leaders")   # built-in default
+        bk.preset = dict(bk.preset, design={"toc_style": "chapters", "page_number": "right"})
+        self.assertEqual(build_html.design(bk, "toc_style"), "chapters")   # preset default
+        th["toc"]["style"] = "leaders"
+        self.assertEqual(build_html.design(bk, "toc_style"), "leaders")   # the theme wins
+        th.pop("running", None)
+        self.assertEqual(build_html.design(bk, "page_number"), "right")   # no theme section at all
+        bk.preset["design"] = {"toc_style": "chapter"}
+        th["toc"].pop("style")
+        with self.assertRaises(build_html.BuildError):
+            build_html.design(bk, "toc_style")
+
+    def test_preset_without_design_keeps_the_old_look(self):
+        # D-01: the built-in defaults are the look of a preset with no `design`, byte for byte
+        bk = self.w.bk
+        heads = [(1, "1 First"), (2, "1.1 Alpha")]
+        kinds = [("chapter", 1, "First"), ("other",)]
+        out = lambda: (build_html.stylesheet(bk, [(1, "First")]), build_html.title_page_html(bk),
+                       build_html.toc_html(bk, heads, kinds, ["1", "2"]))
+        before = out()
+        bk.preset = dict(bk.preset, design={k: allowed[0] for k, (_, allowed) in build_html.DESIGN.items()})
+        self.assertEqual(out(), before)
+
+    def test_editorial_preset_turns_the_design_on(self):
+        bk = self.w.bk
+        plain = build_html.stylesheet(bk, [(1, "A")])
+        bk.preset = json.loads((REPO / "harness/presets/ltr-textbook-editorial.json").read_text(encoding="utf-8"))
+        self.assertEqual({k: build_html.design(bk, k) for k in build_html.DESIGN},
+                         {"chapter_opener": "page", "toc_style": "chapters", "title_page": "centered",
+                          "running_style": "caps", "page_number": "right"})
+        css = build_html.stylesheet(bk, [(1, "A")])
+        self.assertNotEqual(css, plain)
+        self.assertIn("@bottom-right{content:counter(page)", css)
+        self.assertIn('<section class="titlepage centered">', build_html.title_page_html(bk))
+
     def test_engine_defaults_to_word(self):
         cfg = config.load(REPO / "projects/ai-in-medicine")
         self.assertEqual(build_html.engine(cfg), "word_com")
@@ -148,6 +256,29 @@ class HtmlBuildTest(unittest.TestCase):
     def test_subscript_is_real_text(self):
         text = "".join(p.extract_text() for p in self.reader().pages)
         self.assertIn("CO2", text.replace(" ", ""))   # CO~2~ printed as CO with a lowered 2, still one word
+
+
+@unittest.skipUnless(EDGE and WORD, "Edge and Word are needed for the HTML engine build")
+class EditorialPresetBuildTest(unittest.TestCase):
+    """The fixture on the editorial preset: a real `run build`, every PDF gate passed or not applicable."""
+
+    def test_build_passes_the_pdf_gates(self):
+        from tests.helpers import stamp_project
+        with temp_repo(SLUG, slug=SLUG, stamp=True) as root:
+            project = root / "projects" / SLUG
+            theme = json.loads((project / "theme.json").read_text(encoding="utf-8"))
+            theme["preset"] = "ltr-textbook-editorial"
+            (project / "theme.json").write_text(json.dumps(theme, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            st = (project / "state.json").read_text(encoding="utf-8")   # the receipts name the preset among their inputs
+            (project / "state.json").write_text(st.replace("presets/ltr-textbook.json", "presets/ltr-textbook-editorial.json"),
+                                                encoding="utf-8")
+            stamp_project(root, project)
+            finish_rework(root)
+            r = run_cli(root, *P, "run", "build")
+            self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+            checks = json.loads((project / "build" / "build-report.json").read_text(encoding="utf-8"))["pdf_checks"]
+            self.assertEqual(len(checks), 10)
+            self.assertEqual([c["id"] for c in checks if c["status"] not in ("pass", "not_applicable")], [])
 
 
 if __name__ == "__main__":

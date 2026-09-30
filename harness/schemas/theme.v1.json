@@ -186,6 +186,12 @@
       "sans",
       "serif_heading"
      ]
+    },
+    "chapter_opener": {
+     "enum": [
+      "inline",
+      "page"
+     ]
     }
    },
    "additionalProperties": false
@@ -318,6 +324,12 @@
      "type": "integer",
      "minimum": 1,
      "maximum": 9
+    },
+    "style": {
+     "enum": [
+      "leaders",
+      "chapters"
+     ]
     }
    },
    "additionalProperties": false
@@ -381,6 +393,12 @@
      "items": {
       "type": "string"
      }
+    },
+    "layout": {
+     "enum": [
+      "preset",
+      "centered"
+     ]
     }
    },
    "additionalProperties": false
@@ -436,6 +454,10 @@
      "pattern": "\\S"
     },
     "chapters": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "in_this_chapter": {
      "type": "string",
      "pattern": "\\S"
     }
@@ -536,6 +558,71 @@
     },
     "additionalProperties": false
    }
+  },
+  "section_eyebrows": {
+   "type": "object",
+   "additionalProperties": {
+    "type": "string",
+    "pattern": "\\S"
+   }
+  },
+  "running": {
+   "type": "object",
+   "properties": {
+    "style": {
+     "enum": [
+      "plain",
+      "caps"
+     ]
+    },
+    "head_left": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "footer_left": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "footer_center": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "page_number": {
+     "enum": [
+      "center",
+      "right"
+     ]
+    }
+   },
+   "additionalProperties": false
+  },
+  "ending": {
+   "type": [
+    "object",
+    "null"
+   ],
+   "required": [
+    "quote"
+   ],
+   "properties": {
+    "quote": {
+     "type": "string",
+     "pattern": "\\S"
+    },
+    "attribution": {
+     "type": [
+      "string",
+      "null"
+     ]
+    }
+   },
+   "additionalProperties": false
   }
  },
  "additionalProperties": false

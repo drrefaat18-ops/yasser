@@ -1,4 +1,6 @@
 [
  {"pointer_glob": "/verify_refs/*/status", "reason": "verify_refs no-DOI policy fix (TICKET STEP 8)"},
- {"pointer_glob": "/hashes/assembled_md", "reason": "build/ Markdown links are relative to build/; the STEP 6 deliverable was assembled at the repo root (DEC-035). Identical once links resolve to their targets: tests.test_assemble (user ruling, STEP 8 R14)"}
+ {"pointer_glob": "/hashes/assembled_md", "reason": "build/ Markdown links are relative to build/; the STEP 6 deliverable was assembled at the repo root (DEC-035). Identical once links resolve to their targets: tests.test_assemble (user ruling, STEP 8 R14)"},
+ {"pointer_glob": "/hashes/docx", "reason": "the Word writer binds a spaced dash to the word before it (NBSP, PDF-DASH) and gives the cover section an exact top margin so no paper shows above the cover (PDF-BLEED); the text is otherwise unchanged (user, 2026-09-28, DEC-048)"},
+ {"pointer_glob": "/hashes/docx_parts/word/document.xml", "reason": "the Word writer binds a spaced dash to the word before it (NBSP, PDF-DASH) and gives the cover section an exact top margin so no paper shows above the cover (PDF-BLEED); the text is otherwise unchanged (user, 2026-09-28, DEC-048)"}
 ]

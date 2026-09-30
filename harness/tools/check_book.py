@@ -1,8 +1,9 @@
 """Config-driven chapter and book checker (core §9.3; plan Task 8.1). Stdlib only.
 
 Usage: python harness/tools/check_book.py --project projects/<slug> [--chapter ID] [--json]
-Exit 0 iff no check fails; 1 on any failing check or a refused gate; 2 on a config error.
-Each check reports `pass`, `fail` or `not_applicable` (its feature is disabled in template.json).
+Exit 0 iff no blocking check fails; 1 on a blocking fail or a refused gate; 2 on a config error.
+Each check reports `pass`, `fail` or `not_applicable` (its feature is disabled in template.json). A fail of an ID in
+NON_BLOCKING is printed as WARN and does not change the exit code.
 """
 import argparse, json, pathlib, re, sys
 
@@ -39,6 +40,9 @@ IDS = {  # emission order per function; every ID appears once per target
 }
 
 
+# a `fail` of these is a warning: it stays in the report but blocks neither this tool nor `complete rework`
+# (user, 2026-09-28: some sections are prose by design, such as an introduction or a case)
+NON_BLOCKING = {"RHYTHM-PROSE"}
 NA = "not_applicable"   # a check result may list IDs whose sub-feature is disabled under this key
 
 
@@ -409,7 +413,7 @@ def check_assets(text, cfg, path):
 # display delimiters \[ \] \( \) (step9b fix S9b-04: a short allowlist missed most TeX)
 LATEX = re.compile(r"\$[^$\n]*[\\_^{][^$\n]*\$|(?<![\w\\])\\[A-Za-z]+|\\[\[\]()]")
 CODE_SPAN = re.compile(r"`[^`]*`")
-VISUAL = ("![", "|", ">")   # a figure, a table or a box breaks a prose run (plan Task 9b.5)
+VISUAL_BLOCKS = ("image", "table", "callout", "grid", "question")   # each breaks a prose run (plan Task 9b.5)
 
 
 def _prose_lines(text, cfg):
@@ -431,19 +435,31 @@ def check_typography(text, cfg):
 
 
 def check_rhythm(text, cfg):
-    """RHYTHM-PROSE: prose words between two visuals (figure, table, box) above template.readability.max_prose_run_words."""
+    """RHYTHM-PROSE: words of consecutive paragraphs and list items, read with the writers' parser (blocks.parse), between
+    two visual breaks (a figure, table, box, grid, boxed section or question) above template.readability.max_prose_run_words."""
     limit = cfg["template"]["readability"].get("max_prose_run_words")
     if not limit:
         return None
-    prof, run, start, out = cfg["profile_out"], 0, None, []
-    for s in list(_prose_lines(prose_body(text, cfg), cfg)) + ["!["]:
-        if s.startswith(VISUAL):
+    from harness.tools import blocks   # blocks imports this module
+    prof, out = cfg["profile_out"], []
+    run, start, where, head, boxed = 0, None, None, None, False
+    body = "\n".join(_prose_lines(prose_body(text, cfg), cfg))
+    for b in blocks.parse(body, cfg, "chapter") + [{"t": "table"}]:
+        t = b["t"]
+        if t == "section":
+            head, boxed = b["label"], b["boxed"]
+        elif t == "h3":
+            head = blocks.plain(b["text"])
+        if t in VISUAL_BLOCKS or (t == "section" and boxed):
             if run > limit:
-                out.append(f"prose run of {run} words without a figure, table or box (from '{start[:60]}…'), limit {limit}")
+                out.append(f"{where or '(chapter start)'}: {run} words without a figure, table or box "
+                           f"(starts '{start[:60]}…'), limit {limit}")
             run, start = 0, None
-        elif s and not s.startswith("#"):
-            run += tx.words(re.sub(r"[*_`]", "", s), prof)
-            start = start or s
+        elif t in ("para", "bullet", "numbered") and not boxed:
+            s = blocks.plain(b.get("text") or b.get("body"))
+            run += tx.words(s, prof)
+            if start is None:
+                start, where = s, head
     return {"RHYTHM-PROSE": out}
 
 
@@ -603,8 +619,14 @@ def check_book(cfg, chapter=None):
     return out
 
 
-def failures(report):
-    return [(t["target"], c) for t in report["targets"] for c in t["checks"] if c["status"] == "fail"]
+def blocking(checks):
+    return [c for c in checks if c["status"] == "fail" and c["id"] not in NON_BLOCKING]
+
+
+def failures(report, warnings=False):
+    """[(target, check)] of blocking fails; `warnings=True`: the non-blocking fails instead."""
+    return [(t["target"], c) for t in report["targets"] for c in t["checks"]
+            if c["status"] == "fail" and (c["id"] in NON_BLOCKING) == warnings]
 
 
 def main(project, argv):
@@ -623,6 +645,8 @@ def main(project, argv):
     else:
         for target, c in fails:
             print(f"FAIL {target} {c['id']}: {c['message']}")
+        for target, c in failures(report, warnings=True):
+            print(f"WARN {target} {c['id']}: {c['message']}")
         if "total_words" in report:
             print(f"total words: {report['total_words']}")
         if not fails:
