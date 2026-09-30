@@ -75,3 +75,17 @@ recomputed every worked example, numeric MCQ and numeric essay answer and found 
 | R-012 | fixed + verified | real | Channel functions attributed to Kotler & Keller as listed, without risk | "Adapted from"; risk taking added as the eighth function |
 | R-013 | fixed + verified | real | Sanders et al. cited for what HTA bodies do | Attributed to the Second Panel's reference case |
 | R-014 | fixed + verified | real | Uncited statements of Egyptian pricing and pre-launch rules | Hedged to name the EDA as the authority; the promotion guideline cited in ch06 |
+
+## Round 4 — review of commit 8696791
+
+Recorded verbatim in `audit/codex-audit-r4.md`: 5 findings, 2 major and 3 minor. All arithmetic reproduced; Codex
+found no endorsed inducement or misleading promotion, and judged the Egyptian data-protection, promotion and
+out-of-pocket claims supportable.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | fixed + verified | real | Analysers and reagents called IVDs categorically; IVD status depends on intended purpose | Intended-purpose qualification; research-use-only reagents and general equipment excluded; Q7 and glossary aligned |
+| C-002 | fixed + verified | real | A "main and supporting elements" table not found in the cited source | Kotler and Keller's eight major modes, each with a health-care example; LO1, Q2 and takeaway aligned |
+| C-003 | fixed + verified | real | Elasticity base not stated | Initial-value method named; midpoint result (about −0.47) given; math check added |
+| C-004 | fixed + verified | real | ch08 takeaway omitted risk taking | Added |
+| C-005 | fixed + verified | real | Q10 gave the life-cycle label as the legal reason | Option and rationale state the registration rule |

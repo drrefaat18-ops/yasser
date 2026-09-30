@@ -138,6 +138,8 @@
 
 **Humanistic outcomes** — The effects of disease or treatment on a patient's function, well-being and quality of life.
 
+**in-vitro diagnostic (IVD) devices** — Medical devices, such as reagents and analysers, that their manufacturer intends for examining specimens from the human body to give information for diagnosis, monitoring or screening.
+
 **Incremental cost** — The additional cost of one option compared with another.
 
 **incremental cost-effectiveness ratio (ICER)** — The difference in cost between two options divided by the difference in their effects.

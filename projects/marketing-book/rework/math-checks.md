@@ -385,3 +385,11 @@ expr: F/f
 expect: 8628 +- 0.5
 ```
 
+## Audit round 4 — midpoint elasticity
+
+```math-check
+label: ch02 Worked Example - midpoint (arc) elasticity
+given: P0=400, P1=500, Q0=300, Q1=270
+expr: ((Q1-Q0)/((Q0+Q1)/2))/((P1-P0)/((P0+P1)/2))
+expect: -0.47 +- 0.005
+```

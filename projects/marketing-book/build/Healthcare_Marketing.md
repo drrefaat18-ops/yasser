@@ -391,7 +391,7 @@ Demand for necessary care is usually inelastic. A patient with suspected appendi
 >
 > *Step 2 — percentage change in quantity.* (270 − 300) ÷ 300 = −0.10, a 10% fall.
 >
-> *Step 3 — elasticity.* −10% ÷ 25% = −0.4. The absolute value is 0.4.
+> *Step 3 — elasticity.* −10% ÷ 25% = −0.4. The absolute value is 0.4. This uses the starting values as the base of each percentage. The midpoint method, which uses the average of the two values as the base, gives about −0.47 and the same answer whichever way the price moves. Either way, the demand is inelastic.
 >
 > *Interpretation.* The value is below 1, so demand is inelastic over this range. Revenue rises from 300 × 400 = 120,000 EGP to 270 × 500 = 135,000 EGP. The laboratory earns more, but it has lost thirty patients a month who may now go without the test.
 
@@ -1139,7 +1139,7 @@ For marketing, the supply classification matters most. Prescription medicines ar
 
 ### Medical devices and consumables
 
-A **medical device** is an instrument, apparatus, machine, material or other article intended for diagnosis, prevention, monitoring or treatment of disease, which does not act mainly by pharmacological means. Laboratory analysers, reagents, X-ray machines, dressings, syringes and gloves all belong here. Older translated texts call this group "products of medical appointment". The international term is medical devices, with in-vitro diagnostic devices as the laboratory subgroup.
+A **medical device** is an instrument, apparatus, machine, material or other article intended for diagnosis, prevention, monitoring or treatment of disease, which does not act mainly by pharmacological means. X-ray machines, dressings, syringes and examination gloves belong here. Older translated texts call this group "products of medical appointment". The international term is medical devices, with **in-vitro diagnostic (IVD) devices** as the laboratory subgroup. What makes an analyser or a reagent an IVD is its manufacturer's intended purpose: it is meant for examining specimens from the human body to give information for diagnosis, monitoring or screening. A reagent labelled "for research use only", or general laboratory equipment such as an ordinary centrifuge or refrigerator, is not an IVD, and must not be used to report patient results as if it were.
 
 Medical devices and supplies can be grouped:
 
@@ -1150,7 +1150,7 @@ Medical devices and supplies can be grouped:
 
 Regulators also group devices by risk. A plaster carries low risk; an implant or an imaging system carries higher risk and faces stricter review.
 
-> **Common Mistake:** Treating reagents and analysers as ordinary supplies. They are in-vitro diagnostic medical devices. Their registration, storage and quality control affect patient safety as directly as a medicine does.
+> **Common Mistake:** Treating the reagents and analysers used for patient testing as ordinary supplies. Those intended by their manufacturer for examining human specimens are in-vitro diagnostic medical devices. Their registration, storage and quality control affect patient safety as directly as a medicine does.
 
 ## 5.4 Customer Value
 
@@ -1243,7 +1243,7 @@ B) Dosage form
 C) Supply: prescription or over-the-counter
 D) Storage needs
 
-**Q7.** [LO3] Laboratory reagents and analysers are best classified as:
+**Q7.** [LO3] Reagents and analysers that their manufacturer intends for examining patients' blood samples for diagnosis are best classified as:
 A) Medicines
 B) Cosmetics
 C) Food products
@@ -1289,7 +1289,7 @@ D) Laboratories may not advertise at all
 
 **Q6. C** — Prescription medicines are marketed mainly to doctors and over-the-counter medicines to the public, so supply class shapes the marketing.
 
-**Q7. D** — Reagents and analysers are in-vitro diagnostic medical devices, regulated for safety like other devices.
+**Q7. D** — Intended for examining human specimens for diagnosis, they are in-vitro diagnostic medical devices, regulated for safety like other devices. A research-use-only reagent would not be.
 
 **Q8. A** — Customer value = 70 − 50 = 20. Option C divides instead of subtracting.
 
@@ -1540,7 +1540,7 @@ D) Harvesting
 **Q10.** [LO5] Why may a new product not be promoted in Egypt before registration?
 A) Promotion is never allowed in health care
 B) Registration only affects the price
-C) The product's introduction stage in Egypt begins only after regulatory approval
+C) An unregistered product may not lawfully be marketed or promoted
 D) Only foreign products need registration
 
 ### Essay Questions
@@ -1571,7 +1571,7 @@ D) Only foreign products need registration
 
 **Q9. B** — Promoting more frequent use is a legitimate strategy only where the evidence supports it. Here it serves revenue, not patients.
 
-**Q10. C** — Registration comes first; only then may a health product be launched and promoted in Egypt.
+**Q10. C** — The legal rule is the reason: a medicine or device must be registered with the Egyptian Drug Authority before it may be marketed, and the authority's promotion guidelines cover registered products only. That the introduction stage starts after registration is a consequence of the rule, not its cause.
 
 **E1 — model answer points.** Introduction: slow sales, losses, few competitors (a new cardiac marker). Growth: rapid sales, rising profit, new competitors (home collection services). Maturity: flat sales, peak competition (routine blood tests). Decline: falling sales, competitors leave (an old test replaced by a more accurate one).
 
@@ -2046,7 +2046,7 @@ Distribution decisions shape who can reach care. A chain that opens branches onl
 
 ## Key Takeaways
 - Distribution moves products from where they are made to where they are used; channels are the firms that transfer them.
-- Channels perform information, promotion, negotiation, ordering, adaptation, physical distribution and financing.
+- Channels perform information, promotion, negotiation, ordering, adaptation, physical distribution, financing and risk taking.
 - Medicine channels run from zero-level (direct) to three-level (importer, regional wholesaler, pharmacy).
 - Diagnostic services use direct access, collection points, referral, teleradiology and mobile units.
 - Independent intermediaries own the goods; dependent intermediaries do not, so the owner carries the risk.
@@ -2162,7 +2162,7 @@ World Health Organization. (2010). *Good distribution practices for pharmaceutic
 
 ## Learning Objectives
 By the end of this chapter you will be able to:
-1. [LO1] Name the main and supporting elements of marketing communications and their purposes in health care.
+1. [LO1] Name the major modes of marketing communication and their purposes in health care.
 2. [LO2] Distinguish push and pull strategies and choose between them for a health product.
 3. [LO3] Compare advertising with sales promotion and classify advertisements.
 4. [LO4] Explain the role of opinion leaders and of regulators in health-care communication.
@@ -2176,20 +2176,24 @@ In health care, communication has a second, stricter goal: the patient and the p
 
 ## 9.2 Elements of Marketing Communications
 
-The communication mix has main and supporting elements, as Table 9.1 shows.
+Kotler and Keller (2016) describe eight major modes of communication, shown in Table 9.1 with a health-care example of each.
 
-| Main elements | Supporting elements |
+| Mode | Health-care example |
 |---|---|
-| Advertising | Exhibitions and conferences |
-| Personal selling | Branding |
-| Public relations | Sponsorship |
-| Sales promotion | Service policy |
+| Advertising | A newspaper notice of a laboratory's opening hours |
+| Sales promotion | A lawful discount on a self-paid service |
+| Events and experiences | A stand at a medical conference; a health awareness day |
+| Public relations and publicity | A news story about a new screening service |
+| Online and social media marketing | A website page on test preparation |
+| Mobile marketing | A booking reminder sent to a patient's phone |
+| Direct and database marketing | A letter to referring doctors about a new test |
+| Personal selling | A representative's visit to a doctor |
 
-*Table 9.1. Main and supporting elements of marketing communications.*
+*Table 9.1. The eight major modes of marketing communication (after Kotler & Keller, 2016).*
 
 **Advertising** is paid, non-personal communication from an identified sponsor through media. **Personal selling** is face-to-face presentation, such as a representative's visit to a doctor. **Public relations** builds goodwill and reputation through news, community activity and information. **Sales promotion** offers short-term incentives to encourage purchase.
 
-The supporting elements reinforce these. A laboratory's stand at a medical conference, its logo and brand, its sponsorship of a health awareness day, and its after-sales service all communicate.
+The four classic tools, advertising, personal selling, public relations and sales promotion, are the ones this chapter treats in most depth. Branding and the way a service treats its patients are not modes in this framework, but they communicate too: a logo on a clear report and a courteous reception tell patients what to expect.
 
 ### Purposes in health care
 
@@ -2317,7 +2321,7 @@ The World Health Organization (1988) set out ethical criteria for promoting medi
 
 ## Key Takeaways
 - Marketing communications inform, persuade and remind; in health care they must above all be true.
-- The main elements are advertising, personal selling, public relations and sales promotion.
+- Kotler and Keller's eight modes are advertising, sales promotion, events and experiences, public relations, online and social media, mobile, direct and database marketing, and personal selling.
 - Push promotes through the channel; pull promotes to final customers, and pull aimed at the public is prohibited for prescription medicines in Egypt and most other countries.
 - Advertisements can be classified by reach, audience, medium and function.
 - Sales promotion acts fast but many of its tools are restricted in health care.
@@ -2335,7 +2339,7 @@ D) Sponsorship
 **Q2.** [LO1] A laboratory's stand at a medical conference is an example of:
 A) Personal selling only
 B) A price discount
-C) A supporting element of communication
+C) Events and experiences
 D) A distribution channel
 
 **Q3.** [LO2] Promotion directed at wholesalers and retailers, each passing the product on, is a:
@@ -2398,7 +2402,7 @@ D) Push strategy
 
 **Q1. A** — This is the definition of advertising.
 
-**Q2. C** — Exhibitions and conferences are supporting elements of the communication mix.
+**Q2. C** — A conference stand is an event, one of the eight major modes of communication in Kotler and Keller's framework.
 
 **Q3. B** — Promotion passed down through channel members is a push strategy.
 
@@ -3439,6 +3443,8 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 **hub-and-spoke** — A network with one central facility and many small collection or service points.
 
 **Humanistic outcomes** — The effects of disease or treatment on a patient's function, well-being and quality of life.
+
+**in-vitro diagnostic (IVD) devices** — Medical devices, such as reagents and analysers, that their manufacturer intends for examining specimens from the human body to give information for diagnosis, monitoring or screening.
 
 **Incremental cost** — The additional cost of one option compared with another.
 
