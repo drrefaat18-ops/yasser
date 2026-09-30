@@ -71,3 +71,18 @@ pptx-creator (list from kimi.ai/resources/ppt-skills-for-agents). Their code is 
 Not taken: HTML/WebGL decks, CDN scripts, auto-updates (`git pull`), public deploys (Vercel), remote OCR or MCP
 uploads, reuse of stored login tokens. image-to-editable-ppt-skill's SKILL.md tells agents to pre-justify permission
 prompts (prompt injection); slide-writer ships settings that pre-allow `git push`. Both stay disabled.
+
+## Timed decks (CNS book, 2026-09-30)
+
+User: "every section exactly 40 minutes; fit the content to it; review every slide visually before handing over".
+
+| Problem | Fix in the tool |
+|---|---|
+| Full decks ran 39-54 slides for a 40-minute section | `fit_to_minutes`: each slide group has a priority and a time cost; greedy fill of the session; the first slide of every section and the first 3 MCQs always stay; `callout_priority` in slides.json ranks callouts |
+| Timing must add up exactly | Notes end "Time m:ss (at mm:ss of 40:00)"; per-slide seconds in 15 s steps, the last slide absorbs rounding |
+| A split table kept "(1/2)" after its second half was dropped | Kept parts are renumbered; a lone part loses its suffix |
+| A callout with a list inside (`> - ...`) lost its list to the previous slide as "> -" rows | The parser joins `>` lines to the callout; card and panel draw several paragraphs |
+| Narrow first column broke words ("Thiopenta/l") | Each column is widened to its longest word, taken from the widest column |
+| Long cards shrank to small text | Card shrinks only to 22 pt, then grows to the content band, then shrinks to 18 |
+| Accent tint on the accent was 4.3:1 | `acc_l` picks the first tint reaching 4.5:1 |
+| Tool commits after a finished book staled its gate | `build_slides` uses the content-only gate (DEC-009 in the CNS project): approvals and every hash checked, tool SHA not |

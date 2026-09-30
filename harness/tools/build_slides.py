@@ -12,7 +12,12 @@ Everything book-specific comes from the project (Rule 8): palette, callout colou
      "feature_callout": "<callout id shown on a half-bleed panel>", "feature_glyph": "<one character>",
      "case_glyph": "?", "fonts": {"head": "Cambria", "body": "Calibri"},
      "preset": null | one of PRESETS (overrides the book palette), "agenda": true,
-     "background": "<hex for content slides; default theme.palette.paper>"}
+     "background": "<hex for content slides; default theme.palette.paper>",
+     "fit_to_minutes": false, "callout_priority": {"<callout id>": 3}}
+
+fit_to_minutes: every slide group gets a time cost and a priority; the deck keeps the highest-priority groups that
+fit the session (document order kept), long explanations stay in the notes, and the notes' timings add up to the
+session length exactly.
 
 Deck: title; objectives with a stat card; per core section, each figure/table/list with the explanation that
 precedes it in the chapter (above the visual when short, beside it, or on its own slide first when long); callout
@@ -102,7 +107,8 @@ class Style:
                           if contrast(mix(self.pri, WHITE_HEX, t), self.pri) >= 4.5 or t == 1.0)
         self.warm = mix(self.pri, WHITE_HEX, 0.94)                 # zebra rows, cards
         self.warm2 = mix(self.pri, WHITE_HEX, 0.85)
-        self.acc_l = mix(self.acc, WHITE_HEX, 0.88)
+        self.acc_l = next(mix(self.acc, WHITE_HEX, t) for t in (0.88, 0.92, 0.95, 0.97, 1.0)   # disc and panel tint
+                          if contrast(mix(self.acc, WHITE_HEX, t), self.acc) >= 4.5 or t == 1.0)
         self.faded = mix(self.mut, WHITE_HEX, 0.93)
         self.faded_disc = mix(self.mut, WHITE_HEX, 0.80)
         # content-slide background: slides.json "background", else the book's paper colour, else white
@@ -193,6 +199,8 @@ def parse(md, book):
             elif s.startswith("> **"):
                 m = re.match(r"^> \*\*(.+?):\*\* (.+)$", s)
                 if m: it.append(["callout", book.callout_by_label.get(m.group(1), ""), m.group(1), m.group(2)])
+            elif s.startswith(">") and it and it[-1][0] == "callout":   # a list inside the callout
+                it[-1].append(re.sub(r"^>\s*(- )?", lambda m: "• " if m.group(1) else "", s))
             elif re.match(r"^(- |\d+\. )", s):
                 txt = re.sub(r"^(- |\d+\. )", "", s)
                 if it and it[-1][0] == "list": it[-1][1].append(txt)
@@ -234,6 +242,13 @@ class Deck:
         self.unit = f"{book.unit} {int(ch['num'])}"
         self.book_title = book.brief["identity"]["title"]
         self.pages, self.titles, self.kinds = [], [], []    # footer number boxes; per-slide title and layout kind
+        self.costs = []                                      # planned minutes per slide
+        m = book.cfg.get("minutes")                          # a number, or {"<chapter num>": n, "default": n}
+        if isinstance(m, dict):
+            m = m.get(str(ch["num"]).lstrip("0"), m.get("default"))
+        self.minutes = m
+        self.fit = bool(book.cfg.get("fit_to_minutes") and m)
+        self.mcqs = list(ch["mcq"])                          # the questions shown (fit_to_minutes may drop some)
 
     # ---- primitives -------------------------------------------------------------------------------------------
     def runs(self, p, text, size, color=None, bold=False, font=None, italic=False, spacing=None):
@@ -277,7 +292,7 @@ class Deck:
     def slide(self, notes="", dark=False):
         s = self.prs.slides.add_slide(self.blank)
         bg = s.background.fill; bg.solid(); bg.fore_color.rgb = rgb(self.st.pri if dark else self.st.bg)
-        self.titles.append(""); self.kinds.append("anchor" if dark else "content")
+        self.titles.append(""); self.kinds.append("anchor" if dark else "content"); self.costs.append(0.0)
         if notes and self.b.cfg.get("speaker_notes", True):
             s.notes_slide.notes_text_frame.text = clean(notes).replace("**", "")
         return s
@@ -334,8 +349,11 @@ class Deck:
             self.runs(p, para, size)
 
     def card(self, s, label, body, x, y, w, h, fill, tone, size=17):
-        need = lambda sz: self.height([body], w - 0.6, sz) + 0.95   # long callouts: shrink to 18 pt, then grow the card
-        while size > 18 and need(size) > h:
+        body = body if isinstance(body, list) else [body]            # the callout text, then any list lines
+        need = lambda sz: self.height(body, w - 0.6, sz) + 0.95      # long callouts: shrink to 18 pt, then grow the card
+        while size > 22 and need(size) > h:                          # grow the card before the text gets small
+            size -= 1
+        while size > 18 and need(size) > BOTTOM - TOP:
             size -= 1
         if need(size) > h:
             h = min(need(size), BOTTOM - TOP); y = min(y, BOTTOM - h)
@@ -343,7 +361,9 @@ class Deck:
         pill = self.rect(s, x + 0.3, y + 0.25, 0.3 + 0.125 * len(label), 0.38, tone, MSO_SHAPE.ROUNDED_RECTANGLE, 0.5)
         self.centred(pill, label.upper(), 12, WHITE_HEX)
         t = self.text(s, x + 0.3, y + 0.75, w - 0.6, h - 0.95)
-        self.runs(t.paragraphs[0], body, size)
+        for i, para in enumerate(body):
+            q = t.paragraphs[0] if i == 0 else t.add_paragraph(); q.space_before = Pt(0 if i == 0 else 6)
+            self.runs(q, para, size)
 
     def table(self, s, rows, y=TOP, h=BOTTOM - TOP, x=M, w=CW):
         nr, nc = len(rows), max(len(r) for r in rows)
@@ -356,6 +376,15 @@ class Deck:
                                          for j, c in enumerate(r[:nc]))) * sz * 1.25 / 72 + 0.12 for r in rows)
         while size > 12 and need(size) > h * 0.95:
             size -= 1
+        # no word may break inside a cell: widen a column to its longest word, taking the width from the widest
+        word = [max((len(w) for r in rows for w in clean(r[j] if j < len(r) else "").replace("**", "").split()),
+                    default=1) for j in range(nc)]
+        for j in range(nc):
+            least = (word[j] * (size + 1) * 0.55 / 72 + 0.3) / w * sum(lens)   # in the same units as lens
+            if lens[j] < least:
+                k = max(range(nc), key=lambda i: lens[i] - (0 if i != j else 1e9))
+                give = min(least - lens[j], lens[k] * 0.4)
+                lens[j] += give; lens[k] -= give
         rh = min(h / nr, 0.7)
         shape = s.shapes.add_table(nr, nc, Inches(x), Inches(y), Inches(w), Inches(rh * nr))
         tblPr = shape._element.graphic.graphicData.tbl.tblPr      # our own fills; no banding from the default style
@@ -386,7 +415,11 @@ class Deck:
         self.runs(k.paragraphs[0], label, 30, WHITE_HEX, True, self.st.head)
         self.runs(k.add_paragraph(), self.unit, 14, tint, True, spacing=150)
         t = self.text(s, 4.95, 0.9, 7.8, 5.6, MSO_ANCHOR.MIDDLE)
-        self.runs(t.paragraphs[0], body, size if len(body) < 420 else size - 2 if len(body) < 620 else size - 4)
+        body = body if isinstance(body, list) else [body]
+        n = sum(len(b) for b in body) + 40 * (len(body) - 1)
+        for i, para in enumerate(body):
+            q = t.paragraphs[0] if i == 0 else t.add_paragraph(); q.space_before = Pt(0 if i == 0 else 6)
+            self.runs(q, para, size if n < 420 else size - 2 if n < 620 else size - 4)
         self.footer(s, 4.95, f"{self.book_title}  ·  {self.ch['title']}")
 
     # ---- slides -----------------------------------------------------------------------------------------------
@@ -418,13 +451,10 @@ class Deck:
 
     def facts(self):
         out = []
-        m = self.b.cfg.get("minutes")                  # a number, or {"<chapter num>": n, "default": n}
-        if isinstance(m, dict):
-            m = m.get(str(self.ch["num"]).lstrip("0"), m.get("default"))
-        if m:
-            out.append((str(m), "minutes"))
-        if self.ch["mcq"]:
-            out.append((str(len(self.ch["mcq"])), "questions"))
+        if self.minutes:
+            out.append((str(self.minutes), "minutes"))
+        if self.mcqs:
+            out.append((str(len(self.mcqs)), "questions"))
         if self.ch["case"]:
             out.append(("1", self.b.case_label.rstrip(".").lower() or "case"))
         return out
@@ -442,9 +472,8 @@ class Deck:
                 self.runs(p, big, 54, self.st.pri, True, self.st.head)
                 self.runs(tf.add_paragraph(), small.upper(), 12, self.st.mut, True, spacing=150)
 
-    def agenda(self):
+    def agenda(self, titles):
         """Roadmap of the core sections."""
-        titles = [x["title"] for x in self.ch["sections"]]
         if len(titles) < 2 or not self.b.cfg.get("agenda", True):
             return
         s = self.content(self.unit, "Roadmap", "What we will cover, in order.", "agenda")
@@ -510,60 +539,78 @@ class Deck:
             out.append(d)
         return out
 
-    def section(self, sec):
+    def blocks(self, si, sec):
+        """One slide group per figure/table/list/callout of a core section, in deck order, each with a priority
+        and a time cost in minutes."""
         items = sec["items"]
         notes = " ".join(i[1] for i in items if i[0] == "para")
         feature = self.b.cfg.get("feature_callout")
-        for c in (x for ch in self.chunks(items) for x in self.split_chunk(ch)):
-            title = (c["sub"] or sec["title"]) + c.get("suffix", "")
-            text = c["text"] if self.b.cfg.get("explain_on_slide", True) else []
-            s = self.content(self.unit, title, notes, "dense" if c["kind"] == "table" else c["kind"])
-            if c["kind"] == "prose":                      # explanation only: paragraphs as numbered points
-                self.rows(s, c["text"] if text else [re.split(r"(?<=[.!?])\s", t)[0] for t in c["text"]], size=21)
-                continue
-            if not text:
-                self.visual(s, c, M, TOP, CW, BOTTOM - TOP); continue
-            wide = c["kind"] == "table" and max(len(r) for r in c["data"]) >= 3
-            lead = self.height(text, CW, 18)
-            load = sum(len(t) for t in text) + sum(len(x) for r in (c["data"] if c["kind"] in ("table", "list") else [])
-                                                   for x in (r if isinstance(r, list) else [r]))
-            if load > 850 and sum(len(t) for t in text) > 300:   # density cap: a long explanation takes its own slide
-                lead = 99
-            if lead <= 1.5:                               # short explanation above the visual
-                self.explain(s, text, M, TOP, CW, lead + 0.1, 18)
-                self.visual(s, c, M, TOP + lead + 0.3, CW, BOTTOM - TOP - lead - 0.3)
-            elif lead != 99 and not wide and self.height(text, 4.9, 17) <= BOTTOM - TOP:   # explanation column beside the visual
-                self.explain(s, text, M, TOP, 4.9, BOTTOM - TOP, 17)
-                self.visual(s, c, M + 5.3, TOP, CW - 5.3, BOTTOM - TOP)
-            else:                                         # long explanation on its own slide(s), visual next
-                self.kinds[-1] = "text"
-                groups, cur = [], []
-                for para in text:                          # never below 18 pt: overflow goes to another slide
-                    if cur and self.height(cur + [para], CW, 18) > BOTTOM - TOP:
-                        groups.append(cur); cur = []
-                    cur.append(para)
-                groups.append(cur)
-                for gi, g in enumerate(groups):
-                    if gi:
-                        s = self.content(self.unit, title, notes, "text")
-                    fits = self.height(g, CW, 21) <= BOTTOM - TOP
-                    self.explain(s, g, M, TOP, CW, BOTTOM - TOP, 21 if fits else 18)
-                self.visual(self.content(self.unit, title, notes, "dense" if c["kind"] == "table" else c["kind"]),
-                            c, M, TOP, CW, BOTTOM - TOP)
+        prio = self.b.cfg.get("callout_priority") or {}
+        out = []
+        for j, (g, c) in enumerate((g, x) for g, ch in enumerate(self.chunks(items)) for x in self.split_chunk(ch)):
+            cont = bool(c.get("suffix")) and not c["suffix"].startswith(" (1/")
+            p = 10 if j == 0 else {"fig": 2.5, "table": 2.5, "list": 2.0}.get(c["kind"], 1.5) - cont   # every section shows
+            out.append({"sec": si, "prio": p, "min": 2.5 if c["kind"] == "table" else 2.0, "part": (si, g, c),
+                        "draw": lambda c=c: self.chunk(sec, c, notes)})
         for c in (i for i in items if i[0] == "callout" and i[1] != feature):
-            s = self.content(self.unit, sec["title"], notes)
-            fill, tone = self.st.tone(c[1])
-            self.card(s, c[2], c[3], M + 1.2, 2.3, CW - 2.4, 2.6, fill, tone, 26)
+            out.append({"sec": si, "prio": prio.get(c[1], 1.5), "min": 1.5,
+                        "draw": lambda c=c: self.callout(sec, c, notes)})
         for c in (i for i in items if i[0] == "callout" and feature and i[1] == feature):
-            self.split(c[2], self.b.cfg.get("feature_glyph", c[2][:1]), c[3],
-                       "Discuss with the class: what would you ask, check and say?", self.st.acc, self.st.acc_l)
+            out.append({"sec": si, "prio": prio.get(c[1], 2.0), "min": 2.0, "draw": lambda c=c: self.split(
+                c[2], self.b.cfg.get("feature_glyph", c[2][:1]), c[3:],
+                "Discuss with the class: what would you ask, check and say?", self.st.acc, self.st.acc_l)})
+        return out
+
+    def callout(self, sec, c, notes):
+        s = self.content(self.unit, sec["title"], notes)
+        fill, tone = self.st.tone(c[1])
+        self.card(s, c[2], c[3:], M + 1.2, 2.3, CW - 2.4, 2.6, fill, tone, 26)
+
+    def chunk(self, sec, c, notes):
+        title = (c["sub"] or sec["title"]) + c.get("suffix", "")
+        text = c["text"] if self.b.cfg.get("explain_on_slide", True) else []
+        s = self.content(self.unit, title, notes, "dense" if c["kind"] == "table" else c["kind"])
+        if c["kind"] == "prose":                      # explanation only: paragraphs as numbered points
+            self.rows(s, c["text"] if text else [re.split(r"(?<=[.!?])\s", t)[0] for t in c["text"]], size=21)
+            return
+        if not text:
+            self.visual(s, c, M, TOP, CW, BOTTOM - TOP); return
+        wide = c["kind"] == "table" and max(len(r) for r in c["data"]) >= 3
+        lead = self.height(text, CW, 18)
+        load = sum(len(t) for t in text) + sum(len(x) for r in (c["data"] if c["kind"] in ("table", "list") else [])
+                                               for x in (r if isinstance(r, list) else [r]))
+        if load > 850 and sum(len(t) for t in text) > 300:   # density cap: a long explanation takes its own slide
+            lead = 99
+        if lead <= 1.5:                               # short explanation above the visual
+            self.explain(s, text, M, TOP, CW, lead + 0.1, 18)
+            self.visual(s, c, M, TOP + lead + 0.3, CW, BOTTOM - TOP - lead - 0.3)
+        elif lead != 99 and not wide and self.height(text, 4.9, 17) <= BOTTOM - TOP:   # explanation column beside the visual
+            self.explain(s, text, M, TOP, 4.9, BOTTOM - TOP, 17)
+            self.visual(s, c, M + 5.3, TOP, CW - 5.3, BOTTOM - TOP)
+        elif self.fit:                                # timed deck: a long explanation stays in the notes
+            self.visual(s, c, M, TOP, CW, BOTTOM - TOP)
+        else:                                         # long explanation on its own slide(s), visual next
+            self.kinds[-1] = "text"
+            groups, cur = [], []
+            for para in text:                          # never below 18 pt: overflow goes to another slide
+                if cur and self.height(cur + [para], CW, 18) > BOTTOM - TOP:
+                    groups.append(cur); cur = []
+                cur.append(para)
+            groups.append(cur)
+            for gi, g in enumerate(groups):
+                if gi:
+                    s = self.content(self.unit, title, notes, "text")
+                fits = self.height(g, CW, 21) <= BOTTOM - TOP
+                self.explain(s, g, M, TOP, CW, BOTTOM - TOP, 21 if fits else 18)
+            self.visual(self.content(self.unit, title, notes, "dense" if c["kind"] == "table" else c["kind"]),
+                        c, M, TOP, CW, BOTTOM - TOP)
 
     def mcq(self, q):
         key, why = self.ch["answers"].get(q["n"], ("", ""))
-        total = len(self.ch["mcq"])
+        total = len(self.mcqs)
         st = self.st
         for reveal in (False, True):
-            kick = f"{self.unit}  ·  question {q['n']} of {total}" + ("  ·  answer" if reveal else "")
+            kick = f"{self.unit}  ·  question {self.mcqs.index(q) + 1} of {total}" + ("  ·  answer" if reveal else "")
             s = self.content(kick, "Check your answer" if reveal else "Your turn", "" if reveal else f"Answer {key}: {why}")
             t = self.text(s, M, 1.7, CW, 1.1)
             self.runs(t.paragraphs[0], q["q"], 24 if len(q["q"]) < 120 else 21, st.ink, True)
@@ -593,19 +640,52 @@ class Deck:
         for i, lg in enumerate(self.logos):
             s.shapes.add_picture(str(lg), Inches(12.07 - 0.72 * (len(self.logos) - 1 - i)), Inches(6.72), height=Inches(0.6))
 
-    def build(self):
-        self.title_slide()
-        self.objectives()
-        self.agenda()
-        for sec in self.ch["sections"]:
-            self.section(sec)
-        for q in self.ch["mcq"] if self.b.cfg.get("mcq_slides", True) else []:
-            self.mcq(q)
+    FIXED = {"title": 0.5, "objectives": 1.5, "agenda": 0.5, "closing": 2.0}   # minutes
+
+    def plan(self):
+        """Slide groups in deck order. fit_to_minutes keeps the highest priorities that fit the session (greedy,
+        ties by order) and drops the rest; the book keeps everything."""
+        out = [b for si, sec in enumerate(self.ch["sections"]) for b in self.blocks(si, sec)]
+        for k, q in enumerate(self.ch["mcq"] if self.b.cfg.get("mcq_slides", True) else []):
+            out.append({"sec": None, "q": q, "prio": 9 if k < 3 else 1.8 if k < 5 else 0.8, "min": 1.5,   # three questions always
+                        "draw": lambda q=q: self.mcq(q)})
         if self.ch["case"]:
-            self.split(self.b.case_label.rstrip("."), self.b.cfg.get("case_glyph", "?"), self.ch["case"],
-                       "Model answer: " + self.ch["case_answer"], self.st.pri, self.st.warm2)
+            out.append({"sec": None, "prio": 2.2, "min": 3.0, "draw": lambda: self.split(
+                self.b.case_label.rstrip("."), self.b.cfg.get("case_glyph", "?"), self.ch["case"],
+                "Model answer: " + self.ch["case_answer"], self.st.pri, self.st.warm2)})
+        if not self.fit:
+            return out
+        left, keep = self.minutes - sum(self.FIXED.values()), set()
+        for i in sorted(range(len(out)), key=lambda i: (-out[i]["prio"], i)):
+            if out[i]["min"] <= left:
+                keep.add(i); left -= out[i]["min"]
+        kept = [b for i, b in enumerate(out) if i in keep]
+        parts = {}
+        for b in kept:
+            if "part" in b:
+                parts.setdefault(b["part"][:2], []).append(b["part"][2])
+        for group in parts.values():                  # "(1/2)" without its second half: renumber what is left
+            for k, c in enumerate(group):
+                if c.get("suffix"):
+                    c["suffix"] = f" ({k + 1}/{len(group)})" if len(group) > 1 else ""
+        return kept
+
+    def spend(self, n0, minutes):
+        n = len(self.prs.slides) - n0
+        for i in range(n0, n0 + n):
+            self.costs[i] = minutes / n
+
+    def build(self):
+        blocks = self.plan()
+        self.mcqs = [b["q"] for b in blocks if "q" in b]
+        secs = sorted({b["sec"] for b in blocks if b["sec"] is not None})
+        for name, fn in (("title", self.title_slide), ("objectives", self.objectives),
+                         ("agenda", lambda: self.agenda([self.ch["sections"][i]["title"] for i in secs]))):
+            n0 = len(self.prs.slides); fn(); self.spend(n0, self.FIXED[name])
+        for b in blocks:
+            n0 = len(self.prs.slides); b["draw"](); self.spend(n0, b["min"])
         if self.ch["takeaways"]:
-            self.closing()
+            n0 = len(self.prs.slides); self.closing(); self.spend(n0, self.FIXED["closing"])
         self.finish()
         return self.prs
 
@@ -615,12 +695,27 @@ class Deck:
             self.runs(tf.paragraphs[0], f"{i:02d} / {n:02d}", 12, self.st.mut, True)
         if not self.b.cfg.get("speaker_notes", True):
             return
+        secs, run = self.timings(), 0
         for i, s in enumerate(self.prs.slides):          # notes: talking points, then timing and the next slide
             nf = s.notes_slide.notes_text_frame
             words = len(nf.text.split()) + sum(len(sh.text_frame.text.split()) for sh in s.shapes if sh.has_text_frame)
             nxt = next((t for t in self.titles[i + 1:] if t), "")
-            tail = f"About {max(1, round(words / 140 * 2)) * 30} s." + (f"  Next: {nxt}." if nxt else "")
+            if secs:
+                run += secs[i]
+                tail = f"Time: {secs[i] // 60}:{secs[i] % 60:02d}  (at {run // 60}:{run % 60:02d} of {self.minutes}:00)."
+            else:
+                tail = f"About {max(1, round(words / 140 * 2)) * 30} s."
+            tail += f"  Next: {nxt}." if nxt else ""
             nf.text = (nf.text + "\n\n" if nf.text else "") + tail
+
+    def timings(self):
+        """Seconds per slide in 15 s steps, adding up to the session exactly (fit_to_minutes only)."""
+        total = sum(self.costs)
+        if not self.fit or not total:
+            return []
+        secs = [round(c * self.minutes * 60 / total / 15) * 15 for c in self.costs]
+        secs[-1] += self.minutes * 60 - sum(secs)
+        return secs
 
 
 PLACEHOLDER = re.compile(r"\bx{3,}\b|lorem|ipsum|placeholder|\bTODO\b", re.I)
