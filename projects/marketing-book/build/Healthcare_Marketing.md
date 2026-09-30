@@ -421,7 +421,7 @@ Health organisations face recurring marketing problems:
 
 Each later chapter addresses one or more of these problems.
 
-> **Egyptian Context:** Egyptian patients commonly choose laboratories and imaging centres through a mix of doctor advice, family recommendation and price comparison. Large laboratory chains compete with independent laboratories and hospital laboratories. Under the universal health insurance system, contracted providers are chosen by the insurer and accredited for quality (Arab Republic of Egypt, 2018). As coverage spreads, the payer's choices will matter more and the patient's price comparison less.
+> **Egyptian Context:** Egyptian patients commonly choose laboratories and imaging centres through a mix of doctor advice, family recommendation and price comparison. Large laboratory chains compete with independent laboratories and hospital laboratories. Under the universal health insurance system, the insurer contracts with providers that are accredited for quality, and beneficiaries choose among the contracted providers available to them, subject to referral pathways (Arab Republic of Egypt, 2018). As coverage spreads, the insurer's contracting choices will matter more and the patient's price comparison less, while the patient's choice between contracted providers remains.
 
 ## Key Takeaways
 - Health care often splits the roles of decider, payer, user and influencer among different people.
@@ -662,14 +662,14 @@ Health information is among the most sensitive personal data. Egypt's personal d
 
 > **Ethics Check:** A laboratory's marketing team proposes an online campaign. Patients who searched for "diabetes symptoms" would be shown advertisements for a discounted glucose test. The idea sounds helpful, but it raises three problems. It uses health-related search behaviour, which is sensitive. Its message may frighten people who are healthy. And it offers a discount tied to anxiety. A defensible alternative is a general educational campaign about diabetes risk, directing people to see a doctor, with no use of personal search data.
 
-Four rules guide digital marketing of health services:
+Four professional rules guide digital marketing of health services. They sit alongside the legal requirements described in the Egyptian Context box below, which add licensing and electronic-marketing rules of their own:
 
 1. **Consent.** Send reminders and newsletters only to patients who have agreed to receive them.
 2. **Confidentiality.** Never publish patients' images, results or stories without explicit written consent.
 3. **Truthfulness.** Claims about accuracy, speed or price must be true and complete.
 4. **No remote diagnosis by marketing.** Staff answering online messages must not interpret results or give medical advice. They direct the patient to a qualified professional.
 
-> **Egyptian Context:** Egypt's personal data protection law was issued as Law No. 151 of 2020 (Arab Republic of Egypt, 2020). It governs how organisations collect and process personal data, with stricter rules for sensitive data such as health data. A laboratory's booking app and result portal fall within its scope. Before launching any digital service, check the current law and its executive regulations with the organisation's legal adviser.
+> **Egyptian Context:** Egypt's personal data protection law was issued as Law No. 151 of 2020 (Arab Republic of Egypt, 2020). Its executive regulations followed in Ministerial Decree No. 816 of 2025, which sets operational rules for consent, licences or permits for those who control or process personal data, record-keeping, breach notification, sensitive data such as health data, and direct electronic marketing (Ministry of Communications and Information Technology, 2025). Organisations were given a transition period of one year from November 2025 to comply. A laboratory's booking app, result portal and reminder messages all fall within this framework. Before launching any digital service, check with the organisation's legal adviser whether it needs a licence or permit, how consent for marketing messages must be obtained, and whether a data protection officer is required.
 
 ## Key Takeaways
 - Digital marketing promotes services through search, websites, social media, email, apps and new channels.
@@ -781,6 +781,7 @@ D) Direct the patient to a qualified professional
 ## References
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 on the protection of personal data*. Official Gazette.
 Chaffey, D., & Ellis-Chadwick, F. (2019). *Digital marketing* (7th ed.). Pearson.
+Ministry of Communications and Information Technology. (2025). *Ministerial Decree No. 816 of 2025 issuing the executive regulations of the Personal Data Protection Law No. 151 of 2020*. Official Gazette.
 
 
 ---
@@ -834,7 +835,7 @@ Promotion includes four main tools: advertising, public relations, personal sell
 
 ## 4.3 Why Services Need Seven Ps
 
-A **service** is an act or performance offered to another. It is largely intangible, is produced and consumed at the same time, and cannot be stored (Wirtz & Lovelock, 2021). A blood test is performed on the patient's sample, at a time the patient attends, by people the patient meets.
+A **service** is an act or performance offered to another. It tends to be intangible, the patient usually takes part in producing it, and its capacity cannot be stored: an hour of a phlebotomist's or a scanner's time that goes unused is lost (Wirtz & Lovelock, 2021). These are tendencies, not absolutes. A laboratory sample can be stored and analysed later, and a report is read after the visit; what cannot be stored is the capacity to serve. A blood test is performed on the patient's sample, at a time the patient attends, by people the patient meets.
 
 Because of these features, services researchers added three elements to the mix. The result is the **7 Ps of services marketing** (Wirtz & Lovelock, 2021):
 
@@ -947,7 +948,7 @@ D) Promotion
 **Q3.** [LO2] Services need an extended mix mainly because they are:
 A) Always more expensive than goods
 B) Produced by machines
-C) Intangible and produced and consumed together
+C) Largely intangible, with perishable capacity and the customer taking part
 D) Free of regulation
 
 **Q4.** [LO2] Which three elements does the services marketing mix add?
@@ -1006,7 +1007,7 @@ D) Patients attracted by the promotion are disappointed
 
 **Q2. A** — People is one of the three extra Ps added for services. Product, price and promotion are original.
 
-**Q3. C** — Intangibility and the simultaneous production and consumption of services are what the extra Ps address.
+**Q3. C** — Intangibility, perishable capacity and the customer's part in production are what the extra Ps address. They are tendencies: a sample can be stored, but the capacity to serve cannot.
 
 **Q4. D** — People, process and physical evidence complete the seven Ps.
 
@@ -1052,13 +1053,13 @@ A **good** is a physical product made for sale to satisfy a need. A service, as 
 
 Customers do not buy goods or services for their own sake. They buy a bundle of benefits: variety, quality, design, features, brand name, packaging and service. They expect the bundle to satisfy a need.
 
-Goods and services differ on five characteristics (Wirtz & Lovelock, 2021), shown in Table 5.1.
+Goods and services differ on five characteristics (Wirtz & Lovelock, 2021), shown in Table 5.1. Each is a tendency rather than a rule, and a laboratory shows why: the patient is present for sampling, but the analysis may happen hours later and the report is read later still.
 
 | Characteristic | Goods | Services |
 |---|---|---|
 | Tangible | Yes | Largely no |
-| Time between production and consumption | Often long | None: produced and consumed together |
-| Can be stored | Yes | No |
+| Time between production and consumption | Often long | Often short; the patient-facing part happens in the patient's presence |
+| Can be stored | Yes | Capacity cannot be stored; some inputs, such as samples, can |
 | Customer takes part in production | Usually not | Usually yes |
 | Ownership passes to the buyer | Yes | No: the buyer receives a performance |
 
@@ -1068,7 +1069,7 @@ Each difference has a practical meaning for a health service.
 
 **Intangibility.** A patient cannot inspect a test before buying it. That is why physical evidence and reputation matter so much.
 
-**Simultaneity.** A sample is drawn while the patient is present. The phlebotomist's skill is part of the product.
+**Simultaneity.** The patient-facing part of the service happens in the patient's presence: a sample is drawn while the patient is there, and the phlebotomist's skill is part of the product. Analysis and reporting can follow later.
 
 **Perishability.** An empty scanner slot at ten in the morning is lost for ever. Imaging centres therefore work hard to fill schedules evenly.
 
@@ -1157,7 +1158,7 @@ Chapter 1 introduced customer value. This section defines it precisely.
 >
 > $$CV = \text{perceived customer benefit} - \text{total customer cost}$$
 >
-> Total customer cost includes money, time, effort and psychological cost such as anxiety. When perceived benefit exceeds total cost, customers are satisfied, return and recommend the service.
+> Total customer cost includes money, time, effort and psychological cost such as anxiety. When perceived benefit exceeds total cost, customers are more likely to be satisfied, return and recommend the service. Satisfaction itself still depends on how the service performs against what the customer expected (Chapter 1).
 
 Customers must believe the product is worth more than its price. They judge worth in four ways (Kotler & Keller, 2016; Wirtz & Lovelock, 2021):
 
@@ -1646,13 +1647,13 @@ Other approaches include psychological pricing, such as 199 instead of 200, and 
 
 ### Cost-based pricing
 
-**Cost-plus pricing** adds a percentage margin to the cost of producing the service. It is simple and is common for laboratory tests.
+**Cost-plus pricing** adds a percentage **markup** to the cost of producing the service. It is simple and is common for laboratory tests. A markup is a percentage of cost; a margin is a percentage of the price. The two are easily confused: a 25% markup on a cost of 240 EGP gives a price of 300 EGP, on which the margin is 60 ÷ 300 = 20%.
 
 > **Key Formula:** Cost-plus price
 >
 > $$P = C \times (1 + m)$$
 >
-> where $C$ is the full cost per unit and $m$ is the margin as a fraction.
+> where $C$ is the full cost per unit and $m$ is the markup as a fraction of cost. To reach a target margin $g$ as a fraction of price instead, use $P = C / (1 - g)$.
 
 **Break-even pricing** asks how many units must be sold for revenue to equal total cost. Below that volume the service loses money; above it, it makes a surplus.
 
@@ -1670,7 +1671,7 @@ Other approaches include psychological pricing, such as 199 instead of 200, and 
 >
 > *Step 1 — full cost per test at the expected volume.* The laboratory expects 500 tests a month. Fixed cost per test = 60,000 ÷ 500 = 120 EGP. Full cost per test = 120 + 120 = 240 EGP.
 >
-> *Step 2 — cost-plus price.* With a 25% margin, P = 240 × 1.25 = 300 EGP.
+> *Step 2 — cost-plus price.* With a 25% markup, P = 240 × 1.25 = 300 EGP. The margin on that price is 60 ÷ 300 = 20%.
 >
 > *Step 3 — break-even volume at that price.* Contribution per test = 300 − 120 = 180 EGP. Break-even volume = 60,000 ÷ 180 = 333.3, so 334 tests a month.
 >
@@ -1769,7 +1770,7 @@ Its possible purposes are grouped around three core aims: survival, keeping mark
 - Price is the money value of a product and must be worth paying for the buyer and sustainable for the seller.
 - Prices inform, give incentives, distribute income and balance supply and demand.
 - Prices may be free, controlled or fixed; medicine prices in Egypt are controlled.
-- Cost-plus price = full cost × (1 + margin); break-even volume = fixed cost ÷ (price − variable cost).
+- Cost-plus price = full cost × (1 + markup); a markup is a share of cost, a margin a share of price; break-even volume = fixed cost ÷ (price − variable cost).
 - Skimming suits novel products with eager early buyers; penetration suits price-sensitive markets.
 - Private laboratories in a city form a monopolistically competitive market; patents create temporary monopolies.
 - Health-care prices must be transparent, fair in emergencies and free of referral inducements.
@@ -1788,7 +1789,7 @@ B) A stock exchange quotation
 C) A tariff
 D) A world market price
 
-**Q3.** [LO2] A test costs 200 EGP in full. With a 20% margin, the cost-plus price is:
+**Q3.** [LO2] A test costs 200 EGP in full. With a 20% markup on cost, the cost-plus price is:
 A) 220 EGP
 B) 180 EGP
 C) 400 EGP
@@ -1936,14 +1937,14 @@ Original diagram (original)
 
 | Level | Channel |
 |---|---|
-| Zero-level | Producer → consumer (for example, a manufacturer supplying a hospital directly) |
+| Zero-level | Producer → final user, with no intermediary (for example, a manufacturer supplying a hospital that uses the product itself) |
 | One-level | Producer → pharmacy or hospital pharmacy → patient |
 | Two-level | Producer → national wholesaler → pharmacy → patient |
 | Three-level | Producer → importer → regional wholesaler → pharmacy → patient |
 
 *Table 8.2. Channel levels for medicines.*
 
-Longer channels reach more places but add cost and more points where quality can fail. Every transfer is a chance for temperature damage, delay or diversion.
+Count the levels to the final user of the product. When a hospital buys a medicine for its own wards, the hospital is the final user and a direct supply is zero-level. When a hospital pharmacy dispenses to an outpatient who takes the medicine home, the patient is the final user and the hospital pharmacy is an intermediary, so the channel is one-level. Longer channels reach more places but add cost and more points where quality can fail. Every transfer is a chance for temperature damage, delay or diversion.
 
 ## 8.5 Channels for Diagnostic Services
 
@@ -2770,7 +2771,7 @@ Chapter 10 introduced the patient, provider, payer and societal perspectives. Th
 
 ## 11.4 Methods of Economic Evaluation
 
-A **pharmacoeconomic evaluation** is any study that assesses the costs and consequences of alternative therapies. Five methods are used (Drummond et al., 2015). They differ in how outcomes are measured, as Table 11.1 shows.
+A **pharmacoeconomic evaluation** is any study that assesses the costs and consequences of alternative therapies. A full economic evaluation compares two or more options on both costs and consequences, and four methods do this: CMA, CEA, CUA and CBA (Drummond et al., 2015). A fifth kind of study, cost-of-illness analysis, is related but descriptive: it measures the burden of a disease and compares no interventions. Table 11.1 sets the five side by side.
 
 | Method | Costs measured in | Outcomes measured in | Result |
 |---|---|---|---|
@@ -2780,7 +2781,7 @@ A **pharmacoeconomic evaluation** is any study that assesses the costs and conse
 | Cost-benefit analysis (CBA) | Money | Money | Benefit–cost ratio or net benefit |
 | Cost-of-illness analysis (COI) | Money | Not compared: describes the burden | Total cost of a disease |
 
-*Table 11.1. The five methods of economic evaluation.*
+*Table 11.1. The four comparative methods of economic evaluation, and cost-of-illness analysis as a related descriptive study.*
 
 ### Cost-minimisation analysis (CMA)
 
@@ -2832,9 +2833,9 @@ Dominance is read from the signs of the two differences, not from the sign of th
 
 **Cost-benefit analysis** measures both costs and benefits in money. Results are a **benefit–cost ratio** (benefits ÷ costs) or a **net benefit** (benefits − costs). Because both sides are in money, CBA can compare very different programmes, such as a screening programme and a road-safety scheme. Benefits may be valued by willingness to pay. Many CBAs count only direct costs and direct benefits, which should be stated. Chapter 12 works examples.
 
-### Cost-of-illness analysis (COI)
+### Cost-of-illness analysis (COI): a descriptive study
 
-**Cost-of-illness analysis** measures the economic burden of a disease on society: the total direct and indirect costs it causes. It estimates the most that could be saved if the disease were eliminated. It does not compare interventions, but provides a baseline against which prevention and treatment can be judged. It is used for any disease whose burden needs describing, from diabetes to road injuries.
+**Cost-of-illness analysis** is not a full economic evaluation, because it compares no options. It measures the economic burden of a disease on society: the total direct and indirect costs it causes. It estimates the most that could be saved if the disease were eliminated. It does not compare interventions, but provides a baseline against which prevention and treatment can be judged. It is used for any disease whose burden needs describing, from diabetes to road injuries.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** A laboratory comparing two analysers with equivalent accuracy uses CMA. Comparing a rapid test with a slower one that detects more infections uses CEA, cost per case detected. The method follows the outcome, and equivalence must be shown before CMA is used.
@@ -2858,7 +2859,7 @@ The more assumptions a study makes, the more important sensitivity analysis beco
 3. **Identify the alternatives.** Usually the new option against the current standard or most likely substitute. The comparator need not be a medicine; it can be a test, a scan or a lifestyle programme.
 4. **Identify and measure outcomes.** Cure rates, quality of life, reduced complications, years of life gained, symptom relief and adverse events.
 5. **Identify, measure and value costs.** Direct medical, direct non-medical, indirect and intangible, as the perspective requires.
-6. **Choose the method.** CMA, CEA, CUA, CBA or COI, according to the outcome.
+6. **Choose the method.** CMA, CEA, CUA or CBA, according to the outcome. A cost-of-illness study may come first, to describe the burden, but it cannot choose between options.
 7. **Calculate and interpret.** Compute the ratios and read them on the cost-effectiveness plane.
 8. **Test the result.** Run sensitivity analysis.
 9. **Report transparently.** Reporting standards such as CHEERS 2022 list what a report must contain (Husereau et al., 2022).
@@ -2879,9 +2880,9 @@ Guidelines usually discount both costs and health outcomes, at a rate set by the
 >
 > A screening programme is expected to save 10,000 EGP of treatment costs five years from now. The discount rate is 3% a year.
 >
-> *Step 1 — the discount factor.* (1 + 0.03)⁵ = 1.159.
+> *Step 1 — the discount factor.* (1 + 0.03)⁵ = 1.1593, which rounds to 1.159.
 >
-> *Step 2 — present value.* 10,000 ÷ 1.159 = 8,626 EGP.
+> *Step 2 — present value.* 10,000 ÷ 1.1593 = 8,626 EGP. (Dividing by the rounded 1.159 gives 8,628 EGP; carry the unrounded factor.)
 >
 > *Interpretation.* A saving of 10,000 EGP in five years is worth about 8,626 EGP today. Counting it at face value would overstate the programme's benefit by about 16%.
 
@@ -2972,7 +2973,7 @@ D) Disclosing funding
 
 **E2.** [LO3] Draw and explain the cost-effectiveness plane. Show why dominance cannot be read from the sign of the ICER alone.
 
-**E3.** [LO2] For each of the five methods of economic evaluation, give the unit of outcome, one suitable question in diagnostics, and one limitation.
+**E3.** [LO2] For each of the four comparative methods of economic evaluation and for cost-of-illness analysis, give the unit of outcome, one suitable question in diagnostics, and one limitation.
 
 ## Answers and Worked Solutions
 
@@ -3097,6 +3098,8 @@ The method follows the outcome. Chapter 11 set the rule: CMA only when equivalen
 
 Cost-benefit analysis values both costs and benefits in money. It gives three results: each option's own benefit–cost ratio, its net benefit, and the incremental ratio between options. They answer different questions.
 
+Before computing an incremental ratio, order the options by increasing cost, so that the incremental cost is positive, and remove any option that is dominated. With the order reversed, the sign of the ratio misleads, just as a negative ICER can. Where signs are awkward, compare net benefits instead.
+
 The decision rules for a benefit–cost ratio are:
 
 - *greater than 1* — benefits exceed costs: a net gain;
@@ -3147,7 +3150,7 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 >
 > *Step 2 — ICER of B over A.* (90,000 − 60,000) ÷ (24 − 18) = 30,000 ÷ 6 = 5,000 EGP per additional case detected.
 >
-> *Step 3 — interpret.* B is more costly and more effective: the north-east quadrant, a trade-off. The question is whether detecting one more case is worth 5,000 EGP. If treating an infection early avoids complications that cost more than that, B is worth it. The CERs alone would suggest A, but the decision rests on the ICER.
+> *Step 3 — interpret.* B is more costly and more effective: the north-east quadrant, a trade-off. The question is whether detecting one more case is worth 5,000 EGP to the decision-maker. Comparing 5,000 EGP with the cost of one complication is not enough, because not every extra case detected would have developed a complication, and detected cases also need confirmatory tests and treatment. A sound decision either compares the ICER with an explicit willingness to pay per additional case detected, or models what happens after detection (treatment costs, complications avoided and health gained) to give a cost per QALY or a net benefit. The CERs alone would suggest A, but the decision rests on the incremental comparison.
 >
 > *Sensitivity check.* If test B's cost fell to 78,000 EGP, the ICER would be (78,000 − 60,000) ÷ 6 = 3,000 EGP per additional case. The case for B becomes stronger.
 
@@ -3198,7 +3201,7 @@ B) Medicine
 C) Transport
 D) Hospital stay
 
-**Q3.** [LO2] Two brands of the same medicine have demonstrated equivalent effects and different prices. The right method is:
+**Q3.** [LO2] Two brands of the same medicine have demonstrated equivalence in efficacy, safety, adherence and every other relevant outcome, and different prices. The right method is:
 A) Cost-minimisation analysis
 B) Cost-effectiveness analysis
 C) Cost-utility analysis
@@ -3260,7 +3263,7 @@ D) The conclusion without the costs
 
 **Q2. D** — The stay costs USD 350 of USD 437.35, 80% of the total.
 
-**Q3. A** — Demonstrated equivalence means only costs differ: CMA.
+**Q3. A** — Equivalence shown in every relevant outcome means only costs differ: CMA. Equivalence in one effect alone would not be enough.
 
 **Q4. C** — Same kind of outcome in different amounts calls for CEA.
 
@@ -3346,9 +3349,9 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **Cost-minimisation analysis** — An economic evaluation that compares only costs, used when outcomes have been shown to be equivalent.
 
-**Cost-of-illness analysis** — An analysis of the total economic burden of a disease; it compares no interventions but gives a baseline.
+**Cost-of-illness analysis** — A descriptive study of the total economic burden of a disease. It compares no interventions, so it is not a full economic evaluation, but it gives a baseline.
 
-**Cost-plus pricing** — Setting a price by adding a percentage margin to the full cost per unit.
+**Cost-plus pricing** — Setting a price by adding a percentage markup to the full cost per unit.
 
 **Cost-utility analysis** — An economic evaluation that measures outcomes in quality-adjusted life years.
 
@@ -3466,6 +3469,8 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **marketing orientation** — An approach that starts from customers' needs and builds the offering around them.
 
+**markup** — An amount added to cost, expressed as a percentage of cost; a margin is the same amount expressed as a percentage of the price.
+
 **maturity stage** — The stage of the product life cycle in which sales growth slows, competition peaks and prices fall.
 
 **media** — The channels that carry messages, such as print, broadcast, outdoor and online media.
@@ -3580,7 +3585,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **Sensitivity analysis** — Recalculating a result with different plausible values to see whether the conclusion changes.
 
-**service** — An act or performance offered to another; intangible, perishable and produced as it is consumed.
+**service** — An act or performance offered to another; it tends to be intangible, its capacity cannot be stored, and the customer usually takes part in producing it.
 
 **service blueprint** — A diagram of every step a customer takes through a service, with the staff actions and support processes behind each step.
 
@@ -3656,6 +3661,8 @@ International Federation of Pharmaceutical Manufacturers & Associations. (2019).
 Koopmanschap, M. A., Rutten, F. F. H., van Ineveld, B. M., & van Roijen, L. (1995). The friction cost method for measuring indirect costs of disease. *Journal of Health Economics, 14*(2), 171–189. https://doi.org/10.1016/0167-6296(94)00044-5 (Chapter 10.)
 
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson. (Chapters 1, 4, 5, 6, 8 and 9.)
+
+Ministry of Communications and Information Technology. (2025). *Ministerial Decree No. 816 of 2025 issuing the executive regulations of the Personal Data Protection Law No. 151 of 2020*. Official Gazette. (Chapter 3.)
 
 Nagle, T. T., & Müller, G. (2018). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge. (Chapter 7.)
 

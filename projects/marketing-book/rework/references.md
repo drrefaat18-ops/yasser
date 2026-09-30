@@ -26,6 +26,8 @@ Koopmanschap, M. A., Rutten, F. F. H., van Ineveld, B. M., & van Roijen, L. (199
 
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson. (Chapters 1, 4, 5, 6, 8 and 9.)
 
+Ministry of Communications and Information Technology. (2025). *Ministerial Decree No. 816 of 2025 issuing the executive regulations of the Personal Data Protection Law No. 151 of 2020*. Official Gazette. (Chapter 3.)
+
 Nagle, T. T., & Müller, G. (2018). *The strategy and tactics of pricing: A guide to growing more profitably* (6th ed.). Routledge. (Chapter 7.)
 
 Rascati, K. L. (2014). *Essentials of pharmacoeconomics* (2nd ed.). Lippincott Williams & Wilkins. (Chapter 11.)

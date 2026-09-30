@@ -54,9 +54,9 @@
 
 **Cost-minimisation analysis** — An economic evaluation that compares only costs, used when outcomes have been shown to be equivalent.
 
-**Cost-of-illness analysis** — An analysis of the total economic burden of a disease; it compares no interventions but gives a baseline.
+**Cost-of-illness analysis** — A descriptive study of the total economic burden of a disease. It compares no interventions, so it is not a full economic evaluation, but it gives a baseline.
 
-**Cost-plus pricing** — Setting a price by adding a percentage margin to the full cost per unit.
+**Cost-plus pricing** — Setting a price by adding a percentage markup to the full cost per unit.
 
 **Cost-utility analysis** — An economic evaluation that measures outcomes in quality-adjusted life years.
 
@@ -174,6 +174,8 @@
 
 **marketing orientation** — An approach that starts from customers' needs and builds the offering around them.
 
+**markup** — An amount added to cost, expressed as a percentage of cost; a margin is the same amount expressed as a percentage of the price.
+
 **maturity stage** — The stage of the product life cycle in which sales growth slows, competition peaks and prices fall.
 
 **media** — The channels that carry messages, such as print, broadcast, outdoor and online media.
@@ -288,7 +290,7 @@
 
 **Sensitivity analysis** — Recalculating a result with different plausible values to see whether the conclusion changes.
 
-**service** — An act or performance offered to another; intangible, perishable and produced as it is consumed.
+**service** — An act or performance offered to another; it tends to be intangible, its capacity cannot be stored, and the customer usually takes part in producing it.
 
 **service blueprint** — A diagram of every step a customer takes through a service, with the staff actions and support processes behind each step.
 

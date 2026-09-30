@@ -355,3 +355,33 @@ expr: c/q
 expect: 3171 +- 0.5
 ```
 
+## Audit round 1 — markup, margin and the unrounded discount factor
+
+```math-check
+label: ch07 Worked Example - margin on the 300 EGP price
+given: P=300, C=240
+expr: (P-C)/P
+expect: exact 1/5
+```
+
+```math-check
+label: ch07 Cost-plus text - margin from a 25% markup
+given: C=240, m=1/4
+expr: (C*(1+m)-C)/(C*(1+m))
+expect: exact 1/5
+```
+
+```math-check
+label: ch11 Worked Example - unrounded discount factor
+given: r=3/100, t=5
+expr: (1+r)**t
+expect: 1.1593 +- 0.00005
+```
+
+```math-check
+label: ch11 Worked Example - present value with the rounded factor
+given: F=10000, f=1159/1000
+expr: F/f
+expect: 8628 +- 0.5
+```
+
