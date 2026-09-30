@@ -852,7 +852,7 @@ Figure 4.1 shows the seven elements around the patient.
 *Figure 4.1 — The seven Ps of services marketing around the patient. Product, price, place and promotion are the classic mix; people, process and physical evidence are added because a health service is performed with the patient present.*  
 Original diagram (original)
 
-These three extra Ps matter more in health care than almost anywhere else. Patients cannot judge whether a result is technically correct. They judge what they can see: people, process and physical evidence. Chapter 1 called this functional quality.
+These three extra Ps matter more in health care than almost anywhere else. Patients usually cannot judge whether a result is technically correct. They judge what they can see: people, process and physical evidence. Chapter 1 called this functional quality.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** People are the phlebotomists who draw blood with little pain and explain fasting rules. Process is registration, sampling and online results without delays. Physical evidence is a clean collection room, sealed tubes, a clear report and visible accreditation certificates.
@@ -1095,7 +1095,7 @@ Marketers classify consumer products by how people buy them (Kotler & Keller, 20
 
 **Unsought products** are products the buyer does not know about, or knows about but does not think of buying. Examples are insurance and, in health care, many screening tests. Few healthy people seek a colorectal screening test on their own.
 
-Older texts sometimes translate these classes as "daily demand", "previous choice", "special demand" and "passive demand". The standard English terms are the four above, and students will find them in every marketing text.
+Older texts sometimes translate these classes as "daily demand", "previous choice", "special demand" and "passive demand". The standard English terms are the four above, and students will find them in standard marketing texts.
 
 The classification points to the marketing task. Convenience products need wide availability. Shopping products need clear information for comparison. Specialty products need awareness among the few who need them. Unsought products need education, which is why screening programmes rely on doctors and public campaigns.
 
@@ -1277,7 +1277,7 @@ D) Laboratories may not advertise at all
 
 ## Answers and Worked Solutions
 
-**Q1. D** — A service cannot be stored; unused capacity is lost. That is perishability.
+**Q1. D** — Service capacity cannot be stored; an unused slot is lost. That is perishability.
 
 **Q2. A** — The patient's preparation is part of producing a valid result: customer participation.
 
@@ -3169,7 +3169,7 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 >
 > *Step 2 — incremental cost per QALY.* 6,000 ÷ 0.20 = 30,000 EGP per QALY gained.
 >
-> *Step 3 — interpret.* B is more costly and more effective: the north-east quadrant. It is cost-effective only if the decision-maker is willing to pay at least 30,000 EGP for one QALY. The average ratios, 2,500 and about 3,171 EGP per QALY, would wrongly suggest A is always better, which is why average cost per QALY does not rank options.
+> *Step 3 — interpret.* B is more costly and more effective: the north-east quadrant. It is cost-effective only if the decision-maker is willing to pay at least 30,000 EGP for one QALY. The average ratios, 2,500 and about 3,171 EGP per QALY, would favour A whatever the decision-maker is willing to pay, which is why average cost per QALY does not rank options.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** The screening example shows why laboratories should know cost per case detected, not only cost per test. A cheaper test that misses cases can be the more expensive choice once missed cases are counted. Laboratory staff supply the accuracy data such analyses depend on.
