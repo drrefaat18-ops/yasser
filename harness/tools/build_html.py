@@ -41,6 +41,21 @@ def hexc(v):
     return "#" + v.lstrip("#")
 
 
+def contrast(a, b):
+    """WCAG contrast ratio of two #rrggbb colours."""
+    def lum(v):
+        c = [int(v.lstrip("#")[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+        c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+        return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+    hi, lo = sorted((lum(a), lum(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def cover_accent(acc, pri):
+    """The accent drawn on the primary-coloured cover, or a light tint when the accent is too dark to read there."""
+    return acc if contrast(acc, pri) >= 3 else "#F3E6D8"
+
+
 def darker(v, f=0.62):
     v = v.lstrip("#")
     return "#" + "".join(f"{round(int(v[i:i + 2], 16) * f):02x}" for i in (0, 2, 4))
@@ -281,6 +296,7 @@ def stylesheet(bk, chapters):
     # a glyph missing from a display or UI font falls back to the body serif, never to the browser default
     ff = lambda k: css_string(bk.fonts[k]) + ("" if k == "serif" else "," + css_string(bk.fonts["serif"]))
     ink, pri, acc, mut = hexc(bk.ink), hexc(bk.primary), hexc(bk.accent), hexc(bk.muted)
+    cacc = cover_accent(acc, pri)
     align = {"left": "left", "justify": "justify", "right": "right", "center": "center"}
     body_align, head_align = align[th["alignment"]["body"]], align[th["alignment"]["headings"]]
     run = th.get("running") or {}
@@ -408,18 +424,18 @@ figcaption{{font-family:{ff('sans')};font-size:8.5pt;color:{mut}}}
 .cover{{page:cover;position:relative;width:{pg['width_cm']}cm;height:calc({pg['height_cm']}cm - 1px);overflow:hidden;color:#fff;
   background:linear-gradient(160deg,{pri} 0%,{darker(bk.primary)} 100%)}}
 .cover img.full{{width:100%;height:100%;object-fit:cover;display:block}}
-.cover .frame{{position:absolute;inset:0.8cm;border:0.6pt solid {acc};opacity:0.55}}
+.cover .frame{{position:absolute;inset:0.8cm;border:0.6pt solid {cacc};opacity:0.55}}
 .cover .top{{position:absolute;top:1.6cm;left:1.8cm;right:1.8cm;display:flex;align-items:center;gap:0.45cm;
-  padding-bottom:0.5cm;border-bottom:0.6pt solid {acc}}}
+  padding-bottom:0.5cm;border-bottom:0.6pt solid {cacc}}}
 .cover .top img{{height:1.9cm;width:auto;background:#fff;border-radius:50%;padding:0.08cm}}
 .cover .inst{{flex:1;font-family:{ff('sans')};font-size:10pt;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}}
 .cover .mid{{position:absolute;top:35%;left:1.8cm;right:1.8cm;text-align:center}}
 .cover .eyebrow{{display:inline-block;font-family:{ff('sans')};font-size:8pt;font-weight:700;letter-spacing:0.16em;
-  text-transform:uppercase;color:{acc};border:0.8pt solid {acc};border-radius:1cm;padding:0.14cm 0.5cm;margin-bottom:0.7cm}}
+  text-transform:uppercase;color:{cacc};border:0.8pt solid {cacc};border-radius:1cm;padding:0.14cm 0.5cm;margin-bottom:0.7cm}}
 .cover .title{{font-family:{ff('serif_heading')};font-size:34pt;font-weight:700;line-height:1.1}}
-.cover .subtitle{{font-family:{ff('serif_heading')};font-style:italic;font-size:14pt;color:{acc};margin-top:0.35cm}}
-.cover .rule{{width:3.2cm;height:1.6pt;background:{acc};margin:0.8cm auto 0}}
-.cover .bottom{{position:absolute;bottom:1.8cm;left:1.8cm;right:1.8cm;padding-top:0.5cm;border-top:0.6pt solid {acc};
+.cover .subtitle{{font-family:{ff('serif_heading')};font-style:italic;font-size:14pt;color:{cacc};margin-top:0.35cm}}
+.cover .rule{{width:3.2cm;height:1.6pt;background:{cacc};margin:0.8cm auto 0}}
+.cover .bottom{{position:absolute;bottom:1.8cm;left:1.8cm;right:1.8cm;padding-top:0.5cm;border-top:0.6pt solid {cacc};
   display:flex;justify-content:space-between;align-items:flex-end;gap:1cm}}
 .cover .credits{{font-family:{ff('serif_heading')};font-size:14pt;font-weight:700}}
 .cover .meta{{font-family:{ff('sans')};font-size:8.5pt;text-align:right;opacity:0.85}}

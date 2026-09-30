@@ -184,6 +184,14 @@ class WriterTest(unittest.TestCase):
 
 
 @unittest.skipUnless(EDGE and WORD, "Edge and Word are needed for the HTML engine build")
+class CoverAccentTest(unittest.TestCase):
+    def test_low_contrast_accent_falls_back_to_light_tint(self):
+        self.assertEqual(build_html.cover_accent("#2F6F7A", "#A4472B"), "#F3E6D8")   # petrol on terracotta: ~1.2:1
+
+    def test_readable_accent_is_kept(self):
+        self.assertEqual(build_html.cover_accent("#B08534", "#1B2A8C"), "#B08534")   # gold on navy: >3:1
+
+
 class HtmlBuildTest(unittest.TestCase):
     """One real `run build` of the fixture; every assertion reads its outputs."""
 
