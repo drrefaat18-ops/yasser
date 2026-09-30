@@ -72,7 +72,7 @@ You will spend your career inside such services. You may run a laboratory sectio
 
 ## 1.2 What Marketing Is
 
-The American Marketing Association (AMA) is the professional body most often quoted for a definition. Its current definition, which the association dates to 2017 and whose wording it first adopted in 2007, is:
+The American Marketing Association (AMA) is the professional body most often quoted for a definition. Its current definition is:
 
 > **In Practice:** "Marketing is the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large" (American Marketing Association, as cited in Kotler & Keller, 2016).
 >
@@ -870,7 +870,7 @@ A process can be drawn as a sequence of steps. Each step is a chance to delight 
 
 ### Physical evidence
 
-Physical evidence reassures patients about what they cannot see. A patient who sees opened needles packed in sealed wrappers trusts the laboratory's hygiene. A report with clear reference ranges and the laboratory's accreditation mark signals care.
+Physical evidence reassures patients about what they cannot see. A patient who sees the phlebotomist open a sterile needle from an intact sealed wrapper trusts the laboratory's hygiene. A report with clear reference ranges and the laboratory's accreditation mark signals care.
 
 > **In Practice:** A laboratory branch receives complaints about long waits in the morning. The team maps the process and finds that registration and payment happen at one desk. They add a second desk for patients who booked online and move payment to the end. The morning wait falls sharply. No price, product or promotion changed. A process change improved the service, and satisfaction rose.
 
@@ -2738,6 +2738,8 @@ The **ECHO model** groups outcomes into three kinds: economic, clinical and huma
 - savings from treatment, a direct monetary benefit;
 - production gained when a patient returns to work, an indirect monetary benefit.
 
+These economic outcomes must not be counted twice. This book counts lost production as an indirect cost and treatment costs as direct costs (Chapter 10). A return to work therefore appears as a smaller indirect cost, and a saving in treatment as a smaller direct cost, in the option that achieves them. Neither is also added as a benefit. A study may choose the other convention, counting them as benefits instead, but it must use one or the other for each item.
+
 **Clinical outcomes** are medical events resulting from disease or treatment, including safety and efficacy end points:
 
 - laboratory values, such as a fall in glycated haemoglobin;
@@ -2792,7 +2794,7 @@ A **pharmacoeconomic evaluation** is any study that assesses the costs and conse
 
 Common candidates are a brand against its bioequivalent generic, the same medicine by two routes, or two laboratory methods with equivalent accuracy. They become CMA only once equivalence has been shown in every relevant outcome, including safety and adherence, not in one end point alone. Assuming equivalence without evidence turns CMA into a guess.
 
-> **In Practice:** Two antibiotics have the same cure rate, 90%, and the same safety profile in trials. Drug A costs 250 EGP per course and drug B costs 350 EGP. Because outcomes are equivalent, CMA applies. Drug A is preferred, saving 100 EGP per course.
+> **In Practice:** Two antibiotics were compared in a trial designed to test equivalence, and were shown to be equivalent within a prespecified margin in cure rate (about 90% each), safety and adherence. Drug A costs 250 EGP per course and drug B costs 350 EGP. Because equivalence has been demonstrated, CMA applies. Two equal percentages from different studies would not be enough; without a proper equivalence analysis, CEA is the safer method. Drug A is preferred, saving 100 EGP per course.
 
 ### Cost-effectiveness analysis (CEA)
 
@@ -2838,7 +2840,7 @@ Dominance is read from the signs of the two differences, not from the sign of th
 
 ### Cost-of-illness analysis (COI): a descriptive study
 
-**Cost-of-illness analysis** is not a full economic evaluation, because it compares no options. It measures the economic burden of a disease on society: the total direct and indirect costs it causes. It estimates the most that could be saved if the disease were eliminated. It does not compare interventions, but provides a baseline against which prevention and treatment can be judged. It is used for any disease whose burden needs describing, from diabetes to road injuries.
+**Cost-of-illness analysis** is not a full economic evaluation, because it compares no options. It measures the economic burden of a disease on society: the total direct and indirect costs it causes. That total is not an estimate of what could be saved. Eliminating a disease has costs of its own, some shared costs would remain, people who live longer go on to use other care, and not all of the burden is preventable. A cost-of-illness study therefore says how large a problem is, not whether any way of reducing it is worth the money; that question needs a comparative evaluation. It is used for any disease whose burden needs describing, from diabetes to road injuries.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** A laboratory comparing two analysers with equivalent accuracy uses CMA. Comparing a rapid test with a slower one that detects more infections uses CEA, cost per case detected. The method follows the outcome, and equivalence must be shown before CMA is used.
@@ -2934,7 +2936,7 @@ B) Cost-utility analysis
 C) Cost-benefit analysis
 D) Cost-minimisation analysis
 
-**Q5.** [LO2] Comparing a screening programme for one disease with a treatment for another, using a common measure of health, requires:
+**Q5.** [LO2] Comparing a screening programme for one disease with a treatment for another, using quality-adjusted life years as the common measure, requires:
 A) Cost-minimisation analysis
 B) Cost-of-illness analysis
 C) Cost-effectiveness analysis in natural units
@@ -2988,7 +2990,7 @@ D) Disclosing funding
 
 **Q4. C** — CBA values both costs and benefits in money.
 
-**Q5. D** — Only QALYs give a common measure across different diseases, so CUA is needed.
+**Q5. D** — Outcomes measured in QALYs define cost-utility analysis. A CEA could also compare the two if both used a shared natural unit such as life-years gained, but with QALYs specified, CUA is the method.
 
 **Q6. A** — ICER = (90,000 − 60,000) ÷ (60 − 50) = 30,000 ÷ 10 = 3,000 EGP per additional patient cured. Option D is the cost difference alone, and option C divides the costs instead of the differences.
 
@@ -3129,7 +3131,7 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 
 > **Worked Example:** Two treatments compared by CBA
 >
-> Two treatments have the costs and benefits in Tables 12.3 and 12.4, in US dollars (USD) as in the source example.
+> Two treatments have the costs and benefits in Tables 12.3 and 12.4, in US dollars (USD) as in the source example. Each option's costs and benefits are measured against no treatment, whose cost and benefit are taken as zero; this baseline is what gives each option's own ratio a meaning.
 >
 > *Step 1 — totals.* Cost of A = 10 + 5 + 30 + 15 = USD 60. Cost of B = 15 + 7 + 20 + 40 = USD 82.
 >
@@ -3137,9 +3139,9 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 >
 > *Step 3 — the incremental ratio of B over A.* (35 − 30) ÷ (82 − 60) = 5 ÷ 22 = 0.23.
 >
-> *Interpretation.* The incremental ratio, 0.23, is below 1: moving from A to B costs USD 22 more to gain USD 5 more. The extra cost of B is not justified. The source example stopped there. Step 2 adds a second finding: neither treatment returns its own cost in money, since both ratios are below 1. That may simply mean the study counted only some benefits. Health gains that were not valued in money are missing, which is common when only direct benefits are measured.
+> *Interpretation.* The incremental ratio, 0.23, is below 1: moving from A to B costs USD 22 more to gain USD 5 more. The extra cost of B is not justified. The source example stopped there. Step 2 adds a second finding, which rests on the stated baseline of no treatment: against that baseline, neither treatment returns its own cost in money, since both ratios are below 1. If the relevant comparator were current care rather than no treatment, the costs and benefits would have to be measured against it instead. The result may also simply mean the study counted only some benefits. Health gains that were not valued in money are missing, which is common when only direct benefits are measured.
 
-> **Common Mistake:** Reporting only the incremental ratio and calling a treatment "beneficial" or not. The incremental ratio compares two options; each option's own ratio says whether it is worth doing at all. Report both, and say which question each answers.
+> **Common Mistake:** Reporting only the incremental ratio and calling a treatment "beneficial" or not. The incremental ratio compares two options; each option's own ratio compares it with the baseline its costs and benefits were measured against, usually no treatment, and means nothing unless that baseline is stated. Report both, and say which question each answers.
 
 ## 12.5 A Laboratory Application
 
@@ -3358,7 +3360,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **Cost-utility analysis** — An economic evaluation that measures outcomes in quality-adjusted life years.
 
-**cost-utility ratio** — Cost per QALY gained; the lower, the better.
+**cost-utility ratio** — Cost per QALY. The average ratio of one option only describes it; decisions use the incremental cost-utility ratio, ΔC ÷ ΔQALYs between options, after checking for dominance and against a threshold.
 
 **Customer value** — Perceived customer benefit minus total customer cost, where cost includes money, time, effort and anxiety.
 

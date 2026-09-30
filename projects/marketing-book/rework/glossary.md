@@ -60,7 +60,7 @@
 
 **Cost-utility analysis** — An economic evaluation that measures outcomes in quality-adjusted life years.
 
-**cost-utility ratio** — Cost per QALY gained; the lower, the better.
+**cost-utility ratio** — Cost per QALY. The average ratio of one option only describes it; decisions use the incremental cost-utility ratio, ΔC ÷ ΔQALYs between options, after checking for dominance and against a threshold.
 
 **Customer value** — Perceived customer benefit minus total customer cost, where cost includes money, time, effort and anxiety.
 

@@ -37,3 +37,19 @@ every other calculation and found no further wrong MCQ key.
 | C-007 | fixed + verified | real | WTP described on both sides of the balance | — | One convention: valued intangible effects are benefits, never also costs | → ok |
 | C-008 | fixed + verified | real | Utility scale described without negative values | glossary | Values below 0 noted | → ok |
 | C-009 | fixed + verified | real | Takeaway kept the absolute wording round 1 removed from the body | — | Takeaway qualified | → ok |
+
+## Round 3 — review of commit c4c3291
+
+Recorded verbatim in `audit/codex-audit-r3.md`: 8 findings, 4 major and 4 minor. All arithmetic, units, ICERs,
+quadrants and B/C results reproduced; every finding is about interpretation or definition.
+
+| ID | status | real/rejected | root cause | siblings found | fix | verification → result |
+|---|---|---|---|---|---|---|
+| C-001 | fixed + verified | real | The glossary kept the source's "lower is better" rule that ch11 had already corrected | — | Glossary separates the descriptive average ratio from the incremental ratio used for decisions | → ok |
+| C-002 | fixed + verified | real | Regained production listed as a benefit while ch10 counts lost production as a cost | treatment savings, same problem | One convention stated in ch11: productivity and treatment savings enter as smaller costs, never also as benefits | → ok |
+| C-003 | fixed + verified | real | COI total read as the savings from elimination | glossary already correct | COI describes burden, not avoidable savings | → ok |
+| C-004 | fixed + verified | real | Each option's own B/C interpreted without a stated baseline | Common Mistake box | Baseline of no treatment stated; own ratios interpreted only against it | → ok |
+| C-005 | fixed + verified | real | Stem did not specify QALYs | — | Stem specifies QALYs; rationale notes CEA with a shared natural unit | key unchanged → ok |
+| C-006 | fixed + verified | real | "Opened needles in sealed wrappers" | — | A sterile needle opened from an intact wrapper | → ok |
+| C-007 | fixed + verified | real | The 2017 date rested on a 2016 secondary source | — | Date removed; the definition's wording is supported by the cited source | → ok |
+| C-008 | fixed + verified | real | CMA example inferred equivalence from equal percentages | — | Equivalence shown within a prespecified margin in a trial designed for it | → ok |
