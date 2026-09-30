@@ -17,7 +17,7 @@
    "chapter_id": "ch01",
    "kind": "diagram.svg",
    "source": "rework/figures/src/ch01-plasma-curve.svg",
-   "caption": "The plasma concentration-time curve after an oral dose. Cpmax and tmax describe the rate of absorption; the shaded area (AUC) describes its extent. The band between MEC and MTC is the therapeutic range.",
+   "caption": "The plasma concentration-time curve after an oral dose. Cpmax and tmax are the endpoints most sensitive to the rate of absorption, though Cpmax also depends on its extent; the shaded area (AUC) describes the extent. The band between MEC and MTC is the therapeutic range.",
    "alt": "A concentration-time curve rising to a peak at about two hours and then falling. The area beneath it is shaded and labelled AUC. Dashed lines mark the peak concentration on the vertical axis and the time of the peak on the horizontal axis. Two horizontal dashed lines mark the minimum effective concentration and the minimum toxic concentration, with the band between them bracketed and labelled therapeutic range.",
    "credit": "Original diagram, redrawn from the first edition page 5",
    "licence": "original",
@@ -84,7 +84,7 @@
    "kind": "diagram.svg",
    "source": "rework/figures/src/ch06-renal-handling.svg",
    "caption": "Top: the three renal processes acting on a drug. Filtration and secretion move drug towards the urine; reabsorption returns it to the blood, which is why it enters the balance with a minus sign. Bottom: what the clearance ratio reveals about which process dominates.",
-   "alt": "Two panels. The upper panel shows a blood channel above a tubular fluid channel. Arrows point down for glomerular filtration, described as passive and free drug only with a GFR of 125 to 130 millilitres per minute, and down for active secretion, described as carrier and energy against the gradient. A third arrow points up for reabsorption, described as favouring the unionised form and set by urine pH and pKa. The tubular fluid channel leads out to urine, and a caption reads excretion equals filtration plus secretion minus reabsorption. The lower panel is a horizontal scale of the clearance ratio marked at zero for completely reabsorbed as for glucose, less than one for filtered then partially reabsorbed, equal to one for filtered only as for inulin, and greater than one for actively secreted as for PAH.",
+   "alt": "Two panels. The upper panel shows a blood channel above a tubular fluid channel. Arrows point down for glomerular filtration, described as passive and free drug only with a GFR of 125 to 130 millilitres per minute, and down for active secretion, described as carrier and energy against the gradient. A third arrow points up for reabsorption, described as favouring the unionised form and set by urine pH and pKa. The tubular fluid channel leads out to urine, and a caption reads excretion equals filtration plus secretion minus reabsorption. The lower panel is a horizontal scale of the clearance ratio marked at zero for completely reabsorbed as for glucose below its renal threshold, less than one for filtered then partially reabsorbed, equal to one for filtered only as for inulin, and greater than one for actively secreted as for PAH.",
    "credit": "Original diagram, redrawn from the first edition pages 25 to 28",
    "licence": "original",
    "status": "generated"

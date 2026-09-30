@@ -159,3 +159,26 @@ missed in round 3, and are recorded as such.
 Two sentences made long by these fixes were split, with nothing removed. After the fixes all 14
 chapters pass the checker (52,743 words), and the build passes its math checks and all seven
 `check_pdf` gates; `verify --through build` is clean.
+
+## Round 5 (claude-sonnet-5-5 per DEC-010, commit 10215fb)
+
+Codex reached its usage limit partway through its own fifth review. The one finding it had confirmed, that E8.1 derived F = 1 from complete absorption, was fixed in eebab26. The Sonnet review is recorded in `audit/review-r5.md`: 16 findings, 3 of them major.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | fixed + verified | real | Du∞ was presented as both an input to and an output of the sigma-minus plot, and Ke was said to be unobtainable from it | §3.4 now says Du∞ is estimated from a complete collection's plateau, or fitted, and the intercept checks it. The table shows Ke from either method once the dose is known. Q9 asks what must be known before plotting (key D). |
+| C-002 | fixed + verified | real | The diagnostic step used the final fitted parameters, not the ones being tested | Step 5 uses the residual intercept of 107 with Ka = 0.25 (≈ 2 µg·mL⁻¹, 8%), then gives the quarter figure from the final A = 160 and Ka = 0.200 |
+| C-003 | fixed + verified | real | Kh was renamed Knr in round 4, and its siblings were missed | ch06 paragraph, ch10 back-reference and ledger E-020 all say Knr |
+| C-004 | fixed + verified | real | The symmetry of the exponentials was stated as symmetry of the whole curve | With A free the fitted curve is the same, but the assignment changes K, t½ and Vd/F by K/Ka. Both mentions in ch07 are fixed. |
+| C-005 | fixed + verified | real | Round-4 sibling left in the prose and the figure | §6.2 and the Figure 6.1 label and alt text now say "below its renal threshold" |
+| C-006 | fixed + verified | real | Misread of Example 10.1 | 300 mg·day⁻¹ gives 6.0 (below the range), 400 gives 16.0 (inside it) |
+| C-007 | fixed + verified | real | Round-4 sibling left in the Key Takeaways | Takeaway hedged: "often a smaller Vd" |
+| C-008 | fixed + verified | real | Round-4 sibling left in the Figure 1.2 caption and in ch07 §7.8 | Both now say "most sensitive to rate", noting that Cpmax also depends on extent |
+| C-009 | fixed + verified | real | Rounding: t½ recomputes to 26.3 h | "about 26 h" |
+| C-010 | fixed + verified | real | Wrong unit argument | "units of mg·L·h⁻², not a concentration" |
+| C-011 | fixed + verified | real | Wrong origin given for the distractor | Option A is the elimination half-life, 0.693 ÷ 0.15 |
+| C-012 | fixed + verified | real | The five methods were listed in an order the text contradicts | Order claim dropped; the relative precision is stated. The dissolution rule now applies only to dissolution-limited drugs with an IVIVC. |
+| C-013 | fixed + verified | real | Barbiturates (pKa about 7.2–8) were listed in the pKa > 8 row | Removed from that row. A sentence after the table places them at the boundary of the two weak-acid rows. |
+| C-014 | fixed + verified | real | Date conflated (web check: ECA Academy) | Salicylic acid calibrators were no longer required from December 2009; since May 2023 the prednisone DPVS is the only standard for Apparatus 1 and 2 |
+| C-015 | fixed + verified | real | Resequencing made the full sequences distinct, but not their first four keys | Options swapped, with rationale letters updated, in ch09 Q1–4 (now CADB), ch10 Q1–4 (DCBA) and ch12 Q1–3 (ABD). Only ch03 now starts BDAC. The checker's key balance passes. |
+| C-016 | fixed + verified | real | Wrong section pointer | E-027 points to Section 13.4 |

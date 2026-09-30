@@ -122,7 +122,7 @@ The amount of drug in the body cannot be measured directly. The plasma concentra
 
 ![A concentration-time curve rising to a peak at about two hours and then falling. The area beneath it is shaded and labelled AUC. Dashed lines mark the peak concentration on the vertical axis and the time of the peak on the horizontal axis. Two horizontal dashed lines mark the minimum effective concentration and the minimum toxic concentration, with the band between them bracketed and labelled therapeutic range.](../rework/figures/out/ch01-plasma-curve.png)
 
-*Figure 1.2 — The plasma concentration-time curve after an oral dose. Cpmax and tmax describe the rate of absorption; the shaded area (AUC) describes its extent. The band between MEC and MTC is the therapeutic range.*  
+*Figure 1.2 — The plasma concentration-time curve after an oral dose. Cpmax and tmax are the endpoints most sensitive to the rate of absorption, though Cpmax also depends on its extent; the shaded area (AUC) describes the extent. The band between MEC and MTC is the therapeutic range.*  
 Original diagram, redrawn from the first edition page 5 (original)
 
 Three quantities are read off Figure 1.2.
@@ -775,7 +775,7 @@ The plot of log ARE against time is a straight line of slope −K/2.303 and inte
 
 > **Watch the Units:** ARE is an amount, in milligrams, not a rate. The excretion-rate plot has milligrams per hour on its vertical axis; the sigma-minus plot has milligrams. Both slopes are −K/2.303 and both give the same half-life, but the intercepts mean different things: Ke·D_B⁰ in the first, Du∞ in the second.
 
-The method has one hard requirement, and it is a real one. Du∞ must be known before a single point can be plotted, because every ARE value is a subtraction from it.
+The method has one hard requirement, and it is a real one. Du∞ must be known before a single point can be plotted, because every ARE value is a subtraction from it. Du∞ is therefore an input: it is estimated from the plateau of a collection continued to completion, about 7–10 half-lives, or fitted as a third parameter along with K. The intercept of the plot then checks that estimate rather than supplying it.
 
 > **Common Mistake:** Du∞ is the amount excreted at infinite time, not the last cumulative value in your table. If collection stopped at six half-lives, that last value is about 98% of Du∞. Using it as Du∞ forces the final ARE to zero and makes the ones before it far too small. The late points then bend sharply downwards and the fitted K comes out too large.
 
@@ -787,7 +787,7 @@ The method has one hard requirement, and it is a real one. Du∞ must be known b
 | One missing sample | Loses that one point; the rest stand | Invalidates the cumulative total, and so every later point |
 | Scatter from incomplete bladder emptying | Shows directly as scatter about the line | Damped by cumulation, so the plot looks better than the data are |
 | Order of elimination | The raw rate plot describes excretion of any order, but K and t½ come from Equation 3.2 only under first-order elimination | First-order elimination only |
-| Ke | Obtainable from the intercept | Not obtainable |
+| Ke | From the intercept, Ke·D_B⁰, divided by the dose | From the results, Ke = K·Du∞/D_B⁰, once Du∞ and the dose are known |
 
 Two entries that look like advantages of the sigma-minus method are one property seen twice. Cumulation smooths the data, and smoothing hides experimental error rather than removing it. A tidy sigma-minus plot is therefore not evidence of a careful collection. The excretion-rate plot is more honest about sample quality, at the cost of looking worse.
 
@@ -909,7 +909,7 @@ B) Too small, because the late ARE values come out too large
 C) Unaffected, because Du∞ affects only the intercept
 D) Correct only if the drug is excreted entirely unchanged
 
-**Q9.** [LO4] Which one of these can the sigma-minus method *not* provide?
+**Q9.** [LO4] Which one of these must be known *before* the sigma-minus plot can be drawn?
 A) The half-life
 B) Ke
 C) The total elimination rate constant
@@ -947,7 +947,7 @@ D) The excretion rate method applies, because it plots the observed rate
 
 **Q8. A** — The late ARE values are computed as small differences, so understating Du∞ shrinks them disproportionately. Those points drop below the line and steepen it, raising K. Option C fails because Du∞ enters every ARE value, not just the intercept.
 
-**Q9. B** — The sigma-minus plot contains no term in Ke: its intercept is Du∞ and its slope is −K/2.303. Ke can still be found afterwards from fe, but not from the plot.
+**Q9. D** — Every ARE value is Du∞ minus the cumulative amount, so Du∞ must be estimated first, from the plateau of a complete collection. The half-life and K come from the slope, and Ke then follows as K·Du∞/D_B⁰; none of them is needed before plotting.
 
 **Q10. C** — Equations 3.2 and 3.3 both substitute D_B = D_B⁰·e^(−Kt) and depend on a straight semilogarithmic line. Under zero-order elimination neither line is straight, so neither method yields K or a half-life. Option D is the trap: the observed excretion rate can still be plotted, and the table of Section 3.5 notes that such a plot describes excretion of any order, but that descriptive plot is not the semilogarithmic method of Equation 3.2 and gives no first-order K or half-life.
 
@@ -995,7 +995,7 @@ t½' = 0.693 ÷ 0.1012 = 6.85 h
 
 *Answer.* fe = 0.30, Ke = 0.0416 h⁻¹, Knr = 0.0970 h⁻¹, and the half-life rises from 5.0 h to 6.85 h.
 
-*Comment.* Renal function fell by 90% and the half-life rose by only 37%, because 70% of elimination never used the kidney. Repeat the calculation with fe = 0.9 and the half-life rises to about 25 h instead. This is why fe, not renal function alone, decides whether a drug needs dose adjustment.
+*Comment.* Renal function fell by 90% and the half-life rose by only 37%, because 70% of elimination never used the kidney. Repeat the calculation with fe = 0.9 and the half-life rises to about 26 h instead. This is why fe, not renal function alone, decides whether a drug needs dose adjustment.
 
 **E3.3 — worked solution**
 
@@ -1631,7 +1631,7 @@ D) 24 L·h⁻¹
 
 ## Answers and Worked Solutions
 
-**Q1. D** — Css = R/(K·Vd), and K·Vd is clearance. Option B is the reverse operation and would give an amount per time squared.
+**Q1. D** — Css = R/(K·Vd), and K·Vd is clearance. Option B is the reverse operation and would give units of mg·L·h⁻², not a concentration.
 
 **Q2. B** — Css is proportional to R, so it doubles. The time course depends only on K, so the approach takes the same number of half-lives.
 
@@ -1758,7 +1758,7 @@ Three processes act on a drug in the nephron, and the net amount excreted is the
 >
 > The minus sign is the whole point: reabsorption returns drug to the blood, so it reduces excretion.
 
-![Two panels. The upper panel shows a blood channel above a tubular fluid channel. Arrows point down for glomerular filtration, described as passive and free drug only with a GFR of 125 to 130 millilitres per minute, and down for active secretion, described as carrier and energy against the gradient. A third arrow points up for reabsorption, described as favouring the unionised form and set by urine pH and pKa. The tubular fluid channel leads out to urine, and a caption reads excretion equals filtration plus secretion minus reabsorption. The lower panel is a horizontal scale of the clearance ratio marked at zero for completely reabsorbed as for glucose, less than one for filtered then partially reabsorbed, equal to one for filtered only as for inulin, and greater than one for actively secreted as for PAH.](../rework/figures/out/ch06-renal-handling.png)
+![Two panels. The upper panel shows a blood channel above a tubular fluid channel. Arrows point down for glomerular filtration, described as passive and free drug only with a GFR of 125 to 130 millilitres per minute, and down for active secretion, described as carrier and energy against the gradient. A third arrow points up for reabsorption, described as favouring the unionised form and set by urine pH and pKa. The tubular fluid channel leads out to urine, and a caption reads excretion equals filtration plus secretion minus reabsorption. The lower panel is a horizontal scale of the clearance ratio marked at zero for completely reabsorbed as for glucose below its renal threshold, less than one for filtered then partially reabsorbed, equal to one for filtered only as for inulin, and greater than one for actively secreted as for PAH.](../rework/figures/out/ch06-renal-handling.png)
 
 *Figure 6.1 — Top: the three renal processes acting on a drug. Filtration and secretion move drug towards the urine; reabsorption returns it to the blood, which is why it enters the balance with a minus sign. Bottom: what the clearance ratio reveals about which process dominates.*  
 Original diagram, redrawn from the first edition pages 25 to 28 (original)
@@ -1771,7 +1771,7 @@ the true GFR, typically by 10–20% and by more as renal function falls.
 
 **Active tubular secretion** moves drug from blood into the tubular fluid against its concentration gradient, so it needs a carrier and energy. The kidney has two carrier systems, one for weak acids and one for weak bases. Drugs of similar structure compete for the same carrier, which is the basis of a real drug interaction: probenecid competes with penicillin and raises its concentration. Para-aminohippuric acid is secreted so efficiently that its clearance, 425–650 mL·min⁻¹, measures renal plasma flow.
 
-**Tubular reabsorption** returns drug from the filtrate to the blood, and it favours the more lipid-soluble, unionised form. It may be active or passive. Glucose is reabsorbed completely, so its renal clearance is zero. For weak acids and weak bases the extent depends on urinary pH and on the pKa of the drug, because those two together fix how much of the drug is unionised at any moment.
+**Tubular reabsorption** returns drug from the filtrate to the blood, and it favours the more lipid-soluble, unionised form. It may be active or passive. Below its renal threshold, glucose is reabsorbed completely, so its renal clearance is zero; above the threshold the carriers saturate and glucose appears in the urine. For weak acids and weak bases the extent depends on urinary pH and on the pKa of the drug, because those two together fix how much of the drug is unionised at any moment.
 
 > **Why It Matters in Practice:** Give amphetamine, a weak base, with a urinary alkaliniser and more of it stays unionised in the tubule, so more is reabsorbed and less appears in the urine. The same logic runs the other way in overdose: alkalinising the urine ionises a weak acid such as aspirin, traps it in the tubule and speeds its removal. Manipulating urinary pH is a treatment, and it is also a way of defeating a urine drug screen.
 
@@ -1821,7 +1821,7 @@ genuinely is the whole of it, Cl_nr and Cl_h coincide.
 > notation of the pharmacokinetic literature, and this book uses both symbols in that sense. Only
 > unbound drug is filtered, so the filtration clearance of a drug is fu × GFR, not fe × GFR.
 
-The symbol Kh is used deliberately. Chapter 10 needs Km for the Michaelis constant, which is a concentration and not a rate constant at all, and the two must not share a letter.
+The symbol Knr, not Km, is used deliberately for the non-renal rate constant. Chapter 10 needs Km for the Michaelis constant, which is a concentration and not a rate constant at all, and the two must not share a letter.
 
 Two further routes to clearance come from areas rather than rate constants, and they are the ones Chapters 9 and 13 rely on:
 
@@ -2202,7 +2202,7 @@ Original diagram, drawn from the first edition Example 22 dataset, page 33 (orig
 >
 > *Step 4 — read the residual slope, and stop.* Taking successive pairs gives Ka = 0.254, 0.266, 0.286, 0.310 and 0.356 h⁻¹. These are not scatter about one value; they climb steadily. The residual line is curved, so the method has not worked.
 >
-> *Step 5 — diagnose it.* A curved residual line means the terminal line was not clean: absorption was still contributing where the line was fitted. Test that directly. If Ka were about 0.25 h⁻¹, the absorption term at 16 h would be A·e^(−Ka·16), which is roughly 6 µg·mL⁻¹ against a measured 25.8, or a quarter of it. The "post-absorption" phase had not begun.
+> *Step 5 — diagnose it.* A curved residual line means the terminal line was not clean: absorption was still contributing where the line was fitted. Test that directly. Suppose Ka were about 0.25 h⁻¹, with the residual-line intercept of about 107 µg·mL⁻¹. The absorption term at 16 h would then be 107 × e^(−0.25 × 16) ≈ 2 µg·mL⁻¹, about 8% of the measured 25.8. Even that is enough to bend the fitted line. Step 6 shows that the true share is larger. With the final values A = 160 and Ka = 0.200 h⁻¹, the term is 160 × e^(−3.2) ≈ 6.5 µg·mL⁻¹, a quarter of the measured value. The "post-absorption" phase had not begun.
 >
 > *Step 6 — fit both exponentials together instead.* Doing so gives a curve passing through every point to within 0.1 µg·mL⁻¹:
 >
@@ -2292,7 +2292,7 @@ Cp = A · [e^(−K(t − t₀)) − e^(−Ka(t − t₀))]
 
 ## 7.7 Flip-Flop
 
-Equation 7.1 is symmetric in Ka and K: exchanging the two constants leaves the curve unchanged. The plasma data alone therefore cannot say which constant is which, and the usual assumption that the terminal slope is K can be exactly wrong.
+The two exponentials of Equation 7.1 are symmetric in Ka and K. With the coefficient A left free, exchanging the two constants gives the same fitted curve. The plasma data alone therefore cannot say which constant is which, and the usual assumption that the terminal slope is K can be exactly wrong. The assignment is not harmless. It changes K and t½. Because A = F·Ka·D₀/[Vd(Ka − K)], it also changes the estimate of Vd/F, by the factor K/Ka.
 
 **Flip-flop** is the name for that situation, and it occurs whenever K is greater than Ka. The terminal phase is then controlled by the slower process, which is absorption, so the terminal slope gives Ka and the residual line gives K.
 
@@ -2308,7 +2308,7 @@ The resolution is experimental, not algebraic [2]. Give the drug intravenously, 
 | Increase Ka, K constant | Increases | Decreases | Unchanged |
 | Increase K, Ka constant | Decreases | Decreases | Decreases |
 
-The middle row is the one worth dwelling on. Absorbing a drug faster raises the peak and brings it forward, but does not change the total amount that reaches the circulation, so the AUC is unmoved. This is the quantitative form of the distinction Chapter 1 drew: tmax and Cpmax describe the *rate* of absorption, AUC describes its *extent*. Chapter 13 makes both the basis of bioequivalence.
+The middle row is the one worth dwelling on. Absorbing a drug faster raises the peak and brings it forward, but does not change the total amount that reaches the circulation, so the AUC is unmoved. This is the quantitative form of the distinction Chapter 1 drew: tmax and Cpmax are the endpoints most sensitive to the *rate* of absorption, though Cpmax also depends on its extent. AUC describes the *extent*. Chapter 13 makes both the basis of bioequivalence.
 
 > **Why It Matters in Practice:** Two formulations of the same drug at the same dose can have identical AUC and still behave differently. A faster-absorbing one produces a higher peak, which matters when the peak approaches the minimum toxic concentration, and an earlier peak, which matters for an analgesic. Equal extent is not equal performance, which is why bioequivalence tests both Cmax and AUC.
 
@@ -2410,7 +2410,7 @@ D) X is eliminated more slowly than Y.
 
 **Q7. A** — Absorption starts at t₀, but the concentration must then climb to the MEC before an effect appears, so onset is always later than lag time and falls as the dose rises.
 
-**Q8. D** — tmax = ln(0.6/0.15) ÷ (0.6 − 0.15) = ln 4 ÷ 0.45 = 1.386 ÷ 0.45 = 3.08 h. Option A divides ln 4 by K alone.
+**Q8. D** — tmax = ln(0.6/0.15) ÷ (0.6 − 0.15) = ln 4 ÷ 0.45 = 1.386 ÷ 0.45 = 3.08 h. Option A is the elimination half-life, 0.693 ÷ 0.15 = 4.6 h.
 
 **Q9. C** — The method makes no assumption about absorption, which is what lets it determine the order, but it depends entirely on a correct K, since K multiplies every AUC term.
 
@@ -2484,7 +2484,7 @@ K = 1.20 h⁻¹ and Ka = 0.30 h⁻¹
 
 *Answer.* Ka = 0.30 h⁻¹ and K = 1.20 h⁻¹. Flip-flop is present.
 
-*What the oral data alone would have given.* The usual assumption assigns the terminal slope to K, which would have given K = 0.30 h⁻¹ and a half-life of 2.3 h instead of the true 35 min — four times too long. A dosing interval built on that figure would be four times longer than it should be, and the concentration would fall below the MEC between doses. Equation 7.1 is symmetric in Ka and K, so no amount of analysis of the oral curve can resolve this; only the intravenous study can.
+*What the oral data alone would have given.* The usual assumption assigns the terminal slope to K, which would have given K = 0.30 h⁻¹ and a half-life of 2.3 h instead of the true 35 min — four times too long. A dosing interval built on that figure would be four times longer than it should be, and the concentration would fall below the MEC between doses. The two exponentials of Equation 7.1 are symmetric in Ka and K, so no amount of analysis of the oral curve can resolve this; only the intravenous study can. The wrong assignment would also have misstated Vd/F, by the factor K/Ka.
 
 ## References
 1. Shargel L, Yu ABC. *Applied Biopharmaceutics and Pharmacokinetics*. 8th ed. New York: McGraw Hill Medical; 2022.
@@ -3039,26 +3039,26 @@ The number of compartments is a property of the data and the sampling design, no
 
 **Q1.** [LO1] Non-compartmental analysis computes AUC and AUMC without any compartmental model. Before the clearance it gives can be applied to a different dose, the further assumption needed is that:
 A) The drug follows a one-compartment model
-B) The kinetics are linear
-C) The drug is given intravenously
+B) The drug is given intravenously
+C) The kinetics are linear
 D) Elimination is entirely renal
 
 **Q2.** [LO2] AUMC is the area under a plot of:
-A) Cp against log t
+A) Cp·t against t
 B) log Cp against t
 C) Cp against t
-D) Cp·t against t
+D) Cp against log t
 
 **Q3.** [LO3] The mean residence time is calculated as:
-A) AUMC / AUC
+A) D₀ / AUMC
 B) AUC / AUMC
 C) AUC × AUMC
-D) D₀ / AUMC
+D) AUMC / AUC
 
 **Q4.** [LO4] For a drug following one-compartment kinetics after an IV bolus, MRT equals:
 A) 0.693 / K
-B) K / 0.693
-C) 1 / K
+B) 1 / K
+C) K / 0.693
 D) Vd / Cl²
 
 **Q5.** [LO2] The last sample is Cn = 2 mg·L⁻¹ and λz = 0.25 h⁻¹. The AUC beyond the last sample is:
@@ -3107,13 +3107,13 @@ D) 5 h
 
 ## Answers and Worked Solutions
 
-**Q1. B** — Linearity means every dose gives a curve of the same shape, so areas scale with dose and a clearance found at one dose holds at another. The areas could be computed without it, but they would describe only the dose studied. No particular model is assumed, which rules out option A.
+**Q1. C** — Linearity means every dose gives a curve of the same shape, so areas scale with dose and a clearance found at one dose holds at another. The areas could be computed without it, but they would describe only the dose studied. No particular model is assumed, which rules out option A.
 
-**Q2. D** — The first moment curve is concentration multiplied by time. Option C is the ordinary plasma curve, whose area is AUC.
+**Q2. A** — The first moment curve is concentration multiplied by time. Option C is the ordinary plasma curve, whose area is AUC.
 
-**Q3. A** — MRT is the first moment divided by the zero moment, which is the mean of the residence-time distribution.
+**Q3. D** — MRT is the first moment divided by the zero moment, which is the mean of the residence-time distribution.
 
-**Q4. C** — For a single exponential, AUMC/AUC = (C⁰/K²)/(C⁰/K) = 1/K. Option A is the half-life, which is 0.693·MRT.
+**Q4. B** — For a single exponential, AUMC/AUC = (C⁰/K²)/(C⁰/K) = 1/K. Option A is the half-life, which is 0.693·MRT.
 
 **Q5. D** — The tail is Cn/λz = 2 ÷ 0.25 = 8 mg·h·L⁻¹. Option A multiplies instead of dividing.
 
@@ -3244,7 +3244,7 @@ enzyme (E) + drug (D) ⇌ E–D complex → enzyme + metabolite
 
 The enzyme is released unchanged, but there is a finite amount of it. At low concentrations most enzyme molecules are free, and more drug means more conversion. At high concentrations nearly all are occupied, so more drug adds no capacity. The system is saturated.
 
-Chapter 6 used the symbol Kh for the hepatic elimination rate constant, precisely so that Km could be kept for what follows. Km is a concentration, not a rate constant.
+Chapter 6 used the symbol Knr for the non-renal elimination rate constant, precisely so that Km could be kept for what follows. Km is a concentration, not a rate constant.
 
 ## 10.3 The Michaelis–Menten Equation
 
@@ -3353,7 +3353,7 @@ Non-linear kinetics matter most at high doses, because saturation needs high con
 
 *Products need in-vivo comparison.* A small difference in absorption between two formulations is amplified by saturable elimination. Drugs such as phenytoin therefore require in-vivo bioequivalence studies, the subject of Chapter 13.
 
-> **Why It Matters in Practice:** The usual target range quoted for phenytoin is about 10–20 mg·L⁻¹, and Example 10.1 puts 300 and 400 mg·day⁻¹ on either side of it. The dose in between is found by small steps and monitoring, not by proportion [2].
+> **Why It Matters in Practice:** The usual target range quoted for phenytoin is about 10–20 mg·L⁻¹, and in Example 10.1, 300 mg·day⁻¹ gives 6.0 mg·L⁻¹, below it, while 400 mg·day⁻¹ gives 16.0 mg·L⁻¹, inside it: 100 mg·day⁻¹ more almost tripled the concentration. The dose in between is found by small steps and monitoring, not by proportion [2].
 
 ## Key Takeaways
 - Linear kinetics: concentration is proportional to dose, and K, Vd and t½ are independent of dose.
@@ -3370,26 +3370,26 @@ Non-linear kinetics matter most at high doses, because saturation needs high con
 
 **Q1.** [LO1] The dose of a drug with linear kinetics is doubled. The steady-state concentration will:
 A) Increase more than twofold
-B) Double
+B) Increase less than twofold
 C) Stay the same
-D) Increase less than twofold
+D) Double
 
 **Q2.** [LO3] When the drug concentration equals Km, the rate of a Michaelis–Menten process is:
 A) Zero
 B) Vmax
-C) 2 × Vmax
-D) Vmax / 2
+C) Vmax / 2
+D) 2 × Vmax
 
 **Q3.** [LO3] At concentrations far below Km, elimination is:
-A) First order, with an apparent rate constant Vmax/Km
-B) Zero order, at a rate equal to Vmax
+A) Zero order, at a rate equal to Vmax
+B) First order, with an apparent rate constant Vmax/Km
 C) Independent of concentration
 D) Mixed order at all times
 
 **Q4.** [LO2] The main cause of non-linear pharmacokinetics is:
-A) An increase in Vd at high doses
+A) A saturable enzyme or carrier system
 B) Incomplete absorption at low doses
-C) A saturable enzyme or carrier system
+C) An increase in Vd at high doses
 D) An error in the assay at high concentrations
 
 **Q5.** [LO4] A drug has Km = 4 mg·L⁻¹ and Vmax = 500 mg·day⁻¹, and is given at 250 mg·day⁻¹. The steady-state concentration is:
@@ -3438,13 +3438,13 @@ D) Vmax changes after the first dose
 
 ## Answers and Worked Solutions
 
-**Q1. B** — In linear kinetics concentration is proportional to dose. Options A and D describe non-linear behaviour.
+**Q1. D** — In linear kinetics concentration is proportional to dose. Options A and B describe non-linear behaviour.
 
-**Q2. D** — Setting C = Km gives V = Vmax·Km/(2Km) = Vmax/2. This is the definition of Km.
+**Q2. C** — Setting C = Km gives V = Vmax·Km/(2Km) = Vmax/2. This is the definition of Km.
 
-**Q3. A** — When C ≪ Km, Km + C ≈ Km, so V ≈ (Vmax/Km)·C. The rate is proportional to concentration.
+**Q3. B** — When C ≪ Km, Km + C ≈ Km, so V ≈ (Vmax/Km)·C. The rate is proportional to concentration.
 
-**Q4. C** — Enzymes and carriers have finite capacity, and once saturated they cannot keep pace with concentration.
+**Q4. A** — Enzymes and carriers have finite capacity, and once saturated they cannot keep pace with concentration.
 
 **Q5. D** — Css = 4 × 250 ÷ (500 − 250) = 1000 ÷ 250 = 4 mg·L⁻¹. The dosing rate is half of Vmax, which places Css exactly at Km.
 
@@ -3695,7 +3695,7 @@ These hold whichever step is rate-limiting. The ratio form needs no dose: relati
 > *Check the area by integration.* The integral of Equation 11.1 is the coefficient times (1/K − 1/Kmet) = −20 × (5 − 10) = 100 mg·h·L⁻¹. That is the same as Step 5, reached without using Cl(m).
 
 ## Key Takeaways
-- Metabolism makes a drug more polar: a smaller Vd, less tubular reabsorption, faster excretion.
+- Metabolism makes a drug more polar: often a smaller Vd (binding and transport can reverse this), less tubular reabsorption, faster excretion.
 - Phase I adds a polar group by oxidation or reduction, largely by cytochrome P450; Phase II conjugates.
 - Norfluoxetine, 4-hydroxypropranolol, norverapamil and desmethyldiazepam are active metabolites; NAPQI is the classic toxic one.
 - NAT2, CYP2D6 and CYP2C19 genotype set an individual's metabolic rate; population allele frequencies do not follow skin colour.
@@ -3990,12 +3990,14 @@ The **pH-partition hypothesis** states that drugs cross the gut membrane by pass
 
 | Drug type | pKa | Examples | Ionisation in the gut | Absorption |
 |---|---|---|---|---|
-| Very weak acid | > 8 | Phenytoin, ethosuximide, barbiturates | Unionised at all gut pH | Rapid, independent of pH |
+| Very weak acid | > 8 | Phenytoin, ethosuximide | Unionised at all gut pH | Rapid, independent of pH |
 | Weak acid | 2.5–7.5 | Aspirin, ibuprofen, penicillins | Unionised in stomach, ionised in intestine | Favoured in stomach |
 | Strong acid | < 2.5 | Cromolyn sodium | Ionised at all gut pH | Poor throughout |
 | Very weak base | < 5 | Caffeine, theophylline, diazepam | Unionised at all gut pH | Rapid, independent of pH |
 | Weak base | 5–11 | Morphine, chloroquine, imipramine, amitriptyline | Ionised in stomach, unionised in intestine | Favoured in intestine |
 | Strong base | > 11 | Mecamylamine, guanethidine | Ionised at all gut pH | Poor throughout |
+
+Barbiturates, with pKa values of about 7.2–8, sit at the boundary of the two weak-acid rows: they are almost wholly unionised in the stomach and partly ionised in the intestine.
 
 Gastric pH is not fixed. Gastric secretion itself is below pH 1, but the contents are usually at pH 1–3 and rise briefly to about 5 after a meal. Fasting lowers the pH, duodenal ulcer lowers it further, and fatty food inhibits acid secretion. Antacids, H₂-receptor blockers such as cimetidine and ranitidine, and drugs with anticholinergic activity such as atropine all raise it.
 
@@ -4112,22 +4114,22 @@ Read it as a tendency that follows from the number of steps, not as a law. Chapt
 ## Check Your Understanding
 
 **Q1.** [LO1] The main site of drug absorption after an oral dose is:
-A) The stomach
-B) The upper small intestine
+A) The upper small intestine
+B) The stomach
 C) The colon
 D) The oesophagus
 
 **Q2.** [LO2] Oligopeptides produced by digestion of a protein drug are hydrolysed by:
 A) Lactase and maltase
-B) Pepsin in the stomach
+B) Brush-border and cytosolic peptidases
 C) Bacterial enzymes in the colon
-D) Brush-border and cytosolic peptidases
+D) Pepsin in the stomach
 
 **Q3.** [LO3] A weak acid has pKa = 4.4. The fraction unionised at pH 2.4 is:
-A) 0.99
+A) 0.01
 B) 0.50
 C) 0.10
-D) 0.01
+D) 0.99
 
 **Q4.** [LO2] Active transport differs from facilitated diffusion because it:
 A) Uses a carrier
@@ -4181,11 +4183,11 @@ D) A ranking of the extent of absorption only
 
 ## Answers and Worked Solutions
 
-**Q1. B** — The upper small intestine combines the largest absorbing area with a rich blood supply. The stomach has a small area and a short residence time.
+**Q1. A** — The upper small intestine combines the largest absorbing area with a rich blood supply. The stomach has a small area and a short residence time.
 
-**Q2. D** — Oligopeptides are hydrolysed by brush-border peptidases, such as aminopeptidase N and dipeptidyl peptidase IV, and by cytosolic peptidases. Lactase and maltase are disaccharidases.
+**Q2. B** — Oligopeptides are hydrolysed by brush-border peptidases, such as aminopeptidase N and dipeptidyl peptidase IV, and by cytosolic peptidases. Lactase and maltase are disaccharidases.
 
-**Q3. A** — For an acid the unionised fraction is 1/(1 + 10^(2.4 − 4.4)) = 1/1.01 = 0.99. Two pH units below the pKa, an acid is almost entirely unionised.
+**Q3. D** — For an acid the unionised fraction is 1/(1 + 10^(2.4 − 4.4)) = 1/1.01 = 0.99. Two pH units below the pKa, an acid is almost entirely unionised.
 
 **Q4. C** — Both use saturable carriers with competition. Only active transport spends energy to move drug uphill.
 
@@ -4349,7 +4351,7 @@ A drug can therefore be completely absorbed, with fa = 1, and still have F well 
 
 ## 13.3 Measuring Bioavailability
 
-Five methods are used, in decreasing order of precision.
+Five methods are used. The plasma and urine methods are the most precise, and clinical response is the least sensitive. In-vitro dissolution is a surrogate measured outside the body, not a measure of bioavailability itself.
 
 *Plasma data.* The AUC measures extent. Cpmax and tmax are the endpoints sensitive to rate, but neither is a pure measure of it: Chapter 1 showed that Cpmax depends on both rate and extent, and Chapter 7 that tmax depends on Ka and K together, not on Ka alone. Cpmax also shows whether the drug is absorbed enough to act, and warns of toxic levels. AUC is found by the trapezoidal rule. It should rise in proportion to the dose. A rise more than proportional suggests saturation of a metabolic pathway, as in Chapter 10.
 
@@ -4359,7 +4361,7 @@ Five methods are used, in decreasing order of precision.
 
 *Clinical response.* Failure suggests poor availability, a good response adequate availability, and toxicity high availability. This is the least sensitive, least accurate and least reproducible method, because patients differ in their response for reasons unrelated to absorption: receptor sensitivity, interactions, age and tolerance. It is used for products such as topical antifungals.
 
-*In-vitro dissolution.* This is the cheapest method, needing no volunteers. The formulation that dissolves fastest in vitro will generally be absorbed fastest in vivo. Chapter 14 describes it.
+*In-vitro dissolution.* This is the cheapest method, needing no volunteers. Take a drug whose absorption is limited by dissolution, with an in-vitro–in-vivo correlation shown. For it, the formulation that dissolves fastest in vitro will generally be absorbed fastest in vivo. For a drug limited by permeability that may not hold. Chapter 14 describes it.
 
 ![Three plasma concentration curves over 24 hours. Curve A rises steeply to the highest peak, about 6.7 relative units, at 2 hours. Curve B rises more slowly to a lower, broader peak of about 4.5 at 4 hours and stays higher than A later on. Curve C peaks at 2 hours like A but at half its height. Dashed lines drop from each peak to the time axis. A key at the right lists A with AUC 50 and tmax 2 hours, B with AUC 50 and tmax 4 hours, and C with AUC 25 and tmax 2 hours.](../rework/figures/out/ch13-rate-extent.png)
 
@@ -4700,7 +4702,7 @@ The pharmacopoeia describes seven apparatus, but not all in one place. Apparatus
 
 *Apparatus 5 and 6, for transdermal products.* In the paddle-over-disk method the patch is held in a disk assembly at the bottom of the vessel, under the paddle. In the rotating-cylinder method, a modification of the basket, the patch is mounted on a stainless steel cylinder. Both run at 32 °C, and samples are drawn midway between the surface of the medium and the top of the paddle or cylinder.
 
-Apparatus performance is verified against a reference standard. The scheme long taught pairs two calibrator tablets, disintegrating prednisone tablets for disintegrating products and non-disintegrating salicylic acid tablets for non-disintegrating products, and that is the scheme the first edition describes. It is no longer current: since 2023 the performance verification test for Apparatus 1 and 2 uses the USP Dissolution Performance Verification Standard, a prednisone tablet standard, and the salicylic acid calibrator has been withdrawn. Buccal and sublingual tablets are tested by the procedure for uncoated tablets.
+Apparatus performance is verified against a reference standard. The scheme long taught pairs two calibrator tablets, disintegrating prednisone tablets for disintegrating products and non-disintegrating salicylic acid tablets for non-disintegrating products, and that is the scheme the first edition describes. It is no longer current. Salicylic acid calibrator tablets stopped being required for Apparatus 1 and 2 in December 2009, leaving prednisone tablets as the standard, and since May 2023 the only standard for Apparatus 1 and 2 has been the USP Dissolution Performance Verification Standard – Prednisone. Buccal and sublingual tablets are tested by the procedure for uncoated tablets.
 
 ## 14.4 Meeting the Requirements
 
