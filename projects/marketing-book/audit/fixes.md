@@ -164,3 +164,7 @@ Recorded in `audit/review-r9.md`: verdict pass, 0 blocker or major, 1 minor. The
 | ID | status | real/rejected | root cause | fix |
 |---|---|---|---|---|
 | C-001 | fixed + verified | real | New entries were appended to the chapter reference lists without sorting, and the Egyptian Drug Authority entry was already out of order | Every chapter list was sorted by script. Only ch06 and ch09 changed, and no entry text changed. |
+
+## Final confirmation (claude-sonnet-5-5, commit dc10263)
+
+The review is saved as `audit/codex-audit.md`: verdict pass, no findings. The scores are round 9's independent rescore: G1 9, G2 8.5, G3 8, G4 8.5, D1 9 and D2 9.5, a total of 88.5 against the baseline of 33.0. G4 was kept at 8.5 after the list sort rather than raised without a reviewer's rescore. `audit/findings.json` is empty: no finding remains open.

@@ -13,9 +13,7 @@
    "id": "G2",
    "score": 8.5,
    "applicable": true,
-   "evidence_finding_ids": [
-    "F-001"
-   ]
+   "evidence_finding_ids": []
   },
   {
    "id": "G3",
@@ -27,19 +25,13 @@
    "id": "G4",
    "score": 8.5,
    "applicable": true,
-   "evidence_finding_ids": [
-    "F-002",
-    "F-003"
-   ]
+   "evidence_finding_ids": []
   },
   {
    "id": "D1",
-   "score": 8.5,
+   "score": 9,
    "applicable": true,
-   "evidence_finding_ids": [
-    "F-004",
-    "F-005"
-   ]
+   "evidence_finding_ids": []
   },
   {
    "id": "D2",
@@ -49,5 +41,5 @@
   }
  ],
  "caps_applied": [],
- "total": 87.5
+ "total": 88.5
 }
