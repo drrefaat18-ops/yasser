@@ -346,7 +346,7 @@ class Deck:
         cols = [w * n / sum(lens) - 0.24 for n in lens]              # real column widths, minus cell margins
         need = lambda sz: sum(max(1, max(-(-len(c) // max(int(cols[j] * 72 / (sz * 0.5)), 1))
                                          for j, c in enumerate(r[:nc]))) * sz * 1.25 / 72 + 0.12 for r in rows)
-        while size > 12 and need(size) > h * 0.85:
+        while size > 12 and need(size) > h * 0.95:
             size -= 1
         rh = min(h / nr, 0.7)
         shape = s.shapes.add_table(nr, nc, Inches(x), Inches(y), Inches(w), Inches(rh * nr))
@@ -516,7 +516,7 @@ class Deck:
             lead = self.height(text, CW, 18)
             load = sum(len(t) for t in text) + sum(len(x) for r in (c["data"] if c["kind"] in ("table", "list") else [])
                                                    for x in (r if isinstance(r, list) else [r]))
-            if load > 850:                                 # density cap: the explanation takes its own slide
+            if load > 850 and sum(len(t) for t in text) > 300:   # density cap: a long explanation takes its own slide
                 lead = 99
             if lead <= 1.5:                               # short explanation above the visual
                 self.explain(s, text, M, TOP, CW, lead + 0.1, 18)
