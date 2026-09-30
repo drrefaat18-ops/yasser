@@ -303,7 +303,7 @@ World Health Organization. (2025). *Country cooperation strategy for WHO and Egy
 By the end of this chapter you will be able to:
 1. [LO1] Identify the decider, the payer, the user and the influencer for a given health service.
 2. [LO2] Describe the main triggers that lead patients to choose a health service or a medicine.
-3. [LO3] Compare the healthcare market with ordinary consumer markets on six characteristics.
+3. [LO3] Compare the healthcare market with ordinary consumer markets on seven characteristics.
 4. [LO4] Distinguish the law of demand from price elasticity and calculate an elasticity.
 5. [LO5] Explain the principles and the main problems of marketing management in health care.
 
@@ -351,7 +351,7 @@ Table 2.1 compares the two kinds of market. Each row is a tendency, not a rule. 
 |---|---|---|
 | Who decides | Often a professional | The buyer |
 | Who pays | Patient, insurer, employer or state | The buyer |
-| Brand loyalty | Often high, built on trust | Usually lower |
+| Brand loyalty | Often reported as high, built on trust | Usually lower |
 | Importance of ethics | Very high | Present but lower |
 | Government regulation | Heavy | Lighter |
 | Research and development | Costly and long, especially for medicines | Usually cheaper and shorter |
@@ -513,7 +513,7 @@ D) Develop services that meet real needs
 
 **Q4. D** — A symptom and an online search led directly to the booking. No professional advised.
 
-**Q5. A** — Health care is heavily regulated. Loyalty and ethics are higher, and research is costlier, so the other options reverse the pattern.
+**Q5. A** — Health care is heavily regulated. Options C and D reverse the pattern: ethics matter more and research is costlier. Option B runs against the usual tendency in Table 2.1, though loyalty varies more between services than regulation does.
 
 **Q6. C** — WHO estimates that 54.9% of Egypt's current health expenditure in 2022 was paid out of pocket. Options A, B and D describe systems Egypt does not have.
 
@@ -1213,7 +1213,7 @@ B) Transferable
 C) Storable
 D) Perishable
 
-**Q2.** [LO1] A patient must fast before a lipid test. This illustrates:
+**Q2.** [LO1] A patient must fast before a fasting glucose test. This illustrates:
 A) Customer participation in producing the service
 B) Transfer of ownership
 C) Storage of the service
@@ -1379,7 +1379,7 @@ Gaining wider distribution is a key goal. Toward the end of growth, prices usual
 
 ## 6.4 Maturity
 
-In the **maturity stage** sales growth slows and then flattens. Profits peak and begin to decline.
+In the **maturity stage** sales growth slows and then flattens. Profits are at or just past their peak and begin to decline.
 
 Its properties are:
 
@@ -1994,7 +1994,7 @@ Intermediaries differ in one key respect: whether they own the goods they sell. 
 
 **Agent.** Works for a manufacturer under a specific agreement, sometimes with exclusive rights in a region. Paid a commission set by the manufacturer, usually a percentage of each deal.
 
-> **Common Mistake:** Confusing who owns the goods with who holds them. A consignee holds the goods in its store but does not own them; the consignor does. When reagents expire on a consignee's shelf, the loss usually falls on the consignor. Always ask who owns the stock and who carries the risk.
+> **Common Mistake:** Confusing who owns the goods with who holds them. A consignee holds the goods in its store but does not own them; the consignor does. When consigned medicines expire on a pharmacy's shelf, the loss usually falls on the consignor, and the same holds for consignment stock of reagents in a laboratory. Always ask who owns the stock and who carries the risk.
 
 ## 8.7 Pharmaceutical Warehouses
 
@@ -2119,7 +2119,7 @@ D) Restricts patients' access to affordable medicines
 
 **E1.** [LO2] Compare the channel levels for medicines with the channels a laboratory can use to reach patients. Which quality risks arise in each?
 
-**E2.** [LO3] Explain the difference between independent and dependent intermediaries, using consignment of laboratory reagents as your example.
+**E2.** [LO3] Explain the difference between independent and dependent intermediaries, using consignment of medicines to a pharmacy and consignment stock of laboratory reagents as your examples.
 
 **E3.** [LO5] A laboratory chain plans to expand into a governorate with poor transport. Propose a distribution design and explain how it protects both access and sample quality.
 
@@ -2205,7 +2205,7 @@ A health organisation communicates to:
 4. present its advantages honestly against competing products;
 5. build a trustworthy brand image among professionals and patients.
 
-The older lecture phrase "neutralise competitors' advertising" is better stated as the fourth purpose: answer competitors with accurate, comparative evidence, never with disparagement.
+The phrase "neutralise competitors' advertising", still found in some teaching notes, is better stated as the fourth purpose: answer competitors with accurate, comparative evidence, never with disparagement.
 
 ### Channels
 
@@ -2228,7 +2228,7 @@ A **push strategy** directs promotion at the channel. The manufacturer promotes 
 
 A **pull strategy** directs promotion at the final customer. Customers then ask retailers for the product, retailers ask wholesalers, and demand pulls the product up the channel.
 
-In health care the choice is constrained. For prescription medicines, the "customer" whom promotion may address is mainly the prescriber. Pull strategies aimed at the public are prohibited in most countries, because patients cannot judge prescription medicines alone. For over-the-counter products and self-paid services, lawful pull strategies are possible.
+In health care the choice is constrained. For prescription medicines, the "customer" whom promotion may address is mainly the prescriber. Pull strategies aimed at the public are prohibited in most countries, because patients cannot judge prescription medicines alone. The United States and New Zealand are the main exceptions, where direct-to-consumer advertising of prescription medicines is permitted under regulation. For over-the-counter products and self-paid services, lawful pull strategies are possible.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** A laboratory mostly uses push toward doctors: visits, test menus and scientific evenings. It may use careful pull toward the public only for tests with a clear indication for a defined group, such as recommended screening. Messages must be accurate, state who should be tested, and advise medical consultation.
@@ -2568,7 +2568,7 @@ Two methods value lost productivity, the indirect costs of this chapter. A third
 
 **Human capital approach.** Lost productivity is valued at the earnings the patient would have made; it is also called the **foregone earnings approach**. Where actual wages are unknown, average earnings for the patient's age and sex are used. The pure method does not count unpaid work, such as home-making, child care or volunteering, which undervalues the productivity of people outside paid work.
 
-**Friction cost approach.** Lost productivity is valued only over the **friction period**: the time until the worker is replaced or output is otherwise restored (Koopmanschap et al., 1995). After that, the work is done by someone else, so no further production is lost to society. The costs of recruiting and training a replacement are counted separately, as costs to the employer. This method usually gives lower indirect costs than the human capital approach.
+**Friction cost approach.** Lost productivity is valued only over the **friction period**: the time until the worker is replaced or output is otherwise restored (Koopmanschap et al., 1995). After that, the work is done by someone else, so no further production is lost to society. The friction cost method also counts the employer's costs of recruiting and training a replacement as part of the friction costs (Koopmanschap et al., 1995). This method usually gives lower indirect costs than the human capital approach.
 
 **Willingness to pay (WTP).** People are asked, through carefully phrased questions, the most they would pay for a benefit or to avoid a harm. WTP is not a productivity method. It values outcomes and welfare, including intangible ones such as pain avoided, and so belongs on the benefit side of the balance. Chapter 11 uses it in cost-benefit analysis.
 
@@ -2584,7 +2584,7 @@ Two methods value lost productivity, the indirect costs of this chapter. A third
 >
 > *Classification.* Table 10.2, after this box, sets out every cost by category.
 >
-> *Two corrections to a common answer.* The large hospital he did not use is not his opportunity cost. He did not use its resources, so it costs nothing in this analysis; it would matter only if we compared the two places of care as options. The replacement worker is not the patient's cost. It falls on the employer, and it is counted because the perspective is society's. It is a replacement cost, not the friction-cost valuation itself, which measures the production lost until the replacement is working.
+> *Two corrections to a common answer.* The large hospital he did not use is not his opportunity cost. He did not use its resources, so it costs nothing in this analysis; it would matter only if we compared the two places of care as options. The replacement worker is not the patient's cost. It falls on the employer, and it is counted because the perspective is society's. Under the friction cost method, recruiting and training the replacement would be part of the friction costs, together with the production lost until the replacement is working. Here lost production is valued by the human capital approach, so the replacement cost is listed as a separate cost to the employer.
 
 | Category | Items |
 |---|---|
@@ -2774,7 +2774,7 @@ The **quality-adjusted life year (QALY)** combines length and quality of life in
 >
 > *Case 2 — a lower baseline.* If the patient's utility is 0.8 because of the underlying disease, the utility with the effects is 0.8 × 0.75 = 0.6. QALYs gained = 2 × 0.6 = 1.2 QALYs.
 >
-> *Interpretation.* The source example gives 1.5 QALYs, which holds only when the patient starts in full health. Always state the baseline utility.
+> *Interpretation.* The answer of 1.5 QALYs holds only when the patient starts in full health. Always state the baseline utility.
 
 ## 11.3 Perspectives Again
 
@@ -3047,7 +3047,7 @@ This chapter works through examples that use the methods of Chapters 10 and 11. 
 
 ## 12.2 Micro-Costing
 
-**Micro-costing** builds the cost of care from each resource used: the number of units of each resource times its unit cost, summed. Older lecture notes call the result a "standardisation cost value". The standard term is the total cost from resource use.
+**Micro-costing** builds the cost of care from each resource used: the number of units of each resource times its unit cost, summed. Some teaching notes call the result a "standardisation cost value". The standard term is the total cost from resource use.
 
 | Resource | Units used | Price |
 |---|---|---|
@@ -3059,7 +3059,7 @@ This chapter works through examples that use the methods of Chapters 10 and 11. 
 
 > **Worked Example:** Micro-costing a course of care
 >
-> A patient's course of care uses the resources in Table 12.1. The unit costs are given in US dollars (USD), as in the source example, and some are priced per group of units.
+> A patient's course of care uses the resources in Table 12.1. The unit costs are given in US dollars (USD), and some are priced per group of units.
 >
 > *Step 1 — convert each resource to priced units.* Doctor visits: 8 ÷ 2 = 4 priced units. Medicine: 28 ÷ 4 = 7 priced units. Hospital stay: 7 nights.
 >
@@ -3083,7 +3083,7 @@ The method follows the outcome. Chapter 11 set the rule: CMA only when equivalen
 
 > **Worked Example:** Three medicines for type 2 diabetes
 >
-> Three tablets, listed in Table 12.2, are compared for lowering fasting blood glucose. The costs and effects are illustrative, as in the source example, with the product names replaced by their generic descriptions. Costs are per patient for one month of treatment; effects are the average fall in fasting glucose measured at the end of that month. Costs and effects cover the same patients over the same period. Without such a stated basis, an ICER cannot be interpreted.
+> Three tablets, listed in Table 12.2, are compared for lowering fasting blood glucose. The costs and effects are illustrative, and the products are identified by generic descriptions rather than brand names. Costs are per patient for one month of treatment; effects are the average fall in fasting glucose measured at the end of that month. Costs and effects cover the same patients over the same period. Without such a stated basis, an ICER cannot be interpreted.
 >
 > *Question (a): medicines 1 and 2.* Same active ingredient, same strength, same effect. If their equivalence has been shown in every relevant outcome, including safety, the right method is CMA, and only cost matters. One equal glucose end point is not proof of equivalence by itself. Medicine 1 is preferred and saves 35 − 18 = 17 EGP.
 >
@@ -3095,7 +3095,7 @@ The method follows the outcome. Chapter 11 set the rule: CMA only when equivalen
 >
 > *Step 3 — locate it on the plane.* Medicine 1 costs 9 EGP less and lowers glucose by 10 points more. It falls in the south-east quadrant, so medicine 1 *dominates* medicine 3.
 >
-> *Correction to the source.* The source slide printed the ICER as −15.36. The arithmetic gives −0.9. The conclusion, dominance, is right, but it follows from the quadrant: one option is both cheaper and more effective. It does not follow from the negative sign alone.
+> *A common wrong answer.* An ICER of −15.36 is sometimes given for this example. The arithmetic gives −0.9. The conclusion, dominance, is right, but it follows from the quadrant: one option is both cheaper and more effective. It does not follow from the negative sign alone.
 
 > **Key Formula:** The ratios of this chapter
 >
@@ -3137,7 +3137,7 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 
 > **Worked Example:** Two treatments compared by CBA
 >
-> Two treatments have the costs and benefits in Tables 12.3 and 12.4, in US dollars (USD) as in the source example. Each option's costs and benefits are measured against no treatment, whose cost and benefit are taken as zero; this baseline is what gives each option's own ratio a meaning.
+> Two treatments have the costs and benefits in Tables 12.3 and 12.4, in US dollars (USD). Each option's costs and benefits are measured against no treatment, whose cost and benefit are taken as zero; this baseline is what gives each option's own ratio a meaning.
 >
 > *Step 1 — totals.* Cost of A = 10 + 5 + 30 + 15 = USD 60. Cost of B = 15 + 7 + 20 + 40 = USD 82.
 >
@@ -3190,9 +3190,9 @@ Net benefit gives the same verdict in money: positive, zero or negative.
 > **Egyptian Context:** Economic evaluation in Egypt should use local costs in EGP and, where possible, local data on disease and outcomes. As purchasing under the universal health insurance system grows (Arab Republic of Egypt, 2018), laboratories and imaging centres that can document the value of their services will be better placed.
 
 ## Key Takeaways
-- Micro-costing multiplies units by unit costs and sums them; the source's total, USD 437.35, is correct.
+- Micro-costing multiplies units by unit costs and sums them; the course of care in Section 12.2 totals USD 437.35.
 - Use CMA only when equivalence is shown; use CEA when outcomes differ in size.
-- The source's ICER of −15.36 is wrong; the correct value is −0.9 EGP per percentage point.
+- An ICER of −15.36 for the tablet example is a common wrong answer; the correct value is −0.9 EGP per percentage point.
 - Dominance comes from the quadrant: cheaper and more effective.
 - Report each option's own B/C and net benefit as well as the incremental B/C.
 - A B/C ratio above 1 is a net gain, equal to 1 is break-even, below 1 is a net loss.
@@ -3278,19 +3278,19 @@ D) The conclusion without the costs
 
 **Q4. C** — Same kind of outcome in different amounts calls for CEA.
 
-**Q5. B** — (18 − 27) ÷ (25 − 15) = −9 ÷ 10 = −0.9. Option A is the source's misprint; options C and D are the CERs.
+**Q5. B** — (18 − 27) ÷ (25 − 15) = −9 ÷ 10 = −0.9. Option A is a common wrong answer; options C and D are the CERs.
 
 **Q6. A** — Cheaper and more effective is the south-east quadrant: the option dominates.
 
 **Q7. D** — 35 ÷ 82 = 0.43. Option B is the incremental ratio from the example.
 
-**Q8. D** — Benefits equal costs: break-even. The source's rule wrongly grouped 1 with a loss.
+**Q8. D** — Benefits equal costs: break-even. A common wrong rule groups a ratio of 1 with a loss.
 
 **Q9. C** — (90,000 − 60,000) ÷ (24 − 18) = 30,000 ÷ 6 = 5,000 EGP per additional case. Options A and B are the CERs.
 
 **Q10. B** — Honest reporting shows the base case, assumptions and sensitivity analysis, including unfavourable results.
 
-**E1 — model answer points.** Medicines 1 and 2 share ingredient, strength and effect: with equivalence shown, CMA; medicine 1 saves 17 EGP. Medicines 1 and 3 differ in effect: CEA. ICER = (18 − 27) ÷ (25 − 15) = −0.9 EGP per point; medicine 1 is cheaper and more effective, south-east, so it dominates. The source's −15.36 is a misprint.
+**E1 — model answer points.** Medicines 1 and 2 share ingredient, strength and effect: with equivalence shown, CMA; medicine 1 saves 17 EGP. Medicines 1 and 3 differ in effect: CEA. ICER = (18 − 27) ÷ (25 − 15) = −0.9 EGP per point; medicine 1 is cheaper and more effective, south-east, so it dominates. An answer of −15.36 is an arithmetic error.
 
 **E2 — model answer points.** Costs 60 and 82. A: B/C 0.50, net benefit −30. B: B/C 0.43, net benefit −47. Incremental B/C 5 ÷ 22 = 0.23. Neither option returns its cost in money; B's extra cost is not justified by its extra benefit; unvalued health gains may be missing.
 

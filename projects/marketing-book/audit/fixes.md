@@ -103,3 +103,19 @@ endorsed misleading or inducement-based promotion found.
 | C-004 | fixed + verified | real | E3 answer said CEA cannot compare across diseases | Limited comparison unless a shared natural outcome is used |
 | C-005 | fixed + verified | real | Q6 asked for the "most important" classification | Stem asks which classification decides the audience of promotion |
 | C-006 | fixed + verified | real | Average ratios linked to willingness to pay | The average comparison named as invalid; decision rests on the ICER or net benefit |
+
+## Round 6 (claude-sonnet-5-5, commit 2f2c5f3)
+
+Recorded verbatim in `audit/review-r6.md`: verdict pass, 0 blocker or major, 9 minor. Run by a different Claude model after Codex usage limits blocked round 6, on the user's instruction to finish on Claude. All arithmetic reproduced.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | rejected | rejected | The reviewer's search result was misread: the executive regulations were issued by the Minister of Communications and Information Technology as Ministerial Decree No. 816 of 2025 (Al Tamimi & Company legal update, checked 2026-09-30) | No change; text and reference already correct |
+| C-002 | fixed + verified | real | Worked examples and rationales referred to an uncredited "source", "source slide" and "lecture notes" | Rephrased as common wrong answers or teaching-note usages in ch09, ch11 and ch12; history kept in the errata ledger |
+| C-003 | fixed + verified | real | Friction cost method described as excluding recruitment and training | 10.6 and 10.7 now include hiring and training in friction costs; the separate row is explained by the human capital valuation |
+| C-004 | fixed + verified | real | Common Mistake box and E2 used "consignee" for a laboratory end user | Box uses a pharmacy with consigned medicines; E2 names both arrangements |
+| C-005 | fixed + verified | real | Q2 assumed fasting for a lipid test | Stem uses a fasting glucose test |
+| C-006 | fixed + verified | real | LO3 counted six characteristics; Table 2.1 has seven | LO3 says seven |
+| C-007 | fixed + verified | real | Health-care brand loyalty stated as settled | Table row says "often reported as high"; Q5 rationale no longer rests on loyalty |
+| C-008 | fixed + verified | real | Profit peak placed in both growth and maturity | Maturity: "at or just past their peak" |
+| C-009 | fixed + verified | real | "Most countries" without the exceptions | 9.3 names the United States and New Zealand |

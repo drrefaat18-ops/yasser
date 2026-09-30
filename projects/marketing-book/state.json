@@ -41,17 +41,17 @@
     "design/chapter-plan.json": "bf40441202ed22e88df31d7c668387a6f38715ccd89710c2732b147c1d408af5",
     "rework/00-front-matter.md": "e9f5f17ab1607dd1bffb898a269858db5a1965fedb3cf3e4dc0c770b67bdb388",
     "rework/ch01.md": "69320bb4d34d4b6e14e92a4d673b67158a0380cec855af53cd2bf9e80444eb6e",
-    "rework/ch02.md": "cd8fdd2e4230bea88943972767b011a262067d6ecf87d73615afd96bae266ba1",
+    "rework/ch02.md": "870bebab3a0fc9fcb6c2e3e6396be04274367710715e5e1eaf74f0b324375db6",
     "rework/ch03.md": "3c6a2527658df648d673b0d14c42e5187a98f93d4679188de816e8b4e7f95760",
     "rework/ch04.md": "f12c4225676c4c84175ad54a4f3575d641080cca79c6825ed4ba16fa67fee82b",
-    "rework/ch05.md": "7dcc00112e78dfc1034140d21f578cdc4df59cc1f703be3a82cd7f17188887e1",
-    "rework/ch06.md": "0fac78d4af43397b667a3d610130347d649576f362f9e87d2e3e2f4805bee58c",
+    "rework/ch05.md": "00b256beb678d39508b8309558a8cbead31376c878c21b653e06f73df5e9069b",
+    "rework/ch06.md": "fe084ab71e5d0c00f232d37d23247dfe4762ff09595c3dcc611b3a8c8393d9c5",
     "rework/ch07.md": "cc78b1c278f3e9c971306980e9b910fc692a97dadebe648d644fa8b82ff4c38e",
-    "rework/ch08.md": "4167f7657da205237196410be40bca2c1766fa1a2bb40cfc1c7507e463334504",
-    "rework/ch09.md": "d5c0b993d12082c9eb4cd3dd717253b31b0830b1653bde132f3d5bf7be7b5761",
-    "rework/ch10.md": "1aa0310e154a50f81cd10fa2bc1ad72b90078fa09359fe6e5b6cc2de302878c9",
-    "rework/ch11.md": "d438579135a203afbb98cad95525bb060a00114e72fb6391f98a6013d414ede9",
-    "rework/ch12.md": "8a794a06b442ee86df380538da7badcc1442112241216c2b9e08e468ad88dcf5",
+    "rework/ch08.md": "93276b1c6e9164a43111052d03f9f5e09b5f65b342a716d413fe880a13f5c367",
+    "rework/ch09.md": "b0081121f9b950c3f08a0f70486a523582dc9565121d995bb676d4698c6275b6",
+    "rework/ch10.md": "dd24a4b65a5acd21515564e82c5e3736a23fe78bf4f388fe67350962ce45a6d7",
+    "rework/ch11.md": "3bb18e6ff1c7a5efc8863ea18b25882b598e66dfc907b540760d5406bd51168b",
+    "rework/ch12.md": "9fed690c700be40275f4813d4ef045d050ac29542aed4f0c5143d54352f983c4",
     "rework/errata-ledger.md": "bf19b30b3be7d84ababe852df91995592d1229fa8cfed1d3c9c7ad093555c6a7",
     "rework/figures/figures.json": "94ad47aee242b293f56f008432e8e241c869cdeed56edd6f4be6fb8bd74abd10",
     "rework/figures/src/ch04-seven-ps.svg": "0bf3367c72f698aeabef6dd93d20311d77f0a76994ec5d005ca5d1b8ca6374bb",
@@ -65,9 +65,9 @@
     "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
    },
    "outputs": {
-    "build/Healthcare_Marketing.docx": "0ade8c51e6eb551cfe9caee2bb4f0563c69ad31d7709318ca2375b99186314ab",
-    "build/Healthcare_Marketing.md": "131d94329e3a5bb28d3c255f4c75ec840efab2880afa0104d9dfd28f0c7956f3",
-    "build/Healthcare_Marketing.pdf": "707746cbd49868bc69bbb2fd52dea5339b1fc972142225c5b0c011d465a691ef",
+    "build/Healthcare_Marketing.docx": "83f4fb2415a513493690b20e364182a7985a595b916b5c8d407d9db900da32c4",
+    "build/Healthcare_Marketing.md": "ada8fadf245f0d2c6b08bac984079488d2f6b1fec3b585f3d3b64db0f25d4445",
+    "build/Healthcare_Marketing.pdf": "0a66486faa02b17ec315b95feddf291965f522bbb67133ca02d7c5c15078cc01",
     "build/build-report.json": "ec2df2414c2e2ee01c10fe60bad65d1ad984a08575791f47db15ea5881bc8228",
     "build/checkpoints/cover.png": "53bcffc65e4f58e31dd8736f04d68a6303b50062101532508edeee94989dd8bf",
     "build/checkpoints/first-chapter.png": "df875dcd01252eca3cc74713f7ebaaeb29852d4337cb89377d6a37082d2dbce7",
@@ -90,7 +90,7 @@
    "pdf_engine": "html",
    "stage": "build",
    "status": "ok",
-   "time": "2026-09-30T06:22:47Z",
+   "time": "2026-09-30T08:40:17Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948"
   },
   "design": {
@@ -229,7 +229,7 @@
   },
   "rework": {
    "args": {},
-   "checker_report_sha256": "9b92ee5f818c46ccbb0106296f771f3c6bb263f6019930b3f42c2fd6e47ace85",
+   "checker_report_sha256": "7660e3010a4f90fdc679060fbb7d5d715dc9c10226b229cbad9b36f7722ff35f",
    "inputs": {
     "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
     "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -244,17 +244,17 @@
    "outputs": {
     "rework/00-front-matter.md": "e9f5f17ab1607dd1bffb898a269858db5a1965fedb3cf3e4dc0c770b67bdb388",
     "rework/ch01.md": "69320bb4d34d4b6e14e92a4d673b67158a0380cec855af53cd2bf9e80444eb6e",
-    "rework/ch02.md": "cd8fdd2e4230bea88943972767b011a262067d6ecf87d73615afd96bae266ba1",
+    "rework/ch02.md": "870bebab3a0fc9fcb6c2e3e6396be04274367710715e5e1eaf74f0b324375db6",
     "rework/ch03.md": "3c6a2527658df648d673b0d14c42e5187a98f93d4679188de816e8b4e7f95760",
     "rework/ch04.md": "f12c4225676c4c84175ad54a4f3575d641080cca79c6825ed4ba16fa67fee82b",
-    "rework/ch05.md": "7dcc00112e78dfc1034140d21f578cdc4df59cc1f703be3a82cd7f17188887e1",
-    "rework/ch06.md": "0fac78d4af43397b667a3d610130347d649576f362f9e87d2e3e2f4805bee58c",
+    "rework/ch05.md": "00b256beb678d39508b8309558a8cbead31376c878c21b653e06f73df5e9069b",
+    "rework/ch06.md": "fe084ab71e5d0c00f232d37d23247dfe4762ff09595c3dcc611b3a8c8393d9c5",
     "rework/ch07.md": "cc78b1c278f3e9c971306980e9b910fc692a97dadebe648d644fa8b82ff4c38e",
-    "rework/ch08.md": "4167f7657da205237196410be40bca2c1766fa1a2bb40cfc1c7507e463334504",
-    "rework/ch09.md": "d5c0b993d12082c9eb4cd3dd717253b31b0830b1653bde132f3d5bf7be7b5761",
-    "rework/ch10.md": "1aa0310e154a50f81cd10fa2bc1ad72b90078fa09359fe6e5b6cc2de302878c9",
-    "rework/ch11.md": "d438579135a203afbb98cad95525bb060a00114e72fb6391f98a6013d414ede9",
-    "rework/ch12.md": "8a794a06b442ee86df380538da7badcc1442112241216c2b9e08e468ad88dcf5",
+    "rework/ch08.md": "93276b1c6e9164a43111052d03f9f5e09b5f65b342a716d413fe880a13f5c367",
+    "rework/ch09.md": "b0081121f9b950c3f08a0f70486a523582dc9565121d995bb676d4698c6275b6",
+    "rework/ch10.md": "dd24a4b65a5acd21515564e82c5e3736a23fe78bf4f388fe67350962ce45a6d7",
+    "rework/ch11.md": "3bb18e6ff1c7a5efc8863ea18b25882b598e66dfc907b540760d5406bd51168b",
+    "rework/ch12.md": "9fed690c700be40275f4813d4ef045d050ac29542aed4f0c5143d54352f983c4",
     "rework/errata-ledger.md": "bf19b30b3be7d84ababe852df91995592d1229fa8cfed1d3c9c7ad093555c6a7",
     "rework/figures/figures.json": "94ad47aee242b293f56f008432e8e241c869cdeed56edd6f4be6fb8bd74abd10",
     "rework/figures/src/ch04-seven-ps.svg": "0bf3367c72f698aeabef6dd93d20311d77f0a76994ec5d005ca5d1b8ca6374bb",
@@ -267,9 +267,9 @@
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-30T06:21:08Z",
+   "time": "2026-09-30T08:38:35Z",
    "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
-   "total_words": 34228,
+   "total_words": 34341,
    "units": {
     "ch01": {
      "args": {
@@ -292,7 +292,7 @@
       "rework/ch01.md": "69320bb4d34d4b6e14e92a4d673b67158a0380cec855af53cd2bf9e80444eb6e"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:21Z",
+     "time": "2026-09-30T08:37:48Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -304,7 +304,7 @@
      "args": {
       "unit": "ch02"
      },
-     "checker_report_sha256": "ed6d2ef3f4e7731195e0313c8f22760be9740fc59710da5a920595ba4b1df5bb",
+     "checker_report_sha256": "5a129f5603b9a756a82a2709714dc0edaed583c696de8a6214fa98c6640a5cc9",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -318,10 +318,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch02.md": "cd8fdd2e4230bea88943972767b011a262067d6ecf87d73615afd96bae266ba1"
+      "rework/ch02.md": "870bebab3a0fc9fcb6c2e3e6396be04274367710715e5e1eaf74f0b324375db6"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:25Z",
+     "time": "2026-09-30T08:37:53Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -350,7 +350,7 @@
       "rework/ch03.md": "3c6a2527658df648d673b0d14c42e5187a98f93d4679188de816e8b4e7f95760"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:29Z",
+     "time": "2026-09-30T08:37:56Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -379,7 +379,7 @@
       "rework/ch04.md": "f12c4225676c4c84175ad54a4f3575d641080cca79c6825ed4ba16fa67fee82b"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:32Z",
+     "time": "2026-09-30T08:37:59Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -391,7 +391,7 @@
      "args": {
       "unit": "ch05"
      },
-     "checker_report_sha256": "48640eb5120952303786c05220563329807f603d22db6ff455eebcf8b653532a",
+     "checker_report_sha256": "e36ca639972ef4246940c83bd07975d25f50a4535b9725f8314cea8777208e94",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -405,10 +405,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch05.md": "7dcc00112e78dfc1034140d21f578cdc4df59cc1f703be3a82cd7f17188887e1"
+      "rework/ch05.md": "00b256beb678d39508b8309558a8cbead31376c878c21b653e06f73df5e9069b"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:35Z",
+     "time": "2026-09-30T08:38:02Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -420,7 +420,7 @@
      "args": {
       "unit": "ch06"
      },
-     "checker_report_sha256": "8b2c375cb333722d8cea6c752f57c8205bd53b04d3fcd3fe54c53f5129f4ba13",
+     "checker_report_sha256": "b3b587ddfef5c4dd5d6549ee734d69e48aab3de736b376f961f1935c6aa91ab9",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -434,10 +434,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch06.md": "0fac78d4af43397b667a3d610130347d649576f362f9e87d2e3e2f4805bee58c"
+      "rework/ch06.md": "fe084ab71e5d0c00f232d37d23247dfe4762ff09595c3dcc611b3a8c8393d9c5"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:39Z",
+     "time": "2026-09-30T08:38:06Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -466,7 +466,7 @@
       "rework/ch07.md": "cc78b1c278f3e9c971306980e9b910fc692a97dadebe648d644fa8b82ff4c38e"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:42Z",
+     "time": "2026-09-30T08:38:09Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -478,7 +478,7 @@
      "args": {
       "unit": "ch08"
      },
-     "checker_report_sha256": "abf54ac577b56ca2f03462699fefa2c3497c2cd3028fe7768f3fe26bae80154f",
+     "checker_report_sha256": "60ce275e90f2ae94cc9de4916a4d90977270250ecaeb17a5dd624c68792fd1d3",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -492,10 +492,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch08.md": "4167f7657da205237196410be40bca2c1766fa1a2bb40cfc1c7507e463334504"
+      "rework/ch08.md": "93276b1c6e9164a43111052d03f9f5e09b5f65b342a716d413fe880a13f5c367"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:45Z",
+     "time": "2026-09-30T08:38:12Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 0,
@@ -507,7 +507,7 @@
      "args": {
       "unit": "ch09"
      },
-     "checker_report_sha256": "11b73c5331d0cefad49b88cf0749af5a3f42de474cd046d77fa1ceca251e6edb",
+     "checker_report_sha256": "cf968766060cbd53c034eb28213493acef916dc8bf4e5a8f249fe5d317f939fe",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -521,10 +521,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch09.md": "d5c0b993d12082c9eb4cd3dd717253b31b0830b1653bde132f3d5bf7be7b5761"
+      "rework/ch09.md": "b0081121f9b950c3f08a0f70486a523582dc9565121d995bb676d4698c6275b6"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:50Z",
+     "time": "2026-09-30T08:38:17Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -536,7 +536,7 @@
      "args": {
       "unit": "ch10"
      },
-     "checker_report_sha256": "2fd17ba2000d7e44afd011b1159b7be6ca56d19c12f8f22af7303d22e0669388",
+     "checker_report_sha256": "da542aa1010b3f8519dde3768ce8a5fa28120e3662f23b6655af46a2821e9264",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -550,10 +550,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch10.md": "1aa0310e154a50f81cd10fa2bc1ad72b90078fa09359fe6e5b6cc2de302878c9"
+      "rework/ch10.md": "dd24a4b65a5acd21515564e82c5e3736a23fe78bf4f388fe67350962ce45a6d7"
      },
      "status": "ok",
-     "time": "2026-09-30T06:20:54Z",
+     "time": "2026-09-30T08:38:21Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
@@ -565,7 +565,7 @@
      "args": {
       "unit": "ch11"
      },
-     "checker_report_sha256": "8714b2512199f837d11f4a184354a90fe010b61e0c73be2da743c7cc99c80330",
+     "checker_report_sha256": "9acf548038c271d5f46d61ab331565107ab0a1af1b53fb3b3eee492cd91a656d",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -579,10 +579,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch11.md": "d438579135a203afbb98cad95525bb060a00114e72fb6391f98a6013d414ede9"
+      "rework/ch11.md": "3bb18e6ff1c7a5efc8863ea18b25882b598e66dfc907b540760d5406bd51168b"
      },
      "status": "ok",
-     "time": "2026-09-30T06:21:00Z",
+     "time": "2026-09-30T08:38:27Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 3,
@@ -594,7 +594,7 @@
      "args": {
       "unit": "ch12"
      },
-     "checker_report_sha256": "beea3a66745e4bcd88b94a05a0b2eece6612658e6f6cfda2b8e8b14a13ff8698",
+     "checker_report_sha256": "d4940ff735993d60088f212c31cb19521b73b3931ae30d972f706d2f94947302",
      "inputs": {
       "agents/healthcare-marketing-reviewer.json": "20011e306d9528dcd390acf8f99f5184d89fec1689108da18f4814d9c8495fa9",
       "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
@@ -608,10 +608,10 @@
       "theme.json": "4894270ec1fe6713a09e178f7bb5f181d8861c4b59104b3805daebee9f683e22"
      },
      "outputs": {
-      "rework/ch12.md": "8a794a06b442ee86df380538da7badcc1442112241216c2b9e08e468ad88dcf5"
+      "rework/ch12.md": "9fed690c700be40275f4813d4ef045d050ac29542aed4f0c5143d54352f983c4"
      },
      "status": "ok",
-     "time": "2026-09-30T06:21:05Z",
+     "time": "2026-09-30T08:38:31Z",
      "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
      "verify_refs_summary": {
       "exists": 1,
