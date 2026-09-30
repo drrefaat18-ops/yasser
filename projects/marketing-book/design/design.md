@@ -1,7 +1,7 @@
 # Design — Healthcare Marketing: Marketing and Health Economics for Applied Health Sciences
 
 Inputs: `brief.json`, `rubric.json`, `template.json`, `theme.json`, `agents/healthcare-marketing-reviewer.json`
-(DEC-001); `evaluation/report.md`, `evaluation/findings.json`, `evaluation/scorecard.json` (37.0 / 100),
+(DEC-001); `evaluation/report.md`, `evaluation/findings.json`, `evaluation/scorecard.json` (33.0 / 100),
 `evaluation/codex-review.md`, `evaluation/fixes.md`.
 
 ## 1. What this book is
@@ -58,22 +58,23 @@ chapter of its own (the brief allows merging and splitting).
 
 ## 4. Chapters and budgets
 
-Budgets total 36,200 words against a template range of 28,000–45,000.
+Budgets total 34,600 words against a template range of 28,000–45,000. They were set from the
+drafted chapters, about 5% above each chapter's length, so that every chapter sits inside its ±15% band.
 
 | ID | Title | Words | Source | Notes |
 |---|---|---|---|---|
-| ch01 | Marketing in Health Care | 2900 | L1 | Current AMA definition; needs, wants and demands; value, exchange, markets; the scope of marketing for a health service |
-| ch02 | The Healthcare Market and Its Customers | 3000 | L2 second half | Who decides, pays and uses; buying triggers; the healthcare market against consumer markets; demand and price sensitivity; principles and problems of healthcare marketing |
+| ch01 | Marketing in Health Care | 3000 | L1 | Current AMA definition; needs, wants and demands; value, exchange, markets; the scope of marketing for a health service |
+| ch02 | The Healthcare Market and Its Customers | 2900 | L2 second half | Who decides, pays and uses; buying triggers; the healthcare market against consumer markets; demand and price sensitivity; principles and problems of healthcare marketing |
 | ch03 | Digital Marketing in Health Care | 2800 | L1, L2 first half | Channels, benefits, objectives, digital against traditional as tendencies; health-data privacy |
-| ch04 | The Marketing Mix: From Four Ps to Seven | 2900 | L1 marketing mix | The 4 Ps, then people, process and physical evidence for services; the service elements of a pharmaceutical product |
-| ch05 | Health Products and Services | 3000 | L3 first half | Goods and services; consumer-product classes in standard terms; medicines and medical devices; customer value |
-| ch06 | The Product Life Cycle | 2900 | L3 second half | Four stages with properties and strategies; the pharmaceutical and diagnostic cases; avoiding decline |
-| ch07 | Pricing Health Services | 3200 | L4 | Functions and kinds of price; pricing methods; demand, regulation and competition; market structures; setting the price; price policy |
-| ch08 | Distribution and Access | 3000 | L5 | Distribution and channels; channel levels for medicines and for diagnostic services; intermediaries; retail trade and pharmacies |
-| ch09 | Marketing Communications and Promotion | 3200 | L6 | The communication mix; push and pull; advertising and sales promotion; opinion leaders; the ethical and legal limits of promotion |
-| ch10 | Health-Care Costs | 3000 | L7 | Health economics and pharmacoeconomics; inputs and outcomes; perspectives; cost categories; valuing indirect costs; the cost-classification activity, corrected |
-| ch11 | Outcomes and Methods of Economic Evaluation | 3300 | L8 | ECHO outcomes; QALYs; the five methods; ICER and the cost-effectiveness plane; sensitivity analysis; steps of an evaluation |
-| ch12 | Applying Economic Evaluation | 3000 | L9 | Micro-costing, CMA against CEA with the corrected ICER, CBA with simple and incremental ratios; laboratory and imaging applications |
+| ch04 | The Marketing Mix: From Four Ps to Seven | 2650 | L1 marketing mix | The 4 Ps, then people, process and physical evidence for services; the service elements of a pharmaceutical product |
+| ch05 | Health Products and Services | 2700 | L3 first half | Goods and services; consumer-product classes in standard terms; medicines and medical devices; customer value |
+| ch06 | The Product Life Cycle | 2700 | L3 second half | Four stages with properties and strategies; the pharmaceutical and diagnostic cases; avoiding decline |
+| ch07 | Pricing Health Services | 3100 | L4 | Functions and kinds of price; pricing methods; demand, regulation and competition; market structures; setting the price; price policy |
+| ch08 | Distribution and Access | 2750 | L5 | Distribution and channels; channel levels for medicines and for diagnostic services; intermediaries; retail trade and pharmacies |
+| ch09 | Marketing Communications and Promotion | 2950 | L6 | The communication mix; push and pull; advertising and sales promotion; opinion leaders; the ethical and legal limits of promotion |
+| ch10 | Health-Care Costs | 3050 | L7 | Health economics and pharmacoeconomics; inputs and outcomes; perspectives; cost categories; valuing indirect costs; the cost-classification activity, corrected |
+| ch11 | Outcomes and Methods of Economic Evaluation | 3250 | L8 | ECHO outcomes; QALYs; the five methods; ICER and the cost-effectiveness plane; sensitivity analysis; steps of an evaluation |
+| ch12 | Applying Economic Evaluation | 2750 | L9 | Micro-costing, CMA against CEA with the corrected ICER, CBA with simple and incremental ratios; laboratory and imaging applications |
 
 ## 5. What the evaluation findings require, and where
 
@@ -95,6 +96,43 @@ the wrong statements, and `rework/errata-ledger.md` closes each one.
 | F-018 to F-021 (sources, currency) | all | APA citations; current AMA definition; the spending figure replaced or removed |
 | F-022 to F-027 (scope, 7 Ps, ethics, opinion leaders, payer and decider) | all; ch04, ch09, ch02 | Principles 1–4 of §2 |
 | F-029 to F-031 (CBA table, decision rule, micro-costing) | ch12 | Costs and benefits separated; three B/C cases; micro-costing named |
+| F-032 to F-034 (formulary rule, WTP grouping, patient perspective) | ch10 | Dominance then incremental comparison; productivity methods separated from WTP; patient and caregiver costs listed |
+| F-035 to F-038 (ACER, cost-utility rule, CMA condition, Example 2 basis) | ch11, ch12 | ACER = total C ÷ total E; incremental cost per QALY; equivalence in all relevant outcomes; cost and effect bases stated |
+| F-039 (advertising "expands scope") | ch09 | Approved indications only, citing the EDA promotion guidelines |
+| F-040, F-041 (price and QALY definitions) | ch07, ch11 | Price distinguished from cost and value; QALY = years × utility |
+
+### Mapping of every blocker and major finding
+
+| Finding | Chapter | Reason |
+|---|---|---|
+| F-001 | ch02 | Law of demand separated from elasticity; necessary care inelastic, self-paid services more elastic (also ch07). |
+| F-002 | ch10 | Incremental cost defined as ΔC between options, the ICER numerator. |
+| F-003 | ch10 | Total cost of one option excludes incremental cost; intangible costs reported separately. |
+| F-004 | ch10 | Cost activity reworked with a stated perspective; opportunity cost and replacement cost corrected. |
+| F-005 | ch11 | Cost-effectiveness plane; dominance read from the quadrant (also ch12). |
+| F-006 | ch05 | Standard terms: convenience, shopping, specialty, unsought goods; medical devices (also ch07 for price functions). |
+| F-013 | ch01 | Every chapter is explained prose; the chapter shape of §3 applies to all twelve. |
+| F-014 | ch01 | Every chapter opens with 3–5 assessed objectives. |
+| F-017 | ch01 | Ten MCQs and three essay questions per chapter, with answers. |
+| F-018 | ch01 | APA citations throughout; consolidated reference list. |
+| F-019 | ch01 | Current AMA definition, cited, with the 1985 wording noted. |
+| F-020 | ch10 | Unsourced spending figure removed (errata E-014). |
+| F-022 | ch01 | Health services first in every chapter, with the two-lens box. |
+| F-023 | ch04 | Seven Ps with people, process and physical evidence applied to laboratory and imaging. |
+| F-024 | ch09 | Ethical and legal limits of promotion, with an Ethics Check in every chapter. |
+| F-025 | ch09 | Opinion leaders defined as clinicians; regulators described as independent bodies. |
+| F-026 | ch02 | Who pays varies; Egyptian out-of-pocket payment described. |
+| F-028 | ch11 | CER and ICER distinguished; the worked example in ch12 uses ICER. |
+| F-032 | ch10 | Dominance, then incremental comparison, replaces 'most effective at lowest price'. |
+| F-033 | ch10 | Productivity methods separated from willingness to pay; friction period defined. |
+| F-034 | ch10 | Patient perspective includes time, copayments, lost income and caregiving. |
+| F-035 | ch11 | ACER = total cost ÷ total effect; ICER for decisions. |
+| F-036 | ch11 | Incremental cost per QALY against a threshold; average ratio descriptive only. |
+| F-037 | ch11 | CMA only after equivalence in all relevant outcomes (also ch12). |
+| F-038 | ch12 | Example 2 states cost per 30-day supply and effect at three months. |
+| F-039 | ch09 | Advertising limited to approved indications; EDA promotion guidelines cited. |
+| F-040 | ch07 | Price distinguished from cost and value. |
+| F-041 | ch11 | QALY = years × utility, with the utility source named. |
 
 ## 6. References
 

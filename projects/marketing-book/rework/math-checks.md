@@ -334,3 +334,24 @@ expr: (F - F/(1+r)**t)/(F/(1+r)**t)
 expect: 0.16 +- 0.005
 ```
 
+```math-check
+label: ch12 Worked Example - incremental cost per QALY of early MRI
+given: cA=20000, cB=26000, qA=8, qB=41/5
+expr: (cB-cA)/(qB-qA)
+expect: 30000 +- 0.5
+```
+
+```math-check
+label: ch12 Worked Example - average cost per QALY of A
+given: c=20000, q=8
+expr: c/q
+expect: exact 2500
+```
+
+```math-check
+label: ch12 Worked Example - average cost per QALY of B
+given: c=26000, q=41/5
+expr: c/q
+expect: 3171 +- 0.5
+```
+

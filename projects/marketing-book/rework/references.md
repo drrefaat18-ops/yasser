@@ -2,8 +2,6 @@
 
 Every work cited in this book, in one list, in APA style. Each chapter also lists the works it cites. The chapters citing each work are named at the end of its entry.
 
-American Marketing Association. (2017). *Definitions of marketing*. https://www.ama.org/the-definition-of-marketing-what-is-marketing/ (Chapter 1.)
-
 Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal Health Insurance System law*. Official Gazette. (Chapters 1, 2, 4, 7, 10, 11 and 12.)
 
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 on the protection of personal data*. Official Gazette. (Chapter 3.)
