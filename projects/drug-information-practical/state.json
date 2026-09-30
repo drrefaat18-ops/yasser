@@ -170,6 +170,327 @@
    "status": "ok",
    "time": "2026-09-30T16:20:51Z",
    "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  },
+  "rework": {
+   "args": {},
+   "checker_report_sha256": "03fb17a628294dee9c3aea5541723418547ea96f9a8ff0358466ff90c69bfae3",
+   "inputs": {
+    "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+    "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+    "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+    "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+    "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+    "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+    "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+    "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+    "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+   },
+   "outputs": {
+    "chapters/00-front-matter.md": "84eb7c2d593f244dbb6c45a1364e3a24449592ca08d2ac8dab4862197e58d46f",
+    "chapters/ch01-drug-information-centre.md": "3940d8c7c35c2bebb03ab8b237092b73c712533fab27bb92e9d456b413d87efe",
+    "chapters/ch02-drug-information-sources.md": "ac9b411ad09056aa2b730d2d6c17df849203c74dbfe70f3cff75b222daa25f36",
+    "chapters/ch03-study-designs.md": "629da26f95f6050a63b98dfb57a2cf71258109c3c0bd988c0851d49778a7768f",
+    "chapters/ch04-randomisation-blinding.md": "37263cb97769b978934ffd0dea5d3ec9cfd7ac3a703b761a2f8791e7459df81d",
+    "chapters/ch05-protocol-hypothesis-ethics.md": "c099cb7e3329ca9fc87cd1431edd9687c4fea9fe79cededf2c42629ade50cf64",
+    "chapters/ch06-critical-appraisal.md": "0cf7877e1bb165f7aa1a2cbb03fa893910e0b913ae4bd21d04810e10a71e5d59",
+    "chapters/ch07-adverse-drug-reactions.md": "47f29d006bb43ab348cad06ff06c6e4d6c2cae8b1621bb005f7342338ade5efc",
+    "chapters/ch08-adr-causality-management.md": "205f9c9216f85a3417200acff231b5eb4f615a239f944e73f450eebe6748261e",
+    "chapters/ch09-pharmacovigilance-medication-errors.md": "61353f7919a5634105d4f85a719f6f3f99fc958d05a6b5f98b844d2375ec1745",
+    "chapters/ch10-applied-case.md": "5f6f8e8d99b9a04bda2ed2f4e49d372a5340800e7314d08a546a625ee8868032",
+    "chapters/errata-ledger.md": "d0a049aff4adba709884e261ef3a47276ddc8930f252e670b69c2b01ec3c8eeb",
+    "figures/figures.json": "b60835359417b7f87393c4cbe8bfe1244d45860d0cd185a8fea2a74ac9fa3260",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/adr-management.svg": "05759d351911715af41a94c06ab981e27d1fbc0546037877e346d2377f7d42e5",
+    "figures/src/di-request-steps.svg": "18f9665aecbbaeef842390294d344617f76a28b951a29cb8a55b89e5d2339464",
+    "figures/src/evidence-pyramid.svg": "9a132dac8c046b60e3fa3362c49dafa769d5a8545e505de56ebb6fd83d3b0e88"
+   },
+   "stage": "rework",
+   "status": "ok",
+   "time": "2026-09-30T17:06:58Z",
+   "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+   "total_words": 13317,
+   "units": {
+    "ch01": {
+     "args": {
+      "unit": "ch01"
+     },
+     "checker_report_sha256": "c733c1cb66c5ae932d8d3623e8d471ca699304b30132fb05c7dcdcef00e35747",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch01-drug-information-centre.md": "3940d8c7c35c2bebb03ab8b237092b73c712533fab27bb92e9d456b413d87efe"
+     },
+     "status": "ok",
+     "time": "2026-09-30T16:57:05Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 3,
+      "total": 3
+     }
+    },
+    "ch02": {
+     "args": {
+      "unit": "ch02"
+     },
+     "checker_report_sha256": "2729573d6d2aa7e0eec6d8aca2663f6af45e5375b4ee123f94febaaec7b11a1e",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch02-drug-information-sources.md": "ac9b411ad09056aa2b730d2d6c17df849203c74dbfe70f3cff75b222daa25f36"
+     },
+     "status": "ok",
+     "time": "2026-09-30T16:58:50Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 3,
+      "total": 3
+     }
+    },
+    "ch03": {
+     "args": {
+      "unit": "ch03"
+     },
+     "checker_report_sha256": "6896edbe616a2a6f8c549acd74dda14252ca555f187b86f557cb43dcfc3a8c6b",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch03-study-designs.md": "629da26f95f6050a63b98dfb57a2cf71258109c3c0bd988c0851d49778a7768f"
+     },
+     "status": "ok",
+     "time": "2026-09-30T16:59:13Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 1,
+      "total": 3
+     }
+    },
+    "ch04": {
+     "args": {
+      "unit": "ch04"
+     },
+     "checker_report_sha256": "346cf51dd1f1f5afc7320915f72ed85748f070cc07d13b96ad7957a0c3d6c4fc",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch04-randomisation-blinding.md": "37263cb97769b978934ffd0dea5d3ec9cfd7ac3a703b761a2f8791e7459df81d"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:00:43Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 3,
+      "no_doi_allowed": 0,
+      "total": 3
+     }
+    },
+    "ch05": {
+     "args": {
+      "unit": "ch05"
+     },
+     "checker_report_sha256": "36668217738f29fd356dd5684693bc72a5135664d04ccfdbeaca40f5c22f7603",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch05-protocol-hypothesis-ethics.md": "c099cb7e3329ca9fc87cd1431edd9687c4fea9fe79cededf2c42629ade50cf64"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:01:05Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 1,
+      "no_doi_allowed": 2,
+      "total": 3
+     }
+    },
+    "ch06": {
+     "args": {
+      "unit": "ch06"
+     },
+     "checker_report_sha256": "729b1408ce718de28dc7d5f049dbf4fa2d4fb17f5aa008437fbf74d0be6a56d1",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch06-critical-appraisal.md": "0cf7877e1bb165f7aa1a2cbb03fa893910e0b913ae4bd21d04810e10a71e5d59"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:02:22Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 1,
+      "total": 3
+     }
+    },
+    "ch07": {
+     "args": {
+      "unit": "ch07"
+     },
+     "checker_report_sha256": "579907e705cc6d666b4b15f1803b9091d1e08fe581ea28c106636fef95545b5b",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch07-adverse-drug-reactions.md": "47f29d006bb43ab348cad06ff06c6e4d6c2cae8b1621bb005f7342338ade5efc"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:02:29Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 1,
+      "total": 3
+     }
+    },
+    "ch08": {
+     "args": {
+      "unit": "ch08"
+     },
+     "checker_report_sha256": "cf1c50def60fc941641e2bd20f9aa270f5b736fb5e44796755fc0ae6690b7e26",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch08-adr-causality-management.md": "205f9c9216f85a3417200acff231b5eb4f615a239f944e73f450eebe6748261e"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:04:07Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 2,
+      "total": 4
+     }
+    },
+    "ch09": {
+     "args": {
+      "unit": "ch09"
+     },
+     "checker_report_sha256": "6e67bc1b1f2d491da2e6255211519a51627ee1802f469677d4acba660201c445",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch09-pharmacovigilance-medication-errors.md": "61353f7919a5634105d4f85a719f6f3f99fc958d05a6b5f98b844d2375ec1745"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:04:17Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 3,
+      "total": 5
+     }
+    },
+    "ch10": {
+     "args": {
+      "unit": "ch10"
+     },
+     "checker_report_sha256": "03bfeedfc3be8c433079db611fabb783d4c244d3be6c7ac242b123d421c54dea",
+     "inputs": {
+      "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+      "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+      "design/chapter-plan.json": "0c51dca4108673cd43a6a11aba39b85b6a143369d1d8d4a9842fd4bab70095c1",
+      "design/design.md": "0c1a84375427409f7748397e1a2a9e7637d7d095bb516cd6eaf7bf243b43c3ec",
+      "design/errata-seed.md": "6d4a5251458f69a59c4f16a6b234d3af0215ca4eb42c3a616e7074cdcad8ffae",
+      "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+      "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+      "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
+      "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
+     },
+     "outputs": {
+      "chapters/ch10-applied-case.md": "5f6f8e8d99b9a04bda2ed2f4e49d372a5340800e7314d08a546a625ee8868032"
+     },
+     "status": "ok",
+     "time": "2026-09-30T17:05:50Z",
+     "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 1,
+      "total": 3
+     }
+    }
+   }
   }
  },
  "schema_version": 1
