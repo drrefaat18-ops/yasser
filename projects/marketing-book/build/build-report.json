@@ -8,7 +8,7 @@
  },
  "chem_unverified": [],
  "docx": {
-  "images": 6,
+  "images": 22,
   "parts": [
    "[Content_Types].xml",
    "_rels/.rels",
@@ -108,11 +108,27 @@
    "word/header8.xml",
    "word/header9.xml",
    "word/media/image1.png",
+   "word/media/image10.png",
+   "word/media/image11.png",
+   "word/media/image12.jpg",
+   "word/media/image13.png",
+   "word/media/image14.png",
+   "word/media/image15.png",
+   "word/media/image16.jpg",
+   "word/media/image17.png",
+   "word/media/image18.png",
+   "word/media/image19.png",
    "word/media/image2.png",
+   "word/media/image20.png",
+   "word/media/image21.png",
+   "word/media/image22.png",
    "word/media/image3.png",
    "word/media/image4.png",
    "word/media/image5.png",
    "word/media/image6.png",
+   "word/media/image7.jpg",
+   "word/media/image8.png",
+   "word/media/image9.jpg",
    "word/numbering.xml",
    "word/settings.xml",
    "word/styles.xml",
@@ -270,6 +286,102 @@
    "png": "rework/figures/out/ch11-ce-plane.png",
    "status": "rendered",
    "svg": "rework/figures/out/ch11-ce-plane.svg"
+  },
+  {
+   "id": "ch01-marketing-process",
+   "png": "rework/figures/out/ch01-marketing-process.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch01-marketing-process.svg"
+  },
+  {
+   "id": "ch02-customer-roles",
+   "png": "rework/figures/out/ch02-customer-roles.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch02-customer-roles.svg"
+  },
+  {
+   "id": "ch02-demand-elasticity",
+   "png": "rework/figures/out/ch02-demand-elasticity.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch02-demand-elasticity.svg"
+  },
+  {
+   "id": "ch03-online-booking",
+   "png": "rework/figures/out/ch03-online-booking.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch03-online-booking.svg"
+  },
+  {
+   "id": "ch03-campaign-steps",
+   "png": "rework/figures/out/ch03-campaign-steps.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch03-campaign-steps.svg"
+  },
+  {
+   "id": "ch04-ct-room",
+   "png": "rework/figures/out/ch04-ct-room.jpg",
+   "status": "copied",
+   "svg": null
+  },
+  {
+   "id": "ch04-blueprint",
+   "png": "rework/figures/out/ch04-blueprint.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch04-blueprint.svg"
+  },
+  {
+   "id": "ch05-lab-culture",
+   "png": "rework/figures/out/ch05-lab-culture.jpg",
+   "status": "copied",
+   "svg": null
+  },
+  {
+   "id": "ch05-customer-value",
+   "png": "rework/figures/out/ch05-customer-value.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch05-customer-value.svg"
+  },
+  {
+   "id": "ch06-pet-mri",
+   "png": "rework/figures/out/ch06-pet-mri.jpg",
+   "status": "copied",
+   "svg": null
+  },
+  {
+   "id": "ch07-break-even",
+   "png": "rework/figures/out/ch07-break-even.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch07-break-even.svg"
+  },
+  {
+   "id": "ch08-cold-chain",
+   "png": "rework/figures/out/ch08-cold-chain.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch08-cold-chain.svg"
+  },
+  {
+   "id": "ch08-pharmacy-counter",
+   "png": "rework/figures/out/ch08-pharmacy-counter.jpg",
+   "status": "copied",
+   "svg": null
+  },
+  {
+   "id": "ch09-awareness-day",
+   "png": "rework/figures/out/ch09-awareness-day.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch09-awareness-day.svg"
+  },
+  {
+   "id": "ch11-echo",
+   "png": "rework/figures/out/ch11-echo.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch11-echo.svg"
+  },
+  {
+   "id": "ch12-method-choice",
+   "png": "rework/figures/out/ch12-method-choice.png",
+   "status": "rendered",
+   "svg": "rework/figures/out/ch12-method-choice.svg"
   }
  ],
  "figure_versions": {
@@ -306,14 +418,14 @@
  ],
  "pdf": {
   "bookmarks": 191,
-  "pages": 129
+  "pages": 136
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 129
+    "pages": 136
    },
    "message": "",
    "status": "pass"

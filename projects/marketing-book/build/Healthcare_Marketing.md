@@ -84,7 +84,12 @@ Kotler and Keller (2016) put the same idea more simply. Marketing is meeting nee
 
 ## 1.3 The Building Blocks of Marketing
 
-Five linked ideas make up the marketing process. They appear in every later chapter.
+Five linked ideas make up the marketing process. They appear in every later chapter, and Figure 1.1 shows how they connect.
+
+![A cycle of five boxes around a central circle labelled The marketing process: Needs, wants and demands; Products and services; Value, satisfaction and quality; Exchange and relationships; and Markets, joined by arrows in that order and back to the start.](../rework/figures/out/ch01-marketing-process.png)
+
+*Figure 1.1 — The five building blocks of the marketing process. Each leads to the next, and markets shape the needs a service sets out to meet. In health care, professionals often define the need, while patients shape wants and demand.*  
+Original diagram (original)
 
 ### Needs, wants and demands
 
@@ -319,7 +324,12 @@ Traditionally, medicine companies reached doctors through sales representatives,
 
 In most consumer markets one person decides, pays and uses. A buyer chooses a shirt, pays for it and wears it. Health care often splits these roles among several people.
 
-The **decider** chooses the service. For a prescribed test or scan this is usually the doctor. The **payer** funds it: the patient, an insurer, an employer or the state. The **user** receives it: the patient. The **influencer** shapes the choice without deciding it: a family member, a friend, a pharmacist or a website.
+The **decider** chooses the service. For a prescribed test or scan this is usually the doctor. The **payer** funds it: the patient, an insurer, an employer or the state. The **user** receives it: the patient. The **influencer** shapes the choice without deciding it: a family member, a friend, a pharmacist or a website. Figure 2.1 shows the four roles.
+
+![A rounded box labelled A prescribed test or scan in the centre, with four boxes pointing to it: Decider, usually the doctor; Payer, the patient, insurer, employer or state; Influencer, a family member, friend, pharmacist or website; and User, the patient.](../rework/figures/out/ch02-customer-roles.png)
+
+*Figure 2.1 — The four customer roles in a health-care purchase. For a prescribed test or scan, the decider, payer, user and influencer are often different people, and a service must satisfy each of them.*  
+Original diagram (original)
 
 The split changes the whole marketing task. A laboratory that serves only patients may ignore the doctors who send them. An imaging centre that pleases doctors but mistreats patients will lose them to a competitor when they have a choice.
 
@@ -395,7 +405,12 @@ Demand for necessary care is usually inelastic. A patient with suspected appendi
 >
 > *Interpretation.* The value is below 1, so demand is inelastic over this range. Revenue rises from 300 × 400 = 120,000 EGP to 270 × 500 = 135,000 EGP. The laboratory earns more, but it has lost thirty patients a month who may now go without the test.
 
-The last sentence of the example is the health-care point. A price that does not hurt revenue can still hurt access.
+The last sentence of the example is the health-care point. A price that does not hurt revenue can still hurt access. Figure 2.2 contrasts this inelastic demand with the elastic demand of an elective service.
+
+![Two price–quantity graphs. The left graph has a steep blue demand line through the points 400 EGP with 300 tests and 500 EGP with 270 tests. The right graph has a flatter coral line on which a small rise in price moves the quantity a long way to the left.](../rework/figures/out/ch02-demand-elasticity.png)
+
+*Figure 2.2 — Inelastic and elastic demand. On the left, the vitamin D test of the worked example: a 25% rise in price cuts quantity by only 10%. On the right, an illustrative elective panel, where a small price rise causes a large fall in quantity.*  
+Original diagram (original)
 
 ## 2.6 Principles of Marketing Management in Health Care
 
@@ -631,7 +646,12 @@ Many Egyptian patients, especially older ones, still rely on a doctor's advice a
 
 **Educational content.** Short articles and videos on test preparation, what a scan feels like, or when screening is due. Content must be accurate and reviewed by a qualified professional.
 
-**Online booking and results.** Booking systems spread demand. Secure result portals save trips. Both improve service quality, which is itself marketing.
+**Online booking and results.** Booking systems spread demand. Secure result portals save trips. Both improve service quality, which is itself marketing (Figure 3.1).
+
+![An illustration of a woman in a headscarf sitting on a sofa and reaching to a large phone. The phone screen shows a booking form for a fasting glucose test at the nearest branch at 7:00 a.m., with results online the same day and a Confirm booking button. A message bubble reads: Reminder: do not eat after 9 p.m. tonight.](../rework/figures/out/ch03-online-booking.png)
+
+*Figure 3.1 — Online booking. A patient books an early-morning fasting test on a phone and receives a preparation reminder. Booking and result systems spread demand, save trips and are part of the service's quality.*  
+Original illustration (original)
 
 **Reviews and responses.** Patients' reviews are earned media. A polite, factual reply to a complaint shows other readers how the service treats people. A reply must never reveal a patient's health information.
 
@@ -645,6 +665,13 @@ A digital campaign is a planned set of online activities with one objective. Goo
 4. **Choose the channels.** Search listings and the website for people already looking; social media for awareness; reminders by message for existing patients who have agreed to receive them.
 5. **Set the budget.** Decide what can be spent, and how it is split between channels.
 6. **Measure and review.** Choose a few indicators before starting, then compare results with the objective.
+
+Figure 3.2 shows the six steps as a cycle: what the last step learns shapes the next campaign.
+
+![Six boxes in a row joined by arrows: Set the objective, Define the audience, Write the message, Choose the channels, Set the budget, and Measure and review. A dashed arrow runs from the last box back to the first, with a list of useful indicators below.](../rework/figures/out/ch03-campaign-steps.png)
+
+*Figure 3.2 — The six steps of a digital campaign. The last step, measuring and reviewing against the objective, feeds the next campaign.*  
+Original diagram (original)
 
 The indicators should measure what the service values. Useful ones are appropriate bookings, cost per booking, the share of patients who arrive correctly prepared, and complaints. Clicks and followers show only that people saw something.
 
@@ -870,7 +897,12 @@ A process can be drawn as a sequence of steps. Each step is a chance to delight 
 
 ### Physical evidence
 
-Physical evidence reassures patients about what they cannot see. A patient who sees the phlebotomist open a sterile needle from an intact sealed wrapper trusts the laboratory's hygiene. A report with clear reference ranges and the laboratory's accreditation mark signals care.
+Physical evidence reassures patients about what they cannot see. A patient who sees the phlebotomist open a sterile needle from an intact sealed wrapper trusts the laboratory's hygiene. A report with clear reference ranges and the laboratory's accreditation mark signals care. Figure 4.2 shows the physical evidence of an imaging room.
+
+![A photograph of a CT scanner room: a large ring-shaped scanner with a patient table covered by a clean sheet, radiation safety signs on the wall beside it and a drip stand to the right.](../rework/figures/out/ch04-ct-room.jpg)
+
+*Figure 4.2 — Physical evidence in an imaging centre. The patient cannot judge the scanner's technical performance, but sees the room: its cleanliness, clean linen, clear safety signs and working equipment.*  
+Photograph: Romainbehar, via Wikimedia Commons (CC0)
 
 > **In Practice:** A laboratory branch receives complaints about long waits in the morning. The team maps the process and finds that registration and payment happen at one desk. They add a second desk for patients who booked online and move payment to the end. The morning wait falls sharply. No price, product or promotion changed. A process change improved the service, and satisfaction rose.
 
@@ -912,7 +944,12 @@ A blueprint has four layers. The top layer shows the patient's actions: booking,
 
 Drawing the blueprint reveals **fail points**, the steps where the service most often goes wrong. In a laboratory these are often sample labelling, transport delays and results that do not reach the doctor. In an imaging centre they are often incomplete safety screening, rescheduled appointments and delayed reports. Each fail point is a place to add a check, such as a second identification step before sampling.
 
-The blueprint also shows where physical evidence matters. The patient cannot see the analyser or the reporting workstation, so the reception, the collection room and the printed report must carry the signals of quality.
+The blueprint also shows where physical evidence matters. The patient cannot see the analyser or the reporting workstation, so the reception, the collection room and the printed report must carry the signals of quality. Figure 4.3 shows a blueprint of a laboratory blood test.
+
+![A grid with four labelled rows: Patient actions (books, arrives, registers, waits, gives sample, gets result); Front-stage staff (booking staff, receptionist, identity check, calling the patient, phlebotomist, result sent); Back-stage actions below a dashed line of visibility (labels tube, transports, analyses, validates and reports); and Support processes (information system, reagent supply, equipment maintenance). Coral circles marked F sit on labelling, transport and result delivery.](../rework/figures/out/ch04-blueprint.png)
+
+*Figure 4.3 — A service blueprint of a laboratory blood test. The line of visibility separates what the patient sees from the back-stage work; F marks the usual fail points.*  
+Original diagram (original)
 
 > **In Practice:** An imaging centre draws the blueprint of an MRI appointment. It finds that patients are asked about metal implants twice, once by phone and once at the scanner, but never in writing. The team adds a short written checklist at registration, signed by the patient and checked by the radiographer. Safety improves and the scanner loses fewer slots to last-minute exclusions.
 
@@ -1051,7 +1088,12 @@ By the end of this chapter you will be able to:
 
 ## 5.1 Goods and Services
 
-A **good** is a physical product made for sale to satisfy a need. A service, as Chapter 4 defined it, is an act or performance. Most health offerings combine the two. A glucose meter is a good sold with the service of training. A CT scan is a service that uses goods: the scanner, contrast medium and a printed report.
+A **good** is a physical product made for sale to satisfy a need. A service, as Chapter 4 defined it, is an act or performance. Most health offerings combine the two. A glucose meter is a good sold with the service of training. A CT scan is a service that uses goods: the scanner, contrast medium and a printed report. Figure 5.1 shows a laboratory service that depends on goods.
+
+![A photograph of a laboratory worker in gloves and a white coat streaking a red culture plate with a swab inside a clear safety cabinet, with a stack of plates beside them.](../rework/figures/out/ch05-lab-culture.jpg)
+
+*Figure 5.1 — A laboratory service uses goods. A microbiology culture needs plates, swabs and reagents, but what the patient buys is the skilled performance that turns them into a reliable result.*  
+Photograph: U.S. Air Force, Airman 1st Class Ashley Thum, via Wikimedia Commons (public-domain)
 
 Customers do not buy goods or services for their own sake. They buy a bundle of benefits: variety, quality, design, features, brand name, packaging and service. They expect the bundle to satisfy a need.
 
@@ -1178,6 +1220,13 @@ Customers must believe the product is worth more than its price (Kotler & Keller
 > Laboratory B: perceived benefit 75; money 35, travel and waiting 5, anxiety 5. Total cost = 35 + 5 + 5 = 45. Customer value = 75 − 45 = 30.
 >
 > Laboratory B charges more money but offers more value, because it is close by and quick. Price is only one part of cost.
+
+Figure 5.2 draws the two laboratories' benefits and costs side by side.
+
+![A bar chart on a 100-point scale. For Laboratory A a green benefit bar of 80 stands beside a stacked cost bar of 55 (money 30, travel and waiting 20, anxiety 5), and the gap is labelled Value 25. For Laboratory B a benefit bar of 75 stands beside a cost bar of 45 (money 35, travel and waiting 5, anxiety 5), labelled Value 30.](../rework/figures/out/ch05-customer-value.png)
+
+*Figure 5.2 — Customer value in the worked example. Laboratory B charges more money than Laboratory A, but its lower travel and waiting cost gives the patient more value: 30 points against 25.*  
+Original diagram (original)
 
 ## 5.5 Properties That Create Value
 
@@ -1458,7 +1507,12 @@ Health technologies follow life cycles with features of their own.
 
 **Diagnostic tests and evidence.** A laboratory test's life depends on evidence and guidelines. A test enters growth when a guideline recommends it, and it enters decline when a better test replaces it or when evidence shows it adds little. A laboratory that reviews its menu every year keeps tests that help and retires tests that no longer do.
 
-**Imaging equipment and upgrades.** An imaging centre faces two life cycles at once: the cycle of each type of examination, and the cycle of each machine. Scanners age, and their maintenance costs rise while newer models offer faster scans and lower doses. The decision to replace a scanner weighs these against the cost of the new one. Chapters 10 to 12 give the tools for that decision.
+**Imaging equipment and upgrades.** An imaging centre faces two life cycles at once: the cycle of each type of examination, and the cycle of each machine. Scanners age, and their maintenance costs rise while newer models offer faster scans and lower doses. The decision to replace a scanner weighs these against the cost of the new one. Chapters 10 to 12 give the tools for that decision. Figure 6.2 shows a newer hybrid technology at an early stage of its life cycle.
+
+![A photograph of a man lying on the table of a large white combined PET-MRI scanner while a clinician in a white coat stands beside him.](../rework/figures/out/ch06-pet-mri.jpg)
+
+*Figure 6.2 — A new imaging technology. A combined PET-MRI scanner at its introduction is costly and available in few centres; its use grows as evidence and payers' coverage follow.*  
+Photograph: NIH Image Gallery, National Institutes of Health, via Wikimedia Commons (public-domain)
 
 **Payment rules.** In health care, a decision by a payer to cover a service can move it from introduction to growth almost overnight. Withdrawal of coverage can push it into decline just as fast. Marketing plans must therefore follow coverage decisions as closely as they follow competitors.
 
@@ -1680,6 +1734,13 @@ Other approaches include psychological pricing, such as 199 instead of 200, and 
 > *Step 3 — break-even volume at that price.* Contribution per test = 300 − 120 = 180 EGP. Break-even volume = 60,000 ÷ 180 = 333.3, so 334 tests a month.
 >
 > *Interpretation.* At 300 EGP the test covers its costs once monthly volume passes 334 tests. If demand turns out to be 300 tests, the service loses money at this price. Cost-plus pricing hides that risk, because the full cost per test was worked out at an assumed volume. Always check the break-even volume against a realistic forecast of demand.
+
+Figure 7.1 shows the same calculation as a break-even chart.
+
+![A line chart with tests per month from 0 to 600 on the horizontal axis and EGP per month from 0 to 180,000 on the vertical axis. A dashed flat line marks the fixed cost of 60,000. A blue total cost line rises from 60,000 to 132,000, and a green revenue line rises from 0 to 180,000. They cross at 333.3 tests, marked with a coral dot. The area to the left is labelled Loss and the area to the right Surplus, with the expected volume of 500 marked.](../rework/figures/out/ch07-break-even.png)
+
+*Figure 7.1 — The break-even chart for the new hormone test. Revenue at 300 EGP per test crosses total cost at 333.3 tests a month, so the test needs 334 tests to cover its costs; below that volume it makes a loss.*  
+Original diagram (original)
 
 ### Demand-based pricing
 
@@ -2010,7 +2071,12 @@ A **pharmaceutical warehouse** is a licensed establishment that stores medicines
 
 International guidance on good distribution practice sets standards for storage, transport, records and recalls (World Health Organization, 2010). Its purpose is that a medicine reaches the patient with the quality it had when it left the factory.
 
-Laboratories and imaging departments depend on the same kind of distribution. Reagents, calibrators and quality-control materials are supplied by specialised distributors of in-vitro diagnostic products, and many must be kept cold from the manufacturer to the laboratory refrigerator. A break in this cold chain can change a reagent's performance and so the patient's result. Iodinated and gadolinium contrast media for imaging are stored within the temperature range on their labels and are tracked by batch so that a recall can reach every department that holds them. When a laboratory chooses a supplier, storage and delivery conditions are part of the quality it is buying, not only the price.
+Laboratories and imaging departments depend on the same kind of distribution. Reagents, calibrators and quality-control materials are supplied by specialised distributors of in-vitro diagnostic products, and many must be kept cold from the manufacturer to the laboratory refrigerator. A break in this cold chain can change a reagent's performance and so the patient's result. Iodinated and gadolinium contrast media for imaging are stored within the temperature range on their labels and are tracked by batch so that a recall can reach every department that holds them. When a laboratory chooses a supplier, storage and delivery conditions are part of the quality it is buying, not only the price. Figure 8.2 shows the links of this cold chain.
+
+![An illustration of four stages joined by arrows: a factory labelled Manufacturer, a refrigerated truck labelled Distributor's vehicle, a shelved cold room labelled Distributor's cold room and a refrigerator full of reagent boxes labelled Laboratory refrigerator. A thermometer marked 2–8 °C sits above each of the last three.](../rework/figures/out/ch08-cold-chain.png)
+
+*Figure 8.2 — The cold chain for laboratory reagents. Many reagents must stay within a labelled temperature range, often 2–8 °C, from the manufacturer through the distributor to the laboratory refrigerator.*  
+Original illustration (original)
 
 ## 8.8 Retail Trade and the Pharmacy
 
@@ -2024,7 +2090,12 @@ Retail trade performs these functions:
 - paying suppliers;
 - receiving, storing, labelling and pricing products.
 
-A retailer makes several marketing decisions: choosing its target market, developing its product range, offering services and a pleasant setting, setting retail prices within regulation, and informing customers. For a pharmacy, the most valuable service is professional: counselling patients on their medicines.
+A retailer makes several marketing decisions: choosing its target market, developing its product range, offering services and a pleasant setting, setting retail prices within regulation, and informing customers. For a pharmacy, the most valuable service is professional: counselling patients on their medicines (Figure 8.3).
+
+![A photograph of a woman at a pharmacy counter reading a leaflet, beside a display card about stopping smoking; a pharmacist in a white coat works at shelves of medicines behind her.](../rework/figures/out/ch08-pharmacy-counter.jpg)
+
+*Figure 8.3 — The pharmacy as a retail outlet. The counter, the shelves and the information on display are part of the service, and the pharmacist's counselling is its most valuable part.*  
+Photograph: Bill Branson, National Cancer Institute, via Wikimedia Commons (public-domain)
 
 The same retail decisions face a laboratory or imaging centre that serves patients directly. It chooses whom it serves, which tests or scans it offers, what services surround them, such as home sample collection, online results or evening hours, and its prices within regulation. Like a pharmacy, its most valuable service is professional: preparing patients correctly and explaining what a test or scan involves.
 
@@ -2303,6 +2374,13 @@ A communication campaign turns the tools of this chapter into a plan. It follows
 4. **Choose the channels.** Personal channels, such as visits and scientific evenings, or non-personal ones, such as print, online and outdoor media.
 5. **Set the budget.** Four methods are common. The **affordable method** spends what the organisation can spare. The **percentage-of-sales method** spends a fixed share of revenue. The **competitive-parity method** matches competitors' spending. The **objective-and-task method** costs the tasks needed to reach the objective. The last is the most logical, because it starts from what the campaign must achieve.
 6. **Measure the results.** Compare the outcome with the objective: new referrals, appropriate bookings, awareness among doctors.
+
+A campaign aimed at the public can use events and experiences, one of the eight modes in Table 9.1. Figure 9.2 shows a stand at a health awareness day.
+
+![An illustration of a stand under a blue banner reading Health Awareness Day and Know your numbers: ask us how to prepare for a test. A staff member stands behind a coral table labelled Free information leaflets, and two visitors, one holding a leaflet, stand beside it.](../rework/figures/out/ch09-awareness-day.png)
+
+*Figure 9.2 — A health awareness day stand. Events and experiences let a service meet the public and inform them, for example on how to prepare for a test; they must not promise results or pressure people to be tested.*  
+Original illustration (original)
 
 > **In Practice:** A laboratory launches a new rapid test for a common infection. Its audience is primary-care doctors in two districts. The objective is to inform them within two months. The message is a one-page summary of the test's accuracy and turnaround, with its limitations. The channels are personal visits and one scientific evening. The budget is set by costing these tasks. After two months the laboratory counts how many doctors requested the test and asks them what they thought of the information.
 
@@ -2742,7 +2820,12 @@ Chapter 10 measured the cost side of the balance. This chapter measures the outc
 
 ## 11.2 The ECHO Model
 
-The **ECHO model** groups outcomes into three kinds: economic, clinical and humanistic (Rascati, 2014). Research that measures them is called **outcomes research**.
+The **ECHO model** groups outcomes into three kinds: economic, clinical and humanistic (Rascati, 2014). Research that measures them is called **outcomes research**. Figure 11.1 summarises the three groups.
+
+![Three columns. Economic outcomes: fewer admissions and other resources saved, savings from treatment, production gained on returning to work. Clinical outcomes: laboratory values such as a fall in HbA1c, lives saved and deaths prevented, days of disability avoided. Humanistic outcomes: physical and social function, well-being and satisfaction, health-related quality of life.](../rework/figures/out/ch11-echo.png)
+
+*Figure 11.1 — The ECHO model. Outcomes are grouped as economic, clinical and humanistic; each economic benefit is counted only once.*  
+Original diagram (original)
 
 **Economic outcomes** are changes in resource use and money:
 
@@ -2824,11 +2907,11 @@ The **average cost-effectiveness ratio (ACER)** is the same thing as the CER: th
 
 ### Reading an ICER: the cost-effectiveness plane
 
-An ICER on its own can mislead. A negative ICER arises in two very different situations: when the new option is cheaper and more effective, and when it is more expensive and less effective. The **cost-effectiveness plane** separates them (Black, 1990). Figure 11.1 shows it.
+An ICER on its own can mislead. A negative ICER arises in two very different situations: when the new option is cheaper and more effective, and when it is more expensive and less effective. The **cost-effectiveness plane** separates them (Black, 1990). Figure 11.2 shows it.
 
 ![Two crossing axes divide the plane into four shaded quadrants. The right side is labelled more effective and the left less effective; the top is more costly and the bottom less costly. The lower-right quadrant reads Dominates, adopt. The upper-left reads Dominated, reject. The upper-right and lower-left read Trade-off. A blue point in the lower-right quadrant is labelled Example: difference in effect plus 10, difference in cost minus 9.](../rework/figures/out/ch11-ce-plane.png)
 
-*Figure 11.1 — The cost-effectiveness plane. The horizontal axis is the difference in effect and the vertical axis the difference in cost of a new option against its comparator. Dominance is read from the quadrant, not from the sign of the ICER. The marked point is the metformin example of Chapter 12.*  
+*Figure 11.2 — The cost-effectiveness plane. The horizontal axis is the difference in effect and the vertical axis the difference in cost of a new option against its comparator. Dominance is read from the quadrant, not from the sign of the ICER. The marked point is the metformin example of Chapter 12.*  
 Original diagram (original)
 
 The horizontal axis is the difference in effect; the vertical axis is the difference in cost. Each quadrant has its own meaning:
@@ -3077,7 +3160,12 @@ This chapter works through examples that use the methods of Chapters 10 and 11. 
 
 ## 12.3 Choosing Between CMA and CEA
 
-The method follows the outcome. Chapter 11 set the rule: CMA only when equivalence is shown; CEA when outcomes are of the same kind but differ in size.
+The method follows the outcome. Chapter 11 set the rule: CMA only when equivalence is shown; CEA when outcomes are of the same kind but differ in size. Figure 12.1 sets out the whole choice.
+
+![A decision flowchart. A diamond asks: Have the outcomes been shown to be equivalent? Yes leads to CMA, compare costs only. No leads to a second diamond: In what units are the outcomes measured? Natural units lead to CEA, cost per case detected or per life saved; QALYs lead to CUA, cost per QALY; money leads to CBA, benefit–cost ratio or net benefit.](../rework/figures/out/ch12-method-choice.png)
+
+*Figure 12.1 — Choosing a method of economic evaluation. CMA is used only when equivalent outcomes have been shown; otherwise the unit in which outcomes are measured decides between CEA, CUA and CBA.*  
+Original diagram (original)
 
 | Medicine | Strength | Cost (EGP) | Average fall in fasting glucose |
 |---|---|---|---|

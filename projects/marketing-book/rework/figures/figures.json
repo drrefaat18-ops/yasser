@@ -66,6 +66,182 @@
    "credit": "Original diagram",
    "licence": "original",
    "status": "generated"
+  },
+  {
+   "id": "ch01-marketing-process",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch01-marketing-process.svg",
+   "caption": "The five building blocks of the marketing process. Each leads to the next, and markets shape the needs a service sets out to meet. In health care, professionals often define the need, while patients shape wants and demand.",
+   "alt": "A cycle of five boxes around a central circle labelled The marketing process: Needs, wants and demands; Products and services; Value, satisfaction and quality; Exchange and relationships; and Markets, joined by arrows in that order and back to the start.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch02-customer-roles",
+   "chapter_id": "ch02",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch02-customer-roles.svg",
+   "caption": "The four customer roles in a health-care purchase. For a prescribed test or scan, the decider, payer, user and influencer are often different people, and a service must satisfy each of them.",
+   "alt": "A rounded box labelled A prescribed test or scan in the centre, with four boxes pointing to it: Decider, usually the doctor; Payer, the patient, insurer, employer or state; Influencer, a family member, friend, pharmacist or website; and User, the patient.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch02-demand-elasticity",
+   "chapter_id": "ch02",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch02-demand-elasticity.svg",
+   "caption": "Inelastic and elastic demand. On the left, the vitamin D test of the worked example: a 25% rise in price cuts quantity by only 10%. On the right, an illustrative elective panel, where a small price rise causes a large fall in quantity.",
+   "alt": "Two price–quantity graphs. The left graph has a steep blue demand line through the points 400 EGP with 300 tests and 500 EGP with 270 tests. The right graph has a flatter coral line on which a small rise in price moves the quantity a long way to the left.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch03-online-booking",
+   "chapter_id": "ch03",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch03-online-booking.svg",
+   "caption": "Online booking. A patient books an early-morning fasting test on a phone and receives a preparation reminder. Booking and result systems spread demand, save trips and are part of the service's quality.",
+   "alt": "An illustration of a woman in a headscarf sitting on a sofa and reaching to a large phone. The phone screen shows a booking form for a fasting glucose test at the nearest branch at 7:00 a.m., with results online the same day and a Confirm booking button. A message bubble reads: Reminder: do not eat after 9 p.m. tonight.",
+   "credit": "Original illustration",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch03-campaign-steps",
+   "chapter_id": "ch03",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch03-campaign-steps.svg",
+   "caption": "The six steps of a digital campaign. The last step, measuring and reviewing against the objective, feeds the next campaign.",
+   "alt": "Six boxes in a row joined by arrows: Set the objective, Define the audience, Write the message, Choose the channels, Set the budget, and Measure and review. A dashed arrow runs from the last box back to the first, with a list of useful indicators below.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch04-ct-room",
+   "chapter_id": "ch04",
+   "kind": "raster.existing",
+   "source": "rework/figures/src/ch04-ct-room.jpg",
+   "caption": "Physical evidence in an imaging centre. The patient cannot judge the scanner's technical performance, but sees the room: its cleanliness, clean linen, clear safety signs and working equipment.",
+   "alt": "A photograph of a CT scanner room: a large ring-shaped scanner with a patient table covered by a clean sheet, radiation safety signs on the wall beside it and a drip stand to the right.",
+   "credit": "Photograph: Romainbehar, via Wikimedia Commons",
+   "licence": "CC0",
+   "status": "existing"
+  },
+  {
+   "id": "ch04-blueprint",
+   "chapter_id": "ch04",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch04-blueprint.svg",
+   "caption": "A service blueprint of a laboratory blood test. The line of visibility separates what the patient sees from the back-stage work; F marks the usual fail points.",
+   "alt": "A grid with four labelled rows: Patient actions (books, arrives, registers, waits, gives sample, gets result); Front-stage staff (booking staff, receptionist, identity check, calling the patient, phlebotomist, result sent); Back-stage actions below a dashed line of visibility (labels tube, transports, analyses, validates and reports); and Support processes (information system, reagent supply, equipment maintenance). Coral circles marked F sit on labelling, transport and result delivery.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch05-lab-culture",
+   "chapter_id": "ch05",
+   "kind": "raster.existing",
+   "source": "rework/figures/src/ch05-lab-culture.jpg",
+   "caption": "A laboratory service uses goods. A microbiology culture needs plates, swabs and reagents, but what the patient buys is the skilled performance that turns them into a reliable result.",
+   "alt": "A photograph of a laboratory worker in gloves and a white coat streaking a red culture plate with a swab inside a clear safety cabinet, with a stack of plates beside them.",
+   "credit": "Photograph: U.S. Air Force, Airman 1st Class Ashley Thum, via Wikimedia Commons",
+   "licence": "public-domain",
+   "status": "existing"
+  },
+  {
+   "id": "ch05-customer-value",
+   "chapter_id": "ch05",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch05-customer-value.svg",
+   "caption": "Customer value in the worked example. Laboratory B charges more money than Laboratory A, but its lower travel and waiting cost gives the patient more value: 30 points against 25.",
+   "alt": "A bar chart on a 100-point scale. For Laboratory A a green benefit bar of 80 stands beside a stacked cost bar of 55 (money 30, travel and waiting 20, anxiety 5), and the gap is labelled Value 25. For Laboratory B a benefit bar of 75 stands beside a cost bar of 45 (money 35, travel and waiting 5, anxiety 5), labelled Value 30.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch06-pet-mri",
+   "chapter_id": "ch06",
+   "kind": "raster.existing",
+   "source": "rework/figures/src/ch06-pet-mri.jpg",
+   "caption": "A new imaging technology. A combined PET-MRI scanner at its introduction is costly and available in few centres; its use grows as evidence and payers' coverage follow.",
+   "alt": "A photograph of a man lying on the table of a large white combined PET-MRI scanner while a clinician in a white coat stands beside him.",
+   "credit": "Photograph: NIH Image Gallery, National Institutes of Health, via Wikimedia Commons",
+   "licence": "public-domain",
+   "status": "existing"
+  },
+  {
+   "id": "ch07-break-even",
+   "chapter_id": "ch07",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch07-break-even.svg",
+   "caption": "The break-even chart for the new hormone test. Revenue at 300 EGP per test crosses total cost at 333.3 tests a month, so the test needs 334 tests to cover its costs; below that volume it makes a loss.",
+   "alt": "A line chart with tests per month from 0 to 600 on the horizontal axis and EGP per month from 0 to 180,000 on the vertical axis. A dashed flat line marks the fixed cost of 60,000. A blue total cost line rises from 60,000 to 132,000, and a green revenue line rises from 0 to 180,000. They cross at 333.3 tests, marked with a coral dot. The area to the left is labelled Loss and the area to the right Surplus, with the expected volume of 500 marked.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch08-cold-chain",
+   "chapter_id": "ch08",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch08-cold-chain.svg",
+   "caption": "The cold chain for laboratory reagents. Many reagents must stay within a labelled temperature range, often 2–8 °C, from the manufacturer through the distributor to the laboratory refrigerator.",
+   "alt": "An illustration of four stages joined by arrows: a factory labelled Manufacturer, a refrigerated truck labelled Distributor's vehicle, a shelved cold room labelled Distributor's cold room and a refrigerator full of reagent boxes labelled Laboratory refrigerator. A thermometer marked 2–8 °C sits above each of the last three.",
+   "credit": "Original illustration",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch08-pharmacy-counter",
+   "chapter_id": "ch08",
+   "kind": "raster.existing",
+   "source": "rework/figures/src/ch08-pharmacy-counter.jpg",
+   "caption": "The pharmacy as a retail outlet. The counter, the shelves and the information on display are part of the service, and the pharmacist's counselling is its most valuable part.",
+   "alt": "A photograph of a woman at a pharmacy counter reading a leaflet, beside a display card about stopping smoking; a pharmacist in a white coat works at shelves of medicines behind her.",
+   "credit": "Photograph: Bill Branson, National Cancer Institute, via Wikimedia Commons",
+   "licence": "public-domain",
+   "status": "existing"
+  },
+  {
+   "id": "ch09-awareness-day",
+   "chapter_id": "ch09",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch09-awareness-day.svg",
+   "caption": "A health awareness day stand. Events and experiences let a service meet the public and inform them, for example on how to prepare for a test; they must not promise results or pressure people to be tested.",
+   "alt": "An illustration of a stand under a blue banner reading Health Awareness Day and Know your numbers: ask us how to prepare for a test. A staff member stands behind a coral table labelled Free information leaflets, and two visitors, one holding a leaflet, stand beside it.",
+   "credit": "Original illustration",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch11-echo",
+   "chapter_id": "ch11",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch11-echo.svg",
+   "caption": "The ECHO model. Outcomes are grouped as economic, clinical and humanistic; each economic benefit is counted only once.",
+   "alt": "Three columns. Economic outcomes: fewer admissions and other resources saved, savings from treatment, production gained on returning to work. Clinical outcomes: laboratory values such as a fall in HbA1c, lives saved and deaths prevented, days of disability avoided. Humanistic outcomes: physical and social function, well-being and satisfaction, health-related quality of life.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch12-method-choice",
+   "chapter_id": "ch12",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch12-method-choice.svg",
+   "caption": "Choosing a method of economic evaluation. CMA is used only when equivalent outcomes have been shown; otherwise the unit in which outcomes are measured decides between CEA, CUA and CBA.",
+   "alt": "A decision flowchart. A diamond asks: Have the outcomes been shown to be equivalent? Yes leads to CMA, compare costs only. No leads to a second diamond: In what units are the outcomes measured? Natural units lead to CEA, cost per case detected or per life saved; QALYs lead to CUA, cost per QALY; money leads to CBA, benefit–cost ratio or net benefit.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
   }
  ]
 }
