@@ -1,0 +1,93 @@
+{
+ "schema_version": 1,
+ "findings": [
+  {
+   "id": "F-001",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [
+    "source-reference",
+    "clarity"
+   ],
+   "location": {
+    "file": "build/Healthcare_Marketing.md",
+    "line_start": 3148,
+    "line_end": 3148
+   },
+   "claim": "The CBA interpretation refers to an uncredited 'source example', which a student reader cannot identify. The brief says the source lectures are not credited in the book, and round 6 removed other such references.",
+   "evidence": "\"The extra cost of B is not justified. The source example stopped there. Step 2 adds a second finding\"",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Rephrase without naming a source, e.g. 'Step 2, the per-option ratios, adds a second finding'."
+  },
+  {
+   "id": "F-002",
+   "pillar_id": "G4",
+   "severity": "minor",
+   "tags": [
+    "citation-coverage"
+   ],
+   "location": {
+    "file": "build/Healthcare_Marketing.md",
+    "line_start": 1471,
+    "line_end": 1471
+   },
+   "claim": "The guideline position that routine repeated vitamin D testing in healthy people is unsupported is stated as fact with no citation, in an Ethics Check that Q9 and its rationale rely on.",
+   "evidence": "\"Guidelines do not support routine repeated testing in healthy people.\"",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Cite a named guideline or review and add it to the chapter and consolidated reference lists, or soften to 'many guidelines do not recommend'."
+  },
+  {
+   "id": "F-003",
+   "pillar_id": "G4",
+   "severity": "minor",
+   "tags": [
+    "citation-coverage"
+   ],
+   "location": {
+    "file": "build/Healthcare_Marketing.md",
+    "line_start": 81,
+    "line_end": 81
+   },
+   "claim": "The AMA 1985 definition is quoted verbatim with no citation or reference entry, although the current AMA definition is cited.",
+   "evidence": "\"Older textbooks still quote the AMA's 1985 definition. It spoke of 'planning and executing the conception, pricing, promotion, and distribution of ideas, goods, and services'.\"",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Add a secondary citation if Kotler & Keller (2016) carries it, or keep a paraphrase."
+  },
+  {
+   "id": "F-004",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [
+    "generic-example",
+    "pharma-only"
+   ],
+   "location": {
+    "file": "build/Healthcare_Marketing.md",
+    "line_start": 1999,
+    "line_end": 2024
+   },
+   "claim": "Sections 8.7 and 8.8 (pharmaceutical warehouses and retail pharmacy) have no laboratory or imaging application. They are the only place in the chapter where the healthcare broadening is thin.",
+   "evidence": "\"A **pharmaceutical warehouse** is a licensed establishment that stores medicines and medical products ... Pharmacies are the retail outlets for medicines.\"",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Add one or two sentences tying warehousing and retail to reagent and contrast storage, the cold chain for diagnostic consumables, or hospital imaging supply."
+  },
+  {
+   "id": "F-005",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [
+    "egyptian-regulation",
+    "thin"
+   ],
+   "location": {
+    "file": "build/Healthcare_Marketing.md",
+    "line_start": 2320,
+    "line_end": 2320
+   },
+   "claim": "The Egyptian regulatory treatment of promotion for laboratories and imaging centres, the book's main audience, is generic and names no instrument. Only medicines have a cited Egyptian rule.",
+   "evidence": "\"Laboratories and imaging centres are bound by professional ethics and by the rules of their licensing bodies. Before running any campaign, check the current rules with the regulator.\"",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Name and cite the relevant Egyptian professional-ethics or facility-licensing advertising rule, or state explicitly that the book does not cover it."
+  }
+ ]
+}

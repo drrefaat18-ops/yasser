@@ -140,3 +140,19 @@ Recorded verbatim in `audit/review-r8.md`: verdict pass, 0 blocker or major, 2 m
 |---|---|---|---|---|
 | C-001 | fixed + verified | real | The round 7 sibling hunt missed the glossary entry for "societal marketing orientation" | Glossary entry and its generator say "the most appropriate one"; no other "only acceptable" remains |
 | C-002 | fixed + verified | real | "Owns the report but not the scan" blurred the no-ownership characteristic | Patient receives the performance and its results (images and report) but does not own the service |
+
+## Final confirmation and rescore (claude-sonnet-5-5, commit 2ad98f1)
+
+The confirmation review of the diff from 173e24d is saved as `audit/codex-audit.md`: verdict pass, and no findings.
+
+The independent rescore against the same rubric gives 87.5, against a baseline of 33.0 for the source lectures. The pillar scores are G1 9, G2 8.5, G3 8, G4 8.5, D1 8.5 and D2 9.5; they are recorded in `audit/scorecard.json`.
+
+The rescore lists 5 minor findings that remain open in the audited text; they are recorded in `audit/findings.json`. None is a blocker or major. They were left open so that the audit closes on the text the reviewer confirmed, and fixing them would re-open the audit.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| F-001 | open (minor) | real | Sibling of round 6 C-002 missed: one "source example" left in ch12 | Rephrase without naming a source |
+| F-002 | open (minor) | real | The vitamin D testing guideline position has no citation | Cite a guideline, or soften the claim |
+| F-003 | open (minor) | real | The AMA 1985 definition is quoted without a citation | Add a secondary citation, or paraphrase |
+| F-004 | open (minor) | real | ch08 §8.7–8.8 have no laboratory or imaging application | Add the reagent and contrast supply link |
+| F-005 | open (minor) | real | The Egyptian rules for laboratory and imaging promotion are generic | Name the instrument, or state the limit of coverage |
