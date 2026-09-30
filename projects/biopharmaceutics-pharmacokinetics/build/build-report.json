@@ -443,6 +443,30 @@
    },
    "message": "",
    "status": "pass"
+  },
+  {
+   "id": "PDF-HEAD",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-BLEED",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
+  },
+  {
+   "id": "PDF-DASH",
+   "measured": {
+    "count": 0
+   },
+   "message": "",
+   "status": "pass"
   }
  ],
  "pdf_engine": "html",

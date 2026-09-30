@@ -132,6 +132,7 @@
     "rework/glossary.md": "90ea8efd24bf0f197e3ed5f9e22f83190ce290d4c6ee230ebee7e4d51bdef3a6",
     "rubric.json": "dab0a8f49aa18aa8cdeae6498dbe8b16ac5f8c48269be46ac101d85871643497"
    },
+   "invalidated_by": "build@2026-09-30T21:38:27Z",
    "outputs": {
     "audit/codex-audit.md": "b55641ef1abe39c13058c6ce541341a03873163e09ef49db2f602a94e4bff3a6",
     "audit/findings.json": "59e0a83b31058dc08cb7c85efc7385a23de04ea5a819ca1a29aa272264a41d7e",
@@ -192,13 +193,13 @@
     "theme.json": "0927bf64943f2b2df0c2f62a77d15fddb0f9d5247f8428990a31fe0ea2fb4c59"
    },
    "outputs": {
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "4175d22f2fcf9a6950ebd9bd0c75aa898b2f21a6df925d32cd0c8109e3a504a0",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.docx": "065ea556137a08978e6a6589f5630a3c6aff9715feb35fc0aff03be985b8b1f6",
     "build/Biopharmaceutics_and_Pharmacokinetics_PT312.md": "1b98d69b0fa089b6adf2d104d0ab113c8060e3ec145fe86a7d99dc52f7a9c9b1",
-    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "68311a25c2e8051353e0bc6d98066396f34a09cab810247403670ec14bf6f200",
-    "build/build-report.json": "b6a2715197482aede055445eae147ce372f1e7592c5807b55d878d032f383435",
-    "build/checkpoints/cover.png": "ace3380e6e2beeb592e52709b42c6ceb0a1f6760304501186acbe841c0c7c0ef",
-    "build/checkpoints/first-chapter.png": "dac8054d1720dfadd24be8bc786fb33e5123dbbabd094c1cd8c1de7aa48d8723",
-    "build/checkpoints/first-figure.png": "6d508ea61671a1dc64760762a0f8d1ea691fa529502941620a44970dc271262f",
+    "build/Biopharmaceutics_and_Pharmacokinetics_PT312.pdf": "93d4580b42b3381fa0c035ecaa9032b5b71a6ff0b27e9ece099ae802132f08f0",
+    "build/build-report.json": "984915ddc78adc111f7683a10a638aac25bbe14a05c88a36419f4037036a97b3",
+    "build/checkpoints/cover.png": "2329f2ee260b8a2d5354fbc7d72c5dc015af18d1d70e07ab5b9c3c5508c5856e",
+    "build/checkpoints/first-chapter.png": "9313457cf36c51ace9621e0bf14aaf63de80fc8a49924730abc04ecc3a63df40",
+    "build/checkpoints/first-figure.png": "645f14a803321e4e637a00c9fa0e972416c82b2e7992ee45b3e55ff101641af8",
     "build/checkpoints/last.png": "418082abb81f5677ba5878966c447f0c03c1661177558b19bbc272b6d9dd52ba",
     "rework/figures/out/ch01-compartment-models.png": "b363cf12fa0aa15645e0187d42f2512aca9c78359320474f1310fc2f2bb38761",
     "rework/figures/out/ch01-compartment-models.svg": "09d45734bdcb860c06cbf9906c981dfc96994c3ae5d006a54f72b8cb7890b6de",
@@ -237,8 +238,8 @@
    "pdf_engine": "html",
    "stage": "build",
    "status": "ok",
-   "time": "2026-09-30T18:26:37Z",
-   "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948"
+   "time": "2026-09-30T21:40:36Z",
+   "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72"
   },
   "design": {
    "args": {},
@@ -351,8 +352,8 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-09-30T17:41:16Z",
-   "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b"
+   "time": "2026-09-30T21:36:36Z",
+   "tool_sha": "c96c149345a5cc706cd583b064c87626168040ea"
   },
   "new": {
    "args": {
@@ -426,8 +427,8 @@
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-30T18:24:11Z",
-   "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+   "time": "2026-09-30T21:38:08Z",
+   "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
    "total_words": 53246,
    "units": {
     "ch01": {
@@ -451,8 +452,8 @@
       "rework/ch01.md": "2b39d4ad54262b4c6b6f61e6410f4655b1bd49a66abe68de5d7bf2136584e438"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:21Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:18Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -480,8 +481,8 @@
       "rework/ch02.md": "020b52de0a9ec9182e45eb16e89a2cff289caf19ff448429a51abc454725231a"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:24Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:21Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -509,8 +510,8 @@
       "rework/ch03.md": "d5f2c49ed9609dc324a3f7edf39576ffddbc7e670fbd206c15760c6317fafb2c"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:27Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:24Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -538,8 +539,8 @@
       "rework/ch04.md": "60a9437ac37bb4cabd135b582ff205162f45340f81ecc0b841678186963969bc"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:30Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:28Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -567,8 +568,8 @@
       "rework/ch05.md": "f93dc5f36aedc3a8b365a250f3a9edd0cfdda2c796958d85729222af45eb1322"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:34Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:31Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -596,8 +597,8 @@
       "rework/ch06.md": "1d749d0eaba720c495bfeb73e7536482fe848c04fd46f0d274c440a2e207e70b"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:37Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:34Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -625,8 +626,8 @@
       "rework/ch07.md": "5123314cb2dd2f9875e922f3310955da509a1cdab709a89d3021f7ef52bbcb6e"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:40Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:38Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -654,8 +655,8 @@
       "rework/ch08.md": "1cacd67880774abb8993c9ace61ce42d816caa66954ca9f3a3a147764f39ccb0"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:45Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:43Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 2,
       "no_doi_allowed": 2,
@@ -683,8 +684,8 @@
       "rework/ch09.md": "73757fda59889b830ea0fb6177b67e6ca3105d6f204304edf08519f686e8c3b2"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:49Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:46Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -712,8 +713,8 @@
       "rework/ch10.md": "6f7267748b97a5581fbfea6163502cabe4ce77158a036aee54106128d06ed151"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:52Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:50Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -741,8 +742,8 @@
       "rework/ch11.md": "e3bce2b06a49c0f51e535d75cc580be08fa80684eddd7cc9ee6d56b003c02642"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:55Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:53Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -770,8 +771,8 @@
       "rework/ch12.md": "3c9414bd472ca1e22f83c97e33ff8ddbdb70e0ea87b56541a0b1022dcf44205f"
      },
      "status": "ok",
-     "time": "2026-09-30T18:23:58Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:37:56Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 2,
@@ -799,8 +800,8 @@
       "rework/ch13.md": "6e867fe525dcb0ef8ed1552ded79ee6619e459e5aa0e371acff4434ea2f1b358"
      },
      "status": "ok",
-     "time": "2026-09-30T18:24:04Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:38:02Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 2,
       "no_doi_allowed": 6,
@@ -828,8 +829,8 @@
       "rework/ch14.md": "563867fb3816f6645a19b90f2d754772c281cf2604558ebe0b90c8efa98db793"
      },
      "status": "ok",
-     "time": "2026-09-30T18:24:07Z",
-     "tool_sha": "efe3a00011bf3144e07579f39cf5e21a639cd948",
+     "time": "2026-09-30T21:38:05Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
      "verify_refs_summary": {
       "exists": 0,
       "no_doi_allowed": 4,
