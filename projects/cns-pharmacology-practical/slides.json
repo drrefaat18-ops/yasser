@@ -1,0 +1,24 @@
+{
+ "out_dir": "slides",
+ "unit_label": "Section",
+ "minutes": 40,
+ "feature_callout": "pearl",
+ "feature_glyph": "℞",
+ "case_glyph": "?",
+ "mcq_slides": true,
+ "explain_on_slide": true,
+ "speaker_notes": true,
+ "agenda": true,
+ "preset": null,
+ "fonts": {
+  "head": "Cambria",
+  "body": "Calibri"
+ },
+ "fit_to_minutes": true,
+ "callout_priority": {
+  "caution": 3,
+  "pearl": 2.5,
+  "exam-tip": 2,
+  "recap": 1
+ }
+}

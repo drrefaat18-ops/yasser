@@ -282,3 +282,20 @@ class ReviewFixTest(unittest.TestCase):
                     self.assertIn(f"harness/schemas/{sch}.v1.json", tp, f"{stage}: schema {sch} not in tool_paths")
             if stage in ("evaluate", "audit"):
                 self.assertTrue({"harness/schemas/findings.v1.json", "harness/schemas/scorecard.v1.json"} <= tp)
+
+
+class ContentOnlyGate(unittest.TestCase):   # DEC-H01: a finished book's side products ignore later tool commits only
+    def test_tool_commit_blocks_normal_gate_not_content_only(self):
+        with temp_repo("bypass", slug="bypass-book", stamp=True, with_legacy=True) as root:
+            p = root / "projects" / "bypass-book"
+            with open(root / "harness" / "schema.py", "a", encoding="utf-8") as f:
+                f.write("\n# later tool change\n")
+            subprocess.run(["git", "commit", "-qam", "tool change"], cwd=root, check=True, capture_output=True)
+            with self.assertRaises(state.GateError) as cm:
+                state.require_gates(p, "rework", repo=root)
+            self.assertIn("tool changed", str(cm.exception))
+            state.require_gates(p, "rework", repo=root, content_only=True)
+            (p / "ingest" / "normalized.md").write_text("tampered\n", encoding="utf-8")
+            with self.assertRaises(state.GateError) as cm:
+                state.require_gates(p, "rework", repo=root, content_only=True)
+            self.assertEqual(cm.exception.code, "UPSTREAM-STALE")

@@ -21,7 +21,7 @@ def _take_project(argv):
     return None
 
 
-def enforce(stage_id, argv):
+def enforce(stage_id, argv, content_only=False):
     """Removes `--project P` from argv (in place), resolves it inside projects/, runs require_gates(stage_id).
     Any failure prints `ERROR <CODE>: ...` and exits 1; there is no bypass."""
     try:
@@ -29,7 +29,7 @@ def enforce(stage_id, argv):
         if arg is None:
             raise state.GateError("PROJECT-REQUIRED", f"{argv[0]} needs --project projects/<slug>")
         project = paths.resolve_project(arg, must_exist=True)
-        state.require_gates(project, stage_id)
+        state.require_gates(project, stage_id, content_only=content_only)
         return project
     except state.GateError as e:
         print(f"ERROR {e}", file=sys.stderr)

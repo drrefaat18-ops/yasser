@@ -1,0 +1,699 @@
+{
+ "schema_version": 1,
+ "findings": [
+  {
+   "id": "F-001",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 37,
+    "line_end": 39
+   },
+   "claim": "The first drug information centre opened at the University of Kentucky Medical Center in 1962, not 1960.",
+   "evidence": "\"First DIC was developed in University of Kentucky in 1960.\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Say 1962, University of Kentucky Medical Center."
+  },
+  {
+   "id": "F-002",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 40,
+    "line_end": 42
+   },
+   "claim": "The claim that 80% of US hospitals have a DIC is unsourced; most hospitals provide drug information through pharmacists, and the number of formal centres has fallen.",
+   "evidence": "\"In United states 80% of the Hospitals having DIC.\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Drop the percentage; say that formal centres are fewer today and most drug information is given by pharmacists at the point of care."
+  },
+  {
+   "id": "F-003",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 43,
+    "line_end": 46
+   },
+   "claim": "The Egyptian drug information centre date is given without a source.",
+   "evidence": "\"Egyptian drug information center (EDIC) establishment was organized in 2012\"",
+   "source": "Egyptian Drug Authority website (edaegypt.gov.eg)",
+   "fix_hint": "Keep only if confirmed from the EDA; otherwise describe the EDA drug information and pharmacovigilance services without a date."
+  },
+  {
+   "id": "F-004",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 199,
+    "line_end": 207
+   },
+   "claim": "The online-source examples are misclassified or out of date: MEDLINE is a secondary (indexing) database, TOXNET was retired in 2019, and the FDA site and DailyMed hold official labelling, not summaries.",
+   "evidence": "\"Medscape® / TOXNET from NIH / Medline from NIH / FDA website / Daily Med (side effects)\" under \"Electronic and Online tertiary information resources\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022; NLM Technical Bulletin 2019 (TOXNET retirement)",
+   "fix_hint": "Tertiary online: Micromedex, Lexicomp, UpToDate, Medscape. Secondary: PubMed/MEDLINE, Embase. Official labelling: DailyMed, Drugs@FDA, EDA. Drop TOXNET."
+  },
+  {
+   "id": "F-005",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 252,
+    "line_end": 262
+   },
+   "claim": "Randomisation gives a known chance, equal only in 1:1 allocation; the next slides teach unequal allocation. 'Predicated' should be 'predicted'.",
+   "evidence": "\"Randomization gives each participant a known and equal chance ... cannot be predicated in advance.\"",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
+   "fix_hint": "\"Each participant has a known chance (equal in 1:1 allocation) of each group, and the next assignment cannot be predicted.\""
+  },
+  {
+   "id": "F-006",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 274,
+    "line_end": 284
+   },
+   "claim": "The listed 'disadvantages of randomisation' are limitations of controlled trials (efficacy vs effectiveness, strict criteria), not of randomisation itself.",
+   "evidence": "\"Trials which test for efficacy may not be widely applicable.\"",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
+   "fix_hint": "Rename as 'Limitations of randomised controlled trials' and explain efficacy (ideal conditions) vs effectiveness (real practice) in one table."
+  },
+  {
+   "id": "F-007",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 363,
+    "line_end": 369
+   },
+   "claim": "A trial never proves the null hypothesis; it tests H0 and either rejects it or fails to reject it.",
+   "evidence": "\"So, in a clinical trial we proof the concept relying on the H0 hypothesis.\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "\"H0 says there is no difference. The trial tests H0: if p < alpha we reject H0; otherwise we fail to reject it. Failing to reject is not proof of no difference.\""
+  },
+  {
+   "id": "F-008",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 371,
+    "line_end": 381
+   },
+   "claim": "Alpha is the significance level (false-positive risk), not 'precision'; 1 - alpha is the confidence level. Alpha 5% and beta 20% are conventional choices set by the investigator, not fixed facts.",
+   "evidence": "\"Error type 1 (Alpha) : affects precision of the clinical study. The possibility of error type 1 ( False positive) to occur is 5% So, The precision is 95% .\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Use a 2x2 table (truth vs decision): type I = false positive, alpha usually set at 0.05; type II = false negative, beta usually 0.1-0.2; power = 1 - beta (80-90%)."
+  },
+  {
+   "id": "F-009",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 395,
+    "line_end": 401
+   },
+   "claim": "The IRB definition is taken from a science-fair context ('fair, high school'); it does not describe the ethics committee of a clinical trial.",
+   "evidence": "\"A committee of specific composition at an affiliated fair, high school, or institution that reviews research plans\"",
+   "source": "ICH E6(R3) Good Clinical Practice, 2025",
+   "fix_hint": "\"An independent committee that reviews and approves a trial protocol and consent form, and monitors the trial, to protect the rights, safety and well-being of participants.\""
+  },
+  {
+   "id": "F-010",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 403,
+    "line_end": 408
+   },
+   "claim": "Informed consent is defined as permission to process personal data (a data-protection definition), not the voluntary agreement of a trial participant after full disclosure.",
+   "evidence": "\"Informed consent means asking the data subject for permission before a process ... how it will be processed.\"",
+   "source": "ICH E6(R3) Good Clinical Practice, 2025",
+   "fix_hint": "\"A participant's voluntary, documented agreement to take part, given after being told the purpose, procedures, risks, benefits and alternatives, and that they can withdraw at any time.\""
+  },
+  {
+   "id": "F-011",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 467,
+    "line_end": 474
+   },
+   "claim": "A secondary outcome is also pre-specified in the protocol; it is not any additional outcome that 'occurs' during the study.",
+   "evidence": "\"Secondary Outcome: is the additional outcome that occurs during the study.\"",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
+   "fix_hint": "\"Secondary outcomes are pre-specified outcomes of lesser importance; outcomes found only after the data are seen are exploratory.\""
+  },
+  {
+   "id": "F-012",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 479,
+    "line_end": 486
+   },
+   "claim": "Negative studies are under-published because of publication bias, not because they are usually poorly designed.",
+   "evidence": "\"Negative studies ... may not be published. These results may due to the existence of questionable data or poorly designed studies.\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Explain publication bias: well-designed negative trials matter and are often unpublished; trial registration reduces this."
+  },
+  {
+   "id": "F-013",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 524,
+    "line_end": 529
+   },
+   "claim": "The universal 500-word limit is wrong: abstract length is set by each journal (often 250-300 words).",
+   "evidence": "\"usually contain ≤500 words.\"",
+   "source": "Hopewell S et al. CONSORT for Abstracts. Lancet 2008;371:281-3",
+   "fix_hint": "Say that abstracts follow the target journal's word limit and report the required structured elements."
+  },
+  {
+   "id": "F-014",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 625,
+    "line_end": 669
+   },
+   "claim": "The ADR type names are inconsistent and Type C is wrong: B is called 'Nonpharmacologic' then 'Bizarre'; C is called 'Continuous' then 'Chemical', with paracetamol hepatotoxicity as the example. In the standard scheme C is Chronic (dose- and time-related), e.g. HPA-axis suppression with corticosteroids.",
+   "evidence": "\"Type B- (Nonpharmacologic) ... Type C- (Continuous)\"; \"Type C (Chemical) reactions ... Paracetamol: Hepatotoxicity.\"",
+   "source": "Edwards IR, Aronson JK. Adverse drug reactions: definitions, diagnosis, and management. Lancet 2000;356:1255-9",
+   "fix_hint": "One table A-F: Augmented, Bizarre, Chronic, Delayed, End of use, Failure, each with timing, dose relation and one example. Paracetamol overdose hepatotoxicity is Type A."
+  },
+  {
+   "id": "F-015",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 739,
+    "line_end": 740
+   },
+   "claim": "Pre-marketing trials are too small to see uncommon ADRs; the '<1%' threshold is imprecise.",
+   "evidence": "\"Cannot identify ADRs with incidence < 1%\"",
+   "source": "Hanley JA, Lippman-Hand A. If nothing goes wrong, is everything all right? JAMA 1983;249:1743-5",
+   "fix_hint": "Rule of three: if 0 events are seen in n patients, the true rate may still be up to about 3/n (e.g. 1 in 1,000 with 3,000 patients); rare ADRs may stay undetected until after marketing."
+  },
+  {
+   "id": "F-016",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 837,
+    "line_end": 857
+   },
+   "claim": "The causality categories omit dechallenge (improvement on withdrawal), which WHO-UMC requires for 'certain' and 'probable'.",
+   "evidence": "\"*Definite causality— ... re- administration of the medicine causes a similar reaction\"",
+   "source": "WHO-UMC. The use of the WHO-UMC system for standardised case causality assessment. Uppsala Monitoring Centre; 2018",
+   "fix_hint": "Use the WHO-UMC table: certain, probable, possible, unlikely, conditional, unassessable; show time sequence, other causes, dechallenge and rechallenge as columns."
+  },
+  {
+   "id": "F-017",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 926,
+    "line_end": 928
+   },
+   "claim": "Errors of commission are not only due to lack of knowledge; slips and lapses also cause them.",
+   "evidence": "\"2-Errors of Commission: a mistake that consists of doing something wrong due to Lack of knowledge .\"",
+   "source": "NCC MERP. Taxonomy of Medication Errors; 2001",
+   "fix_hint": "\"Commission: doing the wrong thing (wrong drug, dose, route or patient); omission: failing to do the right thing.\""
+  },
+  {
+   "id": "F-018",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1056,
+    "line_end": 1059
+   },
+   "claim": "The FDA figure for brand-name review is unsourced and out of date.",
+   "evidence": "\"FDA reviews 300 brand names in a year before they are marketed to avoid confusion of LASA drugs .\"",
+   "source": "FDA Division of Medication Error Prevention and Analysis (DMEPA), current web page",
+   "fix_hint": "Say that the FDA screens every proposed proprietary name for look-alike/sound-alike risk before approval; drop the number."
+  },
+  {
+   "id": "F-019",
+   "pillar_id": "G2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1,
+    "line_end": 1062
+   },
+   "claim": "The source is slide fragments with no learning objectives, summaries or connected explanation; text is broken into bullets and garbled tables (e.g. lines 837-948).",
+   "evidence": "\"| -Strength | of the | association | . |\"",
+   "source": "Instructional design standard (Anderson & Krathwohl 2001)",
+   "fix_hint": "Rewrite each section as a short guide: 'In This Section' objectives, tables and one flowchart, an 'At the Pharmacy' example, then 5 MCQs."
+  },
+  {
+   "id": "F-020",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 604,
+    "line_end": 609
+   },
+   "claim": "Causality is defined under 'The burden of ADRs', far from the causality section (lines 837-897).",
+   "evidence": "\"The burden of ADRs / Causality: The probability that a particular medicine is responsible\"",
+   "source": "Instructional design standard",
+   "fix_hint": "Move the definition to the causality chapter."
+  },
+  {
+   "id": "F-021",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 510,
+    "line_end": 522
+   },
+   "claim": "The biased-title example sits under a heading 'Blinding in Clinical Trials'.",
+   "evidence": "\"Blinding in Clinical Trials / An example for a biased study title:\"",
+   "source": "Instructional design standard",
+   "fix_hint": "Put the example under 'Title'."
+  },
+  {
+   "id": "F-022",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1052,
+    "line_end": 1062
+   },
+   "claim": "The role of regulatory authorities in medication errors appears after the trauma case, cut off from the medication-error slides (lines 899-949).",
+   "evidence": "\"*Role of regulatory authorities: • Important role in preventing medication errors .\"",
+   "source": "Instructional design standard",
+   "fix_hint": "Move it into the medication-error part of the ADR chapters."
+  },
+  {
+   "id": "F-023",
+   "pillar_id": "G2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 942,
+    "line_end": 948
+   },
+   "claim": "The list 'Reducing dispensing errors' mixes prescribing measures (electronic prescribing) with dispensing measures.",
+   "evidence": "\"Reducing dispensing errors : 1- Electronic prescribing\"",
+   "source": "ISMP. Key elements of medication use",
+   "fix_hint": "Group measures by stage: prescribing, dispensing, administration."
+  },
+  {
+   "id": "F-024",
+   "pillar_id": "G3",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1,
+    "line_end": 1062
+   },
+   "claim": "There are no MCQs, cases, exercises or answers in any section.",
+   "evidence": "No question appears in the source.",
+   "source": "Brief assessment (5 MCQs and one case per chapter)",
+   "fix_hint": "Write 5 single-best-answer MCQs (A-D) with one-line rationales and one practice case per chapter."
+  },
+  {
+   "id": "F-025",
+   "pillar_id": "G4",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 1,
+    "line_end": 1062
+   },
+   "claim": "The source cites no references; statistics (ADR burden, PMC size, FDA names) have no source.",
+   "evidence": "\"Studies have shown adverse drug reactions account for 1 in 16 hospital admissions\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "3-5 Vancouver references per chapter; cite Pirmohamed et al. BMJ 2004;329:15-9 for the ADR burden figures."
+  },
+  {
+   "id": "F-026",
+   "pillar_id": "G4",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 233,
+    "line_end": 246
+   },
+   "claim": "The PubMed Central size (4.8 million, dated 2018) is out of date; PMC now holds over 10 million articles.",
+   "evidence": "\"Over 4.8 million articles are available.\" \"10 June 2018\"",
+   "source": "NCBI PMC home page (current)",
+   "fix_hint": "Say 'over 10 million full-text articles' or give no number."
+  },
+  {
+   "id": "F-027",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 80,
+    "line_end": 124
+   },
+   "claim": "There is no systematic approach to answering a drug information request (the core practical skill): get requester details, background, the real question, categorise, search, answer, follow up, document.",
+   "evidence": "\"It is imperative that pharmacists know how to provide accurate and complete responses to DI requests.\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022 (modified systematic approach, Host and Kirkwood)",
+   "fix_hint": "Add a 7-step flowchart with one worked request in Chapter 1."
+  },
+  {
+   "id": "F-028",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 209,
+    "line_end": 246
+   },
+   "claim": "Section 2 stops after secondary sources; primary literature (definition, types, pros and cons) is missing.",
+   "evidence": "\"Secondary resources ... PubMed Central ... Google Scholar\" (the deck ends here)",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Add primary literature: original research (trials, cohort, case reports); pros (most current, full detail) and cons (needs appraisal skill, may conflict)."
+  },
+  {
+   "id": "F-029",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 167,
+    "line_end": 186
+   },
+   "claim": "The 'examples of tertiary drug sources' list gives question types but no named references.",
+   "evidence": "\"*Example of tertiary drug sources : 1-General product information 2-Adverse effects ...\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Table: question type -> best reference (BNF / Martindale / AHFS; Meyler's; Stockley's; Briggs; Natural Medicines; Trissel's; Lexicomp Geriatric)."
+  },
+  {
+   "id": "F-030",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 111,
+    "line_end": 118
+   },
+   "claim": "Drug information service is limited to requests from health professionals; patients and the public also ask.",
+   "evidence": "\"problems that are received from health care professionals.\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Add patients and the public as requesters."
+  },
+  {
+   "id": "F-031",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 951,
+    "line_end": 1050
+   },
+   "claim": "Section 8 ('Trauma') is a physiotherapy case of non-traumatic frozen shoulder; it has no drug-information question, source search or ADR content.",
+   "evidence": "\"Diagnose Adhesive Capsulitis (Frozen Shoulder) ... Mechanism of Injury: No history of trauma\"",
+   "source": "Brief (Chapter 10: apply the whole course)",
+   "fix_hint": "Rebuild Chapter 10 as a pharmacy case: a DI request (e.g. NSAID choice and GI risk, or steroid injection), source search, evidence appraisal, a suspected ADR assessed with Naranjo, and a report."
+  },
+  {
+   "id": "F-032",
+   "pillar_id": "D2",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 246,
+    "line_end": 252
+   },
+   "claim": "Section 3 is missing: there is no content on study designs or the hierarchy of evidence between sources (Section 2) and randomisation (Section 4).",
+   "evidence": "Deck 2 ends at line 246; deck 4 starts at line 248.",
+   "source": "Brief (Chapter 3 added); Murad MH et al. New evidence pyramid. BMJ Evid Based Med 2016;21:125-7",
+   "fix_hint": "Add Chapter 3: case report/series, cross-sectional, case-control, cohort, RCT, systematic review/meta-analysis; one table and the evidence pyramid."
+  },
+  {
+   "id": "F-033",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 286,
+    "line_end": 334
+   },
+   "claim": "Simple and blocked randomisation are listed but not explained; the unequal-allocation example is incomplete.",
+   "evidence": "\"Simple method randomization. / Blocked randomization.\"",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
+   "fix_hint": "One table: method, how it works, when to use, one-line example."
+  },
+  {
+   "id": "F-034",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 336,
+    "line_end": 346
+   },
+   "claim": "Blinding is defined but single-, double- and triple-blind and allocation concealment are not explained.",
+   "evidence": "\"Blinding keeps participants, clinical trial personnel ... unaware\"",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
+   "fix_hint": "Add a who-is-blinded table and one line on allocation concealment."
+  },
+  {
+   "id": "F-035",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 352,
+    "line_end": 393
+   },
+   "claim": "p-value, confidence interval and the link between power and sample size are absent.",
+   "evidence": "\"Gives detailed schedule of tests, procedures, medications, dosages, Sample size\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Add a short box: p-value, 95% CI, and 'bigger sample -> more power'."
+  },
+  {
+   "id": "F-036",
+   "pillar_id": "D2",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 488,
+    "line_end": 578
+   },
+   "claim": "The RCT evaluation checklist stops at Methods; results, discussion, conclusions, funding and conflicts are missing.",
+   "evidence": "\"Evaluation of prepared RCT / Title / Abstract / Introduction / Method\"",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
+   "fix_hint": "Move to the added Chapter 6 and finish the checklist with results (ITT, effect size, NNT), discussion, funding and conflicts."
+  },
+  {
+   "id": "F-037",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 625,
+    "line_end": 690
+   },
+   "claim": "Type D (delayed) reactions are listed but never explained and have no example.",
+   "evidence": "\"Type D- (Delayed)\" (no slide follows)",
+   "source": "Edwards IR, Aronson JK. Lancet 2000;356:1255-9",
+   "fix_hint": "Add Type D: appear long after use, e.g. teratogenicity (isotretinoin), carcinogenicity, tardive dyskinesia."
+  },
+  {
+   "id": "F-038",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 775,
+    "line_end": 780
+   },
+   "claim": "The Naranjo algorithm is named but not taught: its 10 questions, scores and categories are absent.",
+   "evidence": "\"Use the Naranjo algorithm (or any other system) to assess the patient’s reaction.\"",
+   "source": "Naranjo CA et al. Clin Pharmacol Ther 1981;30:239-45",
+   "fix_hint": "Give the 10-question table with scores and cut-offs (>=9 definite, 5-8 probable, 1-4 possible, <=0 doubtful) and one worked example."
+  },
+  {
+   "id": "F-039",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 727,
+    "line_end": 831
+   },
+   "claim": "The practical steps of reporting an ADR are missing: what to report, who reports, which form, and where (the EDA Egyptian Pharmaceutical Vigilance Center).",
+   "evidence": "\"Reporting of serious and recurring ADRs to regulatory authorities and manufacturers\"",
+   "source": "Egyptian Drug Authority, Egyptian Pharmaceutical Vigilance Center, reporting guidance",
+   "fix_hint": "Add Chapter 9: reporting form fields, 'if in doubt, report', timelines for serious reactions, and the EDA online reporting route."
+  },
+  {
+   "id": "F-040",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 692,
+    "line_end": 698
+   },
+   "claim": "Patient, prescriber and pharmacist are given as 'causes' of ADRs, mixing non-preventable ADR susceptibility with preventable medication errors.",
+   "evidence": "\"Causes of adverse drug reactions 1. Patient. 2. Prescriber. 3. pharmacist\"",
+   "source": "Edwards IR, Aronson JK. Lancet 2000;356:1255-9; NCC MERP. Taxonomy of Medication Errors",
+   "fix_hint": "Separate ADR risk factors (patient, drug, dose, duration, interactions, monitoring) from causes of medication errors."
+  },
+  {
+   "id": "F-041",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 410,
+    "line_end": 418
+   },
+   "claim": "'Psychologically qualified or eligible' is an undefined criterion; eligibility is set by the protocol, and capacity to consent is a separate matter.",
+   "evidence": "\"Should be qualified or eligible(Psychologically) for the trial\"",
+   "source": "ICH E6(R3) Good Clinical Practice, 2025",
+   "fix_hint": "Say: meets the protocol's inclusion and exclusion criteria and gives valid informed consent (or a legal representative does, with safeguards)."
+  },
+  {
+   "id": "F-042",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 209,
+    "line_end": 238
+   },
+   "claim": "PubMed Central is placed under secondary resources; it is a free full-text archive, not an indexing or abstracting database.",
+   "evidence": "\"Secondary resources ... PubMed Central (PMC) is an archive of articles\"",
+   "source": "National Library of Medicine. MEDLINE, PubMed, and PMC: how are they different? (current)",
+   "fix_hint": "Secondary: PubMed/MEDLINE, Embase. PMC: free full-text archive used to get the retrieved articles."
+  },
+  {
+   "id": "F-043",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 120,
+    "line_end": 124
+   },
+   "claim": "The tertiary -> secondary -> primary order is presented as mandatory; it is the usual starting strategy, adjusted to the question and urgency.",
+   "evidence": "\"the best method to find information includes a stepwise approach moving first through tertiary\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Present it as the usual strategy; check currency and citations; go further when the answer is incomplete or high-stakes."
+  },
+  {
+   "id": "F-044",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 757,
+    "line_end": 773
+   },
+   "claim": "Severity (intensity) is confused with seriousness (regulatory outcome): 'severe' is defined as fatal or life-threatening and 'moderate' as needing hospitalisation. This can lead to wrong reporting decisions.",
+   "evidence": "\"Severe—fatal or life threatening / Moderate—requires antidote, medical procedure, or hospitalization\"",
+   "source": "ICH E2A. Clinical Safety Data Management: Definitions and Standards for Expedited Reporting; 1994",
+   "fix_hint": "Two tables: severity = mild / moderate / severe intensity; seriousness = death, life-threatening, hospitalisation, disability, congenital anomaly, other important medical event."
+  },
+  {
+   "id": "F-045",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 786,
+    "line_end": 800
+   },
+   "claim": "ADR management jumps to education, formulary change and notification; immediate patient care (assess, stop or withhold the suspected drug, treat, monitor, escalate) is missing.",
+   "evidence": "\"Step 3. Take corrective and follow-up action. For Severe ADRs: Educate and monitor prescribers.\"",
+   "source": "WHO. Safety of Medicines: A Guide to Detecting and Reporting Adverse Drug Reactions; 2002",
+   "fix_hint": "Add 'Step 0 - look after the patient' before system-level actions."
+  },
+  {
+   "id": "F-046",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 727,
+    "line_end": 731
+   },
+   "claim": "Pharmacovigilance is defined too narrowly (monitoring marketed drugs only).",
+   "evidence": "\"Refers to the process of continuous monitoring for unwanted effects and other safety related aspects of marketed drugs.\"",
+   "source": "WHO. The Importance of Pharmacovigilance; 2002",
+   "fix_hint": "WHO definition: the science and activities relating to the detection, assessment, understanding and prevention of adverse effects or any other drug-related problem."
+  }
+ ]
+}

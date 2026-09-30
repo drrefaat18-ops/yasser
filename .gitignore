@@ -11,3 +11,4 @@ dr mo skill/
 .impeccable/mocks/
 .impeccable/build/
 .impeccable/config.local.json
+vendor/

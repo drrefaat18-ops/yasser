@@ -1,0 +1,240 @@
+{
+ "schema_version": 1,
+ "project_id": "drug-information-practical",
+ "identity": {
+  "title": "Drug Information",
+  "subtitle": "A Practical Section Guide",
+  "edition": null,
+  "authors": [
+   {
+    "name": "Assoc. Prof. Dr. Ahmed Mourad",
+    "credit_line": "Assoc. Prof. Dr. Ahmed Mourad",
+    "role": "author"
+   },
+   {
+    "name": "Assoc. Prof. Dr. Ahmed Gaafar",
+    "credit_line": "Assoc. Prof. Dr. Ahmed Gaafar",
+    "role": "author"
+   },
+   {
+    "name": "Assoc. Prof. Dr. Ahmed Saad",
+    "credit_line": "Assoc. Prof. Dr. Ahmed Saad",
+    "role": "author"
+   },
+   {
+    "name": "Dr. Riffat Ibrahim Riffat",
+    "credit_line": "Dr. Riffat Ibrahim Riffat, Teaching Assistant, Department of Pharmacology & Toxicology",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "Same four co-authors as the CNS book: the three associate professors first by rank, then Dr. Riffat Ibrahim Riffat, author of the section slides (user, 2026-09-30).",
+  "rework_authorised": "yes",
+  "rework_authorised_note": "Dr. Riffat Ibrahim Riffat, author of the source slides, asked for the rework in chat on 2026-09-30."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "original/drug-info-sections-combined.pdf",
+    "format": "pdf",
+    "sha256": "53bba62b4a9d1dbcd5cccd418a7ced878061b6e134db5057080b28fbe482602b"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Drug information and pharmacovigilance",
+  "subfields": [
+   "drug information centre and query handling",
+   "drug information sources",
+   "study designs and evidence",
+   "randomisation",
+   "research protocol, hypothesis and ethics",
+   "adverse drug reactions",
+   "ADR causality assessment",
+   "applied case study",
+   "critical appraisal of clinical trials",
+   "ADR reporting and pharmacovigilance systems"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Simple tables and flowcharts only; slide images are not carried over."
+ },
+ "audience": {
+  "year_of_study": "Final years",
+  "programmes": [
+   "Pharmacy"
+  ],
+  "prior_knowledge": "Pharmacology and basic clinical pharmacy are complete; no statistics background is assumed.",
+  "display_line": "For pharmacy students, Drug Information practical sections"
+ },
+ "perspectives": {
+  "enabled": false,
+  "items": []
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "simplify",
+   "restructure"
+  ],
+  "notes": "Secondary course: the simplest useful edition; easy to study, valuable content (user). Each section is taught in 45 minutes at most. Fill the incomplete Section 2 and write four added chapters (3, 6, 9 and the missing Section 3 topic) from standard references, marked as added. Low effort by user instruction (2026-09-30)."
+ },
+ "language": {
+  "source": "en",
+  "output": "en-GB",
+  "translation_required": false,
+  "terminology": "English only; INN drug names."
+ },
+ "size": {
+  "target_words_total": 14000,
+  "chapter_count_target": 10,
+  "restructuring": "merge_split_allowed",
+  "restructuring_note": "Ten chapters, one per 45-minute section, about 1,200-1,500 words (4-6 A4 pages) each: 1. The drug information centre; 2. Drug information sources (primary part added); 3. Study designs and levels of evidence (added); 4. Randomisation; 5. The research protocol, hypothesis and ethics; 6. Critical appraisal of a clinical trial (added); 7. Adverse drug reactions; 8. ADR causality assessment; 9. ADR reporting and pharmacovigilance (added); 10. Applied case: trauma. Chapter 10 turns the trauma case into an application of the whole course. Priority (user): an easy subject with valuable content."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 5,
+   "options": 4,
+   "format": "Single best answer from four options (A-D); answers with one-line rationales."
+  },
+  "cases": {
+   "enabled": true
+  },
+  "exercises": {
+   "enabled": false
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [
+   "NARS - Pharmacy"
+  ],
+  "frameworks": [
+   "Egyptian Drug Authority (EDA) pharmacovigilance"
+  ]
+ },
+ "references": {
+  "style": "vancouver",
+  "style_note": "Short list, 3-5 references per chapter. Core texts: Malone, Drug Information: A Guide for Pharmacists (latest edition); WHO pharmacovigilance and causality guidance; CONSORT; ICH-GCP.",
+  "recency": {
+   "min_share_since": {
+    "year": 2016,
+    "share": 0.4
+   }
+  },
+  "evidence_cutoff": "2026-09-30"
+ },
+ "constraints": {
+  "must_keep": [
+   "Section order",
+   "Author credit"
+  ],
+  "must_not_change": [
+   "No invented ISBN, publisher or copyright registration"
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Source Serif 4, Playfair Display, Alexandria (ltr-textbook-alexandria preset)",
+  "branding": {
+   "logo": "images/logos/faculty-of-pharmacy.png",
+   "colours": [
+    "A4472B",
+    "2F6F7A",
+    "2B211C",
+    "6E625B",
+    "FBF7F2"
+   ]
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Drug information practice",
+   "weight": 15,
+   "reviewer_ids": [
+    "drug-information-reviewer"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Research methods",
+   "weight": 15,
+   "reviewer_ids": [
+    "drug-information-reviewer"
+   ]
+  },
+  {
+   "id": "D3",
+   "name": "Pharmacovigilance",
+   "weight": 10,
+   "reviewer_ids": [
+    "drug-information-reviewer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": "Title Drug Information: A Practical Section Guide; same four co-authors as the CNS book, associate professors first; Faculty of Pharmacy, Port Said University; rework requested by the slide author."
+  },
+  "B": {
+   "provenance": "user",
+   "note": "Drug information and pharmacovigilance; tables and flowcharts only."
+  },
+  "C": {
+   "provenance": "user",
+   "note": "Pharmacy students late in the programme; the exact year does not matter (user)."
+  },
+  "D": {
+   "provenance": "user",
+   "note": "No perspective lenses; boxes: In This Section, At the Pharmacy, Caution, Exam Tip."
+  },
+  "E": {
+   "provenance": "user",
+   "note": "Easy subject, valuable content; 45 minutes per section; missing parts and three added chapters from references, marked as added."
+  },
+  "F": {
+   "provenance": "user",
+   "note": "English in, English out."
+  },
+  "G": {
+   "provenance": "user",
+   "note": "Ten chapters (user asked for 10 sections), about 14,000 words; Chapter 10 is a whole-course application case."
+  },
+  "H": {
+   "provenance": "user",
+   "note": "5 MCQs (A-D) with answers and one practice case per chapter."
+  },
+  "I": {
+   "provenance": "user",
+   "note": "Egypt; NARS; EDA pharmacovigilance."
+  },
+  "J": {
+   "provenance": "user",
+   "note": "Short Vancouver lists, 3-5 per chapter."
+  },
+  "K": {
+   "provenance": "user",
+   "note": "No ISBN, publisher or deadline."
+  },
+  "L": {
+   "provenance": "user",
+   "note": "PDF only, A4, html engine; Terracotta & Petrol palette; faculty and university logos on the cover."
+  },
+  "M": {
+   "provenance": "default-confirmed",
+   "note": "Domain pillars D1 drug information practice 15, D2 research methods 15, D3 pharmacovigilance 10 (proposed)."
+  }
+ },
+ "unresolved": []
+}

@@ -1,0 +1,88 @@
+{
+ "schema_version": 1,
+ "project_id": "drug-information-practical",
+ "parts": [],
+ "dropped": [],
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01-drug-information-centre.md",
+   "title": "The Drug Information Centre",
+   "word_budget": 1400,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch02",
+   "file": "ch02-drug-information-sources.md",
+   "title": "Drug Information Sources",
+   "word_budget": 1500,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch03",
+   "file": "ch03-study-designs.md",
+   "title": "Study Designs and Levels of Evidence",
+   "word_budget": 1400,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch04",
+   "file": "ch04-randomisation-blinding.md",
+   "title": "Randomisation and Blinding",
+   "word_budget": 1300,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch05",
+   "file": "ch05-protocol-hypothesis-ethics.md",
+   "title": "The Research Protocol, Hypothesis Testing and Ethics",
+   "word_budget": 1500,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch06",
+   "file": "ch06-critical-appraisal.md",
+   "title": "Critical Appraisal of a Clinical Trial",
+   "word_budget": 1400,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch07",
+   "file": "ch07-adverse-drug-reactions.md",
+   "title": "Adverse Drug Reactions",
+   "word_budget": 1400,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch08",
+   "file": "ch08-adr-causality-management.md",
+   "title": "ADR Causality and Management",
+   "word_budget": 1400,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch09",
+   "file": "ch09-pharmacovigilance-medication-errors.md",
+   "title": "Pharmacovigilance, ADR Reporting and Medication Errors",
+   "word_budget": 1500,
+   "part_id": null,
+   "source_refs": []
+  },
+  {
+   "id": "ch10",
+   "file": "ch10-applied-case.md",
+   "title": "Applied Case: Answering a Real Drug Question",
+   "word_budget": 1200,
+   "part_id": null,
+   "source_refs": []
+  }
+ ]
+}

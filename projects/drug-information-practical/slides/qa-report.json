@@ -1,0 +1,66 @@
+{
+ "ch01-drug-information-centre.md": [],
+ "ch02-drug-information-sources.md": [
+  {
+   "slide": 10,
+   "check": "overflow",
+   "detail": "2.17in of text in a 1.65in box"
+  },
+  {
+   "slide": 12,
+   "check": "overflow",
+   "detail": "0.70in of text in a 0.60in box"
+  },
+  {
+   "slide": 12,
+   "check": "density",
+   "detail": "947 characters"
+  }
+ ],
+ "ch03-study-designs.md": [],
+ "ch04-randomisation-blinding.md": [],
+ "ch05-protocol-hypothesis-ethics.md": [],
+ "ch06-critical-appraisal.md": [],
+ "ch07-adverse-drug-reactions.md": [],
+ "ch08-adr-causality-management.md": [
+  {
+   "slide": 14,
+   "check": "density",
+   "detail": "941 characters"
+  },
+  {
+   "slide": 7,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  },
+  {
+   "slide": 8,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  },
+  {
+   "slide": 9,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  }
+ ],
+ "ch09-pharmacovigilance-medication-errors.md": [
+  {
+   "slide": 12,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  }
+ ],
+ "ch10-applied-case.md": [
+  {
+   "slide": 4,
+   "check": "density",
+   "detail": "922 characters"
+  },
+  {
+   "slide": 6,
+   "check": "density",
+   "detail": "1055 characters"
+  }
+ ]
+}

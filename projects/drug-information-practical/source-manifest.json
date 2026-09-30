@@ -1,0 +1,11 @@
+{
+ "files": [
+  {
+   "format": "pdf",
+   "original": "original/drug-info-sections-combined.pdf",
+   "path": "source/drug-info-sections-combined.pdf",
+   "sha256": "53bba62b4a9d1dbcd5cccd418a7ced878061b6e134db5057080b28fbe482602b"
+  }
+ ],
+ "schema_version": 1
+}

@@ -41,9 +41,72 @@ def hexc(v):
     return "#" + v.lstrip("#")
 
 
+def contrast(a, b):
+    """WCAG contrast ratio of two #rrggbb colours."""
+    def lum(v):
+        c = [int(v.lstrip("#")[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+        c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+        return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+    hi, lo = sorted((lum(a), lum(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def cover_accent(acc, pri):
+    """The accent drawn on the primary-coloured cover, or a light tint when the accent is too dark to read there."""
+    return acc if contrast(acc, pri) >= 3 else "#F3E6D8"
+
+
 def darker(v, f=0.62):
     v = v.lstrip("#")
     return "#" + "".join(f"{round(int(v[i:i + 2], 16) * f):02x}" for i in (0, 2, 4))
+
+
+# Edge keeps a page-margin box on one line with `nowrap` but ignores `width` and `text-overflow` there, so a long
+# running head runs past the text block. The writer cuts it to a character budget instead; PDF-HEAD measures the result.
+# ponytail: average advance per character in em, per head style; a font-metrics measure if a font breaks it
+HEAD_EM = {"plain": 0.56, "caps": 0.72, "serif_italic": 0.47, "caps_wide": 0.8}
+HEAD_PT = {"plain": 8, "caps": 6.5}
+
+
+def clip(text, n):
+    """`text` cut at a word boundary to at most `n` characters, ending in an ellipsis."""
+    if len(text) <= n:
+        return text
+    cut = text[:max(n - 1, 1)]
+    cut = (cut.rsplit(" ", 1)[0] if " " in cut else cut).rstrip(" ·,:;–—-")
+    return cut + "…"
+
+
+def fit_heads(left, right, budget):
+    """(left, right) cut so that both fit on one line of `budget` characters; the right (the chapter) keeps more."""
+    gap = 4
+    if len(left) + len(right) + gap <= budget:
+        return left, right
+    right = clip(right, max(budget - len(left) - gap, int(budget * 0.6)))
+    return clip(left, max(budget - len(right) - gap, 0)) if budget - len(right) - gap > 3 else "", right
+
+
+# The design switches: theme value, else the preset's `design` default, else the built-in default (the plain look of
+# a book whose preset has no `design`). key -> ((theme section, theme key), allowed values; the first is the default)
+DESIGN = {"chapter_opener": (("layout", "chapter_opener"), ("inline", "page")),
+          "toc_style": (("toc", "style"), ("leaders", "chapters")),
+          "title_page": (("title_page", "layout"), ("preset", "centered")),
+          "running_style": (("running", "style"), ("plain", "caps")),
+          "page_number": (("running", "page_number"), ("center", "right"))}
+
+
+def design(bk, key):
+    (section, name), allowed = DESIGN[key]
+    v = (bk.cfg["theme"].get(section) or {}).get(name)
+    if v is None:
+        v = (bk.preset.get("design") or {}).get(key, allowed[0])
+    if v not in allowed:   # the theme schema checks the theme; the preset has no schema
+        raise BuildError(f"preset {bk.preset['id']}: design.{key} is {v!r}, not one of {', '.join(allowed)}")
+    return v
+
+
+def two(n):
+    return str(n).zfill(2) if str(n).isdigit() else str(n)
 
 
 class Writer:
@@ -64,7 +127,7 @@ class Writer:
     def _spans(self, text, links=True):
         out = []
         for sp in blocks.inline(text, links):
-            t = esc(sp["text"])
+            t = esc(blocks.bind_dash(sp["text"]))
             if sp["sub"]:
                 t = f"<sub>{t}</sub>"
             if sp["sup"]:
@@ -178,6 +241,9 @@ class Writer:
             elif t == "section":
                 close_box()
                 state["role"] = b["role"]
+                eyebrow = (bk.cfg["theme"].get("section_eyebrows") or {}).get(b["id"]) if b["id"] else None
+                if eyebrow and not b["boxed"]:
+                    out.append(f'<div class="eyebrow">{esc(eyebrow)}</div>')
                 if b["boxed"]:
                     out.append(f'<div class="box {self._cls(b["id"])}"><div class="label">{esc(b["label"])}</div>')
                     state["box"] = True
@@ -255,25 +321,50 @@ def stylesheet(bk, chapters):
     # a glyph missing from a display or UI font falls back to the body serif, never to the browser default
     ff = lambda k: css_string(bk.fonts[k]) + ("" if k == "serif" else "," + css_string(bk.fonts["serif"]))
     ink, pri, acc, mut = hexc(bk.ink), hexc(bk.primary), hexc(bk.accent), hexc(bk.muted)
+    cacc = cover_accent(acc, pri)
     align = {"left": "left", "justify": "justify", "right": "right", "center": "center"}
     body_align, head_align = align[th["alignment"]["body"]], align[th["alignment"]["headings"]]
-    head_box = (f"font-family:{ff('sans')};font-size:8pt;color:{mut};vertical-align:bottom;"
-                f"padding-bottom:0.25cm;border-bottom:0.5pt solid #{GRID}")
-    title = css_string(bk.title)
+    run = th.get("running") or {}
+    style, num_at = design(bk, "running_style"), design(bk, "page_number")
+    if num_at == "center" and run.get("footer_center"):
+        raise BuildError("theme.running: footer_center needs page_number 'right' (the centre holds the page number)")
+    size = HEAD_PT[style]
+    width_pt = (pg["width_cm"] - m["left"] - m["right"]) * 72 / 2.54
+    chars = lambda pt, em, share=1.0: int(width_pt * share / (pt * HEAD_EM[em]))
+    budget = chars(size, style)
+    caps = ";text-transform:uppercase;letter-spacing:0.06em" if style == "caps" else ""
+    head_box = (f"font-family:{ff('sans')};font-size:{size}pt;color:{mut};vertical-align:bottom;white-space:nowrap;"
+                f"padding-bottom:0.25cm;border-bottom:0.5pt solid #{GRID}{caps}")
+    right_box = f"font-weight:700;color:{acc if style == 'caps' else mut}"
+    left_text = run.get("head_left") or bk.title
+
+    def heads(right):
+        left, right = fit_heads(left_text, right, budget)
+        return (f"@top-left{{content:{css_string(left)};{head_box}}}"
+                f"@top-right{{content:{css_string(right)};{head_box};{right_box}}}")
+
+    def foot(counter):
+        num = (f"content:{counter};font-family:{ff('serif_heading')};font-size:10pt;font-weight:700;color:{pri}"
+               if num_at == "right" else f"content:{counter};font-family:{ff('sans')};font-size:8.5pt;color:{mut}")
+        out = f"@bottom-{num_at}{{{num}}}"
+        if run.get("footer_left"):
+            out += (f"@bottom-left{{content:{css_string(clip(run['footer_left'], chars(8.5, 'serif_italic', 0.4)))};white-space:nowrap;"
+                    f"font-family:{ff('serif')};font-style:italic;font-size:8.5pt;color:{mut}}}")
+        if run.get("footer_center"):
+            out += (f"@bottom-center{{content:{css_string(clip(run['footer_center'], chars(7, 'caps_wide', 0.34)))};white-space:nowrap;"
+                    f"font-family:{ff('sans')};font-size:7pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:{acc}}}")
+        return out
+    none = "".join(f"@{box}{{content:none;border:0}}" for box in ("top-left", "top-right", "bottom-left", "bottom-center", "bottom-right"))
     pages = [
         f"@page{{size:{pg['width_cm']}cm {pg['height_cm']}cm;margin:{m['top']}cm {m['right']}cm {m['bottom']}cm {m['left']}cm;"
-        f"background:{hexc(bk.pal.get('paper') or 'FFFFFF')};"
-        f"@top-left{{content:{title};{head_box}}}@top-right{{content:'';{head_box}}}"
-        f"@bottom-center{{content:counter(page);font-family:{ff('sans')};font-size:8.5pt;color:{mut}}}}}",
-        "@page plain{@top-left{content:none;border:0}@top-right{content:none;border:0}@bottom-center{content:none}}",
-        "@page cover{margin:0;@top-left{content:none;border:0}@top-right{content:none;border:0}@bottom-center{content:none}}",
-        f"@page how{{@top-right{{content:{css_string(bk.role.get('how_to_use') or '')};font-weight:700}}"
-        f"@bottom-center{{content:counter(page,lower-roman)}}}}",
-        f"@page gloss{{@top-right{{content:{css_string(bk.labels['glossary'])};font-weight:700}}}}",
+        f"background:{hexc(bk.pal.get('paper') or 'FFFFFF')};{heads('')}{foot('counter(page)')}}}",
+        f"@page plain{{{none}}}",
+        f"@page cover{{margin:0;{none}}}",
+        f"@page how{{{heads(bk.role.get('how_to_use') or '')}{foot('counter(page,lower-roman)')}}}",
+        f"@page gloss{{{heads(bk.labels['glossary'])}}}",
     ]
     for n, title_n in chapters:
-        pages.append(f"@page ch{n}{{@top-right{{content:{css_string(bk.labels['chapter'] + ' ' + str(n) + ' · ' + blocks.plain(title_n))};"
-                     f"font-weight:700}}}}")
+        pages.append(f"@page ch{n}{{{heads(bk.labels['chapter'] + ' ' + str(n) + ' · ' + blocks.plain(title_n))}}}")
     boxes = []
     for key, e in th["callouts"].items():
         border = e.get("border")
@@ -360,21 +451,73 @@ math{{font-size:1.02em}}
 .cover{{page:cover;position:relative;width:{pg['width_cm']}cm;height:calc({pg['height_cm']}cm - 1px);overflow:hidden;color:#fff;
   background:linear-gradient(160deg,{pri} 0%,{darker(bk.primary)} 100%)}}
 .cover img.full{{width:100%;height:100%;object-fit:cover;display:block}}
-.cover .frame{{position:absolute;inset:0.8cm;border:0.6pt solid {acc};opacity:0.55}}
+.cover .frame{{position:absolute;inset:0.8cm;border:0.6pt solid {cacc};opacity:0.55}}
 .cover .top{{position:absolute;top:1.6cm;left:1.8cm;right:1.8cm;display:flex;align-items:center;gap:0.45cm;
-  padding-bottom:0.5cm;border-bottom:0.6pt solid {acc}}}
+  padding-bottom:0.5cm;border-bottom:0.6pt solid {cacc}}}
 .cover .top img{{height:1.9cm;width:auto;background:#fff;border-radius:50%;padding:0.08cm}}
 .cover .inst{{flex:1;font-family:{ff('sans')};font-size:10pt;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}}
 .cover .mid{{position:absolute;top:35%;left:1.8cm;right:1.8cm;text-align:center}}
 .cover .eyebrow{{display:inline-block;font-family:{ff('sans')};font-size:8pt;font-weight:700;letter-spacing:0.16em;
-  text-transform:uppercase;color:{acc};border:0.8pt solid {acc};border-radius:1cm;padding:0.14cm 0.5cm;margin-bottom:0.7cm}}
+  text-transform:uppercase;color:{cacc};border:0.8pt solid {cacc};border-radius:1cm;padding:0.14cm 0.5cm;margin-bottom:0.7cm}}
 .cover .title{{font-family:{ff('serif_heading')};font-size:34pt;font-weight:700;line-height:1.1}}
-.cover .subtitle{{font-family:{ff('serif_heading')};font-style:italic;font-size:14pt;color:{acc};margin-top:0.35cm}}
-.cover .rule{{width:3.2cm;height:1.6pt;background:{acc};margin:0.8cm auto 0}}
-.cover .bottom{{position:absolute;bottom:1.8cm;left:1.8cm;right:1.8cm;padding-top:0.5cm;border-top:0.6pt solid {acc};
+.cover .subtitle{{font-family:{ff('serif_heading')};font-style:italic;font-size:14pt;color:{cacc};margin-top:0.35cm}}
+.cover .rule{{width:3.2cm;height:1.6pt;background:{cacc};margin:0.8cm auto 0}}
+.cover .bottom{{position:absolute;bottom:1.8cm;left:1.8cm;right:1.8cm;padding-top:0.5cm;border-top:0.6pt solid {cacc};
   display:flex;justify-content:space-between;align-items:flex-end;gap:1cm}}
 .cover .credits{{font-family:{ff('serif_heading')};font-size:14pt;font-weight:700}}
 .cover .meta{{font-family:{ff('sans')};font-size:8.5pt;text-align:right;opacity:0.85}}
+.eyebrow{{font-family:{ff('sans')};font-size:7.5pt;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:{acc};
+  margin:18pt 0 0;break-after:avoid;text-align:{head_align}}}
+.eyebrow+h2,.eyebrow+.h2{{margin-top:2pt}}
+.bleed{{position:relative;width:{pg['width_cm']}cm;height:calc({pg['height_cm']}cm - 1px);overflow:hidden;color:#fff;
+  background:linear-gradient(160deg,{pri} 0%,{darker(bk.primary)} 100%)}}
+.bleed .frame{{position:absolute;inset:0.8cm;border:0.6pt solid {acc};opacity:0.55}}
+.opener{{page:cover;break-after:page}}
+.opener .mid{{position:absolute;top:27%;left:2.2cm;right:2.2cm}}
+.opener .kicker{{font-family:{ff('sans')};font-size:8.5pt;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:{acc}}}
+.opener .partline{{font-family:{ff('sans')};font-size:8pt;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:0.5cm}}
+.opener h1{{color:#fff;border:0;padding:0;margin:0.15cm 0 0;font-size:31pt;line-height:1.1;text-align:left}}
+.opener h1 .num{{display:block;font-size:64pt;line-height:1;color:{acc};margin:0 0 0.25cm}}
+.opener .rule{{width:3.2cm;height:1.6pt;background:{acc};margin-top:0.8cm}}
+.opener .inchap{{position:absolute;left:2.2cm;right:2.2cm;bottom:2.2cm;border-top:0.6pt solid {acc};padding-top:0.4cm}}
+.opener .inchap .lbl{{font-family:{ff('sans')};font-size:7.5pt;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+  color:{acc};margin-bottom:0.25cm}}
+.opener .inchap ol{{list-style:none;margin:0;padding:0;columns:2;column-gap:0.8cm;font-family:{ff('sans')};font-size:8.5pt;
+  line-height:1.35;opacity:0.9}}
+.opener .inchap li{{break-inside:avoid;margin-bottom:3pt}}
+.part-page.bleed{{page:cover;padding:7cm 2.2cm 0;break-before:page;break-after:page}}
+.part-page.bleed h1{{color:#fff;border-bottom-color:{acc}}}.part-page.bleed .span{{color:{acc}}}
+.part-page.bleed .entry{{color:#fff}}
+.tc-part{{font-family:{ff('sans')};font-size:8pt;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:{acc};
+  margin:14pt 0 2pt;padding-bottom:3pt;border-bottom:0.8pt solid {acc};break-after:avoid}}
+.tc-row{{display:grid;grid-template-columns:2.2cm 1fr 1.3cm;column-gap:0.3cm;padding:6pt 0;border-bottom:0.5pt solid #{GRID};
+  break-inside:avoid}}
+.tc-k{{font-family:{ff('sans')};font-size:7.5pt;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:{acc};padding-top:3pt}}
+.tc-t{{font-family:{ff('serif_heading')};font-size:11.5pt;font-weight:700;color:{pri};line-height:1.2}}
+.tc-sub{{font-family:{ff('sans')};font-size:7.5pt;color:{mut};line-height:1.4;margin-top:2pt;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}}
+.tc-pg{{font-family:{ff('serif_heading')};font-size:11pt;font-weight:700;color:{pri};text-align:right}}
+.titlepage.centered{{display:flex;flex-direction:column;align-items:center;text-align:center;
+  height:calc({pg['height_cm'] - m['top'] - m['bottom']}cm - 2px);padding-top:1.2cm}}
+.centered .logos img{{height:1.8cm;width:auto;margin:0 0.2cm}}
+.centered .inst{{font-family:{ff('sans')};font-size:8.5pt;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:{pri};
+  margin-top:0.35cm}}
+.centered .tp-title{{font-family:{ff('serif_heading')};font-size:28pt;font-weight:700;color:{pri};line-height:1.12;margin-top:1.6cm}}
+.centered .tp-sub{{font-family:{ff('serif_heading')};font-style:italic;font-size:13pt;color:{mut};margin-top:0.35cm}}
+.centered .pill{{font-family:{ff('sans')};font-size:7.5pt;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:{pri};
+  border:0.8pt solid {acc};border-radius:1cm;padding:0.12cm 0.45cm;margin-top:0.6cm}}
+.centered .tp-rule{{width:3cm;height:1.4pt;background:{acc};margin:0.8cm 0}}
+.centered .tp-author{{font-family:{ff('serif_heading')};font-size:12pt;font-weight:700;color:{ink};margin-bottom:3pt}}
+.centered .tp-aud{{font-family:{ff('sans')};font-size:8.5pt;color:{mut};margin-top:0.3cm}}
+.centered .tp-notices{{margin-top:auto;font-family:{ff('sans')};font-size:7.8pt;color:{mut};max-width:12cm}}
+.centered .tp-notices p{{text-align:center;margin-bottom:3pt}}
+.ending .mid{{position:absolute;top:38%;left:2.8cm;right:2.8cm;text-align:center}}
+.ending .logos{{position:absolute;top:2.2cm;left:0;right:0;text-align:center}}
+.ending .logos img{{height:1.9cm;width:auto;background:#fff;border-radius:50%;padding:0.08cm;margin:0 0.2cm}}
+.ending .mark{{font-family:{ff('serif_heading')};font-size:54pt;line-height:0.6;color:{acc}}}
+.ending .quote{{font-family:{ff('serif_heading')};font-style:italic;font-size:15pt;line-height:1.45;margin-top:0.5cm}}
+.ending .who{{font-family:{ff('sans')};font-size:8pt;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:{acc};margin-top:0.6cm}}
+.ending .foot{{position:absolute;bottom:1.8cm;left:0;right:0;text-align:center;font-family:{ff('sans')};font-size:8pt;opacity:0.8}}
 """
 
 
@@ -404,8 +547,45 @@ def cover_html(bk):
             f'{esc(bk.credits)}</div><div class="meta">{meta}</div></div></section>')
 
 
+def logos_html(bk):
+    design = bk.cfg["theme"]["cover"].get("design") or {}
+    return "".join(f'<img src="{(bk.cfg["project"] / p).resolve().as_uri()}" alt="">' for p in design.get("logos", []))
+
+
+def title_page_centered(bk):
+    """theme.title_page.layout 'centered': logos, institution, title, subtitle, edition, authors, audience, and the
+    notices at the foot of the same page (no page of its own)."""
+    th, ident = bk.cfg["theme"], bk.cfg["brief"]["identity"]
+    inst = (th["cover"].get("design") or {}).get("institution")
+    logos = logos_html(bk)
+    out = [f'<div class="logos">{logos}</div>' if logos else "", f'<div class="inst">{esc(inst)}</div>' if inst else "",
+           f'<div class="tp-title">{esc(bk.title)}</div>', f'<div class="tp-sub">{esc(bk.subtitle)}</div>' if bk.subtitle else "",
+           f'<div class="pill">{esc(ident["edition"])}</div>' if ident.get("edition") else "", '<div class="tp-rule"></div>']
+    out += [f'<div class="tp-author">{esc(a["credit_line"])}</div>' for a in ident["authors"]]
+    out.append(f'<div class="tp-aud">{esc(bk.audience)}</div>' if bk.audience else "")
+    notices = th["title_page"]["notices"]
+    if notices:
+        out.append('<div class="tp-notices">' + "".join(f"<p>{esc(n)}</p>" for n in notices) + "</div>")
+    return f'<section class="titlepage centered">{"".join(out)}</section>'
+
+
+def ending_html(bk):
+    """theme.ending: a full-bleed closing page (logos, quotation, attribution); None without it."""
+    e = bk.cfg["theme"].get("ending")
+    if not e:
+        return None
+    logos = logos_html(bk)
+    who = f'<div class="who">{esc(e["attribution"])}</div>' if e.get("attribution") else ""
+    return (f'<section class="cover bleed ending"><div class="frame"></div>'
+            + (f'<div class="logos">{logos}</div>' if logos else "")
+            + f'<div class="mid"><div class="mark">“</div><div class="quote">{esc(e["quote"])}</div>{who}</div>'
+            f'<div class="foot">{esc(bk.title)}</div></section>')
+
+
 def title_page_html(bk):
-    values = {"title": bk.title, "subtitle": bk.subtitle, "credits": bk.credits, "audience_line": bk.audience}
+    if design(bk, "title_page") == "centered":
+        return title_page_centered(bk)
+    values ={"title": bk.title, "subtitle": bk.subtitle, "credits": bk.credits, "audience_line": bk.audience}
     notices = bk.cfg["theme"]["title_page"]["notices"]
     main, extra = [], ""
     for spec in bk.preset["title_page_layout"]:
@@ -428,15 +608,53 @@ def title_page_html(bk):
     return f'<section class="titlepage">{"".join(main)}</section>{extra}'
 
 
-def toc_html(bk, entries, pages):
-    """entries: [(level, title)]; pages: the same length, a page label or '' (the probe print)."""
-    rows = "".join(f'<div class="toc-entry toc-{lvl}"><span class="t">{esc(t)}</span><span class="dots"></span>'
-                   f'<span class="pg">{esc(p)}</span></div>' for (lvl, t), p in zip(entries, pages))
-    return f'<section class="toc"><div class="toc-title">{esc(bk.labels["contents"])}</div>{rows}</section>'
+def toc_html(bk, heads, kinds, pages):
+    """heads: every placed heading [(level, title)]; kinds: the same length, ('part', label, title),
+    ('chapter', n, title) or ('other',); pages: the same length, a page label or '' (the probe print).
+    theme.toc.style 'leaders' (default): one dotted row per heading down to theme.toc.levels. 'chapters': one row per
+    level-1 heading (the chapter label, its title, its level-2 headings as one muted line, the page); parts as bands."""
+    title = f'<div class="toc-title">{esc(bk.labels["contents"])}</div>'
+    if design(bk, "toc_style") == "leaders":
+        levels = bk.cfg["theme"]["toc"]["levels"]
+        rows = "".join(f'<div class="toc-entry toc-{lvl}"><span class="t">{esc(t)}</span><span class="dots"></span>'
+                       f'<span class="pg">{esc(p)}</span></div>' for (lvl, t), p in zip(heads, pages) if lvl <= levels)
+        return f'<section class="toc">{title}{rows}</section>'
+    rows = []
+    for i, ((lvl, t), kind, p) in enumerate(zip(heads, kinds, pages)):
+        if lvl != 1:
+            continue
+        if kind[0] == "part":
+            rows.append(f'<div class="tc-part">{esc(kind[1])} · {esc(kind[2])}</div>')
+            continue
+        subs = []
+        for lvl2, t2 in heads[i + 1:]:
+            if lvl2 == 1:
+                break
+            if lvl2 == 2:
+                subs.append(t2)
+        k, name = (f"{bk.labels['chapter']} {two(kind[1])}", blocks.plain(kind[2])) if kind[0] == "chapter" else ("", t)
+        sub = f'<div class="tc-sub">{esc(" · ".join(subs))}</div>' if subs else ""
+        rows.append(f'<div class="tc-row"><div class="tc-k">{esc(k)}</div><div><div class="tc-t">{esc(name)}</div>{sub}</div>'
+                    f'<div class="tc-pg">{esc(p)}</div></div>')
+    return f'<section class="toc">{title}{"".join(rows)}</section>'
+
+
+def opener_html(bk, n, title_html, part, h2s):
+    """theme.layout.chapter_opener 'page': a full-bleed page that holds the chapter's h1 (the outline and the contents
+    point at it), the part it belongs to, and its level-2 headings when theme.labels.in_this_chapter is set."""
+    partline = f'<div class="partline">{esc(part["label"])} · {esc(part["title"])}</div>' if part else ""
+    lbl = bk.labels.get("in_this_chapter")
+    inchap = (f'<div class="inchap"><div class="lbl">{esc(lbl)}</div><ol>' + "".join(f"<li>{esc(t)}</li>" for t in h2s)
+              + "</ol></div>") if lbl and h2s else ""
+    return (f'<div class="bleed opener"><div class="frame"></div><div class="mid">{partline}'
+            f'<div class="kicker">{esc(bk.labels["chapter"])}</div><h1><span class="num">{esc(str(n))}</span> '
+            f'{title_html}</h1><div class="rule"></div></div>{inchap}</div>')
 
 
 def body_parts(cfg, bk, w):
-    """-> (front how-to-use html or '', its heads, body html, body heads [(level, title)], [(n, title)])."""
+    """-> (front how-to-use html or '', its heads, body html, body heads [(level, title)], [(n, title)], body kinds).
+    Kinds run with the body heads: ('part', label, title), ('chapter', n, title) or ('other',) (see toc_html)."""
+    opener = design(bk, "chapter_opener") == "page"
     how_html, how_heads = "", []
     front_file = cfg.book_file("front_matter")
     how = bk.role.get("how_to_use")
@@ -458,29 +676,36 @@ def body_parts(cfg, bk, w):
             members.setdefault(c["part_id"], []).append(n)
     if parts and "chapters" not in bk.labels:
         raise BuildError("theme.labels.chapters is required when chapter-plan.json has parts")
-    out, heads, current = [], [], None
+    out, heads, kinds, current = [], [], [], None
     for c, path, text, n, title in chapters:
         pid = c.get("part_id")
+        part = parts[pid] if pid else None
         if pid and pid != current:
-            current, part = pid, parts[pid]
+            current = pid
             span = members[pid]
             label = (f"{bk.labels['chapters']} {span[0]}–{span[-1]}" if len(span) > 1 else f"{bk.labels['chapter']} {span[0]}")
             entries = "".join(f'<div class="entry"><span class="k">{k}</span>{esc(blocks.plain(t2))}</div>'
                               for c2, _, _, k, t2 in chapters if c2.get("part_id") == pid)
-            out.append(f'<section class="part-page"><h1><span class="num">{esc(part["label"])}</span> {esc(part["title"])}</h1>'
+            out.append(f'<section class="part-page{" bleed" if opener else ""}">'
+                       + ('<div class="frame"></div>' if opener else "")
+                       + f'<h1><span class="num">{esc(part["label"])}</span> {esc(part["title"])}</h1>'
                        f'<div class="span">{esc(label)}</div>{entries}</section>')
             heads.append((1, f"{part['label']} {part['title']}"))
+            kinds.append(("part", part["label"], part["title"]))
         w.dropcap_pending = True
         inner, h = w.render(text, "chapter", path)
-        out.append(f'<section class="chapter" style="page:ch{n}"><h1><span class="num">{n}</span> '
-                   f'{w.inline(title, links=False)}</h1>{inner}</section>')
+        h1 = (opener_html(bk, n, w.inline(title, links=False), part, [t for lvl, t in h if lvl == 2]) if opener
+              else f'<h1><span class="num">{n}</span> {w.inline(title, links=False)}</h1>')
+        out.append(f'<section class="chapter" style="page:ch{n}">{h1}{inner}</section>')
         heads += [(1, f"{n} {blocks.plain(title)}")] + h
+        kinds += [("chapter", n, title)] + [("other",)] * len(h)
     glossary = cfg.book_file("glossary") if cfg["template"]["glossary"]["enabled"] else None
     if glossary is not None:
         inner, _ = w.render(glossary.read_text(encoding="utf-8"), "glossary", glossary)
         out.append(f'<section class="gloss"><h1>{esc(bk.labels["glossary"])}</h1><div class="glossary-entries">{inner}</div></section>')
         heads.append((1, bk.labels["glossary"]))
-    return how_html, how_heads, "".join(out), heads, [(n, t) for _, _, _, n, t in chapters]
+        kinds.append(("other",))
+    return how_html, how_heads, "".join(out), heads, [(n, t) for _, _, _, n, t in chapters], kinds
 
 
 # ---------- printing and merging ----------
@@ -560,29 +785,28 @@ def build_pdf(cfg, out_pdf):
     from pypdf import PdfReader, PdfWriter
     bk = build_book.Book(cfg)
     w = Writer(bk)
-    how_html, how_heads, body, body_heads, chapters = body_parts(cfg, bk, w)
+    how_html, how_heads, body, body_heads, chapters, body_kinds = body_parts(cfg, bk, w)
     css = stylesheet(bk, chapters)
-    levels = cfg["theme"]["toc"]["levels"]
     with tempfile.TemporaryDirectory() as t:
         work = pathlib.Path(t)
         body_pdf = print_pdf(page_html(bk, css, body), work / "body.pdf", work)
         body_marks, _ = outline(body_pdf)
         _match(body_heads, body_marks, "body")
-        toc_entries = [(lvl, title) for lvl, title in how_heads + body_heads if lvl <= levels]
-        body_pages = [str(p + 1) for lvl, _, p in body_marks if lvl <= levels]
+        body_pages = [str(p + 1) for _, _, p in body_marks]   # _match paired them one to one
+        toc_heads, toc_kinds = how_heads + body_heads, [("other",)] * len(how_heads) + body_kinds
         tp = title_page_html(bk)
 
         def front(how_pages):
-            return page_html(bk, css, tp + toc_html(bk, toc_entries, how_pages + body_pages) + how_html)
-        n_how = sum(1 for lvl, _ in how_heads if lvl <= levels)
-        front_pdf = print_pdf(front([""] * n_how), work / "front.pdf", work)
+            return page_html(bk, css, tp + toc_html(bk, toc_heads, toc_kinds, how_pages + body_pages) + how_html)
+        front_pdf = print_pdf(front([""] * len(how_heads)), work / "front.pdf", work)
         front_marks, _ = outline(front_pdf)
         _match(how_heads, front_marks, "front")
-        if n_how:   # the how-to-use pages depend on the contents length: print again with its numbers
-            front_pdf = print_pdf(front([roman(p + 1) for lvl, _, p in front_marks if lvl <= levels]), work / "front.pdf", work)
+        if how_heads:   # the how-to-use pages depend on the contents length: print again with its numbers
+            front_pdf = print_pdf(front([roman(p + 1) for _, _, p in front_marks]), work / "front.pdf", work)
             front_marks, _ = outline(front_pdf)
-        cover = cover_html(bk)
-        pieces = ([print_pdf(page_html(bk, css, cover), work / "cover.pdf", work)] if cover else []) + [front_pdf, body_pdf]
+        cover, ending = cover_html(bk), ending_html(bk)
+        pieces = (([print_pdf(page_html(bk, css, cover), work / "cover.pdf", work)] if cover else []) + [front_pdf, body_pdf]
+                  + ([print_pdf(page_html(bk, css, ending), work / "ending.pdf", work)] if ending else []))
         writer = PdfWriter()
         offset, starts = 0, {}
         for p in pieces:

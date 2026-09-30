@@ -91,6 +91,11 @@ def table_rows(lines):
     return [r for r in cells if not all(re.fullmatch(r":?-+:?", x) for x in r)]
 
 
+def bind_dash(text):
+    """A spaced em or en dash is bound to the word before it (NBSP), so no line starts with it (PDF-DASH)."""
+    return re.sub(r" ([—–])", " \\1", text)
+
+
 def parse(text, cfg, kind, is_cover=None):
     """-> [block]. `kind`: 'chapter' or 'glossary'. `is_cover(link)`: True for the cover image, which is dropped
     (it is placed by the writer's title pages)."""

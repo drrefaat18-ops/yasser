@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="420" fill="#FBF7F2"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2B211C"/></marker></defs>
+  <text x="450" y="32" font-size="20" font-weight="bold" text-anchor="middle" fill="#A4472B">Managing a suspected adverse drug reaction</text>
+  <rect x="170" y="58" width="560" height="56" rx="10" fill="#F6E5DE" stroke="#A4472B" stroke-width="2.5"/>
+  <text x="190" y="82" font-size="16" font-weight="bold" fill="#A4472B">1. Patient first</text>
+  <text x="190" y="103" font-size="13" fill="#2B211C">stop or withhold, treat, monitor, escalate</text>
+  <line x1="450" y1="115" x2="450" y2="128" stroke="#2B211C" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="170" y="130" width="560" height="56" rx="10" fill="#E0EEF0" stroke="#2F6F7A" stroke-width="2.5"/>
+  <text x="190" y="154" font-size="16" font-weight="bold" fill="#2F6F7A">2. Evaluate</text>
+  <text x="190" y="175" font-size="13" fill="#2B211C">full drug history; severity; serious?</text>
+  <line x1="450" y1="187" x2="450" y2="200" stroke="#2B211C" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="170" y="202" width="560" height="56" rx="10" fill="#E0EEF0" stroke="#2F6F7A" stroke-width="2.5"/>
+  <text x="190" y="226" font-size="16" font-weight="bold" fill="#2F6F7A">3. Causality</text>
+  <text x="190" y="247" font-size="13" fill="#2B211C">WHO-UMC or Naranjo; product quality; error?</text>
+  <line x1="450" y1="259" x2="450" y2="272" stroke="#2B211C" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="170" y="274" width="560" height="56" rx="10" fill="#E0EEF0" stroke="#2F6F7A" stroke-width="2.5"/>
+  <text x="190" y="298" font-size="16" font-weight="bold" fill="#2F6F7A">4. Record and report</text>
+  <text x="190" y="319" font-size="13" fill="#2B211C">notes, allergy record, EPVC report</text>
+  <line x1="450" y1="331" x2="450" y2="344" stroke="#2B211C" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="170" y="346" width="560" height="56" rx="10" fill="#F6E5DE" stroke="#A4472B" stroke-width="2.5"/>
+  <text x="190" y="370" font-size="16" font-weight="bold" fill="#A4472B">5. Prevent</text>
+  <text x="190" y="391" font-size="13" fill="#2B211C">educate, DTC review, inform regulator</text>
+</svg>

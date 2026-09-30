@@ -1,0 +1,234 @@
+{
+ "schema_version": 1,
+ "project_id": "drug-information-practical",
+ "core_version": 1,
+ "pillars": [
+  {
+   "id": "G1",
+   "kind": "fixed",
+   "name": "Content accuracy",
+   "description": "every factually wrong statement, wrong number, wrong definition, and every claim that its cited reference does not support (claim-support mismatch), anywhere in the book",
+   "weight": 20,
+   "anchors": {
+    "9-10": {
+     "text": "No factual errors or claim-support mismatches found on a full read.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Isolated minor inaccuracies that do not mislead the reader.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Several errors, or one that would mislead a reader acting on it.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Frequent or dangerous errors; the text cannot be trusted as written.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "subject-reviewer",
+    "drug-information-reviewer"
+   ],
+   "applicable": true,
+   "hard_caps": [
+    {
+     "trigger": {
+      "severity": "blocker",
+      "min_count": 1,
+      "tag": "safety"
+     },
+     "max_score": 4,
+     "description": "An open safety blocker caps content accuracy at 4."
+    }
+   ]
+  },
+  {
+   "id": "G2",
+   "kind": "fixed",
+   "name": "Pedagogical design and clarity",
+   "description": "objectives, structure, progression, cognitive load, readability, figures' teaching value",
+   "weight": 20,
+   "anchors": {
+    "9-10": {
+     "text": "Clear objectives, logical progression and readable prose pitched at the stated audience throughout.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Sound structure with some uneven chapters or dense passages.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Objectives or progression are weak in many chapters; readability often above the audience.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "No usable learning design; structure or level does not fit the audience.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "instructional-designer",
+    "psychologist"
+   ],
+   "applicable": true,
+   "hard_caps": []
+  },
+  {
+   "id": "G3",
+   "kind": "fixed",
+   "name": "Assessment quality",
+   "description": "questions, distractors, rationales, key balance, alignment to objectives",
+   "weight": 10,
+   "anchors": {
+    "9-10": {
+     "text": "Every item is aligned to an objective, with plausible distractors and full rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Mostly sound items; some weak distractors or thin rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Many items misaligned, trivially guessable or without rationales.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Assessment is missing, wrong-keyed or unusable.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "instructional-designer"
+   ],
+   "applicable": true,
+   "hard_caps": []
+  },
+  {
+   "id": "G4",
+   "kind": "fixed",
+   "name": "Sources and currency",
+   "description": "reference existence and metadata, recency against brief.references.recency, evidence hierarchy, citation coverage (claims that need a citation and have none)",
+   "weight": 10,
+   "anchors": {
+    "9-10": {
+     "text": "Every reference exists with correct metadata; recency target met; claims needing a citation have one.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "A few metadata slips or uncited claims; recency close to target.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Many unverifiable references, outdated evidence or uncited claims.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "References largely missing, invented or obsolete.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "reviewer_ids": [
+    "research-synthesist"
+   ],
+   "applicable": true,
+   "hard_caps": []
+  },
+  {
+   "id": "D1",
+   "kind": "domain",
+   "name": "Drug information practice",
+   "weight": 15,
+   "description": "drug information centre roles, systematic query handling, correct choice and evaluation of tertiary, secondary and primary sources",
+   "anchors": {
+    "9-10": {
+     "text": "Every chapter teaches the practical skill: systematic handling of a request, and correct choice and appraisal of tertiary, secondary and primary sources with real named resources.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Skills and sources covered; a few resources misclassified, unnamed or out of date.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Systematic approach or a source tier missing; sources listed without how to choose or judge them.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Drug information practice absent or wrong across most chapters.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "drug-information-reviewer"
+   ],
+   "applicable": true
+  },
+  {
+   "id": "D2",
+   "kind": "domain",
+   "name": "Research methods",
+   "weight": 15,
+   "description": "study designs, levels of evidence, randomisation, protocol, hypothesis, power and ethics stated correctly and simply",
+   "anchors": {
+    "9-10": {
+     "text": "Study designs, evidence levels, randomisation, blinding, hypothesis testing, power and ethics stated correctly, simply and with examples.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Methods correct with a few thin or unexplained concepts.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Core concepts missing, or stated wrongly (e.g. proving H0, wrong definitions of alpha, IRB or consent).",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Research methods absent or mostly wrong.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "drug-information-reviewer"
+   ],
+   "applicable": true
+  },
+  {
+   "id": "D3",
+   "kind": "domain",
+   "name": "Pharmacovigilance",
+   "weight": 10,
+   "description": "ADR definitions, classification, causality methods (WHO-UMC, Naranjo) and reporting",
+   "anchors": {
+    "9-10": {
+     "text": "ADR definitions, classification A-F, severity vs seriousness, causality (WHO-UMC, Naranjo), immediate management and reporting all correct and practical.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "7-8": {
+     "text": "Minor gaps in classification, causality or reporting.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "4-6": {
+     "text": "Important parts missing or wrong (a classification type, causality scoring, seriousness criteria, reporting route).",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    },
+    "1-3": {
+     "text": "Pharmacovigilance content absent or wrong.",
+     "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
+    }
+   },
+   "hard_caps": [],
+   "reviewer_ids": [
+    "drug-information-reviewer"
+   ],
+   "applicable": true
+  }
+ ],
+ "provenance": {
+  "generated_by": "claude (intake)",
+  "from_brief_sha256": "88a82a26b621a5aa5bf2459f1be80d15df43a5239b743cadb3b48fb4206fe65a",
+  "edited_by_user": false
+ }
+}

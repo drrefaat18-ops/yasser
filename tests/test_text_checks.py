@@ -40,6 +40,21 @@ class TextChecks(unittest.TestCase):
         filler = " ".join(["Friction slows the box."] * 120)   # 480 words, no figure, table or box
         r = self.run_on(self.text.replace("## 1.3 Friction\n", f"## 1.3 Friction\n\n{filler}\n", 1))
         self.assertEqual(status(r, "RHYTHM-PROSE"), {"fail"})
+        # a warning (user, 2026-09-28): it never blocks rework (the filler also breaks the word budget, which does)
+        self.assertNotIn("RHYTHM-PROSE", [c["id"] for c in check_book.blocking(r["checks"])])
+        rep = {"targets": [r]}
+        self.assertEqual([c["id"] for _, c in check_book.failures(rep, warnings=True)], ["RHYTHM-PROSE"])
+        self.assertNotIn("RHYTHM-PROSE", [c["id"] for _, c in check_book.failures(rep)])
+
+    def test_long_run_names_its_section_and_a_table_breaks_it(self):
+        half = " ".join(["Friction slows the box."] * 75)   # 300 words
+        run = f"## 1.3 Friction\n\n{half}\n\n- {half}\n"   # a paragraph and a bullet: one 600-word run
+        r = self.run_on(self.text.replace("## 1.3 Friction\n", run, 1))
+        msg = next(c["message"] for c in r["checks"] if c["id"] == "RHYTHM-PROSE")
+        self.assertRegex(msg, r"^1\.3 Friction: 6\d\d words .*starts 'Friction slows")
+        table = "\n\n| a | b |\n|---|---|\n| 1 | 2 |\n\n"
+        r = self.run_on(self.text.replace("## 1.3 Friction\n", run.replace(f"\n\n- {half}", f"{table}- {half}"), 1))
+        self.assertEqual(status(r, "RHYTHM-PROSE"), {"pass"})
 
     def test_rhythm_off_without_a_limit(self):
         cfg = copy.deepcopy(self.cfg)

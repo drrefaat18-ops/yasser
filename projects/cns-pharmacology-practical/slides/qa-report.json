@@ -1,0 +1,71 @@
+{
+ "ch01-alzheimers-disease.md": [],
+ "ch02-psychosis.md": [
+  {
+   "slide": 5,
+   "check": "density",
+   "detail": "967 characters"
+  },
+  {
+   "slide": 13,
+   "check": "density",
+   "detail": "1108 characters"
+  },
+  {
+   "slide": 14,
+   "check": "density",
+   "detail": "975 characters"
+  },
+  {
+   "slide": 10,
+   "check": "rhythm",
+   "detail": "3 list slides in a row"
+  },
+  {
+   "slide": 11,
+   "check": "rhythm",
+   "detail": "3 list slides in a row"
+  }
+ ],
+ "ch03-parkinsons-disease.md": [
+  {
+   "slide": 6,
+   "check": "rhythm",
+   "detail": "3 list slides in a row"
+  },
+  {
+   "slide": 17,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  }
+ ],
+ "ch04-depression.md": [],
+ "ch05-epilepsy.md": [
+  {
+   "slide": 11,
+   "check": "density",
+   "detail": "1508 characters"
+  }
+ ],
+ "ch06-skeletal-muscle-relaxants.md": [
+  {
+   "slide": 12,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  }
+ ],
+ "ch07-anxiolytics-hypnotics.md": [],
+ "ch08-general-anaesthetics.md": [],
+ "ch09-local-anaesthetics.md": [
+  {
+   "slide": 15,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  },
+  {
+   "slide": 16,
+   "check": "rhythm",
+   "detail": "3 dense slides in a row"
+  }
+ ]
+}

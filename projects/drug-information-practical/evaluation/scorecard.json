@@ -1,0 +1,104 @@
+{
+ "schema_version": 1,
+ "rubric_digest": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+ "pillars": [
+  {
+   "id": "G1",
+   "score": 3,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-001",
+    "F-002",
+    "F-003",
+    "F-004",
+    "F-005",
+    "F-006",
+    "F-007",
+    "F-008",
+    "F-009",
+    "F-010",
+    "F-011",
+    "F-012",
+    "F-013",
+    "F-014",
+    "F-015",
+    "F-016",
+    "F-017",
+    "F-018",
+    "F-040",
+    "F-041"
+   ]
+  },
+  {
+   "id": "G2",
+   "score": 3,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-019",
+    "F-020",
+    "F-021",
+    "F-022",
+    "F-023"
+   ]
+  },
+  {
+   "id": "G3",
+   "score": 1,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-024"
+   ]
+  },
+  {
+   "id": "G4",
+   "score": 2,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-025",
+    "F-026"
+   ]
+  },
+  {
+   "id": "D1",
+   "score": 4,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-027",
+    "F-028",
+    "F-029",
+    "F-030",
+    "F-031",
+    "F-042",
+    "F-043"
+   ]
+  },
+  {
+   "id": "D2",
+   "score": 4,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-032",
+    "F-033",
+    "F-034",
+    "F-035",
+    "F-036"
+   ]
+  },
+  {
+   "id": "D3",
+   "score": 3,
+   "applicable": true,
+   "evidence_finding_ids": [
+    "F-037",
+    "F-038",
+    "F-039",
+    "F-044",
+    "F-045",
+    "F-046"
+   ]
+  }
+ ],
+ "caps_applied": [],
+ "total": 30.0,
+ "review_kind": "self"
+}

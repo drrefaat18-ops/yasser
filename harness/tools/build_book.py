@@ -101,7 +101,7 @@ class Factory:
             container.add_paragraph(style=style) if style else container.add_paragraph())
 
     def make_run(self, p, text, *, bold=False, italic=False, colour=None, size=None, sub=False, sup=False):
-        r = p.add_run(text)
+        r = p.add_run(blocks.bind_dash(text))
         r.bold = bold or None
         r.italic = italic or None
         if sub:
@@ -788,7 +788,10 @@ class Pages:
         s = doc.sections[0]
         self.page_setup(s)
         if bk.cover:   # cover: zero-margin section with a full-bleed image
-            s.left_margin = s.right_margin = s.top_margin = s.bottom_margin = Cm(0)
+            s.left_margin = s.right_margin = s.bottom_margin = Cm(0)
+            # a signed top margin is exact: Word no longer moves the body below the (empty) header, which left a
+            # 13 pt paper strip above the cover (PDF-BLEED). -1 twip = -635 EMU
+            s.top_margin = -635
             s.header_distance = s.footer_distance = Cm(0)
             self.no_head(s)
             p = doc.paragraphs[0] if doc.paragraphs else doc.add_paragraph()

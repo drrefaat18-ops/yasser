@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "di-request-steps",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "figures/src/di-request-steps.svg",
+   "caption": "The seven-step systematic approach to a drug information request.",
+   "alt": "Seven numbered boxes in two rows joined by arrows: requester, background, real question, classify, search, answer, follow up and document. Step 3, the real question, is highlighted as the step most often skipped.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "evidence-pyramid",
+   "chapter_id": "ch03",
+   "kind": "diagram.svg",
+   "source": "figures/src/evidence-pyramid.svg",
+   "caption": "The evidence pyramid: stronger designs control bias better.",
+   "alt": "A six-level pyramid. From the base upward: case reports and expert opinion; case series and cross-sectional studies; case-control studies; cohort studies; randomised controlled trials; systematic reviews and meta-analyses at the top.",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "adr-management",
+   "chapter_id": "ch08",
+   "kind": "diagram.svg",
+   "source": "figures/src/adr-management.svg",
+   "caption": "Managing a suspected adverse drug reaction, starting with the patient.",
+   "alt": "Five boxes in a vertical flow: patient first (stop, treat, monitor, escalate); evaluate (history, severity, seriousness); causality (WHO-UMC or Naranjo); record and report (EPVC); prevent (education, DTC review, regulator).",
+   "credit": "Original diagram for this book",
+   "licence": "original",
+   "status": "generated"
+  }
+ ]
+}

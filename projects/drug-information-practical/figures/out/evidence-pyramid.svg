@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Arial, Helvetica, sans-serif">
+  <rect width="900" height="400" fill="#FBF7F2"/>
+  <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2B211C"/></marker></defs>
+  <text x="450" y="32" font-size="20" font-weight="bold" text-anchor="middle" fill="#A4472B">The evidence pyramid</text>
+  <polygon points="300,60 600,60 652,108 248,108" fill="#A4472B" stroke="#FBF7F2" stroke-width="2"/>
+  <text x="450" y="91" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Systematic reviews, meta-analyses</text>
+  <polygon points="248,112 652,112 704,160 196,160" fill="#A4472B" stroke="#FBF7F2" stroke-width="2"/>
+  <text x="450" y="143" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Randomised controlled trials</text>
+  <polygon points="196,164 704,164 756,212 144,212" fill="#2F6F7A" stroke="#FBF7F2" stroke-width="2"/>
+  <text x="450" y="195" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Cohort studies</text>
+  <polygon points="144,216 756,216 808,264 92,264" fill="#2F6F7A" stroke="#FBF7F2" stroke-width="2"/>
+  <text x="450" y="247" font-size="14" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Case-control studies</text>
+  <polygon points="92,268 808,268 860,316 40,316" fill="#E0EEF0" stroke="#FBF7F2" stroke-width="2"/>
+  <text x="450" y="299" font-size="14" font-weight="bold" text-anchor="middle" fill="#2B211C">Case series, cross-sectional studies</text>
+  <polygon points="40,320 860,320 912,368 -12,368" fill="#F6E5DE" stroke="#FBF7F2" stroke-width="2"/>
+  <text x="450" y="351" font-size="14" font-weight="bold" text-anchor="middle" fill="#2B211C">Case reports, expert opinion</text>
+  <line x1="40" y1="370" x2="40" y2="70" stroke="#2B211C" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="55" y="220" font-size="13" fill="#6E625B" transform="rotate(-90 55 220)" text-anchor="middle">stronger evidence, less bias</text>
+</svg>
