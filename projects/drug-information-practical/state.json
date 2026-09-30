@@ -38,6 +38,16 @@
  },
  "project_id": "drug-information-practical",
  "receipts": {
+  "build": {
+   "args": {},
+   "error": "GateError: DIRTY-TOOL: uncommitted changes in harness/stages/build.py, harness/tools/assemble.py, harness/tools/build_book.py, harness/tools/blocks.py, harness/tools/build_html.py, harness/tools/check_pdf.py, harness/tools/config.py, harness/tools/capture_golden.py, harness/tools/check_book.py, harness/text.py, harness/locales.py, harness/preflight.py, harness/presets, harness/figures, harness/schema.py, harness/schemas/figures.v1.json, requirements-chemistry.txt:\n M harness/tools/build_html.py\n",
+   "inputs": {},
+   "outputs": {},
+   "stage": "build",
+   "status": "failed",
+   "time": "2026-09-30T17:25:56Z",
+   "tool_sha": "unknown"
+  },
   "design": {
    "args": {},
    "chapter_count": 10,
@@ -202,11 +212,11 @@
     "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "figures/src/adr-management.svg": "05759d351911715af41a94c06ab981e27d1fbc0546037877e346d2377f7d42e5",
     "figures/src/di-request-steps.svg": "18f9665aecbbaeef842390294d344617f76a28b951a29cb8a55b89e5d2339464",
-    "figures/src/evidence-pyramid.svg": "9a132dac8c046b60e3fa3362c49dafa769d5a8545e505de56ebb6fd83d3b0e88"
+    "figures/src/evidence-pyramid.svg": "c4c85a79f4399e98dba1aab428ffc6d55d4890bd9b06aeef4f9761309fd857c9"
    },
    "stage": "rework",
    "status": "ok",
-   "time": "2026-09-30T17:06:58Z",
+   "time": "2026-09-30T17:22:33Z",
    "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f",
    "total_words": 13317,
    "units": {
