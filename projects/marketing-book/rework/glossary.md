@@ -304,7 +304,7 @@
 
 **Social value** — How far using a product connects the customer with others.
 
-**societal marketing orientation** — A marketing orientation that also protects the long-term interest of society; the only acceptable one for health services.
+**societal marketing orientation** — A marketing orientation that also protects the long-term interest of society; the most appropriate one for health services.
 
 **Specialty products** — Products with unique features for which buyers make a special effort.
 

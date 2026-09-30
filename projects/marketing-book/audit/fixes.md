@@ -131,3 +131,12 @@ Recorded verbatim in `audit/review-r7.md`: verdict pass, 0 blocker or major, 5 m
 | C-003 | fixed + verified | real | The worked example listed a full month of lost production and the replacement cost without saying they cannot simply be added | One sentence added: add them only when no output is restored |
 | C-004 | fixed + verified | real | "Only acceptable" orientation stated as an absolute | Text, takeaway, Q9 stem and rationale say "most appropriate" or "best fits"; key unchanged |
 | C-005 | fixed + verified | real | Rice & Unruh cited for a specific wellness-panel claim | Citation moved to the general elasticity statement; the panel given as an illustration |
+
+## Round 8 (claude-sonnet-5-5, commit 173e24d)
+
+Recorded verbatim in `audit/review-r8.md`: verdict pass, 0 blocker or major, 2 minor. All arithmetic reproduced. Reviewer per DEC-003. The reviewer's note on the 62.7% out-of-pocket figure was checked against the text read earlier from the WHO document: "making up 59.3% in 2020 decreasing to an estimate of 54.9% of CHE in 2022, down from 62.7% in 2018–2019". The figure is confirmed and not changed.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | fixed + verified | real | The round 7 sibling hunt missed the glossary entry for "societal marketing orientation" | Glossary entry and its generator say "the most appropriate one"; no other "only acceptable" remains |
+| C-002 | fixed + verified | real | "Owns the report but not the scan" blurred the no-ownership characteristic | Patient receives the performance and its results (images and report) but does not own the service |

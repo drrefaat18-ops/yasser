@@ -1077,7 +1077,7 @@ Each difference has a practical meaning for a health service.
 
 **Customer participation.** The patient must fast, lie still or hold a breath. Clear instructions are part of producing a good result.
 
-**No transfer of ownership.** The patient owns the report but not the scan. What is bought is the performance and its outcome.
+**No transfer of ownership.** The patient receives the performance and its results, such as the images and the report, but does not come to own the service itself. What is bought is the performance and its outcome.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** A laboratory's capacity perishes when analysers stand idle, yet samples can often wait a few hours. This lets laboratories pool work from many collection points and run it in batches, balancing demand across the day.
@@ -3610,7 +3610,7 @@ Husereau, D., Drummond, M., Augustovski, F., de Bekker-Grob, E., Briggs, A. H., 
 
 **Social value** — How far using a product connects the customer with others.
 
-**societal marketing orientation** — A marketing orientation that also protects the long-term interest of society; the only acceptable one for health services.
+**societal marketing orientation** — A marketing orientation that also protects the long-term interest of society; the most appropriate one for health services.
 
 **Specialty products** — Products with unique features for which buyers make a special effort.
 
