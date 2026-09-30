@@ -1,0 +1,9 @@
+{
+ "out_dir": "slides",
+ "unit_label": "Section",
+ "minutes": 45,
+ "feature_callout": "pharmacy",
+ "feature_glyph": "℞",
+ "case_glyph": "?",
+ "fonts": {"head": "Cambria", "body": "Calibri"}
+}
