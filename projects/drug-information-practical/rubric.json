@@ -143,19 +143,19 @@
    "description": "drug information centre roles, systematic query handling, correct choice and evaluation of tertiary, secondary and primary sources",
    "anchors": {
     "9-10": {
-     "text": "Every class covered; mechanisms precise, visual and linked to effects.",
+     "text": "Every chapter teaches the practical skill: systematic handling of a request, and correct choice and appraisal of tertiary, secondary and primary sources with real named resources.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "7-8": {
-     "text": "Classes covered; a few mechanisms thin or not linked to effects.",
+     "text": "Skills and sources covered; a few resources misclassified, unnamed or out of date.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "4-6": {
-     "text": "Missing classes or mechanisms stated as lists without explanation.",
+     "text": "Systematic approach or a source tier missing; sources listed without how to choose or judge them.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "1-3": {
-     "text": "Mechanisms absent or confused across most chapters.",
+     "text": "Drug information practice absent or wrong across most chapters.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     }
    },
@@ -173,19 +173,19 @@
    "description": "study designs, levels of evidence, randomisation, protocol, hypothesis, power and ethics stated correctly and simply",
    "anchors": {
     "9-10": {
-     "text": "Guideline-based choices throughout; cases realistic and decision-driven.",
+     "text": "Study designs, evidence levels, randomisation, blinding, hypothesis testing, power and ethics stated correctly, simply and with examples.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "7-8": {
-     "text": "Sound choices with a few outdated or unexplained preferences.",
+     "text": "Methods correct with a few thin or unexplained concepts.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "4-6": {
-     "text": "Therapeutic choice often missing, outdated or not justified; cases are recall only.",
+     "text": "Core concepts missing, or stated wrongly (e.g. proving H0, wrong definitions of alpha, IRB or consent).",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "1-3": {
-     "text": "No usable therapeutic guidance.",
+     "text": "Research methods absent or mostly wrong.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     }
    },
@@ -203,19 +203,19 @@
    "description": "ADR definitions, classification, causality methods (WHO-UMC, Naranjo) and reporting",
    "anchors": {
     "9-10": {
-     "text": "All clinically important safety points present and highlighted.",
+     "text": "ADR definitions, classification A-F, severity vs seriousness, causality (WHO-UMC, Naranjo), immediate management and reporting all correct and practical.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "7-8": {
-     "text": "Minor safety omissions.",
+     "text": "Minor gaps in classification, causality or reporting.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "4-6": {
-     "text": "Important interactions, contraindications or toxicities missing.",
+     "text": "Important parts missing or wrong (a classification type, causality scoring, seriousness criteria, reporting route).",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     },
     "1-3": {
-     "text": "Safety content absent or wrong.",
+     "text": "Pharmacovigilance content absent or wrong.",
      "evidence_required": "cite the finding IDs (or state that none were found) that justify the band"
     }
    },

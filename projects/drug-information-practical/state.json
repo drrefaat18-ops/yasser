@@ -1,23 +1,23 @@
 {
- "aborts": [],
- "active_run": {
-  "author_model": "claude",
-  "nonce": "b23745aa2b61ce78",
-  "pid": 14996,
-  "stage": "evaluate",
-  "started_at": "2026-09-30T16:34:48Z",
-  "unit": null
- },
+ "aborts": [
+  {
+   "nonce": "b23745aa2b61ce78",
+   "reason": "Codex E-01: rubric domain anchors copied from another book; amend intake first",
+   "stage": "evaluate",
+   "time": "2026-09-30T16:47:31Z"
+  }
+ ],
+ "active_run": null,
  "approvals": {
   "intake": {
-   "approved_at": "2026-09-30T16:33:43Z",
+   "approved_at": "2026-09-30T16:48:55Z",
    "approved_by": "user",
-   "dec_id": "DEC-001",
-   "dec_row_sha256": "f2ca582b3f0ff09ef2a5e198791256f9959fcafabdee82f6122f0d1aa7676238",
+   "dec_id": "DEC-002",
+   "dec_row_sha256": "eb92affa96f6a421cbc6d1742a4d88214fcdacae609c4187867885320f203670",
    "files": {
     "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
     "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
-    "rubric.json": "341163378ac10719dbc85e918777f53bce7353a4bd5344f7ab1a369713027fc0",
+    "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
     "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
     "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
    },
@@ -26,6 +26,38 @@
  },
  "project_id": "drug-information-practical",
  "receipts": {
+  "evaluate": {
+   "args": {},
+   "author_model": "claude",
+   "inputs": {
+    "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
+    "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
+    "ingest/conversion-report.json": "a0d3c795a1a5871aea651e9c0fff808bc2ba0b5e891666468053e555dbff0b57",
+    "ingest/source.md": "d1eab6ae12dbf88bb92271e2e69e908f875af4768e514fa72c31547204dc0917",
+    "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5"
+   },
+   "outputs": {
+    "evaluation/codex-review.md": "3ca946c6ac852422e73054e6ef8b8984fe7e9391a0f708ca7979365f944f36f2",
+    "evaluation/findings.json": "fb1553609fc3c6eb865e8455baa429176e4da95f8f98667e8131fcb36d96af7c",
+    "evaluation/fixes.md": "7b647507791e7493e6de6cdffb130da841a5db5f3864de0891962042ecef8496",
+    "evaluation/report.md": "ea22d054a5aeb0d58a63a1e540b35166c767052790d52f24c4f9b03b52a70d71",
+    "evaluation/scorecard.json": "d9f9f0b862900e0e37291f5968f5b583b8a3c552b19b1d2bdf5656eec3aee000"
+   },
+   "personas": [
+    "drug-information-reviewer",
+    "instructional-designer",
+    "psychologist",
+    "research-synthesist",
+    "subject-reviewer"
+   ],
+   "reviewer_model": "GPT-5 Codex",
+   "rubric_digest": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
+   "rulings": {},
+   "stage": "evaluate",
+   "status": "ok",
+   "time": "2026-09-30T16:50:03Z",
+   "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
+  },
   "ingest": {
    "args": {},
    "converter": "markitdown",
@@ -59,7 +91,7 @@
    "outputs": {
     "agents/drug-information-reviewer.json": "728d550b3d7177474659684d29896d2084f8b67304557d8b2eee296ce6cf506b",
     "brief.json": "f7742ce00d5f48e54469c3ae6e55d638055d1136df673e1fe131e92ee255a752",
-    "rubric.json": "341163378ac10719dbc85e918777f53bce7353a4bd5344f7ab1a369713027fc0",
+    "rubric.json": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
     "template.json": "1671ce6d5c670407f417e5bf8ce3cd5995a24f86b02b88b73e718cb98ebd2a7e",
     "theme.json": "8fa33212089999c28ddd073d409681b452aeca1de27d4cc95260a7991560c408"
    },
@@ -80,7 +112,7 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-09-30T16:32:28Z",
+   "time": "2026-09-30T16:47:45Z",
    "tool_sha": "84123ce14dd019fa0bdd0ef78450c18b0a81760f"
   },
   "new": {

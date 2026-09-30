@@ -5,29 +5,29 @@ Review kind: self (Claude, inline persona passes: subject-reviewer, drug-informa
 
 ## Score
 
-Total **35.0 / 100**. No hard cap fires (no safety blocker).
+Total **30.0 / 100**. No hard cap fires (no safety blocker).
 
 | Pillar | Name | Weight | Score | Findings |
 |---|---|---|---|---|
-| G1 | Content accuracy | 20 | 5 | 18 |
+| G1 | Content accuracy | 20 | 3 | 20 |
 | G2 | Pedagogical design and clarity | 20 | 3 | 5 |
 | G3 | Assessment quality | 10 | 1 | 1 |
 | G4 | Sources and currency | 10 | 2 | 2 |
-| D1 | Drug information practice | 15 | 4 | 5 |
+| D1 | Drug information practice | 15 | 4 | 7 |
 | D2 | Research methods | 15 | 4 | 5 |
-| D3 | Pharmacovigilance | 10 | 4 | 3 |
+| D3 | Pharmacovigilance | 10 | 3 | 6 |
 
-Findings: 39 (0 blocker, 17 major, 22 minor).
+Findings: 46 (0 blocker, 20 major, 26 minor).
 
 ## What the source does well
 
 - Covers the core topics of a drug information course: the DIC, source tiers, randomisation, protocol and ethics, ADR types, causality and medication errors.
-- The tertiary-source pros/cons and the ADR management steps are clear and usable as they are.
+- The tertiary-source pros/cons and the evaluation questions for tertiary literature are clear and usable.
 - The type I / type II error explanation uses a concrete 'current vs new drug' example that students can follow.
 
 ## Main problems
 
-1. **Accuracy (G1).** Wrong definitions borrowed from other contexts (IRB from science fairs, informed consent from data protection), 'proving' H0, alpha called precision, and a confused ADR type C.
+1. **Accuracy (G1, D3).** ADR severity confused with seriousness and no immediate patient care in ADR management; wrong definitions borrowed from other contexts (IRB from science fairs, informed consent from data protection), 'proving' H0, alpha called precision, and a confused ADR type C.
 2. **Missing content (D1, D2, D3).** No systematic approach to a drug information request; primary literature, Section 3 (study designs), Type D ADRs, the Naranjo algorithm and ADR reporting are missing. Section 8 is a physiotherapy case with no drug-information content.
 3. **Form (G2).** Slide fragments and garbled tables; no objectives or summaries.
 4. **Assessment and sources (G3, G4).** No questions and no references.
@@ -50,9 +50,12 @@ Findings: 39 (0 blocker, 17 major, 22 minor).
 | F-028 | D1 | 209-246 | Section 2 stops after secondary sources; primary literature (definition, types, pros and cons) is missing. |
 | F-031 | D1 | 951-1050 | Section 8 ('Trauma') is a physiotherapy case of non-traumatic frozen shoulder; it has no drug-information question, source search or ADR content. |
 | F-032 | D2 | 246-252 | Section 3 is missing: there is no content on study designs or the hierarchy of evidence between sources (Section 2) and randomisation (Section 4). |
-| F-037 | D3 | 625-690 | Type D (delayed) reactions are listed but never explained and have no example. |
 | F-038 | D3 | 775-780 | The Naranjo algorithm is named but not taught: its 10 questions, scores and categories are absent. |
 | F-039 | D3 | 727-831 | The practical steps of reporting an ADR are missing: what to report, who reports, which form, and where (the EDA Egyptian Pharmaceutical Vigilance Center). |
+| F-040 | G1 | 692-698 | Patient, prescriber and pharmacist are given as 'causes' of ADRs, mixing non-preventable ADR susceptibility with preventable medication errors. |
+| F-042 | D1 | 209-238 | PubMed Central is placed under secondary resources; it is a free full-text archive, not an indexing or abstracting database. |
+| F-044 | D3 | 757-773 | Severity (intensity) is confused with seriousness (regulatory outcome): 'severe' is defined as fatal or life-threatening and 'moderate' as needing hospitalisation. This can lead to wrong reporting decisions. |
+| F-045 | D3 | 786-800 | ADR management jumps to education, formulary change and notification; immediate patient care (assess, stop or withhold the suspected drug, treat, monitor, escalate) is missing. |
 
 ## Direction for the design
 

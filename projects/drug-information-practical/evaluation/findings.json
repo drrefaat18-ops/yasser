@@ -73,7 +73,7 @@
    },
    "claim": "Randomisation gives a known chance, equal only in 1:1 allocation; the next slides teach unequal allocation. 'Predicated' should be 'predicted'.",
    "evidence": "\"Randomization gives each participant a known and equal chance ... cannot be predicated in advance.\"",
-   "source": "CONSORT 2010 explanation and elaboration. BMJ 2010;340:c869",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
    "fix_hint": "\"Each participant has a known chance (equal in 1:1 allocation) of each group, and the next assignment cannot be predicted.\""
   },
   {
@@ -88,7 +88,7 @@
    },
    "claim": "The listed 'disadvantages of randomisation' are limitations of controlled trials (efficacy vs effectiveness, strict criteria), not of randomisation itself.",
    "evidence": "\"Trials which test for efficacy may not be widely applicable.\"",
-   "source": "CONSORT 2010 explanation and elaboration. BMJ 2010;340:c869",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
    "fix_hint": "Rename as 'Limitations of randomised controlled trials' and explain efficacy (ideal conditions) vs effectiveness (real practice) in one table."
   },
   {
@@ -163,7 +163,7 @@
    },
    "claim": "A secondary outcome is also pre-specified in the protocol; it is not any additional outcome that 'occurs' during the study.",
    "evidence": "\"Secondary Outcome: is the additional outcome that occurs during the study.\"",
-   "source": "CONSORT 2010 explanation and elaboration. BMJ 2010;340:c869",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
    "fix_hint": "\"Secondary outcomes are pre-specified outcomes of lesser importance; outcomes found only after the data are seen are exploratory.\""
   },
   {
@@ -191,10 +191,10 @@
     "line_start": 524,
     "line_end": 529
    },
-   "claim": "Journal abstracts are usually limited to about 250-300 words, not 500.",
+   "claim": "The universal 500-word limit is wrong: abstract length is set by each journal (often 250-300 words).",
    "evidence": "\"usually contain ≤500 words.\"",
-   "source": "CONSORT for abstracts. Lancet 2008;371:281-3",
-   "fix_hint": "Say 'usually 250-300 words'."
+   "source": "Hopewell S et al. CONSORT for Abstracts. Lancet 2008;371:281-3",
+   "fix_hint": "Say that abstracts follow the target journal's word limit and report the required structured elements."
   },
   {
    "id": "F-014",
@@ -221,10 +221,10 @@
     "line_start": 739,
     "line_end": 740
    },
-   "claim": "Pre-marketing trials miss rare ADRs; with about 3,000 patients a trial can detect roughly 1 in 1,000, so the '<1%' threshold is imprecise.",
+   "claim": "Pre-marketing trials are too small to see uncommon ADRs; the '<1%' threshold is imprecise.",
    "evidence": "\"Cannot identify ADRs with incidence < 1%\"",
-   "source": "Edwards IR, Aronson JK. Lancet 2000;356:1255-9",
-   "fix_hint": "\"Rare ADRs (fewer than 1 in 1,000-10,000 patients) usually appear only after marketing (rule of three).\""
+   "source": "Hanley JA, Lippman-Hand A. If nothing goes wrong, is everything all right? JAMA 1983;249:1743-5",
+   "fix_hint": "Rule of three: if 0 events are seen in n patients, the true rate may still be up to about 3/n (e.g. 1 in 1,000 with 3,000 patients); rare ADRs may stay undetected until after marketing."
   },
   {
    "id": "F-016",
@@ -493,7 +493,7 @@
    },
    "claim": "Simple and blocked randomisation are listed but not explained; the unequal-allocation example is incomplete.",
    "evidence": "\"Simple method randomization. / Blocked randomization.\"",
-   "source": "CONSORT 2010 explanation and elaboration. BMJ 2010;340:c869",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
    "fix_hint": "One table: method, how it works, when to use, one-line example."
   },
   {
@@ -508,7 +508,7 @@
    },
    "claim": "Blinding is defined but single-, double- and triple-blind and allocation concealment are not explained.",
    "evidence": "\"Blinding keeps participants, clinical trial personnel ... unaware\"",
-   "source": "CONSORT 2010 explanation and elaboration. BMJ 2010;340:c869",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
    "fix_hint": "Add a who-is-blinded table and one line on allocation concealment."
   },
   {
@@ -538,13 +538,13 @@
    },
    "claim": "The RCT evaluation checklist stops at Methods; results, discussion, conclusions, funding and conflicts are missing.",
    "evidence": "\"Evaluation of prepared RCT / Title / Abstract / Introduction / Method\"",
-   "source": "CONSORT 2010 checklist",
+   "source": "Hopewell S et al. CONSORT 2025 statement. BMJ 2025;389:e081123",
    "fix_hint": "Move to the added Chapter 6 and finish the checklist with results (ITT, effect size, NNT), discussion, funding and conflicts."
   },
   {
    "id": "F-037",
    "pillar_id": "D3",
-   "severity": "major",
+   "severity": "minor",
    "tags": [],
    "location": {
     "file": "ingest/source.md",
@@ -585,6 +585,115 @@
    "evidence": "\"Reporting of serious and recurring ADRs to regulatory authorities and manufacturers\"",
    "source": "Egyptian Drug Authority, Egyptian Pharmaceutical Vigilance Center, reporting guidance",
    "fix_hint": "Add Chapter 9: reporting form fields, 'if in doubt, report', timelines for serious reactions, and the EDA online reporting route."
+  },
+  {
+   "id": "F-040",
+   "pillar_id": "G1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 692,
+    "line_end": 698
+   },
+   "claim": "Patient, prescriber and pharmacist are given as 'causes' of ADRs, mixing non-preventable ADR susceptibility with preventable medication errors.",
+   "evidence": "\"Causes of adverse drug reactions 1. Patient. 2. Prescriber. 3. pharmacist\"",
+   "source": "Edwards IR, Aronson JK. Lancet 2000;356:1255-9; NCC MERP. Taxonomy of Medication Errors",
+   "fix_hint": "Separate ADR risk factors (patient, drug, dose, duration, interactions, monitoring) from causes of medication errors."
+  },
+  {
+   "id": "F-041",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 410,
+    "line_end": 418
+   },
+   "claim": "'Psychologically qualified or eligible' is an undefined criterion; eligibility is set by the protocol, and capacity to consent is a separate matter.",
+   "evidence": "\"Should be qualified or eligible(Psychologically) for the trial\"",
+   "source": "ICH E6(R3) Good Clinical Practice, 2025",
+   "fix_hint": "Say: meets the protocol's inclusion and exclusion criteria and gives valid informed consent (or a legal representative does, with safeguards)."
+  },
+  {
+   "id": "F-042",
+   "pillar_id": "D1",
+   "severity": "major",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 209,
+    "line_end": 238
+   },
+   "claim": "PubMed Central is placed under secondary resources; it is a free full-text archive, not an indexing or abstracting database.",
+   "evidence": "\"Secondary resources ... PubMed Central (PMC) is an archive of articles\"",
+   "source": "National Library of Medicine. MEDLINE, PubMed, and PMC: how are they different? (current)",
+   "fix_hint": "Secondary: PubMed/MEDLINE, Embase. PMC: free full-text archive used to get the retrieved articles."
+  },
+  {
+   "id": "F-043",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 120,
+    "line_end": 124
+   },
+   "claim": "The tertiary -> secondary -> primary order is presented as mandatory; it is the usual starting strategy, adjusted to the question and urgency.",
+   "evidence": "\"the best method to find information includes a stepwise approach moving first through tertiary\"",
+   "source": "Malone PM, Witt BA, Malone MJ, Peterson DM. Drug Information: A Guide for Pharmacists. 7th ed. McGraw Hill; 2022",
+   "fix_hint": "Present it as the usual strategy; check currency and citations; go further when the answer is incomplete or high-stakes."
+  },
+  {
+   "id": "F-044",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 757,
+    "line_end": 773
+   },
+   "claim": "Severity (intensity) is confused with seriousness (regulatory outcome): 'severe' is defined as fatal or life-threatening and 'moderate' as needing hospitalisation. This can lead to wrong reporting decisions.",
+   "evidence": "\"Severe—fatal or life threatening / Moderate—requires antidote, medical procedure, or hospitalization\"",
+   "source": "ICH E2A. Clinical Safety Data Management: Definitions and Standards for Expedited Reporting; 1994",
+   "fix_hint": "Two tables: severity = mild / moderate / severe intensity; seriousness = death, life-threatening, hospitalisation, disability, congenital anomaly, other important medical event."
+  },
+  {
+   "id": "F-045",
+   "pillar_id": "D3",
+   "severity": "major",
+   "tags": [
+    "safety"
+   ],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 786,
+    "line_end": 800
+   },
+   "claim": "ADR management jumps to education, formulary change and notification; immediate patient care (assess, stop or withhold the suspected drug, treat, monitor, escalate) is missing.",
+   "evidence": "\"Step 3. Take corrective and follow-up action. For Severe ADRs: Educate and monitor prescribers.\"",
+   "source": "WHO. Safety of Medicines: A Guide to Detecting and Reporting Adverse Drug Reactions; 2002",
+   "fix_hint": "Add 'Step 0 - look after the patient' before system-level actions."
+  },
+  {
+   "id": "F-046",
+   "pillar_id": "D3",
+   "severity": "minor",
+   "tags": [],
+   "location": {
+    "file": "ingest/source.md",
+    "line_start": 727,
+    "line_end": 731
+   },
+   "claim": "Pharmacovigilance is defined too narrowly (monitoring marketed drugs only).",
+   "evidence": "\"Refers to the process of continuous monitoring for unwanted effects and other safety related aspects of marketed drugs.\"",
+   "source": "WHO. The Importance of Pharmacovigilance; 2002",
+   "fix_hint": "WHO definition: the science and activities relating to the detection, assessment, understanding and prevention of adverse effects or any other drug-related problem."
   }
  ]
 }

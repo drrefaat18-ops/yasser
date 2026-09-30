@@ -1,10 +1,10 @@
 {
  "schema_version": 1,
- "rubric_digest": "341163378ac10719dbc85e918777f53bce7353a4bd5344f7ab1a369713027fc0",
+ "rubric_digest": "0c87adbbf979c9fe4bc275c401f7b35c6223dd5b434d0ecf2c5822a9a885cbe5",
  "pillars": [
   {
    "id": "G1",
-   "score": 5,
+   "score": 3,
    "applicable": true,
    "evidence_finding_ids": [
     "F-001",
@@ -24,7 +24,9 @@
     "F-015",
     "F-016",
     "F-017",
-    "F-018"
+    "F-018",
+    "F-040",
+    "F-041"
    ]
   },
   {
@@ -65,7 +67,9 @@
     "F-028",
     "F-029",
     "F-030",
-    "F-031"
+    "F-031",
+    "F-042",
+    "F-043"
    ]
   },
   {
@@ -82,16 +86,19 @@
   },
   {
    "id": "D3",
-   "score": 4,
+   "score": 3,
    "applicable": true,
    "evidence_finding_ids": [
     "F-037",
     "F-038",
-    "F-039"
+    "F-039",
+    "F-044",
+    "F-045",
+    "F-046"
    ]
   }
  ],
  "caps_applied": [],
- "total": 35.0,
+ "total": 30.0,
  "review_kind": "self"
 }
