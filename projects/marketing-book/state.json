@@ -35,14 +35,14 @@
    "args": {},
    "author_model": "claude-opus-5-5",
    "codex_audited_inputs": {
-    "review_sha256": "122de53e4d5f9e39402893467cc9d456963164895b4f4a524a7ed3b325c40c09",
-    "reviewed_commit": "2ba249a"
+    "review_sha256": "dad3beed17bb6f522fe2d20c8f11fc0167c193457e2169ea9a244316cf51f3d3",
+    "reviewed_commit": "4d7ae39"
    },
    "inputs": {
     "brief.json": "cb28dbdb0e9810ac5d07730f15b5ac10cdcf712a700b01f099fc6a268bd506ce",
-    "build/Healthcare_Marketing.docx": "019d793b8c9883e0548d68c025496dad11f0474bb40cf7f643a1d8e916abf9fc",
+    "build/Healthcare_Marketing.docx": "fc3e59d5297184877cb7d7045f0cd996e9b8fe554965e3e8131f55943a27b295",
     "build/Healthcare_Marketing.md": "64dd3804c828a22a32c908b00925a73e64a13ed9fd526ce03ceb635cf1b11c12",
-    "build/Healthcare_Marketing.pdf": "5935b71a2abfc75ac6b91ba47f5d8938b8f62f3363eecb898de282d34c47a17f",
+    "build/Healthcare_Marketing.pdf": "40f355b6e49d6f626cf5b69661c3a074c69868dc4e6b9de849105c3c189ee6f4",
     "build/build-report.json": "a89fb756b7fd54621c4882aa67047380dbc2ff4438f38567c35cbf67e9185a19",
     "build/checkpoints/cover.png": "53bcffc65e4f58e31dd8736f04d68a6303b50062101532508edeee94989dd8bf",
     "build/checkpoints/first-chapter.png": "df875dcd01252eca3cc74713f7ebaaeb29852d4337cb89377d6a37082d2dbce7",
@@ -107,11 +107,10 @@
     "rework/glossary.md": "d23da590b28b3feaec1701d971f8876eb9772d9f765f38159a1af5a16e7e7121",
     "rubric.json": "60e6f781e8733c3571571eaef491d59160098f5ab61c528e11e90f98f9b514d0"
    },
-   "invalidated_by": "build@2026-09-30T16:21:07Z",
    "outputs": {
-    "audit/codex-audit.md": "122de53e4d5f9e39402893467cc9d456963164895b4f4a524a7ed3b325c40c09",
+    "audit/codex-audit.md": "dad3beed17bb6f522fe2d20c8f11fc0167c193457e2169ea9a244316cf51f3d3",
     "audit/findings.json": "638ec3b7d98ac43d398c21e74218a73ccec2f1a7159e1d2bcd0c0ffa2bcfc2c3",
-    "audit/fixes.md": "b6fb751284d47af5a3a3e7f32d06cc4d8502cd4cff2d198eccc1da36471ae1b9",
+    "audit/fixes.md": "7aeefc285fc384a9d05dde85215897afdb66cc2e3bc668f20dd67a47295d0d7a",
     "audit/scorecard.json": "66377cd19b763a97c0e375c73ee8b6f6def05325becd4d4c68cd2000a830b754"
    },
    "reviewer_model": "claude-sonnet-5-5",
@@ -119,7 +118,7 @@
    "rulings": {},
    "stage": "audit",
    "status": "ok",
-   "time": "2026-09-30T12:45:38Z",
+   "time": "2026-09-30T16:25:46Z",
    "tool_sha": "9f15d2b5ec166cbf58dcfe655fb0addc0f9daa39"
   },
   "build": {

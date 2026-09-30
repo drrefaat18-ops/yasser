@@ -186,3 +186,7 @@ At the user's request ("عايز اضيف صور للماركتينج زيادة
 | R-001 | fixed + verified | real | The licence of the replaced CT photograph was left as CC0 | Corrected to public-domain |
 
 The final confirmation, `audit/codex-audit.md` at 2ba249a, passed with two optional cosmetic notes, F-001 and F-002, both left open. G2 was rescored from 8.5 to 9, giving a total of 89.5 against the baseline of 33.0.
+
+## Design approval carried forward (claude-sonnet-5-5, commit 4d7ae39)
+
+The user reviewed and approved the design (DEC-004), which replaces the advance authorisation of DEC-002. design.md was updated in three passages to match the finished book. Rebuilding changed the PDF and DOCX byte for byte but not their content. The confirmation in `audit/codex-audit.md` passed with no findings. The scores are unchanged at 89.5, and the two optional cosmetic notes (F-001, F-002) remain open.
