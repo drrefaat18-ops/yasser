@@ -1580,10 +1580,10 @@ D) Only foreign products need registration
 **E3 — model answer points.** Introduction: overstating benefits before evidence; alternative, claims limited to validated data. Maturity or decline: pushing more frequent use; alternative, promotion aimed at groups and intervals the evidence supports.
 
 ## References
-Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
 Demay, M. B., Pittas, A. G., Bikle, D. D., Diab, D. L., Kiely, M. E., Lazaretti-Castro, M., Lips, P., Mitchell, D. M., Murad, M. H., Powers, S., Rao, S. D., Scragg, R., Tayek, J. A., Valent, A. M., Walsh, J. M. E., & McCartney, C. R. (2024). Vitamin D for the prevention of disease: An Endocrine Society clinical practice guideline. *The Journal of Clinical Endocrinology & Metabolism, 109*(8), 1907–1947. https://doi.org/10.1210/clinem/dgae290
-Rogers, E. M. (2003). *Diffusion of innovations* (5th ed.). Free Press.
 Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
+Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
+Rogers, E. M. (2003). *Diffusion of innovations* (5th ed.). Free Press.
 
 
 ---
@@ -2432,12 +2432,12 @@ D) Push strategy
 **E3 — model answer points.** Truthfulness, completeness, approved use, no public promotion of prescription medicines, no inducements, disclosure, respect for patients. Applied: accurate claims about equipment and reports; honest statements on radiation; no payments to referrers; disclosed sponsorships; no fear-based messages.
 
 ## References
+Arab Republic of Egypt. (2017). *Law No. 206 of 2017 regulating the advertisement of health-related products and services*. Official Gazette.
+Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
 Fickweiler, F., Fickweiler, W., & Urbach, E. (2017). Interactions between physicians and the pharmaceutical industry generally and sales representatives specifically and their association with physicians' attitudes and prescribing habits: A systematic review. *BMJ Open, 7*(9), e016408. https://doi.org/10.1136/bmjopen-2017-016408
 International Federation of Pharmaceutical Manufacturers & Associations. (2019). *IFPMA code of practice 2019* [Industry guidance]. IFPMA.
 Kotler, P., & Keller, K. L. (2016). *Marketing management* (15th ed.). Pearson.
 World Health Organization. (1988). *Ethical criteria for medicinal drug promotion*. World Health Organization.
-Arab Republic of Egypt. (2017). *Law No. 206 of 2017 regulating the advertisement of health-related products and services*. Official Gazette.
-Egyptian Drug Authority. (2020). *Prescription medicine promotion guidelines* (Version 01) [Guideline]. https://edaegypt.gov.eg/media/ieph2wot/prescription-medicine-promotion-guidelines.pdf
 
 
 ---

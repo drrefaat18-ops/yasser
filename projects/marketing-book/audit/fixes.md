@@ -156,3 +156,11 @@ The rescore lists 5 minor findings that remain open in the audited text; they ar
 | F-003 | fixed + verified | real | AMA 1985 definition quoted without citation | Given as a paraphrase, not a quotation |
 | F-004 | fixed + verified | real | ch08 §8.7–8.8 had no laboratory or imaging application | Paragraphs added on the reagent cold chain, contrast media storage and recall, and the retail decisions of a patient-facing laboratory or imaging centre |
 | F-005 | fixed + verified | real | Egyptian rule for laboratory and imaging promotion was generic | Names Law No. 206 of 2017 (licence from a higher committee chaired by the Minister of Health; Riad & Riad legal update, checked 2026-09-30), added to ch09 and consolidated references |
+
+## Round 9 (claude-sonnet-5-5, commit ea35068)
+
+Recorded in `audit/review-r9.md`: verdict pass, 0 blocker or major, 1 minor. The new facts (Law 206/2017 and the Endocrine Society guideline, 2024) were verified by the reviewer.
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| C-001 | fixed + verified | real | New entries were appended to the chapter reference lists without sorting, and the Egyptian Drug Authority entry was already out of order | Every chapter list was sorted by script. Only ch06 and ch09 changed, and no entry text changed. |
