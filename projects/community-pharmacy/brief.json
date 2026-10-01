@@ -1,0 +1,204 @@
+{
+ "schema_version": 1,
+ "project_id": "community-pharmacy",
+ "identity": {
+  "title": "Community Pharmacy",
+  "subtitle": "Study Decks",
+  "edition": "2026-2027",
+  "authors": [
+   {
+    "name": "East Port Said National University",
+    "credit_line": "East Port Said National University",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "No author name on the decks, as the user asked. The decks are built from the course's own sources (sections, quizzes and labs) for East Port Said National University; the sources are transcribed into intake/ and every slide is checked against them.",
+  "rework_authorised": "unknown",
+  "rework_authorised_note": "The user supplied the course sources of Port Said University and East Port Said National University and asked for study decks for East Port Said National University."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "intake/Sore_Throat_and_Tonsillitis.md",
+    "format": "md",
+    "sha256": "56055aeca58f1553876d5c3f7635c244fbcf2955b4aa34ede10941644740bd13"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Community pharmacy practice: responding to symptoms and OTC treatment",
+  "subfields": [
+   "respiratory conditions: sore throat, tonsillitis, common cold, influenza, cough, rhinitis",
+   "gastrointestinal conditions: diarrhoea, constipation, IBS",
+   "dermatology, ear and eye conditions",
+   "pharmacist counselling, referral and patient cases"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Native PowerPoint diagrams drawn by build_study; pictures taken from the course sources where they exist."
+ },
+ "audience": {
+  "year_of_study": "Pharmacy students taking Community Pharmacy",
+  "programmes": [
+   "Pharmacy"
+  ],
+  "prior_knowledge": "Pharmacology and microbiology of the earlier years.",
+  "display_line": "East Port Said National University"
+ },
+ "perspectives": {
+  "enabled": false,
+  "items": []
+ },
+ "goal": {
+  "mode": "evaluate_only",
+  "directions": [
+   "other"
+  ],
+  "notes": "Decks-only project: no book is written. Study decks (build_study.py, source mode) are built topic by topic from the transcribed course sources; content fixed to the sources, few words per slide, diagrams and the sources' pictures, MCQs from the course quizzes with an answer key at the end."
+ },
+ "language": {
+  "source": "en",
+  "output": "en",
+  "translation_required": false,
+  "terminology": "Drug names, doses and abbreviations (QDS, TDS, BD, OD) exactly as in the sources."
+ },
+ "size": {
+  "target_words_total": 35000,
+  "chapter_count_target": 12,
+  "restructuring": "merge_split_allowed",
+  "restructuring_note": "About 12 chapters: the six marketing lectures and three economics lectures are reorganised and split where a topic needs its own chapter; the order of the source syllabus is kept."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 10,
+   "options": 4,
+   "format": "MCQs taken from the course quizzes, two per slide, answer key with reasons at the end of the deck."
+  },
+  "cases": {
+   "enabled": false
+  },
+  "exercises": {
+   "enabled": true
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [],
+  "frameworks": []
+ },
+ "references": {
+  "style": "apa",
+  "style_note": "APA 7 author-date citations in the text; each chapter lists what it cites, and one consolidated reference list closes the book. At least 60% of sources date from 2016 or later; classic sources are kept where they are the origin of a concept.",
+  "recency": {
+   "min_share_since": {
+    "year": 2016,
+    "share": 0.6
+   }
+  },
+  "evidence_cutoff": null
+ },
+ "constraints": {
+  "must_keep": [
+   "The sources' wording, drug names, doses, age limits and durations"
+  ],
+  "must_not_change": [
+   "No fact, dose or age limit that is not in the sources",
+   "Contradictions in the sources are shown as 'to be confirmed', never resolved by guessing",
+   "Section 2 page 11 lists Benzydamine spray under >12 years and again as Spray/lozenge >6 yrs: to be confirmed with the course doctor (user, 2026-10-01)."
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "docx",
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Fonts installed on stock Windows",
+  "branding": {
+   "logo": null,
+   "colours": []
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Pharmacotherapy and dose accuracy against the sources",
+   "weight": 20,
+   "reviewer_ids": [
+    "community-pharmacy-reviewer",
+    "subject-reviewer"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Study value of the decks",
+   "weight": 20,
+   "reviewer_ids": [
+    "community-pharmacy-reviewer",
+    "pedagogy-reviewer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": "Project name 'community pharmacy'; no author name on the decks (user's choice)."
+  },
+  "B": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "C": {
+   "provenance": "user",
+   "note": "For East Port Said National University; the sources are shared with Port Said University."
+  },
+  "D": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "E": {
+   "provenance": "user",
+   "note": "Light deck project chosen by the user; decks built with the study-deck skill; first deck: tonsillitis, with the sore-throat treatments and the quiz and lab cases; the sources' pictures used."
+  },
+  "F": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "G": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "H": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "I": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "J": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "K": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "L": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  },
+  "M": {
+   "provenance": "default-confirmed",
+   "note": "Decks-only project."
+  }
+ },
+ "unresolved": []
+}

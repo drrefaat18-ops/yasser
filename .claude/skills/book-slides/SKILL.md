@@ -75,3 +75,20 @@ close it and run again.
    `python -m unittest tests.test_build_slides`.
 
 **Gate rules (Rule 7).** The tool calls the build gate; if it prints `ERROR <CODE>`, stop and report it. No bypass.
+
+## 5. Decks-only projects (source decks, no book)
+
+When the user wants decks straight from course sources (sections, labs, quizzes) without a book:
+
+1. `new`, then a short intake (brief goal mode `evaluate_only`, direction `other`; glossary and perspectives off;
+   `paths.chapters: ingest`; chapter heading pattern for topics). The source is a faithful transcription of the
+   pages used, in their wording, one `# Topic N: <title>` part per deck, with `## N.n` sections; keep the originals
+   in `intake/original/`. Show the files and SHA-256s; approve on an explicit yes; then `run ingest`.
+2. Contradictions or typos in the sources: ask the user; never resolve by guessing. Mark open ones "to be
+   confirmed" in the transcription and on the slide.
+3. Outline `slides/study/<deck>.json` with `"topic": N`; add `mcq` (q, opts, key, why, src) from the course
+   quizzes, `takeaways` (text, src), `case` slides (verbatim case text beside the points that answer it) and
+   pictures (`image` on points slides and on diagram nodes). Pictures live in `slides/study/images/` (outside every
+   stage contract) with a `photo-sources.md`.
+4. Build: `python harness/tools/build_source_deck.py --project projects/<p> [--chapter <deck>] --pdf`
+   (gate: evaluate, i.e. intake approved and a fresh ingest). Then QA as in §3.

@@ -1,0 +1,85 @@
+{
+ "schema_version": 1,
+ "units": [
+  {
+   "heading": "Topic 1: Sore Throat and Tonsillitis",
+   "id": "src-ch01",
+   "level": 1,
+   "line_end": 109,
+   "line_start": 1,
+   "sha256": "65ed427f71b711e684bf54f16da90c75263034cd4a274c9efeaf9cd305216ac7"
+  },
+  {
+   "heading": "1.1 Sore Throat",
+   "id": "src-ch01-s01",
+   "level": 2,
+   "line_end": 19,
+   "line_start": 5,
+   "sha256": "a2e53824412884b5f3789fd259dff1b1cb47138bf212840ffc5e993cc741c866"
+  },
+  {
+   "heading": "1.2 Sore Throat: OTC Treatment",
+   "id": "src-ch01-s02",
+   "level": 2,
+   "line_end": 37,
+   "line_start": 21,
+   "sha256": "b4224ccbe701c547b569115eb81e40530538f4fbc6edb15bfa9fcc748092ee6e"
+  },
+  {
+   "heading": "1.3 Tonsillitis",
+   "id": "src-ch01-s03",
+   "level": 2,
+   "line_end": 45,
+   "line_start": 39,
+   "sha256": "e13d27f50b57df3808fd83210e2d5387ab264fcbb6df4dfba2ddfd54f54eb754"
+  },
+  {
+   "heading": "1.4 Tonsillitis: Cause and Pathology",
+   "id": "src-ch01-s04",
+   "level": 2,
+   "line_end": 55,
+   "line_start": 47,
+   "sha256": "c9e8c6540c316d3dac773f5309a9c7416ffc53fb5bca03880095926370838cd9"
+  },
+  {
+   "heading": "1.5 Viral versus Bacterial Tonsillitis",
+   "id": "src-ch01-s05",
+   "level": 2,
+   "line_end": 73,
+   "line_start": 57,
+   "sha256": "241026b27a82f16516f2e50f4cb18da1822bad173779e5290820b95bff4e7106"
+  },
+  {
+   "heading": "1.6 Tonsillitis: Complications",
+   "id": "src-ch01-s06",
+   "level": 2,
+   "line_end": 79,
+   "line_start": 75,
+   "sha256": "bf1311e998db13de3c1080af91b97344c9460057be5575fe58cd8f96b9e74474"
+  },
+  {
+   "heading": "1.7 Tonsillitis: Management",
+   "id": "src-ch01-s07",
+   "level": 2,
+   "line_end": 87,
+   "line_start": 81,
+   "sha256": "612a829a88e255fb84104f7ea76679f60f312b5e76397eb0cf534a753d3495d1"
+  },
+  {
+   "heading": "1.8 Tonsillitis: Antibiotics",
+   "id": "src-ch01-s08",
+   "level": 2,
+   "line_end": 97,
+   "line_start": 89,
+   "sha256": "d5c0f7212b22584342c3a8c7d1db9729f6a620435d280f99941ab107c522c29d"
+  },
+  {
+   "heading": "1.9 Cases",
+   "id": "src-ch01-s09",
+   "level": 2,
+   "line_end": 109,
+   "line_start": 99,
+   "sha256": "1a0bc3f3413d11422e9a407aa360063ca8a2c4dad5e003bf6bb1aec39abdb26a"
+  }
+ ]
+}

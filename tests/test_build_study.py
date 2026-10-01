@@ -72,6 +72,13 @@ class BuildStudyTest(unittest.TestCase):
         issues = build_study.check(data, self.md, build_study.sections_of(self.md))
         self.assertTrue(any(p == "no slide" for _, p in issues))
 
+    def test_topics_split_a_source_at_chapter_headings(self):
+        import re
+        rx = re.compile(r"^# Topic (?P<num>\d+): (?P<title>.+)$")
+        parts = build_study.topics("# Topic 1: A\n## 1.1 X\ntext\n# Topic 2: B\nmore", rx)
+        self.assertEqual(sorted(parts), ["1", "2"])
+        self.assertIn("## 1.1 X", parts["1"]); self.assertNotIn("more", parts["1"])
+
     def test_norm_ignores_markup_and_quote_style(self):
         self.assertEqual(build_study.norm("**Need**  is “felt”"), 'need is "felt"')
         self.assertEqual(build_study.stem("studies"), "study")

@@ -1,0 +1,101 @@
+{
+ "aborts": [],
+ "active_run": null,
+ "approvals": {
+  "intake": {
+   "approved_at": "2026-10-01T14:27:09Z",
+   "approved_by": "user",
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "337a97c1c3a93b8046b783aa83c0c2bcb30a7c052f05a4a18e118fceb104cf1e",
+   "files": {
+    "agents/community-pharmacy-reviewer.json": "093ba8e335c729723de0d498826769a0468cc09ec14284465cb7beca304aaec3",
+    "brief.json": "6eccce9a0c80581e581736bf883822de6be61ff26c79722a0613cf6a82131dd6",
+    "rubric.json": "b2902ac21ce12da4a2a6415c9e5156f84eb13a8f9120654db38866547c527f61",
+    "template.json": "89ac6de397b95edc66ed447a07c1d9211101f35b28dae880c797a00120398c26",
+    "theme.json": "5ccb326ec679378d1318cd8aaf753e98087a4b6a64fa9560e89b3446152615b8"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "community-pharmacy",
+ "receipts": {
+  "ingest": {
+   "args": {},
+   "converter": "markitdown",
+   "inputs": {
+    "intake/Sore_Throat_and_Tonsillitis.md": "56055aeca58f1553876d5c3f7635c244fbcf2955b4aa34ede10941644740bd13",
+    "template.json": "89ac6de397b95edc66ed447a07c1d9211101f35b28dae880c797a00120398c26"
+   },
+   "outputs": {
+    "ingest/conversion-report.json": "ea7a106041658d4b9448517300420bc02bc27d744c57ca4f9f5b2510a0b5b26c",
+    "ingest/normalized.md": "56055aeca58f1553876d5c3f7635c244fbcf2955b4aa34ede10941644740bd13",
+    "ingest/units.json": "5a9395972a5ca07104ff60e88e66b8790b6115a33cd49863e94c1d50e0217f25",
+    "source-manifest.json": "f615359050b0b257d92eb349cb8193e5dc6fe611431e261468519b957d2ab233",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/Sore_Throat_and_Tonsillitis.md": "56055aeca58f1553876d5c3f7635c244fbcf2955b4aa34ede10941644740bd13"
+   },
+   "source_formats": [
+    "md"
+   ],
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-10-01T14:27:14Z",
+   "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b"
+  },
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook.json": "075302844e57524ac3ca57b29030dcb6377b36c85ba54c0b16ead2d75148aa7e",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/community-pharmacy-reviewer.json": "093ba8e335c729723de0d498826769a0468cc09ec14284465cb7beca304aaec3",
+    "brief.json": "6eccce9a0c80581e581736bf883822de6be61ff26c79722a0613cf6a82131dd6",
+    "rubric.json": "b2902ac21ce12da4a2a6415c9e5156f84eb13a8f9120654db38866547c527f61",
+    "template.json": "89ac6de397b95edc66ed447a07c1d9211101f35b28dae880c797a00120398c26",
+    "theme.json": "5ccb326ec679378d1318cd8aaf753e98087a4b6a64fa9560e89b3446152615b8"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-10-01T14:21:14Z",
+   "tool_sha": "c96c149345a5cc706cd583b064c87626168040ea"
+  },
+  "new": {
+   "args": {
+    "slug": "community-pharmacy"
+   },
+   "inputs": {},
+   "outputs": {
+    "agents/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "design/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-10-01T14:17:06Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  }
+ },
+ "schema_version": 1
+}

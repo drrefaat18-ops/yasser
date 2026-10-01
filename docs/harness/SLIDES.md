@@ -144,3 +144,20 @@ all the answers together at the end; a 3D glassmorphism design".
 | Label-only cards left an empty body | A label-only node is one 3D block |
 | Words broken mid-word in narrow cards ("mammograph-y") | Text shrinks until the longest word fits a line (0.57 em for the longest word; hyphenated parts counted apart) |
 | Long options in one column came out tiny | Options always 2 × 2; long ones wrap inside their pill |
+
+## Source decks (community-pharmacy, tonsillitis, 2026-10-01)
+
+User: a new project "community pharmacy" from 16 course files (Port Said University and East Port Said National
+University), decks made with the study-deck skill, first deck on tonsillitis, "make graphics that make studying
+easier, and use the pictures where there are pictures"; chose a light deck project (no book), no author name, the
+sore-throat treatments and the quiz and lab cases included, the sources' pictures used.
+
+| Need or problem | Fix |
+|---|---|
+| A deck without a book | `build_source_deck.py` (gate: evaluate) runs `build_study.main(source=True)`: one deck per outline, built from the `# Topic N` part of `ingest/normalized.md` |
+| Questions and takeaways are not in the source text | Outline `mcq` and `takeaways`, each checked against the source (words, verbatim src, reason share) |
+| Pictures | `image` on points slides and diagram nodes; files in `slides/study/images/` (inside `images/` they broke the ingest contract: UPSTREAM-STALE) |
+| A case from a lab sheet | `case` slide: the case verbatim beside the points that answer it |
+| No glossary or objectives in the sources | Key-terms and objectives slides are skipped; title facts drop zero counts |
+| Slashes do not break lines in PowerPoint ("antipyr-etics") | Space the slash in the outline ("Analgesics / antipyretics") |
+| The source contradicts itself (Benzydamine spray >12 years and >6 yrs) | Asked the user; marked "to be confirmed" on the slide |

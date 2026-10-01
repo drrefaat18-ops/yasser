@@ -1,0 +1,24 @@
+{
+ "schema_version": 1,
+ "id": "community-pharmacy-reviewer",
+ "base_persona": "subject-reviewer",
+ "scope": "Community pharmacy study decks: whether every drug, dose, age limit and counselling point matches the course sources, and whether the slides help a pharmacy student revise.",
+ "criteria": [
+  "Every drug, dose, frequency and duration on a slide matches the source page it comes from.",
+  "Age limits, pregnancy and breastfeeding statements match the sources; contradictions in the sources are shown as 'to be confirmed'.",
+  "Viral and bacterial features, complications and referral or surgery indications are complete and correct.",
+  "MCQs come from the course quizzes, have one defensible key, and the reason cites the source fact.",
+  "Slides carry few words, use diagrams where the content has a shape, and use the sources' pictures where they help."
+ ],
+ "exclusions": [
+  "Do not add drugs, doses or guidance that are not in the course sources."
+ ],
+ "evidence_expectations": [
+  "Quote the slide text and the source page for every finding.",
+  "Give replacement text, not only a critique."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2"
+ ]
+}

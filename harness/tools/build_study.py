@@ -122,7 +122,7 @@ def glossary(path):
     return g
 
 
-def check(outline, md, sections):
+def check(outline, md, sections, project=None):
     """Fidelity report: list of (where, problem)."""
     text, vocab, issues = norm(md), words(md), []
     covered = {s["sec"] for s in outline["sections"]}
@@ -155,14 +155,39 @@ def check(outline, md, sections):
                 share = len(own & words(p["src"])) / max(len(own), 1)
                 if share < SRC_SHARE:
                     issues.append((where, f"point shares {share:.0%} with its src: {body[:50]}"))
+            if sl["kind"] == "case":
+                case = sl.get("case") or {}
+                if norm(case.get("text", "")) not in text:
+                    issues.append((where, "case text is not verbatim in the source"))
+            for img in [sl.get("image")] + [n.get("image") for n in nodes]:
+                if img and project and not (project / img).is_file():
+                    issues.append((where, f"image not found: {img}"))
             if sl["kind"] in DIAGRAMS and not 1 <= len(nodes) <= DIAGRAMS[sl["kind"]]:
                 issues.append((where, f"{sl['kind']} takes 1 to {DIAGRAMS[sl['kind']]} nodes"))
-            elif sl["kind"] not in DIAGRAMS and sl["kind"] not in ("points", "table"):
+            elif sl["kind"] not in DIAGRAMS and sl["kind"] not in ("points", "table", "case"):
                 issues.append((where, f"unknown kind {sl['kind']}"))
             if sl["kind"] == "points" and len(sl.get("points", [])) > MAX_POINTS:
                 issues.append((where, f"more than {MAX_POINTS} points"))
             if sl["kind"] == "table" and not sl.get("src"):
                 issues.append((where, "table without src"))
+    for k, m in enumerate(outline.get("mcq", []), 1):          # questions written in the outline (source mode)
+        where = f"MCQ {k}"
+        for c in [m["q"], m["why"]] + m["opts"]:
+            foreign = sorted(words(c) - vocab)
+            if foreign:
+                issues.append((where, f"words not in the source {foreign}: {c[:50]}"))
+        if m.get("key") not in "ABCD"[:len(m["opts"])] or len(m["opts"]) < 2:
+            issues.append((where, "key must be one of the option letters"))
+        if norm(m.get("src", "")) not in text or not m.get("src"):
+            issues.append((where, f"src not verbatim in the source: {m.get('src', '')[:60]}"))
+        elif len(words(m["why"]) & words(m["src"])) / max(len(words(m["why"])), 1) < SRC_SHARE:
+            issues.append((where, f"reason shares too little with its src: {m['why'][:50]}"))
+    for t in outline.get("takeaways", []):
+        if norm(t["src"]) not in text:
+            issues.append(("takeaways", f"src not verbatim in the source: {t['src'][:60]}"))
+        foreign = sorted(words(t["text"]) - vocab)
+        if foreign:
+            issues.append(("takeaways", f"words not in the source {foreign}: {t['text'][:50]}"))
     return issues
 
 
@@ -232,6 +257,12 @@ class StudyDeck(bs.Deck):
         self.minutes, self.fit = None, False
         self.outline, self.secs = outline, sections_of(md)
         self.terms = [(t, gloss.get(t.lower(), "")) for t in bold_terms(md, self.secs)]
+        if outline.get("mcq"):                                  # source mode: the outline carries the questions
+            self.mcqs = [{"n": str(i), "q": m["q"], "opts": [f"{L}) {o}" for L, o in zip("ABCD", m["opts"])]}
+                         for i, m in enumerate(outline["mcq"], 1)]
+            self.ch["answers"] = {str(i): (m["key"], m["why"]) for i, m in enumerate(outline["mcq"], 1)}
+        if outline.get("takeaways"):
+            self.ch["takeaways"] = [t["text"] for t in outline["takeaways"]]
         self.bg = bg or {}
         st = self.st
         self.kick_col = next(bs.mix(st.acc, "000000", z) for z in (0, 0.08, 0.16, 0.24, 0.32, 0.4)
@@ -309,7 +340,8 @@ class StudyDeck(bs.Deck):
         hh = max(0.66, max(self.dh([l], w - 0.3, lsz, 0.56) for l in labels) + 0.16)
         paras = [[t for t in (n.get("text", ""), n.get("sub", "")) if t] for n in nodes]
         z = min((self.fitsize(ps, w - 0.4, h - hh - 0.3) for ps in paras if ps), default=22)
-        need = hh + max((self.dh(ps, w - 0.4, z) for ps in paras if ps), default=0) + 0.45
+        need = hh + max((self.dh(ps, w - 0.4, z) for ps in paras if ps), default=0) + 0.45 + \
+            (2.4 if any(n.get("image") for n in nodes) else 0)
         if not any(paras):
             need = max(1.2, hh + 0.4)                                       # label-only blocks
         return lsz, hh, z, need
@@ -325,6 +357,17 @@ class StudyDeck(bs.Deck):
             return
         self.panel(s, x, y, w, h)
         self.label(self.solid(s, x, y, w, hh, fill), label or node["label"], lsz, font=st.head)
+        if node.get("image"):                                   # picture under the node's text
+            th = self.dh(paras, w - 0.4, z)
+            ih = h - hh - th - 0.45
+            if ih > 0.6:
+                from PIL import Image
+                path = self.b.project / node["image"]
+                iw, ihp = Image.open(path).size
+                sc = min((w - 0.4) / iw, ih / ihp)
+                pic = s.shapes.add_picture(str(path), bs.Inches(x + (w - iw * sc) / 2), bs.Inches(y + h - 0.2 - ihp * sc),
+                                           bs.Inches(iw * sc), bs.Inches(ihp * sc))
+                self.alt(pic, node["label"])
         body = self.text(s, x + 0.2, y + hh + 0.18, w - 0.4, h - hh - 0.28)
         for i, t in enumerate(paras):
             q = body.paragraphs[0] if i == 0 else body.add_paragraph(); q.space_before = bs.Pt(0 if i == 0 else 8)
@@ -407,12 +450,15 @@ class StudyDeck(bs.Deck):
 
     # ---- section slides ------------------------------------------------------------------------------------
     def facts(self):
-        return [(str(len(self.secs)), "sections"), (str(len(self.terms)), "key terms"), (str(len(self.mcqs)), "questions")]
+        out = [(len(self.secs), "sections"), (len(self.terms), "key terms"), (len(self.mcqs), "questions")]
+        return [(str(n), what) for n, what in out if n]                 # no "0 key terms"
 
     def kick(self, sec):
         return f"§{sec}  ·  {self.secs[sec][0]}"
 
     def objectives(self):
+        if not self.ch["los"]:                                  # sources without objectives: no slide
+            return
         label = next((x["label"] for x in self.b.template["sections"] if x["role"] == "objectives"), "Objectives")
         s = self.content(self.unit, label, " ".join(self.ch["intro"]))
         self.glass_rows(s, self.ch["los"], bs.M, bs.TOP, 8.4, bs.BOTTOM - bs.TOP, 20)
@@ -435,12 +481,45 @@ class StudyDeck(bs.Deck):
         s = self.content(self.kick(sec), sl["title"], notes, "list")
         pts = [p["text"] for p in sl["points"]]
         fig = sl.get("figure")
-        if fig and fig in self.figs:
+        if sl.get("image"):                                     # a picture from the sources beside the points
+            self.glass_rows(s, pts, bs.M, bs.TOP, 6.0, bs.BOTTOM - bs.TOP, 22)
+            self.picture(s, sl["image"], sl.get("image_caption", ""), bs.M + 6.25, bs.TOP, bs.CW - 6.25, bs.BOTTOM - bs.TOP)
+        elif fig and fig in self.figs:
             self.glass_rows(s, pts, bs.M, bs.TOP, 4.6, bs.BOTTOM - bs.TOP, 20)
             self.panel(s, bs.M + 4.85, bs.TOP, bs.CW - 4.85, bs.BOTTOM - bs.TOP, 80)
             self.visual(s, {"kind": "fig", "data": fig}, bs.M + 5.05, bs.TOP + 0.15, bs.CW - 5.25, bs.BOTTOM - bs.TOP - 0.3)
         else:
             self.glass_rows(s, pts, bs.M, bs.TOP, bs.CW, bs.BOTTOM - bs.TOP)
+
+    def picture(self, s, rel, caption, x, y, w, h):
+        """A source picture on a glass panel, fitted inside it, with an optional caption line."""
+        self.panel(s, x, y, w, h, 80)
+        cap_h = 0.45 if caption else 0
+        path = self.b.project / rel
+        from PIL import Image
+        iw, ih = Image.open(path).size
+        bw, bh = w - 0.4, h - 0.4 - cap_h
+        scale = min(bw / iw, bh / ih)
+        pw, ph = iw * scale, ih * scale
+        pic = s.shapes.add_picture(str(path), bs.Inches(x + (w - pw) / 2), bs.Inches(y + 0.2 + (bh - ph) / 2),
+                                   bs.Inches(pw), bs.Inches(ph))
+        self.alt(pic, caption or pathlib.Path(rel).stem.replace("-", " "))
+        if caption:
+            tf = self.text(s, x + 0.2, y + h - 0.2 - cap_h, w - 0.4, cap_h, bs.MSO_ANCHOR.MIDDLE)
+            tf.paragraphs[0].alignment = bs.PP_ALIGN.CENTER
+            self.runs(tf.paragraphs[0], caption, 14, self.st.mut, italic=True)
+
+    def case(self, sec, sl, notes):
+        """A case from the sources (verbatim) beside the points that answer it."""
+        s = self.content(self.kick(sec), sl["title"], notes, "case")
+        st, text = self.st, sl["case"]["text"]
+        w = 6.2
+        self.panel(s, bs.M, bs.TOP, w, bs.BOTTOM - bs.TOP, 66)
+        self.label(self.solid(s, bs.M + 0.35, bs.TOP + 0.3, 1.3, 0.46, st.acc, radius=0.5), "CASE", 13)
+        tf = self.text(s, bs.M + 0.35, bs.TOP + 1.0, w - 0.7, bs.BOTTOM - bs.TOP - 1.25)
+        self.runs(tf.paragraphs[0], text, self.fitsize([text], w - 0.7, bs.BOTTOM - bs.TOP - 1.3, (20, 19, 18, 17, 16)), italic=True)
+        self.glass_rows(s, [p["text"] for p in sl["points"]], bs.M + w + 0.25, bs.TOP, bs.CW - w - 0.25,
+                        bs.BOTTOM - bs.TOP, 19)
 
     def table_slides(self, title, kicker, head, rows, notes):
         parts = self.pages_of(rows, MAX_ROWS)
@@ -483,6 +562,8 @@ class StudyDeck(bs.Deck):
     # ---- end of the deck -----------------------------------------------------------------------------------
     def key_terms(self):
         rows = [(t[:1].upper() + t[1:], d) for t, d in self.terms if d]
+        if not rows:                                            # no glossary (e.g. a decks-only project)
+            return
         parts = self.pages_of(rows, TERMS_PER_SLIDE)
         per = max(len(x) for x in parts) if parts else TERMS_PER_SLIDE
         gap = 0.2
@@ -587,6 +668,8 @@ class StudyDeck(bs.Deck):
                     self.table_slides(sl["title"], self.kick(sec), sl["head"], sl["rows"], notes)
                 elif sl["kind"] in DIAGRAMS:
                     self.diagram(sec, sl, notes)
+                elif sl["kind"] == "case":
+                    self.case(sec, sl, notes)
             for label, body in callouts:
                 self.callout(sec, label, body, f"Source: §{sec}, {label} box (verbatim).")
         self.key_terms()
@@ -612,7 +695,25 @@ def to_pdf(pptx):
     return pdf if pdf.is_file() else None
 
 
-def main(project, only=None, pdf=False):
+def topics(md, rx):
+    """{topic number: its part of the normalized source}, split at the chapter headings."""
+    out, num, buf = {}, None, []
+    for ln in md.splitlines():
+        m = rx.match(ln)
+        if m:
+            if num:
+                out[num] = "\n".join(buf)
+            num, buf = str(int(m.group("num"))), []
+        if num:
+            buf.append(ln)
+    if num:
+        out[num] = "\n".join(buf)
+    return out
+
+
+def main(project, only=None, pdf=False, source=False):
+    """source=False: one deck per book chapter that has an outline. source=True (decks-only projects, called by
+    build_source_deck.py): one deck per outline, built from the part of ingest/normalized.md its "topic" names."""
     book = bs.Book(project)
     style = bs.Style(book.theme, book.cfg)
     p = book.project
@@ -628,14 +729,21 @@ def main(project, only=None, pdf=False):
     style.glass_bg = bs.mix(style.pri, bs.WHITE_HEX, 0.9)
     bg = backgrounds(style, assets)
     status, report = 0, {}
-    for c in book.plan["chapters"]:
-        stem_ = pathlib.Path(c["file"]).stem
-        src = base / f"{stem_}.json"
+    if source:
+        parts = topics((p / "ingest" / "normalized.md").read_text(encoding="utf-8"), book.chapter_rx)
+        jobs = [(o.stem, o, parts.get(str(json.loads(o.read_text(encoding="utf-8")).get("topic", ""))))
+                for o in sorted(base.glob("*.json"))]
+    else:
+        jobs = [(pathlib.Path(c["file"]).stem, base / f"{pathlib.Path(c['file']).stem}.json", None)
+                for c in book.plan["chapters"]]
+    for stem_, src, part in jobs:
         if not src.is_file() or (only and not stem_.startswith(only)):
             continue
-        md = (chapters / c["file"]).read_text(encoding="utf-8")
+        md = part if source else (chapters / f"{stem_}.md").read_text(encoding="utf-8")
+        if md is None:
+            print(f"{stem_}: its topic is not in ingest/normalized.md"); status = 1; continue
         outline = json.loads(src.read_text(encoding="utf-8"))
-        issues = check(outline, md, sections_of(md))
+        issues = check(outline, md, sections_of(md), p)
         deck = StudyDeck(book, style, bs.parse(md, book), logos, figs, captions, outline, md, gloss, bg)
         missing = [t for t, d in deck.terms if not d]
         issues += [("key terms", f"no glossary entry: {t}") for t in missing]
