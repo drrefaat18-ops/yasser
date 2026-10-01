@@ -1,13 +1,43 @@
 ---
 name: book-slides
-description: Make PowerPoint teaching decks (one .pptx per chapter) from a built book through harness/tools/build_slides.py. Use when the user asks for slides, a slide deck, PowerPoint or a presentation for a book in projects/.
+description: Make PowerPoint decks from a built book in projects/ — teaching decks (build_slides.py) or source-faithful study-summary decks with a PDF (build_study.py). Use when the user asks for slides, a deck, PowerPoint, a presentation, a summary deck or revision slides for a book chapter.
 ---
 
 # book-slides
 
-Turns the reworked chapters of a book into one teaching deck per chapter. Runs after `build` (gate: build). All
-wording, colours, logos and labels come from the project's own files; the rules and the lessons behind them are in
-`docs/harness/SLIDES.md` — read it first.
+Two kinds of deck, both after `build` (gate: build), both styled from the project's own files. The rules and the
+lessons behind them are in `docs/harness/SLIDES.md` — read it first.
+
+| User asks for | Mode | Tool |
+|---|---|---|
+| slides to teach / present a lecture | **teaching** (§1–3 below) | `build_slides.py`, every chapter |
+| a summary deck to study or revise from | **study** (§4 below) | `build_study.py`, chapter by chapter |
+
+## 4. Study mode (summary deck, content fixed to the book)
+
+Defaults the user chose (see SLIDES.md, Study decks): shortened but traceable points, English as in the book,
+for the lecturer and the student together (on-slide text plus speaker notes), PPTX and PDF.
+
+1. **Ask only what is not yet settled** (the defaults above stand; ask about new needs, one round, recommended first).
+2. **Read the whole chapter**, then write `projects/<book>/slides/study/<chapter stem>.json` (format in the tool's
+   docstring): per core section, `points` slides (≤6 points, each a shortening of one chapter sentence quoted
+   verbatim in `src`; a figure beside short points) and `table` slides for comparisons between related concepts,
+   with their `src` quotes. Use only the chapter's own words; bold the key term in a point.
+   **Prefer a diagram whenever the content has a shape** (user, 2026-10-01: "more figures, so the information is
+   summarised better"): a sequence → `flow`; parts of a whole or a list of 4-10 → `cards`; two contrasted ideas →
+   `versus`; a definition that is a difference or sum → `equation`; a scale with a best end → `spectrum`. Put the
+   one-line key message in `caption`. Keep a table only where the reader compares several attributes across rows,
+   and keep the book's own figures beside short points. Aim for at least one diagram per section. Keep node texts
+   short and of similar length: one long text shrinks the whole row.
+3. Build: `python harness/tools/build_study.py --project projects/<book> --chapter chNN --pdf`.
+   The fidelity check stops the build on any non-verbatim `src`, any word not in the chapter, a point that shares
+   less than half its words with its `src`, or a section without a slide. **Fix the outline, never the checker's
+   limits.** The tool adds the objectives, the callout boxes, key terms (glossary), the MCQs (question, then answer
+   with the reason) and a one-page revision slide, all verbatim.
+4. QA as in §3: export to PNG with PowerPoint COM, look at every slide on contact sheets (only `Slide*.PNG`), fix
+   in the outline or the tool, rebuild, look again. Lint warnings for the revision slide's density are expected.
+5. Send the PPTX and PDF, ask the user what to change, and record each new preference in `docs/harness/SLIDES.md`
+   (Study decks section) so the next chapter starts from it.
 
 ## 1. Questionnaire first (always, before any deck is built)
 

@@ -25,6 +25,7 @@ HARNESS = [
     {"path": "harness/tools/renumber_refs.py", "gate": "rework", "why_ungated": None},
     {"path": "harness/figures/render.py", "gate": "build", "why_ungated": None},
     {"path": "harness/tools/build_slides.py", "gate": "build", "why_ungated": None},
+    {"path": "harness/tools/build_study.py", "gate": "build", "why_ungated": None},
     {"path": "harness/figures/check_figures.py", "gate": "build", "why_ungated": None},
     {"path": "harness/tools/leak_scan.py", "gate": None, "why_ungated": "scans shared harness code, reads no project"},
     {"path": "harness/tools/capture_golden.py", "gate": None,

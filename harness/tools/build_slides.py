@@ -111,6 +111,8 @@ class Style:
                           if contrast(mix(self.acc, WHITE_HEX, t), self.acc) >= 4.5 or t == 1.0)
         self.faded = mix(self.mut, WHITE_HEX, 0.93)
         self.faded_disc = mix(self.mut, WHITE_HEX, 0.80)
+        self.mut_f = next(mix(self.mut, "000000", t) for t in (0, 0.1, 0.2, 0.3, 0.45, 0.6)   # faded option text
+                          if contrast(mix(self.mut, "000000", t), self.faded_disc) >= 4.6 or t == 0.6)
         # content-slide background: slides.json "background", else the book's paper colour, else white
         self.bg = (slides_cfg.get("background") or pal.get("paper") or WHITE_HEX).lstrip("#").upper()
         fonts = slides_cfg.get("fonts") or {}
@@ -503,12 +505,14 @@ class Deck:
 
     def visual(self, s, c, x, y, w, h):
         if c["kind"] == "fig":
+            caption = self.captions.get(c["data"], "")
+            cap_h = max(0.4, self.height([caption], w, 13)) if caption else 0.4    # the caption box grows with its text
             pic = self.alt(s.shapes.add_picture(str(self.figs[c["data"]]), Inches(x), Inches(y), width=Inches(w)),
-                           self.alts.get(c["data"], self.captions.get(c["data"], "")))
-            if pic.height > Inches(h - 0.45):
-                pic.width = int(pic.width * Inches(h - 0.45) / pic.height); pic.height = Inches(h - 0.45)
+                           self.alts.get(c["data"], caption))
+            if pic.height > Inches(h - cap_h - 0.1):
+                pic.width = int(pic.width * Inches(h - cap_h - 0.1) / pic.height); pic.height = Inches(h - cap_h - 0.1)
             pic.left = Inches(x) + int((Inches(w) - pic.width) / 2)
-            cap = self.text(s, x, y + pic.height / 914400 + 0.1, w, 0.4); cap.paragraphs[0].alignment = PP_ALIGN.CENTER
+            cap = self.text(s, x, y + pic.height / 914400 + 0.1, w, cap_h); cap.paragraphs[0].alignment = PP_ALIGN.CENTER
             self.runs(cap.paragraphs[0], self.captions.get(c["data"], ""), 13, self.st.mut, italic=True)
         elif c["kind"] == "table":
             self.table(s, c["data"], y=y, h=h, x=x, w=w)
@@ -622,9 +626,9 @@ class Deck:
                           MSO_SHAPE.ROUNDED_RECTANGLE, 0.18)
                 d = self.rect(s, M + 0.18, top + k * gap + (gap - 0.6) / 2, 0.46, 0.46,
                               WHITE_HEX if hit else (st.faded_disc if faded else st.pri), MSO_SHAPE.OVAL)
-                self.centred(d, letter, 15, st.acc if hit else (st.mut if faded else WHITE_HEX))
+                self.centred(d, letter, 15, st.acc if hit else (st.mut_f if faded else WHITE_HEX))
                 b = self.text(s, M + 0.9, top + k * gap, CW - 1.1, gap - 0.14, MSO_ANCHOR.MIDDLE)
-                self.runs(b.paragraphs[0], body, 19, WHITE_HEX if hit else (st.mut if faded else st.ink), hit)
+                self.runs(b.paragraphs[0], body, 19, WHITE_HEX if hit else (st.mut_f if faded else st.ink), hit)
             if reveal and why:
                 r = self.text(s, M, top + len(q["opts"]) * gap + 0.05, CW, 0.75)
                 self.runs(r.paragraphs[0], "Why:  ", 15, st.acc, True); self.runs(r.paragraphs[0], why, 15, st.ink)
@@ -772,15 +776,20 @@ def lint(prs, kinds):
     return issues
 
 
+def figures(book):
+    """Rendered figure PNGs and their (captions, alt texts), from the template's figures path."""
+    fdir = book.project / (book.template["paths"].get("figures") or "figures")
+    figs = {f.stem: f for f in (fdir / "out").glob("*.png")} if (fdir / "out").is_dir() else {}
+    fj = fdir / "figures.json"
+    figdoc = json.loads(fj.read_text(encoding="utf-8"))["figures"] if fj.is_file() else []
+    return figs, ({f["id"]: f["caption"] for f in figdoc}, {f["id"]: f.get("alt") or f["caption"] for f in figdoc})
+
+
 def main(project):
     book = Book(project)
     style = Style(book.theme, book.cfg)
     p = book.project
-    fig_dir = p / "figures" / "out"
-    figs = {f.stem: f for f in fig_dir.glob("*.png")} if fig_dir.is_dir() else {}
-    fj = p / "figures" / "figures.json"
-    figdoc = json.loads(fj.read_text(encoding="utf-8"))["figures"] if fj.is_file() else []
-    captions = ({f["id"]: f["caption"] for f in figdoc}, {f["id"]: f.get("alt") or f["caption"] for f in figdoc})
+    figs, captions = figures(book)
     out = p / (book.cfg.get("out_dir") or "slides"); out.mkdir(exist_ok=True)
     assets = out / "_assets"; assets.mkdir(exist_ok=True)
     logos = [badge(p / rel, assets / pathlib.Path(rel).name)

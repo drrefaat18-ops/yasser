@@ -1,0 +1,172 @@
+{
+ "chapter": "ch01.md",
+ "sections": [
+  {"sec": "1.1", "slides": [
+   {"kind": "cards", "title": "Every one of these decisions is a marketing decision",
+    "nodes": [
+     {"label": "Which tests to offer", "text": "A medical laboratory must decide which tests to offer.", "src": "A medical laboratory must decide which tests to offer."},
+     {"label": "What to charge", "text": "It must decide what to charge.", "src": "It must decide what to charge"},
+     {"label": "Where to open a branch", "text": "Where to open a branch.", "src": "where to open a branch"},
+     {"label": "How long patients wait", "text": "How long patients should wait.", "src": "how long patients should wait"},
+     {"label": "How results reach them", "text": "An imaging centre faces the same questions about scans.", "src": "how results reach them. An imaging centre faces the same questions about scans."}
+    ],
+    "caption": [
+     {"text": "Each one starts from the same question: **what do the people we serve actually need?**", "src": "Each one starts from the same question: what do the people we serve actually need?"}
+    ]},
+   {"kind": "versus", "title": "Marketing is more than advertising",
+    "nodes": [
+     {"label": "The narrow picture", "text": "Billboards, discounts and pushy salespeople.", "sub": "That picture is too narrow.", "src": "They picture billboards, discounts and pushy salespeople. That picture is too narrow"},
+     {"label": "What marketing lets you do", "text": "See your service the way patients, doctors and payers see it.", "sub": "Recognise marketing that crosses an ethical line.", "src": "Understanding marketing lets you see your service the way patients, doctors and payers see it. It also lets you recognise marketing that crosses an ethical line."}
+    ]}
+  ]},
+  {"sec": "1.2", "slides": [
+   {"kind": "flow", "title": "The AMA definition: four verbs",
+    "nodes": [
+     {"label": "Creating", "text": "A laboratory creates a test menu", "src": "creating, communicating, delivering and exchanging. A laboratory creates a test menu"},
+     {"label": "Communicating", "text": "communicates it to doctors and patients", "src": "communicates it to doctors and patients"},
+     {"label": "Delivering", "text": "delivers results", "src": "delivers results"},
+     {"label": "Exchanging", "text": "and exchanges them for a fee", "src": "and exchanges them for a fee"}
+    ],
+    "caption": [
+     {"text": "Offerings that have value for customers, clients, partners and **society at large**: a service can affect people who never pay for it.", "src": "offerings that have value for customers, clients, partners, and society at large"}
+    ]},
+   {"kind": "versus", "title": "From the seller's activities to the value received",
+    "nodes": [
+     {"label": "AMA 1985", "text": "Planning and carrying out the conception, pricing, promotion and distribution of ideas, goods and services.", "sub": "Focus: the seller's activities.", "src": "It described marketing as the process of planning and carrying out the conception, pricing, promotion and distribution of ideas, goods and services."},
+     {"label": "AMA current", "text": "Creating, communicating, delivering and exchanging offerings that have value.", "sub": "Focus: the value received.", "src": "creating, communicating, delivering, and exchanging offerings that have value"}
+    ],
+    "caption": [
+     {"text": "**Kotler and Keller:** marketing is meeting needs profitably. For a public hospital, “profitably” becomes “sustainably”.", "src": "Marketing is meeting needs profitably. For a public hospital, \"profitably\" becomes \"sustainably\"."}
+    ]}
+  ]},
+  {"sec": "1.3", "slides": [
+   {"kind": "points", "title": "Five linked ideas", "figure": "ch01-marketing-process", "points": [
+    {"text": "Five linked ideas make up the marketing process.", "src": "Five linked ideas make up the marketing process."},
+    {"text": "Needs, wants and demands", "src": "Needs, wants and demands"},
+    {"text": "Products and services", "src": "Products and services"},
+    {"text": "Value, satisfaction and quality", "src": "Value, satisfaction and quality"},
+    {"text": "Exchange, transactions and relationships", "src": "Exchange, transactions and relationships"},
+    {"text": "Markets: they appear in every later chapter.", "src": "They appear in every later chapter"}
+   ]},
+   {"kind": "flow", "title": "Needs, wants and demands",
+    "nodes": [
+     {"label": "Need", "text": "A state of felt deprivation.", "sub": "A patient with chest pain needs a diagnosis.", "src": "A need is a state of felt deprivation. People need food, safety and health."},
+     {"label": "Want", "text": "The form a need takes, shaped by culture and personal experience.", "sub": "A particular cardiologist or a scan at a well-known centre.", "src": "A want is the form a need takes, shaped by culture and personal experience."},
+     {"label": "Demand", "text": "A want backed by the ability and willingness to pay.", "sub": "Many Egyptians want a full annual check-up; only some can pay for one.", "src": "A demand is a want backed by the ability and willingness to pay. Many Egyptians want a full annual check-up. Only some can pay for one"}
+    ],
+    "caption": [
+     {"text": "In health care, needs are often defined by professionals; wants and demands come from patients.", "src": "Needs in health care are therefore often defined by professionals, while wants and demands come from patients"}
+    ]},
+   {"kind": "equation", "title": "Customer value", "ops": ["−", "="],
+    "nodes": [
+     {"label": "What the customer gains", "text": "The benefits of the service.", "src": "The gains are the benefits of the service."},
+     {"label": "What the customer gives up", "text": "Money, time, travel and anxiety.", "src": "The costs include money, time, travel and anxiety."},
+     {"label": "Customer value", "text": "The difference between what a customer gains and what the customer gives up.", "src": "Customer value is the difference between what a customer gains and what the customer gives up."}
+    ],
+    "caption": [
+     {"text": "A patient who waits three hours for a routine test has paid a high cost, even if the fee was low.", "src": "A patient who waits three hours for a routine test has paid a high cost, even if the fee was low."},
+     {"text": "**Satisfaction** is the patient's judgement of whether the service met expectations: it depends on both performance and expectation.", "src": "Satisfaction is the patient's judgement of whether the service met expectations. It depends on both performance and expectation."}
+    ]},
+   {"kind": "versus", "title": "Quality in health care has two sides",
+    "nodes": [
+     {"label": "Technical quality", "text": "Whether the result is correct.", "sub": "An accurate haemoglobin, a clear image.", "src": "Technical quality is whether the result is correct: an accurate haemoglobin, a clear image."},
+     {"label": "Functional quality", "text": "How the service was delivered.", "sub": "Courtesy, cleanliness, explanation.", "src": "Functional quality is how the service was delivered: courtesy, cleanliness, explanation."}
+    ],
+    "caption": [
+     {"text": "Patients usually cannot judge technical quality, so they judge what they can see.", "src": "Patients usually cannot judge technical quality, so they judge what they can see"}
+    ]},
+   {"kind": "versus", "title": "Exchange: transaction or relationship",
+    "nodes": [
+     {"label": "Transaction", "text": "A single exchange.", "sub": "A patient pays for one lipid profile and leaves.", "src": "A single exchange is a transaction. A patient pays for one lipid profile and leaves."},
+     {"label": "Relationship", "text": "Long-term, trusting links: relationship marketing.", "sub": "A diabetic patient may need a glycated haemoglobin test every three months for life.", "src": "A diabetic patient may need a glycated haemoglobin test every three months for life. The laboratory that earns this patient's trust gains a long relationship. Relationship marketing is the practice of building such long-term, trusting links."}
+    ],
+    "caption": [
+     {"text": "An **exchange** is the act of obtaining something of value by offering something in return.", "src": "An exchange is the act of obtaining something of value by offering something in return."}
+    ]},
+   {"kind": "cards", "title": "Products and markets",
+    "nodes": [
+     {"label": "Patients who walk in", "text": "Actual and potential buyers.", "src": "A market is the set of actual and potential buyers of a product. For a laboratory, the market includes patients who walk in"},
+     {"label": "Doctors who refer them", "text": "Each group has different needs.", "src": "doctors who refer them, clinics that send samples and insurers that pay. Each group has different needs"},
+     {"label": "Clinics that send samples", "text": "Each group has different needs.", "src": "clinics that send samples and insurers that pay. Each group has different needs"},
+     {"label": "Insurers that pay", "text": "A good service plans for all of them.", "src": "insurers that pay. Each group has different needs, and a good service plans for all of them."}
+    ],
+    "caption": [
+     {"text": "A **product** is anything offered to satisfy a need or want: a good (a glucose meter) or a service (a blood test). Most health care is a service, or a service wrapped around a good.", "src": "A product is anything offered to satisfy a need or want. It can be a physical good, such as a glucose meter. It can be a service, such as a blood test. Most health care is a service, or a service wrapped around a good."}
+    ]}
+  ]},
+  {"sec": "1.4", "slides": [
+   {"kind": "cards", "title": "The ten activities of marketing", "numbered": true,
+    "nodes": [
+     {"label": "Creating awareness", "text": "A new mammography unit must tell women it is open.", "src": "Creating awareness. People cannot use a service they do not know exists. A new mammography unit must tell women and their doctors that it is open"},
+     {"label": "Studying what customers want", "text": "Survey referring doctors about turnaround times.", "src": "Studying what customers want. Marketing research finds out what patients and doctors need. A laboratory might survey referring doctors about turnaround times"},
+     {"label": "Product planning", "text": "From the first idea to launch.", "src": "Product planning. A product is a bundle of benefits. Planning runs from the first idea to launch."},
+     {"label": "After-sales service", "text": "Everything after the result is issued.", "src": "After-sales service. In health care this means everything after the result is issued."},
+     {"label": "Pricing", "text": "The amount of money charged.", "src": "Pricing. Price is the amount of money charged for a product."},
+     {"label": "Distribution", "text": "Branches, collection points, home visits.", "src": "Distribution. This is how the service reaches people: branches, collection points, home visits, mobile units."},
+     {"label": "Selling", "text": "Most selling is really informing.", "src": "Selling. Selling is supplying goods and services to target customers, directly or through others. In health care, most selling is really informing."},
+     {"label": "Packaging and presentation", "text": "A clean reception and clear signs.", "src": "Packaging and presentation. For goods, packaging protects the product and carries information. For services, the equivalent is the setting: a clean reception, clear signs and a well-designed report."},
+     {"label": "Advertising", "text": "The most restricted tool in health care.", "src": "Advertising. Advertising makes a service known to a wide audience. In health care it is the most restricted tool"},
+     {"label": "Collecting feedback", "text": "A short survey after a scan.", "src": "Collecting feedback. Feedback shows whether patients were satisfied and what to improve. A short survey after a scan costs little"}
+    ]},
+   {"kind": "table", "title": "The ten activities in a health service", "head": ["", "Activity", "In a health service"],
+    "rows": [
+     ["1", "Creating awareness", "A new mammography unit tells women and their doctors that it is open"],
+     ["2", "Studying what customers want", "A laboratory surveys referring doctors about turnaround times before investing in a new analyser"],
+     ["3", "Product planning", "From the first idea to launch: study demand, staffing and competitors before home sample collection"],
+     ["4", "After-sales service", "Everything after the result: explaining a report, correcting an error, reminders, complaints"],
+     ["5", "Pricing", "The money charged; time, travel and effort are costs too"],
+     ["6", "Distribution", "Branches, collection points, home visits, mobile units"],
+     ["7", "Selling", "Mostly informing: a sales representative explains a new test; a doctor then decides"],
+     ["8", "Packaging and presentation", "For services, the setting: a clean reception, clear signs and a well-designed report"],
+     ["9", "Advertising", "Makes a service known to a wide audience; the most restricted tool in health care"],
+     ["10", "Collecting feedback", "A short survey after a scan costs little and reveals a great deal"]
+    ],
+    "src": ["Ten activities make up its scope.", "A new mammography unit must tell women and their doctors that it is open",
+            "A laboratory might survey referring doctors about turnaround times before investing in a new analyser.",
+            "Planning runs from the first idea to launch. A laboratory considering home sample collection must study demand, staffing and competitors first.",
+            "In health care this means everything after the result is issued. Examples include explaining a report, correcting an error quickly, sending reminders for repeat tests and handling complaints.",
+            "Price is the amount of money charged for a product.", "time, travel and effort are costs too",
+            "branches, collection points, home visits, mobile units",
+            "In health care, most selling is really informing. A sales representative explains a new test to doctors; a doctor then decides.",
+            "For services, the equivalent is the setting: a clean reception, clear signs and a well-designed report.",
+            "Advertising makes a service known to a wide audience. In health care it is the most restricted tool",
+            "A short survey after a scan costs little and reveals a great deal."]}
+  ]},
+  {"sec": "1.5", "slides": [
+   {"kind": "cards", "title": "Why health-care marketing is different",
+    "nodes": [
+     {"label": "The customer cannot judge quality well", "text": "**Information asymmetry**: a gap in knowledge that gives the provider power.", "src": "The customer cannot judge quality well. Most patients cannot tell whether a test was performed correctly. This gap in knowledge is called information asymmetry. It gives the provider power"},
+     {"label": "The decider, the payer and the user may differ", "text": "A doctor orders a scan, an insurer may pay, and the patient undergoes it.", "src": "The decider, the payer and the user may differ. A doctor orders a scan, an insurer may pay, and the patient undergoes it."},
+     {"label": "Demand can be created by the provider", "text": "**Supplier-induced demand**: a provider who both advises and sells can recommend more than is needed.", "src": "Demand can be created by the provider. A provider who both advises and sells can recommend more than is needed. Economists call this supplier-induced demand."},
+     {"label": "Stakes are high", "text": "A misleading advertisement for a test can lead to missed disease or needless anxiety.", "src": "Stakes are high. A misleading advertisement for shampoo wastes money. A misleading advertisement for a test can lead to missed disease or needless anxiety."},
+     {"label": "Society has an interest", "text": "Society sets rules on what may be promised and how.", "src": "Society has an interest. Health care is partly funded by public money and affects public health. Society therefore sets rules on what may be promised and how."}
+    ],
+    "caption": [
+     {"text": "With power comes responsibility.", "src": "It gives the provider power, and with power comes responsibility."}
+    ]}
+  ]},
+  {"sec": "1.6", "slides": [
+   {"kind": "spectrum", "title": "Five marketing orientations", "highlight": 4, "ends": ["Production orientation", "Societal marketing orientation"],
+    "nodes": [
+     {"label": "Production", "text": "Customers want what is cheap and available.", "sub": "Focus: efficiency.", "src": "A production orientation assumes customers want what is cheap and available. The focus is efficiency."},
+     {"label": "Product", "text": "Customers want the highest quality.", "sub": "Focus: technical excellence.", "src": "A product orientation assumes customers want the highest quality. The focus is technical excellence"},
+     {"label": "Selling", "text": "Customers will not buy enough unless pushed.", "sub": "Leads directly to ethical problems.", "src": "A selling orientation assumes customers will not buy enough unless pushed. In health care this leads directly to the ethical problems"},
+     {"label": "Marketing", "text": "Starts from the customer's needs.", "sub": "Builds the service around them.", "src": "A marketing orientation starts from the customer's needs and builds the service around them."},
+     {"label": "Societal marketing", "text": "Adds the long-term interest of society.", "sub": "The most appropriate for health services.", "src": "A societal marketing orientation adds the long-term interest of society. For health services, the last is the most appropriate."}
+    ],
+    "caption": [
+     {"text": "A service must meet patients' needs, cover its costs and protect public health together.", "src": "A service must meet patients' needs, cover its costs and protect public health together."}
+    ]}
+  ]},
+  {"sec": "1.7", "slides": [
+   {"kind": "flow", "title": "Marketing and the rest of the book",
+    "nodes": [
+     {"label": "Chapter 1", "text": "This chapter introduced the vocabulary.", "src": "This chapter introduced the vocabulary."},
+     {"label": "Chapter 2", "text": "The health-care market and its customers.", "src": "Chapter 2 examines the health-care market and its customers."},
+     {"label": "Chapter 3", "text": "Digital marketing.", "src": "Chapter 3 turns to digital marketing."},
+     {"label": "Chapters 4 to 9", "text": "The marketing mix, one element at a time.", "src": "Chapters 4 to 9 take the marketing mix apart, one element at a time."},
+     {"label": "Chapters 10 to 12", "text": "Is a service worth what it costs?", "src": "Chapters 10 to 12 then ask the question every health system must answer: is a service worth what it costs?"}
+    ]}
+  ]}
+ ]
+}

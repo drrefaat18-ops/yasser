@@ -86,3 +86,47 @@ User: "every section exactly 40 minutes; fit the content to it; review every sli
 | Long cards shrank to small text | Card shrinks only to 22 pt, then grows to the content band, then shrinks to 18 |
 | Accent tint on the accent was 4.3:1 | `acc_l` picks the first tint reaching 4.5:1 |
 | Tool commits after a finished book staled its gate | `build_slides` uses the content-only gate (DEC-009 in the CNS project): approvals and every hash checked, tool SHA not |
+
+## Study decks (build_study, marketing-book ch01, 2026-10-01)
+
+User: "a clear, summarised PowerPoint that also works for studying; the content fixed to the source; build it step
+by step, one chapter at a time, and improve the skill as we go".
+
+Answers to the first questionnaire (the defaults for every study deck until the user changes them):
+
+| Question | Answer |
+|---|---|
+| Fidelity | Shortened but traceable: every point shortens one chapter sentence; section number on every slide |
+| Audience | Lecturer and student together: explanation on the slide and the section's prose in the notes |
+| Contents | Section summaries; definitions and comparison tables; MCQs (question, then answer); one-page revision |
+| Language | English, as in the book |
+
+How the tool keeps the content fixed to the source: the agent writes only the condensed outline
+(`slides/study/<stem>.json`), each point with a verbatim `src`; `build_study.py` refuses to build if a `src` is not
+in the chapter, if any word or number on a slide is not in the chapter, if a point shares less than half its words
+with its `src`, or if a section has no slide. Callouts, glossary definitions, MCQs and takeaways are copied, not
+written. Deck: title, objectives, roadmap, per section points/table slides then its callouts, key terms, MCQs,
+"Chapter N on one page".
+
+| Problem | Fix |
+|---|---|
+| python-pptx missing from the system Python | `python -m pip install --user python-pptx` |
+| Figures not found for books whose figures live under `rework/figures` | `build_slides.figures()` reads `template.paths.figures` |
+| Faded MCQ options at 4.2:1 | `Style.mut_f`: darkened until 4.6:1 on the faded disc |
+| Long figure caption overflowed its 0.4" box | Caption box grows with its text; the picture shrinks to make room |
+| Revision slide ran into the footer; key terms as run-on text | Compact numbered list sized to fit; key terms in two columns on a card |
+| Stop-words passing the vocabulary check as stems ("mostly" → "most") | Stems are filtered against the stop list too |
+| Contact sheet showed each slide twice | Windows globs are case-insensitive: glob `Slide*.PNG` only |
+
+Second round (same day). User: "more figures in the slides, so the information is summarised better for the
+lecturer and for the student while studying; the title bold and inside a clear frame".
+
+| Request or problem | Fix |
+|---|---|
+| More figures | Five native diagram kinds (flow, cards, versus, equation, spectrum) with a key-message caption bar; ch01 went from 1 figure to 14 diagram slides |
+| Title bold in a clear frame | Framed title band (primary border, tint fill) on every content slide; `slides.json` `study.title_frame: false` turns it off |
+| Kicker at 4.3:1 on the band tint | Accent darkened until 4.6:1 on the band |
+| Boxes half empty, text small | One label size, header height and text size per row; boxes shrink to their text and are centred |
+| Text 13 pt in narrow boxes | Width estimate measured on exports: body 0.43 em, bold heading font 0.56 em per character; text capped at 20 pt |
+| One long node shrank a 10-card grid to 13 pt | Keep node texts short and alike (outline rule in the skill) |
+| Faint caption bar | Primary tint with an accent stripe |
