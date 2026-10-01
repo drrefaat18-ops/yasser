@@ -19,6 +19,30 @@
  },
  "project_id": "healthcare-entrepreneurship",
  "receipts": {
+  "design": {
+   "args": {},
+   "chapter_count": 14,
+   "inputs": {
+    "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+    "evaluation/codex-review.md": "8b566c44d82c1c6b9f20bf0f3d9323a33a8dc05fd6b28732e185e2244b946ad9",
+    "evaluation/findings.json": "a72d0ed085b2804024b8857c204dbc401287b4b5640fdace3f9af0c8f87e1547",
+    "evaluation/fixes.md": "6da1c88369ea29cea02146486ec102a7a0609960a6b383c7d52f37d9dbf4fece",
+    "evaluation/report.md": "9bdfb665b5fdc74f0c2dd12fe46f868d718befa0a05af1abf1e9d6ab7cb69d12",
+    "evaluation/scorecard.json": "3c4d6f5826e81178cabb0407c49162bec0e5f1b84046081b95dd3ffcab7e2710",
+    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928",
+    "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+   },
+   "outputs": {
+    "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+    "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+    "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab"
+   },
+   "stage": "design",
+   "status": "ok",
+   "time": "2026-10-01T07:17:33Z",
+   "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b",
+   "total_budget": 41300
+  },
   "evaluate": {
    "args": {},
    "author_model": "claude",

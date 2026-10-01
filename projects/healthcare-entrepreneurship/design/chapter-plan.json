@@ -1,0 +1,141 @@
+{
+ "schema_version": 1,
+ "project_id": "healthcare-entrepreneurship",
+ "parts": [
+  {
+   "id": "P1",
+   "label": "Part I",
+   "title": "The Entrepreneur in Health Care"
+  },
+  {
+   "id": "P2",
+   "label": "Part II",
+   "title": "The Environment of a Health Venture"
+  },
+  {
+   "id": "P3",
+   "label": "Part III",
+   "title": "From a Health Need to a Venture Design"
+  },
+  {
+   "id": "P4",
+   "label": "Part IV",
+   "title": "Building and Sustaining the Venture"
+  }
+ ],
+ "chapters": [
+  {
+   "id": "ch01",
+   "file": "ch01.md",
+   "title": "Entrepreneurship and the Health Entrepreneur",
+   "word_budget": 2900,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch02",
+   "file": "ch02.md",
+   "title": "Kinds of Entrepreneurs and the Entrepreneurial Journey",
+   "word_budget": 2800,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch03",
+   "file": "ch03.md",
+   "title": "Why Entrepreneurship Matters and How Egypt Supports It",
+   "word_budget": 3000,
+   "part_id": "P1",
+   "source_refs": []
+  },
+  {
+   "id": "ch04",
+   "file": "ch04.md",
+   "title": "The Environment of a Health Venture",
+   "word_budget": 3000,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch05",
+   "file": "ch05.md",
+   "title": "Culture, Globalisation and Health Teams",
+   "word_budget": 3000,
+   "part_id": "P2",
+   "source_refs": []
+  },
+  {
+   "id": "ch06",
+   "file": "ch06.md",
+   "title": "Unmet Health Needs and the Need Statement",
+   "word_budget": 2800,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch07",
+   "file": "ch07.md",
+   "title": "Ideas, Empathy and Personas",
+   "word_budget": 2800,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch08",
+   "file": "ch08.md",
+   "title": "Customer Discovery: Patients, Payers and Competitors",
+   "word_budget": 2900,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch09",
+   "file": "ch09.md",
+   "title": "Design Thinking, the Minimum Viable Product and Prototyping",
+   "word_budget": 2800,
+   "part_id": "P3",
+   "source_refs": []
+  },
+  {
+   "id": "ch10",
+   "file": "ch10.md",
+   "title": "Business Models and the Business Plan",
+   "word_budget": 3000,
+   "part_id": "P4",
+   "source_refs": []
+  },
+  {
+   "id": "ch11",
+   "file": "ch11.md",
+   "title": "Start-up Costs, Break-even and Funding",
+   "word_budget": 3200,
+   "part_id": "P4",
+   "source_refs": []
+  },
+  {
+   "id": "ch12",
+   "file": "ch12.md",
+   "title": "Regulation, Quality and Ethics for Health Ventures",
+   "word_budget": 3000,
+   "part_id": "P4",
+   "source_refs": []
+  },
+  {
+   "id": "ch13",
+   "file": "ch13.md",
+   "title": "Intellectual Property and the Brand of a Health Venture",
+   "word_budget": 2900,
+   "part_id": "P4",
+   "source_refs": []
+  },
+  {
+   "id": "ch14",
+   "file": "ch14.md",
+   "title": "Launching, Growing and Sustaining a Health Venture",
+   "word_budget": 3200,
+   "part_id": "P4",
+   "source_refs": []
+  }
+ ],
+ "dropped": []
+}
