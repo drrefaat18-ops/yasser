@@ -2,11 +2,6 @@
  "ch01-drug-information-centre.md": [],
  "ch02-drug-information-sources.md": [
   {
-   "slide": 10,
-   "check": "overflow",
-   "detail": "2.17in of text in a 1.65in box"
-  },
-  {
    "slide": 12,
    "check": "overflow",
    "detail": "0.70in of text in a 0.60in box"
