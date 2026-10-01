@@ -1,6 +1,6 @@
 """Study decks straight from a project's ingested sources, for decks-only projects (no book). Gate: evaluate.
 
-Usage: python harness/tools/build_source_deck.py --project projects/<p> [--chapter <outline stem>] [--pdf]
+Usage: python harness/tools/build_source_deck.py --project projects/<p> [--chapter <outline stem>] [--pdf] [--review]
 
 The gate is that of the first stage that reads the ingest output: the intake approved at matching hashes and a
 fresh ingest receipt; no design, rework or build is needed, because the deck quotes the sources themselves.
@@ -19,4 +19,4 @@ if __name__ == "__main__":
     from harness.tools import build_study
     args = sys.argv[1:]
     only = args[args.index("--chapter") + 1] if "--chapter" in args else None
-    sys.exit(build_study.main(PROJECT, only, "--pdf" in args, source=True))
+    sys.exit(build_study.main(PROJECT, only, "--pdf" in args, source=True, review="--review" in args))

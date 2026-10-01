@@ -67,6 +67,16 @@ class BuildStudyTest(unittest.TestCase):
         self.write(data)
         self.assertEqual(build_study.main(self.proj), 1)                            # invented node refused
 
+    def test_stats_icons_and_variety(self):
+        data = outline(self.md)
+        first = data["sections"][0]["slides"][0]["points"][0]
+        node = {"label": first["text"].split()[0], "text": first["text"], "icon": "🦠", "src": first["src"]}
+        data["sections"][0]["slides"] += [{"kind": "stats", "title": "Force and Motion", "nodes": [node, dict(node)]},
+                                          {"kind": "stats", "title": "Force and Motion", "nodes": [node]}]
+        self.write(data)
+        self.assertEqual(build_study.main(self.proj), 0)
+        self.assertTrue(any("stats layout" in v for v in build_study.variety(data)))   # stats twice in a row
+
     def test_missing_section_is_reported(self):
         data = outline(self.md); data["sections"] = data["sections"][:1]
         issues = build_study.check(data, self.md, build_study.sections_of(self.md))

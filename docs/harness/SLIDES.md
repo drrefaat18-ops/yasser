@@ -161,3 +161,22 @@ sore-throat treatments and the quiz and lab cases included, the sources' picture
 | No glossary or objectives in the sources | Key-terms and objectives slides are skipped; title facts drop zero counts |
 | Slashes do not break lines in PowerPoint ("antipyr-etics") | Space the slash in the outline ("Analgesics / antipyretics") |
 | The source contradicts itself (Benzydamine spray >12 years and >6 yrs) | Asked the user; marked "to be confirmed" on the slide |
+
+## Design round from the GitHub survey (2026-10-01)
+
+User: "install all of them in the harness and make a workflow to create good-looking slides". Cloning the
+skills was blocked by the auto-mode safety classifier (untrusted code integration), so nothing was installed; their
+published ideas were rebuilt in build_study.py instead, and the workflow is the skill's section 6.
+
+| Idea (source skill) | In the tool |
+|---|---|
+| Action titles, ghost-deck test (academic-pptx-skill, agent-slides critique) | Titles written as messages; the review note lists the titles alone |
+| Big-number layout, layout variety (siril9 presentation-skill, danny0926 ppt-skills) | `stats` kind; `variety()` warns when a layout repeats on the next slide |
+| One consistent icon style (claude-office-skills ppt-visual) | `"icon"` per node: colour emoji (Segoe UI Emoji) on a white glass disc above the card; no downloads |
+| Luminous borders, one metaphor, contrast first (bergside glassmorphism) | A light highlight line along the top of every large panel; contrast lint unchanged |
+| Rendered visual QA (siril9, agent-slides audit) | `--review`: PNG of every slide, contact sheets, review note |
+
+| Problem | Fix |
+|---|---|
+| Icons on the card edge covered the header text | Icons sit above the card; diagrams with icons start 0.8" lower |
+| Long action titles wrapped out of the band | Title size fits one line (30 down to 20 pt) |

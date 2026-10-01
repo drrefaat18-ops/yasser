@@ -1,204 +1,735 @@
 {
  "topic": 1,
  "sections": [
-  {"sec": "1.1", "slides": [
-   {"kind": "points", "title": "What is a sore throat?", "image": "slides/study/images/sore-throat.png",
-    "points": [
-     {"text": "**Sore throat:** pain in any part of throat mucosa due to common cold.", "src": "Pain in any part of throat mucosa due to common cold"},
-     {"text": "Pharynx → pharyngitis; tonsils → tonsillitis.", "src": "(pharynx → pharyngitis; tonsils → tonsillitis)."},
-     {"text": "The distinction between pharyngitis and tonsillitis is unclear.", "src": "Between pharyngitis and tonsillitis is unclear."}
-    ]},
-   {"kind": "cards", "title": "Sore throat: age and strep",
-    "nodes": [
-     {"label": "<3 yrs", "text": "Strep rare", "src": "<3 yrs → strep rare."},
-     {"label": "5–10 yrs + 15–25 yrs", "text": "Strep common", "src": "5–10 yrs + 15–25 yrs → strep common"},
-     {"label": "Adolescents", "text": "Glandular fever", "src": "Adolescents → glandular fever"},
-     {"label": "Older age", "text": "Carcinoma risk", "src": "Older age → carcinoma risk."}
-    ]},
-   {"kind": "versus", "title": "Sore throat: viral or bacterial?",
-    "nodes": [
-     {"label": "Viral 70–90% of cases", "text": "Cough; pharyngeal inflammation, ulcer ± exudate; fever, headache.",
-      "src": "Viral 70–90% of cases: 1 cough; 2 pharyngeal inflammation ulcer ± exudate; 3 fever, headache."},
-     {"label": "Bacterial ~10–30%", "text": "Absence of cough; tonsillar exudate; fever, tender cervical lymph nodes.",
-      "sub": "Most common: Group A beta-hemolytic Streptococcus (S. pyogenes).",
-      "src": "Bacterial ~10–30% (most common: Group A beta-hemolytic Streptococcus / S. pyogenes): 1 absence of cough; 2 Tonsillar exudate; 3 fever, tender cervical lymph nodes."}
-    ],
-    "caption": [{"text": "**Complications of streptococcal throat:** otitis media, acute sinusitis.", "src": "Complications of Streptococcal Throat: Otitis media; Acute sinusitis."}]}
-  ]},
-  {"sec": "1.2", "slides": [
-   {"kind": "cards", "title": "OTC treatment of sore throat",
-    "nodes": [
-     {"label": "Local anesthetics", "text": "Benzocaine, Lidocaine", "src": "Local anesthetics → Benzocaine, Lidocaine."},
-     {"label": "Anti-inflammatories", "text": "Benzydamine spray", "src": "Anti-inflammatories → Benzydamine spray."},
-     {"label": "Analgesics", "text": "Flurbiprofen, Paracetamol, ibuprofen", "src": "Analgesics → Flurbiprofen, Paracetamol, ibuprofen effective."},
-     {"label": "Antibacterials", "text": "Penicillin or macrolides (if allergy)", "src": "Antibacterials/Antiviral → Penicillin or macrolides (if allergy)."},
-     {"label": "Gargles", "text": "Aspirin / saltwater gargles", "src": "Aspirin/saltwater gargles."}
-    ]},
-   {"kind": "flow", "title": "Age limits of the OTC products",
-    "nodes": [
-     {"label": ">3 yrs", "text": "Benzocaine lozenge", "src": "Benzocaine → Lozenge >3 yrs"},
-     {"label": ">6 yrs", "text": "Benzocaine spray", "src": "Benzocaine → Lozenge >3 yrs; Spray >6 yrs."},
-     {"label": ">12 years", "text": "Benzydamine rinse, Lidocaine, Flurbiprofen", "src": "Benzydamine spray, Rinse, Lidocaine, Flurbiprofen → >12 years."}
-    ],
-    "caption": [{"text": "**Benzydamine spray:** listed under >12 years and as spray/lozenge >6 yrs: **to be confirmed** with the course doctor.",
-                 "src": "The page lists Benzydamine spray in both the >12 years group and the >6 yrs row; to be confirmed with the course doctor."}]},
-   {"kind": "versus", "title": "Pregnancy and breast feeding",
-    "nodes": [
-     {"label": "Pregnancy", "text": "Flurbiprofen: avoid in 3rd trimester. Lidocaine: not safe. Benzydamine spray, rinse: not safe.",
-      "src": "Pregnancy (page 12): Flurbiprofen → avoid in 3trimester) pregnancy. Lidocaine → Not safe. Benzydamine spray, Rinse → Not safe."},
-     {"label": "Breast feeding", "text": "Flurbiprofen ✓", "src": "Breast feeding → Flurbiprofen ✓."}
-    ]}
-  ]},
-  {"sec": "1.3", "slides": [
-   {"kind": "points", "title": "What is tonsillitis?", "image": "slides/study/images/tonsillitis.png",
-    "points": [
-     {"text": "**Tonsillitis:** inflammation of the palatine tonsils due to infection (viral or bacterial).", "src": "Inflammation of the palatine tonsils due to infection (viral or bacterial)."},
-     {"text": "**Age:** children (5–15 years).", "src": "Age: Children (5–15 years)."},
-     {"text": "**Features:** sore throat, fever, tonsillar enlargement ± exudate.", "src": "Features: sore throat, fever, and tonsillar enlargement ± exudate."}
-    ]},
-   {"kind": "points", "title": "Tonsillitis: the throat", "image": "slides/study/images/tonsil-diagram.png",
-    "points": [
-     {"text": "Tonsil", "src": "Tonsil."},
-     {"text": "White drainage patch", "src": "White drainage patch"},
-     {"text": "Swollen and sore throat", "src": "Swollen and sore throat"}
-    ]}
-  ]},
-  {"sec": "1.4", "slides": [
-   {"kind": "versus", "title": "Tonsillitis: the cause",
-    "nodes": [
-     {"label": "Viral (70–80%)", "text": "Rhinovirus, adenovirus, coronavirus, influenza.", "src": "Viral (70–80%): Rhinovirus, adenovirus, coronavirus, influenza."},
-     {"label": "Bacterial 20–30%", "text": "Group A β-hemolytic streptococcus (S. pyogenes): most important.",
-      "sub": "Also Groups C & G strep, Staphylococcus aureus, Haemophilus influenzae.",
-      "src": "Bacterial 20–30%: Group A β-hemolytic streptococcus (S. pyogenes) – most important; also Groups C & G strep, Staphylococcus aureus, Haemophilus influenzae."}
-    ]},
-   {"kind": "flow", "title": "Pathology",
-    "nodes": [
-     {"label": "Infection", "src": "Pathogenesis Infection → crypt inflammation"},
-     {"label": "Crypt inflammation", "src": "Infection → crypt inflammation"},
-     {"label": "Erythema, edema, exudates", "src": "crypt inflammation → erythema, edema, exudates."}
-    ],
-    "caption": [{"text": "**Immune response:** local + systemic inflammatory reaction → fever, lymphadenopathy.", "src": "Local + systemic inflammatory reaction → fever, lymphadenopathy."}]}
-  ]},
-  {"sec": "1.5", "slides": [
-   {"kind": "table", "title": "Viral or bacterial tonsillitis?", "head": ["", "Viral", "Bacterial"],
-    "rows": [
-     ["Onset", "More gradual", "Sudden"],
-     ["Throat pain", "Mild to moderate", "Severe"],
-     ["Fever", "Low", "High >38"],
-     ["Cough, coryza, rhinorrhea", "Common", "Absent"],
-     ["Tonsils", "Red, swollen, little/no exudate", "Enlarged, purulent exudates"],
-     ["Lymph nodes", "Mild or absent", "Tender anterior cervical lymphadenopathy"],
-     ["Duration", "5–7 days, self-limiting", "7–10 days, needs antibiotics if strep confirmed"],
-     ["Systemic", "Malaise, fatigue, conjunctivitis", "Headache, abdominal pain (children)"]
-    ],
-    "src": ["ONSET: Viral More gradual; Bacterial Sudden.", "Throat pain: Viral Mild to moderate; Bacterial severe.", "fever: Viral low; Bacterial high>38.",
-            "Cough, coryza, rhinorrhea: Viral Common; Bacterial absent.", "Tonsils: Viral Red, swollen, little/no exudate; Bacterial Enlarged, purulent exudates.",
-            "Lymph nodes: Viral Mild or absent; Bacterial Tender anterior cervical lymphadenopathy.",
-            "Duration: Viral 5–7 days, self-limiting; Bacterial 7–10 days, needs antibiotics if strep confirmed.",
-            "Systemic: Viral Malaise, fatigue, conjunctivitis; Bacterial Headache, abdominal pain (children)."]}
-  ]},
-  {"sec": "1.6", "slides": [
-   {"kind": "cards", "title": "Suppurative complications (local)",
-    "nodes": [
-     {"label": "Severe sore throat", "src": "1 severe sore throat"},
-     {"label": "Retropharyngeal abscess", "text": "Deep neck space infection, airway compromise", "image": "slides/study/images/neck-abscess.png",
-      "src": "Retropharyngeal abscess Deep neck space infection, airway compromise"},
-     {"label": "Otitis media", "text": "Spread via Eustachian tube", "image": "slides/study/images/otitis-media.png", "src": "Otitis media Spread via Eustachian tube"},
-     {"label": "Sinusitis", "text": "Obstruction of sinus drainage", "image": "slides/study/images/sinusitis.png", "src": "Sinusitis Due to obstruction of sinus drainage."}
-    ]},
-   {"kind": "cards", "title": "Non-suppurative complications (post-streptococcal)",
-    "nodes": [
-     {"label": "Acute Rheumatic Fever (ARF)", "src": "1 Acute Rheumatic Fever (ARF)"},
-     {"label": "Scarlet fever", "text": "Strawberry tongue, sandpaper rash", "src": "2 Scarlet fever strawberry tongue, sandpaper rash"},
-     {"label": "PSGN", "text": "Hematuria, edema, hypertension, proteinuria", "sub": "Immune complex deposition in kidneys",
-      "src": "Post-streptococcal Glomerulonephritis (PSGN): Immune complex deposition in kidneys; Hematuria, edema, hypertension, proteinuria."}
-    ]}
-  ]},
-  {"sec": "1.7", "slides": [
-   {"kind": "flow", "title": "Tonsillitis: management",
-    "nodes": [
-     {"label": "1 NonPharmacological", "text": "Hydration, warm saline gargles, soft diet", "src": "1 NonPharmacological: hydration, warm saline gargles • Soft diet"},
-     {"label": "2 Pharmacological", "text": "Analgesics, topical anesthetics, NSAID lozenges, antibiotics", "src": "1 Analgesics/antipyretics → Paracetamol, ibuprofen First-line. 2 Topical anesthetics → Benzydamine spray, lidocaine/benzocaine lozenges Local pain relief. 3 NSAID lozenges → Flurbiprofen Some efficacy. 4 Antibiotics."},
-     {"label": "3 Tonsillectomy", "text": "Indications", "src": "3 Tonsillectomy Indications"}
-    ],
-    "caption": [{"text": "**Avoid irritants:** smoke, spicy food.", "src": "Avoid irritants (smoke, spicy food"}]},
-   {"kind": "cards", "title": "Pharmacological treatment",
-    "nodes": [
-     {"label": "Analgesics / antipyretics", "text": "Paracetamol, ibuprofen: first-line", "src": "Analgesics/antipyretics → Paracetamol, ibuprofen First-line."},
-     {"label": "Topical anesthetics", "text": "Benzydamine spray, lidocaine / benzocaine lozenges", "sub": "Local pain relief",
-      "src": "Topical anesthetics → Benzydamine spray, lidocaine/benzocaine lozenges Local pain relief."},
-     {"label": "NSAID lozenges", "text": "Flurbiprofen", "sub": "Some efficacy", "src": "NSAID lozenges → Flurbiprofen Some efficacy."},
-     {"label": "Antibiotics", "text": "If strep confirmed", "src": "needs antibiotics if strep confirmed"}
-    ]},
-   {"kind": "cards", "title": "Tonsillectomy: indications",
-    "nodes": [
-     {"label": "Obstructive sleep apnea", "text": "From tonsillar hypertrophy", "src": "Obstructive sleep apnea from tonsillar hypertrophy"},
-     {"label": "Recurrent peritonsillar abscess", "src": "Recurrent peritonsillar abscess"},
-     {"label": "Suspicion of malignancy", "src": "Suspicion of malignancy."}
-    ]},
-   {"kind": "flow", "title": "Tonsillectomy: episodes",
-    "nodes": [
-     {"label": "≥7 episodes", "text": "in 1 year", "src": "≥7 episodes in 1 year"},
-     {"label": "≥5 episodes/year", "text": "for 2 years", "src": "≥5 episodes/year for 2 years"},
-     {"label": "≥3 episodes/year", "text": "for 3 years", "src": "≥3 episodes/year for 3 years."}
-    ]}
-  ]},
-  {"sec": "1.8", "slides": [
-   {"kind": "versus", "title": "Antibiotics: first-line",
-    "nodes": [
-     {"label": "✓ Penicillin V", "text": "Phenoxymethylpenicillin, 10-day course.", "sub": "Children: 12.5–25 mg/kg 2–4 times daily. Adults: 500 mg QDS.",
-      "src": "Penicillin V (phenoxymethylpenicillin) 10-day course. Children: 12.5–25 mg/kg 2–4 times daily; Adults: 500 mg QDS."},
-     {"label": "✗ Amoxicillin", "text": "500 mg TDS 10 days. Avoid if glandular fever (EBV) suspected (rash).", "image": "slides/study/images/augmentin.png",
-      "src": "Amoxicillin 500 mg TDS 10 days. Avoid if EBV Glandular fever (EBV) fever, malaise, rash, splenomegaly suspected (rash)."}
-    ],
-    "caption": [{"text": "**Glandular fever (EBV):** fever, malaise, rash, splenomegaly.", "src": "Glandular fever (EBV) fever, malaise, rash, splenomegaly"}]},
-   {"kind": "cards", "title": "Alternatives (penicillin allergy)", "highlight": 2,
-    "nodes": [
-     {"label": "✓ Clarithromycin", "text": "250–500 mg BD 5 days", "sub": "Better tolerated than erythromycin", "image": "slides/study/images/klacid.png",
-      "src": "Clarithromycin 250–500 mg BD 5 days Better tolerated than erythromycin."},
-     {"label": "✓ Azithromycin", "text": "500 mg OD 3 days", "sub": "Short course", "image": "slides/study/images/zithromax.png",
-      "src": "Azithromycin 500 mg OD 3 days Short course."},
-     {"label": "✗ Erythromycin", "text": "250–500 mg QDS 7–10 days", "sub": "GI side effects common",
-      "src": "Erythromycin 250–500 mg QDS 7–10 days GI side effects common."}
-    ]}
-  ]},
-  {"sec": "1.9", "slides": [
-   {"kind": "case", "title": "Lab 2 case: a 15-year-old with a very sore throat",
-    "case": {"text": "He is 15 years old and is at home in bed. She says he has a temperature and that she can see creamy white matter at the back of his throat. He seems lethargic and hasn't been eating very well because his throat has been so painful. The sore throat started about 5 days ago and he has been in bed since yesterday. The glands on his neck are swollen."},
-    "points": [
-     {"text": "Adolescents → glandular fever.", "src": "Adolescents → glandular fever"},
-     {"text": "Tonsillar exudate, fever, tender cervical lymph nodes → bacterial.", "src": "2 Tonsillar exudate; 3 fever, tender cervical lymph nodes."},
-     {"text": "Avoid amoxicillin if glandular fever (EBV) is suspected.", "src": "Avoid if EBV Glandular fever (EBV) fever, malaise, rash, splenomegaly suspected (rash)."},
-     {"text": "Paracetamol, ibuprofen: first-line for pain and fever.", "src": "Analgesics/antipyretics → Paracetamol, ibuprofen First-line."}
-    ]}
-  ]}
+  {
+   "sec": "1.1",
+   "slides": [
+    {
+     "kind": "points",
+     "title": "Sore throat: pain in the throat mucosa due to common cold",
+     "image": "slides/study/images/sore-throat.png",
+     "points": [
+      {
+       "text": "**Sore throat:** pain in any part of throat mucosa due to common cold.",
+       "src": "Pain in any part of throat mucosa due to common cold"
+      },
+      {
+       "text": "Pharynx → pharyngitis; tonsils → tonsillitis.",
+       "src": "(pharynx → pharyngitis; tonsils → tonsillitis)."
+      },
+      {
+       "text": "The distinction between pharyngitis and tonsillitis is unclear.",
+       "src": "Between pharyngitis and tonsillitis is unclear."
+      }
+     ]
+    },
+    {
+     "kind": "cards",
+     "title": "Strep: common at 5–10 and 15–25 yrs, rare <3 yrs",
+     "nodes": [
+      {
+       "label": "<3 yrs",
+       "text": "Strep rare",
+       "src": "<3 yrs → strep rare.",
+       "icon": "👶"
+      },
+      {
+       "label": "5–10 yrs + 15–25 yrs",
+       "text": "Strep common",
+       "src": "5–10 yrs + 15–25 yrs → strep common",
+       "icon": "🧒"
+      },
+      {
+       "label": "Adolescents",
+       "text": "Glandular fever",
+       "src": "Adolescents → glandular fever",
+       "icon": "🧑"
+      },
+      {
+       "label": "Older age",
+       "text": "Carcinoma risk",
+       "src": "Older age → carcinoma risk.",
+       "icon": "👴"
+      }
+     ]
+    },
+    {
+     "kind": "versus",
+     "title": "Viral in 70–90% of cases; bacterial ~10–30%",
+     "nodes": [
+      {
+       "label": "Viral 70–90% of cases",
+       "text": "Cough; pharyngeal inflammation, ulcer ± exudate; fever, headache.",
+       "src": "Viral 70–90% of cases: 1 cough; 2 pharyngeal inflammation ulcer ± exudate; 3 fever, headache.",
+       "icon": "🤧"
+      },
+      {
+       "label": "Bacterial ~10–30%",
+       "text": "Absence of cough; tonsillar exudate; fever, tender cervical lymph nodes.",
+       "sub": "Most common: Group A beta-hemolytic Streptococcus (S. pyogenes).",
+       "src": "Bacterial ~10–30% (most common: Group A beta-hemolytic Streptococcus / S. pyogenes): 1 absence of cough; 2 Tonsillar exudate; 3 fever, tender cervical lymph nodes.",
+       "icon": "🦠"
+      }
+     ],
+     "caption": [
+      {
+       "text": "**Complications of streptococcal throat:** otitis media, acute sinusitis.",
+       "src": "Complications of Streptococcal Throat: Otitis media; Acute sinusitis."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.2",
+   "slides": [
+    {
+     "kind": "cards",
+     "title": "OTC treatment: five groups",
+     "nodes": [
+      {
+       "label": "Local anesthetics",
+       "text": "Benzocaine, Lidocaine",
+       "src": "Local anesthetics → Benzocaine, Lidocaine.",
+       "icon": "🍬"
+      },
+      {
+       "label": "Anti-inflammatories",
+       "text": "Benzydamine spray",
+       "src": "Anti-inflammatories → Benzydamine spray.",
+       "icon": "🔥"
+      },
+      {
+       "label": "Analgesics",
+       "text": "Flurbiprofen, Paracetamol, ibuprofen",
+       "src": "Analgesics → Flurbiprofen, Paracetamol, ibuprofen effective.",
+       "icon": "💊"
+      },
+      {
+       "label": "Antibacterials",
+       "text": "Penicillin or macrolides (if allergy)",
+       "src": "Antibacterials/Antiviral → Penicillin or macrolides (if allergy).",
+       "icon": "🦠"
+      },
+      {
+       "label": "Gargles",
+       "text": "Aspirin / saltwater gargles",
+       "src": "Aspirin/saltwater gargles.",
+       "icon": "🧂"
+      }
+     ]
+    },
+    {
+     "kind": "flow",
+     "title": "Benzocaine lozenge >3 yrs; Lidocaine, Flurbiprofen >12 years",
+     "nodes": [
+      {
+       "label": ">3 yrs",
+       "text": "Benzocaine lozenge",
+       "src": "Benzocaine → Lozenge >3 yrs",
+       "icon": "👶"
+      },
+      {
+       "label": ">6 yrs",
+       "text": "Benzocaine spray",
+       "src": "Benzocaine → Lozenge >3 yrs; Spray >6 yrs.",
+       "icon": "🧒"
+      },
+      {
+       "label": ">12 years",
+       "text": "Benzydamine rinse, Lidocaine, Flurbiprofen",
+       "src": "Benzydamine spray, Rinse, Lidocaine, Flurbiprofen → >12 years.",
+       "icon": "🧑"
+      }
+     ],
+     "caption": [
+      {
+       "text": "**Benzydamine spray:** listed under >12 years and as spray/lozenge >6 yrs: **to be confirmed** with the course doctor.",
+       "src": "The page lists Benzydamine spray in both the >12 years group and the >6 yrs row; to be confirmed with the course doctor."
+      }
+     ]
+    },
+    {
+     "kind": "versus",
+     "title": "In pregnancy, Lidocaine and Benzydamine are not safe",
+     "nodes": [
+      {
+       "label": "Pregnancy",
+       "text": "Flurbiprofen: avoid in 3rd trimester. Lidocaine: not safe. Benzydamine spray, rinse: not safe.",
+       "src": "Pregnancy (page 12): Flurbiprofen → avoid in 3trimester) pregnancy. Lidocaine → Not safe. Benzydamine spray, Rinse → Not safe.",
+       "icon": "🤰"
+      },
+      {
+       "label": "Breast feeding",
+       "text": "Flurbiprofen ✓",
+       "src": "Breast feeding → Flurbiprofen ✓.",
+       "icon": "🍼"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.3",
+   "slides": [
+    {
+     "kind": "points",
+     "title": "Tonsillitis: inflammation of the palatine tonsils",
+     "image": "slides/study/images/tonsillitis.png",
+     "points": [
+      {
+       "text": "**Tonsillitis:** inflammation of the palatine tonsils due to infection (viral or bacterial).",
+       "src": "Inflammation of the palatine tonsils due to infection (viral or bacterial)."
+      },
+      {
+       "text": "**Age:** children (5–15 years).",
+       "src": "Age: Children (5–15 years)."
+      },
+      {
+       "text": "**Features:** sore throat, fever, tonsillar enlargement ± exudate.",
+       "src": "Features: sore throat, fever, and tonsillar enlargement ± exudate."
+      }
+     ]
+    },
+    {
+     "kind": "stats",
+     "title": "Tonsillitis: children 5–15 years, viral 70–80%",
+     "nodes": [
+      {
+       "label": "5–15 years",
+       "text": "Children",
+       "icon": "🧒",
+       "src": "Age: Children (5–15 years)."
+      },
+      {
+       "label": "70–80%",
+       "text": "Viral",
+       "icon": "🤧",
+       "src": "Cause: Viral (70–80%)"
+      },
+      {
+       "label": "20–30%",
+       "text": "Bacterial",
+       "icon": "🦠",
+       "src": "Cause: Bacterial 20–30%"
+      }
+     ]
+    },
+    {
+     "kind": "points",
+     "title": "Tonsillitis: the throat",
+     "image": "slides/study/images/tonsil-diagram.png",
+     "points": [
+      {
+       "text": "Tonsil",
+       "src": "Tonsil."
+      },
+      {
+       "text": "White drainage patch",
+       "src": "White drainage patch"
+      },
+      {
+       "text": "Swollen and sore throat",
+       "src": "Swollen and sore throat"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.4",
+   "slides": [
+    {
+     "kind": "versus",
+     "title": "Viral (70–80%) or bacterial (20–30%): Group A strep most important",
+     "nodes": [
+      {
+       "label": "Viral (70–80%)",
+       "text": "Rhinovirus, adenovirus, coronavirus, influenza.",
+       "src": "Viral (70–80%): Rhinovirus, adenovirus, coronavirus, influenza.",
+       "icon": "🤧"
+      },
+      {
+       "label": "Bacterial 20–30%",
+       "text": "Group A β-hemolytic streptococcus (S. pyogenes): most important.",
+       "sub": "Also Groups C & G strep, Staphylococcus aureus, Haemophilus influenzae.",
+       "src": "Bacterial 20–30%: Group A β-hemolytic streptococcus (S. pyogenes) – most important; also Groups C & G strep, Staphylococcus aureus, Haemophilus influenzae.",
+       "icon": "🦠"
+      }
+     ]
+    },
+    {
+     "kind": "flow",
+     "title": "Pathology: infection → crypt inflammation → exudates",
+     "nodes": [
+      {
+       "label": "Infection",
+       "src": "Pathogenesis Infection → crypt inflammation"
+      },
+      {
+       "label": "Crypt inflammation",
+       "src": "Infection → crypt inflammation"
+      },
+      {
+       "label": "Erythema, edema, exudates",
+       "src": "crypt inflammation → erythema, edema, exudates."
+      }
+     ],
+     "caption": [
+      {
+       "text": "**Immune response:** local + systemic inflammatory reaction → fever, lymphadenopathy.",
+       "src": "Local + systemic inflammatory reaction → fever, lymphadenopathy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.5",
+   "slides": [
+    {
+     "kind": "table",
+     "title": "Bacterial: sudden, severe, fever >38, no cough",
+     "head": [
+      "",
+      "Viral",
+      "Bacterial"
+     ],
+     "rows": [
+      [
+       "Onset",
+       "More gradual",
+       "Sudden"
+      ],
+      [
+       "Throat pain",
+       "Mild to moderate",
+       "Severe"
+      ],
+      [
+       "Fever",
+       "Low",
+       "High >38"
+      ],
+      [
+       "Cough, coryza, rhinorrhea",
+       "Common",
+       "Absent"
+      ],
+      [
+       "Tonsils",
+       "Red, swollen, little/no exudate",
+       "Enlarged, purulent exudates"
+      ],
+      [
+       "Lymph nodes",
+       "Mild or absent",
+       "Tender anterior cervical lymphadenopathy"
+      ],
+      [
+       "Duration",
+       "5–7 days, self-limiting",
+       "7–10 days, needs antibiotics if strep confirmed"
+      ],
+      [
+       "Systemic",
+       "Malaise, fatigue, conjunctivitis",
+       "Headache, abdominal pain (children)"
+      ]
+     ],
+     "src": [
+      "ONSET: Viral More gradual; Bacterial Sudden.",
+      "Throat pain: Viral Mild to moderate; Bacterial severe.",
+      "fever: Viral low; Bacterial high>38.",
+      "Cough, coryza, rhinorrhea: Viral Common; Bacterial absent.",
+      "Tonsils: Viral Red, swollen, little/no exudate; Bacterial Enlarged, purulent exudates.",
+      "Lymph nodes: Viral Mild or absent; Bacterial Tender anterior cervical lymphadenopathy.",
+      "Duration: Viral 5–7 days, self-limiting; Bacterial 7–10 days, needs antibiotics if strep confirmed.",
+      "Systemic: Viral Malaise, fatigue, conjunctivitis; Bacterial Headache, abdominal pain (children)."
+     ]
+    },
+    {
+     "kind": "stats",
+     "title": "Duration: viral 5–7 days, bacterial 7–10 days",
+     "highlight": 1,
+     "nodes": [
+      {
+       "label": "5–7 days",
+       "text": "Viral: self-limiting",
+       "icon": "🤧",
+       "src": "Duration: Viral 5–7 days, self-limiting"
+      },
+      {
+       "label": "7–10 days",
+       "text": "Bacterial: needs antibiotics if strep confirmed",
+       "icon": "🦠",
+       "src": "Bacterial 7–10 days, needs antibiotics if strep confirmed."
+      },
+      {
+       "label": "high>38",
+       "text": "Bacterial fever",
+       "icon": "🌡️",
+       "src": "fever: Viral low; Bacterial high>38."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.6",
+   "slides": [
+    {
+     "kind": "cards",
+     "title": "Local complications: abscess, otitis media, sinusitis",
+     "nodes": [
+      {
+       "label": "Severe sore throat",
+       "src": "1 severe sore throat"
+      },
+      {
+       "label": "Retropharyngeal abscess",
+       "text": "Deep neck space infection, airway compromise",
+       "image": "slides/study/images/neck-abscess.png",
+       "src": "Retropharyngeal abscess Deep neck space infection, airway compromise"
+      },
+      {
+       "label": "Otitis media",
+       "text": "Spread via Eustachian tube",
+       "image": "slides/study/images/otitis-media.png",
+       "src": "Otitis media Spread via Eustachian tube"
+      },
+      {
+       "label": "Sinusitis",
+       "text": "Obstruction of sinus drainage",
+       "image": "slides/study/images/sinusitis.png",
+       "src": "Sinusitis Due to obstruction of sinus drainage."
+      }
+     ]
+    },
+    {
+     "kind": "cards",
+     "title": "Post-streptococcal: ARF, scarlet fever, PSGN",
+     "nodes": [
+      {
+       "label": "Acute Rheumatic Fever (ARF)",
+       "src": "1 Acute Rheumatic Fever (ARF)",
+       "icon": "❤️"
+      },
+      {
+       "label": "Scarlet fever",
+       "text": "Strawberry tongue, sandpaper rash",
+       "src": "2 Scarlet fever strawberry tongue, sandpaper rash",
+       "icon": "🍓"
+      },
+      {
+       "label": "PSGN",
+       "text": "Hematuria, edema, hypertension, proteinuria",
+       "sub": "Immune complex deposition in kidneys",
+       "src": "Post-streptococcal Glomerulonephritis (PSGN): Immune complex deposition in kidneys; Hematuria, edema, hypertension, proteinuria.",
+       "icon": "🩸"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.7",
+   "slides": [
+    {
+     "kind": "flow",
+     "title": "Management: nonpharmacological, pharmacological, tonsillectomy",
+     "nodes": [
+      {
+       "label": "1 NonPharmacological",
+       "text": "Hydration, warm saline gargles, soft diet",
+       "src": "1 NonPharmacological: hydration, warm saline gargles • Soft diet",
+       "icon": "💧"
+      },
+      {
+       "label": "2 Pharmacological",
+       "text": "Analgesics, topical anesthetics, NSAID lozenges, antibiotics",
+       "src": "1 Analgesics/antipyretics → Paracetamol, ibuprofen First-line. 2 Topical anesthetics → Benzydamine spray, lidocaine/benzocaine lozenges Local pain relief. 3 NSAID lozenges → Flurbiprofen Some efficacy. 4 Antibiotics.",
+       "icon": "💊"
+      },
+      {
+       "label": "3 Tonsillectomy",
+       "text": "Indications",
+       "src": "3 Tonsillectomy Indications",
+       "icon": "✂️"
+      }
+     ],
+     "caption": [
+      {
+       "text": "**Avoid irritants:** smoke, spicy food.",
+       "src": "Avoid irritants (smoke, spicy food"
+      }
+     ]
+    },
+    {
+     "kind": "cards",
+     "title": "Paracetamol, ibuprofen first-line; antibiotics if strep confirmed",
+     "nodes": [
+      {
+       "label": "Analgesics / antipyretics",
+       "text": "Paracetamol, ibuprofen: first-line",
+       "src": "Analgesics/antipyretics → Paracetamol, ibuprofen First-line.",
+       "icon": "🌡️"
+      },
+      {
+       "label": "Topical anesthetics",
+       "text": "Benzydamine spray, lidocaine / benzocaine lozenges",
+       "sub": "Local pain relief",
+       "src": "Topical anesthetics → Benzydamine spray, lidocaine/benzocaine lozenges Local pain relief.",
+       "icon": "🍬"
+      },
+      {
+       "label": "NSAID lozenges",
+       "text": "Flurbiprofen",
+       "sub": "Some efficacy",
+       "src": "NSAID lozenges → Flurbiprofen Some efficacy.",
+       "icon": "💊"
+      },
+      {
+       "label": "Antibiotics",
+       "text": "If strep confirmed",
+       "src": "needs antibiotics if strep confirmed",
+       "icon": "🦠"
+      }
+     ]
+    },
+    {
+     "kind": "cards",
+     "title": "Tonsillectomy for sleep apnea, recurrent abscess or malignancy",
+     "nodes": [
+      {
+       "label": "Obstructive sleep apnea",
+       "text": "From tonsillar hypertrophy",
+       "src": "Obstructive sleep apnea from tonsillar hypertrophy",
+       "icon": "😴"
+      },
+      {
+       "label": "Recurrent peritonsillar abscess",
+       "src": "Recurrent peritonsillar abscess",
+       "icon": "🔁"
+      },
+      {
+       "label": "Suspicion of malignancy",
+       "src": "Suspicion of malignancy.",
+       "icon": "⚠️"
+      }
+     ]
+    },
+    {
+     "kind": "stats",
+     "title": "Tonsillectomy: ≥7 episodes in 1 year",
+     "nodes": [
+      {
+       "label": "≥7",
+       "text": "episodes in 1 year",
+       "icon": "📅",
+       "src": "≥7 episodes in 1 year"
+      },
+      {
+       "label": "≥5/year",
+       "text": "for 2 years",
+       "icon": "📅",
+       "src": "≥5 episodes/year for 2 years"
+      },
+      {
+       "label": "≥3/year",
+       "text": "for 3 years",
+       "icon": "📅",
+       "src": "≥3 episodes/year for 3 years."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.8",
+   "slides": [
+    {
+     "kind": "versus",
+     "title": "Penicillin V first-line; avoid amoxicillin if EBV",
+     "nodes": [
+      {
+       "label": "✓ Penicillin V",
+       "text": "Phenoxymethylpenicillin, 10-day course.",
+       "sub": "Children: 12.5–25 mg/kg 2–4 times daily. Adults: 500 mg QDS.",
+       "src": "Penicillin V (phenoxymethylpenicillin) 10-day course. Children: 12.5–25 mg/kg 2–4 times daily; Adults: 500 mg QDS."
+      },
+      {
+       "label": "✗ Amoxicillin",
+       "text": "500 mg TDS 10 days. Avoid if glandular fever (EBV) suspected (rash).",
+       "image": "slides/study/images/augmentin.png",
+       "src": "Amoxicillin 500 mg TDS 10 days. Avoid if EBV Glandular fever (EBV) fever, malaise, rash, splenomegaly suspected (rash)."
+      }
+     ],
+     "caption": [
+      {
+       "text": "**Glandular fever (EBV):** fever, malaise, rash, splenomegaly.",
+       "src": "Glandular fever (EBV) fever, malaise, rash, splenomegaly"
+      }
+     ]
+    },
+    {
+     "kind": "cards",
+     "title": "Penicillin allergy: clarithromycin or azithromycin",
+     "highlight": 2,
+     "nodes": [
+      {
+       "label": "✓ Clarithromycin",
+       "text": "250–500 mg BD 5 days",
+       "sub": "Better tolerated than erythromycin",
+       "image": "slides/study/images/klacid.png",
+       "src": "Clarithromycin 250–500 mg BD 5 days Better tolerated than erythromycin."
+      },
+      {
+       "label": "✓ Azithromycin",
+       "text": "500 mg OD 3 days",
+       "sub": "Short course",
+       "image": "slides/study/images/zithromax.png",
+       "src": "Azithromycin 500 mg OD 3 days Short course."
+      },
+      {
+       "label": "✗ Erythromycin",
+       "text": "250–500 mg QDS 7–10 days",
+       "sub": "GI side effects common",
+       "src": "Erythromycin 250–500 mg QDS 7–10 days GI side effects common."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "sec": "1.9",
+   "slides": [
+    {
+     "kind": "case",
+     "title": "Lab 2 case: a 15-year-old with a very sore throat",
+     "case": {
+      "text": "He is 15 years old and is at home in bed. She says he has a temperature and that she can see creamy white matter at the back of his throat. He seems lethargic and hasn't been eating very well because his throat has been so painful. The sore throat started about 5 days ago and he has been in bed since yesterday. The glands on his neck are swollen."
+     },
+     "points": [
+      {
+       "text": "Adolescents → glandular fever.",
+       "src": "Adolescents → glandular fever"
+      },
+      {
+       "text": "Tonsillar exudate, fever, tender cervical lymph nodes → bacterial.",
+       "src": "2 Tonsillar exudate; 3 fever, tender cervical lymph nodes."
+      },
+      {
+       "text": "Avoid amoxicillin if glandular fever (EBV) is suspected.",
+       "src": "Avoid if EBV Glandular fever (EBV) fever, malaise, rash, splenomegaly suspected (rash)."
+      },
+      {
+       "text": "Paracetamol, ibuprofen: first-line for pain and fever.",
+       "src": "Analgesics/antipyretics → Paracetamol, ibuprofen First-line."
+      }
+     ]
+    }
+   ]
+  }
  ],
  "mcq": [
-  {"q": "A 16-year-old male adolescent suffers from recurrent tonsillitis more than 7 times over the past year, with difficulty swallowing and snoring during sleep. What is the most appropriate management?",
-   "opts": ["Anti viral", "Consider tonsillectomy", "Use nasal spray", "Flurbiprofen only"], "key": "B",
-   "why": "≥7 episodes in 1 year is an indication for tonsillectomy.", "src": "≥7 episodes in 1 year"},
-  {"q": "A child 4 years old has sore throat. Which medication is suitable for this case?",
-   "opts": ["Benzydamine spray", "Lidocaine", "Flurbiprofen", "Benzocaine"], "key": "D",
-   "why": "Benzocaine lozenge >3 yrs; Lidocaine and Flurbiprofen >12 years.", "src": "Benzocaine → Lozenge >3 yrs"},
-  {"q": "An 8-year-old girl complained of a sore throat for two days, no cough, a fever of 38.5°C, and enlarged anterior cervical lymph nodes. What is the most appropriate treatment?",
-   "opts": ["Loratadine syrup", "Penicillin V", "Diphenhydramine syrup", "Oxymetazoline spray"], "key": "B",
-   "why": "Penicillin V is first-line: a 10-day course.", "src": "Penicillin V (phenoxymethylpenicillin) 10-day course"},
-  {"q": "For the same girl, what is the appropriate pharmacist advice?",
-   "opts": ["Take antibiotics only until symptoms subside", "Complete the full course of antibiotics", "Use benzydamine nasal spray for children under 3 years of age", "Take nasal decongestants orally"], "key": "B",
-   "why": "Complete the full course: Penicillin V is a 10-day course.", "src": "Penicillin V (phenoxymethylpenicillin) 10-day course"},
-  {"q": "Which antibiotic is used in glandular fever (EBV)?",
-   "opts": ["Amoxicillin", "Klacid (clarithromycin)", "Penicillin V", "Augmentin"], "key": "B",
-   "why": "Avoid amoxicillin (Augmentin) if EBV glandular fever is suspected.", "src": "Avoid if EBV Glandular fever (EBV) fever, malaise, rash, splenomegaly suspected (rash)."},
-  {"q": "A woman in the eighth month of pregnancy is complaining of a mild sore throat, without fever. What is the safe option to relieve the symptoms?",
-   "opts": ["Lidocaine spray", "Paracetamol + Salt water gargle", "Flurbiprofen lozenges", "NSAID tablets"], "key": "B",
-   "why": "Lidocaine is not safe in pregnancy; flurbiprofen: avoid in 3rd trimester.", "src": "Pregnancy (page 12): Flurbiprofen → avoid in 3trimester) pregnancy. Lidocaine → Not safe."}
+  {
+   "q": "A 16-year-old male adolescent suffers from recurrent tonsillitis more than 7 times over the past year, with difficulty swallowing and snoring during sleep. What is the most appropriate management?",
+   "opts": [
+    "Anti viral",
+    "Consider tonsillectomy",
+    "Use nasal spray",
+    "Flurbiprofen only"
+   ],
+   "key": "B",
+   "why": "≥7 episodes in 1 year is an indication for tonsillectomy.",
+   "src": "≥7 episodes in 1 year"
+  },
+  {
+   "q": "A child 4 years old has sore throat. Which medication is suitable for this case?",
+   "opts": [
+    "Benzydamine spray",
+    "Lidocaine",
+    "Flurbiprofen",
+    "Benzocaine"
+   ],
+   "key": "D",
+   "why": "Benzocaine lozenge >3 yrs; Lidocaine and Flurbiprofen >12 years.",
+   "src": "Benzocaine → Lozenge >3 yrs"
+  },
+  {
+   "q": "An 8-year-old girl complained of a sore throat for two days, no cough, a fever of 38.5°C, and enlarged anterior cervical lymph nodes. What is the most appropriate treatment?",
+   "opts": [
+    "Loratadine syrup",
+    "Penicillin V",
+    "Diphenhydramine syrup",
+    "Oxymetazoline spray"
+   ],
+   "key": "B",
+   "why": "Penicillin V is first-line: a 10-day course.",
+   "src": "Penicillin V (phenoxymethylpenicillin) 10-day course"
+  },
+  {
+   "q": "For the same girl, what is the appropriate pharmacist advice?",
+   "opts": [
+    "Take antibiotics only until symptoms subside",
+    "Complete the full course of antibiotics",
+    "Use benzydamine nasal spray for children under 3 years of age",
+    "Take nasal decongestants orally"
+   ],
+   "key": "B",
+   "why": "Complete the full course: Penicillin V is a 10-day course.",
+   "src": "Penicillin V (phenoxymethylpenicillin) 10-day course"
+  },
+  {
+   "q": "Which antibiotic is used in glandular fever (EBV)?",
+   "opts": [
+    "Amoxicillin",
+    "Klacid (clarithromycin)",
+    "Penicillin V",
+    "Augmentin"
+   ],
+   "key": "B",
+   "why": "Avoid amoxicillin (Augmentin) if EBV glandular fever is suspected.",
+   "src": "Avoid if EBV Glandular fever (EBV) fever, malaise, rash, splenomegaly suspected (rash)."
+  },
+  {
+   "q": "A woman in the eighth month of pregnancy is complaining of a mild sore throat, without fever. What is the safe option to relieve the symptoms?",
+   "opts": [
+    "Lidocaine spray",
+    "Paracetamol + Salt water gargle",
+    "Flurbiprofen lozenges",
+    "NSAID tablets"
+   ],
+   "key": "B",
+   "why": "Lidocaine is not safe in pregnancy; flurbiprofen: avoid in 3rd trimester.",
+   "src": "Pregnancy (page 12): Flurbiprofen → avoid in 3trimester) pregnancy. Lidocaine → Not safe."
+  }
  ],
  "takeaways": [
-  {"text": "Tonsillitis: viral (70–80%) or bacterial 20–30%; Group A β-hemolytic streptococcus most important.", "src": "Group A β-hemolytic streptococcus (S. pyogenes) – most important"},
-  {"text": "Bacterial: sudden, severe pain, fever >38, no cough, purulent exudates, tender cervical lymphadenopathy.", "src": "Tender anterior cervical lymphadenopathy"},
-  {"text": "Paracetamol, ibuprofen first-line; Penicillin V 10-day course if strep confirmed.", "src": "Paracetamol, ibuprofen First-line"},
-  {"text": "Avoid amoxicillin if glandular fever (EBV) is suspected.", "src": "Avoid if EBV Glandular fever (EBV)"},
-  {"text": "Penicillin allergy: clarithromycin or azithromycin.", "src": "Alternatives (Penicillin Allergy)"},
-  {"text": "Tonsillectomy: ≥7 episodes in 1 year, ≥5/year for 2 years, ≥3/year for 3 years.", "src": "≥7 episodes in 1 year • ≥5 episodes/year for 2 years • ≥3 episodes/year for 3 years."}
+  {
+   "text": "Tonsillitis: viral (70–80%) or bacterial 20–30%; Group A β-hemolytic streptococcus most important.",
+   "src": "Group A β-hemolytic streptococcus (S. pyogenes) – most important"
+  },
+  {
+   "text": "Bacterial: sudden, severe pain, fever >38, no cough, purulent exudates, tender cervical lymphadenopathy.",
+   "src": "Tender anterior cervical lymphadenopathy"
+  },
+  {
+   "text": "Paracetamol, ibuprofen first-line; Penicillin V 10-day course if strep confirmed.",
+   "src": "Paracetamol, ibuprofen First-line"
+  },
+  {
+   "text": "Avoid amoxicillin if glandular fever (EBV) is suspected.",
+   "src": "Avoid if EBV Glandular fever (EBV)"
+  },
+  {
+   "text": "Penicillin allergy: clarithromycin or azithromycin.",
+   "src": "Alternatives (Penicillin Allergy)"
+  },
+  {
+   "text": "Tonsillectomy: ≥7 episodes in 1 year, ≥5/year for 2 years, ≥3/year for 3 years.",
+   "src": "≥7 episodes in 1 year • ≥5 episodes/year for 2 years • ≥3 episodes/year for 3 years."
+  }
  ]
 }

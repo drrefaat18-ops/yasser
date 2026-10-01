@@ -43,7 +43,8 @@ from pptx.oxml.ns import qn                                      # noqa: E402
 SRC_SHARE = 0.5
 MAX_POINTS, MAX_ROWS, TERMS_PER_SLIDE, MAX_CARDS = 4, 5, 4, 6   # few words per slide (user, 2026-10-01)
 MCQ_PER_SLIDE, ANSWERS_PER_SLIDE, CALLOUT_CHARS = 2, 3, 300
-DIAGRAMS = {"flow": 5, "cards": 12, "versus": 3, "equation": 4, "spectrum": 6}   # kind: most nodes
+DIAGRAMS = {"flow": 5, "cards": 12, "versus": 3, "equation": 4, "spectrum": 6, "stats": 4}   # kind: most nodes
+ICON_FONT = "Segoe UI Emoji"            # colour emoji shipped with Windows and Office: icons without downloads
 STOP = set("""a an the and or but nor of in on at to for from by with as is are was were be been being it its this that
 these those their there they them then than so such not no can may must will would should could do does did done has have
 had which who whom whose what when where why how each every all any some most more less only also very into onto out up
@@ -285,7 +286,20 @@ class StudyDeck(bs.Deck):
         _alpha(sh, opacity)
         sh.line.color.rgb = bs.rgb(border or bs.WHITE_HEX); sh.line.width = bs.Pt(bw)
         _effects(sh)
+        if w > 1.6 and h > 0.9:                                  # luminous top edge (glassmorphism)
+            hl = self.rect(s, x + min(0.35, w * 0.08), y + 0.07, w - 2 * min(0.35, w * 0.08), 0.035, bs.WHITE_HEX,
+                           bs.MSO_SHAPE.ROUNDED_RECTANGLE, 0.5)
+            _alpha(hl, 85)
         return sh
+
+    def icon(self, s, glyph, cx, cy, d=0.7):
+        """An icon: a colour emoji on a white glass disc, centred at (cx, cy)."""
+        disc = self.rect(s, cx - d / 2, cy - d / 2, d, d, bs.WHITE_HEX, bs.MSO_SHAPE.OVAL)
+        _alpha(disc, 94); disc.line.color.rgb = bs.rgb(self.st.warm2); disc.line.width = bs.Pt(1.25)
+        _effects(disc)
+        tf = self.text(s, cx - d / 2, cy - d / 2, d, d, bs.MSO_ANCHOR.MIDDLE); tf.word_wrap = False
+        q = tf.paragraphs[0]; q.alignment = bs.PP_ALIGN.CENTER
+        r = q.add_run(); r.text = glyph; r.font.size = bs.Pt(int(d * 34)); r.font.name = ICON_FONT
 
     def solid(self, s, x, y, w, h, fill, shape=bs.MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.18):
         sh = self.rect(s, x, y, w, h, fill, shape, radius)
@@ -310,7 +324,8 @@ class StudyDeck(bs.Deck):
         k = self.text(s, bs.M + 1.1, 0.44, bs.CW - 1.3, 0.3)
         self.runs(k.paragraphs[0], kicker.upper(), 12, self.kick_col, True, spacing=150)
         t = self.text(s, bs.M + 1.1, 0.72, bs.CW - 1.3, 0.7, bs.MSO_ANCHOR.MIDDLE)
-        self.runs(t.paragraphs[0], title, 30 if len(title) < 46 else 25, st.pri, True, st.head)
+        self.runs(t.paragraphs[0], title, self.fitsize([title], bs.CW - 1.3, 0.62, (30, 28, 26, 24, 22, 20), 0.56),
+                  st.pri, True, st.head)                                  # an action title stays on one line
         self.footer(s)
         return s
 
@@ -351,6 +366,8 @@ class StudyDeck(bs.Deck):
         """A node: a 3D header with the label on a glass card, the text below, an italic example under it."""
         st, (lsz, hh, z, _) = self.st, lay
         paras = [t for t in (node.get("text", ""), node.get("sub", "")) if t]
+        if node.get("icon"):
+            self._icons.append((s, node["icon"], x + w / 2, y))             # drawn last, above the card
         if not paras:                                                       # label only: one 3D block
             self.label(self.solid(s, x, y, w, h, fill, radius=0.12), label or node["label"],
                        self.fitsize([label or node["label"]], w - 0.3, h - 0.2, (22, 20, 19, 18, 17, 16), 0.56), font=st.head)
@@ -397,20 +414,51 @@ class StudyDeck(bs.Deck):
             self.runs(q, t, z)
         return h + 0.3
 
+    def stats(self, s, nodes, top, band):
+        """Big numbers: the value large in the primary colour, a short caption under it."""
+        n, gx = len(nodes), 0.3
+        w = (bs.CW - gx * (n - 1)) / n
+        vsz = min(self.fitsize([nd["label"]], w - 0.4, 1.4, (66, 60, 54, 48, 42, 36), 0.6) for nd in nodes)
+        cz = min((self.fitsize([nd.get("text", "")], w - 0.5, 1.4, (24, 22, 20, 19, 18)) for nd in nodes if nd.get("text")),
+                 default=22)
+        h = min(band, 1.2 + vsz / 72 * 1.3 + max(self.dh([nd.get("text", "")], w - 0.5, cz) for nd in nodes) + 0.4)
+        y = top + (band - h) / 2
+        for i, nd in enumerate(nodes):
+            x = bs.M + i * (w + gx)
+            self.panel(s, x, y, w, h, 66)
+            if nd.get("icon"):
+                self._icons.append((s, nd["icon"], x + w / 2, y))
+            tf = self.text(s, x + 0.2, y + 0.55, w - 0.4, vsz / 72 * 1.3, bs.MSO_ANCHOR.MIDDLE)
+            tf.paragraphs[0].alignment = bs.PP_ALIGN.CENTER
+            self.runs(tf.paragraphs[0], nd["label"], vsz, self.st.acc if i == self._hi else self.st.pri, True, self.st.head)
+            c = self.text(s, x + 0.25, y + 0.65 + vsz / 72 * 1.3, w - 0.5, h - 0.85 - vsz / 72 * 1.3)
+            c.paragraphs[0].alignment = bs.PP_ALIGN.CENTER
+            self.runs(c.paragraphs[0], nd.get("text", ""), cz, self.st.ink)
+
     def diagram(self, sec, sl, notes):
+        self._icons = []
+        self._diagram(sec, sl, notes)
+        for s, glyph, cx, cy in self._icons:
+            self.icon(s, glyph, cx, cy - 0.42)                           # above the card, clear of its header
+
+    def _diagram(self, sec, sl, notes):
         kind, nodes = sl["kind"], sl["nodes"]
         if kind == "cards" and len(nodes) > MAX_CARDS:                 # fewer words per slide: split the grid
             parts = -(-len(nodes) // MAX_CARDS); per = -(-len(nodes) // parts)
             for k in range(parts):
                 part = dict(sl, nodes=nodes[k * per:(k + 1) * per], start=k * per,
                             title=f"{sl['title']} ({k + 1}/{parts})", caption=sl.get("caption", []) if k == parts - 1 else [])
-                self.diagram(sec, part, notes)
+                self._diagram(sec, part, notes)
             return
         s = self.content(self.kick(sec), sl["title"], notes, "diagram")
         st = self.st
-        top = bs.TOP + 0.05
+        top = bs.TOP + 0.05 + (0.8 if any(nd.get("icon") for nd in nodes) else 0)   # room for icons on the edge
         band = bs.BOTTOM - top - self.caption_bar(s, sl.get("caption", []))
         n, x0, cw, hi = len(nodes), bs.M, bs.CW, sl.get("highlight", -99)
+        self._hi = hi
+        if kind == "stats":
+            self.stats(s, nodes, top, band)
+            return
         if kind in ("flow", "equation", "versus"):
             gap = 0.75 if kind == "versus" else 0.6
             w = (cw - gap * (n - 1)) / n
@@ -711,7 +759,50 @@ def topics(md, rx):
     return out
 
 
-def main(project, only=None, pdf=False, source=False):
+def variety(outline):
+    """Consecutive slides with the same layout (warning: vary the layouts)."""
+    seq = [(s["sec"], sl["kind"], sl.get("title", "")) for s in outline["sections"] for sl in s["slides"]]
+    return [f"{b[2]!r} repeats the {b[1]} layout of the slide before" for a, b in zip(seq, seq[1:])
+            if a[1] == b[1] and a[1] != "case"]
+
+
+def review_deck(pptx, deck, outline):
+    """Rendered QA (Windows, PowerPoint): every slide to PNG, contact sheets, and a review note with the ghost deck
+    (titles alone, in order), the layout-variety warnings and the densest slides. Returns the note's path."""
+    out = pptx.parent / "review" / pptx.stem
+    out.mkdir(parents=True, exist_ok=True)
+    for old in out.glob("*.png"):
+        old.unlink()
+    ps = (f"$p=New-Object -ComObject PowerPoint.Application; $d=$p.Presentations.Open('{pptx}', $true, $false, $false);"
+          f" $d.Export('{out}', 'PNG', 1280, 720); $d.Close(); $p.Quit()")
+    try:
+        subprocess.run(["powershell", "-NoProfile", "-Command", ps], check=True, capture_output=True, timeout=600)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    from PIL import Image
+    shots = sorted(out.glob("Slide*.PNG"), key=lambda f: int(re.findall(r"\d+", f.stem)[-1]))
+    sheets = []
+    for k in range(0, len(shots), 12):
+        part, w, h, cols = shots[k:k + 12], 640, 360, 3
+        rows = -(-len(part) // cols)
+        sheet = Image.new("RGB", (cols * w + (cols + 1) * 8, rows * h + (rows + 1) * 8), "#777777")
+        for i, f in enumerate(part):
+            sheet.paste(Image.open(f).convert("RGB").resize((w, h)), (8 + (i % cols) * (w + 8), 8 + (i // cols) * (h + 8)))
+        name = out.parent / f"{pptx.stem}-sheet-{k // 12 + 1}.png"
+        sheet.save(name); sheets.append(name.name)
+    dens = sorted(((sum(len(sh.text_frame.text) for sh in sl.shapes if sh.has_text_frame), i + 1)
+                   for i, sl in enumerate(deck.prs.slides)), reverse=True)[:5]
+    note = [f"# Review: {pptx.stem}", "", "## Ghost deck (titles alone, in order)", ""]
+    note += [f"{i + 1}. {t}" for i, t in enumerate(deck.titles) if t]
+    note += ["", "## Layout variety", ""] + ([f"- {v}" for v in variety(outline)] or ["- no repeats"])
+    note += ["", "## Densest slides (characters on the slide)", ""] + [f"- slide {i}: {n}" for n, i in dens]
+    note += ["", "## Contact sheets", ""] + [f"- {x}" for x in sheets]
+    path = out.parent / f"{pptx.stem}-review.md"
+    path.write_text("\n".join(note) + "\n", encoding="utf-8")
+    return path.name
+
+
+def main(project, only=None, pdf=False, source=False, review=False):
     """source=False: one deck per book chapter that has an outline. source=True (decks-only projects, called by
     build_source_deck.py): one deck per outline, built from the part of ingest/normalized.md its "topic" names."""
     book = bs.Book(project)
@@ -761,10 +852,15 @@ def main(project, only=None, pdf=False, source=False):
         except PermissionError:
             print(f"{path.name}: SKIPPED, file is open; close it and run again"); status = 1; continue
         made = to_pdf(path.resolve()) if pdf else None
+        if review:
+            report[stem_]["review"] = review_deck(path.resolve(), deck, outline)
         counts = {}
         for x in report[stem_]["lint"]:
             counts[x["check"]] = counts.get(x["check"], 0) + 1
+        rep = report[stem_].get("review")
         print(f"{path.name}: {len(prs.slides)} slides  fidelity: ok  QA: {counts or 'clean'}"
+              + (f"  variety: {len(variety(outline))} repeats" if variety(outline) else "")
+              + (f"  review: {rep}" if rep else "")
               + (f"  PDF: {made.name}" if made else ""))
     (out / "study-qa.json").write_text(json.dumps(report, indent=1, ensure_ascii=False), encoding="utf-8")
     return status
@@ -776,4 +872,4 @@ if __name__ == "__main__":
     PROJECT = enforce("build", sys.argv, content_only=True)   # read-only side product, like build_slides
     args = sys.argv[1:]
     only = args[args.index("--chapter") + 1] if "--chapter" in args else None
-    sys.exit(main(PROJECT, only, "--pdf" in args))
+    sys.exit(main(PROJECT, only, "--pdf" in args, review="--review" in args))

@@ -92,3 +92,23 @@ When the user wants decks straight from course sources (sections, labs, quizzes)
    stage contract) with a `photo-sources.md`.
 4. Build: `python harness/tools/build_source_deck.py --project projects/<p> [--chapter <deck>] --pdf`
    (gate: evaluate, i.e. intake approved and a fresh ingest). Then QA as in §3.
+
+## 6. Design workflow for good-looking study decks (both modes)
+
+Ideas taken from the slide skills surveyed on 2026-10-01 (academic-pptx-skill, siril9/presentation-skill,
+danny0926/ppt-skills, mpuig/agent-slides, bergside glassmorphism, claude-office-skills ppt-visual), rebuilt inside
+build_study.py; none of their code is installed or run.
+
+1. **Plan the story with action titles**: every title states the slide's message in the source's own words
+   ("Viral in 70–90% of cases; bacterial ~10–30%"), not a topic label. Read the titles alone (the review's ghost
+   deck): they must tell the whole topic.
+2. **Pick the layout from the content's shape**, and vary it (no layout twice in a row): `stats` for numbers
+   (percentages, ages, durations, counts), `flow` for a sequence, `cards` for parts of a whole, `versus` for a
+   contrast, `equation` for a definition that is a sum or difference, `spectrum` for a scale, `table` only for
+   several attributes compared across rows, `points` + `image` for a definition with a picture, `case` for a case.
+3. **One icon per node** (`"icon"`: one colour emoji, e.g. 🦠 bacterial, 🤧 viral, 💊 drug, 🌡️ fever, 👶 child,
+   🤰 pregnancy, ✂️ surgery, 📅 episodes): same style throughout, meaning first, never decoration only.
+4. **Few words**: labels alone when they say it all; one key message per slide in `caption`.
+5. Build with `--review`: the tool exports every slide, writes contact sheets and a review note (ghost deck, layout
+   repeats, densest slides) beside the deck. Look at every sheet; fix in the outline or the tool; rebuild; look again.
+6. Send the PPTX and PDF; record the user's new preferences in docs/harness/SLIDES.md.
