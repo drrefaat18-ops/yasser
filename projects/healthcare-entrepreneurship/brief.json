@@ -1,0 +1,237 @@
+{
+ "schema_version": 1,
+ "project_id": "healthcare-entrepreneurship",
+ "identity": {
+  "title": "Entrepreneurship in Healthcare",
+  "subtitle": "From a Health Need to a Sustainable Venture",
+  "edition": "2026-2027",
+  "authors": [
+   {
+    "name": "Assoc. Prof. Mohamed Yasser Hamdy",
+    "credit_line": "Assoc. Prof. Mohamed Yasser Hamdy",
+    "role": "author"
+   }
+  ],
+  "credit_policy": "The book is credited to Assoc. Prof. Mohamed Yasser Hamdy alone, as the user asked. The revision notes are not credited; the rework writes new text on their topics rather than reproducing their wording. Chanda and Gupta (2025), Healthcare Entrepreneurship and Management (Routledge), which the user supplied as a preview, is used only as a cited reference for structure and ideas; none of its text, figures or data tables is reproduced.",
+  "rework_authorised": "unknown",
+  "rework_authorised_note": "The user commissioned this book from a set of revision notes on entrepreneurship (three lectures with question banks); no written authorisation from their author is on file. The Routledge preview is a copyrighted reference, not a source to be reworked."
+ },
+ "source": {
+  "files": [
+   {
+    "path": "intake/Entrepreneurship_Revision.md",
+    "format": "md",
+    "sha256": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321"
+   }
+  ]
+ },
+ "domain": {
+  "primary": "Entrepreneurship and venture creation in the health sector",
+  "subfields": [
+   "the entrepreneur: definitions, characteristics, types and stages",
+   "why entrepreneurship matters, entrepreneurship development programmes and their problems",
+   "the health startup ecosystem in Egypt and worldwide",
+   "the task and general environment of a health organisation; outsourcing; barriers to entry",
+   "national culture (Hofstede), globalisation and diverse health teams",
+   "unmet health needs and need statements",
+   "idea generation, empathy maps and personas",
+   "customer discovery: patient surveys and competitor analysis",
+   "design thinking, minimum viable product and prototyping of health products and services",
+   "business models, the Business Model Canvas and the business plan",
+   "start-up costs, break-even and funding (bootstrapping, grants, angels, venture capital)",
+   "regulation, licensing, quality standards and ethics for health ventures in Egypt",
+   "intellectual property and branding of a health venture",
+   "launching, growing and failing; social entrepreneurship in health"
+  ]
+ },
+ "figures": {
+  "packs": [
+   "charts"
+  ],
+  "notes": "Diagrams (entrepreneurial stages, task and general environment, Hofstede profile, need-statement funnel, empathy map, design-thinking loop, Business Model Canvas, break-even chart, funding stages, launch roadmap) are drawn as SVG sources in rework/figures."
+ },
+ "audience": {
+  "year_of_study": "Year 3 (Level 3)",
+  "programmes": [
+   "Medical Laboratory Technology",
+   "Radiology and Medical Imaging Technology",
+   "other Applied Health Sciences programmes"
+  ],
+  "prior_knowledge": "No prior business or economics; basic arithmetic and percentages. Students know their own clinical service (laboratory or imaging) from the practitioner's side.",
+  "display_line": "For third-year students of the Faculty of Applied Health Sciences"
+ },
+ "perspectives": {
+  "enabled": true,
+  "items": [
+   {
+    "id": "laboratory",
+    "label": "Medical Laboratory"
+   },
+   {
+    "id": "imaging",
+    "label": "Radiology and Medical Imaging"
+   }
+  ]
+ },
+ "goal": {
+  "mode": "evaluate_and_rework",
+  "directions": [
+   "broaden",
+   "simplify",
+   "restructure"
+  ],
+  "notes": "Turn the point-form revision notes into an explained textbook on entrepreneurship in the health sector. The three lectures (entrepreneurship; global organisations; national culture) are kept and applied to health ventures. The book is broadened with the venture-creation path (need, idea, customer, design, MVP, business model, finance, regulation, IP, launch), using Chanda and Gupta (2025) as a cited reference. The foreign cases (Apple, Alibaba, Tesla) are kept briefly, and each chapter adds verified examples of Egyptian health entrepreneurs: laboratory and imaging chains, digital health startups, pharmaceutical companies and social enterprises."
+ },
+ "language": {
+  "source": "en",
+  "output": "en",
+  "translation_required": false,
+  "terminology": "Standard entrepreneurship and business terms (MVP, Business Model Canvas, value proposition, break-even, bootstrapping, angel investor, venture capital, equity, valuation, intellectual property), each defined on first use."
+ },
+ "size": {
+  "target_words_total": 40000,
+  "chapter_count_target": 14,
+  "restructuring": "merge_split_allowed",
+  "restructuring_note": "About 14 chapters: the three source lectures open the book in their order (split where a topic needs its own chapter), followed by the venture-creation chapters."
+ },
+ "assessment": {
+  "mcq": {
+   "enabled": true,
+   "per_chapter": 10,
+   "options": 4,
+   "format": "Ten four-option MCQs per chapter tagged to a learning objective, with rationales at the end of the chapter, followed by short essay questions with model answer points. The source question banks are reused where correct and rewritten where weak."
+  },
+  "cases": {
+   "enabled": false
+  },
+  "exercises": {
+   "enabled": true
+  }
+ },
+ "context": {
+  "country": "Egypt",
+  "curriculum_standards": [
+   "NARS (National Academic Reference Standards) for Applied Health Sciences, NAQAAE. No copy is on file, so the book claims no NARS alignment until one is supplied and the objectives are mapped to it"
+  ],
+  "frameworks": [
+   "Egyptian Drug Authority",
+   "Universal Health Insurance Authority (Egypt)",
+   "Egyptian Personal Data Protection Law No. 151 of 2020",
+   "Egyptian intellectual property law (Law No. 82 of 2002)",
+   "WHO"
+  ]
+ },
+ "references": {
+  "style": "apa",
+  "style_note": "APA 7 author-date citations in the text; each chapter lists what it cites, and one consolidated reference list closes the book. At least 60% of sources date from 2016 or later; classic sources (Schumpeter, Hofstede, Osterwalder) are kept where they are the origin of a concept. Facts about named Egyptian entrepreneurs and companies cite a public source (company page, reputable press or investor report) with its year.",
+  "recency": {
+   "min_share_since": {
+    "year": 2016,
+    "share": 0.6
+   }
+  },
+  "evidence_cutoff": null
+ },
+ "constraints": {
+  "must_keep": [
+   "Every topic of the three source lectures, in the source order",
+   "The source question banks' correct items, reused or rewritten"
+  ],
+  "must_not_change": [
+   "No invented ISBN, publisher or copyright registration",
+   "No promotional claims for named commercial products or companies",
+   "No invented fact about a named person or company: every figure, date and funding amount in an Egyptian example is checked against a cited public source and dated; anything that cannot be checked is left out",
+   "No text, figure or data table reproduced from Chanda and Gupta (2025)"
+  ],
+  "isbn": null,
+  "publisher": null,
+  "deadline": null
+ },
+ "output": {
+  "formats": [
+   "docx",
+   "pdf"
+  ],
+  "page_size": "A4",
+  "fonts": "Fonts installed on stock Windows",
+  "branding": {
+   "logo": null,
+   "colours": []
+  }
+ },
+ "domain_pillars": [
+  {
+   "id": "D1",
+   "name": "Health-sector applicability and accuracy of Egyptian examples",
+   "weight": 20,
+   "reviewer_ids": [
+    "health-entrepreneurship-reviewer",
+    "subject-reviewer"
+   ]
+  },
+  {
+   "id": "D2",
+   "name": "Business-tool and calculation accuracy",
+   "weight": 20,
+   "reviewer_ids": [
+    "statistician",
+    "health-entrepreneurship-reviewer"
+   ]
+  }
+ ],
+ "answers": {
+  "A": {
+   "provenance": "user",
+   "note": "Title proposed by Claude from the user's aim (entrepreneurship in the health sector); author credit Assoc. Prof. Mohamed Yasser Hamdy, as the user asked. Sources: the user's revision notes; the Routledge preview as a cited reference only."
+  },
+  "B": {
+   "provenance": "default-confirmed",
+   "note": "Entrepreneurship in the health sector; charts pack."
+  },
+  "C": {
+   "provenance": "user",
+   "note": "Level 3 students of the Faculty of Applied Health Sciences, East Port Said National University."
+  },
+  "D": {
+   "provenance": "default-confirmed",
+   "note": "Perspective boxes for Medical Laboratory and Radiology and Medical Imaging, as in the faculty's marketing book."
+  },
+  "E": {
+   "provenance": "user",
+   "note": "Rework; the user chose to keep the global-organisation and national-culture lectures and apply them to health, and asked for examples of Egyptian health entrepreneurs (a mix: laboratory and imaging chains, digital startups, pharmaceuticals, social enterprises)."
+  },
+  "F": {
+   "provenance": "user",
+   "note": "English."
+  },
+  "G": {
+   "provenance": "user",
+   "note": "About 14 chapters, about 40,000 words."
+  },
+  "H": {
+   "provenance": "default-confirmed",
+   "note": "MCQs plus short essay questions per chapter, as in the faculty's marketing book."
+  },
+  "I": {
+   "provenance": "default-confirmed",
+   "note": "Egypt; NARS named but no alignment claimed without a copy."
+  },
+  "J": {
+   "provenance": "default-confirmed",
+   "note": "APA."
+  },
+  "K": {
+   "provenance": "default-confirmed",
+   "note": "No ISBN, publisher or deadline given."
+  },
+  "L": {
+   "provenance": "default-confirmed",
+   "note": "Word plus a designed colour PDF, A4."
+  },
+  "M": {
+   "provenance": "default-confirmed",
+   "note": "Claude proposes health-sector applicability and accuracy of Egyptian examples, and business-tool and calculation accuracy, 20 each."
+  }
+ },
+ "unresolved": []
+}

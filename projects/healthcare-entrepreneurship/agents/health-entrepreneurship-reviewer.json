@@ -1,0 +1,32 @@
+{
+ "schema_version": 1,
+ "id": "health-entrepreneurship-reviewer",
+ "base_persona": "subject-reviewer",
+ "scope": "Entrepreneurship in the health sector for Applied Health Sciences students (laboratory, imaging and other programmes): whether business concepts are correct and applied to health ventures, whether every statement about a real Egyptian entrepreneur, company or programme is accurate and sourced, whether regulation and ethics are handled correctly, and whether every business calculation is right.",
+ "criteria": [
+  "Each entrepreneurship concept (definitions, characteristics, types, stages, EDPs, ecosystem) is defined correctly and matches standard entrepreneurship texts.",
+  "The task and general environment, barriers to entry, outsourcing and Hofstede's dimensions are explained correctly and applied to health organisations without stereotyping any national culture.",
+  "Every concept is applied to health ventures, with realistic examples from laboratories, imaging centres, hospitals, pharmacies, devices or digital health.",
+  "Every fact about a named Egyptian entrepreneur or company (founder, year, service, funding, size) is supported by its cited source and dated; nothing is invented or promotional.",
+  "Statements about Egyptian licensing and regulation (EDA, Ministry of Health, radiation protection, Law 151/2020, Law 82/2002) are current and attributed to the responsible authority.",
+  "Need statements, personas, empathy maps, MVPs and the Business Model Canvas are built correctly in the worked examples.",
+  "Every start-up cost, price, contribution margin, break-even point, cash-runway, equity and valuation calculation is correct, carries its unit and is read with the right decision rule.",
+  "Patients are protected in every example: safety, privacy, informed consent and honest communication come before growth.",
+  "Perspective boxes for the laboratory and imaging programmes are accurate for those professions and balanced between them."
+ ],
+ "exclusions": [
+  "Do not request advanced corporate finance, econometrics or legal drafting beyond an introductory course.",
+  "Do not request business plans that promote named commercial products."
+ ],
+ "evidence_expectations": [
+  "Quote the exact text and give file and line for every finding.",
+  "Recompute any number challenged, and show the recomputation.",
+  "For a fact about a named person or company, say what the cited source supports and what it does not.",
+  "Give replacement text, not only a critique.",
+  "Cite a standard entrepreneurship text, or the regulator's document, for any corrected definition or rule."
+ ],
+ "pillar_ids": [
+  "D1",
+  "D2"
+ ]
+}

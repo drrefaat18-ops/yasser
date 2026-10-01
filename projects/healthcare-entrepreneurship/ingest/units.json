@@ -1,0 +1,69 @@
+{
+ "schema_version": 1,
+ "units": [
+  {
+   "heading": "Revision on Entrepreneurship",
+   "id": "src-ch01",
+   "level": 1,
+   "line_end": 450,
+   "line_start": 1,
+   "sha256": "8cdc67367d8ed741c2fc00cf92f705c5501a67204ce6cc97a67e951ea11e2491"
+  },
+  {
+   "heading": "Lecture 1: Entrepreneurship",
+   "id": "src-ch01-s01",
+   "level": 2,
+   "line_end": 61,
+   "line_start": 3,
+   "sha256": "59a0758c0767d50b30250646a38ac703617dbc9ff1d65eeaa2ab97970200c5ac"
+  },
+  {
+   "heading": "Lecture 2: Global Organizations",
+   "id": "src-ch01-s02",
+   "level": 2,
+   "line_end": 85,
+   "line_start": 63,
+   "sha256": "3ecdc0453dba4216951f470afda90100f31977fd9f662ebebf92f1d26ad03949"
+  },
+  {
+   "heading": "Lecture 3: National Culture and Global Management",
+   "id": "src-ch01-s03",
+   "level": 2,
+   "line_end": 104,
+   "line_start": 87,
+   "sha256": "971cc3bf78e7b7a9c24de40d7ceb8a990ff4924b1b85ac6e0997c638d6b97404"
+  },
+  {
+   "heading": "Lectures 2 and 3: True or false",
+   "id": "src-ch01-s04",
+   "level": 2,
+   "line_end": 141,
+   "line_start": 106,
+   "sha256": "ee8919a135afdbee75e54a70915e9958d0fe9164cb07255bfc62a4cffad602b4"
+  },
+  {
+   "heading": "Question bank: Entrepreneurship",
+   "id": "src-ch01-s05",
+   "level": 2,
+   "line_end": 162,
+   "line_start": 143,
+   "sha256": "74e1f7703a793958f0a24bb51b11748f51b9beae0a00b95d8a29198d893101e6"
+  },
+  {
+   "heading": "Question bank with answers and rationales (Lectures 1 to 3)",
+   "id": "src-ch01-s06",
+   "level": 2,
+   "line_end": 428,
+   "line_start": 164,
+   "sha256": "6dd0b2b72376380fb878b7955948e2c6f69edc83791f013814ea3896601d0f12"
+  },
+  {
+   "heading": "Case studies in entrepreneurship",
+   "id": "src-ch01-s07",
+   "level": 2,
+   "line_end": 450,
+   "line_start": 430,
+   "sha256": "8fd7b2404c08b52331821fd00e502561c9eb2d5ce12dc75b2fe3ceb128887319"
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "aborts": [],
+ "active_run": {
+  "author_model": "claude",
+  "nonce": "ba52808f6dc40230",
+  "pid": 8928,
+  "stage": "evaluate",
+  "started_at": "2026-10-01T07:05:10Z",
+  "unit": null
+ },
+ "approvals": {
+  "intake": {
+   "approved_at": "2026-10-01T07:04:44Z",
+   "approved_by": "user",
+   "dec_id": "DEC-001",
+   "dec_row_sha256": "eab7fb1a16d999ca06d9d6acad0269100e12cd7f3bdeaafd629e4eba388af964",
+   "files": {
+    "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+    "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+    "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928",
+    "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+   },
+   "kind": "intake"
+  }
+ },
+ "project_id": "healthcare-entrepreneurship",
+ "receipts": {
+  "ingest": {
+   "args": {},
+   "converter": "markitdown",
+   "inputs": {
+    "intake/Entrepreneurship_Revision.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928"
+   },
+   "outputs": {
+    "ingest/conversion-report.json": "e1ee828970841a7cecf1b46e574afab2f62f84fc1bb8c07419cab656956ad921",
+    "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+    "ingest/units.json": "99b3d2926431e68b2c1e010ca94098c5de2ed8f3e7f8a2c605eabbc1408ebc22",
+    "source-manifest.json": "65657ab1fc7b825604ecb10ea2bc457086f9920e4c2cad987487089a0620e924",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/Entrepreneurship_Revision.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321"
+   },
+   "source_formats": [
+    "md"
+   ],
+   "stage": "ingest",
+   "status": "ok",
+   "time": "2026-10-01T07:04:59Z",
+   "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b"
+  },
+  "intake": {
+   "args": {},
+   "inputs": {
+    "../../harness/locale/en.json": "39d941eae8ed1ef8363b6f1bc555e0212733a90671e65cbda8c5a367c7aa7c72",
+    "../../harness/presets/ltr-textbook.json": "075302844e57524ac3ca57b29030dcb6377b36c85ba54c0b16ead2d75148aa7e",
+    "../../harness/rubric_core.json": "8aab3f8c039613c1a0772485633f9ccc68bfaba313dbcccfe58a9e39c43fd25f"
+   },
+   "outputs": {
+    "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+    "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+    "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928",
+    "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+   },
+   "questionnaire_ids": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M"
+   ],
+   "stage": "intake",
+   "status": "ok",
+   "time": "2026-10-01T07:02:56Z",
+   "tool_sha": "c96c149345a5cc706cd583b064c87626168040ea"
+  },
+  "new": {
+   "args": {
+    "slug": "healthcare-entrepreneurship"
+   },
+   "inputs": {},
+   "outputs": {
+    "agents/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "design/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "figures/src/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/.keep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "stage": "new",
+   "status": "ok",
+   "time": "2026-10-01T06:59:50Z",
+   "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  }
+ },
+ "schema_version": 1
+}
