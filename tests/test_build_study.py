@@ -40,8 +40,9 @@ class BuildStudyTest(unittest.TestCase):
         texts = [" ".join([sh.text_frame.text for sh in s.shapes if sh.has_text_frame] + [t for sh in s.shapes for t in cells(sh)])
                  for s in Presentation(deck).slides]
         self.assertTrue(any("Key terms" in t and "Mass" in t for t in texts))       # glossary definitions
-        self.assertTrue(any("Check your answer" in t for t in texts))               # MCQ answer slide
-        self.assertIn("on one page", texts[-1])                                     # revision slide last
+        self.assertTrue(any("Questions 1–2" in t for t in texts))                   # two questions per slide
+        self.assertIn("Answer key", texts[-1])                                      # all answers at the end
+        self.assertTrue(any("Key takeaways" in t for t in texts))
         self.assertFalse((self.proj / "slides" / "study" / "out" / "ch02-friction-graphs-study.pptx").exists())
 
     def test_words_from_outside_the_chapter_are_refused(self):

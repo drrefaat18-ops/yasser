@@ -28,7 +28,8 @@ for the lecturer and the student together (on-slide text plus speaker notes), PP
    `versus`; a definition that is a difference or sum → `equation`; a scale with a best end → `spectrum`. Put the
    one-line key message in `caption`. Keep a table only where the reader compares several attributes across rows,
    and keep the book's own figures beside short points. Aim for at least one diagram per section. Keep node texts
-   short and of similar length: one long text shrinks the whole row.
+   short and of similar length: one long text shrinks the whole row. **Few words per slide** (user, round 3): more
+   slides are fine; labels alone are enough when they say it all.
 3. Build: `python harness/tools/build_study.py --project projects/<book> --chapter chNN --pdf`.
    The fidelity check stops the build on any non-verbatim `src`, any word not in the chapter, a point that shares
    less than half its words with its `src`, or a section without a slide. **Fix the outline, never the checker's

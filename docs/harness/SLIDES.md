@@ -130,3 +130,17 @@ lecturer and for the student while studying; the title bold and inside a clear f
 | Text 13 pt in narrow boxes | Width estimate measured on exports: body 0.43 em, bold heading font 0.56 em per character; text capped at 20 pt |
 | One long node shrank a 10-card grid to 13 pt | Keep node texts short and alike (outline rule in the skill) |
 | Faint caption bar | Primary tint with an accent stripe |
+
+Third round (same day). User: "fewer words on each slide even if there are more slides; two questions per slide;
+all the answers together at the end; a 3D glassmorphism design".
+
+| Request or problem | Fix |
+|---|---|
+| Fewer words per slide | Caps: 4 points, 6 cards (a larger grid splits), 4 key terms, 300 characters per callout slide (split at sentence ends, every word kept); outline texts shortened; pages split evenly |
+| Two questions per slide | `mcq_pairs`: two glass blocks per slide, options as 2 × 2 pills, no answer shown |
+| Answers at the end | `answer_key`: 3 per slide (Q number, key letter, the right option, the book's reason) after the takeaways |
+| 3D glassmorphism | Blurred colour-field backgrounds from the palette (light and dark); frosted panels (white at 58-80% opacity, white border, soft shadow); headers, discs, chips and arrows solid with a soft-round bevel |
+| "01" and "vs" wrapped inside discs | Small shapes: no inner margin, no wrap |
+| Label-only cards left an empty body | A label-only node is one 3D block |
+| Words broken mid-word in narrow cards ("mammograph-y") | Text shrinks until the longest word fits a line (0.57 em for the longest word; hyphenated parts counted apart) |
+| Long options in one column came out tiny | Options always 2 × 2; long ones wrap inside their pill |
