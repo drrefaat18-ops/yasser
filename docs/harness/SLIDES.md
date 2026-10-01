@@ -191,3 +191,4 @@ stat and option panels, and bevelled pills and the right answer.
 | Problem | Fix |
 |---|---|
 | "Why:" accent at 4.1:1 on the glass background | Uses the darkened kicker colour (4.6:1) |
+| Explanations and figures as bare text on the blurred field: hard to read, not professional (user) | Content band on one frosted sheet (84%); explanations with an accent bar; figures on a white card with a soft shadow; the feature-callout text on its own sheet |

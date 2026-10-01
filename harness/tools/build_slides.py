@@ -870,10 +870,37 @@ class Glass:
 
 
 class GlassDeck(Glass, Deck):
-    """A teaching deck in the glass look: same slides and content as Deck."""
+    """A teaching deck in the glass look: same slides and content as Deck. The content sits on one frosted sheet
+    (text on a blurred field is hard to read), explanations carry an accent bar and figures a white card."""
     def __init__(self, *a, bg=None):
         super().__init__(*a)
         self.glass(bg)
+
+    def content(self, kicker, title, notes="", kind="content"):
+        s = super().content(kicker, title, notes, kind)
+        self.panel(s, M - 0.15, TOP - 0.12, CW + 0.3, BOTTOM - TOP + 0.2, 84, radius=0.04)
+        return s
+
+    def explain(self, s, text, x, y, w, h, size=18):
+        bar = min(h, self.dh(text, w - 0.25, size, 0.47) + 0.06 * len(text))   # measured width, not the lint's bound
+        self.solid(s, x, y + 0.04, 0.07, max(bar - 0.12, 0.3), self.st.acc, radius=0.5)
+        super().explain(s, text, x + 0.25, y, w - 0.25, h, size)
+
+    def split(self, label, glyph, body, notes, panel, tint, size=22):
+        super().split(label, glyph, body, notes, panel, tint, size)
+        s = self.prs.slides[-1]
+        n = len(s.shapes)
+        self.panel(s, 4.65, 0.6, 8.35, 6.25, 84, radius=0.04)
+        tree = s.shapes._spTree                        # sheet and its highlight behind the text, above the background
+        for k, sh in enumerate(list(s.shapes)[n:]):
+            tree.remove(sh._element); tree.insert(3 + k, sh._element)
+
+    def visual(self, s, c, x, y, w, h):
+        if c["kind"] == "fig":
+            card = self.rect(s, x, y, w, h, WHITE_HEX, MSO_SHAPE.ROUNDED_RECTANGLE, 0.03)
+            card.line.color.rgb = rgb(self.st.warm2); card.line.width = Pt(0.75); _effects(card)
+            x, y, w, h = x + 0.15, y + 0.12, w - 0.3, h - 0.2
+        super().visual(s, c, x, y, w, h)
 
 
 PLACEHOLDER = re.compile(r"\bx{3,}\b|lorem|ipsum|placeholder|\bTODO\b", re.I)
