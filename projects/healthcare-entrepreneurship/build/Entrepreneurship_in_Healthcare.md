@@ -315,7 +315,7 @@ Teaching notes on entrepreneurship often sort would-be founders into four groups
 A classic research typology comes from Clarence Danhof (1949). He studied how farmers responded to new methods and identified four types, which are still used to describe entrepreneurs in any field.
 
 1. **Innovative entrepreneurs** introduce new products, methods or markets. They accept the risk of being first.
-2. **Imitative entrepreneurs** copy innovations that have succeeded elsewhere and adapt them to a new place. Danhof also called them adoptive. Much entrepreneurship in developing economies is of this kind, and it creates real value.
+2. **Imitative entrepreneurs** copy innovations that have succeeded elsewhere and adapt them to a new place. Some textbooks also call them adoptive entrepreneurs. Much entrepreneurship in developing economies is of this kind, and it creates real value.
 3. **Fabian entrepreneurs** are cautious. They adopt a change only when failing to do so would clearly cause loss. The name comes from the Roman general Fabius, famous for avoiding battle.
 4. **Drone entrepreneurs** refuse to change even when change is needed, and may lose their business as a result.
 
@@ -564,7 +564,7 @@ This book tries to avoid the last of these. Every chapter from Chapter 6 onward 
 
 ## 3.3 How a Country Promotes Entrepreneurship
 
-The measures governments use fall into a few groups (Isenberg, 2010).
+The measures governments use can be grouped as follows. The grouping is this book's own; it draws on the wider literature on entrepreneurial ecosystems.
 
 - **Institutions for development.** Agencies, incubators and accelerators that train founders, give them space and connect them with mentors and investors.
 - **Recognition.** Prizes, media coverage and public role models that make entrepreneurship respected.
@@ -574,7 +574,7 @@ The measures governments use fall into a few groups (Isenberg, 2010).
 
 > **In Practice:** A faculty wants more of its graduates to found health ventures. It could simply add a lecture course. Instead it combines several measures. Students take a semester-long project course and interview patients and staff in teaching hospitals. The best teams enter a competition judged by clinicians and investors, and winners get six months of space in the university incubator. A local bank offers small loans to graduates whose prototypes pass a safety review. Each measure is modest on its own. Together they address recognition, practice, infrastructure and finance at once.
 
-These measures work best together, as an **entrepreneurial ecosystem**: a set of connected people and organisations that support new ventures in a place (Isenberg, 2010). An ecosystem includes founders, universities, investors, support organisations, large companies, regulators and customers. Figure 3.1 shows the main parts of the ecosystem around a health venture in Egypt.
+These measures work best together, as an **entrepreneurial ecosystem**: a set of connected people and organisations that support new ventures in a place. Isenberg (2010) describes such an ecosystem as several domains acting together: policy, finance, culture, support, human capital and markets. An ecosystem includes founders, universities, investors, support organisations, large companies, regulators and customers. Figure 3.1 shows the main parts of the ecosystem around a health venture in Egypt.
 
 ![A teal circle labelled A health venture is joined by lines to seven boxes: Founders and team, Universities, Incubators and accelerators, Investors, Government and Startup Charter, Regulators naming the health, drug, radiation and data authorities, and Customers below.](../rework/figures/out/ch03-ecosystem.png)
 
@@ -803,7 +803,7 @@ A PESTEL scan is not a list to fill once. Its value lies in asking, for each for
 Health ventures outsource more than they often realise.
 
 - **Reference laboratory send-outs.** A small laboratory sends rare or complex tests to a larger laboratory, sometimes abroad, instead of buying equipment it would rarely use.
-- **Teleradiology.** An imaging centre sends images electronically to radiologists elsewhere for reporting, at night or for subspecialty cases. Egyptian platforms such as Rology now offer this service across the region (Wamda, 2022b).
+- **Teleradiology.** An imaging centre sends images electronically to radiologists elsewhere for reporting, at night or for subspecialty cases. Egyptian platforms such as Rology offer this service and plan to expand it across the Middle East and Africa (Wamda, 2022b).
 - **Support services.** Maintenance of equipment, cleaning, waste disposal, IT and accounting are commonly outsourced.
 
 Outsourcing has clear benefits: lower fixed costs, access to skills the venture lacks, and the ability to grow without large investment. It also has risks. The venture remains responsible to the patient for the quality of what it outsources. It may lose control of turnaround times. Patient data may leave the venture, and perhaps the country. A good outsourcing contract therefore states quality standards, turnaround times, data protection duties and what happens if the partner fails.
@@ -843,7 +843,7 @@ A market where all five forces are strong is hard to profit in. A founder can st
 
 > **Egyptian Entrepreneur:** Cairo Scan
 >
-> Cairo Scan was founded in 1983 as a provider of diagnostic and interventional imaging in Cairo and Giza. According to a 2023 company profile by its investor, Mediterrania Capital Partners, it added laboratory testing in 2012 (Mediterrania Capital Partners, 2023). By that year it had 20 centres. Mediterrania Capital invested in January 2018. The profile reports new branches after that date, an online booking system and home services for radiology and laboratory tests. All laboratory samples from the network go to one central laboratory.
+> Cairo Scan was founded in 1983 as a provider of diagnostic and interventional imaging in Cairo and Giza. According to a 2023 company profile by its investor, Mediterrania Capital Partners, it added laboratory testing in 2012 (Mediterrania Capital Partners, 2023). The same profile reports 20 centres in 2023, the largest branch network in Giza and Cairo. Mediterrania Capital invested in January 2018. The profile reports new branches after that date, an online booking system and home services for radiology and laboratory tests. All laboratory samples from the network go to one central laboratory.
 >
 > The story shows a venture reading its task environment. Adding laboratory services let an imaging provider serve the same patients and referring doctors twice. Home services answered a substitute threat, and a central laboratory captured economies of scale. Facts are as reported in 2023 by the source named.
 
@@ -1191,7 +1191,7 @@ By the end of this chapter you will be able to:
 1. [LO1] Define an unmet health need and describe the barriers that create one.
 2. [LO2] Use observation, records and complaints to find needs in your own service.
 3. [LO3] Write a need statement that names the problem, the population and the outcome, without naming a solution.
-4. [LO4] Rank need statements by market size, severity, technology gap and who will pay, using a weighted score.
+4. [LO4] Rank need statements by market size and severity, technology gap, who will pay and fit, using a weighted score.
 
 ## 6.1 Start With the Need, Not the Idea
 
@@ -1300,9 +1300,9 @@ For SampleHome, the specification includes these requirements. Samples must reac
 
 > **Egyptian Entrepreneur:** The Baheya Foundation
 >
-> The Baheya hospital in Cairo was founded by the family of Baheya Wahby, an Egyptian woman who died of breast cancer. After her death, her family decided to build a hospital providing free care for women with breast cancer. In May 2015 *Egyptian Streets* reported that it had recently opened as the first hospital in the Middle East dedicated to the early detection of breast cancer (Egyptian Streets, 2015). Its services included diagnostic imaging, chemotherapy, radiotherapy and psychological support. At that time it had already seen more than 1,500 patients.
+> The Baheya hospital in Cairo was founded by the family of Baheya Wahby, an Egyptian woman who died of breast cancer. After her death, her family decided to build a hospital providing free care for women with breast cancer. In May 2015 *Egyptian Streets* reported that it had held a soft opening two months earlier, as the first hospital in the Middle East designed for the early detection of breast cancer (Egyptian Streets, 2015). Its services included diagnostic imaging, chemotherapy, radiotherapy and psychological support, and it had already seen more than 1,500 patients. The report stated that treatment costs were covered by the Egyptian charity Resala.
 >
-> The story shows a venture built on a clearly stated need: women with breast cancer were diagnosed late and could not afford treatment. The founders addressed both barriers, cost and late detection, and chose a charitable model because the people with the need could not pay. Facts are as reported in 2015 by the source named.
+> In this book's reading, the story shows a venture built on a clearly stated need. Its design addresses two barriers at once: cost, by offering care free with charitable funding, and detection, by building the hospital around early diagnosis. A charitable model suited a need whose patients often could not pay. Facts are as reported in 2015 by the source named.
 
 > **Ethics Check:** Looking for needs means looking closely at patients' problems, often at vulnerable moments. Observation in a clinical setting needs permission from the service, respect for privacy and care not to disrupt care. Never record names or identifying details in your notebook. When you talk to patients, explain who you are and why you are asking, and accept a refusal.
 
@@ -1478,7 +1478,7 @@ Good idea generation separates two activities: creating many ideas, and judging 
 
 After generating ideas, the team judges them against the need specification from Chapter 6. Ideas that fail a firm requirement, such as safety or sample stability, are dropped. The remaining ideas are compared for value to users, feasibility and cost, often with a scoring matrix like the one used for needs.
 
-> **In Practice:** The SampleHome team brainstorms for an hour and records 46 ideas. They discard 19 that fail the need specification, including drones carrying blood tubes, which breaks the rules on sample transport. They combine 12 overlapping ideas into four concepts and score the four concepts. The best concept is a home visit by a trained collector, booked by phone or app. A cooled transport box with a temperature logger carries samples to an accredited partner laboratory within two hours. The concept is not new technology. Its value lies in how the parts are combined.
+> **In Practice:** The SampleHome team brainstorms for an hour and records 46 ideas. They discard 19 that fail the need specification, including drones carrying blood tubes, which breaks the rules on sample transport. Many of the remaining 27 overlap, so they group all 27 into four concepts and score the four concepts. The best concept is a home visit by a trained collector, booked by phone or app. A cooled transport box with a temperature logger carries samples to an accredited partner laboratory within two hours. The concept is not new technology. Its value lies in how the parts are combined.
 
 ## 7.4 Empathy Maps
 
@@ -1714,7 +1714,7 @@ Investors and founders need to know how large the opportunity is. Three nested m
 - **Serviceable available market** (SAM) — the part of the TAM that the venture's model and region can actually reach.
 - **Serviceable obtainable market** (SOM) — the part of the SAM the venture can realistically win within a stated period, given competitors and its own capacity.
 
-![Three nested circles. The largest, TAM, is 64,000,000 EGP a year; inside it SAM is 16,000,000 EGP a year; the smallest, SOM, is 800,000 EGP a year. Notes on the right give the calculation behind each figure.](../rework/figures/out/ch08-tam-sam-som.png)
+![Three nested circles. The largest, TAM, is 64,000,000 EGP a year; inside it SAM is 16,000,000 EGP a year; the smallest, SOM, is 960,000 EGP a year. Notes on the right give the calculation behind each figure.](../rework/figures/out/ch08-tam-sam-som.png)
 
 *Figure 8.1 — Total, serviceable available and serviceable obtainable market for SampleHome, with the illustrative figures of the worked example. A venture plans on the SOM, not on the much larger TAM.*  
 Original diagram (original)
@@ -1733,9 +1733,9 @@ Original diagram (original)
 >
 > *Step 2 — SAM.* Home collection suits people with limited mobility who can pay the home-visit fee or are covered by a contract. The team estimates this at 25% of the patients: 40,000 × 0.25 = 10,000 patients. SAM = 10,000 × 4 × 400 = 16,000,000 EGP a year.
 >
-> *Step 3 — SOM.* With two collectors and one competitor offering a similar service, the team aims to win 5% of the SAM by the end of its third year: 10,000 × 0.05 = 500 patients. SOM = 500 × 4 × 400 = 800,000 EGP a year.
+> *Step 3 — SOM.* With two collectors and one competitor offering a similar service, the team aims to win 6% of the SAM by the end of its third year: 10,000 × 0.06 = 600 patients. SOM = 600 × 4 × 400 = 960,000 EGP a year. That is 2,400 visits a year, or 200 a month; Chapter 11 uses this target.
 >
-> *Interpretation.* The headline TAM is large, but the venture can plan only on the SOM. Its first-year budget must be built on a few hundred patients, not forty thousand. Each estimate also rests on assumptions, such as the 25% share and the 5% target, that customer discovery must test.
+> *Interpretation.* The headline TAM is large, but the venture can plan only on the SOM. Its first-year budget must be built on a few hundred patients, not forty thousand. Each estimate also rests on assumptions, such as the 25% share and the 6% target, that customer discovery must test.
 
 ## 8.4 Understanding Competitors
 
@@ -1813,7 +1813,7 @@ B) The serviceable available market
 C) The national health budget
 D) The serviceable obtainable market
 
-**Q8.** [LO3] In the SampleHome example, the SAM is 10,000 patients. If the team aims for 8% of the SAM instead of 5%, with 4 visits a year at 400 EGP, the SOM is:
+**Q8.** [LO3] In the SampleHome example, the SAM is 10,000 patients. If the team aims for 8% of the SAM instead of 6%, with 4 visits a year at 400 EGP, the SOM is:
 A) 800,000 EGP a year
 B) 1,280,000 EGP a year
 C) 3,200,000 EGP a year
@@ -1855,7 +1855,7 @@ D) A strength of the venture
 
 **Q7. D** — The SOM is what the venture can realistically win; the TAM and SAM are far larger than its first-year reach.
 
-**Q8. B** — 10,000 × 0.08 = 800 patients; 800 × 4 × 400 = 1,280,000 EGP a year. Option A is the 5% figure.
+**Q8. B** — 10,000 × 0.08 = 800 patients; 800 × 4 × 400 = 1,280,000 EGP a year. Option A would be the figure for 5%.
 
 **Q9. C** — Patients' own ways of coping are often the real alternative, so they belong in the grid.
 
@@ -1983,7 +1983,7 @@ Testing with real users is the heart of design thinking. In health care it carri
 >
 > Rology was founded in Egypt in 2017 by Amr AboDraiaa, Mahmoud Eldefrawy, Moaaz Hossam and Bassam Khallaf. It offers on-demand teleradiology to hospitals and radiology centres (Wamda, 2022b). The platform matches each scan to a radiologist with the right subspecialty. It uses AI radiology tools to help radiologists work faster. Wamda reports that it aims to deliver standard reports within 12 hours and emergency reports within 60 minutes. Its chief executive said the aim was to serve hospitals and centres in cities and rural areas "with zero setup hassle". In 2022 it raised a pre-Series A round to expand across the Middle East and Africa (Wamda, 2022b).
 >
-> The story shows an asset-light design. The venture did not need to buy scanners or open centres. It connected existing scanners with radiologists who had spare reading time. A service of that kind can begin with a few partner centres and grow as evidence of report quality and speed builds up. Facts are as reported in 2022 by the source named.
+> Read as a business design, the story shows an asset-light model. The hospitals and centres own the scanners; the platform supplies the reporting. In this book's reading, a service of that kind can begin with a few partner centres and grow as evidence of report quality and speed builds up. Facts are as reported in 2022 by the source named.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** A laboratory MVP is usually a service pilot, not a new assay. Examples are a new collection route, a result-explanation call or a courier link with a clinic. It should run under the laboratory's existing accreditation. Its measures should be the laboratory's own quality indicators: rejection rate, turnaround time and the number of critical results reported on time. Prototyping a new test itself requires method validation before any patient result is released.
@@ -2149,7 +2149,7 @@ Original diagram (original)
 | Channels | How do we reach customers? | Referring doctors, insurer member services, pharmacies, phone line and app |
 | Customer relationships | What relationship does each segment expect? | Personal and trusted: the same collector where possible, a call with each result |
 | Revenue streams | What will customers pay for, and how? | Home-visit fee from self-paying patients; per-visit fee under insurer contracts |
-| Key resources | What do we need to deliver the value? | Trained collectors, cooled transport, booking system, an accredited partner laboratory |
+| Key resources | What do we need to deliver the value? | Trained collectors, cooled transport boxes with temperature loggers, booking system |
 | Key activities | What must we do well? | Scheduling, safe collection and transport, data protection, result communication |
 | Key partnerships | Who helps us? | Partner laboratory, insurers, referring doctors, a teleradiology partner later |
 | Cost structure | What are the main costs? | Collector salaries, transport, consumables, software, insurance, partner laboratory fees |
@@ -2206,7 +2206,7 @@ Investors rarely read a full plan first. They hear a **pitch**: a short presenta
 
 > **Egyptian Entrepreneur:** Al Borg, Al Mokhtabar and the hub, spoke and spike model
 >
-> Integrated Diagnostics Holdings (IDH) was formed in 2012 by the merger of two Egyptian laboratory groups, Al Mokhtabar and Al Borg. According to the International Finance Corporation (2022), it runs an "asset-light" model called "hub, spoke, and spike". One fully equipped hub, its Mega Lab in Cairo, performs the full range of tests and holds most of the expensive equipment and trained staff. Small "spoke" centres run some routine tests on site. Many low-cost "spike" centres register patients, collect samples and send most of them to the hub. They can be set up in a few months. The chief executive told the IFC that the group did not invent the model but has refined it continually (International Finance Corporation, 2022).
+> Integrated Diagnostics Holdings (IDH) was formed in 2012 by the merger of two Egyptian laboratory groups, Al Mokhtabar and Al Borg. According to the International Finance Corporation (2022), it runs an "asset-light" model called "hub, spoke, and spike". One fully equipped hub, its Mega Lab in Cairo, performs the full range of tests and holds most of the expensive equipment and trained staff. "Spokes" are small collection centres that process some routine tests on site. "Spikes" complete some rapid, basic tests and send the rest to the hub or the spokes for analysis; they need little capital and can be set up in a few months. The chief executive told the IFC that the group did not invent the model but has refined it continually (International Finance Corporation, 2022).
 >
 > The story shows a business model in which the operation fits the market. Patients want a collection point near home. Accurate testing of many kinds needs costly equipment in one place. The model gives each side what it needs. Facts are as reported in 2022 by the source named.
 
@@ -2235,7 +2235,7 @@ B) "The cheapest tests, whatever the quality"
 C) "Your blood test at home, at a time you choose, with your result explained in plain words"
 D) "Tests for everything, every month"
 
-**Q3.** [LO2] In the Business Model Canvas, trained collectors and an accredited partner laboratory belong in:
+**Q3.** [LO2] In the Business Model Canvas, trained collectors and cooled transport boxes belong in:
 A) Customer segments
 B) Revenue streams
 C) Channels
@@ -2387,9 +2387,9 @@ The **margin of safety** shows how far actual or expected volume can fall before
 >
 > *Step 2 — break-even volume.* Q = 24,000 ÷ 150 = 160 visits a month.
 >
-> *Step 3 — profit at the expected volume.* The team expects 220 visits a month by the end of the first year. Profit = 220 × 150 − 24,000 = 33,000 − 24,000 = 9,000 EGP a month.
+> *Step 3 — profit at the target volume.* The team's target comes from its SOM in Chapter 8: 600 patients making 4 visits a year, or 2,400 visits a year, which is 200 visits a month by the end of the third year. Profit = 200 × 150 − 24,000 = 30,000 − 24,000 = 6,000 EGP a month.
 >
-> *Step 4 — margin of safety.* MS = (220 − 160) ÷ 220 = 60 ÷ 220 = 0.273, about 27%. Volume can fall by about a quarter before SampleHome makes a loss.
+> *Step 4 — margin of safety.* MS = (200 − 160) ÷ 200 = 40 ÷ 200 = 0.20, or 20%. Volume can fall by a fifth before SampleHome makes a loss.
 >
 > *Interpretation.* Two collectors can make about 10 visits a day each on 22 working days, or 440 visits a month. Break-even at 160 is therefore well within capacity. The risk is demand, not capacity, and customer discovery must show that 160 paid visits a month are realistic. Figure 11.1 shows the calculation as a chart.
 
@@ -2421,9 +2421,9 @@ Before the first visit, SampleHome must spend money. A **start-up budget** lists
 
 > **Worked Example:** How long can SampleHome last?
 >
-> In its third month SampleHome makes 80 visits. Contribution = 80 × 150 = 12,000 EGP. Fixed costs are 24,000 EGP, so the venture loses 24,000 − 12,000 = 12,000 EGP a month. It has 96,000 EGP of cash left. Runway = 96,000 ÷ 12,000 = 8 months.
+> SampleHome opens with the 72,000 EGP of working capital in Table 11.1. In each of its first two months it makes 40 visits. Contribution = 40 × 150 = 6,000 EGP, so it loses 24,000 − 6,000 = 18,000 EGP a month. After two months it has 72,000 − 2 × 18,000 = 36,000 EGP left. In its third month it makes 80 visits. Contribution = 80 × 150 = 12,000 EGP, so the loss falls to 24,000 − 12,000 = 12,000 EGP a month. Runway = 36,000 ÷ 12,000 = 3 months.
 >
-> *Interpretation.* Unless volume rises toward 160 visits a month within eight months, the founders must raise more money, cut fixed costs or close. Every additional 10 visits a month adds 1,500 EGP of contribution and lengthens the runway. Founders should track runway monthly. Raising money takes months, so it should start well before the cash ends.
+> *Interpretation.* Unless volume rises toward 160 visits a month within three months, the founders must raise more money, cut fixed costs or close. Every additional 10 visits a month adds 1,500 EGP of contribution and lengthens the runway. Founders should track runway monthly. Raising money takes months, so it should start well before the cash ends.
 
 ## 11.5 Sources of Finance
 
@@ -2451,7 +2451,7 @@ Startups often raise equity in rounds named by stage: pre-seed and seed for the 
 >
 > Alfa Medical Group is an Egyptian healthcare group that includes Alfa Laboratories, the Alfa Scan radiology centres and a hospital business. In February 2021 CDC Group, the United Kingdom's development finance institution, announced a minority equity investment of 100 million US dollars in the group, together with the healthcare investor Africa Platform Capital (Hospital Management, 2021). According to the announcement, the funds were to expand the laboratory business into underserved regions of Egypt, grow the Alfa Scan centres, add hospital beds, and develop the Alfa Academy for training staff.
 >
-> The story shows a late-stage source of finance. An established, profitable group sold a minority share, keeping control, to an investor with a development mission. It raised capital for growth that loans alone could not provide. Facts are as reported in 2021 by the source named.
+> The story shows a late-stage source of finance. An established group sold a minority stake to an investor with a development mission. It raised capital for growth that loans alone could not provide. Facts are as reported in 2021 by the source named.
 
 ## 11.6 Equity, Valuation and Dilution
 
@@ -2509,11 +2509,11 @@ B) 300 scans a month
 C) 150 scans a month
 D) 75 scans a month
 
-**Q4.** [LO2] A service breaks even at 160 visits a month and expects 200. Its margin of safety is:
-A) 20%
-B) 25%
-C) 40%
-D) 80%
+**Q4.** [LO2] A service breaks even at 150 visits a month and expects 250. Its margin of safety is:
+A) 40%
+B) 67%
+C) 60%
+D) 25%
 
 **Q5.** [LO2] If SampleHome's variable cost per visit rose from 100 to 130 EGP, with the same price and fixed costs, its break-even volume would:
 A) Fall to 120 visits
@@ -2567,7 +2567,7 @@ D) 75%
 
 **Q3. C** — 90,000 ÷ (900 − 300) = 90,000 ÷ 600 = 150 scans a month. Option A divides by the price alone.
 
-**Q4. A** — (200 − 160) ÷ 200 = 40 ÷ 200 = 0.20 = 20%. Option B divides by the break-even volume instead.
+**Q4. A** — (250 − 150) ÷ 250 = 100 ÷ 250 = 0.40 = 40%. Option B divides by the break-even volume instead.
 
 **Q5. C** — The contribution margin falls to 250 − 130 = 120 EGP, so 24,000 ÷ 120 = 200 visits. A higher variable cost always raises the break-even volume.
 
@@ -2616,17 +2616,19 @@ This chapter gives an overview of the main Egyptian rules and quality standards 
 
 Private health facilities in Egypt are governed mainly by Law 51 of 1981 on private medical establishments (Arab Republic of Egypt, 1981). The law defines five broad categories: the private medical clinic, which includes laboratories and radiology clinics; the specialised clinic; the specialised medical centre; the private hospital; and the convalescence home (World Health Organization Regional Office for the Eastern Mediterranean, 2014).
 
-According to the same review, a private medical facility is licensed by the governorate after registration with the Medical Syndicate, and the Ministry of Health and Population records it in a central registry. Licensing requires several conditions. The facility must meet the required standards and have an approved, clear price list. Its director must be a licensed doctor, or a dentist where relevant, registered with the syndicate. All its health-care staff must be licensed and registered with their syndicates. Older laws also govern particular professions. For example, a separate law regulates practice in chemistry, bacteriology and pathology laboratories.
+According to the same review, a private medical facility is licensed by the governorate after registration with the Medical Syndicate, and the Ministry of Health and Population records it in a central registry. Licensing requires several conditions. The facility must meet the required standards and have an approved, clear price list. Its director must be a licensed doctor, or a dentist where relevant, registered with the syndicate. All its health-care staff must be licensed and registered with their syndicates. The licence also requires an approved, clear price list. The same review found, however, that prices themselves were largely unregulated, so providers set their own lists (World Health Organization Regional Office for the Eastern Mediterranean, 2014).
+
+Laboratories have a law of their own as well. Law 367 of 1954 governs licensing for practice in medical chemistry, bacteriology and pathology and the organisation of diagnostic laboratories (Arab Republic of Egypt, 1954). It sets which qualified professionals may practise in and direct a laboratory. A laboratory founder must therefore check both laws, and the current Ministry of Health and Population requirements, before choosing a model.
 
 For a founder, three consequences follow.
 
-- **The founder may not be the licensed director.** A venture founded by technologists or business graduates needs a licensed doctor as director of any medical establishment it runs.
+- **The founder may not be the licensed director.** A venture founded by technologists or business graduates needs a director with the qualification the law requires. For a medical centre that is a licensed doctor; for a laboratory it is a professional qualified under Law 367 of 1954.
 - **A service model may change the category.** A collection point, a laboratory and a medical centre are licensed differently. SampleHome avoids running its own laboratory by working under a licensed, accredited partner. It must still check what licence its collection staff and premises need.
-- **Price lists are regulated.** A licensed facility needs an approved price list, so prices are not purely a marketing decision.
+- **A price list is a licensing condition.** A licensed facility needs an approved, clear price list, so its prices must be set and published before it opens.
 
 ### Radiation licensing
 
-Any use of ionising radiation, including X-ray, CT and nuclear medicine, also needs a licence from the **Egyptian Nuclear and Radiological Regulatory Authority** (ENRRA). Law 7 of 2010 created this independent regulator and gave it oversight of all nuclear and radiation facilities, activities and practices (Arab Republic of Egypt, 2010). The law was amended in 2026. The licence covers the equipment, the room shielding, the radiation-protection officer, staff dosimetry and safety procedures. An imaging venture must budget the time and cost of this licence from the start, and must renew it.
+Any use of ionising radiation, including X-ray, CT and nuclear medicine, also needs a licence from the **Egyptian Nuclear and Radiological Regulatory Authority** (ENRRA). Law 7 of 2010 created this independent regulator and gave it oversight of all nuclear and radiation facilities, activities and practices (Arab Republic of Egypt, 2010). It was amended in 2026 by Law 10 of 2026 (Arab Republic of Egypt, 2026). The licence covers the equipment, the room shielding, the radiation-protection officer, staff dosimetry and safety procedures. An imaging venture must budget the time and cost of this licence from the start, and must renew it.
 
 Figure 12.1 summarises the path from a plan to a licensed, accredited imaging centre.
 
@@ -2692,7 +2694,7 @@ Common ethical issues in health ventures include conflicts of interest, such as 
 
 > **Egyptian Entrepreneur:** Hend El Sherbini and quality at IDH
 >
-> Dr Hend El Sherbini became chief executive of Integrated Diagnostics Holdings (IDH) after Al Mokhtabar, founded by her mother, merged with Al Borg in 2012. She led the group to a listing on the London Stock Exchange in 2015 (International Finance Corporation, 2022). The IFC case study presents quality as the core of the group's strategy. It reports that, as of 2021, IDH was the only diagnostics provider in Egypt accredited by the College of American Pathologists. Its first engagement with the IFC was through quality advisory services, before it expanded into radiology. Dr El Sherbini summed up her view in the company's 2020 annual report: "The patient has to be the center of the focus, and everything else comes after that" (International Finance Corporation, 2022).
+> Dr Hend El Sherbini is the chief executive of Integrated Diagnostics Holdings (IDH), the group formed in 2012 when Al Mokhtabar, founded by her mother, merged with Al Borg. The group listed on the London Stock Exchange in 2015 under her leadership (International Finance Corporation, 2022). The IFC case study presents quality as the core of the group's strategy. It reports that, as of 2021, IDH was the only diagnostics provider in Egypt accredited by the College of American Pathologists. Its first engagement with the IFC was through quality advisory services, before it expanded into radiology. Dr El Sherbini summed up her view in the company's 2020 annual report: "The patient has to be the center of the focus, and everything else comes after that" (International Finance Corporation, 2022).
 >
 > The story shows quality used as a strategy for growth, not only as a duty. Investors, insurers and doctors trusted a network whose standards were checked by outside bodies. Facts are as reported in 2022 by the source named.
 
@@ -2702,7 +2704,7 @@ Common ethical issues in health ventures include conflicts of interest, such as 
 
 ## Key Takeaways
 - In health care, rules are part of the product; check current requirements with the authorities before launch.
-- Law 51 of 1981 governs private medical establishments; licensing needs standards, an approved price list, a licensed doctor as director and licensed staff.
+- Law 51 of 1981 governs private medical establishments; licensing needs standards, an approved price list, a qualified licensed director and licensed staff. Laboratories are also governed by Law 367 of 1954.
 - Any use of ionising radiation needs a licence from ENRRA under Law 7 of 2010.
 - The Egyptian Drug Authority, established by Law 151 of 2019, registers medicines and medical devices, including diagnostic kits; some software may be a device.
 - Law 151 of 2020 protects personal data; health data is sensitive and needs explicit consent, safeguards, authorisation for transfers abroad and breach notification.
@@ -2717,7 +2719,7 @@ B) Private hospitals
 C) Private medical clinics
 D) Pharmaceutical factories
 
-**Q2.** [LO1] Two business graduates found a venture that will run a medical centre. What does the licensing framework require?
+**Q2.** [LO1] Two business graduates found a venture that will run a specialised medical centre, not a laboratory. What does the licensing framework require?
 A) A licensed doctor as the centre's director
 B) That one founder is a pharmacist
 C) No licence, because the founders are not doctors
@@ -2783,7 +2785,7 @@ D) Economies of scale
 
 **Q1. C** — Law 51 of 1981 places laboratories and radiology clinics within the category of private medical clinics.
 
-**Q2. A** — The director of a licensed medical facility must be a licensed doctor registered with the syndicate.
+**Q2. A** — The director of a licensed medical centre must be a licensed doctor registered with the syndicate. A laboratory's director must hold the qualification Law 367 of 1954 requires.
 
 **Q3. D** — ENRRA, created by Law 7 of 2010, oversees all radiation practices, including medical imaging.
 
@@ -2801,7 +2803,7 @@ D) Economies of scale
 
 **Q10. C** — Payment for referrals creates a conflict of interest; referrals would serve the venture's income rather than the patient's good.
 
-**E1 — model answer points.** Company or entity registration; suitable premises; a licensed doctor (radiologist) as director; licensed, syndicate-registered staff; an approved price list; licensing as a medical establishment by the governorate with Ministry of Health registration; radiation licence from ENRRA covering equipment, shielding, a radiation-protection officer and dosimetry; registered equipment; inspection before opening.
+**E1 — model answer points.** Company or entity registration; suitable premises; a licensed doctor (a radiologist) as director; licensed, syndicate-registered staff; an approved price list; licensing as a medical establishment by the governorate with Ministry of Health registration; radiation licence from ENRRA covering equipment, shielding, a radiation-protection officer and dosimetry; registered equipment; inspection before opening.
 
 **E2 — model answer points.** Explicit written consent at booking; collect only necessary data; secure storage with role-based access (patient, named carer, ordering doctor); identity checks before releasing results; staff training; a breach procedure with 72-hour notification; a data protection officer where required; authorisation before any transfer abroad.
 
@@ -2809,11 +2811,13 @@ D) Economies of scale
 
 ## References
 Ahmad, A. (2026). A first look at Egypt's personal data protection executive regulations. *Chambers and Partners*, 19 January. https://chambers.com/articles/a-first-look-at-egypt-s-personal-data-protection-executive-regulations
+Arab Republic of Egypt. (1954). *Law No. 367 of 1954 on the practice of medical chemistry, bacteriology and pathology and the organisation of diagnostic laboratories*. Official Gazette.
 Arab Republic of Egypt. (1981). *Law No. 51 of 1981 regulating private medical establishments*. Official Gazette.
 Arab Republic of Egypt. (2010). *Law No. 7 of 2010 regulating nuclear and radiation activities*. Official Gazette.
 Arab Republic of Egypt. (2018). *Law No. 2 of 2018 promulgating the Universal Health Insurance System law*. Official Gazette.
 Arab Republic of Egypt. (2019). *Law No. 151 of 2019 establishing the Egyptian Drug Authority*. Official Gazette.
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 promulgating the Personal Data Protection Law*. Official Gazette.
+Arab Republic of Egypt. (2026). *Law No. 10 of 2026 amending Law No. 7 of 2010 regulating nuclear and radiation activities*. Official Gazette.
 Beauchamp, T. L., & Childress, J. F. (2019). *Principles of biomedical ethics* (8th ed.). Oxford University Press.
 Egyptian Accreditation Council. (2025). For the first time in Port Said: El Shifa Medical Complex laboratory achieves international accreditation ISO 15189:2022 from EGAC. *EGAC News*, 13 August. https://egac.gov.eg/en/egac_news/for-the-first-time-in-port-said-el-shifa-medical-complex-laboratory-achieves-international-accreditation-iso-151892022-from-egac/
 General Authority for Healthcare Accreditation and Regulation. (2025). *GAHAR handbook for clinical laboratories accreditation standards*. GAHAR. https://www.gahar.gov.eg/upload/gahar-handbook-for-clinical-laboratories-accreditation-standards-v-2025.pdf
@@ -2914,9 +2918,9 @@ Promoting a health service is not the same as promoting a consumer product. Heal
 
 > **Egyptian Entrepreneur:** Riad Armanious and EVA Pharma
 >
-> EVA Pharma is an Egyptian pharmaceutical company founded in 1997. Riad Armanious has been its chief executive since 2009, after serving as deputy chief executive (Forbes Middle East, 2023). Forbes Middle East reported in 2023 that the company employed 5,000 people across the Middle East and Africa, exported to 41 countries and ran its own research centre. In December 2022, EVA Pharma and the American company Lilly announced a collaboration to improve sustainable access to affordable insulin in Africa (Forbes Middle East, 2023).
+> EVA Pharma is an Egyptian pharmaceutical company founded in 1997. Riad Armanious has been its chief executive since 2009, after serving as deputy chief executive (Forbes Middle East, 2023). Forbes Middle East reported in 2023 that the company employed 5,000 people across the Middle East and Africa, exported to 41 countries and ran its own research centre. In December 2022, EVA Pharma and the American company Lilly announced a collaboration aimed at improving sustainable access to affordable insulin in Africa (Forbes Middle East, 2023).
 >
-> The story shows how intellectual property and brand interact. A company that can show its research capacity and manufacturing quality can become the partner a global patent holder trusts with production. In this case the partnership expanded access to an essential medicine. Facts are as reported in 2023 by the source named.
+> In this book's reading, the story shows how capability and reputation open partnerships. A company with its own research and manufacturing can become a partner of a global pharmaceutical company, here in a collaboration announced with the aim of improving access to insulin. Facts are as reported in 2023 by the source named.
 
 > **Through Two Lenses**
 > - **Medical Laboratory:** A laboratory's most valuable IP is usually its brand and its know-how, not patents. Its name, its quality procedures and its software are what competitors cannot easily copy. A laboratory that develops a new method or kit may protect it by patent or utility model, but must file before presenting it at a conference. Its brand rests on accuracy and turnaround. Promotion must never encourage unnecessary testing.
@@ -3565,6 +3569,8 @@ Ahram Online. (2026). Egypt launches Startup Charter to boost entrepreneurship. 
 
 Altman, M., Huang, T. T. K., & Breland, J. Y. (2018). Design thinking in health care. *Preventing Chronic Disease, 15*, E117. https://doi.org/10.5888/pcd15.180128 (Chapters 7 and 9.)
 
+Arab Republic of Egypt. (1954). *Law No. 367 of 1954 on the practice of medical chemistry, bacteriology and pathology and the organisation of diagnostic laboratories*. Official Gazette. (Chapter 12.)
+
 Arab Republic of Egypt. (1981). *Law No. 51 of 1981 regulating private medical establishments*. Official Gazette. (Chapter 12.)
 
 Arab Republic of Egypt. (2002). *Law No. 82 of 2002 on the protection of intellectual property rights*. Official Gazette. (Chapter 13.)
@@ -3579,17 +3585,19 @@ Arab Republic of Egypt. (2019). *Law No. 151 of 2019 establishing the Egyptian D
 
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 promulgating the Personal Data Protection Law*. Official Gazette. (Chapter 12.)
 
+Arab Republic of Egypt. (2026). *Law No. 10 of 2026 amending Law No. 7 of 2010 regulating nuclear and radiation activities*. Official Gazette. (Chapter 12.)
+
 Beauchamp, T. L., & Childress, J. F. (2019). *Principles of biomedical ethics* (8th ed.). Oxford University Press. (Chapter 12.)
 
 Blank, S., & Dorf, B. (2012). *The startup owner's manual: The step-by-step guide for building a great company*. K&S Ranch. (Chapter 8.)
 
-Blank, S. (2013). Why the lean start-up changes everything. *Harvard Business Review, 91*(5), 63–72. (Chapters 1 and 2.)
+Blank, S. (2013). Why the lean start-up changes everything. *Harvard Business Review, 91*(5), 63–72. https://hbr.org/2013/05/why-the-lean-start-up-changes-everything (Chapters 1 and 2.)
 
 Blank, S. (2020). *The four steps to the epiphany: Successful strategies for products that win* (2nd ed.). Wiley. (Chapter 8.)
 
 Brottman, M. R., Char, D. M., Hattori, R. A., Heeb, R., & Taff, S. D. (2020). Toward cultural competency in health care: A scoping review of the diversity and inclusion education literature. *Academic Medicine, 95*(5), 803–813. https://doi.org/10.1097/ACM.0000000000002995 (Chapter 5.)
 
-Brown, T. (2008). Design thinking. *Harvard Business Review, 86*(6), 84–92. (Chapter 9.)
+Brown, T. (2008). Design thinking. *Harvard Business Review, 86*(6), 84–92. https://hbr.org/2008/06/design-thinking (Chapter 9.)
 
 Cantamessa, M., Gatteschi, V., Perboli, G., & Rosano, M. (2018). Startups' roads to failure. *Sustainability, 10*(7), 2346. https://doi.org/10.3390/su10072346 (Chapter 14.)
 
@@ -3623,8 +3631,6 @@ Global Entrepreneurship Monitor. (2024). *Global Entrepreneurship Monitor 2023/2
 
 Gray, D., Brown, S., & Macanufo, J. (2010). *Gamestorming: A playbook for innovators, rulebreakers, and changemakers*. O'Reilly Media. (Chapter 7.)
 
-Hébert, R. F., & Link, A. N. (2009). *A history of entrepreneurship*. Routledge. (Chapter 1.)
-
 Hisrich, R. D., Peters, M. P., & Shepherd, D. A. (2020). *Entrepreneurship* (11th ed.). McGraw-Hill Education. (Chapter 1.)
 
 Hofstede, G. (2011). Dimensionalizing cultures: The Hofstede model in context. *Online Readings in Psychology and Culture, 2*(1). https://doi.org/10.9707/2307-0919.1014 (Chapter 5.)
@@ -3635,13 +3641,13 @@ Hospital Management. (2021). Egyptian healthcare company AMG secures $100m boost
 
 International Finance Corporation. (2022). *Integrated Diagnostics Holdings (IDH): Case study*. World Bank Group. https://www.ifc.org/en/insights-reports/2022/integrated-diagnostics-holdings-cases-study (Chapters 1, 10 and 12.)
 
-International Organization for Standardization. (2016). *ISO 13485:2016 Medical devices — Quality management systems — Requirements for regulatory purposes*. ISO. (Chapter 12.)
+International Organization for Standardization. (2016). *ISO 13485:2016 Medical devices — Quality management systems — Requirements for regulatory purposes*. ISO. https://www.iso.org/standard/59752.html (Chapter 12.)
 
-International Organization for Standardization. (2022). *ISO 15189:2022 Medical laboratories — Requirements for quality and competence*. ISO. (Chapter 12.)
+International Organization for Standardization. (2022). *ISO 15189:2022 Medical laboratories — Requirements for quality and competence*. ISO. https://www.iso.org/standard/76677.html (Chapter 12.)
 
 Isaacson, W. (2011). *Steve Jobs*. Simon & Schuster. (Chapters 1 and 14.)
 
-Isenberg, D. J. (2010). How to start an entrepreneurial revolution. *Harvard Business Review, 88*(6), 40–50. (Chapter 3.)
+Isenberg, D. J. (2010). How to start an entrepreneurial revolution. *Harvard Business Review, 88*(6), 40–50. https://hbr.org/2010/06/the-big-idea-how-to-start-an-entrepreneurial-revolution (Chapter 3.)
 
 Jones, G. R., & George, J. M. (2020). *Contemporary management* (11th ed.). McGraw-Hill Education. (Chapters 4 and 5.)
 
@@ -3653,7 +3659,7 @@ Kene-Okafor, T. (2023). Egyptian health tech Yodawy raises $16M, backed by Deliv
 
 Kuratko, D. F. (2020). *Entrepreneurship: Theory, process, and practice* (11th ed.). Cengage Learning. (Chapter 1.)
 
-Liedtka, J. (2018). Why design thinking works. *Harvard Business Review, 96*(5), 72–79. (Chapter 9.)
+Liedtka, J. (2018). Why design thinking works. *Harvard Business Review, 96*(5), 72–79. https://hbr.org/2018/09/why-design-thinking-works (Chapter 9.)
 
 Maurya, A. (2012). *Running lean: Iterate from plan A to a plan that works* (2nd ed.). O'Reilly Media. (Chapter 10.)
 
@@ -3671,7 +3677,7 @@ Osterwalder, A., & Pigneur, Y. (2010). *Business model generation: A handbook fo
 
 Osterwalder, A., Pigneur, Y., Bernarda, G., & Smith, A. (2014). *Value proposition design: How to create products and services customers want*. Wiley. (Chapter 10.)
 
-Porter, M. E. (2008). The five competitive forces that shape strategy. *Harvard Business Review, 86*(1), 78–93. (Chapter 4.)
+Porter, M. E. (2008). The five competitive forces that shape strategy. *Harvard Business Review, 86*(1), 78–93. https://hbr.org/2008/01/the-five-competitive-forces-that-shape-strategy (Chapter 4.)
 
 Ries, E. (2011). *The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses*. Crown Business. (Chapter 9.)
 

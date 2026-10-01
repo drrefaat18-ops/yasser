@@ -356,7 +356,7 @@
   {
    "id": "MATH-SYNTAX",
    "measured": {
-    "blocks": 44,
+    "blocks": 47,
     "count": 0
    },
    "message": "",
@@ -381,14 +381,14 @@
  ],
  "pdf": {
   "bookmarks": 162,
-  "pages": 138
+  "pages": 139
  },
  "pdf_checks": [
   {
    "id": "PDF-SIZE",
    "measured": {
     "count": 0,
-    "pages": 138
+    "pages": 139
    },
    "message": "",
    "status": "pass"

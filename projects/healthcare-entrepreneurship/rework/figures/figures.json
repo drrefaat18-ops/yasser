@@ -95,7 +95,7 @@
    "kind": "diagram.svg",
    "source": "rework/figures/src/ch08-tam-sam-som.svg",
    "caption": "Total, serviceable available and serviceable obtainable market for SampleHome, with the illustrative figures of the worked example. A venture plans on the SOM, not on the much larger TAM.",
-   "alt": "Three nested circles. The largest, TAM, is 64,000,000 EGP a year; inside it SAM is 16,000,000 EGP a year; the smallest, SOM, is 800,000 EGP a year. Notes on the right give the calculation behind each figure.",
+   "alt": "Three nested circles. The largest, TAM, is 64,000,000 EGP a year; inside it SAM is 16,000,000 EGP a year; the smallest, SOM, is 960,000 EGP a year. Notes on the right give the calculation behind each figure.",
    "credit": "Original diagram",
    "licence": "original",
    "status": "generated"

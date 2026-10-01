@@ -12,6 +12,8 @@ Ahram Online. (2026). Egypt launches Startup Charter to boost entrepreneurship. 
 
 Altman, M., Huang, T. T. K., & Breland, J. Y. (2018). Design thinking in health care. *Preventing Chronic Disease, 15*, E117. https://doi.org/10.5888/pcd15.180128 (Chapters 7 and 9.)
 
+Arab Republic of Egypt. (1954). *Law No. 367 of 1954 on the practice of medical chemistry, bacteriology and pathology and the organisation of diagnostic laboratories*. Official Gazette. (Chapter 12.)
+
 Arab Republic of Egypt. (1981). *Law No. 51 of 1981 regulating private medical establishments*. Official Gazette. (Chapter 12.)
 
 Arab Republic of Egypt. (2002). *Law No. 82 of 2002 on the protection of intellectual property rights*. Official Gazette. (Chapter 13.)
@@ -26,17 +28,19 @@ Arab Republic of Egypt. (2019). *Law No. 151 of 2019 establishing the Egyptian D
 
 Arab Republic of Egypt. (2020). *Law No. 151 of 2020 promulgating the Personal Data Protection Law*. Official Gazette. (Chapter 12.)
 
+Arab Republic of Egypt. (2026). *Law No. 10 of 2026 amending Law No. 7 of 2010 regulating nuclear and radiation activities*. Official Gazette. (Chapter 12.)
+
 Beauchamp, T. L., & Childress, J. F. (2019). *Principles of biomedical ethics* (8th ed.). Oxford University Press. (Chapter 12.)
 
 Blank, S., & Dorf, B. (2012). *The startup owner's manual: The step-by-step guide for building a great company*. K&S Ranch. (Chapter 8.)
 
-Blank, S. (2013). Why the lean start-up changes everything. *Harvard Business Review, 91*(5), 63–72. (Chapters 1 and 2.)
+Blank, S. (2013). Why the lean start-up changes everything. *Harvard Business Review, 91*(5), 63–72. https://hbr.org/2013/05/why-the-lean-start-up-changes-everything (Chapters 1 and 2.)
 
 Blank, S. (2020). *The four steps to the epiphany: Successful strategies for products that win* (2nd ed.). Wiley. (Chapter 8.)
 
 Brottman, M. R., Char, D. M., Hattori, R. A., Heeb, R., & Taff, S. D. (2020). Toward cultural competency in health care: A scoping review of the diversity and inclusion education literature. *Academic Medicine, 95*(5), 803–813. https://doi.org/10.1097/ACM.0000000000002995 (Chapter 5.)
 
-Brown, T. (2008). Design thinking. *Harvard Business Review, 86*(6), 84–92. (Chapter 9.)
+Brown, T. (2008). Design thinking. *Harvard Business Review, 86*(6), 84–92. https://hbr.org/2008/06/design-thinking (Chapter 9.)
 
 Cantamessa, M., Gatteschi, V., Perboli, G., & Rosano, M. (2018). Startups' roads to failure. *Sustainability, 10*(7), 2346. https://doi.org/10.3390/su10072346 (Chapter 14.)
 
@@ -70,8 +74,6 @@ Global Entrepreneurship Monitor. (2024). *Global Entrepreneurship Monitor 2023/2
 
 Gray, D., Brown, S., & Macanufo, J. (2010). *Gamestorming: A playbook for innovators, rulebreakers, and changemakers*. O'Reilly Media. (Chapter 7.)
 
-Hébert, R. F., & Link, A. N. (2009). *A history of entrepreneurship*. Routledge. (Chapter 1.)
-
 Hisrich, R. D., Peters, M. P., & Shepherd, D. A. (2020). *Entrepreneurship* (11th ed.). McGraw-Hill Education. (Chapter 1.)
 
 Hofstede, G. (2011). Dimensionalizing cultures: The Hofstede model in context. *Online Readings in Psychology and Culture, 2*(1). https://doi.org/10.9707/2307-0919.1014 (Chapter 5.)
@@ -82,13 +84,13 @@ Hospital Management. (2021). Egyptian healthcare company AMG secures $100m boost
 
 International Finance Corporation. (2022). *Integrated Diagnostics Holdings (IDH): Case study*. World Bank Group. https://www.ifc.org/en/insights-reports/2022/integrated-diagnostics-holdings-cases-study (Chapters 1, 10 and 12.)
 
-International Organization for Standardization. (2016). *ISO 13485:2016 Medical devices — Quality management systems — Requirements for regulatory purposes*. ISO. (Chapter 12.)
+International Organization for Standardization. (2016). *ISO 13485:2016 Medical devices — Quality management systems — Requirements for regulatory purposes*. ISO. https://www.iso.org/standard/59752.html (Chapter 12.)
 
-International Organization for Standardization. (2022). *ISO 15189:2022 Medical laboratories — Requirements for quality and competence*. ISO. (Chapter 12.)
+International Organization for Standardization. (2022). *ISO 15189:2022 Medical laboratories — Requirements for quality and competence*. ISO. https://www.iso.org/standard/76677.html (Chapter 12.)
 
 Isaacson, W. (2011). *Steve Jobs*. Simon & Schuster. (Chapters 1 and 14.)
 
-Isenberg, D. J. (2010). How to start an entrepreneurial revolution. *Harvard Business Review, 88*(6), 40–50. (Chapter 3.)
+Isenberg, D. J. (2010). How to start an entrepreneurial revolution. *Harvard Business Review, 88*(6), 40–50. https://hbr.org/2010/06/the-big-idea-how-to-start-an-entrepreneurial-revolution (Chapter 3.)
 
 Jones, G. R., & George, J. M. (2020). *Contemporary management* (11th ed.). McGraw-Hill Education. (Chapters 4 and 5.)
 
@@ -100,7 +102,7 @@ Kene-Okafor, T. (2023). Egyptian health tech Yodawy raises $16M, backed by Deliv
 
 Kuratko, D. F. (2020). *Entrepreneurship: Theory, process, and practice* (11th ed.). Cengage Learning. (Chapter 1.)
 
-Liedtka, J. (2018). Why design thinking works. *Harvard Business Review, 96*(5), 72–79. (Chapter 9.)
+Liedtka, J. (2018). Why design thinking works. *Harvard Business Review, 96*(5), 72–79. https://hbr.org/2018/09/why-design-thinking-works (Chapter 9.)
 
 Maurya, A. (2012). *Running lean: Iterate from plan A to a plan that works* (2nd ed.). O'Reilly Media. (Chapter 10.)
 
@@ -118,7 +120,7 @@ Osterwalder, A., & Pigneur, Y. (2010). *Business model generation: A handbook fo
 
 Osterwalder, A., Pigneur, Y., Bernarda, G., & Smith, A. (2014). *Value proposition design: How to create products and services customers want*. Wiley. (Chapter 10.)
 
-Porter, M. E. (2008). The five competitive forces that shape strategy. *Harvard Business Review, 86*(1), 78–93. (Chapter 4.)
+Porter, M. E. (2008). The five competitive forces that shape strategy. *Harvard Business Review, 86*(1), 78–93. https://hbr.org/2008/01/the-five-competitive-forces-that-shape-strategy (Chapter 4.)
 
 Ries, E. (2011). *The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses*. Crown Business. (Chapter 9.)
 

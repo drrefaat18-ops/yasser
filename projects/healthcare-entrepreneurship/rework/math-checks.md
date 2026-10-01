@@ -67,16 +67,23 @@ expect: exact 16000000
 
 ```math-check
 label: ch08 Worked Example - SOM patients
-given: N=10000, s=1/20
+given: N=10000, s=6/100
 expr: N*s
-expect: exact 500
+expect: exact 600
 ```
 
 ```math-check
 label: ch08 Worked Example - SOM
-given: N=500, f=4, p=400
+given: N=600, f=4, p=400
 expr: N*f*p
-expect: exact 800000
+expect: exact 960000
+```
+
+```math-check
+label: ch08 Worked Example - SOM visits a month
+given: N=600, f=4
+expr: N*f/12
+expect: exact 200
 ```
 
 ```math-check
@@ -147,17 +154,17 @@ expect: exact 160
 ```
 
 ```math-check
-label: ch11 Worked Example - profit at 220 visits
-given: Q=220, cm=150, F=24000
+label: ch11 Worked Example - profit at 200 visits
+given: Q=200, cm=150, F=24000
 expr: Q*cm-F
-expect: exact 9000
+expect: exact 6000
 ```
 
 ```math-check
 label: ch11 Worked Example - margin of safety
-given: Q=220, QBE=160
+given: Q=200, QBE=160
 expr: (Q-QBE)/Q
-expect: 0.273 +- 0.0005
+expect: exact 1/5
 ```
 
 ```math-check
@@ -175,6 +182,20 @@ expect: exact 127000
 ```
 
 ```math-check
+label: ch11 Worked Example - monthly loss at 40 visits
+given: Q=40, cm=150, F=24000
+expr: F-Q*cm
+expect: exact 18000
+```
+
+```math-check
+label: ch11 Worked Example - cash after two months
+given: wc=72000, loss=18000
+expr: wc-2*loss
+expect: exact 36000
+```
+
+```math-check
 label: ch11 Worked Example - monthly loss at 80 visits
 given: Q=80, cm=150, F=24000
 expr: F-Q*cm
@@ -183,9 +204,9 @@ expect: exact 12000
 
 ```math-check
 label: ch11 Worked Example - runway
-given: cash=96000, burn=12000
+given: cash=36000, burn=12000
 expr: cash/burn
-expect: exact 8
+expect: exact 3
 ```
 
 ```math-check
@@ -274,9 +295,9 @@ expect: exact 150
 
 ```math-check
 label: ch11 Q4 - margin of safety
-given: Q=200, QBE=160
+given: Q=250, QBE=150
 expr: (Q-QBE)/Q
-expect: exact 1/5
+expect: exact 2/5
 ```
 
 ```math-check
