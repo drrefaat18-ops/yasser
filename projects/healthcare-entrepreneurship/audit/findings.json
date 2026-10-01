@@ -1,0 +1,56 @@
+{
+ "schema_version": 1,
+ "findings": [
+  {
+   "id": "F-001",
+   "pillar_id": "G3",
+   "severity": "minor",
+   "tags": [
+    "distractors"
+   ],
+   "location": {
+    "file": "rework/ch12.md",
+    "line_start": 1,
+    "line_end": 1
+   },
+   "claim": "A few distractors remain weak, for example Ch. 12 Q10, whose wrong options (indulgence, uncertainty avoidance, economies of scale) are not principles of ethics.",
+   "evidence": "Q10 options A, B and D come from other chapters' vocabulary.",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Optionally replace them with the other three biomedical principles."
+  },
+  {
+   "id": "F-002",
+   "pillar_id": "D1",
+   "severity": "minor",
+   "tags": [
+    "source-quality"
+   ],
+   "location": {
+    "file": "rework/ch04.md",
+    "line_start": 1,
+    "line_end": 1
+   },
+   "claim": "The Cairo Scan box rests on an investor's portfolio brochure, a promotional source; its figures are now dated correctly.",
+   "evidence": "Mediterrania Capital Partners (2023), portfolio company profile.",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Optionally add an independent source when one is available."
+  },
+  {
+   "id": "F-003",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "repetition"
+   ],
+   "location": {
+    "file": "rework/ch12.md",
+    "line_start": 1,
+    "line_end": 1
+   },
+   "claim": "The approved, clear price list condition is stated twice in section 12.2.",
+   "evidence": "Section 12.2 paragraph and bullet list.",
+   "source": "claude-sonnet-5-5",
+   "fix_hint": "Cosmetic; no fix required."
+  }
+ ]
+}

@@ -30,3 +30,13 @@ and Mediterrania PDFs and the WHO EMRO review read locally, the web articles as 
 
 After the fixes: book check PASS (38,928 words), references verified (no disallowed or mismatched entry), build 139
 pages with all PDF, figure and math gates green (47 math checks).
+
+## Confirmation (review of 43a7c9c by claude-sonnet-5-5 per DEC-002)
+
+| ID | status | real/rejected | root cause | fix |
+|---|---|---|---|---|
+| R-none | no action | — | The confirmation found no new problem; all of C-001 to C-019 resolved. | — |
+
+The final review (`audit/codex-audit.md`, 43a7c9c) passed. Three optional minor points are recorded as audit findings
+F-001 to F-003 and left open. The independent rescore is G1 8, G2 8, G3 8, G4 8, D1 8, D2 9, a total of 82.0 against the
+source's 24.5.
