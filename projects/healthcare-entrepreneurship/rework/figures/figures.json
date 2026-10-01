@@ -1,0 +1,170 @@
+{
+ "schema_version": 1,
+ "figures": [
+  {
+   "id": "ch01-elements",
+   "chapter_id": "ch01",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch01-elements.svg",
+   "caption": "The four elements of entrepreneurship. Innovation, calculated risk-taking, vision and organising all serve one opportunity: an unmet need that a new product or service could meet.",
+   "alt": "A teal circle in the centre reads Opportunity: an unmet need. Four boxes surround it, joined to it by arrows: Innovation at the top, Risk-taking on the right, Organising at the bottom and Vision on the left, each with a short description.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch02-path",
+   "chapter_id": "ch02",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch02-path.svg",
+   "caption": "The venture-creation path followed in this book, with the chapter for each step. The dashed arrow shows that evidence at a later step, such as launch, can send a founder back to an earlier one.",
+   "alt": "Eight numbered boxes in two rows joined by arrows: Need, Idea, Customer and Design across the top, then down to Model, Finance, Rules and Launch running right to left along the bottom. Each box names its chapter. A dashed amber arrow on the left loops back from Launch to Need, with the caption that evidence at any step can send the founder back.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch03-ecosystem",
+   "chapter_id": "ch03",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch03-ecosystem.svg",
+   "caption": "The main parts of the entrepreneurial ecosystem around a health venture in Egypt. No part works alone: founders draw on universities, support bodies and investors, and must meet regulators and serve customers.",
+   "alt": "A teal circle labelled A health venture is joined by lines to seven boxes: Founders and team, Universities, Incubators and accelerators, Investors, Government and Startup Charter, Regulators naming the health, drug, radiation and data authorities, and Customers below.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch04-environment",
+   "chapter_id": "ch04",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch04-environment.svg",
+   "caption": "The two layers of a health venture's environment. The task environment of suppliers, customers, referral channels, competitors and potential competitors acts directly and daily; the general environment, scanned with PESTEL, shapes it over time.",
+   "alt": "Three nested ovals. The centre reads An imaging centre. The middle oval, labelled task environment, holds suppliers, customers, competitors, referral channels and potential competitors with examples. The outer oval, labelled general environment, lists political, economic, social and demographic, technological, environmental and legal forces.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch04-five-forces",
+   "chapter_id": "ch04",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch04-five-forces.svg",
+   "caption": "Porter's five forces applied to the private laboratory market in a large city. The ratings are illustrative. Strong rivalry, supplier power and buyer power, and rising substitutes, make the market hard to profit in without a clear advantage.",
+   "alt": "A central teal box labelled Rivalry among existing laboratories, rated high. Four amber boxes point arrows at it: Threat of new entrants above, rated moderate; Supplier power on the left and Buyer power on the right, both rated high; Threat of substitutes below, rated rising.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch05-hofstede",
+   "chapter_id": "ch05",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch05-hofstede.svg",
+   "caption": "Hofstede's six dimensions of national culture, with what a low and a high score mean on each scale. Uncertainty avoidance is highlighted because its direction is often reversed: a high score means people feel threatened by ambiguity. Scores describe national averages, not individuals.",
+   "alt": "Six horizontal arrows, one per dimension, each labelled with what a low score means at the left end and what a high score means at the right end. The uncertainty avoidance arrow is amber, from comfortable with ambiguity to threatened by ambiguity; the others are teal.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch06-need-funnel",
+   "chapter_id": "ch06",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch06-need-funnel.svg",
+   "caption": "From a broad problem to a need statement. Each layer narrows the problem by naming what goes wrong, who is affected and what outcome would show the need is met; no solution is named.",
+   "alt": "A funnel of four layers narrowing downward: a broad problem, then the specific problem, the population and the measurable outcome, each with the SampleHome example. Below, a teal box gives the complete need statement.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch07-empathy-map",
+   "chapter_id": "ch07",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch07-empathy-map.svg",
+   "caption": "An empathy map for Hagga Samira, a SampleHome persona: an elderly patient who needs regular fasting blood tests. The contradiction between what she says and what she does is the most useful insight. The notes are illustrative.",
+   "alt": "A rectangle divided diagonally into four areas around a teal circle labelled Hagga Samira, 72: Says, Thinks, Does and Feels, each with short notes. Below are two boxes: Pains, listing stairs, transport, waiting and forgetting to fast, and Gains, listing independence, tests on time and results explained.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch08-tam-sam-som",
+   "chapter_id": "ch08",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch08-tam-sam-som.svg",
+   "caption": "Total, serviceable available and serviceable obtainable market for SampleHome, with the illustrative figures of the worked example. A venture plans on the SOM, not on the much larger TAM.",
+   "alt": "Three nested circles. The largest, TAM, is 64,000,000 EGP a year; inside it SAM is 16,000,000 EGP a year; the smallest, SOM, is 800,000 EGP a year. Notes on the right give the calculation behind each figure.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch09-loops",
+   "chapter_id": "ch09",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch09-loops.svg",
+   "caption": "The five stages of design thinking, with loops back after testing, and the lean build–measure–learn cycle. Both aim to turn an idea into evidence as quickly and cheaply as possible, and safely in health care.",
+   "alt": "Top: five boxes in a row, Empathise, Define, Ideate, Prototype and Test, joined by arrows, with a dashed amber arrow looping from Test back to Empathise. Bottom: a cycle of three boxes, Build, Measure and Learn, joined by arrows.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch10-canvas",
+   "chapter_id": "ch10",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch10-canvas.svg",
+   "caption": "The Business Model Canvas for SampleHome. The right side describes the market (segments, value, relationships, channels, revenue); the left side describes the operation (partners, activities, resources, costs). Each block is an assumption to be tested.",
+   "alt": "A nine-block grid. Top row from left: Key partners; Key activities above Key resources; Value propositions in the centre; Customer relationships above Channels; Customer segments on the right. Bottom row: Cost structure on the left and Revenue streams on the right. Each block lists SampleHome's entries.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch11-break-even",
+   "chapter_id": "ch11",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch11-break-even.svg",
+   "caption": "Break-even chart for SampleHome, with the illustrative figures of the worked example. Revenue rises by 250 EGP a visit and total cost by 100 EGP a visit from fixed costs of 24,000 EGP, so the lines cross at 160 visits a month.",
+   "alt": "A line chart with home visits per month from 0 to 300 on the horizontal axis and EGP per month on the vertical axis. A dashed grey line marks fixed cost at 24,000. An amber total-cost line starts there and rises; a teal revenue line starts at zero and rises more steeply. They cross at 160 visits, marked break-even. The area to the left is labelled loss and to the right profit.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch12-licensing-path",
+   "chapter_id": "ch12",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch12-licensing-path.svg",
+   "caption": "The main steps from plan to a licensed, accredited imaging centre in Egypt. The radiation licence is highlighted because imaging founders often underestimate it. Requirements change, so each step must be checked with the responsible authority.",
+   "alt": "Six boxes joined by arrows in two rows: Plan and premises, Licensed director and Establishment licence along the top, then down to Radiation licence, Data and devices and Accreditation along the bottom from right to left. A note states that no patient is examined before the establishment and radiation licences are granted.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch13-ip-types",
+   "chapter_id": "ch13",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch13-ip-types.svg",
+   "caption": "The main types of intellectual property and their protection in Egypt under Law 82 of 2002. Service ventures rely mostly on trademarks, copyright and trade secrets; technical creations can be protected by patents, utility models and industrial designs.",
+   "alt": "Six boxes in two rows: Patent, 20 years; Utility model, 7 years, not renewable; Trademark, 10 years, renewable; Industrial design, 10 years plus 5; Copyright, the author's life plus 50 years; Trade secrets, while kept secret. Teal boxes mark technical creations and amber boxes the types most used by service ventures.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  },
+  {
+   "id": "ch14-funding-stages",
+   "chapter_id": "ch14",
+   "kind": "diagram.svg",
+   "source": "rework/figures/src/ch14-funding-stages.svg",
+   "caption": "Typical sources of finance over a venture's life. Early on, cash flow is negative and founders rely on their own money, grants and angels; venture capital funds fast growth; established ventures can use private equity, loans or a stock-market listing. Not every venture follows every stage.",
+   "alt": "A curve of cash flow against time dips below the axis early, labelled the valley of death, then rises steadily. Five boxes above it, from left to right, name the usual sources of finance at each stage: own money, grants and competitions, angels and seed rounds, venture capital, and private equity, loans or listing.",
+   "credit": "Original diagram",
+   "licence": "original",
+   "status": "generated"
+  }
+ ]
+}

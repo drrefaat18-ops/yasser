@@ -1,17 +1,36 @@
 {
- "aborts": [],
+ "aborts": [
+  {
+   "nonce": "597fd7ebcd18e3ad",
+   "reason": "template book-type pattern must be amended (DEC-004 pending): seven real books by publishers not in the pattern",
+   "stage": "rework",
+   "time": "2026-10-01T08:01:34Z"
+  }
+ ],
  "active_run": null,
  "approvals": {
-  "intake": {
-   "approved_at": "2026-10-01T07:04:44Z",
+  "design": {
+   "approved_at": "2026-10-01T07:18:31Z",
    "approved_by": "user",
-   "dec_id": "DEC-001",
-   "dec_row_sha256": "eab7fb1a16d999ca06d9d6acad0269100e12cd7f3bdeaafd629e4eba388af964",
+   "dec_id": "DEC-003",
+   "dec_row_sha256": "f82e7fe626ba6588c2b08f1a764fcb5a000dbb29a1d8c9190052ea97742a6716",
+   "files": {
+    "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+    "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+    "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab"
+   },
+   "kind": "design"
+  },
+  "intake": {
+   "approved_at": "2026-10-01T08:02:12Z",
+   "approved_by": "user",
+   "dec_id": "DEC-004",
+   "dec_row_sha256": "decae6ccecf670bd8cfd2ca1f1755a4e8ae8c52096243bb6fab2246affcea9cf",
    "files": {
     "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
     "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
     "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
-    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928",
+    "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
     "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
    },
    "kind": "intake"
@@ -29,7 +48,7 @@
     "evaluation/fixes.md": "6da1c88369ea29cea02146486ec102a7a0609960a6b383c7d52f37d9dbf4fece",
     "evaluation/report.md": "9bdfb665b5fdc74f0c2dd12fe46f868d718befa0a05af1abf1e9d6ab7cb69d12",
     "evaluation/scorecard.json": "3c4d6f5826e81178cabb0407c49162bec0e5f1b84046081b95dd3ffcab7e2710",
-    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928",
+    "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
     "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
    },
    "outputs": {
@@ -39,7 +58,7 @@
    },
    "stage": "design",
    "status": "ok",
-   "time": "2026-10-01T07:17:33Z",
+   "time": "2026-10-01T08:02:44Z",
    "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b",
    "total_budget": 41300
   },
@@ -75,10 +94,10 @@
    "status": "ok",
    "subagents": [
     {
-     "reason": "fresh-context read-only external review by claude-sonnet-5-5 in place of Codex (DEC-002)"
+     "reason": "fresh-context read-only external review by claude-sonnet-5-5 in place of Codex (DEC-002); re-recorded after the DEC-004 template amend, content unchanged"
     }
    ],
-   "time": "2026-10-01T07:13:58Z",
+   "time": "2026-10-01T08:02:39Z",
    "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
   },
   "ingest": {
@@ -86,7 +105,7 @@
    "converter": "markitdown",
    "inputs": {
     "intake/Entrepreneurship_Revision.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
-    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928"
+    "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e"
    },
    "outputs": {
     "ingest/conversion-report.json": "e1ee828970841a7cecf1b46e574afab2f62f84fc1bb8c07419cab656956ad921",
@@ -101,7 +120,7 @@
    ],
    "stage": "ingest",
    "status": "ok",
-   "time": "2026-10-01T07:04:59Z",
+   "time": "2026-10-01T08:02:23Z",
    "tool_sha": "b91221c81d4f3edc362f48ccabdf05f5b508128b"
   },
   "intake": {
@@ -115,7 +134,7 @@
     "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
     "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
     "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
-    "template.json": "dbde14cae45fdd667f5777d8d6cc7d4cc6c99ecb64b69ce2a179f603ce1d1928",
+    "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
     "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
    },
    "questionnaire_ids": [
@@ -135,7 +154,7 @@
    ],
    "stage": "intake",
    "status": "ok",
-   "time": "2026-10-01T07:02:56Z",
+   "time": "2026-10-01T08:01:43Z",
    "tool_sha": "c96c149345a5cc706cd583b064c87626168040ea"
   },
   "new": {
@@ -157,6 +176,469 @@
    "status": "ok",
    "time": "2026-10-01T06:59:50Z",
    "tool_sha": "1c254902845c4d2dbafbb2b3af975de8fa2e62af"
+  },
+  "rework": {
+   "args": {},
+   "checker_report_sha256": "9f2e9c40901aa3a19eb2718b45773b6a95a1b4043794b851f8570ced326e07d1",
+   "inputs": {
+    "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+    "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+    "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+    "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+    "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+    "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+    "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+    "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+    "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+   },
+   "outputs": {
+    "rework/00-front-matter.md": "46906ca64505128502089c60ee164ede1c1e116e1ca03377cb26189285862a95",
+    "rework/ch01.md": "50afc77c20c4deaa35faf85bf31e602cb5351d420e98b3e8c2808a6143bb7738",
+    "rework/ch02.md": "390bfcd5d28c9c4bac01353780fb472c27b20f237af99c6b21e575a884cb8ef8",
+    "rework/ch03.md": "11eb4e3b4bbe19097aea82ba39b39571594f0ce975ceb2030842942f17b67b1d",
+    "rework/ch04.md": "38143157fc04cef0575a434d3bd9ca85b3eb618163a831d9340da644f8a35bbb",
+    "rework/ch05.md": "566f207f67cb1c22715bf1e5b0453a3ce9c6520596077bb859e3d26df5975729",
+    "rework/ch06.md": "44e18e5c4a5381ee80747994159f7434ee3cd81cd64c3e638d9bb70d7570208d",
+    "rework/ch07.md": "691215cb15ea93a99932ceee0315653800ea3adceb6797cc144fcc6d94451516",
+    "rework/ch08.md": "13837ee84abf2047d05f62296460a07ffc310eb168902034404f665d6c95d333",
+    "rework/ch09.md": "4ec18228679e39fe667b1b95be2ba5554a1022664c351205691fc813a4393058",
+    "rework/ch10.md": "1a1598ce66bebcfb5053719c35d0067a359706fc9c62e2389d61b02351bd6009",
+    "rework/ch11.md": "a5e1dc83bf9c0c4d5bb91b2cb6f74dd0ca5d23ec095f04e7ecaa3ad37d0dc3fb",
+    "rework/ch12.md": "bb976fbc9c49525dda0646e8cc9d873acedb78574fe8def82639ace9998797ce",
+    "rework/ch13.md": "dca9a5c685081e07bb5cf1131fdfd90f9881f49111049e2b776f7e6fc77a1f74",
+    "rework/ch14.md": "ab145c0e97fda7a47e1376704bf82a49e94962fa7257c2d744fd28155370b9dc",
+    "rework/errata-ledger.md": "420ca4580771af1c3e5a2c3206c0520a7d9efcf006602b8fe409dca9ee1a4b0e",
+    "rework/figures/figures.json": "e01ab1ae17def4132eccc8ee13e77dcf7e6a5b3d52e39b8f6fc1935021b10627",
+    "rework/figures/src/ch01-elements.svg": "0cffff8672fbdb8f878be74ee385a4bf52d901a1f48addaff2922ed51b07c6db",
+    "rework/figures/src/ch02-path.svg": "7046bebf991535733a7d1c8fa5847c103d93364f8c21d7a45ed55d9c3040a584",
+    "rework/figures/src/ch03-ecosystem.svg": "91da46f3fb071c7a2d3ad26ae2b3c58e8cbdee204be8fdd995cfaa8232307357",
+    "rework/figures/src/ch04-environment.svg": "fec5d882ffcb02993cecffeb327fe7e9a2d82cfbdb1ddd884b756c4a025f50c2",
+    "rework/figures/src/ch04-five-forces.svg": "d5e0912024cf392e0e1b449f6efa6ed68368e9517774b425ff97572b9bdb82fc",
+    "rework/figures/src/ch05-hofstede.svg": "8c2617b598d1fdf858f4d87a58057ad887901cbf618edfd6010f19c08fe556df",
+    "rework/figures/src/ch06-need-funnel.svg": "2eec620418322fb233543cb45e7bb83df90673f18d994e5501b4c8dc9c9d9e05",
+    "rework/figures/src/ch07-empathy-map.svg": "8dbe5fa60ec672b523d05adb18d9ad690e7c1f1e232f357b7d00f36aa216b4d5",
+    "rework/figures/src/ch08-tam-sam-som.svg": "b0ec1c2d0eb1ddf2c6320204d5a338baa2147585fb840bac6ce4ce6f932f3c27",
+    "rework/figures/src/ch09-loops.svg": "8b307e18e3c67f5005cad7883ac17f65efde206a20a824b789f1caa0ccac22e3",
+    "rework/figures/src/ch10-canvas.svg": "29e973f9f9455a9e2e4e84873c379c3c72f1e1a6e10960f00005ba96660d9ea6",
+    "rework/figures/src/ch11-break-even.svg": "bce88a50f98f346ee47deb15c2631f729983df6274b05c948de9f2d552766b51",
+    "rework/figures/src/ch12-licensing-path.svg": "c797ec0362b596cd2cd29225d00d7d8c11d208621ad0cf6cb2c1b9f1f331bc22",
+    "rework/figures/src/ch13-ip-types.svg": "f76c956664df6cf992110e13f6b3b1b51212eb4863edde13b367904b17354276",
+    "rework/figures/src/ch14-funding-stages.svg": "f78d5cf48c9c2fb3c25201d2b735523672c4dab3a94f6f764c4fbc6cb10d316d",
+    "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f"
+   },
+   "stage": "rework",
+   "status": "ok",
+   "time": "2026-10-01T08:04:05Z",
+   "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+   "total_words": 38616,
+   "units": {
+    "ch01": {
+     "args": {
+      "unit": "ch01"
+     },
+     "checker_report_sha256": "c413f49e0d40711176f78a06ff1d8bc349c47e4282238135e318fa243719ecfa",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch01.md": "50afc77c20c4deaa35faf85bf31e602cb5351d420e98b3e8c2808a6143bb7738"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:02:59Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 1,
+      "no_doi_allowed": 7,
+      "total": 8
+     }
+    },
+    "ch02": {
+     "args": {
+      "unit": "ch02"
+     },
+     "checker_report_sha256": "ba3c04fc94dd5869208cf3e4b6ec57b29d3cdf49e8aaf27bc2d4fcaaa0a05594",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch02.md": "390bfcd5d28c9c4bac01353780fb472c27b20f237af99c6b21e575a884cb8ef8"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:05Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 5,
+      "total": 7
+     }
+    },
+    "ch03": {
+     "args": {
+      "unit": "ch03"
+     },
+     "checker_report_sha256": "1f02edd3123cd1359447de4925546c366d9270e14c5c4a0a49dcc2b9e0fb0316",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch03.md": "11eb4e3b4bbe19097aea82ba39b39571594f0ce975ceb2030842942f17b67b1d"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:11Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 3,
+      "no_doi_allowed": 4,
+      "total": 7
+     }
+    },
+    "ch04": {
+     "args": {
+      "unit": "ch04"
+     },
+     "checker_report_sha256": "d6a948a32e0ef824e2e854ec0e2cfffedce916ca59f3f43fa862ba3e0ff6f1c9",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch04.md": "38143157fc04cef0575a434d3bd9ca85b3eb618163a831d9340da644f8a35bbb"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:15Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 4,
+      "total": 4
+     }
+    },
+    "ch05": {
+     "args": {
+      "unit": "ch05"
+     },
+     "checker_report_sha256": "0c8429d1e78483e724ece87a880d99529c41283e23ab63ca5d82ad2d1818bc04",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch05.md": "566f207f67cb1c22715bf1e5b0453a3ce9c6520596077bb859e3d26df5975729"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:22Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 4,
+      "no_doi_allowed": 5,
+      "total": 9
+     }
+    },
+    "ch06": {
+     "args": {
+      "unit": "ch06"
+     },
+     "checker_report_sha256": "7e25800816cc0331bce88d0d14f234ac90489dfe63eb8600301c183cc2059120",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch06.md": "44e18e5c4a5381ee80747994159f7434ee3cd81cd64c3e638d9bb70d7570208d"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:27Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 3,
+      "total": 5
+     }
+    },
+    "ch07": {
+     "args": {
+      "unit": "ch07"
+     },
+     "checker_report_sha256": "a3ead09943b59b707d32f4f00ed0219129ba8dec993f01d118f1d16025c5662e",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch07.md": "691215cb15ea93a99932ceee0315653800ea3adceb6797cc144fcc6d94451516"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:33Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 3,
+      "total": 5
+     }
+    },
+    "ch08": {
+     "args": {
+      "unit": "ch08"
+     },
+     "checker_report_sha256": "ecaa6ae5015d9dcdb906345b1fcf1e4e2d4d4118b85309c67bda80d1ca0ea3c1",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch08.md": "13837ee84abf2047d05f62296460a07ffc310eb168902034404f665d6c95d333"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:36Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 5,
+      "total": 5
+     }
+    },
+    "ch09": {
+     "args": {
+      "unit": "ch09"
+     },
+     "checker_report_sha256": "4503ccdc3908cb0e5f2c0dd28f239c6d3e0714987a4b34dd189633fd695268f7",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch09.md": "4ec18228679e39fe667b1b95be2ba5554a1022664c351205691fc813a4393058"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:41Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 2,
+      "no_doi_allowed": 4,
+      "total": 6
+     }
+    },
+    "ch10": {
+     "args": {
+      "unit": "ch10"
+     },
+     "checker_report_sha256": "5304e85398b3ae8f76338b6663895ed78911ec6676f739ba12e18f855871523a",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch10.md": "1a1598ce66bebcfb5053719c35d0067a359706fc9c62e2389d61b02351bd6009"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:45Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 1,
+      "no_doi_allowed": 4,
+      "total": 5
+     }
+    },
+    "ch11": {
+     "args": {
+      "unit": "ch11"
+     },
+     "checker_report_sha256": "23d39397f08ab675d6884d8e9569ee232806191836ffb3128584be0ad74b5c90",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch11.md": "a5e1dc83bf9c0c4d5bb91b2cb6f74dd0ca5d23ec095f04e7ecaa3ad37d0dc3fb"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:49Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 4,
+      "total": 4
+     }
+    },
+    "ch12": {
+     "args": {
+      "unit": "ch12"
+     },
+     "checker_report_sha256": "0ade165caa711539d5c90b9879cf473c3629152fc4e13c2b57ec997b623caf4a",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch12.md": "bb976fbc9c49525dda0646e8cc9d873acedb78574fe8def82639ace9998797ce"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:52Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 13,
+      "total": 13
+     }
+    },
+    "ch13": {
+     "args": {
+      "unit": "ch13"
+     },
+     "checker_report_sha256": "abb18c279d4da06132499ec3c789b45b6bd5d47005275db9216514cc2ed73e91",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch13.md": "dca9a5c685081e07bb5cf1131fdfd90f9881f49111049e2b776f7e6fc77a1f74"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:03:55Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 0,
+      "no_doi_allowed": 5,
+      "total": 5
+     }
+    },
+    "ch14": {
+     "args": {
+      "unit": "ch14"
+     },
+     "checker_report_sha256": "88126afaedeef7d3ef4963ee3b5eef8c36f657241adc91cb3ababf2119483e73",
+     "inputs": {
+      "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+      "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+      "design/chapter-plan.json": "296e35c350dba857914055cf476bae7226e18680729361afc648df2590aa3bef",
+      "design/design.md": "91fb98701334ec49d21b503d4557ac0e4e32543cd720dcd9e0661ef000f5fe9f",
+      "design/errata-seed.md": "06e531a1f051544fabd196be6093fc1a1ed21590845abe4a946664abfc38c7ab",
+      "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+      "rework/glossary.md": "2028f2b57a98bc2bc942121818d40c96c53850a9c931f63843cf99f48f1a615f",
+      "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+      "template.json": "c12781c59483cf7cc5e13a372a14bb6cbc01c740910ee3e4cee566ad7ac3188e",
+      "theme.json": "fea432dc43878b9f0214dc8d5facd9c7037f265e965544c8782d1e4bd3bd3cf4"
+     },
+     "outputs": {
+      "rework/ch14.md": "ab145c0e97fda7a47e1376704bf82a49e94962fa7257c2d744fd28155370b9dc"
+     },
+     "status": "ok",
+     "time": "2026-10-01T08:04:02Z",
+     "tool_sha": "e16e46c353c4a4a9f5412363a20e4ea0c3753e72",
+     "verify_refs_summary": {
+      "exists": 3,
+      "no_doi_allowed": 5,
+      "total": 8
+     }
+    }
+   }
   }
  },
  "schema_version": 1

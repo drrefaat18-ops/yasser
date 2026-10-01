@@ -242,7 +242,7 @@
   "original_title_marker": null,
   "providers": {},
   "type_patterns": {
-   "book": "(?i)\\b(\\d+(st|nd|rd|th) ed\\.?|edition|Press|Pearson|Wiley|Elsevier|McGraw)\\b",
+   "book": "(?i)\\b(\\d+(st|nd|rd|th) ed\\.?|edition|Press|Pearson|Wiley|Elsevier|McGraw|Routledge|Simon & Schuster|Ecco|Crown Business|Sams|O'Reilly|CreateSpace|SAGE|Cengage|Oxford|Cambridge|Princeton)\\b",
    "guidance": "(?i)\\b(guidance|guideline|guidelines|recommendations|guide)\\b",
    "regulation": "(?i)\\b(law|decree|regulation|directive)\\b",
    "report": "(?i)\\b(report|World Health Organization|Authority|Ministry|Agency|Bank)\\b",
