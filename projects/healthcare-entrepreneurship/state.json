@@ -1,13 +1,6 @@
 {
  "aborts": [],
- "active_run": {
-  "author_model": "claude",
-  "nonce": "ba52808f6dc40230",
-  "pid": 8928,
-  "stage": "evaluate",
-  "started_at": "2026-10-01T07:05:10Z",
-  "unit": null
- },
+ "active_run": null,
  "approvals": {
   "intake": {
    "approved_at": "2026-10-01T07:04:44Z",
@@ -26,6 +19,44 @@
  },
  "project_id": "healthcare-entrepreneurship",
  "receipts": {
+  "evaluate": {
+   "args": {},
+   "author_model": "claude",
+   "inputs": {
+    "agents/health-entrepreneurship-reviewer.json": "2b0d1503c64dfe973960149ee0c792f406338d705b38f83df1915e0da350146b",
+    "brief.json": "7db3322cf4efb0de6a0203ca3f2edc28b3007f410f2caf461bae8c03676bbb15",
+    "ingest/conversion-report.json": "e1ee828970841a7cecf1b46e574afab2f62f84fc1bb8c07419cab656956ad921",
+    "ingest/normalized.md": "4c8826ab4ae6c08024f924ab311a4622e26995490148e1c4b1423f61a93d2321",
+    "rubric.json": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413"
+   },
+   "outputs": {
+    "evaluation/codex-review.md": "8b566c44d82c1c6b9f20bf0f3d9323a33a8dc05fd6b28732e185e2244b946ad9",
+    "evaluation/findings.json": "a72d0ed085b2804024b8857c204dbc401287b4b5640fdace3f9af0c8f87e1547",
+    "evaluation/fixes.md": "6da1c88369ea29cea02146486ec102a7a0609960a6b383c7d52f37d9dbf4fece",
+    "evaluation/report.md": "9bdfb665b5fdc74f0c2dd12fe46f868d718befa0a05af1abf1e9d6ab7cb69d12",
+    "evaluation/scorecard.json": "3c4d6f5826e81178cabb0407c49162bec0e5f1b84046081b95dd3ffcab7e2710"
+   },
+   "personas": [
+    "health-entrepreneurship-reviewer",
+    "instructional-designer",
+    "psychologist",
+    "research-synthesist",
+    "statistician",
+    "subject-reviewer"
+   ],
+   "reviewer_model": "claude-sonnet-5-5",
+   "rubric_digest": "c380085d5d5c1cf69fa06521e23a19575e3a4f2932219fbd3d44b391aea37413",
+   "rulings": {},
+   "stage": "evaluate",
+   "status": "ok",
+   "subagents": [
+    {
+     "reason": "fresh-context read-only external review by claude-sonnet-5-5 in place of Codex (DEC-002)"
+    }
+   ],
+   "time": "2026-10-01T07:13:58Z",
+   "tool_sha": "d6ab28901b1e1e1a122211eef7a3b4e564c93b55"
+  },
   "ingest": {
    "args": {},
    "converter": "markitdown",

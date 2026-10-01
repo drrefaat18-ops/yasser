@@ -16,7 +16,7 @@
    "claim": "The two definitions describe any business owner who makes and sells goods for profit; neither names opportunity or innovation, which is what distinguishes entrepreneurship in the standard literature.",
    "evidence": "\"Entrepreneurs produce and sell products, bear overhead costs like rent, wages, and interest, and aim to generate profit.\" (line 7); \"combines various factors of production, processes raw materials into finished products, creates utility, and sells these\" (line 10). Line 13 then lists innovation as a key element, so the definitions and the elements disagree.",
    "source": "subject-reviewer",
-   "fix_hint": "Define entrepreneurship as the identification, evaluation and exploitation of opportunities to create new goods or services (Shane & Venkataraman, 2000), with Schumpeter's innovation as the origin; distinguish the entrepreneur from the small-business owner and the manager."
+   "fix_hint": "Define entrepreneurship through the opportunity-based view of Shane and Venkataraman (2000): the discovery, evaluation and exploitation of opportunities to create future goods and services; give Schumpeter's innovation as the origin; distinguish the entrepreneur from the small-business owner and the manager."
   },
   {
    "id": "F-002",
@@ -47,9 +47,9 @@
    "location": {
     "file": "ingest/normalized.md",
     "line_start": 92,
-    "line_end": 93
+    "line_end": 228
    },
-   "claim": "Hofstede's model is given as five dimensions. Since 2010 it has six (Indulgence versus Restraint was added; Hofstede, Hofstede & Minkov, 2010). 'Achievement vs Nurturing Orientation' is a textbook relabelling of Masculinity-Femininity and is not named as such.",
+   "claim": "Hofstede's model is given as five dimensions. Since 2010 it has six (Indulgence versus Restraint was added; Hofstede, Hofstede & Minkov, 2010). 'Achievement vs Nurturing Orientation' is a textbook relabelling of Masculinity-Femininity and is not named as such. The five-dimension model is also built into the assessment: the Q7 rationale ('one of the five dimensions', line 228) and the items at lines 118, 134, 380 and 399.",
    "evidence": "\"The model contains five dimensions: Individualism vs Collectivism, Power Distance, Achievement vs Nurturing Orientation, Uncertainty Avoidance, and Long-term vs Short-term Orientation.\"",
    "source": "subject-reviewer",
    "fix_hint": "Teach the six dimensions with Hofstede's own names, note the textbook label, and cite Hofstede et al. (2010) and the current country-comparison source."
@@ -138,10 +138,10 @@
     "line_start": 434,
     "line_end": 438
    },
-   "claim": "The foreign cases are dated and unsourced: Tesla Motors has been Tesla, Inc. since 2017, Jack Ma stepped down as Alibaba's chairman in 2019, and the case texts are summaries with no reference.",
+   "claim": "The foreign cases are dated and unsourced: Tesla Motors has been Tesla, Inc. since 2017, Jack Ma stepped down as Alibaba's chairman in 2019, and the case texts are summaries with no reference. 'Tesla Motors, under Elon Musk' (line 438) invites a false founder claim: Tesla was founded in 2003 by Martin Eberhard and Marc Tarpenning; Musk joined in 2004 as lead investor and chairman, and may call himself a co-founder only under a 2009 settlement.",
    "evidence": "\"Tesla Motors - Elon Musk\"; \"Alibaba's journey under Jack Ma's leadership\".",
    "source": "research-synthesist",
-   "fix_hint": "Keep the cases brief, date them, use current names, cite a source, and pair each with a health venture."
+   "fix_hint": "Keep the cases brief, date them, use current names, state founders exactly as the cited source does, and pair each with a health venture."
   },
   {
    "id": "F-009",
@@ -204,11 +204,11 @@
    ],
    "location": {
     "file": "ingest/normalized.md",
-    "line_start": 145,
-    "line_end": 145
+    "line_start": 38,
+    "line_end": 447
    },
    "claim": "The notes contain chatbot artefacts addressed to a user, which signals unreviewed generated text and lowers trust in every item.",
-   "evidence": "\"Sure, I can provide you with a set of multiple-choice questions (MCQs)...\" (line 145); \"Creating Multiple-Choice Questions (MCQs) ... Here are some examples:\" (line 440); \"Based on the lecture content, here are some multiple-choice questions\" (line 38).",
+   "evidence": "\"Sure, I can provide you with a set of multiple-choice questions (MCQs)...\" (line 145); \"Creating Multiple-Choice Questions (MCQs) ... Here are some examples:\" (line 440); \"Based on the lecture content, here are some multiple-choice questions\" (line 38); \"These questions and answers provide a comprehensive understanding\" (line 255); \"Here are the answers to the provided Multiple-Choice Questions\" (line 447).",
    "source": "instructional-designer",
    "fix_hint": "Remove all such text; every item in the book is written and checked as teaching material."
   },
@@ -239,9 +239,9 @@
    "location": {
     "file": "ingest/normalized.md",
     "line_start": 36,
-    "line_end": 61
+    "line_end": 162
    },
-   "claim": "The first ten MCQs have no answer key and no rationales; Q10 tests a 'conclusion of the lecture' that the notes do not contain.",
+   "claim": "The first ten MCQs have no answer key and no rationales, and the five MCQs at lines 145-162 have keys but no rationales; Q10 tests a 'conclusion of the lecture' that the notes do not contain.",
    "evidence": "\"10. The conclusion of the lecture emphasizes: ... b) That every big enterprise starts with a small dream\" - no conclusion appears in lines 1-34.",
    "source": "instructional-designer",
    "fix_hint": "Give every question a key and a rationale tied to a learning objective; delete questions on content that is not taught."
@@ -275,7 +275,7 @@
     "line_start": 168,
     "line_end": 428
    },
-   "claim": "The 30-item key is unbalanced: 14 keys are B and 12 are C, against 3 A and 1 D; a student who always picks B or C scores 87%.",
+   "claim": "The 30-item key is unbalanced: 14 keys are B and 12 are C, against 3 A and 1 D; 87% of the keys are B or C, and always answering B scores 47%.",
    "evidence": "Keys of Q1-Q30: c b a c b b b b c d c a b b c c b c b c b c c c b b b c b a.",
    "source": "instructional-designer",
    "fix_hint": "Balance the keys (2-3 per letter in each set of ten, no run longer than two)."
@@ -283,7 +283,7 @@
   {
    "id": "F-017",
    "pillar_id": "G3",
-   "severity": "major",
+   "severity": "minor",
    "tags": [
     "key-validity"
    ],
@@ -292,7 +292,7 @@
     "line_start": 153,
     "line_end": 155
    },
-   "claim": "The keyed answer that a 'newly established restaurant' is a startup is contestable: in the entrepreneurship literature a startup is a new venture searching for a repeatable, scalable business model (Blank, 2013), and a new restaurant is usually a new small business.",
+   "claim": "The keyed answer that a 'newly established restaurant' is a startup is contestable: in the entrepreneurship literature a startup is a new venture searching for a repeatable, scalable business model (Blank, 2013), and a new restaurant is usually a new small business. The notes never define 'startup', so the item is arguable rather than wrong.",
    "evidence": "\"3. Which is an example of a 'startup'? A. A newly established restaurant ... Answer: A.\"",
    "source": "instructional-designer",
    "fix_hint": "Teach the startup-versus-small-business distinction and rewrite the item with a health example (a telehealth platform versus a new neighbourhood pharmacy)."
@@ -326,8 +326,8 @@
     "line_start": 108,
     "line_end": 141
    },
-   "claim": "The 20 true/false items are mostly negated definitions (14 of 20 are false), recall only, and some repeat each other (items 12-15 all test the same idea).",
-   "evidence": "\"12. Globalization reduces the interdependence between countries and cultures. (False)\"; \"14. A decrease in tariffs has not influenced the pace of globalization. (False)\"",
+   "claim": "The 20 true/false items are mostly negated definitions (14 of 20 are false), recall only, and items 13 and 15 test the same idea.",
+   "evidence": "\"13. Technological advancements have increased barriers in global business. (False)\"; \"15. Modern communication technologies have little impact on overcoming distance and cultural barriers in business. (False)\"",
    "source": "instructional-designer",
    "fix_hint": "Convert the useful items into MCQs and short essay questions with model answers."
   },
@@ -361,7 +361,7 @@
     "line_end": 104
    },
    "claim": "The global-environment content predates the pandemic, digital health and current Egyptian reforms; nothing reflects telehealth, platform ecosystems or the Universal Health Insurance system.",
-   "evidence": "\"Modern communication and transportation technologies have reduced barriers of distance and culture\" (line 104) is the only mention of technology.",
+   "evidence": "Technology appears only as a general-environment force (line 75) and in one bullet (lines 103-104): \"Modern communication and transportation technologies have reduced barriers of distance and culture\".",
    "source": "research-synthesist",
    "fix_hint": "Update with recent evidence on health-tech ecosystems and Egyptian health reform, dated and cited."
   },
@@ -396,7 +396,7 @@
     "line_end": 451
    },
    "claim": "There is no Egyptian context: no Egyptian entrepreneur, company, support programme or regulator, although the user asked for Egyptian health entrepreneurs as examples.",
-   "evidence": "No Egyptian name, institution or law appears in the notes; the EDP problems (line 28) and 'need for entrepreneurship' (line 31) follow an Indian textbook list.",
+   "evidence": "No Egyptian name, institution or law appears in the notes; the EDP problems (line 28) and the 'need for entrepreneurship' list (line 31) are generic, with no country named.",
    "source": "health-entrepreneurship-reviewer",
    "fix_hint": "Add verified, dated and cited profiles of Egyptian health entrepreneurs (laboratory and imaging chains, digital health, pharmaceuticals, social enterprises), and the Egyptian ecosystem and regulators."
   },
@@ -413,7 +413,7 @@
     "line_start": 5,
     "line_end": 34
    },
-   "claim": "Ethics and regulation are absent: profit is the only stated aim, and nothing covers patient safety, licensing, data privacy, honest advertising of health services or social entrepreneurship.",
+   "claim": "Ethics and regulation are absent: profit is the only aim in the two definitions (lines 7 and 10; the social aims at lines 31 and 34 concern national development, not patients), and nothing covers patient safety, licensing, data privacy, honest advertising of health services or social entrepreneurship.",
    "evidence": "\"and aim to generate profit.\" (line 7); \"sells these in the market to earn profit.\" (line 10).",
    "source": "health-entrepreneurship-reviewer",
    "fix_hint": "Add an Ethics Check in every chapter and a chapter on regulation, quality and ethics (Egyptian Drug Authority, Ministry of Health licensing, radiation protection, Law 151/2020 on personal data)."
@@ -488,6 +488,95 @@
    "evidence": "\"bear overhead costs like rent, wages, and interest\"",
    "source": "statistician",
    "fix_hint": "Separate fixed and variable, direct and indirect costs before break-even is taught."
+  },
+  {
+   "id": "F-029",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "hofstede",
+    "scale-direction"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 135,
+    "line_end": 428
+   },
+   "claim": "Uncertainty avoidance is described with its scale direction unclear. T/F 18 calls it 'the extent to which a society tolerates ambiguity', which reads as if a high score meant high tolerance; Hofstede's scale runs the other way (a high score means members feel threatened by ambiguity). Q30's keyed option 'the level of comfort with unstructured situations' has the same problem, and its rationale ('feels threatened') states the direction, so the option and its rationale point opposite ways.",
+   "evidence": "\"18. Uncertainty Avoidance refers to the extent to which a society tolerates ambiguity and uncertainty. (True)\" (lines 135-137); \"Answer: a) The level of comfort with unstructured situations\" with \"Rationale: ... the extent to which a society feels threatened by uncertain or unknown situations\" (lines 427-428).",
+   "source": "subject-reviewer",
+   "fix_hint": "Define uncertainty avoidance as the extent to which members of a culture feel threatened by ambiguous or unknown situations (Hofstede, 2011), say that a high score means low tolerance, and rewrite both items so the key and the rationale agree."
+  },
+  {
+   "id": "F-030",
+   "pillar_id": "G1",
+   "severity": "minor",
+   "tags": [
+    "model",
+    "source"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 21,
+    "line_end": 22
+   },
+   "claim": "The four-stage model (Dreamer, Architect, Builder, Cultivator) is a popular model with no source, and it is tested as fact ('What is the first stage of entrepreneurship?', lines 50 and 182).",
+   "evidence": "\"The stages include The Dreamer (idea generation), The Architect (business model development), The Builder (realizing the idea), and The Cultivator (business growth).\"",
+   "source": "subject-reviewer",
+   "fix_hint": "Label it as an informal model, and teach a cited venture-creation process beside it."
+  },
+  {
+   "id": "F-031",
+   "pillar_id": "G3",
+   "severity": "minor",
+   "tags": [
+    "ambiguity",
+    "etymology"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 168,
+    "line_end": 174
+   },
+   "claim": "Distractor b 'Latin Prehendere' is a defensible partial answer: French 'entreprendre' comes from Latin 'inter' + 'prehendere'. The item has two arguable answers.",
+   "evidence": "\"b) Latin 'Prehendere'\" ... \"Answer: c) French 'Entreprendre'\" (lines 170-173).",
+   "source": "instructional-designer",
+   "fix_hint": "Ask which language English borrowed the word from, or replace the Latin distractor."
+  },
+  {
+   "id": "F-032",
+   "pillar_id": "G3",
+   "severity": "minor",
+   "tags": [
+    "ambiguity",
+    "case"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 442,
+    "line_end": 450
+   },
+   "claim": "The case MCQs are arguable: for Alibaba, 'Partnership with major US technology firms' is not clearly wrong (Yahoo bought a large stake in 2005), and the cases' facts are unsourced.",
+   "evidence": "\"d) Partnership with major US technology firms\" (line 446).",
+   "source": "instructional-designer",
+   "fix_hint": "Drop the case MCQs, or rewrite them on sourced facts with one defensible answer."
+  },
+  {
+   "id": "F-033",
+   "pillar_id": "G3",
+   "severity": "minor",
+   "tags": [
+    "duplication"
+   ],
+   "location": {
+    "file": "ingest/normalized.md",
+    "line_start": 209,
+    "line_end": 379
+   },
+   "claim": "The 30-item bank repeats itself: Q6 and Q18 (outsourcing), Q10 and Q22 (tariffs), Q8 and Q21 (impact of culture), and Q20 and Q24 (technology) are near-duplicates.",
+   "evidence": "\"6. Global Outsourcing is primarily used to\" (line 209) and \"18. Which of the following is a benefit of global outsourcing?\" (line 320).",
+   "source": "instructional-designer",
+   "fix_hint": "Keep one item of each pair and use the space for application items."
   }
  ]
 }
