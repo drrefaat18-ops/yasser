@@ -35,6 +35,21 @@ class BuildSlidesTest(unittest.TestCase):
             titles = [sh.text_frame.text for s in prs.slides for sh in s.shapes if sh.has_text_frame]
             self.assertFalse(any(t.endswith("(1/2)") for t in titles if t.replace("(1/2)", "(2/2)") not in titles))
 
+    def test_glass_look_same_slides_with_background(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            proj = pathlib.Path(tmp) / "book"
+            shutil.copytree(FIXTURE, proj)
+            self.assertEqual(build_slides.main(proj), 0)
+            flat = len(Presentation(proj / "slides" / "ch01-forces.pptx").slides)
+            (proj / "slides.json").write_text('{"look": "glass"}', encoding="utf-8")
+            self.assertEqual(build_slides.main(proj), 0)
+            prs = Presentation(proj / "slides" / "ch01-forces.pptx")
+            self.assertEqual(len(prs.slides), flat)                          # content unchanged
+            self.assertTrue(all(s.shapes[0].shape_type == 13 for s in prs.slides))   # blurred field behind each slide
+            whys = [sh.text_frame.text for s in prs.slides for sh in s.shapes
+                    if sh.has_text_frame and sh.text_frame.text.startswith("Why:")]
+            self.assertTrue(whys and all(len(w) > 8 for w in whys))         # the reason follows "Why:"
+
     def test_mix_and_parse_helpers(self):
         self.assertEqual(build_slides.mix("000000", "FFFFFF", 1), "FFFFFF")
         self.assertEqual(build_slides.clean("Risk fell [2, 3] to 1^+^"), "Risk fell to 1+")

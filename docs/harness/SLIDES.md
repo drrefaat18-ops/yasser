@@ -180,3 +180,14 @@ published ideas were rebuilt in build_study.py instead, and the workflow is the 
 |---|---|
 | Icons on the card edge covered the header text | Icons sit above the card; diagrams with icons start 0.8" lower |
 | Long action titles wrapped out of the band | Title size fits one line (30 down to 20 pt) |
+
+## Glass look for teaching decks (CNS, 2026-10-01)
+
+User: "re-design the CNS decks, visually only". The glass primitives moved from build_study.py into build_slides.py
+(`Glass` mixin, `backgrounds()`); study decks use them unchanged. `slides.json` `"look": "glass"` builds the same
+teaching slides (same count, same content) on blurred colour fields, with the framed title band, frosted callout,
+stat and option panels, and bevelled pills and the right answer.
+
+| Problem | Fix |
+|---|---|
+| "Why:" accent at 4.1:1 on the glass background | Uses the darkened kicker colour (4.6:1) |
